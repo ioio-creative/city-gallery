@@ -1,0 +1,60 @@
+{
+  "languages": [
+    {
+      "locale": "zh",
+      "display": "繁體中文"
+    }
+  ],
+  "contents": {
+    "zh": {
+      "title": {
+        "line1": "Impressions of Cities",
+        "line2": "世界城市"
+      },
+      "cities": [
+        {
+          "name": "佛羅里達",
+          "nickname": "防衛之城",
+          "imageTemplate": "some react template of the svg?",
+          "detailBlocks": [
+            {
+              "type": "text",
+              "content": "佛羅里達州是美國本土最南端的一個州，亦屬於墨西哥灣沿岸地區，是美國人口第三多的州，為著名的避寒聖地。中文俗稱為佛州，佛羅里達。"
+            },
+            {
+              "type": "image",
+              "content": {
+                "src": "img01.png",
+                "caption": "佛羅里達州是美國本土最南端的一個州，亦屬於墨西哥灣沿岸地區，是美國人口第三多的州，為著名的避寒聖地。中文俗稱為佛州，佛羅里達。"
+              }
+            },
+            {
+              "type": "image",
+              "content": {
+                "src": "img01.png",
+                "caption": "佛羅里達州是美國本土最南端的一個州，亦屬於墨西哥灣沿岸地區，是美國人口第三多的州，為著名的避寒聖地。中文俗稱為佛州，佛羅里達。"
+              }
+            },
+            {
+              "type": "gallery",
+              "content": [
+                "img01.png",
+                "img02.png",
+                "img03.png",
+                "img04.png",
+                "img05.png"
+              ]
+            }
+          ]
+        }
+      ],
+      "ui": {
+        "selectLanguageHints1": "Please select your language to start",
+        "selectLanguageHints2": "請選擇您的語言以開始",
+        "dragHints": "拖動看更多城市",
+        "clickHints": "按下查看詳細資料",
+        "exploreHints": "觀看其他城市"
+      }
+    }
+  }
+}

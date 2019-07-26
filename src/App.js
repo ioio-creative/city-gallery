@@ -1,26 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Switch, Route, Redirect} from 'react-router-dom';
+import routes from 'globals/routes';
+
+import asyncLoadingPage, {asyncLoadingAppUseHooks} from 'components/asyncLoadingComponent';
+// import {library} from '@fortawesome/fontawesome-svg-core';
+import { InfoContextProvider } from 'globals/contexts/infoContext';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.getRenderPropForRoute = this.getRenderPropForRoute.bind(this);
+  }
+  componentDidMount() {
+  }
+  getRenderPropForRoute(pageName) {
+    const AppComponent = asyncLoadingPage(pageName);
+    // const AppComponent = asyncLoadingAppUseHooks(pageName);
+    return (match) => { return (<AppComponent match={match} />) };
+  }
+  render() {
+    return (
+      <div id="App">
+        <InfoContextProvider>
+          <Switch>
+            <Route exact path={routes.exG02A} render={this.getRenderPropForRoute('exG02A')} />
+            <Route exact path={routes.exG02B} render={this.getRenderPropForRoute('exG02B')} />
+            <Route exact path={routes.ex402} render={this.getRenderPropForRoute('ex402')} />
+            <Route exact path={routes.ex302} render={this.getRenderPropForRoute('ex302')} />
+            <Route exact path={routes.ex302A} render={this.getRenderPropForRoute('ex302A')} />
+            <Redirect to={routes.ex302} />
+          </Switch>
+        </InfoContextProvider>
+      </div>
+    );
+  }
 }
 
 export default App;
