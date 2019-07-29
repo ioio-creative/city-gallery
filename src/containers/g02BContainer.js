@@ -79,8 +79,6 @@ const CitiesList = (props) => {
     })}
  </div>;
 }
-
-const functions = new Set();
 const G02BContainer = (props) => {
   const [status, setStatus] = useState(G02BStatus.IDLE);
   const [userIsInteract, setUserIsInteract] = useState(false);
@@ -94,7 +92,7 @@ const G02BContainer = (props) => {
     if (animationFrame) {
       cancelAnimationFrame(animationFrame);
     }
-    // autoScroll();
+    autoScroll();
     // console.log(autoPanSpeed);
     return () => {
       if (animationFrame) {
@@ -119,13 +117,11 @@ const G02BContainer = (props) => {
     }
   }
 
-  const dragStart = useCallback((event) => {
+  const dragStart = (event) => {
     let pointer = (event.touches? event.touches[0]: event);
     setPointerCoordinate([containerOffset[0] - pointer.clientX, containerOffset[1] - pointer.clientY]);
     setUserIsInteract(true);
-  },[containerOffset]);
-
-  functions.add(dragStart);
+  };
   useEffect(() => {
     if (userIsInteract) {
       document.addEventListener('mousemove', dragMove);
@@ -155,7 +151,6 @@ const G02BContainer = (props) => {
     />
     {/* <CityDetailsContainer /> */}
     {/* <LanguageSelection /> */}
-    {functions.size}
   </div>;
 }
 

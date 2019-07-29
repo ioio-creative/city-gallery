@@ -1,10 +1,17 @@
+**React Hooks**
+https://reactjs.org/docs/hooks-intro.html
+some ref
+https://blog.csdn.net/Napoleonxxx/article/details/84313627
+https://medium.com/@shizukuichi/react-hooks-%E6%98%AF%E7%94%9A%E9%BA%BC%E8%AE%93%E6%88%91%E7%9B%B8%E4%BF%A1%E4%B8%80%E8%A6%8B%E9%8D%BE%E6%83%85-da222a937af2
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `yarn start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -17,7 +24,7 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### `yarn run build`
 
 Builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
