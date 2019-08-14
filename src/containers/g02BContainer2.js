@@ -9,7 +9,8 @@ const G02BStatus = {
 }
 
 const CityBlock = (props) => {
-  return <div className="cityBlock" style={{
+  const cityIdx = props.data ? props.blockIdx ? props.blockIdx : 0 : 0;
+  return <div className={`cityBlock ${props.activeCenterClass?'center':''}`} style={{
     transform: `translate3d(${props.offsetX}px, ${props.offsetY}px, 0px)`
   }}>
     <div className="contentWrapper">
@@ -17,17 +18,22 @@ const CityBlock = (props) => {
         <img src={placeholderImage} alt="placeholder image" />
       </div>
       <div className="cityName">
-        <div className="nickName">防衞之城</div>
-        <div className="realName">佛羅里達</div>
+        <div className="nickName">{props.data && props.data.cities[cityIdx].name}</div>
+        <div className="realName">{props.data && props.data.cities[cityIdx].nickname}</div>
       </div>
       <div style={{
         position: 'absolute',
+        top:'50%',
+        left:'50%',
+        transform:'translate3d(-50%,-50%,0)',
         fontSize: 120,
-        color: props.color
-      }}>{props.blockIdx}</div>
+        color: props.color,
+        display:'inline-block'
+      }}>{props.blockIdx+1}</div>
     </div>
   </div>
 }
+
 const startIdx = [9,3,8,1,5];
 let col = [0,1,2,3,4];
 let row = [0,1,2,3,4];
@@ -36,13 +42,13 @@ let cidx = 2;
 let oldcurrentRowIdx = 2;
 let oldcurrentColIdx = 2;
 
-
-
 const CitiesList = (props) => {
   const blockWidth = window.innerWidth / 3;
   const blockHeight = blockWidth;
-  const currentColIdx = -Math.floor((props.posX-blockWidth/2) / blockWidth);
-  const currentRowIdx = -Math.floor(props.posY / blockHeight);
+  // const currentColIdx = -Math.floor((props.posX-blockWidth/2) / blockWidth);
+  // const currentRowIdx = -Math.floor(props.posY / blockHeight);
+  const currentColIdx = props.currentColIdx;
+  const currentRowIdx = props.currentRowIdx;
 
   useEffect(()=>{
     let topRowIdx,
@@ -51,14 +57,14 @@ const CitiesList = (props) => {
         rightColIdx;
 
     if(currentRowIdx < oldcurrentRowIdx){
-      console.log('up');
+      // console.log('up');
       topRowIdx = currentRowIdx - 2;
       bottomRowIdx = oldcurrentRowIdx + 2;
       ridx = ((bottomRowIdx%row.length)+row.length)%row.length;
       row[ridx] = topRowIdx;
     }
     else if(currentRowIdx > oldcurrentRowIdx){
-      console.log('down');
+      // console.log('down');
       topRowIdx = oldcurrentRowIdx - 2;
       bottomRowIdx = currentRowIdx + 2;
       ridx = ((topRowIdx%row.length)+row.length)%row.length;
@@ -66,14 +72,14 @@ const CitiesList = (props) => {
     }
 
     if(currentColIdx < oldcurrentColIdx){
-      console.log('left');
+      // console.log('left');
       leftColIdx = currentColIdx - 2;
       rightColIdx = oldcurrentColIdx + 2;
       cidx = ((rightColIdx%col.length)+col.length)%col.length;
       col[cidx] = leftColIdx;
     }
     else if(currentColIdx > oldcurrentColIdx){
-      console.log('right');
+      // console.log('right');
       leftColIdx = oldcurrentColIdx - 2;
       rightColIdx = currentColIdx + 2;
       cidx = ((leftColIdx%col.length)+col.length)%col.length;
@@ -83,7 +89,6 @@ const CitiesList = (props) => {
     oldcurrentRowIdx = currentRowIdx;
     oldcurrentColIdx = currentColIdx;
 
-    // console.log(row,topRowIdx,bottomRowIdx);
     // console.log('current row idx',currentRowIdx);
     // console.log('current col idx',currentColIdx);
   },[currentRowIdx,currentColIdx]);
@@ -104,9 +109,11 @@ const CitiesList = (props) => {
           return <CityBlock 
             key={`(${yIdx},${xIdx})`}
             blockIdx={(startIdx[yIdx] + ((col[xIdx]%10)+10)%10)%10}
+            activeCenterClass={xIdx == ((currentColIdx%col.length)+col.length)%col.length && yIdx == ((currentRowIdx%row.length)+row.length)%row.length ? true : false}
             offsetX={col[xIdx] * blockWidth} 
             offsetY={row[yIdx] * blockHeight}
             color={xIdx == ((currentColIdx%col.length)+col.length)%col.length || yIdx == ((currentRowIdx%row.length)+row.length)%row.length?'red':''}
+            data={props.data}
           />
         })
       })
@@ -120,20 +127,26 @@ const G02BContainer = (props) => {
   const blockWidth = window.innerWidth / 3;
   const blockHeight = blockWidth;
   const [status, setStatus] = useState(G02BStatus.IDLE);
+  const [contentData, setContentData] = useState(null);
+  const [isHome, setIsHome] = useState(true);
+  const [currentColIdx, setCurrentColIdx] = useState(2);
+  const [currentRowIdx, setCurrentRowIdx] = useState(2);
   const [data, setData] = useState({
     initalPos:{
       x: -blockWidth*4/2 + window.innerWidth/2 - blockWidth/2, 
-      y: -blockHeight*3/2 + window.innerHeight/2 - blockHeight
+      y: -blockHeight*4/2 + window.innerHeight/2 - blockHeight/2
     },
     startPos:{x:0, y:0},
     currentPos:{x: 0, y:0},
     nextPos:{x:0, y:0},
     offset:{x:0, y:0},
-    delta:{x:0, y:0},
+    delta:{x:0, y:0,t:0},
     lastPos:{x:0, y:0}
   });
   const [allowDrag, setAllowDrag] = useState(false);
   const [easePos, setEasePos] = useState({x:data.initalPos.x, y:data.initalPos.y});
+  let timestamp = Date.now();
+  
   
   const dragStart = (event) => {
     let e = (event.touches? event.touches[0]: event);
@@ -142,7 +155,7 @@ const G02BContainer = (props) => {
     setData({...data,
       startPos:{x:e.clientX, y:e.clientY},
       offset:{x:0,y:0},
-      delta:{x:0,y:0},
+      delta:{x:0,y:0,t:Date.now() - timestamp},
       lastPos:{x: mx, y:my},
     });
     setAllowDrag(true);
@@ -153,37 +166,54 @@ const G02BContainer = (props) => {
     if(allowDrag){
       const mx = e.clientX;
       const my = e.clientY;
+      const now = Date.now();
       setData({...data,
         offset:{
           x:mx - data.startPos.x, 
           y:my - data.startPos.y
         },
+        delta: {
+          x: mx - data.lastPos.x,
+          y: my - data.lastPos.y,
+          t: now - timestamp
+        },
         currentPos: {
-          x:data.nextPos.x + data.offset.x + data.delta.x, 
-          y:data.nextPos.y + data.offset.y + data.delta.y
+          x:data.nextPos.x + data.offset.x + Math.round(data.delta.x / data.delta.t * 100), 
+          y:data.nextPos.y + data.offset.y + Math.round(data.delta.y / data.delta.t * 100)
         },
         lastPos:{x: mx, y:my},
-        delta: {
-          x:data.lastPos.x - mx,
-          y:data.lastPos.y - my
-        },
       });
+      setIsHome(false);
+      timestamp = Date.now();
     }
   }
 
   const dragEnd = (event) => {
     let e = (event.touches? event.touches[0]: event);
-    // const mx = e.clientX;
-    // const my = e.clientY;
     setData({...data,
       nextPos:{...data.currentPos},
-      offset:{x:0,y:0},
-      // delta:{x:0,y:0},
-      // lastPos:{x: mx, y:my},
+      // offset:{x:0,y:0}
     });
     setAllowDrag(false);
   }
-  const easing={x:0,y:0};
+  
+  const backToHome = () => {
+    setData({...data,
+      initalPos:{
+        x: -blockWidth*(currentColIdx*2)/2 + window.innerWidth/2 - blockWidth/2, 
+        y: -blockHeight*(currentRowIdx*2)/2 + window.innerHeight/2 - blockHeight/2
+      },
+      nextPos:{
+        x:0,
+        y:0
+      },
+      currentPos:{
+        x:0,
+        y:0
+      }
+    });
+    setIsHome(true);
+  }
 
   useEffect(()=>{
     let animId;
@@ -194,6 +224,11 @@ const G02BContainer = (props) => {
         y: easePos.y += ((data.currentPos.y + data.initalPos.y) - easePos.y) * .1
       })
     }
+
+    setCurrentColIdx(-Math.floor((easePos.x-blockWidth/2) / blockWidth));
+    setCurrentRowIdx(-Math.floor(easePos.y / blockHeight));
+
+
     animId = requestAnimationFrame(loop);
     document.addEventListener('mousemove', dragMove);
     document.addEventListener('mouseup', dragEnd);
@@ -202,16 +237,44 @@ const G02BContainer = (props) => {
       document.removeEventListener('mousemove', dragMove);
       document.removeEventListener('mouseup', dragEnd);
     }
-  },[easing]);
+  });
 
-  return <div id="G02BContainer" onMouseDown={dragStart}>
-    <CitiesList 
-      posX={easePos.x} 
-      posY={easePos.y}
-    />
-    {/* <CityDetailsContainer /> */}
-    {/* <LanguageSelection /> */}
-  </div>;
+  useEffect(() => {
+    if(props.appData){
+      setContentData(props.appData.contents['zh']);
+    }
+  }, [props.appData]);
+
+  const handleClick = (lang) =>{
+    // console.log(props.appData.contents[lang]);
+    setContentData(props.appData.contents[lang]);
+  }
+
+  return (
+    <div id="G02BContainer" className={`${isHome?'home':''}`} onMouseDown={dragStart}>
+      <div id="homeInfo">
+        <div>{props.appData && props.appData.contents.title.line1}</div>
+        <div>{props.appData && props.appData.contents.title.line2}</div>
+        <div id="lang">
+          { 
+            props.appData && props.appData.languages.map((value,index)=>
+              <div key={index} onClick={()=>handleClick(value.locale)}>{value.display}</div>
+            )
+          }
+        </div>
+      </div>
+      <div id="homeBtn" onClick={()=>{backToHome()}}></div>
+      <CitiesList 
+        data={contentData}
+        posX={easePos.x} 
+        posY={easePos.y}
+        currentColIdx={currentColIdx}
+        currentRowIdx={currentRowIdx}
+      />
+      {/* <CityDetailsContainer /> */}
+      {/* <LanguageSelection /> */}
+    </div>
+  );
 }
 
 export default G02BContainer;

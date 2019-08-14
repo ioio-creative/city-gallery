@@ -12,11 +12,17 @@ const App = (props) => {
     api.fetchExhibitionJsonFromUrl('/json/g02b.json', setAppData);
   }, [])
   useEffect(() => {
-    console.log(appData)
+    if(appData){
+      console.log(appData)
+      // setContentData(appData.contents['zh']);
+    }
   }, [appData]);
+
+  
+
   return (
     <>
-      <G02BContainer />
+      <G02BContainer appData={appData} />
     </>
   );
 }

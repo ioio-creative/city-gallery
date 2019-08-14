@@ -1,16 +1,64 @@
 {
   "languages": [
     {
+      "locale": "en",
+      "display": "English"
+    },
+    {
       "locale": "zh",
       "display": "繁體中文"
     }
   ],
   "contents": {
+    "title": {
+      "line1": "Impressions of Cities",
+      "line2": "世界城市"
+    },
+    "en":{
+      "cities": [
+        {
+          "name": "Safefy Harbour",
+          "nickname": "Flarido"
+        },
+        {
+          "name": "Safefy Harbour 2",
+          "nickname": "Flarido 2"
+        },
+        {
+          "name": "Safefy Harbour 3",
+          "nickname": "Flarido 3"
+        },
+        {
+          "name": "Safefy Harbour 4",
+          "nickname": "Flarido 4"
+        },
+        {
+          "name": "Safefy Harbour 5",
+          "nickname": "Flarido 5"
+        },
+        {
+          "name": "Safefy Harbour 6",
+          "nickname": "Flarido 6"
+        },
+        {
+          "name": "Safefy Harbour 7",
+          "nickname": "Flarido 7"
+        },
+        {
+          "name": "Safefy Harbour 8",
+          "nickname": "Flarido 8"
+        },
+        {
+          "name": "Safefy Harbour 9",
+          "nickname": "Flarido 9"
+        },
+        {
+          "name": "Safefy Harbour 10",
+          "nickname": "Flarido 10"
+        }
+      ]
+    },
     "zh": {
-      "title": {
-        "line1": "Impressions of Cities",
-        "line2": "世界城市"
-      },
       "cities": [
         {
           "name": "佛羅里達",
@@ -28,7 +76,7 @@
                 "caption": "佛羅里達州是美國本土最南端的一個州，亦屬於墨西哥灣沿岸地區，是美國人口第三多的州，為著名的避寒聖地。中文俗稱為佛州，佛羅里達。"
               }
             },
-            {
+            {  
               "type": "image",
               "content": {
                 "src": "img01.png",
@@ -46,6 +94,42 @@
               ]
             }
           ]
+        },
+        {
+          "name": "佛羅里達2",
+          "nickname": "防衛之城2"
+        },
+        {
+          "name": "佛羅里達3",
+          "nickname": "防衛之城3"
+        },
+        {
+          "name": "佛羅里達4",
+          "nickname": "防衛之城4"
+        },
+        {
+          "name": "佛羅里達5",
+          "nickname": "防衛之城5"
+        },
+        {
+          "name": "佛羅里達6",
+          "nickname": "防衛之城6"
+        },
+        {
+          "name": "佛羅里達7",
+          "nickname": "防衛之城7"
+        },
+        {
+          "name": "佛羅里達8",
+          "nickname": "防衛之城8"
+        },
+        {
+          "name": "佛羅里達9",
+          "nickname": "防衛之城9"
+        },
+        {
+          "name": "佛羅里達10",
+          "nickname": "防衛之城10"
         }
       ],
       "ui": {
