@@ -27,6 +27,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path={routes.exG02A} render={this.getRenderPropForRoute('exG02A')} />
             <Route exact path={routes.exG02B} render={this.getRenderPropForRoute('exG02B')} />
+            <Route exact path={routes.exG02B2} render={this.getRenderPropForRoute('exG02B2')} />
             <Route exact path={routes.ex402} render={this.getRenderPropForRoute('ex402')} />
             <Route exact path={routes.ex302} render={this.getRenderPropForRoute('ex302')} />
             <Route exact path={routes.ex302A} render={this.getRenderPropForRoute('ex302A')} />
