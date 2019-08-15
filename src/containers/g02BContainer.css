@@ -65,9 +65,6 @@
   /* background-color: red; */
   transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1), visibility 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-.cityBlock:hover .contentWrapper{
-  transform: translate3d(0,0,0) scale(1.03);
-}
 .cityBlock .contentWrapper {
   position: absolute;
   top: 0;
@@ -79,6 +76,9 @@
   margin: auto;
   border: 1px solid #ccc;
   transition: all 400ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.cityBlock .contentWrapper:active{
+  transform: translate3d(0,0,0) scale(.98);
 }
 .cityBlock .contentWrapper .cityImage {
   position: absolute;

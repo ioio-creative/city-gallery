@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import placeholderImage from 'media/placeholder_400x400.png';
 import './g02BContainer.css';
 
@@ -10,10 +10,13 @@ const G02BStatus = {
 
 const CityBlock = (props) => {
   const cityIdx = props.data ? props.blockIdx ? props.blockIdx : 0 : 0;
-  return <div className={`cityBlock ${props.activeCenterClass?'center':''}`} style={{
-    transform: `translate3d(${props.offsetX}px, ${props.offsetY}px, 0px)`
-  }}>
-    <div className="contentWrapper">
+
+  return <div 
+    id={cityIdx}
+    className={`cityBlock${props.activeCenterClass?' center':''}${props.active?' clicked':''}`} 
+    style={{transform: `translate3d(${props.offsetX}px, ${props.offsetY}px, 0px)`}}
+  >
+    <div className="contentWrapper" onClick={props.handleClick}>
       <div className="cityImage">
         <img src={placeholderImage} alt="placeholder image" />
       </div>
@@ -29,7 +32,7 @@ const CityBlock = (props) => {
         fontSize: 120,
         color: props.color,
         display:'inline-block'
-      }}>{props.blockIdx+1}</div>
+      }}>{props.blockIdx}</div>
     </div>
   </div>
 }
@@ -49,6 +52,14 @@ const CitiesList = (props) => {
   // const currentRowIdx = -Math.floor(props.posY / blockHeight);
   const currentColIdx = props.currentColIdx;
   const currentRowIdx = props.currentRowIdx;
+  const [activeIdx, setActiveIdx] = useState(null);
+
+  const handleClick = (domIdx, blockIdx) =>{
+    if(!props.dragging){
+      setActiveIdx(domIdx);
+      console.log('clicked block index:',blockIdx);
+    }
+  }
 
   useEffect(()=>{
     let topRowIdx,
@@ -95,8 +106,8 @@ const CitiesList = (props) => {
 
  
   /*
-   0  6 7 8 9 0
-   1  2 3 4 5 6
+   0  0 1 2 3 4
+   1  5 6 7 8 9
    2  9 0 _ 2 3
    3  3 4 5 6 7
    4  1 2 3 4 5
@@ -107,13 +118,15 @@ const CitiesList = (props) => {
       new Array(startIdx.length).fill(0).map((value, yIdx)=>{
         return new Array(5).fill(0).map((value, xIdx)=>{
           return <CityBlock 
-            key={`(${yIdx},${xIdx})`}
+            key={yIdx*5 + xIdx}
+            active={activeIdx === yIdx*5 + xIdx}
             blockIdx={(startIdx[yIdx] + ((col[xIdx]%10)+10)%10)%10}
             activeCenterClass={xIdx == ((currentColIdx%col.length)+col.length)%col.length && yIdx == ((currentRowIdx%row.length)+row.length)%row.length ? true : false}
             offsetX={col[xIdx] * blockWidth} 
             offsetY={row[yIdx] * blockHeight}
             color={xIdx == ((currentColIdx%col.length)+col.length)%col.length || yIdx == ((currentRowIdx%row.length)+row.length)%row.length?'red':''}
             data={props.data}
+            handleClick={()=>{handleClick(yIdx*5 + xIdx, (startIdx[yIdx] + ((col[xIdx]%10)+10)%10)%10)}}
           />
         })
       })
@@ -143,6 +156,7 @@ const G02BContainer = (props) => {
     delta:{x:0, y:0,t:0},
     lastPos:{x:0, y:0}
   });
+  const [dragging, setDragging] = useState(false);
   const [allowDrag, setAllowDrag] = useState(false);
   const [easePos, setEasePos] = useState({x:data.initalPos.x, y:data.initalPos.y});
   let timestamp = Date.now();
@@ -159,6 +173,7 @@ const G02BContainer = (props) => {
       lastPos:{x: mx, y:my},
     });
     setAllowDrag(true);
+    setDragging(false);
   }
 
   const dragMove = (event) => {
@@ -183,6 +198,7 @@ const G02BContainer = (props) => {
         },
         lastPos:{x: mx, y:my},
       });
+      setDragging(true);
       setIsHome(false);
       timestamp = Date.now();
     }
@@ -226,7 +242,7 @@ const G02BContainer = (props) => {
     }
 
     setCurrentColIdx(-Math.floor((easePos.x-blockWidth/2) / blockWidth));
-    setCurrentRowIdx(-Math.floor(easePos.y / blockHeight));
+    setCurrentRowIdx(-Math.floor(((easePos.y+blockHeight/4) / blockHeight)));
 
 
     animId = requestAnimationFrame(loop);
@@ -256,7 +272,7 @@ const G02BContainer = (props) => {
         <div>{props.appData && props.appData.contents.title.line1}</div>
         <div>{props.appData && props.appData.contents.title.line2}</div>
         <div id="lang">
-          { 
+          {
             props.appData && props.appData.languages.map((value,index)=>
               <div key={index} onClick={()=>handleClick(value.locale)}>{value.display}</div>
             )
@@ -270,6 +286,7 @@ const G02BContainer = (props) => {
         posY={easePos.y}
         currentColIdx={currentColIdx}
         currentRowIdx={currentRowIdx}
+        dragging={dragging}
       />
       {/* <CityDetailsContainer /> */}
       {/* <LanguageSelection /> */}

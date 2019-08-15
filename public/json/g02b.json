@@ -21,6 +21,10 @@
           "nickname": "Flarido"
         },
         {
+          "name": "Safefy Harbour 1",
+          "nickname": "Flarido 1"
+        },
+        {
           "name": "Safefy Harbour 2",
           "nickname": "Flarido 2"
         },
@@ -51,10 +55,6 @@
         {
           "name": "Safefy Harbour 9",
           "nickname": "Flarido 9"
-        },
-        {
-          "name": "Safefy Harbour 10",
-          "nickname": "Flarido 10"
         }
       ]
     },
@@ -96,6 +96,10 @@
           ]
         },
         {
+          "name": "佛羅里達1",
+          "nickname": "防衛之城1"
+        },
+        {
           "name": "佛羅里達2",
           "nickname": "防衛之城2"
         },
@@ -126,10 +130,6 @@
         {
           "name": "佛羅里達9",
           "nickname": "防衛之城9"
-        },
-        {
-          "name": "佛羅里達10",
-          "nickname": "防衛之城10"
         }
       ],
       "ui": {
