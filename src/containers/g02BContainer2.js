@@ -17,9 +17,10 @@ const CityBlock = (props) => {
     className={`cityBlock${props.activeCenterClass?' center':''}${props.active?' clicked':''}`} 
     style={{transform: `translate3d(${props.offsetX}px, ${props.offsetY}px, 0px)`}}
   >
-    <div className="contentWrapper" onClick={props.handleClick}>
+    <div className="cityBgColor"></div>
+    <div className="contentWrap" onClick={props.clickBlock}>
       <div className="cityImage">
-        <img src={placeholderImage} alt="placeholder image" />
+        {/* <img src={placeholderImage} alt="placeholder image" /> */}
       </div>
       <div className="cityName">
         <div className="nickName">{props.data && props.data.cities[cityIdx].name}</div>
@@ -34,6 +35,10 @@ const CityBlock = (props) => {
         color: props.color,
         display:'inline-block'
       }}>{props.blockIdx}</div>
+    </div>
+    <div className="mainContentWrap">
+        <h2 className="nickName">{props.data && props.data.cities[cityIdx].name}</h2>
+        <h2 className="realName">{props.data && props.data.cities[cityIdx].nickname}</h2>
     </div>
   </div>
 }
@@ -53,15 +58,19 @@ const CitiesList = (props) => {
   // const currentRowIdx = -Math.floor(props.posY / blockHeight);
   const currentColIdx = props.currentColIdx;
   const currentRowIdx = props.currentRowIdx;
-  const [activeIdx, setActiveIdx] = useState(null);
+  const [domIdx, setDomIdx] = useState(null);
 
-  const handleClick = (domIdx, blockIdx) =>{
-    if(!props.dragging){
-      setActiveIdx(domIdx);
-      console.log('clicked block index:',blockIdx);
-    }
-  }
+  // const handleClick = (_domIdx, blockIdx, c,r) =>{
+  //   if(!props.dragging){
+  //     setDomIdx(_domIdx);
+  //     props.getActiveBlockIdx(_domIdx);
+  //     props.moveToBlock(col[c] * blockWidth, row[r] * blockHeight);
+  //   }
+  // }
 
+  useEffect(()=>{
+    setDomIdx(props.activeBlockIdx);
+  });
   useEffect(()=>{
     let topRowIdx,
         bottomRowIdx,
@@ -120,14 +129,14 @@ const CitiesList = (props) => {
         return new Array(5).fill(0).map((value, xIdx)=>{
           return <CityBlock 
             key={yIdx*5 + xIdx}
-            active={activeIdx === yIdx*5 + xIdx}
+            active={domIdx === yIdx*5 + xIdx}
             blockIdx={(startIdx[yIdx] + ((col[xIdx]%10)+10)%10)%10}
             activeCenterClass={xIdx == ((currentColIdx%col.length)+col.length)%col.length && yIdx == ((currentRowIdx%row.length)+row.length)%row.length ? true : false}
             offsetX={col[xIdx] * blockWidth} 
             offsetY={row[yIdx] * blockHeight}
             color={xIdx == ((currentColIdx%col.length)+col.length)%col.length || yIdx == ((currentRowIdx%row.length)+row.length)%row.length?'red':''}
             data={props.data}
-            handleClick={()=>{handleClick(yIdx*5 + xIdx, (startIdx[yIdx] + ((col[xIdx]%10)+10)%10)%10)}}
+            clickBlock={(e)=>{props.clickBlock(yIdx*5 + xIdx, (startIdx[yIdx] + ((col[xIdx]%10)+10)%10)%10, xIdx, yIdx)}}
           />
         })
       })
@@ -144,6 +153,7 @@ const G02BContainer = (props) => {
   const [contentData, setContentData] = useState(null);
   const [isHome, setIsHome] = useState(true);
   const [isShowHints, setIsShowHints] = useState(false);
+  const [isShowExplore, setIsShowExplore] = useState(false);
   const [currentColIdx, setCurrentColIdx] = useState(2);
   const [currentRowIdx, setCurrentRowIdx] = useState(2);
   const [data, setData] = useState({
@@ -158,95 +168,102 @@ const G02BContainer = (props) => {
     delta:{x:0, y:0,t:0},
     lastPos:{x:0, y:0}
   });
+  const [disableDrag, setDisableDrag] = useState(false);
+  const [startDrag, setStartDrag] = useState(false);
   const [dragging, setDragging] = useState(false);
-  const [allowDrag, setAllowDrag] = useState(false);
   const [easePos, setEasePos] = useState({x:data.initalPos.x, y:data.initalPos.y});
+  const [activeBlockIdx, setActiveBlockIdx] = useState(null);
   let timestamp = Date.now();
   let hintsElem = [];
-  let hintsBtn;
   
   const dragStart = (event) => {
-    let e = (event.touches? event.touches[0]: event);
-    const mx = e.clientX;
-    const my = e.clientY;
-    setData({...data,
-      startPos:{x:e.clientX, y:e.clientY},
-      offset:{x:0,y:0},
-      delta:{x:0,y:0,t:Date.now() - timestamp},
-      lastPos:{x: mx, y:my},
-      prevPos: {...data.currentPos},
-    });
-    setAllowDrag(true);
-    setDragging(false);
+    if(!disableDrag){
+      let e = (event.touches? event.touches[0]: event);
+      const mx = e.clientX;
+      const my = e.clientY;
+      setData({...data,
+        startPos:{x:e.clientX, y:e.clientY},
+        offset:{x:0,y:0},
+        delta:{x:0,y:0,t:Date.now() - timestamp},
+        lastPos:{x: mx, y:my},
+        prevPos: {...data.currentPos},
+      });
+      setStartDrag(true);
+      setDragging(false);
+    }
   }
 
   const dragMove = (event) => {
-    let e = (event.touches? event.touches[0]: event);
-    if(allowDrag){
-      const mx = e.clientX;
-      const my = e.clientY;
+    if(!disableDrag){
+      let e = (event.touches? event.touches[0]: event);
+      if(startDrag){
+        const mx = e.clientX;
+        const my = e.clientY;
 
-      setData({...data,
-        offset:{
-          x:mx - data.startPos.x, 
-          y:my - data.startPos.y
-        },
-        delta: {
-          x: mx - data.lastPos.x,
-          y: my - data.lastPos.y,
-          t: Date.now() - timestamp
-        },
-        currentPos: {
-          x:data.prevPos.x + data.offset.x + data.delta.x, 
-          y:data.prevPos.y + data.offset.y + data.delta.y
-        },
-        lastPos:{x: mx, y:my},
-      });
+        setData({...data,
+          offset:{
+            x:mx - data.startPos.x, 
+            y:my - data.startPos.y
+          },
+          delta: {
+            x: mx - data.lastPos.x,
+            y: my - data.lastPos.y,
+            t: Date.now() - timestamp
+          },
+          currentPos: {
+            x:data.prevPos.x + data.offset.x + data.delta.x, 
+            y:data.prevPos.y + data.offset.y + data.delta.y
+          },
+          lastPos:{x: mx, y:my},
+        });
 
-      setDragging(true);
-      setIsHome(false);
-      setIsShowHints(true);
+        setDragging(true);
+        setIsHome(false);
+        setIsShowHints(true);
+      }
     }
   }
 
   const dragEnd = (event) => {
-    setData({...data,
-      delta: {...data.delta,
-        t: Date.now() - timestamp
-      },
-      currentPos: {
-        x:data.prevPos.x + data.offset.x + Math.round(data.delta.x / data.delta.t * 200), 
-        y:data.prevPos.y + data.offset.y + Math.round(data.delta.y / data.delta.t * 200)
-      },
-      prevPos: {...data.currentPos},
-    });
-    setAllowDrag(false);
-    timestamp = Date.now();
+    if(!disableDrag){
+      setData({...data,
+        delta: {...data.delta,
+          t: Date.now() - timestamp
+        },
+        currentPos: {
+          x:data.prevPos.x + data.offset.x + Math.round(data.delta.x / data.delta.t * 200), 
+          y:data.prevPos.y + data.offset.y + Math.round(data.delta.y / data.delta.t * 200)
+        },
+        prevPos: {...data.currentPos},
+      });
+      setStartDrag(false);
+      timestamp = Date.now();
+    }
   }
-  
-  const backToHome = () => {
+
+  const goCenter = () => {
     setData({...data,
       initalPos:{
         x: -blockWidth*(currentColIdx*2)/2 + window.innerWidth/2 - blockWidth/2, 
         y: -blockHeight*(currentRowIdx*2)/2 + window.innerHeight/2 - blockHeight/2
       },
-      nextPos:{
-        x:0,
-        y:0
-      },
-      currentPos:{
-        x:0,
-        y:0
-      }
+      nextPos:{x:0, y:0},
+      currentPos:{x:0, y:0}
     });
+    // console.log(currentColIdx,currentRowIdx)
+  }
+  
+  const backToHome = () => {
+    goCenter();
     setIsHome(true);
     setIsShowHints(false);
+    // console.log(currentColIdx,currentRowIdx)
   }
 
   const showHints = () => {
     const tl = new TimelineMax();
     setIsShowHints(false);
-    // tl.to(hintsBtn,.3,{autoAlpha:0,ease:'Power2.easeInOut'});
+
     hintsElem.map((elem, idx) => {
       tl.to(elem,.3,{autoAlpha:1,ease:'Power1.easeInOut'});
       if(idx === hintsElem.length-1)
@@ -254,8 +271,42 @@ const G02BContainer = (props) => {
       else
         tl.to(elem,.3,{autoAlpha:0,ease:'Power1.easeInOut'},'+=1');
     });
-    // tl.to(hintsBtn,.3,{autoAlpha:1,ease:'Power2.easeInOut'});
   }
+
+  const changeLang = (lang) =>{
+    setIsHome(false);
+    setContentData(props.appData.contents[lang]);
+    showHints();
+  }
+
+  const clickBlock = (domIdx, blockIdx, c,r) =>{
+    if(!dragging){
+      // setDomIdx(_domIdx);
+      setActiveBlockIdx(domIdx);
+      moveToBlock(col[c] * blockWidth, row[r] * blockHeight);
+    }
+  }
+
+  const moveToBlock = (x,y) => {
+    setDisableDrag(true);
+    setIsHome(false);
+    setIsShowHints(false);
+    setIsShowExplore(true);
+    setData({...data,
+      currentPos:{
+        x: -x + blockWidth,
+        y: -y + window.innerHeight/2 - blockHeight/2,
+      },
+      initalPos:{x:0,y:0}
+    });
+  }
+
+  const closeContent = () => {
+    setDisableDrag(false);
+    setIsShowExplore(false);
+    setActiveBlockIdx(null);
+  }
+  
 
   useEffect(()=>{
     let animId;
@@ -264,11 +315,10 @@ const G02BContainer = (props) => {
       setEasePos({
         x: easePos.x += ((data.currentPos.x + data.initalPos.x) - easePos.x) * .1,
         y: easePos.y += ((data.currentPos.y + data.initalPos.y) - easePos.y) * .1
-      })
+      });
+      setCurrentColIdx(-Math.floor((easePos.x-blockWidth/2) / blockWidth));
+      setCurrentRowIdx(-Math.floor(((easePos.y+blockHeight/4) / blockHeight)));
     }
-
-    setCurrentColIdx(-Math.floor((easePos.x-blockWidth/2) / blockWidth));
-    setCurrentRowIdx(-Math.floor(((easePos.y+blockHeight/4) / blockHeight)));
 
 
     animId = requestAnimationFrame(loop);
@@ -287,23 +337,18 @@ const G02BContainer = (props) => {
     }
   }, [props.appData]);
 
-  const handleClick = (lang) =>{
-    setIsHome(false);
-    setContentData(props.appData.contents[lang]);
-    showHints();
-  }
 
   return (
     <div id="G02BContainer" className={`${isHome?'home':''}`} onMouseDown={dragStart}>
       <div id="homeInfo">
         <div>{props.appData && props.appData.contents.home.line1}</div>
-        <div>{props.appData && props.appData.contents.home.line2}</div>
+        <h1>{props.appData && props.appData.contents.home.line2}</h1>
         <div>{props.appData && props.appData.contents.home.selectLanguageHints1}</div>
         <div>{props.appData && props.appData.contents.home.selectLanguageHints2}</div>
         <div id="lang">
           {
             props.appData && props.appData.languages.map((value,index)=>
-              <div key={index} onClick={()=>handleClick(value.locale)}>{value.display}</div>
+              <div key={index} onClick={()=>changeLang(value.locale)}>{value.display}</div>
             )
           }
         </div>
@@ -312,7 +357,8 @@ const G02BContainer = (props) => {
         <div ref={(e)=> hintsElem.push(e)}>{props.appData && contentData && contentData.ui.dragHints}</div>
         <div ref={(e)=> hintsElem.push(e)}>{props.appData && contentData && contentData.ui.clickHints}</div>
       </div>
-      <div ref={(e)=> hintsBtn=e} id="hintsBtn" className={`btn${isShowHints?'':' hide'}`} onClick={()=>{showHints()}}>?</div>
+      <div id="hintsBtn" className={`btn${isShowHints?'':' hide'}`} onClick={()=>{showHints()}}>?</div>
+      <div id="exploreBtn" className={`btn${isShowExplore?'':' hide'}`} onClick={()=>{closeContent()}}>{props.appData && contentData && contentData.ui.exploreHints}</div>
       <div id="homeBtn" className="btn" onClick={()=>{backToHome()}}>O</div>
       <CitiesList 
         data={contentData}
@@ -320,7 +366,10 @@ const G02BContainer = (props) => {
         posY={easePos.y}
         currentColIdx={currentColIdx}
         currentRowIdx={currentRowIdx}
+        moveToBlock={moveToBlock}
         dragging={dragging}
+        activeBlockIdx={activeBlockIdx}
+        clickBlock={clickBlock}
       />
       {/* <CityDetailsContainer /> */}
       {/* <LanguageSelection /> */}
