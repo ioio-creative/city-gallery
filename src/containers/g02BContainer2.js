@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import placeholderImage from 'media/placeholder_400x400.png';
 import './g02BContainer.css';
+import { TweenMax, TimelineMax } from 'gsap';
 
 
 const G02BStatus = {
@@ -142,6 +143,7 @@ const G02BContainer = (props) => {
   const [status, setStatus] = useState(G02BStatus.IDLE);
   const [contentData, setContentData] = useState(null);
   const [isHome, setIsHome] = useState(true);
+  const [isShowHints, setIsShowHints] = useState(false);
   const [currentColIdx, setCurrentColIdx] = useState(2);
   const [currentRowIdx, setCurrentRowIdx] = useState(2);
   const [data, setData] = useState({
@@ -151,7 +153,7 @@ const G02BContainer = (props) => {
     },
     startPos:{x:0, y:0},
     currentPos:{x: 0, y:0},
-    nextPos:{x:0, y:0},
+    prevPos:{x:0, y:0},
     offset:{x:0, y:0},
     delta:{x:0, y:0,t:0},
     lastPos:{x:0, y:0}
@@ -160,7 +162,8 @@ const G02BContainer = (props) => {
   const [allowDrag, setAllowDrag] = useState(false);
   const [easePos, setEasePos] = useState({x:data.initalPos.x, y:data.initalPos.y});
   let timestamp = Date.now();
-  
+  let hintsElem = [];
+  let hintsBtn;
   
   const dragStart = (event) => {
     let e = (event.touches? event.touches[0]: event);
@@ -171,6 +174,7 @@ const G02BContainer = (props) => {
       offset:{x:0,y:0},
       delta:{x:0,y:0,t:Date.now() - timestamp},
       lastPos:{x: mx, y:my},
+      prevPos: {...data.currentPos},
     });
     setAllowDrag(true);
     setDragging(false);
@@ -181,7 +185,7 @@ const G02BContainer = (props) => {
     if(allowDrag){
       const mx = e.clientX;
       const my = e.clientY;
-      const now = Date.now();
+
       setData({...data,
         offset:{
           x:mx - data.startPos.x, 
@@ -190,27 +194,34 @@ const G02BContainer = (props) => {
         delta: {
           x: mx - data.lastPos.x,
           y: my - data.lastPos.y,
-          t: now - timestamp
+          t: Date.now() - timestamp
         },
         currentPos: {
-          x:data.nextPos.x + data.offset.x + Math.round(data.delta.x / data.delta.t * 100), 
-          y:data.nextPos.y + data.offset.y + Math.round(data.delta.y / data.delta.t * 100)
+          x:data.prevPos.x + data.offset.x + data.delta.x, 
+          y:data.prevPos.y + data.offset.y + data.delta.y
         },
         lastPos:{x: mx, y:my},
       });
+
       setDragging(true);
       setIsHome(false);
-      timestamp = Date.now();
+      setIsShowHints(true);
     }
   }
 
   const dragEnd = (event) => {
-    let e = (event.touches? event.touches[0]: event);
     setData({...data,
-      nextPos:{...data.currentPos},
-      // offset:{x:0,y:0}
+      delta: {...data.delta,
+        t: Date.now() - timestamp
+      },
+      currentPos: {
+        x:data.prevPos.x + data.offset.x + Math.round(data.delta.x / data.delta.t * 200), 
+        y:data.prevPos.y + data.offset.y + Math.round(data.delta.y / data.delta.t * 200)
+      },
+      prevPos: {...data.currentPos},
     });
     setAllowDrag(false);
+    timestamp = Date.now();
   }
   
   const backToHome = () => {
@@ -229,6 +240,21 @@ const G02BContainer = (props) => {
       }
     });
     setIsHome(true);
+    setIsShowHints(false);
+  }
+
+  const showHints = () => {
+    const tl = new TimelineMax();
+    setIsShowHints(false);
+    // tl.to(hintsBtn,.3,{autoAlpha:0,ease:'Power2.easeInOut'});
+    hintsElem.map((elem, idx) => {
+      tl.to(elem,.3,{autoAlpha:1,ease:'Power1.easeInOut'});
+      if(idx === hintsElem.length-1)
+        tl.to(elem,.3,{autoAlpha:0,ease:'Power1.easeInOut',onComplete:()=>{setIsShowHints(true);}},'+=1');
+      else
+        tl.to(elem,.3,{autoAlpha:0,ease:'Power1.easeInOut'},'+=1');
+    });
+    // tl.to(hintsBtn,.3,{autoAlpha:1,ease:'Power2.easeInOut'});
   }
 
   useEffect(()=>{
@@ -262,15 +288,18 @@ const G02BContainer = (props) => {
   }, [props.appData]);
 
   const handleClick = (lang) =>{
-    // console.log(props.appData.contents[lang]);
+    setIsHome(false);
     setContentData(props.appData.contents[lang]);
+    showHints();
   }
 
   return (
     <div id="G02BContainer" className={`${isHome?'home':''}`} onMouseDown={dragStart}>
       <div id="homeInfo">
-        <div>{props.appData && props.appData.contents.title.line1}</div>
-        <div>{props.appData && props.appData.contents.title.line2}</div>
+        <div>{props.appData && props.appData.contents.home.line1}</div>
+        <div>{props.appData && props.appData.contents.home.line2}</div>
+        <div>{props.appData && props.appData.contents.home.selectLanguageHints1}</div>
+        <div>{props.appData && props.appData.contents.home.selectLanguageHints2}</div>
         <div id="lang">
           {
             props.appData && props.appData.languages.map((value,index)=>
@@ -279,7 +308,12 @@ const G02BContainer = (props) => {
           }
         </div>
       </div>
-      <div id="homeBtn" onClick={()=>{backToHome()}}></div>
+      <div id="hints">
+        <div ref={(e)=> hintsElem.push(e)}>{props.appData && contentData && contentData.ui.dragHints}</div>
+        <div ref={(e)=> hintsElem.push(e)}>{props.appData && contentData && contentData.ui.clickHints}</div>
+      </div>
+      <div ref={(e)=> hintsBtn=e} id="hintsBtn" className={`btn${isShowHints?'':' hide'}`} onClick={()=>{showHints()}}>?</div>
+      <div id="homeBtn" className="btn" onClick={()=>{backToHome()}}>O</div>
       <CitiesList 
         data={contentData}
         posX={easePos.x} 

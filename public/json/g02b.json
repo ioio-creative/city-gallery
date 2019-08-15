@@ -10,9 +10,11 @@
     }
   ],
   "contents": {
-    "title": {
+    "home": {
       "line1": "Impressions of Cities",
-      "line2": "世界城市"
+      "line2": "世界城市",
+      "selectLanguageHints1": "Please select your language to start",
+      "selectLanguageHints2": "請選擇您的語言以開始"
     },
     "en":{
       "cities": [
@@ -56,7 +58,12 @@
           "name": "Safefy Harbour 9",
           "nickname": "Flarido 9"
         }
-      ]
+      ],
+      "ui": {
+        "dragHints": "DRAG to discover more cities",
+        "clickHints": "CLICK to see the details",
+        "exploreHints": "Explor other cities"
+      }
     },
     "zh": {
       "cities": [
@@ -133,8 +140,6 @@
         }
       ],
       "ui": {
-        "selectLanguageHints1": "Please select your language to start",
-        "selectLanguageHints2": "請選擇您的語言以開始",
         "dragHints": "拖動看更多城市",
         "clickHints": "按下查看詳細資料",
         "exploreHints": "觀看其他城市"

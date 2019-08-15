@@ -14,11 +14,8 @@ const App = (props) => {
   useEffect(() => {
     if(appData){
       console.log(appData)
-      // setContentData(appData.contents['zh']);
     }
   }, [appData]);
-
-  
 
   return (
     <>
