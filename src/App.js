@@ -31,6 +31,7 @@ class App extends React.Component {
             <Route exact path={routes.ex402} render={this.getRenderPropForRoute('ex402')} />
             <Route exact path={routes.ex302} render={this.getRenderPropForRoute('ex302')} />
             <Route exact path={routes.ex302A} render={this.getRenderPropForRoute('ex302A')} />
+            <Route exact path={routes.ex302B} render={this.getRenderPropForRoute('ex302B')} />
             <Redirect to={routes.ex302} />
           </Switch>
         </InfoContextProvider>
