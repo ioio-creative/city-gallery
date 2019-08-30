@@ -1,11 +1,9 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import * as THREE from 'three';
 import Orbitcontrols from 'three-orbitcontrols';
-import { LineGeometry } from './lines/LineGeometry.js';
-import { LineMaterial } from './lines/LineMaterial.js';
-import { Line2 } from './lines/Line2.js';
 import * as dat from 'dat.gui';
-import {TweenMax} from 'gsap';
+import { TweenMax } from 'gsap';
+import { MeshLine, MeshLineMaterial } from 'three.meshline';
 
 const App = (props) => {
   const [sceneElem, setSceneElem] = useState(null);
@@ -15,23 +13,26 @@ const App = (props) => {
 
       if(sceneElem){
 
-
         let width = window.innerWidth,
             height = window.innerHeight; 
         let scene, camera, renderer;
         const offsetDepth = 6;
-        const offsetWidth = 2;
-        const row = 7;
-        const col = 50;
+        const offsetWidth = 1;
+        const row = 10;
+        const col = 20;
         const pointsLth = row * col;
         let pointGeometry;
+        const pointMesh = [];
         const lines = [];
+        const lineMesh = [];
         const startTime = new Date();
+        let lastTime = new Date();
         const options = {
-          waveWidth: 10,
-          waveScale: 0
+          waveWidth: 1,
+          waveScale: 0,
+          pointSize: 0
         }
-        const lineWidth = .3;
+        const lineWidth = .25;
 
         const initScene = () => {
           // camera = new THREE.OrthographicCamera( width / - cameraDepth, width / cameraDepth, height / cameraDepth, height / - cameraDepth, 0.1, 1000 );
@@ -39,7 +40,7 @@ const App = (props) => {
 
           // camera.position.x = 50;
           // camera.position.y = 50;
-          camera.position.z = 30;
+          camera.position.z = 50;
 
           scene = new THREE.Scene();
 
@@ -58,14 +59,14 @@ const App = (props) => {
           initLights();
           initGeometry();
 
-          TweenMax.to(options, 3, {waveScale: 3, ease:'Power4.easeInOut'});
-          // TweenMax.to(options, 3, {delay:5, waveScale: 0, ease:'Power4.easeInOut'});
+          TweenMax.to(options, 3, {waveScale: 1, ease:'Power4.easeInOut'});
         }
 
         const initGUI = () => {
           const gui = new dat.GUI();
           gui.add(options, 'waveWidth',1, 20).name('Wave Width').listen();
           gui.add(options, 'waveScale',0, 10).name('Wave Scale').listen();
+          gui.add(options, 'pointSize',0, 1).name('Point Size').listen();
         }
 
         const initLights = () => {
@@ -86,17 +87,18 @@ const App = (props) => {
 
           const uniforms = {
             time: { value: 1.0 },
+            pointSize: { value: options.pointSize }
           }
           const material = new THREE.ShaderMaterial({
             uniforms: uniforms,
             vertexShader:[
+                'uniform float pointSize;',
                 'void main() {',
                   'vec4 modelViewPosition = modelViewMatrix * vec4(position, 1.0);',
                   'gl_Position = projectionMatrix * modelViewPosition;',
 
-                  'float dist = (30. - sqrt(position.z*position.z + 30. * 30.)) * 2.5 ;',
-                  // 'gl_PointSize = (10. + dist) * .5;',
-                  'gl_PointSize = 0.;',
+                  'float dist = (50. - sqrt(position.z*position.z + 30.*30.)) ;',
+                  `gl_PointSize = (0. + dist) * pointSize;`,
                 '}'
             ].join('\n'),
             fragmentShader:[
@@ -107,6 +109,8 @@ const App = (props) => {
           });
           const mesh = new THREE.Points( pointGeometry, material );
           scene.add(mesh);
+
+          pointMesh.push(mesh);
         }
 
         const updateDotPos = (t=0) => {
@@ -120,42 +124,50 @@ const App = (props) => {
             }
           }
           pointGeometry.attributes.position.needsUpdate = true;
+          pointMesh[0].material.uniforms.pointSize.value = options.pointSize;
         }
 
         const initLine = () => {
           for(let i=0; i<row; i++){
-            const positions = [];
             const pos = pointGeometry.attributes.position.array;
-            for(let c=0; c<col; c++){
-              const idx = i*col;
-              positions.push( new THREE.Vector3(pos[(idx+c)*3+0], pos[(idx+c)*3+1], pos[(idx+c)*3+2]) );
+            const geometry = new THREE.Geometry();
+            const idx = i*col;
+            for(let c=0; c<col ;c++){
+              geometry.vertices.push( new THREE.Vector3(pos[(idx+c)*3+0], pos[(idx+c)*3+1], pos[(idx+c)*3+2]) );
             }
-            
-            const lineGeo = new LineGeometry();
-            const lineMat = new LineMaterial({
+            const line = new MeshLine();
+            line.setGeometry( geometry );
+            const material = new MeshLineMaterial({
               color: 0xffffff,
-              linewidth: Math.abs(i-row) * lineWidth * .003, // in pixels
-              dashed: false
+              lineWidth: Math.abs(i-row) * lineWidth * .1
             });
 
-            const line = new Line2(lineGeo, lineMat);
-            lines.push(line);
-            scene.add(line);
+            const mesh = new THREE.Mesh( line.geometry, material ); 
+            lines.push(mesh);
+            lineMesh.push(line);          
+
+
+            scene.add(mesh);
           }
         }
 
-        const updateLinePos = () => {
+        const updateLinePos = (t) => {
+          const pos = pointGeometry.attributes.position.array;
+          const geometry = new THREE.Geometry();
           for(let i=0; i<lines.length; i++){
             const line = lines[i];
-            const pos = [];
-            const pPos = pointGeometry.attributes.position.array;
-            const idx = i*col;
-            for(let p=0; p<col; p++){
-              pos[p*3+0] = pPos[(idx+p)*3+0];
-              pos[p*3+1] = pPos[(idx+p)*3+1];
-              pos[p*3+2] = pPos[(idx+p)*3+2];
+            if(!lineMesh[i].morph){
+              const idx = i*col;
+              geometry.vertices = [];
+              
+              for(let c=0; c<col; c++){
+                geometry.vertices.push(
+                  new THREE.Vector3(pos[(idx+c)*3+0], pos[(idx+c)*3+1], pos[(idx+c)*3+2])
+                );
+              }
+              
+              lineMesh[i].setGeometry( geometry );
             }
-            line.geometry.setPositions( pos );
           }
         }
 
@@ -166,10 +178,12 @@ const App = (props) => {
           initLine();
         }
         
+
         const update = () => {
           const timer = (new Date() - startTime) * .002;
           updateDotPos(timer);
-          updateLinePos();
+          updateLinePos(timer);
+
           camera.lookAt(0,0,0);
         }
 

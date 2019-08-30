@@ -13,7 +13,8 @@
     "three": "^0.104.0",
     "three-obj-loader": "^1.1.3",
     "three-orbitcontrols": "^2.102.1",
-    "three-subdivision-modifier": "^1.0.5"
+    "three-subdivision-modifier": "^1.0.5",
+    "three.meshline": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
