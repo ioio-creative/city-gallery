@@ -10,7 +10,10 @@ const App = (props) => {
   // render
   return (
     <Fragment>
-      <FlipDotsContainer />
+      <div style={{height: '100%', overflow: 'auto'}}>
+        <FlipDotsContainer />
+        <FlipDotsContainer boardSize={[224, 56]}/>
+      </div>
     </Fragment>
   );
 }

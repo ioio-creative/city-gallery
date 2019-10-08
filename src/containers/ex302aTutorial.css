@@ -1,0 +1,66 @@
+#tutorialPage {
+  color: #FFF;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: background-color 0.4s;
+  z-index: 1001;
+}
+#tutorialPage.hide {
+  pointer-events: none;
+  background-color: rgba(255,255,255,0);
+}
+#tutorialPage .stepsWrapper {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+}
+
+#tutorialPage .stepsWrapper .stepWrapper {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+}
+#tutorialPage .stepsWrapper .stepWrapper .step {
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  border: 2px solid #FFF;
+  background-color: #000;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+}
+#tutorialPage .stepNavigationsWrapper {
+  position: absolute;
+  left: 50%;
+  top: 900px;
+  transform: translateX(-50%);
+}
+#tutorialPage .stepNavigationsWrapper .stepBtn {
+  padding: 20px 80px;
+  border: 2px solid #FFF;
+  border-radius: 100px;
+  /* pointer-events: all; */
+  visibility: hidden;
+  opacity: 0;
+  transform:scale(0);
+}
+
+
+#tutorialPage .tutorialBtn {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+}

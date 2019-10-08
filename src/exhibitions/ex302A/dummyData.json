@@ -1,0 +1,54 @@
+{
+  "id": "302A",
+  "languages": [
+    {
+      "locale": "zh-Hant",
+      "display": "繁體",
+      "short_display": "繁"
+    },
+    {
+      "locale": "en",
+      "display": "English",
+      "short_display": "En"
+    },
+    {
+      "locale": "zh-Hans",
+      "display": "简体",
+      "short_display": "简"
+    }
+  ],
+  "contents": {
+    "zh-Hant": {
+      "decades": [
+        {
+          "decade": "1930",
+          "rangeStart": "1930",
+          "rangeEnd": "1939",
+          "description": "decade short description",
+          "coverImage": "1930.png",
+          "color": "#521b93",
+          "years": [
+            {
+              "year": "1931",
+              "style": 2,
+              "description": "year short description",
+              "media": [
+                {
+                  "type": "image",
+                  "src": "1931.png",
+                  "description": "image caption"
+                },
+                {
+                  "type": "video",
+                  "poster": "1931.png",
+                  "src": "1931.mp4",
+                  "description": "video caption? should we provide video element?"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

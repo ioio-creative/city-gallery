@@ -11,8 +11,8 @@ const App = (props) => {
   // render
   return (
     <Fragment>
-      {/* <CityDisplayContainer /> */}
-      <BuildingGameContainer />
+      <CityDisplayContainer />
+      {/* <BuildingGameContainer /> */}
     </Fragment>
   );
 }

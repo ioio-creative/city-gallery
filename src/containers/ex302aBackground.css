@@ -1,0 +1,13 @@
+#backgroundPage {
+  background-color: #000;
+  z-index: 0;
+}
+#backgroundPage .middleLine {
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #FFF;
+  z-index: 0;
+}

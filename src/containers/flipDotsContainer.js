@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 // new apis
 import { useState, useEffect, useCallback, useMemo } from 'react';
 const Dot = (props) => {
-  const [isActive, setIsActive] = useState(0);
+  const [isActive, setIsActive] = useState(props.status);
   const toggleActive = () => {
     setIsActive(!isActive);
   }
@@ -13,7 +13,7 @@ const Dot = (props) => {
 }
 
 const FlipDotsContainer = (props) => {
-  const [boardSize, setBoardSize] = useState([112, 42]);
+  const [boardSize, setBoardSize] = useState(props.boardSize || [224, 42]);
   const [autoToggle, setAutoToggle] = useState(false);
   const [boardStatus, setBoardStatus] = useState(new Array(boardSize[0]).fill(new Array(boardSize[1]).fill(0)));
   let svgElRef = null;
@@ -27,7 +27,17 @@ const FlipDotsContainer = (props) => {
     }
   }, [])
   useEffect(() => {
+    let str = '';
+    if (boardStatus.length) {
+      for (let i = 0; i < boardStatus[0]['length']; i++) {
+        for (let j = 0; j < boardStatus['length']; j++) {
+          str += boardStatus[j][i];
+        }
+        str += "\n";
+      }
+    }
     console.log('boardStatus changed');
+    console.log(str);
   }, [boardStatus])
   const onMouseUp = () => {
     setAutoToggle(false);
@@ -99,7 +109,14 @@ const FlipDotsContainer = (props) => {
             const r = el.getAttribute('r');
             const x = Math.round((parseFloat(el.getAttribute('cx')) - r) / (2 * r));
             const y = Math.round((parseFloat(el.getAttribute('cy')) - r) / (2 * r));
-            const fill = el.getAttribute('fill') === "transparent"? 0: 1;
+            let fill = 0;
+            if (el.getAttribute('fill') !== null) {
+              // console.log(el.getAttribute('fill'));
+              fill = el.getAttribute('fill') === "transparent"? 0: 1;
+            } else {
+              // console.log(el.classList.contains('cls-2'));
+              fill = el.classList.contains('cls-2') ? 1: 0;
+            }
             // console.log(x,y,fill);
             tmpStatus[x][y] = fill;
             // if (fill !== 0) console.log(x,y);            
@@ -140,21 +157,63 @@ const FlipDotsContainer = (props) => {
     plasticArr.push(new Array(42).fill(0));
     setBoardStatus(plasticArr);
   }
+  const clear = () => {
+    // const [boardStatus, setBoardStatus] = useState(new Array(boardSize[0]).fill(new Array(boardSize[1]).fill(0)));
+    console.log('clear');
+    setBoardStatus([]);
+    setTimeout(() => {
+      setBoardStatus(new Array(boardSize[0]).fill(new Array(boardSize[1]).fill(0)));
+    }, 0)
+  }
+  const animateBoard = () => {
+    const currentBoardStatus = JSON.parse(JSON.stringify(boardStatus));
+    let str = '';
+    for (let i = 0; i < boardSize[1]; i++) {
+      for (let j = 0; j < boardSize[0]; j++) {
+        str += currentBoardStatus[j][i];
+      }
+      str += "\n";
+    }
+    console.log(str);
+    clear();
+    let newBoardStatus = new Array(boardSize[0]).fill(new Array(boardSize[1]).fill(0));
+    for (let i = 0; i < boardSize[1]; i++) {
+      ((i) => {
+        for (let j = 0; j < boardSize[0]; j++) {
+          ((j) => {
+              setTimeout(() => {
+                newBoardStatus[j][i] = str[j * boardSize[1] + i];
+                // console.log(j * boardSize[1] + i);
+                setBoardStatus(newBoardStatus);
+              }, (j * boardSize[1] + i) * 10);
+            })(j);
+          }
+      })(i);
+    }
+    // setTimeout(() => {
+    //   setBoardStatus(newBoardStatus);
+    // }, 500);
+
+  }
   // render
   return (
     <div style={{
       backgroundColor:"#333",
       textAlign: 'center'
     }}>
+      <center style={{color: "#FFF"}}>{boardSize[0]} x {boardSize[1]}</center>
       <div style={{
         overflow: 'auto',
         backgroundColor:"#000",
         display: 'inline-block',
         border: '5px solid #ccc',
         margin: '15px auto 5px',
-        position: 'relative'
+        position: 'relative',
+        width: '100%',
+        boxSizing: 'border-box'
       }}>
-        <svg width="1680" height="630"
+        <svg width="100%" height="auto"
+        viewBox={`0 0 ${boardSize[0] * 15} ${boardSize[1] * 15}`}
           onMouseDown={() => setAutoToggle(true)} 
           // onMouseUp={() => setAutoToggle(false)}
           ref={(ref) => svgElRef = ref}
@@ -163,7 +222,7 @@ const FlipDotsContainer = (props) => {
           {boardStatus.map((rowX, xIdx) => {
             return rowX.map((rowY, yIdx) => {
               {/* if (rowY !== 0) debugger; */}
-              return <Dot key={xIdx+'_'+yIdx+'_'+rowY} position={[xIdx,yIdx]} status={rowY} autoToggle={autoToggle}/>;
+              return <Dot key={xIdx+'_'+yIdx+'_'+rowY} position={[xIdx,yIdx]} status={rowY} autoToggle={autoToggle} />;
             });
           })}
         </svg>
@@ -219,9 +278,34 @@ const FlipDotsContainer = (props) => {
         display: 'inline-block',
         marginRight: 10
       }}
+        onClick={clear}>
+        Clear
+      </div>
+      {/* <div style={{
+        color: '#FFFFFF',
+        padding: '5px 10px',
+        margin: '10px 20px',
+        cursor: 'pointer',
+        border: '1px solid #ccc',
+        display: 'inline-block',
+        marginRight: 10
+      }}
         onClick={loadPlastic}>
         Load Plastic
-      </div>
+      </div> */}
+      {/* <div style={{
+        color: '#333',
+        padding: '5px 10px',
+        margin: '10px 20px',
+        cursor: 'pointer',
+        border: '1px solid #333',
+        display: 'inline-block',
+        marginRight: 10
+      }}
+        onClick={animateBoard}>
+        !!!
+      </div> */}
+      
     </div>
   );
 }
