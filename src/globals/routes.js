@@ -1,5 +1,6 @@
 const routes = {
   'exG02A': '/exG02A',
+  'exG02A2': '/exG02A2',
   'exG02B': '/exG02B',
   'exG02B2': '/exG02B2',
   'ex302': '/ex302',

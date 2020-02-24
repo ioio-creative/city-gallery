@@ -217,6 +217,7 @@ const G02BContainer = (props) => {
           lastPos:{x: mx, y:my},
         });
 
+
         setDragging(true);
         setIsHome(false);
         setIsShowHints(true);
@@ -236,6 +237,7 @@ const G02BContainer = (props) => {
         },
         prevPos: {...data.currentPos},
       });
+      console.log(data.delta)
       setStartDrag(false);
       timestamp = Date.now();
     }

@@ -25,6 +25,7 @@ const App = (props) => {
         <InfoContextProvider>
           <Switch>
             <Route exact path={routes.exG02A} render={getRenderPropForRoute('exG02A')} />
+            <Route exact path={routes.exG02A2} render={getRenderPropForRoute('exG02A2')} />
             <Route exact path={routes.exG02B} render={getRenderPropForRoute('exG02B')} />
             <Route exact path={routes.exG02B2} render={getRenderPropForRoute('exG02B2')} />
             <Route exact path={routes.ex402} render={getRenderPropForRoute('ex402')} />
