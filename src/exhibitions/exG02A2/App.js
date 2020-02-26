@@ -35,11 +35,20 @@ const App = props => {
         const pointScales = [];
         const instanceColors = [];
         const groupedMesh = new THREE.Group();
+        let pointsMesh = null;
+
+        const raycaster = new THREE.Raycaster();
+        const mouse = new THREE.Vector2(1,1);
+        const scaleUpMatrix = new THREE.Matrix4().makeScale( 2,2,2 );
+        const scaleDownMatrix = new THREE.Matrix4().makeScale( .5, .5, .5 );
+        const instanceMatrix = new THREE.Matrix4();
+        const matrix = new THREE.Matrix4();
+        let hoveredInstanceId = null;
 
         let objectControl = null;
 
         // cameraControl system
-        let cameraControl = null;
+        // let cameraControl = null;
 
         // locations
         const locations = [
@@ -71,7 +80,7 @@ const App = props => {
         
         const initEngine = () => {
             scene = new THREE.Scene();
-            camera = new THREE.PerspectiveCamera(30, window.innerWidth/window.innerHeight, 0.1, 10000);
+            camera = new THREE.PerspectiveCamera(30, window.innerWidth/window.innerHeight, 0.1, 1000);
             camera.position.set(0, 0, 100);
 
 
@@ -153,7 +162,7 @@ const App = props => {
         const createPoints = () => {
             const geometry = new THREE.IcosahedronBufferGeometry(.7, 2);
             const material = new THREE.MeshBasicMaterial({color:0xffffff});
-            const mesh = new THREE.InstancedMesh( geometry, material, locations.length );
+            pointsMesh = new THREE.InstancedMesh( geometry, material, locations.length );
             const transform = new THREE.Object3D();
 
             for(let i=0; i<locations.length; i++){
@@ -169,19 +178,19 @@ const App = props => {
                 
                 transform.position.set( pos.x, pos.y, pos.z ).multiplyScalar(pointScales[i]);
                 transform.updateMatrix();
-                mesh.setMatrixAt( i, transform.matrix );
+                pointsMesh.setMatrixAt( i, transform.matrix );
 
                 if(i===0)
                     instanceColors.push(0/255, 53/255, 87/255)
                 else
                     instanceColors.push(81/255, 190/255, 255/255)
             }
-            mesh.castShadow = true;
-            updateColor(geometry, mesh);
+            pointsMesh.castShadow = true;
+            updateColor(geometry, pointsMesh);
 
             materialItems.push(material);
             geometryItems.push(geometry);
-            meshItems.push(mesh);
+            meshItems.push(pointsMesh);
         }
 
         const createLines = () => {
@@ -256,8 +265,55 @@ const App = props => {
             return calcPosFromLatLonRad(lat, lon, earthRadius);
         }
 
+        const onClickedPoint = () => {
+
+        }
+
+        const onMouseMove = (e) => {
+            e.preventDefault();
+            mouse.x = ( e.clientX / window.innerWidth ) * 2 - 1;
+            mouse.y = - ( e.clientY / window.innerHeight ) * 2 + 1;
+        }
+
+        const scaleUp = (instanceId) => {
+            pointsMesh.getMatrixAt( instanceId, instanceMatrix );
+            matrix.multiplyMatrices( instanceMatrix, scaleUpMatrix );
+            pointsMesh.setMatrixAt( instanceId, matrix );
+        }
+
+        const scaleDown = (instanceId) => {
+            pointsMesh.getMatrixAt( instanceId, instanceMatrix );
+            matrix.multiplyMatrices( instanceMatrix, scaleDownMatrix );
+            pointsMesh.setMatrixAt( instanceId, matrix );
+        }
+        
         const draw = () => {
             objectControl.draw();
+
+            raycaster.setFromCamera( mouse, camera );
+            const intersection = raycaster.intersectObject( pointsMesh );
+
+            if(intersection.length > 0){
+                const instanceId = intersection[ 0 ].instanceId;
+                if(instanceId !== hoveredInstanceId){
+                    document.body.style.cursor = 'pointer';
+                    if(hoveredInstanceId !== null){
+                        scaleDown(hoveredInstanceId);
+                    }
+
+                    scaleUp(instanceId);
+                    pointsMesh.instanceMatrix.needsUpdate = true;
+                    hoveredInstanceId = instanceId;
+                }
+            }
+            else{
+                if(hoveredInstanceId !== null){
+                    document.body.style.cursor = '';
+                    scaleDown(hoveredInstanceId);
+                    pointsMesh.instanceMatrix.needsUpdate = true;
+                    hoveredInstanceId = null;
+                }
+            }
         }
         
         const update = () => {
@@ -314,12 +370,14 @@ const App = props => {
         }
 
         const addEvent = () => {
-            window.addEventListener("resize", onWindowResize);
+            window.addEventListener("mousemove", onMouseMove, false);
+            window.addEventListener("resize", onWindowResize, false);
         }
 
         const removeEvent = () => {
             // if(cameraControl) cameraControl.destroy();
             if(dev) dev.destroy();
+            window.removeEventListener("mousemove", onMouseMove);
             window.removeEventListener("resize", onWindowResize);
         }
 

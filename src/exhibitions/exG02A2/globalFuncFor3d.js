@@ -412,8 +412,6 @@ export const ObjectControl = (function(_super){
                     default:
                         break;
                 }
-
-                console.log('mousemove')
             }
         }
 
