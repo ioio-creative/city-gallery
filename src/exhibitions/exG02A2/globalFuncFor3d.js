@@ -339,6 +339,7 @@ export const ObjectControl = (function(_super){
         let phiEase = 0;
         const friction = .8;
         const sphericalEnd = new THREE.Spherical();
+        let auotRotate = 0;
 
         const init = () => {
             document.addEventListener('mousedown', onMouseDown, false);
@@ -346,8 +347,9 @@ export const ObjectControl = (function(_super){
         }
 
         this.draw = () => {
-            thetaEase += (sphericalEnd.theta - thetaEase) * .05 * friction;
-            phiEase += (sphericalEnd.phi - phiEase) * .05 * friction;
+            if(!clicked) auotRotate += 0.001;
+            thetaEase += ((sphericalEnd.theta + auotRotate) - thetaEase) * .05 * friction;
+            phiEase += ((sphericalEnd.phi) - phiEase) * .05 * friction;
 
             targetMesh.rotation.set(phiEase, thetaEase, 0);
         }
