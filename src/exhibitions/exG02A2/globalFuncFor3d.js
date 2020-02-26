@@ -26,11 +26,13 @@ export const initGUI = (options) => {
 
     for(let i=0; i<arrayOptions.length; i++){
         var key = arrayOptions[i][0];
-        if(typeof options[key] === 'function'){
-            gui.add(options, key);
+        var name = arrayOptions[i][1].name || key.charAt(0).toUpperCase() + key.slice(1);
+        const hasFunc = arrayOptions[i][1].callback;
+
+        if(hasFunc){
+            gui.add(options[key], 'callback').name(name);
         }
         else{
-            var name = arrayOptions[i][1].name || key.charAt(0).toUpperCase() + key.slice(1);
             var min = arrayOptions[i][1].min;
             var max = arrayOptions[i][1].max;
             gui.add(options[key], 'value').min(min).max(max).name(name);
@@ -115,7 +117,6 @@ export const CameraControlsSystem = (function(_super){
         
         let looping = undefined;
         let clicked = false;
-        // _this.flip
 
         const init = () => {
             onAnim();
@@ -124,33 +125,31 @@ export const CameraControlsSystem = (function(_super){
             document.addEventListener('contextmenu', onContextMenu, false);
         }
 
-        const rotate = (delta) => {
-            const theta = _this.sphericalEnd.theta + Math.PI * 2 * -delta.x / window.innerHeight;
-            const phi = _this.sphericalEnd.phi + Math.PI * 2 * -delta.y / window.innerHeight;
-            
-            this.rotateTo(theta, phi);
 
-            console.log('rotate',theta, phi);
+        this.rotate = (theta, phi) => {
+            this.rotateTo(_this.sphericalEnd.theta + theta, _this.sphericalEnd.phi + phi);
         }
 
         this.rotateTo = (theta, phi) => {
             _this.sphericalEnd.theta = theta;
             _this.sphericalEnd.phi = phi;
             _this.sphericalEnd.makeSafe();
+            console.log('rotate',theta, phi);
         }
 
-        const pan = (delta) => {
+
+        this.pan = (dx, dy) => {
             const _camera = _this.camera;
             const offset = _v3A.copy(_camera.position).sub(_this.target);
             const fov = _camera.getEffectiveFOV() * THREE.Math.DEG2RAD;
             const targetDistance = offset.length() * Math.tan(fov * 0.5);
             const panSpeed = 2;
-            const x = panSpeed * delta.x * targetDistance / window.innerHeight;
-            const y = panSpeed * delta.y * targetDistance / window.innerHeight;
+            const x = panSpeed * dx * targetDistance / window.innerHeight;
+            const y = panSpeed * dy * targetDistance / window.innerHeight;
 
             this.panTo(x, y);
 
-            console.log('pan',delta);
+            console.log('pan',dx, dy);
         }
 
         this.panTo = (x, y) => {
@@ -176,15 +175,17 @@ export const CameraControlsSystem = (function(_super){
             _this.sphericalEnd.radius = THREE.Math.clamp(distance, _this.minDistance, _this.maxDistance);
         }
 
-        const zoom = (delta) => {
+
+        this.zoom = (delta) => {
             const zoomScale = Math.pow(0.95, -delta * 1);
             const distance = _this.camera.zoom * zoomScale;
             _this.zoomTo(distance);
         }
 
         this.zoomTo = (zoom) => {
-            _this.zoomEnd = THREE.Math.clamp(zoom, 1, 5);
+            _this.zoomEnd = zoom;
         }
+
 
         const update = () => {
             _this.easeTheta += (_this.sphericalEnd.theta - _this.easeTheta) * _this.rotationEase * _this.friction;
@@ -200,10 +201,6 @@ export const CameraControlsSystem = (function(_super){
             _this.target.copy(_this.easeTarget);
             
             _this.easeZoom += (_this.zoomEnd - _this.easeZoom) * _this.zoomEase * _this.friction;
-
-            // console.log(_this.easeZoom/(_this.zoomEnd-1 || 1)-1)
-            // const t = _this.easeZoom/(_this.zoomEnd-1 || 1) - 1;
-            // const z = lerp(1, _this.zoomEnd, animEase['easeInOutCubic'](t));
 
             // convert spherical to vector3
             // then add translation
@@ -268,18 +265,18 @@ export const CameraControlsSystem = (function(_super){
                 
                 switch( mouse.status ){
                     case mouse.button.left:
-                        rotate(mouse.delta);
+                        const theta = 1 * (Math.PI * 2) * -mouse.delta.x / window.innerHeight;
+                        const phi = 1 * (Math.PI * 2) * -mouse.delta.y / window.innerHeight;
+                        _this.rotate(theta, phi);
                         break;
                         
                     case mouse.button.right:
-                        pan(mouse.delta);
+                        _this.pan(mouse.delta.x, mouse.delta.y);
                         break;
         
                     default:
                         break;
                 }
-
-                console.log('mousemove')
             }
         }
 
@@ -293,7 +290,7 @@ export const CameraControlsSystem = (function(_super){
         const onMouseWheel = (e) => {
             const y = e.deltaY/ (3 * 10);
             dolly(y);
-            zoom(y);
+            // _this.zoom(y);
         }
 
         const onContextMenu = (e) => {
@@ -319,6 +316,128 @@ export const CameraControlsSystem = (function(_super){
     return _CameraControlsSystem;
 }(THREE.EventDispatcher));
 
+
+export const ObjectControl = (function(_super){
+    const _ObjectControl = function(mesh){
+        const _this = _super.call(this) || this;
+        const targetMesh = mesh;
+        const mouse = {
+            offset: new THREE.Vector2(),
+            prevPos: new THREE.Vector2(),
+            startPos: new THREE.Vector2(),
+            lastPos: new THREE.Vector2(),
+            delta: new THREE.Vector2(),
+            wheelDelta: 0,
+            lastWheel: 0,
+            button: {left:'rotate', right:'pan'},
+            status: ''
+        };
+        let clicked = false;
+        let thetaEnd = 0;
+        let phiEnd = 0;
+        let thetaEase = 0;
+        let phiEase = 0;
+        const friction = .8;
+        const sphericalEnd = new THREE.Spherical();
+
+        const init = () => {
+            document.addEventListener('mousedown', onMouseDown, false);
+            document.addEventListener('contextmenu', onContextMenu, false);
+        }
+
+        this.draw = () => {
+            thetaEase += (sphericalEnd.theta - thetaEase) * .05 * friction;
+            phiEase += (sphericalEnd.phi - phiEase) * .05 * friction;
+
+            targetMesh.rotation.set(phiEase, thetaEase, 0);
+        }
+
+        const rotate = (theta, phi) => {
+            sphericalEnd.theta = sphericalEnd.theta + theta;
+            sphericalEnd.phi = sphericalEnd.phi + phi;
+        }
+
+        const onMouseDown = (e) => {
+            e.preventDefault();
+
+            const mx = e.clientX;
+            const my = e.clientY;
+            mouse.startPos.set(mx, my);
+            mouse.lastPos.set(mx, my);
+                    
+            clicked = true;
+            switch( e.button ){
+                case 0:
+                    mouse.status = mouse.button.left;
+                    break;
+                    
+                // case 2:
+                //     mouse.status = mouse.button.right;
+                //     break;
+
+                default:
+                    break;
+            }
+
+            
+            document.addEventListener('mousemove', onMouseMove, false);
+            document.addEventListener('mouseup', onMouseUp, false);
+
+            // console.log('mousedown')
+        }
+
+        const onMouseMove = (e) => {
+            if(clicked){
+                const mx = e.clientX;
+                const my = e.clientY;
+
+                mouse.offset.set(mouse.startPos.x - mx, mouse.startPos.y - my);
+
+                mouse.delta.set(-(mouse.lastPos.x - mx), -(mouse.lastPos.y - my));
+                mouse.lastPos.set(mx,my);
+                
+                switch( mouse.status ){
+                    case mouse.button.left:
+                        const theta = 1 * (Math.PI * 2) * mouse.delta.x / window.innerHeight;
+                        const phi = 1 * (Math.PI * 2) * mouse.delta.y / window.innerHeight;
+                        rotate(theta, phi);
+                        break;
+                        
+                    // case mouse.button.right:
+                    //     _this.pan(mouse.delta.x, mouse.delta.y);
+                    //     break;
+        
+                    default:
+                        break;
+                }
+
+                console.log('mousemove')
+            }
+        }
+
+        const onMouseUp = () => {
+            clicked = false;
+            document.removeEventListener('mousemove', onMouseMove, false);
+            document.removeEventListener('mouseup', onMouseUp, false);
+        }
+
+        const onContextMenu = (e) => {
+            e.preventDefault();
+        }
+
+        this.destroy = () => {
+            document.removeEventListener('mousedown', onMouseDown, false);
+            document.removeEventListener('contextmenu', onContextMenu, false);
+        }
+
+        init();
+    }
+
+    _ObjectControl.prototype = Object.create( _super.prototype );
+    _ObjectControl.prototype.constructor = _ObjectControl; // re-assign constructor
+
+    return _ObjectControl;
+}(THREE.EventDispatcher))
 
 
 export const devMode = (scene) => {
@@ -382,4 +501,15 @@ export const animEase = {
     easeOutQuint: (t) => { return 1+(--t)*t*t*t*t },
     // acceleration until halfway, then deceleration 
     easeInOutQuint: (t) => { return t<.5 ? 16*t*t*t*t*t : 1+16*(--t)*t*t*t*t }
+}
+
+export const calcPosFromLatLonRad = (lat,lon,radius) => {
+    const phi   = (90-lat)*Math.PI/180;
+    const theta = (lon)*Math.PI/180;//(lon-180)*Math.PI/180;
+
+    const x = -((radius) * Math.sin(phi)*Math.cos(theta))
+    const z = ((radius) * Math.sin(phi)*Math.sin(theta))
+    const y = ((radius) * Math.cos(phi))
+
+    return new THREE.Vector3(x,y,z);
 }
