@@ -7,6 +7,7 @@ import './style.scss';
 import earthMap from './images/earth/8081_earthmap4k.jpg';
 import earthBumpMap from './images/earth/8081_earthbump4k.jpg';
 import earthSpecularMap from './images/earth/8081_earthspec4k.jpg';
+import earthNormalMap from './images/earth/earth_normalmap4k.jpg';
 
 
 const App = props => {
@@ -33,7 +34,6 @@ const App = props => {
         const pointOffsets = [];
         const pointScales = [];
         const instanceColors = [];
-        let meshEarth = null;
         const groupedMesh = new THREE.Group();
 
         let objectControl = null;
@@ -85,13 +85,13 @@ const App = props => {
             
 
             stats = initStats();
-            initGUI(options);
+            // initGUI(options);
             initLight();
             initMesh();
 
             // cameraControl = new CameraControlsSystem(camera, meshEarth);
             objectControl = new ObjectControl(groupedMesh);
-            dev = devMode(scene);
+            // dev = devMode(scene);
             
             renderer.setAnimationLoop(function() {
                 update();
@@ -124,22 +124,21 @@ const App = props => {
         };
 
         const initEarth = () => {
-            const geometry = new THREE.IcosahedronGeometry(earthRadius, 4);
+            const geometry = new THREE.IcosahedronGeometry(earthRadius, 5);
             const material = new THREE.MeshPhongMaterial({
                 map: new THREE.TextureLoader().load(earthMap),
-                bumpMap: new THREE.TextureLoader().load(earthBumpMap),
-                bumpMapScale: .7,
+                displacementMap: new THREE.TextureLoader().load(earthBumpMap),
+                displacementScale: 3,
+                normalMap: new THREE.TextureLoader().load(earthNormalMap),
                 specularMap: new THREE.TextureLoader().load(earthSpecularMap),
                 specular: new THREE.Color('grey'),
                 shininess:20,
-                side:THREE.DoubleSide,
-                // wireframe:true
+                side:THREE.DoubleSide
             });
 
             const mesh = new THREE.Mesh(geometry, material);
+            mesh.castShadow = true;
             mesh.receiveShadow = true;
-
-            meshEarth = mesh;
 
             materialItems.push(material);
             geometryItems.push(geometry);
