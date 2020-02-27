@@ -60,7 +60,9 @@ const App = props => {
             { name:'Taiwan', lat:23.888775, lon:120.989626 },
             { name:'Korea', lat:36.578477, lon:128.079916 },
             { name:'USA', lat:39.956661, lon:-98.027880 },
-            { name:'France', lat:46.1385598, lon:-2.4472232 }
+            { name:'France', lat:46.1385598, lon:-2.4472232 },
+            { name:'Australia', lat:-24.495995, lon:134.599090 },
+            { name:'Brasil', lat:-10.871609, lon:-50.468879 }
         ]
 
         // stats
@@ -125,6 +127,7 @@ const App = props => {
       
         const initMesh = () => {
             initEarth();
+            initHalo();
             initLocationPoints();
 
             for(let i=0; i< meshItems.length; i++)
@@ -151,6 +154,35 @@ const App = props => {
             const mesh = new THREE.Mesh(geometry, material);
             mesh.castShadow = true;
             mesh.receiveShadow = true;
+
+            materialItems.push(material);
+            geometryItems.push(geometry);
+            meshItems.push(mesh);
+        }
+
+        const initHalo = () => {
+            const geometry = new THREE.IcosahedronGeometry(earthRadius+4, 2);
+            var material = new THREE.ShaderMaterial({
+                // uniforms: {  },
+                vertexShader:[
+                    'varying vec3 vNormal;',
+                    'void main() {',
+                        'vNormal = normalize( normalMatrix * normal );',
+                        'gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );',
+                    '}'
+                ].join('\n'),
+                fragmentShader:[
+                    'varying vec3 vNormal;',
+                    'void main() {',
+                        'float intensity = pow( 0.7 - dot( vNormal, vec3( 0.0, 0.0, 1.0 ) ), 4.0 );',
+                        'gl_FragColor = vec4( 1.0, 1.0, 1.0, 1.0 ) * intensity;',
+                    '}'
+                ].join('\n'),
+                side: THREE.BackSide,
+                blending: THREE.AdditiveBlending,
+                transparent: true
+            });
+            var mesh = new THREE.Mesh( geometry, material );
 
             materialItems.push(material);
             geometryItems.push(geometry);
@@ -323,7 +355,7 @@ const App = props => {
 
 
                     gsap.to(camera.position, 1, { y: 0, z: 100, ease: 'power2.inOut'});
-                    gsap.to(animValue, 1, { theta:shortTheta, phi:targetPhi, ease: 'power2.inOut',
+                    gsap.to(animValue, 1, { theta:shortTheta, phi:targetPhi, ease: 'power3.inOut',
                         onUpdate:function(){
                             const value = this.targets()[0];
                             objectControl.setRotate(value.theta, value.phi);
