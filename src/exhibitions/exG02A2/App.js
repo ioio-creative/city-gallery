@@ -161,9 +161,8 @@ const App = props => {
         }
 
         const initHalo = () => {
-            const geometry = new THREE.IcosahedronGeometry(earthRadius+4, 2);
+            const geometry = new THREE.IcosahedronGeometry(earthRadius+4, 3);
             var material = new THREE.ShaderMaterial({
-                // uniforms: {  },
                 vertexShader:[
                     'varying vec3 vNormal;',
                     'void main() {',
@@ -174,7 +173,7 @@ const App = props => {
                 fragmentShader:[
                     'varying vec3 vNormal;',
                     'void main() {',
-                        'float intensity = pow( 0.7 - dot( vNormal, vec3( 0.0, 0.0, 1.0 ) ), 4.0 );',
+                        'float intensity = pow( 0.65 - dot( vNormal, vec3( 0.0, 0.0, 1.0 ) ), 3.0 );',
                         'gl_FragColor = vec4( 1.0, 1.0, 1.0, 1.0 ) * intensity;',
                     '}'
                 ].join('\n'),
