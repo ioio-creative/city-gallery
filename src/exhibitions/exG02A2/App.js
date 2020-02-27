@@ -37,6 +37,7 @@ const App = props => {
         const instanceColors = [];
         const groupedMesh = new THREE.Group();
         let pointsMesh = null;
+        let linesMesh = null;
 
         const raycaster = new THREE.Raycaster();
         const mouse = new THREE.Vector2(1,1);
@@ -46,6 +47,7 @@ const App = props => {
         const matrix = new THREE.Matrix4();
         let currentHoveredInstanceId = null;
         let prevHoveredInstanceId = null;
+        let oldHoveredInstanceId = null;
 
         let objectControl = null;
         let dragging = false;
@@ -86,7 +88,7 @@ const App = props => {
         const initEngine = () => {
             scene = new THREE.Scene();
             camera = new THREE.PerspectiveCamera(30, window.innerWidth/window.innerHeight, 0.1, 1000);
-            camera.position.set(0, 0, 100);
+            camera.position.set(0, 0, 130);
 
 
             renderer = new THREE.WebGLRenderer({ antialias: true, alpha:true });
@@ -114,9 +116,9 @@ const App = props => {
         }
 
         const initLight = () => {
-            ambientLight = new THREE.AmbientLight(0xcccccc);
+            ambientLight = new THREE.AmbientLight(0xeeeeee);
 
-            lights[0] = new THREE.PointLight(0xffffff, .8, 100);
+            lights[0] = new THREE.PointLight(0xffffff, .6, 100);
             lights[0].position.set(earthRadius*2, earthRadius*2, earthRadius*2);
             lights[0].add(new THREE.Mesh( new THREE.SphereGeometry(1,16,16), new THREE.MeshBasicMaterial({ color: 0xffffff })));
             lights[0].castShadow = true;
@@ -204,7 +206,7 @@ const App = props => {
                 const pos = initLocationPointsPosition(location);
 
                 pointOffsets.push(pos.x, pos.y, pos.z);
-                pointScales.push(Math.random()*.2+1.2);
+                pointScales.push(Math.random()*.3+1.15);
 
 
                 transform.position.set( 0,0,0 );
@@ -230,7 +232,7 @@ const App = props => {
         const createLines = () => {
             const geometry = new THREE.CylinderBufferGeometry(.1, .1, .1, 6, 1, true);
             const material = new THREE.MeshBasicMaterial({color:0xffffff});
-            const mesh = new THREE.InstancedMesh( geometry, material, locations.length );
+            linesMesh = new THREE.InstancedMesh( geometry, material, locations.length );
             geometry.translate(0,.1/2,0);
             geometry.rotateX(90 * THREE.Math.DEG2RAD);
 
@@ -244,14 +246,14 @@ const App = props => {
                 transform.position.set( pointOffsets[i*3],pointOffsets[i*3+1],pointOffsets[i*3+2] );
                 transform.scale.z = (earthRadius * pointScales[i] - earthRadius) * 10;
                 transform.updateMatrix();
-                mesh.setMatrixAt( i, transform.matrix );
+                linesMesh.setMatrixAt( i, transform.matrix );
             }
-            mesh.castShadow = true;
-            updateColor(geometry, mesh);
+            linesMesh.castShadow = true;
+            updateColor(geometry, linesMesh);
             
             materialItems.push(material);
             geometryItems.push(geometry);
-            meshItems.push(mesh);
+            meshItems.push(linesMesh);
         }
 
         const updateColor = (geometry, mesh) => {
@@ -299,10 +301,6 @@ const App = props => {
             return calcPosFromLatLonRad(lat, lon, earthRadius);
         }
 
-        const onClickedPoint = () => {
-
-        }
-
         const onMouseDown = () => {
             dragging = false;
             document.addEventListener("mouseup", onMouseUp, false);
@@ -323,6 +321,7 @@ const App = props => {
                     const {targetTheta, targetPhi} = calcThetaPhiFromLatLon(locations[currentHoveredInstanceId].lat, locations[currentHoveredInstanceId].lon);
                     const {theta, phi} = objectControl.getCurrentThetaPhi();
                     const animValue = {theta:theta, phi:phi};
+                    let shortTheta;
 
                     
                     const currentTargetTheta = 
@@ -335,12 +334,12 @@ const App = props => {
                     theta - targetTheta > 0 ?
                         currentTargetTheta % (Math.PI*2)
                     :
-                        theta < -Math.PI*2 ?
+                        currentTargetTheta < 0 ?
                             Math.PI*2 + currentTargetTheta % (Math.PI*2)
                         :
                             currentTargetTheta % (Math.PI*2);
-                    let shortTheta;
 
+                    // console.log(theta, currentTargetTheta)
 
                     if(fixedTargetTheta > Math.PI && fixedTargetTheta < Math.PI*2){
                         // console.log('left side')
@@ -350,16 +349,18 @@ const App = props => {
                         shortTheta = theta-fixedTargetTheta;
                     }
 
-                    // console.log(theta,theta -Math.PI*2,currentTargetTheta)
-
-
-                    gsap.to(camera.position, 1, { y: 0, z: 100, ease: 'power2.inOut'});
-                    gsap.to(animValue, 1, { theta:shortTheta, phi:targetPhi, ease: 'power3.inOut',
+                    gsap.to(camera.position, 1.3, { y: 0, z: 100, ease: 'power3.out'});
+                    gsap.to(animValue, 1.3, { theta:shortTheta, phi:targetPhi, ease: 'power3.out',
                         onUpdate:function(){
                             const value = this.targets()[0];
                             objectControl.setRotate(value.theta, value.phi);
                         }
                     });
+
+                    
+                    const meshs = [pointsMesh, linesMesh];
+                    resetColor(meshs);
+                    toWhiteColor(meshs);
                 }
             }
             document.removeEventListener('mouseup', onMouseUp, false);
@@ -378,6 +379,43 @@ const App = props => {
         //     pointsMesh.setMatrixAt( instanceId, matrix );
         //     pointsMesh.instanceMatrix.needsUpdate = true;
         // }
+
+        const toWhiteColor = (meshs) => {
+            const id = currentHoveredInstanceId;
+            for(let i=0; i<meshs.length; i++){
+                const mesh = meshs[i];
+                const attribute = mesh.geometry.attributes.instanceColor;
+                const animValue = {r:instanceColors[id*3], g:instanceColors[id*3+1], b:instanceColors[id*3+2]}
+
+                gsap.to(animValue, .3, {r:1, g:1, b:1, ease:'power3.out',
+                    onUpdate:function(){
+                        const value = this.targets()[0];
+                        attribute.setXYZ(id, value.r, value.g, value.b);
+                        attribute.needsUpdate = true;
+                    }
+                });
+            }
+            oldHoveredInstanceId = id;
+        }
+
+        const resetColor = (meshs) => {
+            const id = oldHoveredInstanceId;
+            if(id !== currentHoveredInstanceId && id !== null){
+                for(let i=0; i<meshs.length; i++){
+                    const mesh = meshs[i];
+                    const attribute = mesh.geometry.attributes.instanceColor;
+                    const animValue = {r:1, g:1, b:1}
+
+                    gsap.to(animValue, .3, {r:instanceColors[id*3], g:instanceColors[id*3+1], b:instanceColors[id*3+2], ease:'power3.out',
+                        onUpdate:function(){
+                            const value = this.targets()[0];
+                            attribute.setXYZ(id, value.r, value.g, value.b);
+                            attribute.needsUpdate = true;
+                        }
+                    });
+                }
+            }
+        }
         
         const draw = () => {
             objectControl.draw();
@@ -394,7 +432,6 @@ const App = props => {
                     // }
 
                     // scaleUp(currentHoveredInstanceId);
-                    // pointsMesh.instanceMatrix.needsUpdate = true;
                     prevHoveredInstanceId = currentHoveredInstanceId;
                 }
             }
@@ -402,7 +439,6 @@ const App = props => {
                 if(prevHoveredInstanceId !== null){
                     document.body.style.cursor = '';
                     // scaleDown(prevHoveredInstanceId);
-                    // pointsMesh.instanceMatrix.needsUpdate = true;
                     currentHoveredInstanceId = null;
                     prevHoveredInstanceId = null;
                 }
