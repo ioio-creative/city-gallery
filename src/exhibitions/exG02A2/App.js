@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 // import { useSelector } from 'react-redux';
-import {ObjectControl, initStats, initGUI, removeStats, removeGUI, getScreenSizeIn3dWorld , devMode, calcPosFromLatLonRad } from './globalFuncFor3d';
+import {ObjectControl, initStats, initGUI, removeStats, removeGUI, getScreenSizeIn3dWorld , devMode, calcPosFromLatLonRad, calcThetaPhiFromLatLon } from './globalFuncFor3d';
 import * as THREE from 'three';
 import './style.scss';
 
@@ -43,9 +44,11 @@ const App = props => {
         const scaleDownMatrix = new THREE.Matrix4().makeScale( .5, .5, .5 );
         const instanceMatrix = new THREE.Matrix4();
         const matrix = new THREE.Matrix4();
-        let hoveredInstanceId = null;
+        let currentHoveredInstanceId = null;
+        let prevHoveredInstanceId = null;
 
         let objectControl = null;
+        let dragging = false;
 
         // cameraControl system
         // let cameraControl = null;
@@ -100,7 +103,7 @@ const App = props => {
 
             // cameraControl = new CameraControlsSystem(camera, meshEarth);
             objectControl = new ObjectControl(groupedMesh);
-            // dev = devMode(scene);
+            dev = devMode(scene);
             
             renderer.setAnimationLoop(function() {
                 update();
@@ -111,7 +114,7 @@ const App = props => {
         const initLight = () => {
             ambientLight = new THREE.AmbientLight(0xcccccc);
 
-            lights[0] = new THREE.PointLight(0xffffff, .7, 100);
+            lights[0] = new THREE.PointLight(0xffffff, .8, 100);
             lights[0].position.set(earthRadius*2, earthRadius*2, earthRadius*2);
             lights[0].add(new THREE.Mesh( new THREE.SphereGeometry(1,16,16), new THREE.MeshBasicMaterial({ color: 0xffffff })));
             lights[0].castShadow = true;
@@ -160,7 +163,7 @@ const App = props => {
         }
 
         const createPoints = () => {
-            const geometry = new THREE.IcosahedronBufferGeometry(.7, 2);
+            const geometry = new THREE.IcosahedronBufferGeometry(.8, 2);
             const material = new THREE.MeshBasicMaterial({color:0xffffff});
             pointsMesh = new THREE.InstancedMesh( geometry, material, locations.length );
             const transform = new THREE.Object3D();
@@ -269,23 +272,51 @@ const App = props => {
 
         }
 
+        const onMouseDown = () => {
+            dragging = false;
+            document.addEventListener("mouseup", onMouseUp, false);
+        }
+
         const onMouseMove = (e) => {
             e.preventDefault();
+            if(!dragging) dragging = true;
             mouse.x = ( e.clientX / window.innerWidth ) * 2 - 1;
             mouse.y = - ( e.clientY / window.innerHeight ) * 2 + 1;
         }
 
-        const scaleUp = (instanceId) => {
-            pointsMesh.getMatrixAt( instanceId, instanceMatrix );
-            matrix.multiplyMatrices( instanceMatrix, scaleUpMatrix );
-            pointsMesh.setMatrixAt( instanceId, matrix );
+        const onMouseUp = () => {
+            if(!dragging){
+                if(currentHoveredInstanceId !== null){
+                    objectControl.disableAutoRotate();
+
+                    const {thetaEnd, phiEnd} = calcThetaPhiFromLatLon(locations[currentHoveredInstanceId].lat, locations[currentHoveredInstanceId].lon);
+                    const {theta, phi} = objectControl.getCurrentThetaPhi();
+                    const animValue = {theta:theta, phi:phi};
+
+                    gsap.to(animValue, .8, { theta: thetaEnd, phi: phiEnd, ease: 'power3.inOut',
+                        onUpdate:function(){
+                            const value = this.targets()[0];
+                            objectControl.setRotate(value.theta, value.phi);
+                        }
+                    });
+                }
+            }
+            document.removeEventListener('mouseup', onMouseUp, false);
         }
 
-        const scaleDown = (instanceId) => {
-            pointsMesh.getMatrixAt( instanceId, instanceMatrix );
-            matrix.multiplyMatrices( instanceMatrix, scaleDownMatrix );
-            pointsMesh.setMatrixAt( instanceId, matrix );
-        }
+        // const scaleUp = (instanceId) => {
+        //     pointsMesh.getMatrixAt( instanceId, instanceMatrix );
+        //     matrix.multiplyMatrices( instanceMatrix, scaleUpMatrix );
+        //     pointsMesh.setMatrixAt( instanceId, matrix );
+        //     pointsMesh.instanceMatrix.needsUpdate = true;
+        // }
+
+        // const scaleDown = (instanceId) => {
+        //     pointsMesh.getMatrixAt( instanceId, instanceMatrix );
+        //     matrix.multiplyMatrices( instanceMatrix, scaleDownMatrix );
+        //     pointsMesh.setMatrixAt( instanceId, matrix );
+        //     pointsMesh.instanceMatrix.needsUpdate = true;
+        // }
         
         const draw = () => {
             objectControl.draw();
@@ -294,24 +325,25 @@ const App = props => {
             const intersection = raycaster.intersectObject( pointsMesh );
 
             if(intersection.length > 0){
-                const instanceId = intersection[ 0 ].instanceId;
-                if(instanceId !== hoveredInstanceId){
+                currentHoveredInstanceId = intersection[ 0 ].instanceId;
+                if(currentHoveredInstanceId !== prevHoveredInstanceId){
                     document.body.style.cursor = 'pointer';
-                    if(hoveredInstanceId !== null){
-                        scaleDown(hoveredInstanceId);
-                    }
+                    // if(prevHoveredInstanceId !== null){
+                        // scaleDown(prevHoveredInstanceId);
+                    // }
 
-                    scaleUp(instanceId);
-                    pointsMesh.instanceMatrix.needsUpdate = true;
-                    hoveredInstanceId = instanceId;
+                    // scaleUp(currentHoveredInstanceId);
+                    // pointsMesh.instanceMatrix.needsUpdate = true;
+                    prevHoveredInstanceId = currentHoveredInstanceId;
                 }
             }
             else{
-                if(hoveredInstanceId !== null){
+                if(prevHoveredInstanceId !== null){
                     document.body.style.cursor = '';
-                    scaleDown(hoveredInstanceId);
-                    pointsMesh.instanceMatrix.needsUpdate = true;
-                    hoveredInstanceId = null;
+                    // scaleDown(prevHoveredInstanceId);
+                    // pointsMesh.instanceMatrix.needsUpdate = true;
+                    currentHoveredInstanceId = null;
+                    prevHoveredInstanceId = null;
                 }
             }
         }
@@ -370,15 +402,17 @@ const App = props => {
         }
 
         const addEvent = () => {
-            window.addEventListener("mousemove", onMouseMove, false);
+            document.addEventListener("mousedown", onMouseDown, false);
+            document.addEventListener("mousemove", onMouseMove, false);
             window.addEventListener("resize", onWindowResize, false);
         }
 
         const removeEvent = () => {
             // if(cameraControl) cameraControl.destroy();
             if(dev) dev.destroy();
-            window.removeEventListener("mousemove", onMouseMove);
-            window.removeEventListener("resize", onWindowResize);
+            document.removeEventListener("mousedown", onMouseDown, false);
+            document.removeEventListener('mousemove', onMouseMove, false);
+            window.removeEventListener("resize", onWindowResize, false);
         }
 
         initEngine();

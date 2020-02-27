@@ -340,6 +340,8 @@ export const ObjectControl = (function(_super){
         const friction = .8;
         const sphericalEnd = new THREE.Spherical();
         let auotRotate = 0;
+        let disable = false;
+        let disableEase = false;
 
         const init = () => {
             document.addEventListener('mousedown', onMouseDown, false);
@@ -347,16 +349,33 @@ export const ObjectControl = (function(_super){
         }
 
         this.draw = () => {
-            if(!clicked) auotRotate += 0.001;
-            thetaEase += ((sphericalEnd.theta + auotRotate) - thetaEase) * .05 * friction;
-            phiEase += ((sphericalEnd.phi) - phiEase) * .05 * friction;
+            if(!clicked && !disable) auotRotate += 0.001;
+            if(!disableEase){
+                thetaEase += ((sphericalEnd.theta + auotRotate) - thetaEase) * .05 * friction;
+                phiEase += ((sphericalEnd.phi) - phiEase) * .05 * friction;
+            }
+            else{
+                thetaEase = sphericalEnd.theta;
+                phiEase = sphericalEnd.phi;
+            }
 
             targetMesh.rotation.set(phiEase, thetaEase, 0);
         }
 
         const rotate = (theta, phi) => {
+            if(disableEase) disableEase = false;
             sphericalEnd.theta = sphericalEnd.theta + theta;
             sphericalEnd.phi = sphericalEnd.phi + phi;
+        }
+
+        this.setRotate = (theta, phi) => {
+            if(!disableEase) disableEase = true;
+            sphericalEnd.theta = theta;
+            sphericalEnd.phi = phi;
+        }
+
+        this.getCurrentThetaPhi = () => {
+            return {theta:thetaEase, phi:phiEase};
         }
 
         const onMouseDown = (e) => {
@@ -417,12 +436,17 @@ export const ObjectControl = (function(_super){
 
         const onMouseUp = () => {
             clicked = false;
+            disable = false;
             document.removeEventListener('mousemove', onMouseMove, false);
             document.removeEventListener('mouseup', onMouseUp, false);
         }
 
         const onContextMenu = (e) => {
             e.preventDefault();
+        }
+
+        this.disableAutoRotate = () => {
+            disable = true;
         }
 
         this.destroy = () => {
@@ -501,6 +525,13 @@ export const animEase = {
     easeOutQuint: (t) => { return 1+(--t)*t*t*t*t },
     // acceleration until halfway, then deceleration 
     easeInOutQuint: (t) => { return t<.5 ? 16*t*t*t*t*t : 1+16*(--t)*t*t*t*t }
+}
+
+export const calcThetaPhiFromLatLon = (lat, lon) => {
+    const phi   = (lat)*Math.PI/180;// - 45 * THREE.Math.DEG2RAD;
+    const theta = (lon-180)*Math.PI/180 + 90 * THREE.Math.DEG2RAD;
+
+    return {thetaEnd:-theta, phiEnd:phi}
 }
 
 export const calcPosFromLatLonRad = (lat,lon,radius) => {
