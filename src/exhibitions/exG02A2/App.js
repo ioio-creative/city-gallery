@@ -173,7 +173,7 @@ const App = props => {
                 const pos = initLocationPointsPosition(location);
 
                 pointOffsets.push(pos.x, pos.y, pos.z);
-                pointScales.push(Math.random()*.4+1.1);
+                pointScales.push(Math.random()*.2+1.2);
 
 
                 transform.position.set( 0,0,0 );
@@ -289,11 +289,41 @@ const App = props => {
                 if(currentHoveredInstanceId !== null){
                     objectControl.disableAutoRotate();
 
-                    const {thetaEnd, phiEnd} = calcThetaPhiFromLatLon(locations[currentHoveredInstanceId].lat, locations[currentHoveredInstanceId].lon);
+                    const {targetTheta, targetPhi} = calcThetaPhiFromLatLon(locations[currentHoveredInstanceId].lat, locations[currentHoveredInstanceId].lon);
                     const {theta, phi} = objectControl.getCurrentThetaPhi();
                     const animValue = {theta:theta, phi:phi};
 
-                    gsap.to(animValue, .8, { theta: thetaEnd, phi: phiEnd, ease: 'power3.inOut',
+                    
+                    const currentTargetTheta = 
+                    theta- targetTheta > 0 ?
+                        theta - targetTheta
+                    :
+                        Math.PI*2 + (theta - targetTheta);
+
+                    const fixedTargetTheta = // 0 -> 6.28 -> 0 -> 6.28
+                    theta - targetTheta > 0 ?
+                        currentTargetTheta % (Math.PI*2)
+                    :
+                        theta < -Math.PI*2 ?
+                            Math.PI*2 + currentTargetTheta % (Math.PI*2)
+                        :
+                            currentTargetTheta % (Math.PI*2);
+                    let shortTheta;
+
+
+                    if(fixedTargetTheta > Math.PI && fixedTargetTheta < Math.PI*2){
+                        // console.log('left side')
+                        shortTheta = Math.PI*2 + (theta-fixedTargetTheta);
+                    }else{
+                        // console.log('right side')
+                        shortTheta = theta-fixedTargetTheta;
+                    }
+
+                    // console.log(theta,theta -Math.PI*2,currentTargetTheta)
+
+
+                    gsap.to(camera.position, 1, { y: 0, z: 100, ease: 'power2.inOut'});
+                    gsap.to(animValue, 1, { theta:shortTheta, phi:targetPhi, ease: 'power2.inOut',
                         onUpdate:function(){
                             const value = this.targets()[0];
                             objectControl.setRotate(value.theta, value.phi);

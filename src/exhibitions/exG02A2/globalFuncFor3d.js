@@ -342,6 +342,8 @@ export const ObjectControl = (function(_super){
         let auotRotate = 0;
         let disable = false;
         let disableEase = false;
+        let numofTheta = 0;
+        let numofPhi = 0;
 
         const init = () => {
             document.addEventListener('mousedown', onMouseDown, false);
@@ -358,18 +360,24 @@ export const ObjectControl = (function(_super){
                 thetaEase = sphericalEnd.theta;
                 phiEase = sphericalEnd.phi;
             }
+            
 
             targetMesh.rotation.set(phiEase, thetaEase, 0);
         }
 
         const rotate = (theta, phi) => {
             if(disableEase) disableEase = false;
+
             sphericalEnd.theta = sphericalEnd.theta + theta;
             sphericalEnd.phi = sphericalEnd.phi + phi;
         }
 
         this.setRotate = (theta, phi) => {
-            if(!disableEase) disableEase = true;
+            if(!disableEase){
+                disableEase = true;
+                auotRotate = 0;
+            }
+
             sphericalEnd.theta = theta;
             sphericalEnd.phi = phi;
         }
@@ -531,7 +539,7 @@ export const calcThetaPhiFromLatLon = (lat, lon) => {
     const phi   = (lat)*Math.PI/180;// - 45 * THREE.Math.DEG2RAD;
     const theta = (lon-180)*Math.PI/180 + 90 * THREE.Math.DEG2RAD;
 
-    return {thetaEnd:-theta, phiEnd:phi}
+    return {targetTheta:-theta, targetPhi:phi}
 }
 
 export const calcPosFromLatLonRad = (lat,lon,radius) => {
