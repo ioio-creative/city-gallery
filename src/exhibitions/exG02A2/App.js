@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 // import { useSelector } from 'react-redux';
-import {ObjectControl, initStats, initGUI, removeStats, removeGUI, getScreenSizeIn3dWorld , devMode, calcPosFromLatLonRad, calcThetaPhiFromLatLon } from './globalFuncFor3d';
+import {ObjectControl, initStats, initGUI, removeStats, removeGUI, getScreenSizeIn3dWorld , devMode, calcPosFromLatLonRad, calcThetaPhiFromLatLon, animEase } from './globalFuncFor3d';
 import * as THREE from 'three';
 import './style.scss';
 
@@ -41,9 +41,10 @@ const App = props => {
 
         const raycaster = new THREE.Raycaster();
         const mouse = new THREE.Vector2(1,1);
-        const scaleUpMatrix = new THREE.Matrix4().makeScale( 2,2,2 );
+        const scaleUpMatrix = new THREE.Matrix4().makeScale( 1,1,20 );
         const scaleDownMatrix = new THREE.Matrix4().makeScale( .5, .5, .5 );
         const instanceMatrix = new THREE.Matrix4();
+        const instanceMatrix2 = new THREE.Matrix4();
         const matrix = new THREE.Matrix4();
         let currentHoveredInstanceId = null;
         let prevHoveredInstanceId = null;
@@ -208,7 +209,6 @@ const App = props => {
                 pointOffsets.push(pos.x, pos.y, pos.z);
                 pointScales.push(Math.random()*.3+1.15);
 
-
                 transform.position.set( 0,0,0 );
                 transform.updateMatrix();
                 
@@ -243,7 +243,7 @@ const App = props => {
                 transform.updateMatrix();
 
                 transform.lookAt(pointOffsets[i*3], pointOffsets[i*3+1], pointOffsets[i*3+2]);
-                transform.position.set( pointOffsets[i*3],pointOffsets[i*3+1],pointOffsets[i*3+2] );
+                transform.position.set( pointOffsets[i*3]/2, pointOffsets[i*3+1]/2, pointOffsets[i*3+2]/2 );
                 transform.scale.z = (earthRadius * pointScales[i] - earthRadius) * 10;
                 transform.updateMatrix();
                 linesMesh.setMatrixAt( i, transform.matrix );
@@ -284,6 +284,41 @@ const App = props => {
                     .replace( '#include <common>\n', '#include <common>' + fragmentParsChunk )
                     .replace( 'vec4 diffuseColor = vec4( diffuse, opacity );\n', colorChunk )
             };
+        }
+
+        const pops = () => {
+            for(let i=0; i<locations.length; i++){
+                pointsMesh.getMatrixAt( i, instanceMatrix );
+                linesMesh.getMatrixAt( i, instanceMatrix2 );
+
+                const scaleValue = {s:0};
+                const positionValue = {x:pointOffsets[i*3]/2,y:pointOffsets[i*3+1]/2,z:pointOffsets[i*3+2]/2};
+                const pointTransform = new THREE.Object3D();
+                const lineTransform = new THREE.Object3D();
+                pointTransform.applyMatrix4(instanceMatrix);
+                lineTransform.applyMatrix4(instanceMatrix2);
+
+
+                const tl = gsap.timeline({delay:Math.random()+1});
+                tl.to(positionValue, .5, {x:pointOffsets[i*3], y:pointOffsets[i*3+1], z:pointOffsets[i*3+2], ease:'power4.out', //z:1+1/52
+                    onUpdate:function(){
+                        const value = this.targets()[0];
+                        lineTransform.position.set(value.x, value.y, value.z);
+                        lineTransform.updateMatrix();
+                        linesMesh.setMatrixAt( i, lineTransform.matrix );
+                        linesMesh.instanceMatrix.needsUpdate = true;
+                    }
+                });
+                tl.fromTo(scaleValue, 2, {s:0}, {s:1, ease:'elastic.out(1.3, 0.3)',
+                    onUpdate:function(){
+                        const value = this.targets()[0];
+                        pointTransform.scale.set(value.s,value.s,value.s);
+                        pointTransform.updateMatrix();
+                        pointsMesh.setMatrixAt( i, pointTransform.matrix );
+                        pointsMesh.instanceMatrix.needsUpdate = true;
+                    }
+                },'-=.2');
+            }
         }
 
         const getRotation = (vec) =>{
@@ -514,6 +549,7 @@ const App = props => {
 
         initEngine();
         initEvent();
+        pops();
 
         return () => {
             removeStats();
