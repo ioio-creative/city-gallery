@@ -108,7 +108,7 @@ const App = props => {
 
             // cameraControl = new CameraControlsSystem(camera, meshEarth);
             objectControl = new ObjectControl(groupedMesh);
-            dev = devMode(scene);
+            // dev = devMode(scene);
             
             renderer.setAnimationLoop(function() {
                 update();
@@ -210,6 +210,7 @@ const App = props => {
                 pointScales.push(Math.random()*.3+1.15);
 
                 transform.position.set( 0,0,0 );
+                transform.scale.set(0.001,0.001,0.001);
                 transform.updateMatrix();
                 
                 transform.position.set( pos.x, pos.y, pos.z ).multiplyScalar(pointScales[i]);
@@ -299,8 +300,8 @@ const App = props => {
                 lineTransform.applyMatrix4(instanceMatrix2);
 
 
-                const tl = gsap.timeline({delay:Math.random()+1});
-                tl.to(positionValue, .5, {x:pointOffsets[i*3], y:pointOffsets[i*3+1], z:pointOffsets[i*3+2], ease:'power4.out', //z:1+1/52
+                const tl = gsap.timeline({delay:i*.15});
+                tl.to(positionValue, .4, {x:pointOffsets[i*3], y:pointOffsets[i*3+1], z:pointOffsets[i*3+2], ease:'power4.out', //z:1+1/52
                     onUpdate:function(){
                         const value = this.targets()[0];
                         lineTransform.position.set(value.x, value.y, value.z);
@@ -514,6 +515,12 @@ const App = props => {
             scene.dispose();
         }
 
+        const keyDown = (e) => {
+            if(e.keyCode === 13){
+                pops();
+            }
+        }
+
         
         const onWindowResize = () => {
             // camera.left = -window.innerWidth / 2;
@@ -537,6 +544,7 @@ const App = props => {
             document.addEventListener("mousedown", onMouseDown, false);
             document.addEventListener("mousemove", onMouseMove, false);
             window.addEventListener("resize", onWindowResize, false);
+            window.addEventListener("keydown", keyDown);
         }
 
         const removeEvent = () => {
@@ -545,11 +553,11 @@ const App = props => {
             document.removeEventListener("mousedown", onMouseDown, false);
             document.removeEventListener('mousemove', onMouseMove, false);
             window.removeEventListener("resize", onWindowResize, false);
+            window.removeEventListener("keydown", keyDown);
         }
 
         initEngine();
         initEvent();
-        pops();
 
         return () => {
             removeStats();
