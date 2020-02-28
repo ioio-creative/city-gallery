@@ -33,11 +33,15 @@ const App = props => {
         let textureItems = [];
         let meshItems = [];
         const pointOffsets = [];
+        const pointScaledOffsets = [];
         const pointScales = [];
-        const instanceColors = [];
+        const pointInstanceColors = [];
+        const pointBgInstanceColors = [];
+        let pointsBgMaterial = null;
         const groupedMesh = new THREE.Group();
         let pointsMesh = null;
         let linesMesh = null;
+        // let canvas = null;
 
         const raycaster = new THREE.Raycaster();
         const mouse = new THREE.Vector2(1,1);
@@ -182,7 +186,8 @@ const App = props => {
                 ].join('\n'),
                 side: THREE.BackSide,
                 blending: THREE.AdditiveBlending,
-                transparent: true
+                transparent: true,
+                depthWrite: false,
             });
             var mesh = new THREE.Mesh( geometry, material );
 
@@ -193,6 +198,7 @@ const App = props => {
 
         const initLocationPoints = () => {
             createPoints();
+            createPointsBg();
             createLines();
         }
 
@@ -215,12 +221,13 @@ const App = props => {
                 
                 transform.position.set( pos.x, pos.y, pos.z ).multiplyScalar(pointScales[i]);
                 transform.updateMatrix();
+                pointScaledOffsets.push(transform.position.x, transform.position.y, transform.position.z);
                 pointsMesh.setMatrixAt( i, transform.matrix );
 
                 if(i===0)
-                    instanceColors.push(0/255, 53/255, 87/255)
+                    pointInstanceColors.push(0/255, 53/255, 87/255)
                 else
-                    instanceColors.push(81/255, 190/255, 255/255)
+                    pointInstanceColors.push(81/255, 190/255, 255/255)
             }
             pointsMesh.castShadow = true;
             updateColor(geometry, pointsMesh);
@@ -257,8 +264,179 @@ const App = props => {
             meshItems.push(linesMesh);
         }
 
+        const createPointsBg = () => {
+            const canvasTexture = createCanvasTexture();
+            const animCanvasTexture = createAnimCanvasTexture();
+            const geometry = new THREE.BufferGeometry();
+            const vertices = [];
+            const textures = [
+                new THREE.CanvasTexture(canvasTexture), 
+                new THREE.CanvasTexture(animCanvasTexture)
+            ];
+            const ids = [];
+
+            for(let i=0; i<locations.length; i++){
+                const scaledOffset = pointScaledOffsets;
+                vertices.push(scaledOffset[i*3], scaledOffset[i*3+1], scaledOffset[i*3+2]);
+                ids.push(i);
+                if(i === 0)
+                    pointBgInstanceColors.push(1,1,1);
+                else
+                    pointBgInstanceColors.push(81/255, 190/255, 255/255);
+            }
+
+            geometry.setAttribute( 'position', new THREE.BufferAttribute( new Float32Array(vertices), 3 ) );
+            geometry.setAttribute( 'instanceColor', new THREE.BufferAttribute( new Float32Array(pointBgInstanceColors), 3 ) );
+            geometry.setAttribute( 'instanceId', new THREE.BufferAttribute( new Float32Array(ids), 1 ) );
+
+            pointsBgMaterial = new THREE.ShaderMaterial({
+                uniforms:{
+                    activeInstanceId:{ type:'f', value: 0. },
+                    textures:{
+                        type: "t", value: textures
+                    }
+                },
+                vertexShader:[
+                    'attribute vec3 instanceColor;',
+                    'attribute float instanceId;',
+                    'varying vec3 vColor;',
+                    'varying float vId;',
+
+                    'void main() {',
+                        'vColor = instanceColor;',
+                        'vId = instanceId;',
+                        'vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );',
+                        'gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );',
+                        `gl_PointSize = 2.5 * ${window.innerHeight * Math.PI} / -mvPosition.z;`,
+                    '}'
+                ].join('\n'),
+                fragmentShader:[
+                    'uniform sampler2D textures[2];',
+                    'uniform float activeInstanceId;',
+                    'varying vec3 vColor;',
+                    'varying float vId;',
+
+                    'void main() {',
+                        'vec4 texture;',
+                        'vec3 color;',
+
+                        'if(activeInstanceId == vId){',
+                            'color = vec3(1.,1.,1.);',
+                            'texture = texture2D( textures[1], gl_PointCoord );',
+                        '}',
+                        'else{',
+                            'color = vColor;',
+                            'texture = texture2D( textures[0], gl_PointCoord );',
+                        '}',
+                        'gl_FragColor = vec4( color, 1.0 );',
+                        'gl_FragColor = gl_FragColor * texture;',
+                    '}'
+                ].join('\n'),
+                transparent:true,
+                depthWrite: false,
+                depthWrite:false
+            });
+            const mesh = new THREE.Points(geometry, pointsBgMaterial);
+            
+            console.log(mesh)
+            materialItems.push(pointsBgMaterial);
+            geometryItems.push(geometry);
+            meshItems.push(mesh);
+        }
+
+        const createCanvasTexture = () => {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = 1024;
+            canvas.height = 1024;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(255,255,255,0.01)';
+            ctx.fillRect(0,0,canvas.width,canvas.height);
+            ctx.arc(1024/2, 1024/2, 1024/2, 0, 2*Math.PI);
+            ctx.fillStyle = `rgba(255,255,255,.6)`;
+            ctx.fill();
+
+            return canvas;
+        }
+
+        const createAnimCanvasTexture = () => {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const radius = 1024/2-10;
+            let circles = [];
+            const animValue = {r:0};
+            canvas.width = 1024;
+            canvas.height = 1024;
+            
+            const clearCanvas = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = 'rgba(255,255,255,0.01)';
+                ctx.fillRect(0,0,canvas.width,canvas.height);
+            }
+            
+            const draw = (r) => {
+                ctx.strokeStyle = `rgba(255,225,255,${1-r})`;
+                ctx.lineWidth = 20;
+                ctx.beginPath();
+                ctx.arc(1024/2, 1024/2, r*radius, 0, 2*Math.PI);
+                ctx.stroke();
+            }
+            
+            setInterval(() => {
+                circles.push({radius:0});
+            },500);
+            
+            setInterval(() => {
+                clearCanvas();
+                const newCircles = [];
+                for(let i=0; i<circles.length; i++){
+                    const circle = circles[i];
+                    circle.radius+=.02;
+                    draw(circle.radius);
+
+                    if(circle.radius <= 1)
+                        newCircles.push(circle);
+                }
+                circles = newCircles;
+                pointsBgMaterial.uniforms.textures.value[1].needsUpdate = true;
+            },1000/60);
+
+            // const tl = gsap.timeline({ repeat:-1, repeatDelay:1 });
+            // tl.add(()=>{circles.push({radius:0})});
+            // tl.add(()=>{circles.push({radius:0})}, .3);
+
+            // gsap.to(animValue, 2, {repeat:-1, r:1, ease:'power3.out',
+            //     onUpdate:function(){
+            //         const value = this.targets()[0];
+            //         clearCanvas();
+            //         draw(value.r);
+            //         pointsBgMaterial.uniforms.textures.value[1].needsUpdate = true;
+            //     }
+            // })
+// document.body.appendChild(canvas);
+            
+            
+            return canvas;
+        }
+        
+        const showPointsBg = () => {
+            const animValue = {alpha:0};
+            gsap.to(animValue, 1, {alpha:.3, ease:'power3.out',
+                onUpdate:function(){
+                    const value = this.targets()[0];
+                    draw(value.alpha);
+                    material.map.needsUpdate = true;
+                }
+            });
+        }
+        
+        const AnimPointsBg = () => {
+            
+        }
+
         const updateColor = (geometry, mesh) => {
-            geometry.addAttribute( 'instanceColor', new THREE.InstancedBufferAttribute( new Float32Array( instanceColors ), 3 ) );
+            geometry.addAttribute( 'instanceColor', new THREE.InstancedBufferAttribute( new Float32Array( pointInstanceColors ), 3 ) );
             var colorParsChunk = [
                 'attribute vec3 instanceColor;',
                 'varying vec3 vInstanceColor;'
@@ -397,6 +575,8 @@ const App = props => {
                     const meshs = [pointsMesh, linesMesh];
                     resetColor(meshs);
                     toWhiteColor(meshs);
+
+                    pointsBgMaterial.uniforms.activeInstanceId.value = currentHoveredInstanceId;
                 }
             }
             document.removeEventListener('mouseup', onMouseUp, false);
@@ -421,7 +601,7 @@ const App = props => {
             for(let i=0; i<meshs.length; i++){
                 const mesh = meshs[i];
                 const attribute = mesh.geometry.attributes.instanceColor;
-                const animValue = {r:instanceColors[id*3], g:instanceColors[id*3+1], b:instanceColors[id*3+2]}
+                const animValue = {r:pointInstanceColors[id*3], g:pointInstanceColors[id*3+1], b:pointInstanceColors[id*3+2]}
 
                 gsap.to(animValue, .3, {r:1, g:1, b:1, ease:'power3.out',
                     onUpdate:function(){
@@ -442,7 +622,7 @@ const App = props => {
                     const attribute = mesh.geometry.attributes.instanceColor;
                     const animValue = {r:1, g:1, b:1}
 
-                    gsap.to(animValue, .3, {r:instanceColors[id*3], g:instanceColors[id*3+1], b:instanceColors[id*3+2], ease:'power3.out',
+                    gsap.to(animValue, .3, {r:pointInstanceColors[id*3], g:pointInstanceColors[id*3+1], b:pointInstanceColors[id*3+2], ease:'power3.out',
                         onUpdate:function(){
                             const value = this.targets()[0];
                             attribute.setXYZ(id, value.r, value.g, value.b);
