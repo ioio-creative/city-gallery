@@ -41,6 +41,8 @@ const App = props => {
         const groupedMesh = new THREE.Group();
         let pointsMesh = null;
         let linesMesh = null;
+        let canvasTexture = null;
+        let animCanvasTexture = null;
         // let canvas = null;
 
         const raycaster = new THREE.Raycaster();
@@ -265,13 +267,13 @@ const App = props => {
         }
 
         const createPointsBg = () => {
-            const canvasTexture = createCanvasTexture();
-            const animCanvasTexture = createAnimCanvasTexture();
+            canvasTexture = new createCanvasTexture();
+            animCanvasTexture = new createAnimCanvasTexture();
             const geometry = new THREE.BufferGeometry();
             const vertices = [];
             const textures = [
-                new THREE.CanvasTexture(canvasTexture), 
-                new THREE.CanvasTexture(animCanvasTexture)
+                new THREE.CanvasTexture(canvasTexture.canvas), 
+                new THREE.CanvasTexture(animCanvasTexture.canvas)
             ];
             const ids = [];
 
@@ -291,7 +293,7 @@ const App = props => {
 
             pointsBgMaterial = new THREE.ShaderMaterial({
                 uniforms:{
-                    activeInstanceId:{ type:'f', value: 0. },
+                    activeInstanceId:{ type:'f', value: -1 },
                     textures:{
                         type: "t", value: textures
                     }
@@ -344,103 +346,113 @@ const App = props => {
             meshItems.push(mesh);
         }
 
-        const createCanvasTexture = () => {
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            canvas.width = 1024;
-            canvas.height = 1024;
-
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = 'rgba(255,255,255,0.01)';
-            ctx.fillRect(0,0,canvas.width,canvas.height);
-            ctx.arc(1024/2, 1024/2, 1024/2, 0, 2*Math.PI);
-            ctx.fillStyle = `rgba(255,255,255,.6)`;
-            ctx.fill();
-
-            return canvas;
-        }
-
-        const createAnimCanvasTexture = () => {
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            const radius = 1024/2-10;
-            let circles = [];
-            const animValue = {r:0};
-            let counter = 0;
-            canvas.width = 1024;
-            canvas.height = 1024;
+        const createCanvasTexture = function(){
+            const _this = this;
+            this.canvas = document.createElement('canvas');
+            this.ctx = this.canvas.getContext('2d');
+            this.canvas.width = 1024;
+            this.canvas.height = 1024;
+            this.animValue = {a:0};
             
             const clearCanvas = () => {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.fillStyle = 'rgba(255,255,255,0.01)';
-                ctx.fillRect(0,0,canvas.width,canvas.height);
+                _this.ctx.clearRect(0, 0, _this.canvas.width, _this.canvas.height);
+                _this.ctx.fillStyle = 'rgba(255,255,255,0.01)';
+                _this.ctx.fillRect(0, 0, _this.canvas.width, _this.canvas.height);
+            }
+
+            const draw = (opacity = .3) => {
+                clearCanvas();
+                _this.ctx.beginPath();
+                _this.ctx.arc(1024/2, 1024/2, 1024/2, 0, 2*Math.PI);
+                _this.ctx.fillStyle = `rgba(255,255,255,${opacity})`;
+                _this.ctx.fill();
+            }
+
+            this.show = () => {
+                gsap.to(_this.animValue, 1, {a:.3,
+                    onUpdate:function(){
+                        const value = this.targets()[0];
+                        draw(value.a);
+                        
+                        if(pointsBgMaterial)
+                            pointsBgMaterial.uniforms.textures.value[0].needsUpdate = true;
+                    }
+                })
+            }
+        }
+
+        const createAnimCanvasTexture = function(){
+            const _this = this;
+            this.canvas = document.createElement('canvas');
+            this.ctx = this.canvas.getContext('2d');
+            this.radius = 1024/2-10;
+            this.circles = [];
+            this.counter = 0;
+            this.player = null;
+
+            const init = () => {
+                _this.canvas.width = 1024;
+                _this.canvas.height = 1024;
+            }
+
+            this.start = () => {
+                _this.destroy();
+                animLoop();
+            }
+            
+            this.destroy = () => {
+                cancelAnimationFrame(_this.player);
+                clearCanvas();
+                _this.circles = [];
+            }
+            
+            const clearCanvas = () => {
+                _this.ctx.clearRect(0, 0, _this.canvas.width, _this.canvas.height);
+                _this.ctx.fillStyle = 'rgba(255,255,255,0.01)';
+                _this.ctx.fillRect(0, 0, _this.canvas.width, _this.canvas.height);
             }
             
             const draw = (r) => {
-                ctx.strokeStyle = `rgba(255,225,255,${1-r*r})`;
-                ctx.lineWidth = 30;
-                ctx.beginPath();
-                ctx.arc(1024/2, 1024/2, r*radius, 0, 2*Math.PI);
-                ctx.stroke();
+                _this.ctx.strokeStyle = `rgba(255,225,255,${1-r*r})`;
+                _this.ctx.lineWidth = 20;
+                _this.ctx.beginPath();
+                _this.ctx.arc(1024/2, 1024/2, r*_this.radius, 0, 2*Math.PI);
+                _this.ctx.stroke();
             }
-            
-            const loop = () => {
-                requestAnimationFrame(loop);
 
-                if(counter >= 40){
-                    circles.push({radius:0});
-                    counter = 0;
+            const addCircle = () => {
+                if(_this.counter >= 40){
+                    _this.circles.push({radius:0});
+                    _this.counter = 0;
                 }
-                counter++;
+                _this.counter++;
+            }
 
-                clearCanvas();
+            const updateCircle = () => {
                 const newCircles = [];
-                for(let i=0; i<circles.length; i++){
-                    const circle = circles[i];
+                for(let i=0; i<_this.circles.length; i++){
+                    const circle = _this.circles[i];
                     circle.radius+=.01;
                     draw(circle.radius);
 
                     if(circle.radius <= 1.5)
                         newCircles.push(circle);
                 }
-                circles = newCircles;
+                _this.circles = newCircles;
+            }
+            
+            const animLoop = () => {
+                _this.player = requestAnimationFrame(animLoop);
+
+                clearCanvas();
+                addCircle();
+                updateCircle();
                 
                 if(pointsBgMaterial)
                     pointsBgMaterial.uniforms.textures.value[1].needsUpdate = true;
             }
-            loop();
 
-            // const tl = gsap.timeline({ repeat:-1, repeatDelay:1 });
-            // tl.add(()=>{circles.push({radius:0})});
-            // tl.add(()=>{circles.push({radius:0})}, .3);
-
-            // gsap.to(animValue, 2, {repeat:-1, r:1, ease:'power3.out',
-            //     onUpdate:function(){
-            //         const value = this.targets()[0];
-            //         clearCanvas();
-            //         draw(value.r);
-            //         pointsBgMaterial.uniforms.textures.value[1].needsUpdate = true;
-            //     }
-            // })
-// document.body.appendChild(canvas);
-            
-            
-            return canvas;
-        }
-        
-        const showPointsBg = () => {
-            const animValue = {alpha:0};
-            gsap.to(animValue, 1, {alpha:.3, ease:'power3.out',
-                onUpdate:function(){
-                    const value = this.targets()[0];
-                    draw(value.alpha);
-                    material.map.needsUpdate = true;
-                }
-            });
-        }
-        
-        const AnimPointsBg = () => {
-            
+            init();
         }
 
         const updateColor = (geometry, mesh) => {
@@ -506,6 +518,10 @@ const App = props => {
                     }
                 },'-=.2');
             }
+            
+            setTimeout(()=>{
+                canvasTexture.show();
+            },1000)
         }
 
         const getRotation = (vec) =>{
@@ -537,7 +553,7 @@ const App = props => {
 
         const onMouseUp = () => {
             if(!dragging){
-                if(currentHoveredInstanceId !== null){
+                if(currentHoveredInstanceId !== null && currentHoveredInstanceId !== oldHoveredInstanceId){
                     objectControl.disableAutoRotate();
 
                     const {targetTheta, targetPhi} = calcThetaPhiFromLatLon(locations[currentHoveredInstanceId].lat, locations[currentHoveredInstanceId].lon);
@@ -583,6 +599,8 @@ const App = props => {
                     const meshs = [pointsMesh, linesMesh];
                     resetColor(meshs);
                     toWhiteColor(meshs);
+
+                    animCanvasTexture.start();
 
                     pointsBgMaterial.uniforms.activeInstanceId.value = currentHoveredInstanceId;
                 }

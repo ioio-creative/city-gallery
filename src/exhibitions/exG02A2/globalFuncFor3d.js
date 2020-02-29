@@ -536,7 +536,7 @@ export const animEase = {
 }
 
 export const calcThetaPhiFromLatLon = (lat, lon) => {
-    const phi   = (lat)*Math.PI/180;// - 45 * THREE.Math.DEG2RAD;
+    const phi   = (lat)*Math.PI/180 - 25 * THREE.Math.DEG2RAD;
     const theta = (lon-180)*Math.PI/180 + 90 * THREE.Math.DEG2RAD;
 
     return {targetTheta:-theta, targetPhi:phi}
