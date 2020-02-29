@@ -77,244 +77,252 @@ export const convert2dto3d = (x, y, camera) => {
     return camera.position.clone().add( dir.multiplyScalar( distance ) );
 }
 
-export const CameraControlsSystem = (function(_super){
-    function _CameraControlsSystem(camera){
-        const _this = _super.call(this) || this;
-        const mouse = {
-            offset: new THREE.Vector2(),
-            prevPos: new THREE.Vector2(),
-            startPos: new THREE.Vector2(),
-            lastPos: new THREE.Vector2(),
-            delta: new THREE.Vector2(),
-            wheelDelta: 0,
-            lastWheel: 0,
-            button: {left:'rotate', right:'pan'},
-            status: ''
-        };
-        _this.camera = camera;
-        _this.yAxisUpSpace = new THREE.Quaternion().setFromUnitVectors(_this.camera.up, new THREE.Vector3(0, 1, 0));
-        _this.spherical = new THREE.Spherical().setFromVector3(_this.camera.position.clone().applyQuaternion(_this.yAxisUpSpace));
-        _this.sphericalEnd = _this.spherical.clone();
-        _this.target = new THREE.Vector3();
-        _this.targetEnd = _this.target.clone();
-        _this.zoomEnd = _this.camera.zoom;
-        //
-        _this.easeTheta = _this.sphericalEnd.theta;
-        _this.easePhi = _this.sphericalEnd.phi;
-        _this.easeRadius = _this.sphericalEnd.radius;
-        _this.easeTarget = new THREE.Vector3();
-        _this.easeZoom = _this.zoomEnd;
-        _this.rotationEase = .05;
-        _this.translationEase = .05;
-        _this.zoomEase = .05;
-        _this.friction = .8;
-        _this.minDistance = 0
-        _this.maxDistance = Infinity;
+// export const CameraControlsSystem = (function(_super){
+//     function _CameraControlsSystem(camera){
+//         const _this = _super.call(this) || this;
+//         const mouse = {
+//             offset: new THREE.Vector2(),
+//             prevPos: new THREE.Vector2(),
+//             startPos: new THREE.Vector2(),
+//             lastPos: new THREE.Vector2(),
+//             delta: new THREE.Vector2(),
+//             wheelDelta: 0,
+//             lastWheel: 0,
+//             button: {left:'rotate', right:'pan'},
+//             status: ''
+//         };
+//         _this.camera = camera;
+//         _this.yAxisUpSpace = new THREE.Quaternion().setFromUnitVectors(_this.camera.up, new THREE.Vector3(0, 1, 0));
+//         _this.spherical = new THREE.Spherical().setFromVector3(_this.camera.position.clone().applyQuaternion(_this.yAxisUpSpace));
+//         _this.sphericalEnd = _this.spherical.clone();
+//         _this.target = new THREE.Vector3();
+//         _this.targetEnd = _this.target.clone();
+//         _this.zoomEnd = _this.camera.zoom;
+//         //
+//         _this.easeTheta = _this.sphericalEnd.theta;
+//         _this.easePhi = _this.sphericalEnd.phi;
+//         _this.easeRadius = _this.sphericalEnd.radius;
+//         _this.easeTarget = new THREE.Vector3();
+//         _this.easeZoom = _this.zoomEnd;
+//         _this.rotationEase = .05;
+//         _this.translationEase = .05;
+//         _this.zoomEase = .05;
+//         _this.friction = .8;
+//         _this.minDistance = 0
+//         _this.maxDistance = Infinity;
 
-        let _xColumn = new THREE.Vector3();
-        let _yColumn = new THREE.Vector3();
-        let _v3A = new THREE.Vector3();
+//         let _xColumn = new THREE.Vector3();
+//         let _yColumn = new THREE.Vector3();
+//         let _v3A = new THREE.Vector3();
         
-        let looping = undefined;
-        let clicked = false;
+//         let looping = undefined;
+//         let clicked = false;
 
-        const init = () => {
-            onAnim();
-            document.addEventListener('mousedown', onMouseDown, false);
-            document.addEventListener('mousewheel', onMouseWheel, false);
-            document.addEventListener('contextmenu', onContextMenu, false);
-        }
-
-
-        this.rotate = (theta, phi) => {
-            this.rotateTo(_this.sphericalEnd.theta + theta, _this.sphericalEnd.phi + phi);
-        }
-
-        this.rotateTo = (theta, phi) => {
-            _this.sphericalEnd.theta = theta;
-            _this.sphericalEnd.phi = phi;
-            _this.sphericalEnd.makeSafe();
-            console.log('rotate',theta, phi);
-        }
+//         const init = () => {
+//             onAnim();
+//             document.addEventListener('mousedown', onMouseDown, false);
+//             document.addEventListener('mousewheel', onMouseWheel, false);
+//             document.addEventListener('contextmenu', onContextMenu, false);
+//         }
 
 
-        this.pan = (dx, dy) => {
-            const _camera = _this.camera;
-            const offset = _v3A.copy(_camera.position).sub(_this.target);
-            const fov = _camera.getEffectiveFOV() * THREE.Math.DEG2RAD;
-            const targetDistance = offset.length() * Math.tan(fov * 0.5);
-            const panSpeed = 2;
-            const x = panSpeed * dx * targetDistance / window.innerHeight;
-            const y = panSpeed * dy * targetDistance / window.innerHeight;
+//         this.rotate = (theta, phi) => {
+//             this.rotateTo(_this.sphericalEnd.theta + theta, _this.sphericalEnd.phi + phi);
+//         }
 
-            this.panTo(x, y);
-
-            console.log('pan',dx, dy);
-        }
-
-        this.panTo = (x, y) => {
-            _this.camera.updateMatrix();
-            _xColumn.setFromMatrixColumn(_this.camera.matrix, 0);
-            _yColumn.setFromMatrixColumn(_this.camera.matrix, 1);
-            _xColumn.multiplyScalar(-x);
-            _yColumn.multiplyScalar(y);
-
-            const offset2 = _v3A.copy(_xColumn).add(_yColumn);
-            _this.targetEnd.add(offset2);
-            _this.target.copy(_this.targetEnd);
-        }
+//         this.rotateTo = (theta, phi) => {
+//             _this.sphericalEnd.theta = theta;
+//             _this.sphericalEnd.phi = phi;
+//             _this.sphericalEnd.makeSafe();
+//             console.log('rotate',theta, phi);
+//         }
 
 
-        const dolly = (delta) => {
-            const dollyScale = Math.pow(0.95, -delta * 1);
-            const distance = _this.sphericalEnd.radius * dollyScale;
-            _this.dollyTo(distance);
-        }
+//         this.pan = (dx, dy) => {
+//             const _camera = _this.camera;
+//             const offset = _v3A.copy(_camera.position).sub(_this.target);
+//             const fov = _camera.getEffectiveFOV() * THREE.Math.DEG2RAD;
+//             const targetDistance = offset.length() * Math.tan(fov * 0.5);
+//             const panSpeed = 2;
+//             const x = panSpeed * dx * targetDistance / window.innerHeight;
+//             const y = panSpeed * dy * targetDistance / window.innerHeight;
 
-        this.dollyTo = (distance) => {
-            _this.sphericalEnd.radius = THREE.Math.clamp(distance, _this.minDistance, _this.maxDistance);
-        }
+//             this.panTo(x, y);
+
+//             console.log('pan',dx, dy);
+//         }
+
+//         this.panTo = (x, y) => {
+//             _this.camera.updateMatrix();
+//             _xColumn.setFromMatrixColumn(_this.camera.matrix, 0);
+//             _yColumn.setFromMatrixColumn(_this.camera.matrix, 1);
+//             _xColumn.multiplyScalar(-x);
+//             _yColumn.multiplyScalar(y);
+
+//             const offset2 = _v3A.copy(_xColumn).add(_yColumn);
+//             _this.targetEnd.add(offset2);
+//             _this.target.copy(_this.targetEnd);
+//         }
 
 
-        this.zoom = (delta) => {
-            const zoomScale = Math.pow(0.95, -delta * 1);
-            const distance = _this.camera.zoom * zoomScale;
-            _this.zoomTo(distance);
-        }
+//         const dolly = (delta) => {
+//             const dollyScale = Math.pow(0.95, -delta * 1);
+//             const distance = _this.sphericalEnd.radius * dollyScale;
+//             _this.dollyTo(distance);
+//         }
 
-        this.zoomTo = (zoom) => {
-            _this.zoomEnd = zoom;
-        }
+//         this.dollyTo = (distance) => {
+//             _this.sphericalEnd.radius = THREE.Math.clamp(distance, _this.minDistance, _this.maxDistance);
+//         }
 
 
-        const update = () => {
-            _this.easeTheta += (_this.sphericalEnd.theta - _this.easeTheta) * _this.rotationEase * _this.friction;
-            _this.easePhi += (_this.sphericalEnd.phi - _this.easePhi) * _this.rotationEase * _this.friction;
-            _this.easeRadius += (_this.sphericalEnd.radius - _this.easeRadius) * _this.rotationEase * _this.friction;
-            _this.spherical.theta = _this.easeTheta;
-            _this.spherical.phi = _this.easePhi;
-            _this.spherical.radius = _this.easeRadius;
+//         this.zoom = (delta) => {
+//             const zoomScale = Math.pow(0.95, -delta * 1);
+//             const distance = _this.camera.zoom * zoomScale;
+//             _this.zoomTo(distance);
+//         }
 
-            _this.easeTarget.x += (_this.targetEnd.x - _this.easeTarget.x) * _this.translationEase * _this.friction;
-            _this.easeTarget.y += (_this.targetEnd.y - _this.easeTarget.y) * _this.translationEase * _this.friction;
-            _this.easeTarget.z += (_this.targetEnd.z - _this.easeTarget.z) * _this.translationEase * _this.friction;
-            _this.target.copy(_this.easeTarget);
+//         this.zoomTo = (zoom) => {
+//             _this.zoomEnd = zoom;
+//         }
+
+
+//         const update = () => {
+//             _this.easeTheta += (_this.sphericalEnd.theta - _this.easeTheta) * _this.rotationEase * _this.friction;
+//             _this.easePhi += (_this.sphericalEnd.phi - _this.easePhi) * _this.rotationEase * _this.friction;
+//             _this.easeRadius += (_this.sphericalEnd.radius - _this.easeRadius) * _this.rotationEase * _this.friction;
+//             _this.spherical.theta = _this.easeTheta;
+//             _this.spherical.phi = _this.easePhi;
+//             _this.spherical.radius = _this.easeRadius;
+
+//             _this.easeTarget.x += (_this.targetEnd.x - _this.easeTarget.x) * _this.translationEase * _this.friction;
+//             _this.easeTarget.y += (_this.targetEnd.y - _this.easeTarget.y) * _this.translationEase * _this.friction;
+//             _this.easeTarget.z += (_this.targetEnd.z - _this.easeTarget.z) * _this.translationEase * _this.friction;
+//             _this.target.copy(_this.easeTarget);
             
-            _this.easeZoom += (_this.zoomEnd - _this.easeZoom) * _this.zoomEase * _this.friction;
+//             _this.easeZoom += (_this.zoomEnd - _this.easeZoom) * _this.zoomEase * _this.friction;
 
-            // convert spherical to vector3
-            // then add translation
-            _this.camera.position.setFromSpherical(_this.spherical).add(_this.target);
-            _this.camera.lookAt(_this.target);
-            _this.camera.updateMatrixWorld();
+//             // convert spherical to vector3
+//             // then add translation
+//             _this.camera.position.setFromSpherical(_this.spherical).add(_this.target);
+//             _this.camera.lookAt(_this.target);
+//             _this.camera.updateMatrixWorld();
             
-            _this.camera.zoom = _this.easeZoom;
-            _this.camera.updateProjectionMatrix();
-        }
+//             _this.camera.zoom = _this.easeZoom;
+//             _this.camera.updateProjectionMatrix();
+//         }
 
-        const onAnim = () => {
-            looping = requestAnimationFrame(onAnim);
-            update();
-        }
+//         const onAnim = () => {
+//             looping = requestAnimationFrame(onAnim);
+//             update();
+//         }
 
-        const stopAnim = () => {
-            if(looping){
-                cancelAnimationFrame(looping);
-                looping = undefined;
-            }
-        }
+//         const stopAnim = () => {
+//             if(looping){
+//                 cancelAnimationFrame(looping);
+//                 looping = undefined;
+//             }
+//         }
 
-        const onMouseDown = (e) => {
-            e.preventDefault();
+//         const onMouseDown = (event) => {
+//             event.preventDefault();
+//             let e = (event.touches? event.touches[0]: event);
 
-            const mx = e.clientX;
-            const my = e.clientY;
-            mouse.startPos.set(mx, my);
-            mouse.lastPos.set(mx, my);
+//             const mx = e.clientX;
+//             const my = e.clientY;
+//             mouse.startPos.set(mx, my);
+//             mouse.lastPos.set(mx, my);
                     
-            clicked = true;
-            switch( e.button ){
-                case 0:
-                    mouse.status = mouse.button.left;
-                    break;
+//             clicked = true;
+//             switch( e.button ){
+//                 case 0:
+//                     mouse.status = mouse.button.left;
+//                     break;
                     
-                case 2:
-                    mouse.status = mouse.button.right;
-                    break;
+//                 case 2:
+//                     mouse.status = mouse.button.right;
+//                     break;
 
-                default:
-                    break;
-            }
+//                 default:
+//                     break;
+//             }
 
+//             document.addEventListener('mousemove', onMouseMove, false);
+//             document.addEventListener('mouseup', onMouseUp, false);
             
-            document.addEventListener('mousemove', onMouseMove, false);
-            document.addEventListener('mouseup', onMouseUp, false);
+//             document.addEventListener('touchmove', onMouseMove, false);
+//             document.addEventListener('touchend', onMouseUp, false);
 
-            // console.log('mousedown')
-        }
+//             // console.log('mousedown')
+//         }
 
-        const onMouseMove = (e) => {
-            if(clicked){
-                const mx = e.clientX;
-                const my = e.clientY;
+//         const onMouseMove = (event) => {
+//             if(clicked){
+//                 let e = (event.touches? event.touches[0]: event);
+//                 const mx = e.clientX;
+//                 const my = e.clientY;
 
-                mouse.offset.set(mouse.startPos.x - mx, mouse.startPos.y - my);
+//                 mouse.offset.set(mouse.startPos.x - mx, mouse.startPos.y - my);
 
-                mouse.delta.set(-(mouse.lastPos.x - mx), -(mouse.lastPos.y - my));
-                mouse.lastPos.set(mx,my);
+//                 mouse.delta.set(-(mouse.lastPos.x - mx), -(mouse.lastPos.y - my));
+//                 mouse.lastPos.set(mx,my);
                 
-                switch( mouse.status ){
-                    case mouse.button.left:
-                        const theta = 1 * (Math.PI * 2) * -mouse.delta.x / window.innerHeight;
-                        const phi = 1 * (Math.PI * 2) * -mouse.delta.y / window.innerHeight;
-                        _this.rotate(theta, phi);
-                        break;
+//                 switch( mouse.status ){
+//                     case mouse.button.left:
+//                         const theta = 1 * (Math.PI * 2) * -mouse.delta.x / window.innerHeight;
+//                         const phi = 1 * (Math.PI * 2) * -mouse.delta.y / window.innerHeight;
+//                         _this.rotate(theta, phi);
+//                         break;
                         
-                    case mouse.button.right:
-                        _this.pan(mouse.delta.x, mouse.delta.y);
-                        break;
+//                     case mouse.button.right:
+//                         _this.pan(mouse.delta.x, mouse.delta.y);
+//                         break;
         
-                    default:
-                        break;
-                }
-            }
-        }
+//                     default:
+//                         break;
+//                 }
+//             }
+//         }
 
-        const onMouseUp = () => {
-            clicked = false;
-            // console.log('mouseup')
-            document.removeEventListener('mousemove', onMouseMove, false);
-            document.removeEventListener('mouseup', onMouseUp, false);
-        }
+//         const onMouseUp = () => {
+//             clicked = false;
+//             // console.log('mouseup')
+//             document.removeEventListener('mousemove', onMouseMove, false);
+//             document.removeEventListener('mouseup', onMouseUp, false);
+            
+//             document.removeEventListener('touchmove', onMouseMove, false);
+//             document.removeEventListener('touchend', onMouseUp, false);
+//         }
 
-        const onMouseWheel = (e) => {
-            const y = e.deltaY/ (3 * 10);
-            dolly(y);
-            // _this.zoom(y);
-        }
+//         const onMouseWheel = (e) => {
+//             const y = e.deltaY/ (3 * 10);
+//             dolly(y);
+//             // _this.zoom(y);
+//         }
 
-        const onContextMenu = (e) => {
-            e.preventDefault();
-        }
+//         const onContextMenu = (e) => {
+//             e.preventDefault();
+//         }
 
-        this.destroy = () => {
-            document.removeEventListener('mousedown', onMouseDown, false);
-            document.removeEventListener('mousewheel', onMouseWheel, false);
-            document.removeEventListener('contextmenu', onContextMenu, false);
-            stopAnim();
-        }
+//         this.destroy = () => {
+//             document.removeEventListener('mousedown', onMouseDown, false);
+//             document.removeEventListener('touchstart', onMouseDown, false);
+//             document.removeEventListener('mousewheel', onMouseWheel, false);
+//             document.removeEventListener('contextmenu', onContextMenu, false);
+//             stopAnim();
+//         }
 
-        init();
-    }
+//         init();
+//     }
 
-    _CameraControlsSystem.prototype = Object.create( _super.prototype );
-    _CameraControlsSystem.prototype.constructor = _CameraControlsSystem; // re-assign constructor
-    // _CameraControlsSystem.prototype.panTo = function(){
-    //     console.log(this,'pan to');
-    // }
+//     _CameraControlsSystem.prototype = Object.create( _super.prototype );
+//     _CameraControlsSystem.prototype.constructor = _CameraControlsSystem; // re-assign constructor
+//     // _CameraControlsSystem.prototype.panTo = function(){
+//     //     console.log(this,'pan to');
+//     // }
 
-    return _CameraControlsSystem;
-}(THREE.EventDispatcher));
+//     return _CameraControlsSystem;
+// }(THREE.EventDispatcher));
 
 
 export const ObjectControl = (function(_super){
@@ -333,8 +341,8 @@ export const ObjectControl = (function(_super){
             status: ''
         };
         let clicked = false;
-        let thetaEnd = 0;
-        let phiEnd = 0;
+        // let thetaEnd = 0;
+        // let phiEnd = 0;
         let thetaEase = 0;
         let phiEase = 0;
         const friction = .8;
@@ -342,11 +350,12 @@ export const ObjectControl = (function(_super){
         let auotRotate = 0;
         let disable = false;
         let disableEase = false;
-        let numofTheta = 0;
-        let numofPhi = 0;
+        // let numofTheta = 0;
+        // let numofPhi = 0;
 
         const init = () => {
             document.addEventListener('mousedown', onMouseDown, false);
+            document.addEventListener('touchstart', onMouseDown, false);
             document.addEventListener('contextmenu', onContextMenu, false);
         }
 
@@ -386,8 +395,9 @@ export const ObjectControl = (function(_super){
             return {theta:thetaEase, phi:phiEase};
         }
 
-        const onMouseDown = (e) => {
-            e.preventDefault();
+        const onMouseDown = (event) => {
+            if(!event.touches) event.preventDefault();
+            let e = (event.touches? event.touches[0]: event);
 
             const mx = e.clientX;
             const my = e.clientY;
@@ -395,28 +405,31 @@ export const ObjectControl = (function(_super){
             mouse.lastPos.set(mx, my);
                     
             clicked = true;
-            switch( e.button ){
-                case 0:
-                    mouse.status = mouse.button.left;
-                    break;
+            // switch( e.button ){
+            //     case 0:
+            //         mouse.status = mouse.button.left;
+            //         break;
                     
-                // case 2:
-                //     mouse.status = mouse.button.right;
-                //     break;
+            //     // case 2:
+            //     //     mouse.status = mouse.button.right;
+            //     //     break;
 
-                default:
-                    break;
-            }
+            //     default:
+            //         break;
+            // }
 
             
             document.addEventListener('mousemove', onMouseMove, false);
             document.addEventListener('mouseup', onMouseUp, false);
+            document.addEventListener('touchmove', onMouseMove, false);
+            document.addEventListener('touchend', onMouseUp, false);
 
             // console.log('mousedown')
         }
 
-        const onMouseMove = (e) => {
+        const onMouseMove = (event) => {
             if(clicked){
+                let e = (event.touches? event.touches[0]: event);
                 const mx = e.clientX;
                 const my = e.clientY;
 
@@ -425,20 +438,20 @@ export const ObjectControl = (function(_super){
                 mouse.delta.set(-(mouse.lastPos.x - mx), -(mouse.lastPos.y - my));
                 mouse.lastPos.set(mx,my);
                 
-                switch( mouse.status ){
-                    case mouse.button.left:
+                // switch( mouse.status ){
+                //     case mouse.button.left:
                         const theta = 1 * (Math.PI * 2) * mouse.delta.x / window.innerHeight;
                         const phi = 1 * (Math.PI * 2) * mouse.delta.y / window.innerHeight;
                         rotate(theta, phi);
-                        break;
+                        // break;
                         
                     // case mouse.button.right:
                     //     _this.pan(mouse.delta.x, mouse.delta.y);
                     //     break;
         
-                    default:
-                        break;
-                }
+                //     default:
+                //         break;
+                // }
             }
         }
 
@@ -447,6 +460,9 @@ export const ObjectControl = (function(_super){
             disable = false;
             document.removeEventListener('mousemove', onMouseMove, false);
             document.removeEventListener('mouseup', onMouseUp, false);
+
+            document.removeEventListener('touchmove', onMouseMove, false);
+            document.removeEventListener('touchend', onMouseUp, false);
         }
 
         const onContextMenu = (e) => {
@@ -459,6 +475,7 @@ export const ObjectControl = (function(_super){
 
         this.destroy = () => {
             document.removeEventListener('mousedown', onMouseDown, false);
+            document.removeEventListener('touchend', onMouseDown, false);
             document.removeEventListener('contextmenu', onContextMenu, false);
         }
 

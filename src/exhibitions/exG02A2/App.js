@@ -309,7 +309,7 @@ const App = props => {
                         'vId = instanceId;',
                         'vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );',
                         'gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );',
-                        `gl_PointSize = 2.5 * ${window.innerHeight * Math.PI} / -mvPosition.z;`,
+                        `gl_PointSize = 2.5 * ${(window.innerHeight < window.innerWidth ? window.innerHeight : window.innerWidth * 4) * Math.PI} / -mvPosition.z;`,
                     '}'
                 ].join('\n'),
                 fragmentShader:[
@@ -542,10 +542,12 @@ const App = props => {
         const onMouseDown = () => {
             dragging = false;
             document.addEventListener("mouseup", onMouseUp, false);
+            document.addEventListener("touchend", onMouseUp, false);
         }
 
-        const onMouseMove = (e) => {
-            e.preventDefault();
+        const onMouseMove = (event) => {
+            if(!event.touches) event.preventDefault();
+            let e = (event.touches? event.touches[0]: event);
             if(!dragging) dragging = true;
             mouse.x = ( e.clientX / window.innerWidth ) * 2 - 1;
             mouse.y = - ( e.clientY / window.innerHeight ) * 2 + 1;
@@ -606,6 +608,7 @@ const App = props => {
                 }
             }
             document.removeEventListener('mouseup', onMouseUp, false);
+            document.removeEventListener('touchend', onMouseUp, false);
         }
 
         // const scaleUp = (instanceId) => {
@@ -689,7 +692,7 @@ const App = props => {
         
         const update = () => {
             draw();
-            stats.update();
+            if(stats) stats.update();
         };
   
         const render = () => {
@@ -726,6 +729,9 @@ const App = props => {
                 pops();
             }
         }
+        setTimeout(()=>{
+            pops();
+        },3000)
 
         
         const onWindowResize = () => {
@@ -749,6 +755,9 @@ const App = props => {
         const addEvent = () => {
             document.addEventListener("mousedown", onMouseDown, false);
             document.addEventListener("mousemove", onMouseMove, false);
+
+            document.addEventListener("touchstart", onMouseDown, false);
+            document.addEventListener("touchmove", onMouseMove, false);
             window.addEventListener("resize", onWindowResize, false);
             window.addEventListener("keydown", keyDown);
         }
@@ -758,6 +767,9 @@ const App = props => {
             if(dev) dev.destroy();
             document.removeEventListener("mousedown", onMouseDown, false);
             document.removeEventListener('mousemove', onMouseMove, false);
+            
+            document.removeEventListener("touchstart", onMouseDown, false);
+            document.removeEventListener('touchmove', onMouseMove, false);
             window.removeEventListener("resize", onWindowResize, false);
             window.removeEventListener("keydown", keyDown);
         }
