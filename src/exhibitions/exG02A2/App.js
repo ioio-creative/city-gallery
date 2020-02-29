@@ -366,6 +366,7 @@ const App = props => {
             const radius = 1024/2-10;
             let circles = [];
             const animValue = {r:0};
+            let counter = 0;
             canvas.width = 1024;
             canvas.height = 1024;
             
@@ -376,31 +377,38 @@ const App = props => {
             }
             
             const draw = (r) => {
-                ctx.strokeStyle = `rgba(255,225,255,${1-r})`;
-                ctx.lineWidth = 20;
+                ctx.strokeStyle = `rgba(255,225,255,${1-r*r})`;
+                ctx.lineWidth = 30;
                 ctx.beginPath();
                 ctx.arc(1024/2, 1024/2, r*radius, 0, 2*Math.PI);
                 ctx.stroke();
             }
             
-            setInterval(() => {
-                circles.push({radius:0});
-            },500);
-            
-            setInterval(() => {
+            const loop = () => {
+                requestAnimationFrame(loop);
+
+                if(counter >= 40){
+                    circles.push({radius:0});
+                    counter = 0;
+                }
+                counter++;
+
                 clearCanvas();
                 const newCircles = [];
                 for(let i=0; i<circles.length; i++){
                     const circle = circles[i];
-                    circle.radius+=.02;
+                    circle.radius+=.01;
                     draw(circle.radius);
 
-                    if(circle.radius <= 1)
+                    if(circle.radius <= 1.5)
                         newCircles.push(circle);
                 }
                 circles = newCircles;
-                pointsBgMaterial.uniforms.textures.value[1].needsUpdate = true;
-            },1000/60);
+                
+                if(pointsBgMaterial)
+                    pointsBgMaterial.uniforms.textures.value[1].needsUpdate = true;
+            }
+            loop();
 
             // const tl = gsap.timeline({ repeat:-1, repeatDelay:1 });
             // tl.add(()=>{circles.push({radius:0})});
