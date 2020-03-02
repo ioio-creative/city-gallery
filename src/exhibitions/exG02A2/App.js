@@ -1,14 +1,16 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 // import { useSelector } from 'react-redux';
-import {ObjectControl, initStats, initGUI, removeStats, removeGUI, getScreenSizeIn3dWorld , devMode, calcPosFromLatLonRad, calcThetaPhiFromLatLon, animEase } from './globalFuncFor3d';
+import {ObjectControl, initStats, initGUI, random, removeStats, removeGUI, getScreenSizeIn3dWorld , devMode, calcPosFromLatLonRad, calcThetaPhiFromLatLon, animEase } from './globalFuncFor3d';
 import * as THREE from 'three';
+import {OBJLoader} from 'three-obj-mtl-loader';
 import './style.scss';
 
 import earthMap from './images/earth/8081_earthmap4k.jpg';
 import earthBumpMap from './images/earth/8081_earthbump4k.jpg';
 import earthSpecularMap from './images/earth/8081_earthspec4k.jpg';
 import earthNormalMap from './images/earth/earth_normalmap4k.jpg';
+import cloudObj from './low_poly_cloud.obj';
 
 
 const App = props => {
@@ -43,12 +45,15 @@ const App = props => {
         let linesMesh = null;
         let canvasTexture = null;
         let animCanvasTexture = null;
+        const numsOfClouds = 8;
+        let cloudsMesh = null;
+        const cloudSpeed = [];
         // let canvas = null;
 
         const raycaster = new THREE.Raycaster();
         const mouse = new THREE.Vector2(1,1);
-        const scaleUpMatrix = new THREE.Matrix4().makeScale( 1,1,20 );
-        const scaleDownMatrix = new THREE.Matrix4().makeScale( .5, .5, .5 );
+        // const scaleUpMatrix = new THREE.Matrix4().makeRotationY( 0.1 );
+        // const scaleDownMatrix = new THREE.Matrix4().makeScale( .5, .5, .5 );
         const instanceMatrix = new THREE.Matrix4();
         const instanceMatrix2 = new THREE.Matrix4();
         const matrix = new THREE.Matrix4();
@@ -114,7 +119,7 @@ const App = props => {
 
             // cameraControl = new CameraControlsSystem(camera, meshEarth);
             objectControl = new ObjectControl(groupedMesh);
-            // dev = devMode(scene);
+            dev = devMode(scene);
             
             renderer.setAnimationLoop(function() {
                 update();
@@ -138,6 +143,7 @@ const App = props => {
             initEarth();
             initHalo();
             initLocationPoints();
+            initClouds();
 
             for(let i=0; i< meshItems.length; i++)
                 groupedMesh.add(meshItems[i]);
@@ -340,7 +346,6 @@ const App = props => {
             });
             const mesh = new THREE.Points(geometry, pointsBgMaterial);
             
-            console.log(mesh)
             materialItems.push(pointsBgMaterial);
             geometryItems.push(geometry);
             meshItems.push(mesh);
@@ -453,6 +458,60 @@ const App = props => {
             }
 
             init();
+        }
+
+        const initClouds = () => {
+            const objLoader = new OBJLoader();
+            objLoader.load(cloudObj, (object) => {
+                var geometry = new THREE.Geometry().fromBufferGeometry( object.children[0].geometry );
+                geometry.mergeVertices();
+                geometry.computeVertexNormals();
+                // geometry.rotateX(270 * Math.PI/180)
+                geometry.scale(.1, .1, .1);
+                geometry.translate(0,20,0);
+
+                const material = new THREE.MeshPhongMaterial({color:0xffffff, shininess: 30});
+                cloudsMesh = new THREE.InstancedMesh( geometry, material, numsOfClouds );
+                cloudsMesh.castShadow = true;
+                const transform = new THREE.Object3D();
+
+                for(let i=0; i<numsOfClouds; i++){
+                    cloudSpeed.push(Math.random() * 0.0005 + 0.0001);
+                    // const pos = initLocationPointsPosition({lat:random(-90, 90), lon:random(-180, 180)});
+
+                    // const y = Math.random()*1;
+                    const scale = Math.random() * .2 + 1.1;
+                    transform.rotation.set(Math.random()*15, 0, Math.random()*15);
+                    // transform.updateMatrix();
+                    // transform.position.multiplyScalar(10);
+                    // transform.lookAt(0,0,0);
+                    transform.scale.set(scale, scale, scale);
+                    transform.updateMatrix();
+
+                    // transform.updateMatrix();
+                    
+                    cloudsMesh.setMatrixAt( i, transform.matrix );
+                }
+
+                groupedMesh.add(cloudsMesh);
+                
+                materialItems.push(material);
+                geometryItems.push(geometry);
+                meshItems.push(cloudsMesh);
+            })
+
+        }
+
+        const updateClouds = () => {
+            if(cloudsMesh){
+                for(let i=0; i<numsOfClouds; i++){
+                    cloudsMesh.getMatrixAt(i, instanceMatrix)
+                    matrix.multiplyMatrices( instanceMatrix, new THREE.Matrix4().makeRotationZ( cloudSpeed[i] ) );
+                    
+                    cloudsMesh.setMatrixAt( i, matrix );
+                    cloudsMesh.instanceMatrix.needsUpdate = true;
+                }
+            }
         }
 
         const updateColor = (geometry, mesh) => {
@@ -664,6 +723,8 @@ const App = props => {
         
         const draw = () => {
             objectControl.draw();
+
+            updateClouds();
 
             raycaster.setFromCamera( mouse, camera );
             const intersection = raycaster.intersectObject( pointsMesh );

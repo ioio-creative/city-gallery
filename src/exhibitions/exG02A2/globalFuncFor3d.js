@@ -44,6 +44,10 @@ export const removeGUI = () => {
     if(gui) gui.destroy();
 }
 
+export const random = (min, max) => {
+    return Math.round((Math.random() *( Math.abs(max - min))) + min);
+ }
+
 export const getScreenSizeIn3dWorld = (camera) => {
     let w,h;
     const vFOV = THREE.Math.degToRad(camera.fov);
@@ -360,7 +364,7 @@ export const ObjectControl = (function(_super){
         }
 
         this.draw = () => {
-            if(!clicked && !disable) auotRotate += 0.001;
+            // if(!clicked && !disable) auotRotate += 0.001;
             if(!disableEase){
                 thetaEase += ((sphericalEnd.theta + auotRotate) - thetaEase) * .05 * friction;
                 phiEase += ((sphericalEnd.phi) - phiEase) * .05 * friction;
