@@ -119,7 +119,7 @@ const App = props => {
 
             // cameraControl = new CameraControlsSystem(camera, meshEarth);
             objectControl = new ObjectControl(groupedMesh);
-            dev = devMode(scene);
+            // dev = devMode(scene);
             
             renderer.setAnimationLoop(function() {
                 update();
