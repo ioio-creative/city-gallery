@@ -740,6 +740,10 @@ const App = props => {
                 animCanvasTexture.start();
                 pointsBgMaterial.uniforms.activeInstanceId.value = currentHoveredInstanceId;
                 oldHoveredInstanceId = currentHoveredInstanceId;
+
+                //
+                gsap.to('#selectCity', .3, {autoAlpha:0, ease:'power1.inOut'});
+                gsap.to('#locationsOuterWrap', .3, {autoAlpha:1, ease:'power1.inOut'});
             }
         }
         selectLocationFunc.current = {selectLocation}
@@ -788,7 +792,8 @@ const App = props => {
             const tl = gsap.timeline();
             tl.to('#lang', .3, {autoAlpha:0, ease:'power1.inOut'});
             tl.to(camera.position, 1.6, {y:20, z:60, ease:'power3.inOut'},'-=.1');
-            tl.call(pops, null);
+            tl.to('#locationSelector', .3, {autoAlpha:1, ease:'power1.inOut'},'end');
+            tl.call(pops, null,'end');
         }
         zoomInFunc.current = {zoomIn}
 
@@ -1062,7 +1067,7 @@ const App = props => {
                 <div id="hk" className="sameWidth big">Hong Kong</div>
                 <div id="line"></div>
                 <div id="selector" className="sameWidth" onMouseDown={disableRotate} onTouchStart={disableRotate}>
-                    {/* <div className="big">Select a City</div> */}
+                    <div id="selectCity" className="big">Select a City</div>
                     <div id="locationsOuterWrap">
                         <div ref={locationsWrapElem} id="locationsWrap">
                             <ul ref={locationsElem} id="locations">
