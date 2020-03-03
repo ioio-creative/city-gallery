@@ -557,9 +557,6 @@ const App = props => {
             canvas.height = 1024;
 
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = 'rgba(255,255,255,0)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
             ctx.strokeStyle = color;
             ctx.lineWidth = lineWidth;
             for(let i=0; i<Math.PI*2; i+=eachRadian){
@@ -682,8 +679,6 @@ const App = props => {
         const onMouseUp = () => {
             if(!dragging){
                 if(currentHoveredInstanceId !== null && currentHoveredInstanceId !== oldHoveredInstanceId && currentHoveredInstanceId !== 0){
-                    objectControl.disableAutoRotate();
-
                     selectLocation();
                     moveFromIdFunc.current.moveFromId(currentHoveredInstanceId);
                     showLocationUI();
@@ -696,6 +691,8 @@ const App = props => {
         const selectLocation = (id) => {
             if(id) currentHoveredInstanceId = id;
             if(currentHoveredInstanceId !== oldHoveredInstanceId){
+                objectControl.disableAutoRotate();
+
                 // find short rotation distance
                 const {targetTheta, targetPhi} = calcThetaPhiFromLatLon(locations[currentHoveredInstanceId].lat, locations[currentHoveredInstanceId].lon);
                 const {theta, phi} = objectControl.getCurrentThetaPhi();
@@ -952,6 +949,8 @@ const App = props => {
             clicked = true;
             document.addEventListener('mousemove', onMouseMove, false);
             document.addEventListener('mouseup', onMouseUp, false);
+            document.addEventListener('touchmove', onMouseMove, false);
+            document.addEventListener('touchend', onMouseUp, false);
         }
 
         const onMouseMove = (event) => {
@@ -977,6 +976,8 @@ const App = props => {
             setScrolling(false);
             document.removeEventListener('mousemove', onMouseMove, false);
             document.removeEventListener('mouseup', onMouseUp, false);
+            document.removeEventListener('touchmove', onMouseMove, false);
+            document.removeEventListener('touchend', onMouseUp, false);
         }
 
         const moveElem = (delta) => {
@@ -1018,6 +1019,7 @@ const App = props => {
 
         const initEvent = () => {
             parent.addEventListener('mousedown', onMouseDown, false);
+            parent.addEventListener('touchstart', onMouseDown, false);
         }
 
         initEvent();
@@ -1050,7 +1052,7 @@ const App = props => {
 
     return (
         <div id="home">
-            <div ref={canvasWrap} id="canvasWrap" onMouseDown={enableRotate}></div>
+            <div ref={canvasWrap} id="canvasWrap" onMouseDown={enableRotate} onTouchStart={enableRotate}></div>
             <div id="lang">
                 <p>Please select language<br/>請選擇語言</p>
                 <div onClick={()=>onChangeLang('en')}>English</div>
@@ -1059,7 +1061,7 @@ const App = props => {
             <div id="locationSelector">
                 <div id="hk" className="sameWidth big">Hong Kong</div>
                 <div id="line"></div>
-                <div id="selector" className="sameWidth" onMouseDown={disableRotate}>
+                <div id="selector" className="sameWidth" onMouseDown={disableRotate} onTouchStart={disableRotate}>
                     {/* <div className="big">Select a City</div> */}
                     <div id="locationsOuterWrap">
                         <div ref={locationsWrapElem} id="locationsWrap">
