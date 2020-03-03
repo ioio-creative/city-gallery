@@ -383,7 +383,7 @@ export const ObjectControl = (function(_super){
             if(disableEase) disableEase = false;
 
             sphericalEnd.theta = sphericalEnd.theta + theta;
-            sphericalEnd.phi = sphericalEnd.phi + phi;
+            sphericalEnd.phi = Math.min(90*Math.PI/180, Math.max(-90*Math.PI/180, sphericalEnd.phi + phi));
         }
 
         this.setRotate = (theta, phi) => {
