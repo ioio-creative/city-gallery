@@ -1,9 +1,133 @@
+@import '../../setting.scss';
+
 #home{
     width:100%;
     height:100%;
-    background:#96e4fb;
+    background: linear-gradient(130deg, rgba(150,228,251,1) 0%, rgba(174,210,242,1) 100%);
     overflow: hidden;
+    #lang{
+        width:vw-calc(400);
+        position: absolute;
+        bottom:vw-calc(100);
+        left:50%;
+        transform: translate3d(-50%,0,0);
+        display: flex;
+        text-align: center;
+        p{
+            width:100%;
+            position: absolute;
+            bottom:100%;
+        }
+        div{
+            width:50%;
+            padding:vw-calc(18 30);
+            margin:vw-calc(0 8);
+            background:#fff;
+            border-radius: vw-calc(50);
+            font-size: vw-calc(20);
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            &:active{
+                transform: translate3d(0,0,0) scale(.9);
+            }
+        }
+    }
+    #locationSelector{
+        position: absolute;
+        bottom:vw-calc(200);
+        left:50%;
+        transform: translate3d(-50%,0,0);
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color:#fff;
+        font-weight: bold;
+        text-shadow: 0 vw-calc(3 7) rgba(0,0,0,.2);
+        font-size:vw-calc(40);
+        #hk{
+            color:#003557;
+        }
+        #line{
+            width:vw-calc(250);
+            height:vw-calc(5);
+            margin-top: vw-calc(18);
+            background:#fff;
+        }
+        .big,
+        #selector li{
+            font-size:vw-calc(100);
+        }
+        .sameWidth{
+            width:vw-calc(650);
+        }
+        #selector{
+            position: relative;
+            #locationsOuterWrap{
+                position: absolute;
+                top:50%;
+                left:40%;
+                transform: translate3d(-50%,-50%,0);
+                &:before{
+                    content:'';
+                    width: 0;
+                    height: 0;
+                    border-top: vw-calc(15) solid transparent;
+                    border-bottom: vw-calc(15) solid transparent; 
+                    border-right:vw-calc(23) solid #ffffff;
+                    position: absolute;
+                    top:50%;
+                    left:100%;
+                }
+            }
+            #locationsWrap{
+                height:vw-calc(300);
+                position: relative;
+                overflow: hidden;
+                #locations{
+                    position: relative;
+                    top:0;
+                    left:50%;
+                    transform: translate3d(-50%,0,0);
+                    margin: 0;
+                    padding: 0;
+                    li{
+                        height:vw-calc(80);
+                        list-style: none;
+                        line-height: vw-calc(80);
+                        // border: 1px solid;
+                        padding:vw-calc(10 0);
+                        &.active{
+                            span{
+                                transform: translate3d(0,-5%,0) scale(1);
+                            }
+                        }
+                        &:not(.active):active{
+                            span{
+                                transform: translate3d(0,-4%,0) scale(.4);
+                            }
+                        }
+                        // &:last-child{
+                        //     span{
+                        //         transform: translate3d(0,10%,0) scale(.5);
+                        //     }
+                        // }
+                        span{
+                            display: inline-block;
+                            transform: translate3d(0,-4%,0) scale(.5);
+                            transition: all .6s cubic-bezier(0.19, 1, 0.22, 1);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 html, body{
     position: fixed;
 }
+
+// body > canvas{
+    // position: fixed;
+    // top:0;
+    // z-index: 2;
+// }

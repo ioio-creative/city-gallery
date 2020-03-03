@@ -352,8 +352,9 @@ export const ObjectControl = (function(_super){
         const friction = .8;
         const sphericalEnd = new THREE.Spherical();
         let auotRotate = 0;
-        let disable = false;
+        let disableAuto = false;
         let disableEase = false;
+        let disable = false;
         // let numofTheta = 0;
         // let numofPhi = 0;
 
@@ -364,7 +365,7 @@ export const ObjectControl = (function(_super){
         }
 
         this.draw = () => {
-            if(!clicked && !disable) auotRotate += 0.001;
+            if(!clicked && !disableAuto) auotRotate += 0.001;
             if(!disableEase){
                 thetaEase += ((sphericalEnd.theta + auotRotate) - thetaEase) * .05 * friction;
                 phiEase += ((sphericalEnd.phi) - phiEase) * .05 * friction;
@@ -432,7 +433,7 @@ export const ObjectControl = (function(_super){
         }
 
         const onMouseMove = (event) => {
-            if(clicked){
+            if(clicked && !disable){
                 let e = (event.touches? event.touches[0]: event);
                 const mx = e.clientX;
                 const my = e.clientY;
@@ -461,7 +462,7 @@ export const ObjectControl = (function(_super){
 
         const onMouseUp = () => {
             clicked = false;
-            disable = false;
+            disableAuto = false;
             document.removeEventListener('mousemove', onMouseMove, false);
             document.removeEventListener('mouseup', onMouseUp, false);
 
@@ -474,12 +475,24 @@ export const ObjectControl = (function(_super){
         }
 
         this.disableAutoRotate = () => {
-            disable = true;
+            disableAuto = true;
+        }
+
+        this.enable = () => {
+            if(disable){
+                disable = false;
+            }
+        }
+
+        this.disable = () => {
+            if(!disable){
+                disable = true;
+            }
         }
 
         this.destroy = () => {
             document.removeEventListener('mousedown', onMouseDown, false);
-            document.removeEventListener('touchend', onMouseDown, false);
+            document.removeEventListener('touchstart', onMouseDown, false);
             document.removeEventListener('contextmenu', onContextMenu, false);
         }
 
