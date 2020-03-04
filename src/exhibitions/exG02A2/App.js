@@ -1086,6 +1086,33 @@ const App = props => {
                     </div>
                 </div>
             </div>
+            <div id="detailPage">
+                <div id="sectionWrap">
+                    <div id="opening" className="section">
+                        <div id="left" className="half">
+                            <span className="name">Hong Kong</span>
+                            <div className="wrap">
+                                <div style={{backgroundImage:'url()'}}></div>
+                            </div>
+                        </div>
+                        <div id="right" className="half">
+                            <span className="name">Japan</span>
+                            <div className="wrap">
+                                <div style={{backgroundImage:'url()'}}></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="nav">
+                    <ul>
+                        <li>Urban Form</li>
+                        <li>Population Density</li>
+                        <li>Tallest Buildings</li>
+                        <li>Transportation</li>
+                        <li>GDP</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     )
 }
