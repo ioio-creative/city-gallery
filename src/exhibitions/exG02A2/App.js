@@ -35,7 +35,9 @@ const App = props => {
     // const moveToFunc = useRef(null);
     const moveFromIdFunc = useRef(null);
     const [selectedId, setSelectedId] = useState(null);
+    const [detailIdx, setDetailIdx] = useState(null);
     const [scrolling, setScrolling] = useState(null);
+    const [zindex, setZindex] = useState(1);
 
     useEffect(()=>{
         let scene = undefined,
@@ -681,7 +683,6 @@ const App = props => {
                 if(currentHoveredInstanceId !== null && currentHoveredInstanceId !== oldHoveredInstanceId && currentHoveredInstanceId !== 0){
                     selectLocation();
                     moveFromIdFunc.current.moveFromId(currentHoveredInstanceId);
-                    showLocationUI();
                 }
             }
             document.removeEventListener('mouseup', onMouseUp, false);
@@ -744,6 +745,8 @@ const App = props => {
                 //
                 gsap.to('#selectCity', .3, {autoAlpha:0, ease:'power1.inOut'});
                 gsap.to('#locationsOuterWrap', .3, {autoAlpha:1, ease:'power1.inOut'});
+                
+                showDetails();
             }
         }
         selectLocationFunc.current = {selectLocation}
@@ -784,8 +787,10 @@ const App = props => {
             }
         }
 
-        const showLocationUI = () => {
-
+        const showDetails = () => {
+            gsap.set('#detailPage',{delay:2, className:'active'});
+            gsap.fromTo('#opening .bg', 1, {y:'100%'},{force3D:true, delay:2, y:'0%', stagger:.1, ease:'expo.inOut'});
+            // gsap.set('#opening',{delay:2, className:'section active'});
         }
 
         const zoomIn = () => {
@@ -1039,6 +1044,15 @@ const App = props => {
         zoomInFunc.current.zoomIn();
     }
 
+    const onChangeDetail = (idx) => {
+        if(detailIdx !== idx){
+            setDetailIdx(idx);
+            setZindex(zindex+1);
+            gsap.set(`#section${idx}`, {zIndex:zindex});
+            gsap.fromTo(`#section${idx} .bg`, 1, {y:'100%'},{force3D:true, y:'0%', stagger:.1, ease:'expo.inOut'});
+        }
+    }
+
     const enableRotate = () => {
         enableRotateFunc.current.enableRotate();
     }
@@ -1086,30 +1100,64 @@ const App = props => {
                     </div>
                 </div>
             </div>
-            <div id="detailPage">
+            <div id="detailPage" className="">
                 <div id="sectionWrap">
-                    <div id="opening" className="section">
+                    <div id="opening" className={`section ${!detailIdx ? 'active' : ''}`}>
                         <div id="left" className="half">
                             <span className="name">Hong Kong</span>
                             <div className="wrap">
                                 <div style={{backgroundImage:'url()'}}></div>
                             </div>
+                            <div className="bg"></div>
                         </div>
                         <div id="right" className="half">
                             <span className="name">Japan</span>
                             <div className="wrap">
                                 <div style={{backgroundImage:'url()'}}></div>
                             </div>
+                            <div className="bg"></div>
+                        </div>
+                    </div>
+                    <div id="section1" className={`section ${detailIdx === 1 ? 'active' : ''}`}>
+                        <div id="left" className="half">
+                            <div className="wrap">
+                                <span className="name">Hong Kong</span>
+                                <div style={{backgroundImage:'url()'}}></div>
+                            </div>
+                            <div className="bg"></div>
+                        </div>
+                        <div id="right" className="half">
+                            <div className="wrap">
+                            <span className="name">Japan</span>
+                                <div style={{backgroundImage:'url()'}}></div>
+                            </div>
+                            <div className="bg"></div>
+                        </div>
+                    </div>
+                    <div id="section2" className={`section ${detailIdx === 2 ? 'active' : ''}`}>
+                        <div id="left" className="half">
+                            <div className="wrap">
+                                <span className="name">Hong Kong</span>
+                                <div style={{backgroundImage:'url()'}}></div>
+                            </div>
+                            <div className="bg"></div>
+                        </div>
+                        <div id="right" className="half">
+                            <div className="wrap">
+                                <span className="name">Japan</span>
+                                <div style={{backgroundImage:'url()'}}></div>
+                            </div>
+                            <div className="bg"></div>
                         </div>
                     </div>
                 </div>
                 <div id="nav">
                     <ul>
-                        <li>Urban Form</li>
-                        <li>Population Density</li>
-                        <li>Tallest Buildings</li>
-                        <li>Transportation</li>
-                        <li>GDP</li>
+                        <li className={detailIdx === 1 ? 'active' : ''} onClick={()=>onChangeDetail(1)}><span>Urban Form</span></li>
+                        <li className={detailIdx === 2 ? 'active' : ''} onClick={()=>onChangeDetail(2)}><span>Population Density</span></li>
+                        <li className={detailIdx === 3 ? 'active' : ''} onClick={()=>onChangeDetail(3)}><span>Tallest Buildings</span></li>
+                        <li className={detailIdx === 4 ? 'active' : ''} onClick={()=>onChangeDetail(4)}><span>Transportation</span></li>
+                        <li className={detailIdx === 5 ? 'active' : ''} onClick={()=>onChangeDetail(5)}><span>GDP</span></li>
                     </ul>
                 </div>
             </div>
