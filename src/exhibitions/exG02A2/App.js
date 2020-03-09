@@ -12,6 +12,8 @@ import earthSpecularMap from './images/earth/8081_earthspec4k.jpg';
 import earthNormalMap from './images/earth/earth_normalmap4k.jpg';
 import cloudObj from './low_poly_cloud.obj';
 
+import Section2 from './detailpage/Section2';
+
 
 const App = props => {
     // const count = useSelector(state => state.count);
@@ -790,6 +792,10 @@ const App = props => {
         const showDetails = () => {
             gsap.set('#detailPage',{delay:2, className:'active'});
             gsap.fromTo('#opening .bg', 1, {y:'100%'},{force3D:true, delay:2, y:'0%', stagger:.1, ease:'expo.inOut'});
+
+            setTimeout(()=>{
+                setDetailIdx(0);
+            },2000);
             // gsap.set('#opening',{delay:2, className:'section active'});
         }
 
@@ -1049,7 +1055,7 @@ const App = props => {
             setDetailIdx(idx);
             setZindex(zindex+1);
             gsap.set(`#section${idx}`, {zIndex:zindex});
-            gsap.fromTo(`#section${idx} .bg`, 1, {y:'100%'},{force3D:true, y:'0%', stagger:.1, ease:'expo.inOut'});
+            gsap.fromTo(`#section${idx} .bg`, 1, {y:'100%'},{force3D:true, y:'0%', stagger:.08, ease:'expo.inOut'});
         }
     }
 
@@ -1067,6 +1073,7 @@ const App = props => {
             selectLocationFunc.current.selectLocation(id);
         }
     }
+
 
 
     return (
@@ -1100,41 +1107,9 @@ const App = props => {
                     </div>
                 </div>
             </div>
-            <div id="detailPage" className="">
+            <div id="detailPage" className="active">
                 <div id="sectionWrap">
-                    <div id="opening" className={`section ${!detailIdx ? 'active' : ''}`}>
-                        <div id="left" className="half">
-                            <span className="name">Hong Kong</span>
-                            <div className="wrap">
-                                <div style={{backgroundImage:'url()'}}></div>
-                            </div>
-                            <div className="bg"></div>
-                        </div>
-                        <div id="right" className="half">
-                            <span className="name">Japan</span>
-                            <div className="wrap">
-                                <div style={{backgroundImage:'url()'}}></div>
-                            </div>
-                            <div className="bg"></div>
-                        </div>
-                    </div>
-                    <div id="section1" className={`section ${detailIdx === 1 ? 'active' : ''}`}>
-                        <div id="left" className="half">
-                            <div className="wrap">
-                                <span className="name">Hong Kong</span>
-                                <div style={{backgroundImage:'url()'}}></div>
-                            </div>
-                            <div className="bg"></div>
-                        </div>
-                        <div id="right" className="half">
-                            <div className="wrap">
-                            <span className="name">Japan</span>
-                                <div style={{backgroundImage:'url()'}}></div>
-                            </div>
-                            <div className="bg"></div>
-                        </div>
-                    </div>
-                    <div id="section2" className={`section ${detailIdx === 2 ? 'active' : ''}`}>
+                    <div id="opening" className={`section ${detailIdx !== null ? 'active' : ''}`}>
                         <div id="left" className="half">
                             <div className="wrap">
                                 <span className="name">Hong Kong</span>
@@ -1150,6 +1125,55 @@ const App = props => {
                             <div className="bg"></div>
                         </div>
                     </div>
+
+                    <div className="locationName left">HONG KONG</div>
+                    <div className="locationName right">JAPAN</div>
+                    
+                    <div id={`section1`} className={`section ${detailIdx === 1 ? 'active' : ''}`}>
+                        <div id="left" className="half">
+                            <div className="wrap">
+                                {/* <div className="name"><span>Hong Kong</span></div> */}
+                                <div className="imageWrap" style={{backgroundImage:'url()'}}></div>
+                            </div>
+                            <div className="bg"></div>
+                        </div>
+                        <div id="right" className="half">
+                            <div className="wrap">
+                            {/* <div className="name"><span>Japan</span></div> */}
+                                <div className="imageWrap" style={{backgroundImage:'url()'}}></div>
+                            </div>
+                            <div className="bg"></div>
+                        </div>
+                    </div>
+                    
+                    <Section2 detailIdx={detailIdx} />
+                    {/* <div id={`section2`} className={`section ${detailIdx === 2 ? 'active' : ''}`}>
+                        <div id="left" className="half">
+                            <div className="wrap">
+                                <span className="name">Hong Kong</span>
+                                <div className="imageWrap">
+                                    <div className="stageWrap">
+                                        <div className="stage">
+                                            <span className="people"></span>
+                                            <span className="people"></span>
+                                            <span className="people"></span>
+                                            <span className="people"></span>
+                                            <span className="people"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="bg"></div>
+                        </div>
+                        <div id="right" className="half">
+                            <div className="wrap">
+                            <span className="name">Japan</span>
+                                <div className="imageWrap"></div>
+                            </div>
+                            <div className="bg"></div>
+                        </div>
+                    </div> */}
+                    
                 </div>
                 <div id="nav">
                     <ul>

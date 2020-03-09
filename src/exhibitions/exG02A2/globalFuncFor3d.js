@@ -45,7 +45,7 @@ export const removeGUI = () => {
 }
 
 export const random = (min, max) => {
-    return Math.round((Math.random() *( Math.abs(max - min))) + min);
+    return (Math.random() *( Math.abs(max - min))) + min;
  }
 
 export const getScreenSizeIn3dWorld = (camera) => {

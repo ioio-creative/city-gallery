@@ -5,6 +5,16 @@
     height:100%;
     background: linear-gradient(130deg, rgba(150,228,251,1) 0%, rgba(174,210,242,1) 100%);
     overflow: hidden;
+    & *{
+        box-sizing: border-box;
+    }
+    ul{
+        margin:0;
+        padding:0;
+        li{
+            list-style: none;
+        }
+    }
     #lang{
         width:vw-calc(400);
         position: absolute;
@@ -96,7 +106,6 @@
                     padding: 0;
                     li{
                         height:vw-calc(80);
-                        list-style: none;
                         line-height: vw-calc(80);
                         // border: 1px solid;
                         padding:vw-calc(10 0);
@@ -134,12 +143,25 @@
         z-index: 3;
         opacity: 0;
         visibility: hidden;
+        color:#fff;
         &.active{
             opacity: 1;
             visibility: visible;
-            // #sectionWrap{
-            //     .section{
-            //         &.active{
+            #sectionWrap{
+                .section{
+                    &.active{
+                        .half{
+                            .wrap{
+                                opacity: 1;
+                                visibility: visible;
+                                transition-delay: .8s;
+                                transition-duration: 1s;
+                            }
+                        }
+                    }
+                }
+            }
+            
             //             .half{
             //                 &#left{
             //                     &:after{
@@ -152,9 +174,6 @@
             //                     }
             //                 }
             //             }
-            //         }
-            //     }
-            // }
             #nav{
                 transform: translate3d(0,0%,0);
             }
@@ -163,6 +182,20 @@
             width:100%;
             height:100%;
             position: relative;
+            .locationName{
+                position: absolute;
+                top:vw-calc(70);
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size:vw-calc(50);
+                z-index: 999999;
+                &.left{
+                    left:vw-calc(120);
+                }
+                &.right{
+                    right:vw-calc(120);
+                }
+            }
             .section{
                 width:100%;
                 height:100%;
@@ -172,6 +205,18 @@
                 z-index: 0;
                 display: flex;
                 overflow: hidden;
+                &#opening{
+                    .name{
+                        position: absolute;
+                        top:50%;
+                        left:50%;
+                        z-index: 1;
+                        transform: translate3d(-50%,-50%,0);
+                        font-size:vw-calc(80);
+                        font-weight: bold;
+                        text-shadow: 0 vw-calc(3 7) rgba(0,0,0,.2);
+                    }
+                }
                 &#section1{
                     .half{
                         &#left{
@@ -190,12 +235,182 @@
                     .half{
                         &#left{
                             .bg{
-                                background:#e4ffc5;
+                                background:#9cc1e4;
                             }
                         }
                         &#right{
                             .bg{
                                 background:#dbc4e9;
+                            }
+                        }
+                    }
+                    ul{
+                        li{
+                            padding-top:vw-calc(19);
+                            &:first-child{
+                                padding-top:0;
+                            }
+                        }
+                    }
+                    .imageWrap{
+                        .stageWrap{
+                            width:0;
+                            height:0;
+                            position: absolute;
+                            top:70%;
+                            left:50%;
+                            transform: rotate3d(1, 0, 0, 55deg);
+                            transform-style: preserve-3d;
+                            .stage{
+                                width:25vw;
+                                height: 25vw;
+                                background: #fffce1;
+                                transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, 45deg);
+                                transform-style: preserve-3d;
+                                box-shadow: 4px 4px 6px rgba(0,0,0,0.1);
+                                .people{
+                                    width:vw-calc(31);
+                                    height:vw-calc(61);
+                                    position: absolute;
+                                    top:0;
+                                    left:0;
+                                    display: inline-block;
+                                    transform: translate3d(-999px, -999px, 0) rotate3d(1, 0, 0, -90deg);
+                                    transform-origin: bottom;
+                                    transform-style: preserve-3d;
+                                    div{
+                                        width:100%;
+                                        height:100%;
+                                        display: block;
+                                        transform: translate3d(0,0,0) rotate3d(0,1, 0, 40deg);
+                                    }
+                                    &#_1{
+                                        &.left{
+                                            div{
+                                                background:url('./images/people1_left.png') center center no-repeat;
+                                                background-size:100%;
+                                            }
+                                        }
+                                        &.right{
+                                            div{
+                                                background:url('./images/people1_right.png') center center no-repeat;
+                                                background-size:100%;
+                                            }
+                                        }
+                                    }
+                                    &#_2{
+                                        &.left{
+                                            div{
+                                                background:url('./images/people2_left.png') center center no-repeat;
+                                                background-size:100%;
+                                            }
+                                        }
+                                        &.right{
+                                            div{
+                                                background:url('./images/people2_right.png') center center no-repeat;
+                                                background-size:100%;
+                                            }
+                                        }
+                                    }
+                                    &#_1{
+                                        &.left{
+                                            div{
+                                                background:url('./images/people1_left.png') center center no-repeat;
+                                                background-size:100%;
+                                            }
+                                        }
+                                        &.right{
+                                            div{
+                                                background:url('./images/people1_right.png') center center no-repeat;
+                                                background-size:100%;
+                                            }
+                                        }
+                                    }
+                                    &#_2{
+                                        &.left{
+                                            div{
+                                                background:url('./images/people2_left.png') center center no-repeat;
+                                                background-size:100%;
+                                            }
+                                        }
+                                        &.right{
+                                            div{
+                                                background:url('./images/people2_right.png') center center no-repeat;
+                                                background-size:100%;
+                                            }
+                                        }
+                                    }
+                                    &#_3{
+                                        &.left{
+                                            div{
+                                                background:url('./images/people3_left.png') center center no-repeat;
+                                                background-size:100%;
+                                            }
+                                        }
+                                        &.right{
+                                            div{
+                                                background:url('./images/people3_right.png') center center no-repeat;
+                                                background-size:100%;
+                                            }
+                                        }
+                                    }
+                                    &#_4{
+                                        &.left{
+                                            div{
+                                                background:url('./images/people4_left.png') center center no-repeat;
+                                                background-size:100%;
+                                            }
+                                        }
+                                        &.right{
+                                            div{
+                                                background:url('./images/people4_right.png') center center no-repeat;
+                                                background-size:100%;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &#section3{
+                    .half{
+                        &#left{
+                            .bg{
+                                background:#dfdd7a;
+                            }
+                        }
+                        &#right{
+                            .bg{
+                                background:#a6bec5;
+                            }
+                        }
+                    }
+                }
+                &#section4{
+                    .half{
+                        &#left{
+                            .bg{
+                                background:#ffe6b9;
+                            }
+                        }
+                        &#right{
+                            .bg{
+                                background:#e9c4cf;
+                            }
+                        }
+                    }
+                }
+                &#section5{
+                    .half{
+                        &#left{
+                            .bg{
+                                background:#c5fffc;
+                            }
+                        }
+                        &#right{
+                            .bg{
+                                background:#c4e9c4;
                             }
                         }
                     }
@@ -215,11 +430,18 @@
                         transform: translate3d(0,100%,0);
                     }
                     &#left{
+                        .wrap{
+                            padding-left:vw-calc(120);
+                        }
                         .bg{
                             background:#c5dcff;
                         }
                     }
                     &#right{
+                        .wrap{
+                            padding-right:vw-calc(120);
+                            text-align: right;
+                        }
                         .bg{
                             background:#c4e4e9;
                         }
@@ -228,21 +450,27 @@
                         width:100%;
                         height:100%;
                         height:calc(100vh - #{vw-calc(100)});
+                        padding-top:vw-calc(190);
                         position: relative;
                         z-index: 1;
-                    }
-                }
-                &#opening{
-                    .name{
-                        position: absolute;
-                        top:50%;
-                        left:50%;
-                        z-index: 1;
-                        transform: translate3d(-50%,-50%,0);
-                        font-size:vw-calc(80);
-                        font-weight: bold;
-                        color:#fff;
-                        text-shadow: 0 vw-calc(3 7) rgba(0,0,0,.2);
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: all .3s cubic-bezier(0.19, 1, 0.22, 1);
+                        .title{
+                            font-size:vw-calc(14);
+                            &.big{
+                                font-size:vw-calc(20);
+                                font-weight: normal;
+                            }
+                        }
+                        .big{
+                            font-size:vw-calc(60);
+                            font-weight: bold;
+                        }
+                        .medium{
+                            font-size:vw-calc(26);
+                            font-weight: 500;
+                        }
                     }
                 }
             }
@@ -266,11 +494,9 @@
                 text-align: center;
                 padding:0;
                 margin:0;
-                color:#fff;
                 li{
                     height:100%;
                     font-size:vw-calc(24);
-                    list-style: none;
                     flex: 1;
                     position: relative;
                     display: flex;
