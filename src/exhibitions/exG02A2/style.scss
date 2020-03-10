@@ -210,10 +210,10 @@
                 font-size:vw-calc(50);
                 z-index: 999999;
                 &.left{
-                    left:vw-calc(120);
+                    left:vw-calc(104);
                 }
                 &.right{
-                    right:vw-calc(120);
+                    right:vw-calc(104);
                 }
             }
             .section{
@@ -240,7 +240,7 @@
                 &#section2{
                     ul{
                         li{
-                            padding-top:vw-calc(22);
+                            padding-top:vw-calc(18);
                             &:first-child{
                                 padding-top:0;
                             }
@@ -255,7 +255,7 @@
                             width:0;
                             height:0;
                             position: absolute;
-                            top:65%;
+                            top:63%;
                             left:50%;
                             transform: rotate3d(1, 0, 0, 55deg);
                             transform-style: preserve-3d;
@@ -375,7 +375,7 @@
                     .wrap{
                         background:url('./images/coinhouse.png') center 73% no-repeat;
                         background-size:80%;
-                        padding-top:vw-calc(187);
+                        padding-top:vw-calc(190);
                         .title{
                             &.big{
                                 font-size:vw-calc(31);
@@ -457,7 +457,7 @@
                     }
                     &#left{
                         .wrap{
-                            padding-left:vw-calc(120);
+                            padding-left:vw-calc(104);
                         }
                         .bg{
                             background: transparent linear-gradient(190deg, #64a9d3 0%, #749dcb 100%) 0% 0% no-repeat;
@@ -468,7 +468,7 @@
                     }
                     &#right{
                         .wrap{
-                            padding-right:vw-calc(120);
+                            padding-right:vw-calc(104);
                             text-align: right;
                         }
                         .bg{
@@ -478,7 +478,7 @@
                             }
                         }
                         .source{
-                            right:vw-calc(120);
+                            right:vw-calc(104);
                         }
                     }
                     .wrap{
@@ -518,7 +518,7 @@
         }
         #nav{
             width:100%;
-            height:vw-calc(112);
+            height:vw-calc(122);
             background:#343434;
             position: absolute;
             bottom:0;
