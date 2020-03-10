@@ -1,12 +1,42 @@
 @import '../../setting.scss';
 
+@font-face {
+    font-family: 'FuturaLT';
+    src: url('./fonts/FuturaLT-Bold.eot');
+    src: url('./fonts/FuturaLT-Bold.woff2') format('woff2'),
+         url('./fonts/FuturaLT-Bold.woff') format('woff'),
+         url('./fonts/FuturaLT-Bold.ttf') format('truetype'),
+         url('./fonts/FuturaLT-Bold.svg#FuturaLT-Bold') format('svg'),
+         url('./fonts/FuturaLT-Bold.eot?#iefix') format('embedded-opentype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  
+  @font-face {
+    font-family: 'FuturaLT';
+    src: url('./fonts/FuturaLT.eot');
+    src: url('./fonts/FuturaLT.woff2') format('woff2'),
+         url('./fonts/FuturaLT.woff') format('woff'),
+         url('./fonts/FuturaLT.ttf') format('truetype'),
+         url('./fonts/FuturaLT.svg#FuturaLT') format('svg'),
+         url('./fonts/FuturaLT.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+
 #home{
     width:100%;
     height:100%;
     background: linear-gradient(130deg, rgba(150,228,251,1) 0%, rgba(174,210,242,1) 100%);
     overflow: hidden;
+    font-family: 'FuturaLT' ,sans-serif;
     & *{
         box-sizing: border-box;
+    }
+    sup{
+        font-size: vw-calc(8);
     }
     ul{
         margin:0;
@@ -174,7 +204,7 @@
             position: relative;
             .locationName{
                 position: absolute;
-                top:vw-calc(70);
+                top:vw-calc(80);
                 text-transform: uppercase;
                 font-weight: bold;
                 font-size:vw-calc(50);
@@ -210,9 +240,13 @@
                 &#section2{
                     ul{
                         li{
-                            padding-top:vw-calc(19);
+                            padding-top:vw-calc(22);
                             &:first-child{
                                 padding-top:0;
+                            }
+                            .medium{
+                                font-weight: bold;
+                                margin-top:vw-calc(5);
                             }
                         }
                     }
@@ -226,8 +260,8 @@
                             transform: rotate3d(1, 0, 0, 55deg);
                             transform-style: preserve-3d;
                             .stage{
-                                width:25vw;
-                                height: 25vw;
+                                width:26vw;
+                                height: 26vw;
                                 background: #fffce1;
                                 transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, 45deg);
                                 transform-style: preserve-3d;
@@ -339,13 +373,17 @@
                 }
                 &#section5{
                     .wrap{
-                        background:url('./images/coinhouse.png') center 70% no-repeat;
+                        background:url('./images/coinhouse.png') center 73% no-repeat;
                         background-size:80%;
+                        padding-top:vw-calc(187);
                         .title{
-                            margin-top:vw-calc(-10);
                             &.big{
-                                font-size:vw-calc(28);
+                                font-size:vw-calc(31);
+                                line-height: vw-calc(41);
                             }
+                        }
+                        .big:not(.title){
+                            margin-top:vw-calc(25);
                         }
                         canvas{
                             width:100%;
@@ -422,9 +460,9 @@
                             padding-left:vw-calc(120);
                         }
                         .bg{
-                            background:#9cc1e4;
+                            background: transparent linear-gradient(190deg, #64a9d3 0%, #749dcb 100%) 0% 0% no-repeat;
                             span{
-                                background:#97b8da;
+                                background: transparent linear-gradient(190deg, #6ab2df 0%, #7aa5d6 100%) 0% 0% no-repeat;
                             }
                         }
                     }
@@ -434,9 +472,9 @@
                             text-align: right;
                         }
                         .bg{
-                            background:#b3dbcc;
+                            background: transparent linear-gradient(60deg, #8FC0C6 0%, #A5E4DD 100%) 0% 0% no-repeat;
                             span{
-                                background:#a2cfbf;
+                                background: transparent linear-gradient(60deg, rgb(151, 204, 211) 0%, rgb(175, 241, 234) 100%) 0% 0% no-repeat padding-box;
                             }
                         }
                         .source{
@@ -446,21 +484,21 @@
                     .wrap{
                         width:100%;
                         height:calc(100vh - #{vw-calc(100)});
-                        padding-top:vw-calc(190);
+                        padding-top:vw-calc(220);
                         position: relative;
                         z-index: 1;
                         opacity: 0;
                         visibility: hidden;
                         transition: all .4s cubic-bezier(0.19, 1, 0.22, 1);
                         .title{
-                            font-size:vw-calc(14);
+                            font-size:vw-calc(16);
                             &.big{
-                                font-size:vw-calc(20);
+                                font-size:vw-calc(21);
                                 font-weight: normal;
                             }
                         }
                         .big{
-                            font-size:vw-calc(60);
+                            font-size:vw-calc(70);
                             font-weight: bold;
                         }
                         .medium{
@@ -468,11 +506,11 @@
                             font-weight: 500;
                         }
                         .source{
-                            color:#333;
-                            font-size:vw-calc(14);
-                            line-height: vw-calc(18);
+                            color:#343434;
+                            font-size:vw-calc(16);
+                            line-height: vw-calc(16);
                             position: absolute;
-                            bottom:vw-calc(30);
+                            bottom:vw-calc(40);
                         }
                     }
                 }
@@ -480,8 +518,8 @@
         }
         #nav{
             width:100%;
-            height:vw-calc(100);
-            background:#333;
+            height:vw-calc(112);
+            background:#343434;
             position: absolute;
             bottom:0;
             left:0;
@@ -491,7 +529,7 @@
             #homeBtn{
                 width:vw-calc(150);
                 height:vw-calc(75);
-                background:#333;
+                background:#343434;
                 border-top-left-radius: vw-calc(80);
                 border-top-right-radius: vw-calc(80);
                 position: absolute;
@@ -511,7 +549,8 @@
                 margin:0;
                 li{
                     height:100%;
-                    font-size:vw-calc(24);
+                    font-size:vw-calc(28);
+                    font-weight: bold;
                     flex: 1;
                     position: relative;
                     display: flex;
@@ -521,11 +560,11 @@
                     &:before{
                         content:'';
                         display: block;
-                        width:vw-calc(7);
-                        height:vw-calc(7);
+                        width:vw-calc(8);
+                        height:vw-calc(8);
                         border-radius: 50%;
                         position: absolute;
-                        top:25%;
+                        top:23%;
                         left:50%;
                         background:#fff;
                         transform: translate3d(-50%,0%,0) scale(0);

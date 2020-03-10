@@ -28,7 +28,7 @@ const Section5 = (props) => {
                     frontFace: '#e0de49',
                     backface: '#cdcb3a',
                     translate:{
-                        x:window.innerWidth/2 *.045,
+                        x:window.innerWidth/2 *.047,
                         y:0
                     },
                     rotate:{
@@ -76,7 +76,7 @@ const Section5 = (props) => {
                 zoom: 1.5,
                 resize: true,
                 translate:{
-                    y:-25
+                    y:-15
                 },
                 rotate:{
                     x:-35 * Math.PI/180,
@@ -147,7 +147,7 @@ const Section5 = (props) => {
                 <div className="wrap">
                     <div className="title big">GDP per capita (nominal)</div>
                     <div className="big">48,915.89USD</div>
-                    <canvas ref={canvasLeft} id="leftCanvas" width={window.innerWidth/2} height={window.innerHeight}></canvas>
+                    <canvas ref={canvasLeft} id="leftCanvas" width="600" height="600"></canvas>
                     <div className="source">
                         Source:<br/>HK Census And Statistics Department Population 2018<br/>Hong Kong Geographic Data 2019
                     </div>
@@ -158,7 +158,7 @@ const Section5 = (props) => {
                 <div className="wrap">
                     <div className="title big">GDP per capita (nominal)</div>
                     <div className="big">74,266.31USD</div>
-                    <canvas ref={canvasRight} id="rightCanvas" width={window.innerWidth/2} height={window.innerHeight}></canvas>
+                    <canvas ref={canvasRight} id="rightCanvas" width="600" height="600"></canvas>
                     <div className="source">
                         Source:<br/>HK Census And Statistics Department Population 2018<br/>Hong Kong Geographic Data 2019
                     </div>
