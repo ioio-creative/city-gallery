@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, createRef } from 'react';
-import gsap from 'gsap';
+import React, { useEffect, useRef } from 'react';
 import PeoplesAnim from './peoples';
 
 
@@ -59,19 +58,38 @@ const Section2 = props => {
                             <div ref={stageLeft} className="stage"></div>
                         </div>
                     </div>
+                    <div className="source">
+                        Source:<br/>HK Census And Statistics Department Population 2018<br/>Hong Kong Geographic Data 2019
+                    </div>
                 </div>
-                <div className="bg"></div>
+                <div className="bg"><span></span></div>
             </div>
             <div id="right" className="half">
                 <div className="wrap">
-                <div>Japan</div>
+                    <ul>
+                        <li>
+                            <div className="title big">Population Density (/km<sup>2</sup>)</div>
+                            <div className="big">14,568.96</div>
+                        </li>
+                        <li>
+                            <div className="title">Population</div>
+                            <div className="medium">9,143,041</div>
+                        </li>
+                        <li>
+                            <div className="title">Land Area (km<sup>2</sup>)</div>
+                            <div className="medium">627.57</div>
+                        </li>
+                    </ul>
                     <div className="imageWrap">
                         <div className="stageWrap">
                             <div ref={stageRight} className="stage"></div>
                         </div>
                     </div>
+                    <div className="source">
+                        Source:<br/>HK Census And Statistics Department Population 2018<br/>Hong Kong Geographic Data 2019
+                    </div>
                 </div>
-                <div className="bg"></div>
+                <div className="bg"><span></span></div>
             </div>
         </div>
     )

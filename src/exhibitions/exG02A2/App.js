@@ -13,6 +13,7 @@ import earthNormalMap from './images/earth/earth_normalmap4k.jpg';
 import cloudObj from './low_poly_cloud.obj';
 
 import Section2 from './detailpage/Section2';
+import Section5 from './detailpage/Section5';
 
 
 const App = props => {
@@ -1055,7 +1056,8 @@ const App = props => {
             setDetailIdx(idx);
             setZindex(zindex+1);
             gsap.set(`#section${idx}`, {zIndex:zindex});
-            gsap.fromTo(`#section${idx} .bg`, 1, {y:'100%'},{force3D:true, y:'0%', stagger:.08, ease:'expo.inOut'});
+            gsap.fromTo(`#section${idx} .bg span`, 1, {y:'100%'},{force3D:true, y:'-100%', stagger:.08, ease:'expo.out'});
+            gsap.fromTo(`#section${idx} .bg`, .6, {y:'100%'},{force3D:true, y:'0%', stagger:.08, ease:'expo.inOut'});
         }
     }
 
@@ -1135,18 +1137,19 @@ const App = props => {
                                 {/* <div className="name"><span>Hong Kong</span></div> */}
                                 <div className="imageWrap" style={{backgroundImage:'url()'}}></div>
                             </div>
-                            <div className="bg"></div>
+                            <div className="bg"><span></span></div>
                         </div>
                         <div id="right" className="half">
                             <div className="wrap">
                             {/* <div className="name"><span>Japan</span></div> */}
                                 <div className="imageWrap" style={{backgroundImage:'url()'}}></div>
                             </div>
-                            <div className="bg"></div>
+                            <div className="bg"><span></span></div>
                         </div>
                     </div>
                     
                     <Section2 detailIdx={detailIdx} />
+                    <Section5 detailIdx={detailIdx} />
                     {/* <div id={`section2`} className={`section ${detailIdx === 2 ? 'active' : ''}`}>
                         <div id="left" className="half">
                             <div className="wrap">
@@ -1176,6 +1179,7 @@ const App = props => {
                     
                 </div>
                 <div id="nav">
+                    <div id="homeBtn"></div>
                     <ul>
                         <li className={detailIdx === 1 ? 'active' : ''} onClick={()=>onChangeDetail(1)}><span>Urban Form</span></li>
                         <li className={detailIdx === 2 ? 'active' : ''} onClick={()=>onChangeDetail(2)}><span>Population Density</span></li>

@@ -1,4 +1,4 @@
-import {random, calcThetaPhiFromLatLon} from '../globalFuncFor3d';
+import {random} from '../globalFuncFor3d';
 import gsap from 'gsap';
 
 

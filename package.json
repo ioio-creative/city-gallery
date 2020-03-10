@@ -22,7 +22,8 @@
     "three-obj-mtl-loader": "^1.0.3",
     "three-orbitcontrols": "^2.102.1",
     "three-subdivision-modifier": "^1.0.5",
-    "three.meshline": "^1.2.0"
+    "three.meshline": "^1.2.0",
+    "zdog": "^1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
