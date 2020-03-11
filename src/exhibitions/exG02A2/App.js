@@ -12,6 +12,7 @@ import earthSpecularMap from './images/earth/8081_earthspec4k.jpg';
 import earthNormalMap from './images/earth/earth_normalmap4k.jpg';
 import cloudObj from './low_poly_cloud.obj';
 
+import Section1 from './detailpage/Section1';
 import Section2 from './detailpage/Section2';
 import Section5 from './detailpage/Section5';
 
@@ -1148,6 +1149,7 @@ const App = props => {
                         </div>
                     </div>
                     
+                    <Section1 detailIdx={detailIdx} />
                     <Section2 detailIdx={detailIdx} />
                     <Section5 detailIdx={detailIdx} />
                     {/* <div id={`section2`} className={`section ${detailIdx === 2 ? 'active' : ''}`}>
