@@ -14,6 +14,7 @@ import cloudObj from './low_poly_cloud.obj';
 
 import Section1 from './detailpage/Section1';
 import Section2 from './detailpage/Section2';
+import Section4 from './detailpage/Section4';
 import Section5 from './detailpage/Section5';
 
 
@@ -1151,6 +1152,7 @@ const App = props => {
                     
                     <Section1 detailIdx={detailIdx} />
                     <Section2 detailIdx={detailIdx} />
+                    <Section4 detailIdx={detailIdx} />
                     <Section5 detailIdx={detailIdx} />
                     {/* <div id={`section2`} className={`section ${detailIdx === 2 ? 'active' : ''}`}>
                         <div id="left" className="half">
