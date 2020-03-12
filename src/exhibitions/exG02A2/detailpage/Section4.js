@@ -21,11 +21,20 @@ const Section4 = props => {
             ghostCar
         ]
         let leftCarsImageSize = [];
+        const rightCarsImageURL = [
+            car1, // small
+            car1, // medium
+            car1, // big
+            ghostCar
+        ]
+        let rightCarsImageSize = [];
         let tll, tlr;
 
 
         const loadImage = () => {
             leftCarsImageSize = [];
+            rightCarsImageSize = [];
+
             for(let i=0; i<leftCarsImageURL.length; i++){
                 const src = leftCarsImageURL[i];
                 const img = new Image();
@@ -33,6 +42,17 @@ const Section4 = props => {
                     leftCarsImageSize[i] = {width:0, height:0};
                     leftCarsImageSize[i].width = this.width;
                     leftCarsImageSize[i].height = this.height;
+                }
+                img.src = src;
+            }
+
+            for(let i=0; i<rightCarsImageURL.length; i++){
+                const src = rightCarsImageURL[i];
+                const img = new Image();
+                img.onload = function(){
+                    rightCarsImageSize[i] = {width:0, height:0};
+                    rightCarsImageSize[i].width = this.width;
+                    rightCarsImageSize[i].height = this.height;
                 }
                 img.src = src;
             }
@@ -45,15 +65,27 @@ const Section4 = props => {
             this.line = line;
             this.pos = {x:0, y:0};
             this.speed = speed;
-            this.width = leftCarsImageSize[_this.type-1].width;
-            this.height = leftCarsImageSize[_this.type-1].height;
+            let sizeArray = null;
+            let imageArray = null;
+
+            if(elem.getAttribute('id') === 'leftImageWrap'){
+                sizeArray = leftCarsImageSize;
+                imageArray = leftCarsImageURL;
+            }
+            else{
+                sizeArray = rightCarsImageSize;
+                imageArray = rightCarsImageURL;
+            }
+            
+            this.width = sizeArray[_this.type-1].width;
+            this.height = sizeArray[_this.type-1].height;
 
             this.init = function(){
                 _this.self = document.createElement('div');
                 const carimg = document.createElement('div');
                 _this.self.className = `car line${_this.line}`;
                 _this.self.appendChild(carimg);
-                carimg.style.backgroundImage = `url(${leftCarsImageURL[_this.type-1]})`;
+                carimg.style.backgroundImage = `url(${imageArray[_this.type-1]})`;
                 carimg.style.width = _this.width / 1920 * 100 + 'vw';
                 carimg.style.height = _this.height / 1920 * 100 + 'vw';
                 
@@ -195,7 +227,7 @@ const Section4 = props => {
                 <div className="wrap">
                     <div className="title medium">Percentage of Daily Trips <br/>by Public Transport</div>
                     <div className="big">88%</div>
-                    <div ref={leftImageWrap} className="imageWrap">
+                    <div ref={leftImageWrap} id="leftImageWrap" className="imageWrap">
                         <div id="leftTrain"><div style={{backgroundImage:`url(${train})`,width:858/1920*100+'vw', height:564/1920*100+'vw'}}></div></div>
                     </div>
                     <div className="source">
@@ -208,7 +240,7 @@ const Section4 = props => {
                 <div className="wrap">
                     <div className="title medium">Percentage of Daily Trips <br/>by Public Transport</div>
                     <div className="big">10%</div>
-                    <div ref={rightImageWrap} className="imageWrap">
+                    <div ref={rightImageWrap} id="rightImageWrap" className="imageWrap">
                         <div id="rightTrain"><div style={{backgroundImage:`url(${train})`,width:858/1920*100+'vw', height:564/1920*100+'vw'}}></div></div>
                     </div>
                     <div className="source">
