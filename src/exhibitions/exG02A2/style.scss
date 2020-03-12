@@ -137,8 +137,8 @@
                     margin: 0;
                     padding: 0;
                     li{
-                        height:vw-calc(80);
-                        line-height: vw-calc(80);
+                        height:vw-calc(105);
+                        line-height: vw-calc(100);
                         // border: 1px solid;
                         padding:vw-calc(10 0);
                         &.active{
@@ -176,9 +176,11 @@
         opacity: 0;
         visibility: hidden;
         color:#fff;
+        transition: all .1s cubic-bezier(0.645, 0.045, 0.355, 1) .6s;
         &.active{
             opacity: 1;
             visibility: visible;
+            transition-delay: 0s;
             #sectionWrap{
                 .section{
                     &.active{
@@ -195,8 +197,10 @@
             }
             #nav{
                 transform: translate3d(0,0%,0);
+                transition-delay: .4s;
                 #homeBtn{
                     transform: translate3d(-50%,-100%,0);
+                    transition-delay: .6s;
                 }
             }
         }
@@ -636,7 +640,7 @@
             left:0;
             z-index: 999999;
             transform: translate3d(0,100%,0);
-            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1) .4s;
+            transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
             #homeBtn{
                 width:vw-calc(150);
                 height:vw-calc(75);
@@ -647,7 +651,9 @@
                 top:0;
                 left:50%;
                 transform: translate3d(-50%,0%,0);
-                transition: all 1s cubic-bezier(0.19, 1, 0.22, 1) .6s;
+                transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+                z-index: 1;
+                cursor: pointer;
             }
             ul{
                 width:100%;
@@ -658,6 +664,8 @@
                 text-align: center;
                 padding:0;
                 margin:0;
+                position: relative;
+                z-index: 2;
                 li{
                     height:100%;
                     font-size:vw-calc(28);

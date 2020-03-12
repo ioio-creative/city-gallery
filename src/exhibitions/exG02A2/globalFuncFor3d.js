@@ -408,8 +408,9 @@ export const ObjectControl = (function(_super){
             const my = e.clientY;
             mouse.startPos.set(mx, my);
             mouse.lastPos.set(mx, my);
-                    
-            clicked = true;
+              
+            if(!disable)
+                clicked = true;
             // switch( e.button ){
             //     case 0:
             //         mouse.status = mouse.button.left;
@@ -472,6 +473,12 @@ export const ObjectControl = (function(_super){
 
         const onContextMenu = (e) => {
             e.preventDefault();
+        }
+        
+        this.enableAutoRotate = () => {
+            disableAuto = false;
+            disableEase = false;
+            auotRotate = 0;
         }
 
         this.disableAutoRotate = () => {

@@ -24,6 +24,7 @@ const App = props => {
     const zoomInFunc = useRef(null);
     const enableRotateFunc = useRef(null);
     const disableRotateFunc = useRef(null);
+    const enableAutoRotateFunc = useRef(null);
     const selectLocationFunc = useRef(null);
     const locationsWrapElem = useRef(null);
     const locationsElem = useRef(null);
@@ -698,6 +699,7 @@ const App = props => {
             if(id) currentHoveredInstanceId = id;
             if(currentHoveredInstanceId !== oldHoveredInstanceId){
                 objectControl.disableAutoRotate();
+                objectControl.disable();
 
                 // find short rotation distance
                 const {targetTheta, targetPhi} = calcThetaPhiFromLatLon(locations[currentHoveredInstanceId].lat, locations[currentHoveredInstanceId].lon);
@@ -793,12 +795,12 @@ const App = props => {
         }
 
         const showDetails = () => {
-            gsap.set('#detailPage',{delay:2, className:'active'});
-            gsap.fromTo('#opening .bg', 1, {y:'100%'},{force3D:true, delay:2, y:'0%', stagger:.1, ease:'expo.inOut'});
+            gsap.set('#detailPage',{delay:1, className:'active'});
+            gsap.fromTo('#opening .bg', .8, {y:'100%'},{force3D:true, delay:1, y:'0%', stagger:.08, ease:'expo.inOut'});
 
             setTimeout(()=>{
                 setDetailIdx(0);
-            },2000);
+            },1000);
             // gsap.set('#opening',{delay:2, className:'section active'});
         }
 
@@ -820,6 +822,11 @@ const App = props => {
             objectControl.enable();
         }
         enableRotateFunc.current = {enableRotate};
+        
+        const enableAutoRotate = () => {
+            objectControl.enableAutoRotate();
+        }
+        enableAutoRotateFunc.current = {enableAutoRotate};
         
         const draw = () => {
             objectControl.draw();
@@ -1078,11 +1085,20 @@ const App = props => {
         }
     }
 
+    const onBackHome = () => {
+        gsap.to(`.section.active .bg`, .6, {force3D:true, y:'100%', overwrite:true, stagger:.04, ease:'expo.out'});
+        gsap.set(`.section:not(.active) .bg`, {y:'100%'});
+        gsap.set(`.section .bg span`, {y:'100%'});
+        gsap.set('#detailPage',{className:''});
+        setDetailIdx(null);
+        enableRotate();
+        enableAutoRotateFunc.current.enableAutoRotate();
+    }
 
 
     return (
         <div id="home">
-            <div ref={canvasWrap} id="canvasWrap" onMouseDown={enableRotate} onTouchStart={enableRotate}></div>
+            <div ref={canvasWrap} id="canvasWrap" onMouseUp={enableRotate} onTouchStart={enableRotate}></div>
             <div id="lang">
                 <p>Please select language<br/>請選擇語言</p>
                 <div onClick={()=>onChangeLang('en')}>English</div>
@@ -1113,42 +1129,25 @@ const App = props => {
             </div>
             <div id="detailPage" className="active">
                 <div id="sectionWrap">
-                    <div id="opening" className={`section ${detailIdx !== null ? 'active' : ''}`}>
+                    <div id="opening" className={`section ${detailIdx === 0 ? 'active' : ''}`}>
                         <div id="left" className="half">
                             <div className="wrap">
                                 <span className="name">Hong Kong</span>
                                 <div style={{backgroundImage:'url()'}}></div>
                             </div>
-                            <div className="bg"></div>
+                            <div className="bg"><span></span></div>
                         </div>
                         <div id="right" className="half">
                             <div className="wrap">
                                 <span className="name">Japan</span>
                                 <div style={{backgroundImage:'url()'}}></div>
                             </div>
-                            <div className="bg"></div>
+                            <div className="bg"><span></span></div>
                         </div>
                     </div>
 
                     <div className="locationName left">HONG KONG</div>
                     <div className="locationName right">JAPAN</div>
-                    
-                    <div id={`section1`} className={`section ${detailIdx === 1 ? 'active' : ''}`}>
-                        <div id="left" className="half">
-                            <div className="wrap">
-                                {/* <div className="name"><span>Hong Kong</span></div> */}
-                                <div className="imageWrap" style={{backgroundImage:'url()'}}></div>
-                            </div>
-                            <div className="bg"><span></span></div>
-                        </div>
-                        <div id="right" className="half">
-                            <div className="wrap">
-                            {/* <div className="name"><span>Japan</span></div> */}
-                                <div className="imageWrap" style={{backgroundImage:'url()'}}></div>
-                            </div>
-                            <div className="bg"><span></span></div>
-                        </div>
-                    </div>
                     
                     <Section1 detailIdx={detailIdx} />
                     <Section2 detailIdx={detailIdx} />
@@ -1183,7 +1182,7 @@ const App = props => {
                     
                 </div>
                 <div id="nav">
-                    <div id="homeBtn"></div>
+                    <div id="homeBtn" onClick={onBackHome}></div>
                     <ul>
                         <li className={detailIdx === 1 ? 'active' : ''} onClick={()=>onChangeDetail(1)}><span>Urban Form</span></li>
                         <li className={detailIdx === 2 ? 'active' : ''} onClick={()=>onChangeDetail(2)}><span>Population Density</span></li>
