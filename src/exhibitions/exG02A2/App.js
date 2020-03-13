@@ -11,6 +11,7 @@ import earthBumpMap from './images/earth/8081_earthbump4k.jpg';
 import earthSpecularMap from './images/earth/8081_earthspec4k.jpg';
 import earthNormalMap from './images/earth/earth_normalmap4k.jpg';
 import cloudObj from './low_poly_cloud.obj';
+import hkImage from './images/hk.png';
 
 import Section1 from './detailpage/Section1';
 import Section2 from './detailpage/Section2';
@@ -1133,21 +1134,21 @@ const App = props => {
                         <div id="left" className="half">
                             <div className="wrap">
                                 <span className="name">Hong Kong</span>
-                                <div style={{backgroundImage:'url()'}}></div>
+                                <div className="img" style={{backgroundImage:`url(${hkImage})`}}></div>
                             </div>
                             <div className="bg"><span></span></div>
                         </div>
                         <div id="right" className="half">
                             <div className="wrap">
                                 <span className="name">Japan</span>
-                                <div style={{backgroundImage:'url()'}}></div>
+                                <div className="img" style={{backgroundImage:`url(${hkImage})`}}></div>
                             </div>
                             <div className="bg"><span></span></div>
                         </div>
                     </div>
 
-                    <div className="locationName left">HONG KONG</div>
-                    <div className="locationName right">JAPAN</div>
+                    <div className={`locationName left ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}>HONG KONG</div>
+                    <div className={`locationName right ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}>JAPAN</div>
                     
                     <Section1 detailIdx={detailIdx} />
                     <Section2 detailIdx={detailIdx} />

@@ -25,18 +25,20 @@
     font-style: normal;
   }
   
-
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 #home{
     width:100%;
     height:100%;
     background: linear-gradient(130deg, rgba(150,228,251,1) 0%, rgba(174,210,242,1) 100%);
     overflow: hidden;
     font-family: 'FuturaLT' ,sans-serif;
-    & *,
-    & *:before,
-    & *:after{
-        box-sizing: border-box;
-    }
     sup{
         font-size: vw-calc(8);
     }
@@ -215,11 +217,19 @@
                 font-weight: bold;
                 font-size:vw-calc(50);
                 z-index: 999999;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity .4s cubic-bezier(0.19, 1, 0.22, 1);
                 &.left{
                     left:vw-calc(104);
                 }
                 &.right{
                     right:vw-calc(104);
+                }
+                &.active{
+                    opacity: 1;
+                    visibility: visible;
+                    transition-delay: .6s;
                 }
             }
             .section{
@@ -238,9 +248,20 @@
                         left:50%;
                         z-index: 1;
                         transform: translate3d(-50%,-50%,0);
-                        font-size:vw-calc(80);
+                        font-size:vw-calc(100);
                         font-weight: bold;
                         text-shadow: 0 vw-calc(3 7) rgba(0,0,0,.2);
+                        white-space: nowrap;
+                    }
+                    .img{
+                        width:100%;
+                        height:100%;
+                        position: absolute;
+                        top:0;
+                        left:0;
+                        background-size:cover;
+                        background-repeat: no-repeat;
+                        opacity: .5;
                     }
                 }
                 &#section1{
@@ -634,7 +655,6 @@
         #nav{
             width:100%;
             height:vw-calc(122);
-            background:#343434;
             position: absolute;
             bottom:0;
             left:0;
@@ -642,11 +662,14 @@
             transform: translate3d(0,100%,0);
             transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
             #homeBtn{
-                width:vw-calc(150);
-                height:vw-calc(75);
-                background:#343434;
-                border-top-left-radius: vw-calc(80);
-                border-top-right-radius: vw-calc(80);
+                width:vw-calc(180);
+                height:vw-calc(90);
+                background:#343434 url('./images/homebtn.png') center 14% no-repeat;
+                background-size:110%;
+                border: vw-calc(13) solid #343434;
+                border-bottom: 0;
+                border-top-left-radius: vw-calc(90);
+                border-top-right-radius: vw-calc(90);
                 position: absolute;
                 top:0;
                 left:50%;
@@ -654,15 +677,39 @@
                 transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
                 z-index: 1;
                 cursor: pointer;
+                &:before{
+                    content:'';
+                    width:vw-calc(33);
+                    height: vw-calc(34);
+                    background:url('./images/homeicon.svg') no-repeat;
+                    background-size:100%;
+                    position: absolute;
+                    top:58%;
+                    left:50%;
+                    transform: translate3d(-50%,-50%,0);
+                }
+                &:after{
+                    content:'';
+                    width:vw-calc(17);
+                    height: vw-calc(12);
+                    background:#343434;
+                    border-top-left-radius: vw-calc(10);
+                    border-top-right-radius: vw-calc(10);
+                    position: absolute;
+                    top:70%;
+                    left:50%;
+                    transform: translate3d(-50%,-50%,0);
+                }
             }
             ul{
                 width:100%;
                 height:100%;
                 display: flex;
+                background:#343434;
                 justify-content: space-between;
                 align-items: center;
                 text-align: center;
-                padding:0;
+                padding:0 vw-calc(70);
                 margin:0;
                 position: relative;
                 z-index: 2;
