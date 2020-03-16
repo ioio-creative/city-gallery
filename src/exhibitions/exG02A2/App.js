@@ -589,7 +589,7 @@ const App = props => {
         }
 
         const updateColor = (geometry, mesh) => {
-            geometry.addAttribute( 'instanceColor', new THREE.InstancedBufferAttribute( new Float32Array( pointInstanceColors ), 3 ) );
+            geometry.setAttribute( 'instanceColor', new THREE.InstancedBufferAttribute( new Float32Array( pointInstanceColors ), 3 ) );
             var colorParsChunk = [
                 'attribute vec3 instanceColor;',
                 'varying vec3 vInstanceColor;'
@@ -976,6 +976,7 @@ const App = props => {
             mouse.lastPos.y = 0;
             clicked = true;
             setScrolling(false);
+            disableRotate();
             document.addEventListener('mousemove', onMouseMove, false);
             document.addEventListener('mouseup', onMouseUp, false);
             document.addEventListener('touchmove', onMouseMove, false);
@@ -1113,7 +1114,7 @@ const App = props => {
             <div id="locationSelector">
                 <div id="hk" className="sameWidth big">Hong Kong</div>
                 <div id="line"></div>
-                <div id="selector" className="sameWidth" onMouseDown={disableRotate} onTouchStart={disableRotate}>
+                <div id="selector" className="sameWidth">
                     <div id="selectCity" className="big">Select a City</div>
                     <div id="locationsOuterWrap">
                         <div ref={locationsWrapElem} id="locationsWrap">
