@@ -975,6 +975,7 @@ const App = props => {
             mouse.lastPos.x = 0;
             mouse.lastPos.y = 0;
             clicked = true;
+            setScrolling(false);
             document.addEventListener('mousemove', onMouseMove, false);
             document.addEventListener('mouseup', onMouseUp, false);
             document.addEventListener('touchmove', onMouseMove, false);
@@ -1001,7 +1002,7 @@ const App = props => {
 
         const onMouseUp = () => {
             clicked = false;
-            setScrolling(false);
+            enableRotate();
             document.removeEventListener('mousemove', onMouseMove, false);
             document.removeEventListener('mouseup', onMouseUp, false);
             document.removeEventListener('touchmove', onMouseMove, false);
@@ -1100,7 +1101,7 @@ const App = props => {
 
     return (
         <div id="home">
-            <div ref={canvasWrap} id="canvasWrap" onMouseUp={enableRotate} onTouchStart={enableRotate}></div>
+            <div ref={canvasWrap} id="canvasWrap"></div>
             <div id="touch">
                 Touch screen to select<br/>觸碰螢幕以選取
             </div>
@@ -1132,7 +1133,7 @@ const App = props => {
                     </div>
                 </div>
             </div>
-            <div id="detailPage" className="active">
+            <div id="detailPage" className="">
                 <div id="sectionWrap">
                     <div id="opening" className={`section ${detailIdx === 0 ? 'active' : ''}`}>
                         <div id="left" className="half">
@@ -1159,32 +1160,6 @@ const App = props => {
                     <Section3 detailIdx={detailIdx} />
                     <Section4 detailIdx={detailIdx} />
                     <Section5 detailIdx={detailIdx} />
-                    {/* <div id={`section2`} className={`section ${detailIdx === 2 ? 'active' : ''}`}>
-                        <div id="left" className="half">
-                            <div className="wrap">
-                                <span className="name">Hong Kong</span>
-                                <div className="imageWrap">
-                                    <div className="stageWrap">
-                                        <div className="stage">
-                                            <span className="people"></span>
-                                            <span className="people"></span>
-                                            <span className="people"></span>
-                                            <span className="people"></span>
-                                            <span className="people"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="bg"></div>
-                        </div>
-                        <div id="right" className="half">
-                            <div className="wrap">
-                            <span className="name">Japan</span>
-                                <div className="imageWrap"></div>
-                            </div>
-                            <div className="bg"></div>
-                        </div>
-                    </div> */}
                     
                 </div>
                 <div id="nav">
