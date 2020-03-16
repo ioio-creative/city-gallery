@@ -15,6 +15,7 @@ import hkImage from './images/hk.png';
 
 import Section1 from './detailpage/Section1';
 import Section2 from './detailpage/Section2';
+import Section3 from './detailpage/Section3';
 import Section4 from './detailpage/Section4';
 import Section5 from './detailpage/Section5';
 
@@ -1100,6 +1101,9 @@ const App = props => {
     return (
         <div id="home">
             <div ref={canvasWrap} id="canvasWrap" onMouseUp={enableRotate} onTouchStart={enableRotate}></div>
+            <div id="touch">
+                Touch screen to select<br/>觸碰螢幕以選取
+            </div>
             <div id="lang">
                 <p>Please select language<br/>請選擇語言</p>
                 <div onClick={()=>onChangeLang('en')}>English</div>
@@ -1152,6 +1156,7 @@ const App = props => {
                     
                     <Section1 detailIdx={detailIdx} />
                     <Section2 detailIdx={detailIdx} />
+                    <Section3 detailIdx={detailIdx} />
                     <Section4 detailIdx={detailIdx} />
                     <Section5 detailIdx={detailIdx} />
                     {/* <div id={`section2`} className={`section ${detailIdx === 2 ? 'active' : ''}`}>

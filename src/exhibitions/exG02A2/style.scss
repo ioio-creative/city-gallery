@@ -32,6 +32,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    padding:0;
+    margin:0;
 }
 #home{
     width:100%;
@@ -49,10 +51,29 @@
             list-style: none;
         }
     }
-    #lang{
-        width:vw-calc(400);
+    #touch{
+        font-size: vw-calc(16);
+        line-height: vw-calc(21);
+        font-weight: bold;
+        color:#707376;
+        text-align: center;
         position: absolute;
-        bottom:vw-calc(100);
+        top:vw-calc(75);
+        right:vw-calc(90);
+        &:before{
+            content:'';
+            display: block;
+            width:vw-calc(92);
+            height:vw-calc(70);
+            background:url('./images/touchicon.svg') center no-repeat;
+            background-size:100%;
+            margin:0 auto vw-calc(20);
+        }
+    }
+    #lang{
+        width:vw-calc(566);
+        position: absolute;
+        bottom:vw-calc(95);
         left:50%;
         transform: translate3d(-50%,0,0);
         display: flex;
@@ -60,15 +81,21 @@
         p{
             width:100%;
             position: absolute;
-            bottom:100%;
+            bottom:130%;
+            color:#6C6C6C;
+            font-size:vw-calc(24);
+            font-weight: bold;
         }
         div{
             width:50%;
-            padding:vw-calc(18 30);
-            margin:vw-calc(0 8);
+            padding:vw-calc(21 0);
+            margin:vw-calc(0 9);
             background:#fff;
             border-radius: vw-calc(50);
-            font-size: vw-calc(20);
+            font-size: vw-calc(28);
+            font-weight: bold;
+            color:#1492E6;
+            box-shadow: 1px 3px 10px #00000029;
             cursor: pointer;
             transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
             &:active{
@@ -145,7 +172,7 @@
                         padding:vw-calc(10 0);
                         &.active{
                             span{
-                                transform: translate3d(0,-5%,0) scale(1);
+                                transform: translate3d(0,-6%,0) scale(1);
                             }
                         }
                         &:not(.active):active{
@@ -459,6 +486,196 @@
                         }
                     }
                 }
+                &#section3{
+                    &.active{
+                        .wrap{
+                            .imageWrap{
+                                .building{
+                                    &#_2nd{
+                                        .shadow{
+                                            &:before{
+                                                transition-delay: .9s;
+                                            }
+                                        }
+                                        img{
+                                            transition-delay: .9s;
+                                        }
+                                        .infos{
+                                            transition-delay: .9s, 1.1s;
+                                        }
+                                    }
+                                    &#_3rd{
+                                        .shadow{
+                                            &:before{
+                                                transition-delay: 1.2s;
+                                            }
+                                        }
+                                        img{
+                                            transition-delay: 1.2s;
+                                        }
+                                        .infos{
+                                            transition-delay: 1.2s, 1.4s;
+                                        }
+                                    }
+                                    .shadow{
+                                        &:before{
+                                            transform: translate3d(0,0,0) scale(1, 1);
+                                            transition-delay: .6s;
+                                        }
+                                    }
+                                    img{
+                                        transform:translate3d(0,0,0) scale(1,1);
+                                        transition-delay: .6s;
+                                    }
+                                    .infos{
+                                        opacity: 1;
+                                        transform: translate3d(0,0,0);
+                                        transition-delay: .6s, .8s;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .wrap{
+                        .imageWrap{
+                            width:100%;
+                            height:100%;
+                            position: absolute;
+                            top:0;
+                            left:0;
+                            padding-bottom: vw-calc(133);
+                            display: flex;
+                            align-items: flex-end;
+                            justify-content: center;
+                            .building{
+                                width: auto;
+                                max-height: vw-calc(490);
+                                margin-left:vw-calc(45);
+                                display: flex;
+                                align-items: flex-end;
+                                position: relative;
+                                transform-style: preserve-3d;
+                                &:first-child{
+                                    margin:0;
+                                }
+                                .shadow{
+                                    height:100%;
+                                    position: absolute;
+                                    top:0;
+                                    left:0;
+                                    z-index: -1;
+                                    transform: translate3d(0,0,0) rotate3d(1, 0, 0, 60deg) skewX(-30deg);
+                                    transform-origin: bottom;
+                                    &:before{
+                                        content:'';
+                                        display: block;
+                                        width:100%;
+                                        height:100%;
+                                        transform: translate3d(0,0,0) scale(1, 0);
+                                        transform-origin: bottom;
+                                        transition: transform .8s cubic-bezier(0.165, 0.84, 0.44, 1);
+                                    }
+                                }
+                                &.rectangle{
+                                    .shadow{
+                                        width:80%;
+                                        &:before{
+                                            background:rgba(0,0,0,.3);
+                                        }
+                                    }
+                                }
+                                &.triangle{
+                                    .shadow{
+                                        width:90%;
+                                        &:before{
+                                            background:url('./images/triangle.svg') bottom no-repeat;
+                                            background-size:100% 100%;
+                                            opacity: .3;
+                                        }
+                                    }
+                                }
+                                &#_1st{
+                                    .infos{
+                                        top: vw-calc(-75);
+                                        left:140%;
+                                        .height,
+                                        .floor{
+                                            font-size:vw-calc(40);
+                                            line-height: vw-calc(48);
+                                        }
+                                    }
+                                }
+                                &#_2nd{
+                                    .infos{
+                                        top: vw-calc(-50);
+                                        right:140%;
+                                        text-align: right;
+                                        .ranking{
+                                            right:vw-calc(-20);
+                                            left:auto;
+                                            transform: translate3d(100%,10%,0);
+                                            font-size: vw-calc(16);
+                                        }
+                                    }
+                                }
+                                &#_3rd{
+                                    .infos{
+                                        top: vw-calc(-20);
+                                        left:165%;
+                                        .ranking{
+                                            font-size: vw-calc(15);
+                                        }
+                                    }
+                                }
+                                img{
+                                    width:auto;
+                                    height:0;
+                                    transform-origin: bottom;
+                                    transform:translate3d(0,0,0) scale(1,0);
+                                    transition: transform .8s cubic-bezier(0.165, 0.84, 0.44, 1);
+                                }
+                                .infos{
+                                    width:vw-calc(200);
+                                    position: absolute;
+                                    text-align: left;
+                                    opacity: 0;
+                                    transform: translate3d(0, 200%, 0);
+                                    transition: transform .8s cubic-bezier(0.215, 0.61, 0.355, 1), opacity .8s cubic-bezier(0.215, 0.61, 0.355, 1);
+                                    .ranking{
+                                        width:vw-calc(43);
+                                        height:vw-calc(43);
+                                        background:#fff;
+                                        color:#1D1D1D;
+                                        font-size:vw-calc(18);
+                                        font-weight: bold;
+                                        border-radius: 50%;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        padding-top: vw-calc(2);
+                                        box-shadow: 0px 3px 6px #00000015;
+                                        position: absolute;
+                                        top:0;
+                                        left:vw-calc(-20);
+                                        transform: translate3d(-100%,10%,0);
+                                    }
+                                    .height,
+                                    .floor{
+                                        font-size:vw-calc(28);
+                                        line-height: vw-calc(36);
+                                        color:#fff;
+                                    }
+                                    .name{
+                                        font-size:vw-calc(16);
+                                        line-height:vw-calc(16);
+                                        margin-top:vw-calc(10);
+                                        color:#222222;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
                 &#section4{
                     .wrap{
                         padding-top:vw-calc(200);
@@ -691,7 +908,7 @@
                 &:after{
                     content:'';
                     width:vw-calc(17);
-                    height: vw-calc(12);
+                    height: vw-calc(11);
                     background:#343434;
                     border-top-left-radius: vw-calc(10);
                     border-top-right-radius: vw-calc(10);
