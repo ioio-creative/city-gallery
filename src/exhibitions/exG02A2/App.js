@@ -46,6 +46,7 @@ const App = props => {
     const moveFromIdFunc = useRef(null);
     const [selectedId, setSelectedId] = useState(null);
     const [detailIdx, setDetailIdx] = useState(null);
+    const [scrolledDetailIdx, setScrolledDetailIdx] = useState(1);
     const [scrolling, setScrolling] = useState(null);
     const [zindex, setZindex] = useState(1);
     const [data, setData] = useState(null);
@@ -970,7 +971,7 @@ const App = props => {
         }
         let y = 0;
         let easeY = 0;
-        // let activedId = 0;
+        let activedId = 0;
         // let clickedId = 0;
 
         const onMouseDown = (event) => {
@@ -1035,16 +1036,17 @@ const App = props => {
             easeY += (y - easeY) * .1;
             child.style.transform = `translate3d(-50%,${-easeY}px,0)`;
             
-            // for(let i=0; i<items.length; i++){
-            //     const item = items[i];
-            //     const offsetTop = item.getBoundingClientRect().top - parent.getBoundingClientRect().top;
-            //     const offsetBot = offsetTop + item.offsetHeight;
-            //     const half = parent.offsetHeight/2;
+            for(let i=0; i<items.length; i++){
+                const item = items[i];
+                const offsetTop = item.getBoundingClientRect().top - parent.getBoundingClientRect().top;
+                const offsetBot = offsetTop + item.offsetHeight;
+                const half = parent.offsetHeight/2;
 
-            //     if(half >= offsetTop && half <= offsetBot && i !== activedId){
-            //         activedId = i;
-            //     }
-            // }
+                if(half >= offsetTop && half <= offsetBot && i !== activedId){
+                    activedId = i;
+                    setScrolledDetailIdx(i+1);
+                }
+            }
         }
 
         const animLoop = () => {
@@ -1066,7 +1068,7 @@ const App = props => {
     },[]);
 
     useEffect(()=>{
-        fetch('/json/g02a.json',{ 
+        fetch('./json/g02a.json',{ 
             headers: { 
               'Content-Type': 'application/json',
               'Accept': 'application/json'
@@ -1151,6 +1153,11 @@ const App = props => {
                                 })
                             }
                             </ul>
+                        </div>
+                        <div id="scroll">
+                            <div id="index"><span>{scrolledDetailIdx < 10 ? `0${scrolledDetailIdx}` : scrolledDetailIdx}</span>/10</div>
+                            <span></span>
+                            <p>Scroll Down</p>
                         </div>
                     </div>
                 </div>

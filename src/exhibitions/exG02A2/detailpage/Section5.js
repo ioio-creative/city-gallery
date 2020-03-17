@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import {random} from '../globalFuncFor3d';
 import Zdog from 'zdog';
+import gsap from 'gsap';
 
 const Section5 = (props) => {
     const canvasLeft = useRef(null);
@@ -28,8 +29,8 @@ const Section5 = (props) => {
                     frontFace: '#e0de49',
                     backface: '#cdcb3a',
                     translate:{
-                        x:window.innerWidth/2 *.047,
-                        y:0
+                        x:window.innerWidth/2 *.05,
+                        y:-10
                     },
                     rotate:{
                         x: random(0, Math.PI*2),
@@ -114,6 +115,40 @@ const Section5 = (props) => {
                 cancelAnimationFrame(this.player);
         }
 
+        const createCoins = (elems) => {
+            const pos = [];
+            const coins = elems;
+            let tooClose = false;
+            const navHeight = document.querySelector('#nav').offsetHeight;
+            const margin = 1920 * .05;
+
+            for(let i=0; i<coins.length; i++){
+                const coin = coins[i];
+                const coinWidth = coin.offsetWidth;
+                const coinHeight = coin.offsetHeight;
+                const _pos = {x:random(margin,1920/2-margin), y:random(window.innerHeight/2, window.innerHeight)};
+                tooClose = false;
+
+                const a = _pos.x - (1920/2/2.2);
+                const b = _pos.y - (window.innerHeight/1.3);
+                const dist = Math.sqrt(a*a + b*b);
+
+                if(dist < 200){
+                    --i;
+                    tooClose = true;
+                    continue;
+                }
+
+                if(!tooClose){
+                    pos[i] = {x:_pos.x - coinWidth/2, y:_pos.y - coinHeight/2};
+                    // gsap.set(coin, {left:(1920/2/2.2)/1920*100+'vw', top:(window.innerHeight/1.3)/1920*100+'vw'});
+                    gsap.set(coin, {force3D:true, left:(pos[i].x/1920*100)+'vw', top:(pos[i].y/1920*100)+'vw', scale:random(.8,1.1)});
+                }
+            }
+        }
+
+        createCoins(document.querySelectorAll('#left .coins span'));
+        createCoins(document.querySelectorAll('#right .coins span'));
 
 
         const leftCanvas = new CoinAnim('#leftCanvas');
@@ -148,6 +183,13 @@ const Section5 = (props) => {
                     <div className="title big">GDP per capita (nominal)</div>
                     <div className="big">48,915.89USD</div>
                     <canvas ref={canvasLeft} id="leftCanvas" width="600" height="600"></canvas>
+                    <div className="coins">
+                        {
+                            [...Array(5)].map((v,i)=>{
+                                return <span key={i}></span>
+                            })
+                        }
+                    </div>
                     <div className="source">
                         Source:<br/>HK Census And Statistics Department Population 2018<br/>Hong Kong Geographic Data 2019
                     </div>
@@ -159,6 +201,13 @@ const Section5 = (props) => {
                     <div className="title big">GDP per capita (nominal)</div>
                     <div className="big">74,266.31USD</div>
                     <canvas ref={canvasRight} id="rightCanvas" width="600" height="600"></canvas>
+                    <div className="coins">
+                        {
+                            [...Array(20)].map((v,i)=>{
+                                return <span key={i}></span>
+                            })
+                        }
+                    </div>
                     <div className="source">
                         Source:<br/>HK Census And Statistics Department Population 2018<br/>Hong Kong Geographic Data 2019
                     </div>
