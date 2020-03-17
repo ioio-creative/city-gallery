@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback, useMemo } from 'react';
 
 import placeholderImage from 'media/placeholder_400x400.png';
 
-import './g02BContainer.css';
+import './g02BContainer.scss';
 
 
 const G02BStatus = {
