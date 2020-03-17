@@ -1,0 +1,42 @@
+{
+    "languages": [
+        {
+            "code": "en",
+            "display": "English",
+            "shortDisplay": "EN"
+        },
+        {
+            "code": "tc",
+            "display": "繁體中文",
+            "shortDisplay": "繁"
+        }
+    ],
+    "content":{
+        "en":{
+            "global":{
+                "selectCity":"Select a City",
+                "hk":"Hong Kong"
+            },
+            "menu":[
+                "Urban Form",
+                "population density",
+                "tallest buildings",
+                "transportation",
+                "GDP"
+            ]
+        },
+        "tc":{
+            "global":{
+                "selectCity":"選擇城市",
+                "hk":"香港"
+            },
+            "menu":[
+                "城市形態",
+                "人口密度",
+                "最高建築物",
+                "運輸",
+                "國內生產總值"
+            ]
+        }
+    }
+}

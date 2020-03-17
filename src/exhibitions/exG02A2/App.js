@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 // import { useSelector } from 'react-redux';
-import {ObjectControl, initStats, initGUI, random, removeStats, removeGUI, getScreenSizeIn3dWorld , devMode, calcPosFromLatLonRad, calcThetaPhiFromLatLon, animEase } from './globalFuncFor3d';
+import {ObjectControl, initStats, removeStats, removeGUI, getScreenSizeIn3dWorld , devMode, calcPosFromLatLonRad, calcThetaPhiFromLatLon } from './globalFuncFor3d';
 import * as THREE from 'three';
 import {OBJLoader} from 'three-obj-mtl-loader';
 import './style.scss';
@@ -18,6 +18,8 @@ import Section2 from './detailpage/Section2';
 import Section3 from './detailpage/Section3';
 import Section4 from './detailpage/Section4';
 import Section5 from './detailpage/Section5';
+
+
 
 
 const App = props => {
@@ -46,6 +48,9 @@ const App = props => {
     const [detailIdx, setDetailIdx] = useState(null);
     const [scrolling, setScrolling] = useState(null);
     const [zindex, setZindex] = useState(1);
+    const [data, setData] = useState(null);
+    const [allData, setAllData] = useState(null);
+    const [language, setLanguage] = useState('en');
 
     useEffect(()=>{
         let scene = undefined,
@@ -965,7 +970,7 @@ const App = props => {
         }
         let y = 0;
         let easeY = 0;
-        let activedId = 0;
+        // let activedId = 0;
         // let clickedId = 0;
 
         const onMouseDown = (event) => {
@@ -1058,10 +1063,26 @@ const App = props => {
         return () => {
 
         }
-    },[])
+    },[]);
+
+    useEffect(()=>{
+        fetch('/json/g02a.json',{ 
+            headers: { 
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            setAllData(data);
+            setData(data.content[language]);
+        });
+    },[]);
 
     const onChangeLang = (lang) => {
         zoomInFunc.current.zoomIn();
+        setLanguage(lang);
+        setData(allData.content[lang]);
     }
 
     const onChangeDetail = (idx) => {
@@ -1109,13 +1130,13 @@ const App = props => {
             <div id="lang">
                 <p>Please select language<br/>請選擇語言</p>
                 <div onClick={()=>onChangeLang('en')}>English</div>
-                <div onClick={()=>onChangeLang('zh')}>繁體中文</div>
+                <div onClick={()=>onChangeLang('tc')}>繁體中文</div>
             </div>
             <div id="locationSelector">
-                <div id="hk" className="sameWidth big">Hong Kong</div>
+                <div id="hk" className="sameWidth big">{data && data.global.hk}</div>
                 <div id="line"></div>
                 <div id="selector" className="sameWidth">
-                    <div id="selectCity" className="big">Select a City</div>
+                    <div id="selectCity" className="big">{data && data.global.selectCity}</div>
                     <div id="locationsOuterWrap">
                         <div ref={locationsWrapElem} id="locationsWrap">
                             <ul ref={locationsElem} id="locations">
@@ -1146,7 +1167,7 @@ const App = props => {
                         </div>
                         <div id="right" className="half">
                             <div className="wrap">
-                                <span className="name">Japan</span>
+                                <span className="name">{selectedId && locations[selectedId].name}</span>
                                 <div className="img" style={{backgroundImage:`url(${hkImage})`}}></div>
                             </div>
                             <div className="bg"><span></span></div>
@@ -1154,23 +1175,28 @@ const App = props => {
                     </div>
 
                     <div className={`locationName left ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}>HONG KONG</div>
-                    <div className={`locationName right ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}>JAPAN</div>
+                    <div className={`locationName right ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}>{selectedId && locations[selectedId].name}</div>
                     
-                    <Section1 detailIdx={detailIdx} />
-                    <Section2 detailIdx={detailIdx} />
-                    <Section3 detailIdx={detailIdx} />
-                    <Section4 detailIdx={detailIdx} />
-                    <Section5 detailIdx={detailIdx} />
+                    <Section1 detailIdx={detailIdx} location={selectedId && locations[selectedId].name} />
+                    <Section2 detailIdx={detailIdx} location={selectedId && locations[selectedId].name} />
+                    <Section3 detailIdx={detailIdx} location={selectedId && locations[selectedId].name} />
+                    <Section4 detailIdx={detailIdx} location={selectedId && locations[selectedId].name} />
+                    <Section5 detailIdx={detailIdx} location={selectedId && locations[selectedId].name} />
                     
                 </div>
                 <div id="nav">
                     <div id="homeBtn" onClick={onBackHome}></div>
                     <ul>
-                        <li className={detailIdx === 1 ? 'active' : ''} onClick={()=>onChangeDetail(1)}><span>Urban Form</span></li>
+                        {
+                            data && data.menu.map((value, idx)=>{
+                                return <li key={idx} className={detailIdx === idx+1 ? 'active' : ''} onClick={()=>onChangeDetail(idx+1)}><span>{value}</span></li>
+                            })
+                        }
+                        {/* <li className={detailIdx === 1 ? 'active' : ''} onClick={()=>onChangeDetail(1)}><span>Urban Form</span></li>
                         <li className={detailIdx === 2 ? 'active' : ''} onClick={()=>onChangeDetail(2)}><span>Population Density</span></li>
                         <li className={detailIdx === 3 ? 'active' : ''} onClick={()=>onChangeDetail(3)}><span>Tallest Buildings</span></li>
                         <li className={detailIdx === 4 ? 'active' : ''} onClick={()=>onChangeDetail(4)}><span>Transportation</span></li>
-                        <li className={detailIdx === 5 ? 'active' : ''} onClick={()=>onChangeDetail(5)}><span>GDP</span></li>
+                        <li className={detailIdx === 5 ? 'active' : ''} onClick={()=>onChangeDetail(5)}><span>GDP</span></li> */}
                     </ul>
                 </div>
             </div>
