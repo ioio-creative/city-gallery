@@ -16,7 +16,7 @@ const CityBlock = (props) => {
     className={`cityBlock${props.activeCenterClass?' center':''}${props.active?' clicked':''}`} 
     style={{transform: `translate3d(${props.offsetX}px, ${props.offsetY}px, 0px)`}}
   >
-    <div className="cityBgColor"></div>
+    {/* <div className="cityBgColor"></div> */}
     <div className="contentWrap" onClick={props.onClickBlock}>
       <div className="cityImage" style={{backgroundImage:`url(${hamburg})`}}></div>
       <div className="cityName">
@@ -31,17 +31,17 @@ const CityBlock = (props) => {
         fontSize: 120,
         color: props.color,
         display:'inline-block',
-        zIndex:9
-      }}>{props.blockIdx}</div>
+        zIndex:99
+      }}>{props.data && props.blockIdx}</div>
     </div>
-    <div className="mainContentWrap">
+    {/* <div className="mainContentWrap">
         <h2 className="nickName">{props.data && props.data.cities[cityIdx].name}</h2>
         <h2 className="realName">{props.data && props.data.cities[cityIdx].nickname}</h2>
-    </div>
+    </div> */}
   </div>
 }
 
-const startIdx = [9,3,8,1,5];
+const startIdx = [1,5,8,1,4];
 let col = [0,1,2,3,4];
 let row = [0,1,2,3,4];
 let ridx = 2;
@@ -50,25 +50,25 @@ let oldcurrentRowIdx = 2;
 let oldcurrentColIdx = 2;
 
 const CitiesList = (props) => {
-  const blockWidth = window.innerWidth / 3;
+  const blockWidth = window.innerWidth / 3.1;
   const blockHeight = blockWidth;
   // const currentColIdx = -Math.floor((props.posX-blockWidth/2) / blockWidth);
   // const currentRowIdx = -Math.floor(props.posY / blockHeight);
   const currentColIdx = props.currentColIdx;
   const currentRowIdx = props.currentRowIdx;
-  const [domIdx, setDomIdx] = useState(null);
+  // const [domIdx, setDomIdx] = useState(null);
 
   // const handleClick = (_domIdx, blockIdx, c,r) =>{
   //   if(!props.dragging){
   //     setDomIdx(_domIdx);
-  //     props.getActiveBlockIdx(_domIdx);
+  //     props.getblockElemIdx(_domIdx);
   //     props.moveToBlock(col[c] * blockWidth, row[r] * blockHeight);
   //   }
   // }
 
-  useEffect(()=>{
-    setDomIdx(props.activeBlockIdx);
-  });
+  // useEffect(()=>{
+  //   setDomIdx(props.blockElemIdx);
+  // });
   useEffect(()=>{
     let topRowIdx,
         bottomRowIdx,
@@ -114,12 +114,14 @@ const CitiesList = (props) => {
 
  
   /*
-   0  0 1 2 3 4
+   0  1 2 3 4 5
    1  5 6 7 8 9
-   2  9 0 _ 2 3
-   3  3 4 5 6 7
-   4  1 2 3 4 5
+   2  8 9 _ 1 2
+   3  1 2 3 4 5
+   4  4 5 6 7 8
   */
+
+  const lth = props.data && props.data.cities.length || 0;
 
   return <div className="citiesList" style={{transform:`translate3d(${props.posX}px, ${props.posY}px, 0px)`}}>
     {
@@ -127,14 +129,14 @@ const CitiesList = (props) => {
         return new Array(5).fill(0).map((value, xIdx)=>{
           return <CityBlock 
             key={yIdx*5 + xIdx}
-            active={domIdx === yIdx*5 + xIdx}
-            blockIdx={(startIdx[yIdx] + ((col[xIdx]%10)+10)%10)%10}
+            active={props.blockElemIdx === yIdx*5 + xIdx}
+            blockIdx={(startIdx[yIdx] + ((col[xIdx]%lth)+lth)%lth)%lth}
             activeCenterClass={xIdx === ((currentColIdx%col.length)+col.length)%col.length && yIdx === ((currentRowIdx%row.length)+row.length)%row.length ? true : false}
             offsetX={col[xIdx] * blockWidth} 
             offsetY={row[yIdx] * blockHeight}
             color={xIdx === ((currentColIdx%col.length)+col.length)%col.length || yIdx === ((currentRowIdx%row.length)+row.length)%row.length?'red':''}
             data={props.data}
-            clickBlock={(e)=>{props.clickBlock(yIdx*5 + xIdx, (startIdx[yIdx] + ((col[xIdx]%10)+10)%10)%10, xIdx, yIdx)}}
+            onClickBlock={(e)=>{props.onClickBlock(yIdx*5 + xIdx, xIdx, yIdx)}}
           />
         })
       })
@@ -146,116 +148,29 @@ const CitiesList = (props) => {
 
 const G02BContainer = (props) => {
   const [dragging, setDragging] = useState(false);
-  const citiesListElem = useRef(null);
   const goCenterFunc = useRef(null);
   const moveToClickedBlockFunc = useRef(null);
+  const getDisableDragFunc = useRef(null);
+  const detailsPageElem = useRef(null);
 
-  const [domIdx, setDomIdx] = useState(null);
-  const blockWidth = window.innerWidth / 3;
+  // const [domIdx, setDomIdx] = useState(null);
+  const blockWidth = window.innerWidth / 3.1;
   const blockHeight = blockWidth;
   // const [status, setStatus] = useState(G02BStatus.IDLE);
   const [contentData, setContentData] = useState(null);
   const [isHome, setIsHome] = useState(true);
-  const [isShowHints, setIsShowHints] = useState(false);
-  const [isShowExplore, setIsShowExplore] = useState(false);
+  const [disableDrag, setDisableDrag] = useState(true);
+  // const [isShowHints, setIsShowHints] = useState(false);
+  // const [isShowExplore, setIsShowExplore] = useState(false);
   const [currentColIdx, setCurrentColIdx] = useState(2);
   const [currentRowIdx, setCurrentRowIdx] = useState(2);
   const [easeElemPos, setEaseElemPos] = useState({
-    x: -blockWidth*4/2 + window.innerWidth/2 - blockWidth/2,
-    y: -blockHeight*4/2 + window.innerHeight/2 - blockHeight/2
+    x: -blockWidth*4/2 + window.innerWidth/2 - blockWidth/2,// + blockWidth*.015,
+    y: -blockHeight*4/2 + window.innerHeight/2 - blockHeight/2//+ blockHeight*.015
   });
-  // const [data, setData] = useState({
-  //   initalPos:{
-  //     x: -blockWidth*4/2 + window.innerWidth/2 - blockWidth/2, 
-  //     y: -blockHeight*4/2 + window.innerHeight/2 - blockHeight/2
-  //   },
-  //   startPos:{x:0, y:0},
-  //   currentPos:{x: 0, y:0},
-  //   prevPos:{x:0, y:0},
-  //   offset:{x:0, y:0},
-  //   delta:{x:0, y:0,t:0},
-  //   lastPos:{x:0, y:0}
-  // });
-  // const [disableDrag, setDisableDrag] = useState(false);
-  // const [startDrag, setStartDrag] = useState(false);
-  // const [easePos, setEasePos] = useState({x:data.initalPos.x, y:data.initalPos.y});
-  const [activeBlockIdx, setActiveBlockIdx] = useState(null);
-  // let timestamp = Date.now();
-  let hintsElem = [];
-  
-  // const dragStart = (event) => {
-  //   if(!disableDrag){
-  //     let e = (event.touches? event.touches[0]: event);
-  //     const mx = e.clientX;
-  //     const my = e.clientY;
-  //     setData({...data,
-  //       startPos:{x:e.clientX, y:e.clientY},
-  //       offset:{x:0,y:0},
-  //       delta:{x:0,y:0,t:Date.now() - timestamp},
-  //       lastPos:{x: mx, y:my},
-  //       prevPos: {...data.currentPos},
-  //     });
-  //     setStartDrag(true);
-  //     setDragging(false);
-  //   }
-  // }
-
-  // const dragMove = (event) => {
-  //   if(!disableDrag){
-  //     let e = (event.touches? event.touches[0]: event);
-  //     if(startDrag){
-  //       const mx = e.clientX;
-  //       const my = e.clientY;
-
-  //       setData({...data,
-  //         offset:{
-  //           x:mx - data.startPos.x, 
-  //           y:my - data.startPos.y
-  //         },
-  //         delta: {
-  //           x: mx - data.lastPos.x,
-  //           y: my - data.lastPos.y,
-  //           t: Date.now() - timestamp
-  //         },
-  //         currentPos: {
-  //           x:data.prevPos.x + data.offset.x + data.delta.x, 
-  //           y:data.prevPos.y + data.offset.y + data.delta.y
-  //         },
-  //         lastPos:{x: mx, y:my},
-  //       });
-
-
-  //       setDragging(true);
-  //       setIsHome(false);
-  //       setIsShowHints(true);
-  //     }
-  //   }
-  // }
-
-  // const dragEnd = (event) => {
-  //   if(!disableDrag){
-  //     setData({...data,
-  //       delta: {...data.delta,
-  //         t: Date.now() - timestamp
-  //       },
-  //       currentPos: {
-  //         x:data.prevPos.x + data.offset.x + Math.round(data.delta.x / data.delta.t * 200), 
-  //         y:data.prevPos.y + data.offset.y + Math.round(data.delta.y / data.delta.t * 200)
-  //       },
-  //       prevPos: {...data.currentPos},
-  //     });
-  //     console.log(data.delta)
-  //     setStartDrag(false);
-  //     timestamp = Date.now();
-  //   }
-  // }
-
-  
-
-
-
-
-  
+  const [blockElemIdx, setBlockElemIdx] = useState(null);
+  // let hintsElem = [];
+ 
   
 
   useEffect(()=>{
@@ -268,8 +183,8 @@ const G02BContainer = (props) => {
     // const blockWidth = window.innerWidth / 3;
     // const blockHeight = blockWidth;
     const initalPos = {
-      x: -blockWidth*4/2 + window.innerWidth/2 - blockWidth/2, 
-      y: -blockHeight*4/2 + window.innerHeight/2 - blockHeight/2
+      x: easeElemPos.x, 
+      y: easeElemPos.y
     };
     const elemPos = {
       x: initalPos.x,
@@ -277,23 +192,27 @@ const G02BContainer = (props) => {
     }
     // const easeElemPos = {x:initalPos.x,y:initalPos.y};
     let player = null;
+    let isDragDisabled = false;
+    // const offset = 0;//blockWidth*.015;
 
 
     const onMouseDown = (event) => {
-      setDragging(false);
-      let e = (event.touches? event.touches[0]: event);
-      const mx = e.clientX;
-      const my = e.clientY;
+      if(!isDragDisabled){
+        setDragging(false);
+        let e = (event.touches? event.touches[0]: event);
+        const mx = e.clientX;
+        const my = e.clientY;
 
-      mouse.startPos = {x:mx, y:my};
-      mouse.lastPos = {x:0, y:0};
+        mouse.startPos = {x:mx, y:my};
+        mouse.lastPos = {x:0, y:0};
         
-      document.addEventListener('mousemove', onMouseMove, false);
-      document.addEventListener('mouseup', onMouseUp, false);
+        document.addEventListener('mousemove', onMouseMove, false);
+        document.addEventListener('mouseup', onMouseUp, false);
+      }
     }
 
     const onMouseMove = (event) => {
-      // setDragging(true);
+      setDragging(true);
       let e = (event.touches? event.touches[0]: event);
       const mx = e.clientX;
       const my = e.clientY;
@@ -312,7 +231,7 @@ const G02BContainer = (props) => {
     }
 
     const onMouseUp = (event) => {
-      setDragging(false);
+      // setDragging(false);
       document.removeEventListener('mousemove', onMouseMove, false);
       document.removeEventListener('mouseup', onMouseUp, false);
     }
@@ -327,18 +246,19 @@ const G02BContainer = (props) => {
     
 
     const moveToClickedBlock = (x,y) => {
-      setIsHome(false);
-      setIsShowHints(false);
-      setIsShowExplore(true);
-      elemPos.x = -x + blockWidth;
-      elemPos.y = -y + window.innerHeight/2 - blockHeight/2;
+      if(!isDragDisabled){
+        elemPos.x = -x + window.innerWidth/2 - blockWidth/2;
+        elemPos.y = -y + window.innerHeight/2 - blockHeight/2;
+      }
     }
     moveToClickedBlockFunc.current = {moveToClickedBlock}
 
-    
 
-    // console.log('current row idx',currentRowIdx);
-    // console.log('current col idx',currentColIdx);
+    const getDisableDrag = (d) => {
+      isDragDisabled = d;
+    }
+    getDisableDragFunc.current = {getDisableDrag};
+
 
     const loop = ()=>{
       player = requestAnimationFrame(loop);
@@ -349,9 +269,7 @@ const G02BContainer = (props) => {
       });
 
       setCurrentColIdx(-Math.floor((easeElemPos.x-blockWidth/2) / blockWidth));
-      setCurrentRowIdx(-Math.floor(((easeElemPos.y+blockHeight/4) / blockHeight)));
-
-      // citiesListElem.current.style.transform = `translate3d(${easeElemPos.x}px, ${easeElemPos.y}px, 0)`;
+      setCurrentRowIdx(-Math.floor(((easeElemPos.y+blockHeight/8) / blockHeight)));
     }
 
     loop();
@@ -362,48 +280,64 @@ const G02BContainer = (props) => {
     }
   },[]);
 
+
   useEffect(() => {
     if(props.appData){
       setContentData(props.appData.contents['zh']);
     }
   }, [props.appData]);
 
+
+  useEffect(()=>{
+    getDisableDragFunc.current.getDisableDrag(disableDrag);
+  },[disableDrag]);
   
-  
+
   const backToHome = () => {
     goCenterFunc.current.goCenter(currentColIdx,currentRowIdx);
     setIsHome(true);
-    setIsShowHints(false);
+    setDisableDrag(true);
+    // setIsShowHints(false);
   }
   
   const showHints = () => {
-    const tl = gsap.timeline();
-    setIsShowHints(false);
+    // const tl = gsap.timeline();
+    // setIsShowHints(false);
 
-    hintsElem.map((elem, idx) => {
-      tl.to(elem,.3,{autoAlpha:1,ease:'Power1.easeInOut'});
-      if(idx === hintsElem.length-1)
-        tl.to(elem,.3,{autoAlpha:0,ease:'Power1.easeInOut',onComplete:()=>{setIsShowHints(true);}},'+=1');
-      else
-        tl.to(elem,.3,{autoAlpha:0,ease:'Power1.easeInOut'},'+=1');
-    });
+    // hintsElem.map((elem, idx) => {
+      gsap.to(['#drag', '#homeBtn'],.3,{autoAlpha:1, ease:'power1.inOut'});
+      // if(idx === hintsElem.length-1)
+      //   tl.to(elem,.3,{autoAlpha:0,ease:'Power1.easeInOut',onComplete:()=>{setIsShowHints(true);}},'+=1');
+      // else
+      //   tl.to(elem,.3,{autoAlpha:0,ease:'Power1.easeInOut'},'+=1');
+    // });
   }
   
   const closeContent = () => {
-    // setDisableDrag(false);
-    setIsShowExplore(false);
-    setActiveBlockIdx(null);
+    // setIsShowExplore(false);
+    setBlockElemIdx(null);
+    detailsPageElem.current.className = '';
   }
   
-  const onClickBlock = (domIdx, blockIdx, c,r) =>{
-    if(!dragging){
-      setActiveBlockIdx(domIdx);
+  const onClickBlock = (domIdx, c, r) =>{
+    if(!dragging && !isHome){
+      setDisableDrag(true);
+      setBlockElemIdx(domIdx);
       moveToClickedBlockFunc.current.moveToClickedBlock(col[c] * blockWidth, row[r] * blockHeight);
+      const elem = document.querySelector(`.cityBlock:nth-child(${domIdx+1})`);
+      const delay = Math.abs((elem.getBoundingClientRect().left + (blockWidth/2) - (window.innerWidth/2)) / (window.innerWidth/1.1)) + Math.abs((elem.getBoundingClientRect().top + (blockWidth/2) - (window.innerHeight/2)) / (window.innerWidth));
+      // console.log(elem.getBoundingClientRect().left + (blockWidth/2) - window.innerWidth/2)
+      gsap.to(['#drag'],.3,{autoAlpha:0, ease:'power1.inOut'});
+      gsap.to(['#exploreBtn'],.3,{autoAlpha:1, ease:'power1.inOut'});
+      gsap.fromTo('#detailsPage #bg', .3, {autoAlpha:0}, {delay:delay, autoAlpha:1, ease:'power1.inOut'});
+      gsap.fromTo('#detailsPage #bg', 1.3, {scale:.8}, {force3D:true, delay:delay, scale:3.6, ease:'power4.inOut'});
+      detailsPageElem.current.className = 'active';
     }
   }
 
   const onChangeLang = (lang) =>{
     setIsHome(false);
+    setDisableDrag(false);
     setContentData(props.appData.contents[lang]);
     showHints();
   }
@@ -416,53 +350,35 @@ const G02BContainer = (props) => {
         <div>請選擇語言</div>
         <div id="lang">
           {
-            props.appData && props.appData.languages.map((value,index)=>
+            props.appData && props.appData.languages.map((value,index) => 
               <div key={index} onClick={()=>onChangeLang(value.locale)}>{value.display}</div>
             )
           }
         </div>
       </div>
-      <div id="hints">
-        <div ref={(e)=> hintsElem.push(e)}>{props.appData && contentData && contentData.ui.dragHints}</div>
-        <div ref={(e)=> hintsElem.push(e)}>{props.appData && contentData && contentData.ui.clickHints}</div>
-      </div>
-      <div id="hintsBtn" className={`btn${isShowHints?'':' hide'}`} onClick={()=>{showHints()}}>?</div>
-      <div id="exploreBtn" className={`btn${isShowExplore?'':' hide'}`} onClick={()=>{closeContent()}}>{props.appData && contentData && contentData.ui.exploreHints}</div>
-      <div id="homeBtn" className="btn" onClick={()=>{backToHome()}}>O</div>
-
-
-      {/* <div ref={citiesListElem} className="citiesList">
-        {
-          new Array(startIdx.length).fill(0).map((value, yIdx)=>{
-            return new Array(5).fill(0).map((value, xIdx)=>{
-              return <CityBlock 
-                key={yIdx*5 + xIdx}
-                active={domIdx === yIdx*5 + xIdx}
-                blockIdx={(startIdx[yIdx] + ((col[xIdx]%10)+10)%10)%10}
-                activeCenterClass={xIdx === ((currentColIdx%col.length)+col.length)%col.length && yIdx === ((currentRowIdx%row.length)+row.length)%row.length ? true : false}
-                offsetX={col[xIdx]} 
-                offsetY={row[yIdx]}
-                color={xIdx === ((currentColIdx%col.length)+col.length)%col.length || yIdx === ((currentRowIdx%row.length)+row.length)%row.length?'red':''}
-                data={contentData}
-                // onClickBlock={(e)=>{onClickBlock(yIdx*5 + xIdx, (startIdx[yIdx] + ((col[xIdx]%10)+10)%10)%10, xIdx, yIdx)}}
-              />
-            })
-          })
-        }
-      </div> */}
-      {/* <div ref={citiesListElem} className="citiesList"> */}
-        <CitiesList 
-          data={contentData}
-          posX={easeElemPos.x}
-          posY={easeElemPos.y}
-          currentColIdx={currentColIdx}
-          currentRowIdx={currentRowIdx}
-          // moveToClickedBlock={moveToClickedBlock}
-          // dragging={dragging}
-          activeBlockIdx={activeBlockIdx}
-          onClickBlock={onClickBlock}
-        />
+      <div id="drag" dangerouslySetInnerHTML={{__html:props.appData && contentData && contentData.ui.dragHints}}></div>
+      {/* <div id="hints"> */}
+        {/* <div ref={(e)=> hintsElem.push(e)}>{props.appData && contentData && contentData.ui.clickHints}</div> */}
       {/* </div> */}
+      {/* <div id="hintsBtn" className={`btn${isShowHints?'':' hide'}`} onClick={()=>{showHints()}}>?</div> */}
+      <div id="exploreBtn" onClick={closeContent}><span>{props.appData && contentData && contentData.ui.exploreHints}</span></div>
+      <div id="homeBtn" className="btn" onClick={backToHome}></div>
+      <CitiesList 
+        data={contentData}
+        posX={easeElemPos.x}
+        posY={easeElemPos.y}
+        currentColIdx={currentColIdx}
+        currentRowIdx={currentRowIdx}
+        blockElemIdx={blockElemIdx}
+        onClickBlock={onClickBlock}
+      />
+
+      <div ref={detailsPageElem} id="detailsPage">
+        <div>{props.data && props.data.cities[blockElemIdx%10].name}</div>
+        {currentColIdx+currentRowIdx}
+        <div id="bg"></div>
+      </div>
+
       {/* <CityDetailsContainer /> */}
       {/* <LanguageSelection /> */}
     </div>

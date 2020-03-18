@@ -10,12 +10,6 @@
     }
   ],
   "contents": {
-    "home": {
-      "line1": "Impressions of Cities",
-      "line2": "世界城市",
-      "selectLanguageHints1": "Please select your language to start",
-      "selectLanguageHints2": "請選擇您的語言以開始"
-    },
     "en":{
       "cities": [
         {
@@ -60,7 +54,7 @@
         }
       ],
       "ui": {
-        "dragHints": "DRAG to discover more cities",
+        "dragHints": "<b>DRAG</b> to discover more cities",
         "clickHints": "CLICK to see the details",
         "exploreHints": "Explor other cities"
       }
@@ -68,8 +62,8 @@
     "zh": {
       "cities": [
         {
-          "name": "佛羅里達",
-          "nickname": "防衛之城",
+          "name": "港口城市大改造",
+          "nickname": "漢堡",
           "imageTemplate": "some react template of the svg?",
           "detailBlocks": [
             {
@@ -107,16 +101,16 @@
           "nickname": "哥本哈根"
         },
         {
-          "name": "佛羅里達2",
-          "nickname": "防衛之城2"
+          "name": "巨型都市",
+          "nickname": "北京"
         },
         {
-          "name": "佛羅里達3",
-          "nickname": "防衛之城3"
+          "name": "網路之城",
+          "nickname": "首爾"
         },
         {
-          "name": "佛羅里達4",
-          "nickname": "防衛之城4"
+          "name": "汽車之城",
+          "nickname": "曼谷"
         },
         {
           "name": "佛羅里達5",
@@ -140,9 +134,9 @@
         }
       ],
       "ui": {
-        "dragHints": "拖動看更多城市",
+        "dragHints": "<b>拖曳</b>畫面探索更多城市",
         "clickHints": "按下查看詳細資料",
-        "exploreHints": "觀看其他城市"
+        "exploreHints": "探索更多城市"
       }
     }
   }
