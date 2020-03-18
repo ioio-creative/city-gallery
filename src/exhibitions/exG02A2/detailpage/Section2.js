@@ -53,6 +53,14 @@ const Section2 = props => {
                             <div className="medium">1,106.66</div>
                         </li>
                     </ul>
+                    <div className="unit">
+                        <div className="floorWrap">
+                            <div className="floor">
+                                <span><span></span></span>
+                            </div>
+                        </div>
+                        <p>500/km<sup>2</sup></p>
+                    </div>
                     <div className="imageWrap">
                         <div className="stageWrap">
                             <div ref={stageLeft} className="stage"></div>
@@ -80,6 +88,14 @@ const Section2 = props => {
                             <div className="medium">627.57</div>
                         </li>
                     </ul>
+                    <div className="unit">
+                        <div className="floorWrap">
+                            <div className="floor">
+                                <span><span></span></span>
+                            </div>
+                        </div>
+                        <p>500/km<sup>2</sup></p>
+                    </div>
                     <div className="imageWrap">
                         <div className="stageWrap">
                             <div ref={stageRight} className="stage"></div>

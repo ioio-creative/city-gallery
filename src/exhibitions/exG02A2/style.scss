@@ -43,6 +43,7 @@
     font-family: 'FuturaLT' ,sans-serif;
     sup{
         font-size: vw-calc(8);
+        font-weight: normal;
     }
     ul{
         margin:0;
@@ -95,7 +96,7 @@
             font-size: vw-calc(28);
             font-weight: bold;
             color:#1492E6;
-            box-shadow: 1px 3px 10px #00000029;
+            box-shadow: vw-calc(1 3 10) #00000029;
             cursor: pointer;
             transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
             &:active{
@@ -320,6 +321,15 @@
                     visibility: visible;
                     transition-delay: .6s;
                 }
+                span{
+                    width:vw-calc(52);
+                    height: vw-calc(36);
+                    background:#F53939;
+                    margin:0 vw-calc(30);
+                    box-shadow: 0 vw-calc(3 6) #00000029;
+                    border-radius: vw-calc(3);
+                    display: inline-block;
+                }
             }
             .section{
                 width:100%;
@@ -377,7 +387,7 @@
                                 height: 100%;
                                 display: block;
                                 background: #FFFFFF 0% 0% no-repeat padding-box;
-                                box-shadow: 7px 7px 5px #00000015;
+                                box-shadow: vw-calc(7 7 5) #00000015;
                                 border: 3px solid #8BCBD1;
                                 transform: rotate3d(0, 0, 1, 45deg);
                             }
@@ -427,6 +437,63 @@
                             }
                         }
                     }
+                    #left{
+                        .unit{
+                            right:vw-calc(75);
+                        }
+                    }
+                    #right{
+                        .unit{
+                            left:vw-calc(75);
+                        }
+                    }
+                    .unit{
+                        position: absolute;
+                        top:vw-calc(245);
+                        .floorWrap{
+                            width: vw-calc(50);
+                            height: vw-calc(50);
+                            position: relative;
+                            margin-right:vw-calc(20);
+                            top:vw-calc(7);
+                            display: inline-block;
+                            transform-style: preserve-3d;
+                            transform: rotate3d(1, 0, 0, 55deg);
+                            .floor{
+                                width: 100%;
+                                height: 100%;
+                                display: block;
+                                background: #FFFCE0 0% 0% no-repeat padding-box;
+                                box-shadow: vw-calc(7 7 5) #00000015;
+                                transform: rotate3d(0, 0, 1, 45deg);
+                                transform-style: preserve-3d;
+                                &>span{
+                                    width:vw-calc(31);
+                                    height:vw-calc(61);
+                                    display: block;
+                                    position: absolute;
+                                    top:0;
+                                    left:0;
+                                    transform: translate3d(50%,-50%,0) rotate3d(1, 0, 0, -90deg);
+                                    transform-origin: bottom;
+                                    transform-style: preserve-3d;
+                                    span{
+                                        width:100%;
+                                        height:100%;
+                                        display: block;
+                                        transform: translate3d(0,0,0) rotate3d(0,1, 0, 40deg);
+                                        background:url('./images/people1_right.png') center center no-repeat;
+                                        background-size:100%;
+                                    }
+                                }
+                            }
+                        }
+                        p{
+                            position: absolute;
+                            font-size:vw-calc(14);
+                            // font-weight: bold;
+                        }
+                    }
                     .imageWrap{
                         .stageWrap{
                             width:0;
@@ -442,7 +509,7 @@
                                 background: #fffce1;
                                 transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, 45deg);
                                 transform-style: preserve-3d;
-                                box-shadow: 4px 4px 6px rgba(0,0,0,0.1);
+                                box-shadow: vw-calc(4 4 6) rgba(0,0,0,0.1);
                                 .people{
                                     width:vw-calc(31);
                                     height:vw-calc(61);
@@ -715,7 +782,7 @@
                                         align-items: center;
                                         justify-content: center;
                                         padding-top: vw-calc(2);
-                                        box-shadow: 0px 3px 6px #00000015;
+                                        box-shadow: 0px vw-calc(3 6) #00000015;
                                         position: absolute;
                                         top:0;
                                         left:vw-calc(-20);

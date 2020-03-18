@@ -1181,8 +1181,8 @@ const App = props => {
                         </div>
                     </div>
 
-                    <div className={`locationName left ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}>HONG KONG</div>
-                    <div className={`locationName right ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}>{selectedId && locations[selectedId].name}</div>
+                    <div className={`locationName left ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}>HONG KONG<span></span></div>
+                    <div className={`locationName right ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}><span></span>{selectedId && locations[selectedId].name}</div>
                     
                     <Section1 detailIdx={detailIdx} location={selectedId && locations[selectedId].name} />
                     <Section2 detailIdx={detailIdx} location={selectedId && locations[selectedId].name} />
