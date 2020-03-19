@@ -23,7 +23,7 @@ const CityBlock = (props) => {
         <div className="realName">{props.data && props.data.cities[cityIdx].location}</div>
       </div>
       <div className="otherLangName">
-        <b>Habour Regeneration</b>, Hamburg
+        <b>{props.data && props.otherLangData.cities[cityIdx].name}</b>, {props.data && props.otherLangData.cities[cityIdx].location}
       </div>
       {/* <div style={{
         position: 'absolute',
@@ -138,7 +138,8 @@ const CitiesList = (props) => {
             offsetX={col[xIdx] * blockWidth} 
             offsetY={row[yIdx] * blockHeight}
             // color={xIdx === ((currentColIdx%col.length)+col.length)%col.length || yIdx === ((currentRowIdx%row.length)+row.length)%row.length?'red':''}
-            data={props.data}
+            data={ props.data }
+            otherLangData={ props.otherLangData }
             onClickBlock={(e)=>{
               props.onClickBlock(yIdx*5 + xIdx, xIdx, yIdx); 
               props.setDomId(id)
@@ -163,6 +164,7 @@ const G02BContainer = (props) => {
   const blockWidth = window.innerWidth / 3.1;
   const blockHeight = blockWidth;
   // const [status, setStatus] = useState(G02BStatus.IDLE);
+  const [language, setLanguage] = useState('zh');
   const [contentData, setContentData] = useState(null);
   const [isHome, setIsHome] = useState(true);
   const [activeDetailPage, setActiveDetailPage] = useState(false);
@@ -332,15 +334,15 @@ const G02BContainer = (props) => {
     setActiveDetailPage(true);
   }
 
-  const closeDetailPage = (disableDelay) => {
+  const closeDetailPage = (goHome) => {
     gsap.to(['#exploreBtn'],.3,{autoAlpha:0, ease:'power1.inOut'});
     gsap.to(['#drag'],.3,{delay:.6, autoAlpha:1, ease:'power1.inOut'});
     gsap.to('#detailsContent', .3, {autoAlpha:0, ease:'power1.inOut'});
     gsap.to('#detailsPage #bg', .6, {force3D:true, scale:1, ease:'power2.inOut'});
-    gsap.to('#detailsPage #bg', .3, {delay:disableDelay? 0:.6, autoAlpha:0, ease:'power1.inOut',
+    gsap.to('#detailsPage #bg', .3, {delay:goHome? 0:.6, autoAlpha:0, ease:'power1.inOut',
       onComplete:function(){
         setActiveDetailPage(false);
-        setDisableDrag(false);
+        !goHome && setDisableDrag(false);
       }
     });
   }
@@ -349,6 +351,7 @@ const G02BContainer = (props) => {
     setIsHome(false);
     setDisableDrag(false);
     setContentData(props.appData.contents[lang]);
+    setLanguage(lang);
 
     gsap.to(['#drag', '#homeBtn'],.3,{autoAlpha:1, ease:'power1.inOut'});
   }
@@ -362,16 +365,17 @@ const G02BContainer = (props) => {
         <div id="lang">
           {
             props.appData && props.appData.languages.map((value,index) => 
-              <div key={index} onClick={()=>onChangeLang(value.locale)}>{value.display}</div>
+              <div key={index} className="btn" onClick={()=>onChangeLang(value.locale)}>{value.display}</div>
             )
           }
         </div>
       </div>
       <div id="drag" dangerouslySetInnerHTML={{__html:contentData && contentData.ui.dragHints}}></div>
-      <div id="exploreBtn" onClick={closeContent}><span>{contentData && contentData.ui.exploreHints}</span></div>
+      <div id="exploreBtn" className="btn" onClick={closeContent}><span>{contentData && contentData.ui.exploreHints}</span></div>
       <div id="homeBtn" className="btn" onClick={backToHome}></div>
       <CitiesList 
         data={contentData}
+        otherLangData={props.appData && props.appData.contents[language === 'zh' ? 'en' : 'zh']}
         posX={easeElemPos.x}
         posY={easeElemPos.y}
         currentColIdx={currentColIdx}

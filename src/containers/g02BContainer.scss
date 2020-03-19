@@ -74,13 +74,31 @@ body{
     cursor: -moz-grabbing;
     cursor: -webkit-grabbing;
   }
-  &.home .center{
-    opacity: 0;
-    visibility: hidden;
-  }
-  &.home #homeInfo{
-    opacity: 1;
-    visibility: visible;
+  &.home{
+    .center{
+      opacity: 0;
+      visibility: hidden;
+    }
+    #homeInfo{
+      opacity: 1;
+      visibility: visible;
+    }
+    .cityBlock{
+      .contentWrap{
+        &:after{
+          opacity: 0;
+          visibility: hidden;
+        }
+        .cityName{
+          opacity: 0;
+          visibility: hidden;
+        }
+        .otherLangName{
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    }
   }
 }
 #homeInfo{
@@ -110,11 +128,14 @@ body{
       font-size:vw-calc(28);
       font-weight: bold;
       display: inline-block;
-      transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-      &:active{
-          transform: translate3d(0,0,0) scale(.9);
-      }
     }
+  }
+}
+.btn{
+  transform: translate3d(0,0,0) scale(1);
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  &:active{
+    transform: translate3d(0,0,0) scale(.9);
   }
 }
 // .btn{
@@ -146,21 +167,22 @@ body{
   border-radius: vw-calc(80);
   background: #fff;
   color:#0093FF;
-  transform: translate3d(-50%,0,0);
-  padding:0 17px;
   font-size:vw-calc(30);
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 10px 20px #00000033;
+  box-shadow: 0 vw-calc(10 20) #00000033;
   position: fixed;
   bottom:vw-calc(103);
   left:50%;
   z-index: 999;
-  transform: translate3d(-50%,0,0);
+  transform: translate3d(-50%,0,0) scale(1);
   opacity: 0;
   visibility: hidden;
+  &:active{
+      transform: translate3d(-50%,0,0) scale(.93);
+  }
   &:before{
     content:'';
     width:vw-calc(29);
@@ -177,7 +199,7 @@ body{
   width:vw-calc(127);
   height:vw-calc(127);
   border-radius: vw-calc(70);
-  box-shadow: 0px 10px 20px #00000033;
+  box-shadow: 0 vw-calc(10 20) #00000033;
   background:#fff url('../exhibitions/exG02B2/images/homeicon.png') center no-repeat;
   background-size:50%;
   position: absolute;
@@ -293,6 +315,7 @@ body{
       background:#D6D6D6 url('../exhibitions/exG02B2/images/arrowright.svg') 54% no-repeat;
       background-size:32%;
       border-radius: 50%;
+      transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
     }
     .cityName{
       position: absolute;
@@ -302,6 +325,7 @@ body{
       font-size: vw-calc(30);
       line-height: vw-calc(30);
       z-index: 1;
+      transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
       .location {
         font-weight: bold;
         padding-bottom:vw-calc(5);
@@ -313,6 +337,7 @@ body{
       bottom:vw-calc(37);
       left:vw-calc(70);
       z-index: 1;
+      transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
       b{
         font-weight: bold;
       }
