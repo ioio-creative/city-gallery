@@ -16,14 +16,16 @@ const CityBlock = (props) => {
     className={`cityBlock${props.activeCenterClass?' center':''}${props.active?' clicked':''}`} 
     style={{transform: `translate3d(${props.offsetX}px, ${props.offsetY}px, 0px)`}}
   >
-    {/* <div className="cityBgColor"></div> */}
     <div className="contentWrap" onClick={props.onClickBlock}>
       <div className="cityImage" style={{backgroundImage:`url(${hamburg})`}}></div>
       <div className="cityName">
-        <div className="nickName">{props.data && props.data.cities[cityIdx].name}</div>
-        <div className="realName">{props.data && props.data.cities[cityIdx].nickname}</div>
+        <div className="location">{props.data && props.data.cities[cityIdx].name}</div>
+        <div className="realName">{props.data && props.data.cities[cityIdx].location}</div>
       </div>
-      <div style={{
+      <div className="otherLangName">
+        <b>Habour Regeneration</b>, Hamburg
+      </div>
+      {/* <div style={{
         position: 'absolute',
         top:'50%',
         left:'50%',
@@ -32,11 +34,11 @@ const CityBlock = (props) => {
         color: props.color,
         display:'inline-block',
         zIndex:99
-      }}>{props.data && props.blockIdx}</div>
+      }}>{props.data && props.blockIdx}</div> */}
     </div>
     {/* <div className="mainContentWrap">
-        <h2 className="nickName">{props.data && props.data.cities[cityIdx].name}</h2>
-        <h2 className="realName">{props.data && props.data.cities[cityIdx].nickname}</h2>
+        <h2 className="location">{props.data && props.data.cities[cityIdx].name}</h2>
+        <h2 className="realName">{props.data && props.data.cities[cityIdx].location}</h2>
     </div> */}
   </div>
 }
@@ -127,16 +129,20 @@ const CitiesList = (props) => {
     {
       new Array(startIdx.length).fill(0).map((value, yIdx)=>{
         return new Array(5).fill(0).map((value, xIdx)=>{
+          const id = (startIdx[yIdx] + ((col[xIdx]%lth)+lth)%lth)%lth;
           return <CityBlock 
             key={yIdx*5 + xIdx}
             active={props.blockElemIdx === yIdx*5 + xIdx}
-            blockIdx={(startIdx[yIdx] + ((col[xIdx]%lth)+lth)%lth)%lth}
+            blockIdx={id}
             activeCenterClass={xIdx === ((currentColIdx%col.length)+col.length)%col.length && yIdx === ((currentRowIdx%row.length)+row.length)%row.length ? true : false}
             offsetX={col[xIdx] * blockWidth} 
             offsetY={row[yIdx] * blockHeight}
-            color={xIdx === ((currentColIdx%col.length)+col.length)%col.length || yIdx === ((currentRowIdx%row.length)+row.length)%row.length?'red':''}
+            // color={xIdx === ((currentColIdx%col.length)+col.length)%col.length || yIdx === ((currentRowIdx%row.length)+row.length)%row.length?'red':''}
             data={props.data}
-            onClickBlock={(e)=>{props.onClickBlock(yIdx*5 + xIdx, xIdx, yIdx)}}
+            onClickBlock={(e)=>{
+              props.onClickBlock(yIdx*5 + xIdx, xIdx, yIdx); 
+              props.setDomId(id)
+            }}
           />
         })
       })
@@ -153,24 +159,22 @@ const G02BContainer = (props) => {
   const getDisableDragFunc = useRef(null);
   const detailsPageElem = useRef(null);
 
-  // const [domIdx, setDomIdx] = useState(null);
+  const [domId, setDomId] = useState(0);
   const blockWidth = window.innerWidth / 3.1;
   const blockHeight = blockWidth;
   // const [status, setStatus] = useState(G02BStatus.IDLE);
   const [contentData, setContentData] = useState(null);
   const [isHome, setIsHome] = useState(true);
+  const [activeDetailPage, setActiveDetailPage] = useState(false);
   const [disableDrag, setDisableDrag] = useState(true);
-  // const [isShowHints, setIsShowHints] = useState(false);
-  // const [isShowExplore, setIsShowExplore] = useState(false);
   const [currentColIdx, setCurrentColIdx] = useState(2);
   const [currentRowIdx, setCurrentRowIdx] = useState(2);
   const [easeElemPos, setEaseElemPos] = useState({
-    x: -blockWidth*4/2 + window.innerWidth/2 - blockWidth/2,// + blockWidth*.015,
-    y: -blockHeight*4/2 + window.innerHeight/2 - blockHeight/2//+ blockHeight*.015
+    x: -blockWidth*4/2 + window.innerWidth/2 - blockWidth/2,
+    y: -blockHeight*4/2 + window.innerHeight/2 - blockHeight/2
   });
   const [blockElemIdx, setBlockElemIdx] = useState(null);
-  // let hintsElem = [];
- 
+
   
 
   useEffect(()=>{
@@ -180,8 +184,6 @@ const G02BContainer = (props) => {
       delta:{x:0, y:0},
       lastPos:{x:0, y:0}
     }
-    // const blockWidth = window.innerWidth / 3;
-    // const blockHeight = blockWidth;
     const initalPos = {
       x: easeElemPos.x, 
       y: easeElemPos.y
@@ -190,10 +192,8 @@ const G02BContainer = (props) => {
       x: initalPos.x,
       y: initalPos.y
     }
-    // const easeElemPos = {x:initalPos.x,y:initalPos.y};
     let player = null;
     let isDragDisabled = false;
-    // const offset = 0;//blockWidth*.015;
 
 
     const onMouseDown = (event) => {
@@ -208,6 +208,8 @@ const G02BContainer = (props) => {
         
         document.addEventListener('mousemove', onMouseMove, false);
         document.addEventListener('mouseup', onMouseUp, false);
+        document.addEventListener('touchmove', onMouseMove, false);
+        document.addEventListener('touchend', onMouseUp, false);
       }
     }
 
@@ -230,8 +232,7 @@ const G02BContainer = (props) => {
       elemPos.y += mouse.delta.y * 2;
     }
 
-    const onMouseUp = (event) => {
-      // setDragging(false);
+    const onMouseUp = () => {
       document.removeEventListener('mousemove', onMouseMove, false);
       document.removeEventListener('mouseup', onMouseUp, false);
     }
@@ -274,9 +275,11 @@ const G02BContainer = (props) => {
 
     loop();
     document.addEventListener('mousedown', onMouseDown, false);
+    document.addEventListener('touchstart', onMouseDown, false);
     return () => {
       cancelAnimationFrame(player);
       document.removeEventListener('mousedown', onMouseDown, false);
+      document.removeEventListener('touchstart', onMouseDown, false);
     }
   },[]);
 
@@ -297,26 +300,14 @@ const G02BContainer = (props) => {
     goCenterFunc.current.goCenter(currentColIdx,currentRowIdx);
     setIsHome(true);
     setDisableDrag(true);
-    // setIsShowHints(false);
-  }
-  
-  const showHints = () => {
-    // const tl = gsap.timeline();
-    // setIsShowHints(false);
 
-    // hintsElem.map((elem, idx) => {
-      gsap.to(['#drag', '#homeBtn'],.3,{autoAlpha:1, ease:'power1.inOut'});
-      // if(idx === hintsElem.length-1)
-      //   tl.to(elem,.3,{autoAlpha:0,ease:'Power1.easeInOut',onComplete:()=>{setIsShowHints(true);}},'+=1');
-      // else
-      //   tl.to(elem,.3,{autoAlpha:0,ease:'Power1.easeInOut'},'+=1');
-    // });
+    closeDetailPage(true);
+    gsap.to(['#drag', '#homeBtn'],.3,{autoAlpha:0, overwrite:true, ease:'power1.inOut'});
   }
   
   const closeContent = () => {
-    // setIsShowExplore(false);
     setBlockElemIdx(null);
-    detailsPageElem.current.className = '';
+    closeDetailPage();
   }
   
   const onClickBlock = (domIdx, c, r) =>{
@@ -324,22 +315,42 @@ const G02BContainer = (props) => {
       setDisableDrag(true);
       setBlockElemIdx(domIdx);
       moveToClickedBlockFunc.current.moveToClickedBlock(col[c] * blockWidth, row[r] * blockHeight);
-      const elem = document.querySelector(`.cityBlock:nth-child(${domIdx+1})`);
-      const delay = Math.abs((elem.getBoundingClientRect().left + (blockWidth/2) - (window.innerWidth/2)) / (window.innerWidth/1.1)) + Math.abs((elem.getBoundingClientRect().top + (blockWidth/2) - (window.innerHeight/2)) / (window.innerWidth));
-      // console.log(elem.getBoundingClientRect().left + (blockWidth/2) - window.innerWidth/2)
-      gsap.to(['#drag'],.3,{autoAlpha:0, ease:'power1.inOut'});
-      gsap.to(['#exploreBtn'],.3,{autoAlpha:1, ease:'power1.inOut'});
-      gsap.fromTo('#detailsPage #bg', .3, {autoAlpha:0}, {delay:delay, autoAlpha:1, ease:'power1.inOut'});
-      gsap.fromTo('#detailsPage #bg', 1.3, {scale:.8}, {force3D:true, delay:delay, scale:3.6, ease:'power4.inOut'});
-      detailsPageElem.current.className = 'active';
+      
+      openDetailPage(domIdx);
     }
+  }
+
+  const openDetailPage = (domIdx) => {
+    const elem = document.querySelector(`.cityBlock:nth-child(${domIdx+1})`);
+    const delay = Math.abs((elem.getBoundingClientRect().left + (blockWidth/2) - (window.innerWidth/2)) / (window.innerWidth/1.1)) + Math.abs((elem.getBoundingClientRect().top + (blockWidth/2) - (window.innerHeight/2)) / (window.innerWidth));
+
+    gsap.to(['#drag'],.3,{autoAlpha:0, ease:'power1.inOut'});
+    gsap.fromTo('#detailsPage #bg', .3, {autoAlpha:0}, {delay:delay, autoAlpha:1, ease:'power1.inOut'});
+    gsap.fromTo('#detailsPage #bg', 1.3, {scale:.9}, {force3D:true, delay:delay, scale:3.6, ease:'power4.inOut'});
+    gsap.to('#detailsContent', .3, {delay:delay+1, autoAlpha:1, ease:'power1.inOut'});
+    gsap.to(['#exploreBtn'],.3,{delay:delay+1, autoAlpha:1, ease:'power1.inOut'});
+    setActiveDetailPage(true);
+  }
+
+  const closeDetailPage = (disableDelay) => {
+    gsap.to(['#exploreBtn'],.3,{autoAlpha:0, ease:'power1.inOut'});
+    gsap.to(['#drag'],.3,{delay:.6, autoAlpha:1, ease:'power1.inOut'});
+    gsap.to('#detailsContent', .3, {autoAlpha:0, ease:'power1.inOut'});
+    gsap.to('#detailsPage #bg', .6, {force3D:true, scale:1, ease:'power2.inOut'});
+    gsap.to('#detailsPage #bg', .3, {delay:disableDelay? 0:.6, autoAlpha:0, ease:'power1.inOut',
+      onComplete:function(){
+        setActiveDetailPage(false);
+        setDisableDrag(false);
+      }
+    });
   }
 
   const onChangeLang = (lang) =>{
     setIsHome(false);
     setDisableDrag(false);
     setContentData(props.appData.contents[lang]);
-    showHints();
+
+    gsap.to(['#drag', '#homeBtn'],.3,{autoAlpha:1, ease:'power1.inOut'});
   }
 
 
@@ -356,12 +367,8 @@ const G02BContainer = (props) => {
           }
         </div>
       </div>
-      <div id="drag" dangerouslySetInnerHTML={{__html:props.appData && contentData && contentData.ui.dragHints}}></div>
-      {/* <div id="hints"> */}
-        {/* <div ref={(e)=> hintsElem.push(e)}>{props.appData && contentData && contentData.ui.clickHints}</div> */}
-      {/* </div> */}
-      {/* <div id="hintsBtn" className={`btn${isShowHints?'':' hide'}`} onClick={()=>{showHints()}}>?</div> */}
-      <div id="exploreBtn" onClick={closeContent}><span>{props.appData && contentData && contentData.ui.exploreHints}</span></div>
+      <div id="drag" dangerouslySetInnerHTML={{__html:contentData && contentData.ui.dragHints}}></div>
+      <div id="exploreBtn" onClick={closeContent}><span>{contentData && contentData.ui.exploreHints}</span></div>
       <div id="homeBtn" className="btn" onClick={backToHome}></div>
       <CitiesList 
         data={contentData}
@@ -371,16 +378,23 @@ const G02BContainer = (props) => {
         currentRowIdx={currentRowIdx}
         blockElemIdx={blockElemIdx}
         onClickBlock={onClickBlock}
+        setDomId={setDomId}
       />
 
-      <div ref={detailsPageElem} id="detailsPage">
-        <div>{props.data && props.data.cities[blockElemIdx%10].name}</div>
-        {currentColIdx+currentRowIdx}
+      <div ref={detailsPageElem} id="detailsPage" className={activeDetailPage ? 'active' : ''}>
+        <div id="detailsContent">
+          <div id="title">
+            <span>{contentData && contentData.cities[domId].name},</span>
+            <svg>
+                <text x="0" y="75%" fill="none" stroke="#2F2D7C">
+                  {contentData && contentData.cities[domId].location}
+                </text>
+            </svg>
+          </div>
+          <div id="description">{contentData && contentData.cities[domId].description}</div>
+        </div>
         <div id="bg"></div>
       </div>
-
-      {/* <CityDetailsContainer /> */}
-      {/* <LanguageSelection /> */}
     </div>
   );
 }

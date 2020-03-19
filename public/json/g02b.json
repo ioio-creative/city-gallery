@@ -13,44 +13,44 @@
     "en":{
       "cities": [
         {
-          "name": "Safefy Harbour",
-          "nickname": "Flarido"
+          "name": "Habour Regeneration",
+          "location": "Hamburg"
         },
         {
-          "name": "Safefy Harbour 1",
-          "nickname": "Flarido 1"
+          "name": "City of Cycling",
+          "location": "Copenhagen"
         },
         {
           "name": "Safefy Harbour 2",
-          "nickname": "Flarido 2"
+          "location": "Flarido 2"
         },
         {
           "name": "Safefy Harbour 3",
-          "nickname": "Flarido 3"
+          "location": "Flarido 3"
         },
         {
           "name": "Safefy Harbour 4",
-          "nickname": "Flarido 4"
+          "location": "Flarido 4"
         },
         {
           "name": "Safefy Harbour 5",
-          "nickname": "Flarido 5"
+          "location": "Flarido 5"
         },
         {
           "name": "Safefy Harbour 6",
-          "nickname": "Flarido 6"
+          "location": "Flarido 6"
         },
         {
           "name": "Safefy Harbour 7",
-          "nickname": "Flarido 7"
+          "location": "Flarido 7"
         },
         {
           "name": "Safefy Harbour 8",
-          "nickname": "Flarido 8"
+          "location": "Flarido 8"
         },
         {
           "name": "Safefy Harbour 9",
-          "nickname": "Flarido 9"
+          "location": "Flarido 9"
         }
       ],
       "ui": {
@@ -62,9 +62,9 @@
     "zh": {
       "cities": [
         {
-          "name": "港口城市大改造",
-          "nickname": "漢堡",
-          "imageTemplate": "some react template of the svg?",
+          "name": "城市港口大改造",
+          "location": "漢堡",
+          "description": "你知道德國第二大城市漢堡有多少條橋嗎？有人說是全世界最多，約二千五百條！原來漢堡從十四世紀開始便是歐洲的重要港口，有大大小小的橋橫跨運河、承載鐵路，連接倉庫，港口區發展為與市中心隔河相望的城中城。",
           "detailBlocks": [
             {
               "type": "text",
@@ -98,39 +98,39 @@
         },
         {
           "name": "單車之城",
-          "nickname": "哥本哈根"
+          "location": "哥本哈根"
         },
         {
           "name": "巨型都市",
-          "nickname": "北京"
+          "location": "北京"
         },
         {
           "name": "網路之城",
-          "nickname": "首爾"
+          "location": "首爾"
         },
         {
           "name": "汽車之城",
-          "nickname": "曼谷"
+          "location": "曼谷"
         },
         {
           "name": "佛羅里達5",
-          "nickname": "防衛之城5"
+          "location": "防衛之城5"
         },
         {
           "name": "佛羅里達6",
-          "nickname": "防衛之城6"
+          "location": "防衛之城6"
         },
         {
           "name": "佛羅里達7",
-          "nickname": "防衛之城7"
+          "location": "防衛之城7"
         },
         {
           "name": "佛羅里達8",
-          "nickname": "防衛之城8"
+          "location": "防衛之城8"
         },
         {
           "name": "佛羅里達9",
-          "nickname": "防衛之城9"
+          "location": "防衛之城9"
         }
       ],
       "ui": {

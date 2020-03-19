@@ -1,29 +1,35 @@
 @import '../setting.scss';
 
 @font-face {
-  font-family: 'FuturaLT';
-  src: url('../fonts/FuturaLT-Bold.eot');
-  src: url('../fonts/FuturaLT-Bold.woff2') format('woff2'),
-       url('../fonts/FuturaLT-Bold.woff') format('woff'),
-       url('../fonts/FuturaLT-Bold.ttf') format('truetype'),
-       url('../fonts/FuturaLT-Bold.svg#FuturaLT-Bold') format('svg'),
-       url('../fonts/FuturaLT-Bold.eot?#iefix') format('embedded-opentype');
+  font-family: 'ITC Avant Garde Gothic Std';
+  src: url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bk.woff2') format('woff2'),
+      url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bk.woff') format('woff'),
+      url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bk.ttf') format('truetype'),
+      url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bk.svg#ITCAvantGardeStd-Bk') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std';
+  src: url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bold.woff2') format('woff2'),
+      url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bold.woff') format('woff'),
+      url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bold.ttf') format('truetype'),
+      url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bold.svg#ITCAvantGardeStd-Bold') format('svg');
   font-weight: bold;
   font-style: normal;
 }
 
-
 @font-face {
-  font-family: 'FuturaLT';
-  src: url('../fonts/FuturaLT.eot');
-  src: url('../fonts/FuturaLT.woff2') format('woff2'),
-       url('../fonts/FuturaLT.woff') format('woff'),
-       url('../fonts/FuturaLT.ttf') format('truetype'),
-       url('../fonts/FuturaLT.svg#FuturaLT') format('svg'),
-       url('../fonts/FuturaLT.eot?#iefix') format('embedded-opentype');
-  font-weight: normal;
+  font-family: 'ITC Avant Garde Gothic Std';
+  src: url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Demi.woff2') format('woff2'),
+      url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Demi.woff') format('woff'),
+      url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Demi.ttf') format('truetype'),
+      url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Demi.svg#ITCAvantGardeStd-Demi') format('svg');
+  font-weight: 500;
   font-style: normal;
 }
+
 
 *{
   -webkit-box-sizing: border-box;
@@ -36,8 +42,13 @@
   margin:0;
 }
 
+html,body{
+  position: fixed;
+}
 body{
   background:#E2E5EA;
+  overflow: hidden;
+  font-family: 'ITC Avant Garde Gothic Std', 'Microsoft JhengHei';
   // &:after{
   //   content:'';
   //   width:100%;
@@ -138,6 +149,7 @@ body{
   transform: translate3d(-50%,0,0);
   padding:0 17px;
   font-size:vw-calc(30);
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -169,8 +181,8 @@ body{
   background:#fff url('../exhibitions/exG02B2/images/homeicon.png') center no-repeat;
   background-size:50%;
   position: absolute;
-  bottom:vw-calc(75);
-  left:vw-calc(80);
+  bottom:vw-calc(103);
+  left:vw-calc(103);
   z-index: 999;
   opacity: 0;
   visibility: hidden;
@@ -205,6 +217,7 @@ body{
   visibility: hidden;
   b{
     font-size:vw-calc(45);
+    font-weight: bold;
     margin-bottom: vw-calc(3);
     margin-right: vw-calc(20);
   }
@@ -218,7 +231,7 @@ body{
   width: 32.258vw;
   position: absolute;
   padding-top: 32.258vw;
-  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1), visibility 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity .3s cubic-bezier(0.645, 0.045, 0.355, 1), visibility .3s cubic-bezier(0.645, 0.045, 0.355, 1);
   // &.clicked{
     // z-index:888;
     // .contentWrap{
@@ -269,20 +282,39 @@ body{
     right: 0;
     bottom: 0;
     margin: auto;
-    opacity: 1;
-    visibility: visible;
-    transition: all .6s cubic-bezier(0.645, 0.045, 0.355, 1);
+    &:after{
+      content:'';
+      width:vw-calc(35);
+      height:vw-calc(35);
+      position: absolute;
+      bottom:vw-calc(44);
+      right:vw-calc(47);
+      z-index: 1;
+      background:#D6D6D6 url('../exhibitions/exG02B2/images/arrowright.svg') 54% no-repeat;
+      background-size:32%;
+      border-radius: 50%;
+    }
     .cityName{
       position: absolute;
       top: vw-calc(63);
-      left: vw-calc(57);
+      left: vw-calc(70);
       color: #302E7C;
       font-size: vw-calc(30);
       line-height: vw-calc(30);
       z-index: 1;
-      .nickName {
+      .location {
         font-weight: bold;
         padding-bottom:vw-calc(5);
+      }
+    }
+    .otherLangName{
+      font-size:vw-calc(20);
+      position: absolute;
+      bottom:vw-calc(37);
+      left:vw-calc(70);
+      z-index: 1;
+      b{
+        font-weight: bold;
       }
     }
     .cityImage {
@@ -316,12 +348,49 @@ body{
   position: fixed;
   top:0;
   left:0;
-  z-index: 1000;
+  z-index: 998;
   opacity: 0;
   visibility: hidden;
   &.active{
     opacity: 1;
     visibility: visible;
+  }
+  #detailsContent{
+    width: 100%;
+    height:100%;
+    background:#FFF7ED;
+    padding:vw-calc(98 0 0 155);
+    opacity: 0;
+    visibility: hidden;
+    // transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    #title{
+      font-size:vw-calc(80);
+      font-weight: bold;
+      color:#2F2D7C;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      white-space: nowrap;
+      svg{
+        width:50vw;
+        height:vw-calc(90);
+        position: relative;
+        top:0;
+        margin-left:vw-calc(20);
+        text{
+          font-size:vw-calc(80);
+          stroke-width: vw-calc(1);
+          font-family: 'ITC Avant Garde Gothic Std', 'Microsoft JhengHei';
+        }
+      }
+    }
+    #description{
+      width:vw-calc(590);
+      text-align: justify;
+      font-size:vw-calc(25);
+      line-height: vw-calc(36);
+      margin-top:vw-calc(50);
+    }
   }
   #bg{
     width: calc(32.258vw - #{vw-calc(80)});
