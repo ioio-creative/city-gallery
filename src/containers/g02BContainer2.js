@@ -237,6 +237,8 @@ const G02BContainer = (props) => {
     const onMouseUp = () => {
       document.removeEventListener('mousemove', onMouseMove, false);
       document.removeEventListener('mouseup', onMouseUp, false);
+      document.removeEventListener('touchmove', onMouseMove, false);
+      document.removeEventListener('touchend', onMouseUp, false);
     }
 
     const goCenter = (colIdx, rowIdx) => {
@@ -358,7 +360,7 @@ const G02BContainer = (props) => {
 
 
   return (
-    <div id="G02BContainer" className={`${isHome?'home':''}`}>
+    <div id="G02BContainer" className={`${isHome?'home ':''}${language}`}>
       <div id="homeInfo">
         <div>Please select language</div>
         <div>請選擇語言</div>
