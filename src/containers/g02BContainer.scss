@@ -206,6 +206,7 @@ body{
     margin-top:vw-calc(-5);
   }
 }
+
 #homeBtn{
   width:vw-calc(127);
   height:vw-calc(127);
@@ -221,14 +222,7 @@ body{
   visibility: hidden;
   cursor: pointer;
 }
-// #hints{
-//   width:0;
-//   position: fixed;
-//   bottom:vw-calc(40);
-//   left:50%;
-//   z-index: 999;
-  
-// }
+
 #drag{
   width:vw-calc(680);
   height:vw-calc(134);
@@ -248,6 +242,7 @@ body{
   backdrop-filter: blur(15px);
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   b{
     font-size:vw-calc(45);
     font-weight: bold;
@@ -255,125 +250,82 @@ body{
     margin-right: vw-calc(20);
   }
 }
-.citiesList {
-  /* display: flex;
-  flex-wrap: wrap; */
+.citiesList{
   position: relative;
-}
-.cityBlock {
-  width: 32.258vw;
-  position: absolute;
-  padding-top: 32.258vw;
-  transition: opacity .3s cubic-bezier(0.645, 0.045, 0.355, 1), visibility .3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  // &.clicked{
-    // z-index:888;
-    // .contentWrap{
-    //   opacity: 0;
-    //   visibility: hidden;
-    //   transition-delay: .6s;
-    // }
-    // .mainContentWrap{
-    //   opacity: 1;
-    //   visibility: visible;
-    // }
-    // .cityBgColor{
-    //   transform: translate3d(-48%,-50%,0) scale(3.6);
-    //   transition-delay: .6s;
-    // }
-  // }
-  // &:not(.clicked) .contentWrap:active{
-  //   transform: translate3d(0,0,0) scale(.98);
-  // }
-  // .mainContentWrap{
-  //   width: 100vw;
-  //   height: 100vh;
-  //   position: fixed;
-  //   top: 50%;
-  //   left: 50%;
-  //   transform: translate3d(-49.5%,-49.1%,0);
-  //   opacity: 0;
-  //   visibility: hidden;
-  //   transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
-  // }
-  // .cityBgColor{
-  //   width: calc(100% - #{vw-calc(80)});
-  //   height: calc(100% - #{vw-calc(80)});
-  //   position: absolute;
-  //   top:50%;
-  //   left:50%;
-  //   z-index: 0;
-  //   background:#F5F6FA;
-  //   transform: translate3d(-50%,-50%,0);
-  //   transition: all 1s cubic-bezier(0.83, 0, 0.17, 1);
-  // }
-  .contentWrap{
-    width: calc(100% - #{vw-calc(80)});
-    height: calc(100% - #{vw-calc(80)});
+  .cityBlock{
+    width: 32.258vw;
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    &:after{
-      content:'';
-      width:vw-calc(35);
-      height:vw-calc(35);
+    padding-top: 32.258vw;
+    transition: opacity .3s cubic-bezier(0.645, 0.045, 0.355, 1), visibility .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    .contentWrap{
+      width: calc(100% - #{vw-calc(80)});
+      height: calc(100% - #{vw-calc(80)});
       position: absolute;
-      bottom:vw-calc(44);
-      right:vw-calc(47);
-      z-index: 1;
-      background:#D6D6D6 url('../exhibitions/exG02B2/images/arrowright.svg') 54% no-repeat;
-      background-size:32%;
-      border-radius: 50%;
-      transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
-    }
-    .cityName{
-      position: absolute;
-      top: vw-calc(63);
-      left: vw-calc(70);
-      color: #302E7C;
-      font-size: vw-calc(30);
-      line-height: vw-calc(30);
-      z-index: 1;
-      transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
-      .location {
-        font-weight: bold;
-        padding-bottom:vw-calc(5);
-      }
-    }
-    .otherLangName{
-      color:#505050;
-      font-size:vw-calc(20);
-      position: absolute;
-      bottom:vw-calc(37);
-      left:vw-calc(70);
-      z-index: 1;
-      transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
-      b{
-        font-weight: bold;
-      }
-    }
-    .cityImage {
-      position: absolute;
-      z-index: 0;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      background-color:#F5F6FA;
-      background-size:82%;
-      background-repeat: no-repeat;
-      background-position: 50% 51%;
-      box-shadow: 0 vw-calc(10 15) #0000000F;
-      img {
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      &:after{
+        content:'';
+        width:vw-calc(35);
+        height:vw-calc(35);
+        position: absolute;
+        bottom:vw-calc(44);
+        right:vw-calc(47);
+        z-index: 1;
+        background:#D6D6D6 url('../exhibitions/exG02B2/images/arrowright.svg') 54% no-repeat;
+        background-size:32%;
+        border-radius: 50%;
+        transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+      .cityName{
+        position: absolute;
+        top: vw-calc(63);
+        left: vw-calc(70);
+        color: #302E7C;
+        font-size: vw-calc(30);
+        line-height: vw-calc(30);
+        z-index: 1;
+        transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        .location {
+          font-weight: bold;
+          padding-bottom:vw-calc(5);
+        }
+      }
+      .otherLangName{
+        color:#505050;
+        font-size:vw-calc(20);
+        position: absolute;
+        bottom:vw-calc(37);
+        left:vw-calc(70);
+        z-index: 1;
+        transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        b{
+          font-weight: bold;
+        }
+      }
+      .cityImage {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        object-fit: contain;
-        object-position: center;
-        vertical-align: top;
-        pointer-events: none;
+        z-index: 1;
+        background-color:#F5F6FA;
+        background-size:82%;
+        background-repeat: no-repeat;
+        background-position: 50% 51%;
+        box-shadow: 0 vw-calc(10 15) #0000000F;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          object-position: center;
+          vertical-align: top;
+          pointer-events: none;
+        }
       }
     }
   }
@@ -410,7 +362,7 @@ body{
       left:0;
       z-index: 0;
       background-repeat: no-repeat;
-      background-size:49%;
+      background-size:48.5%;
       background-position: vw-calc(140) 60%;
     }
     .bubbleWrap{
@@ -496,6 +448,7 @@ body{
         bottom:0;
         left:0;
         z-index: 2;
+        pointer-events: none;
       }
       #dragForMore{
         padding-left:vw-calc(37);
@@ -509,6 +462,7 @@ body{
         left:50%;
         z-index: 2;
         transform: translate3d(-50%,0,0);
+        pointer-events: none;
       }
       #galleryList{
         width:100%;
