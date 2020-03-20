@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef} from 'react';
 import gsap from 'gsap';
+import {random} from '../exhibitions/exG02A2/globalFuncFor3d';
 import './g02BContainer.scss';
 
 import hamburg from '../exhibitions/exG02B2/images/hamburg.png';
 import bubble1 from '../exhibitions/exG02B2/images/bubble.svg';
 import bubble2 from '../exhibitions/exG02B2/images/bubble2.svg';
-import bubble3 from '../exhibitions/exG02B2/images/bubble3.svg';
 import gallery from '../exhibitions/exG02B2/images/gallery.png';
 
 const G02BStatus = {
@@ -40,79 +40,66 @@ const CityBlock = (props) => {
         zIndex:99
       }}>{props.data && props.blockIdx}</div> */}
     </div>
-    {/* <div className="mainContentWrap">
-        <h2 className="location">{props.data && props.data.cities[cityIdx].name}</h2>
-        <h2 className="realName">{props.data && props.data.cities[cityIdx].location}</h2>
-    </div> */}
   </div>
 }
 
-const startIdx = [1,5,8,1,4];
 let col = [0,1,2,3,4];
 let row = [0,1,2,3,4];
-let ridx = 2;
-let cidx = 2;
-let oldcurrentRowIdx = 2;
-let oldcurrentColIdx = 2;
 
 const CitiesList = (props) => {
+  const [startColIdx, setStartColIdx] = useState([]);
+  const [lth, setLth] = useState(0);
+  const [oldcurrentRowIdx, setOldcurrentRowIdx] = useState(2);
+  const [oldcurrentColIdx, setOldcurrentColIdx] = useState(2);
+
   const blockWidth = window.innerWidth / 3.1;
   const blockHeight = blockWidth;
-  // const currentColIdx = -Math.floor((props.posX-blockWidth/2) / blockWidth);
-  // const currentRowIdx = -Math.floor(props.posY / blockHeight);
   const currentColIdx = props.currentColIdx;
   const currentRowIdx = props.currentRowIdx;
-  // const [domIdx, setDomIdx] = useState(null);
 
-  // const handleClick = (_domIdx, blockIdx, c,r) =>{
-  //   if(!props.dragging){
-  //     setDomIdx(_domIdx);
-  //     props.getblockElemIdx(_domIdx);
-  //     props.moveToBlock(col[c] * blockWidth, row[r] * blockHeight);
-  //   }
-  // }
-
-  // useEffect(()=>{
-  //   setDomIdx(props.blockElemIdx);
-  // });
   useEffect(()=>{
     let topRowIdx,
         bottomRowIdx,
         leftColIdx,
         rightColIdx;
+    const colLth = col.length;
+    const rowLth = row.length;
+    let ridx;
+    let cidx;
 
     if(currentRowIdx < oldcurrentRowIdx){
       // console.log('up');
       topRowIdx = currentRowIdx - 2;
       bottomRowIdx = oldcurrentRowIdx + 2;
-      ridx = ((bottomRowIdx%row.length)+row.length)%row.length;
+      ridx = ((bottomRowIdx%rowLth)+rowLth)%rowLth;
       row[ridx] = topRowIdx;
     }
     else if(currentRowIdx > oldcurrentRowIdx){
       // console.log('down');
       topRowIdx = oldcurrentRowIdx - 2;
       bottomRowIdx = currentRowIdx + 2;
-      ridx = ((topRowIdx%row.length)+row.length)%row.length;
+      ridx = ((topRowIdx%rowLth)+rowLth)%rowLth;
       row[ridx] = bottomRowIdx;
     }
+
 
     if(currentColIdx < oldcurrentColIdx){
       // console.log('left');
       leftColIdx = currentColIdx - 2;
       rightColIdx = oldcurrentColIdx + 2;
-      cidx = ((rightColIdx%col.length)+col.length)%col.length;
+      cidx = ((rightColIdx%colLth)+colLth)%colLth;
       col[cidx] = leftColIdx;
     }
     else if(currentColIdx > oldcurrentColIdx){
       // console.log('right');
       leftColIdx = oldcurrentColIdx - 2;
       rightColIdx = currentColIdx + 2;
-      cidx = ((leftColIdx%col.length)+col.length)%col.length;
+      cidx = ((leftColIdx%colLth)+colLth)%colLth;
       col[cidx] = rightColIdx;
     }
 
-    oldcurrentRowIdx = currentRowIdx;
-    oldcurrentColIdx = currentColIdx;
+    setOldcurrentRowIdx(currentRowIdx);
+    setOldcurrentColIdx(currentColIdx);
 
     // console.log('current row idx',currentRowIdx);
     // console.log('current col idx',currentColIdx);
@@ -127,21 +114,39 @@ const CitiesList = (props) => {
    4  4 5 6 7 8
   */
 
-  const lth = props.data && props.data.cities.length || 0;
+
+
+  useEffect(()=>{
+    if(props.data){
+      setLth(props.data.cities.length);
+
+      const idx = [];//[1,5,8,1,4];
+      for(let i=0; i<5; i++){
+        if(i === 2)
+          idx[i] = props.data.cities.length - 2;
+        else
+          idx[i] = Math.round(random(0, props.data.cities.length-1));
+      }
+      setStartColIdx(idx);
+    }
+  },[props.data]);
+
 
   return <div className="citiesList" style={{transform:`translate3d(${props.posX}px, ${props.posY}px, 0px)`}}>
     {
-      new Array(startIdx.length).fill(0).map((value, yIdx)=>{
-        return new Array(5).fill(0).map((value, xIdx)=>{
-          const id = (startIdx[yIdx] + ((col[xIdx]%lth)+lth)%lth)%lth;
+      startColIdx.length &&
+      [...Array(startColIdx.length)].map((v, yIdx)=>{
+        return [...Array(5)].map((v, xIdx)=>{
+          const colLth = col.length;
+          const rowLth = row.length;
+          const id = (startColIdx[yIdx] + ((col[xIdx]%lth)+lth)%lth)%lth;
           return <CityBlock 
             key={yIdx*5 + xIdx}
             active={props.blockElemIdx === yIdx*5 + xIdx}
             blockIdx={id}
-            activeCenterClass={xIdx === ((currentColIdx%col.length)+col.length)%col.length && yIdx === ((currentRowIdx%row.length)+row.length)%row.length ? true : false}
+            activeCenterClass={xIdx === ((currentColIdx%colLth)+colLth)%colLth && yIdx === ((currentRowIdx%rowLth)+rowLth)%rowLth ? true : false}
             offsetX={col[xIdx] * blockWidth} 
             offsetY={row[yIdx] * blockHeight}
-            // color={xIdx === ((currentColIdx%col.length)+col.length)%col.length || yIdx === ((currentRowIdx%row.length)+row.length)%row.length?'red':''}
             data={ props.data }
             otherLangData={ props.otherLangData }
             onClickBlock={(e)=>{
@@ -394,8 +399,7 @@ const G02BContainer = (props) => {
       <div ref={detailsPageElem} id="detailsPage" className={activeDetailPage ? 'active' : ''}>
         <div id="detailsContent">
           <div id="image" style={{backgroundImage:`url(${hamburg})`}}></div>
-          <div id="bubbleWrap1" className="bubbleWrap">
-            <svg>
+          <svg width="0" height="0">
               <defs>
                 <filter id="blur">
                   <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
@@ -407,24 +411,13 @@ const G02BContainer = (props) => {
                 </filter>
               </defs>
             </svg>
+          <div id="bubbleWrap1" className="bubbleWrap">
             <div id="bubble1" className="bubble" style={{backgroundImage:`url(${bubble1})`}}></div>
-            <div id="bubble2" className="bubble" style={{backgroundImage:`url(${bubble3})`}}></div>
+            <div id="bubble2" className="bubble" style={{backgroundImage:`url(${bubble2})`}}></div>
           </div>
           <div id="bubbleWrap2" className="bubbleWrap">
-            <svg>
-              <defs>
-                <filter id="blur">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                  <feComposite in="SourceGraphic" in2="matrix" operator="atop"/>
-                </filter>
-                <filter id="colormatrix">
-                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="matrix" />
-                  <feComposite in="SourceGraphic" in2="matrix" operator="atop"/>
-                </filter>
-              </defs>
-            </svg>
             <div id="bubble1" className="bubble" style={{backgroundImage:`url(${bubble1})`}}></div>
-            <div id="bubble2" className="bubble" style={{backgroundImage:`url(${bubble3})`}}></div>
+            <div id="bubble2" className="bubble" style={{backgroundImage:`url(${bubble2})`}}></div>
           </div>
           <div id="contentWrap">
             <div id="title">

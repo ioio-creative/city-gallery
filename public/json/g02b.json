@@ -51,6 +51,14 @@
         {
           "name": "Safefy Harbour 9",
           "location": "Flarido 9"
+        },
+        {
+          "name": "Safefy Harbour 10",
+          "location": "Flarido 10"
+        },
+        {
+          "name": "Safefy Harbour 11",
+          "location": "Flarido 11"
         }
       ],
       "ui": {
@@ -131,6 +139,14 @@
         {
           "name": "佛羅里達9",
           "location": "9"
+        },
+        {
+          "name": "佛羅里達10",
+          "location": "10"
+        },
+        {
+          "name": "佛羅里達11",
+          "location": "11"
         }
       ],
       "ui": {
