@@ -185,6 +185,7 @@ const G02BContainer = (props) => {
     y: -blockHeight*4/2 + window.innerHeight/2 - blockHeight/2
   });
   const [blockElemIdx, setBlockElemIdx] = useState(null);
+  const [idle, setIdle] = useState(null);
 
   
 
@@ -205,10 +206,11 @@ const G02BContainer = (props) => {
     }
     let player = null;
     let isDragDisabled = false;
-
+    let timer = null;
 
     const onMouseDown = (event) => {
       if(!isDragDisabled){
+        idle();
         setDragging(false);
         let e = (event.touches? event.touches[0]: event);
         const mx = e.clientX;
@@ -273,6 +275,15 @@ const G02BContainer = (props) => {
     }
     getDisableDragFunc.current = {getDisableDrag};
 
+    const idle = () => {
+      if(timer){
+        clearTimeout(timer);
+        setIdle(false);
+      }
+      timer = setTimeout(()=>{
+        setIdle(true);
+      },1000*60);
+    }
 
     const loop = ()=>{
       player = requestAnimationFrame(loop);
@@ -308,8 +319,13 @@ const G02BContainer = (props) => {
     getDisableDragFunc.current.getDisableDrag(disableDrag);
   },[disableDrag]);
   
+  useEffect(()=>{
+    if(idle){
+      backToHome();
+    }
+  },[idle])
 
-  const backToHome = () => {
+  const backToHome = () => {console.log(currentColIdx,currentRowIdx)
     goCenterFunc.current.goCenter(currentColIdx,currentRowIdx);
     setIsHome(true);
     setDisableDrag(true);

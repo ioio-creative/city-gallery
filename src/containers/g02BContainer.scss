@@ -189,7 +189,7 @@ body{
   justify-content: center;
   box-shadow: 0 vw-calc(10 20) #00000033;
   position: fixed;
-  bottom:vw-calc(103);
+  bottom:vw-calc(76);
   left:50%;
   z-index: 999;
   transform: translate3d(-50%,0,0) scale(1);
@@ -219,8 +219,8 @@ body{
   background:#fff url('../exhibitions/exG02B2/images/homeicon.png') center no-repeat;
   background-size:50%;
   position: absolute;
-  bottom:vw-calc(103);
-  left:vw-calc(103);
+  bottom:vw-calc(76);
+  left:vw-calc(76);
   z-index: 999;
   opacity: 0;
   visibility: hidden;
@@ -234,7 +234,7 @@ body{
   background: rgba(0,0,0,.45);
   color:#fff;
   position: fixed;
-  bottom:vw-calc(103);
+  bottom:vw-calc(76);
   left:50%;
   z-index: 999;
   display: flex;
@@ -377,7 +377,7 @@ body{
     .bubbleWrap{
       width:vw-calc(600);
       height:vw-calc(600);
-      position: fixed;
+      position: absolute;
       top:0;
       right:0;
       overflow: hidden;
@@ -390,7 +390,7 @@ body{
       &#bubbleWrap2{
         top:100%;
         right:30%;
-        transform: translate3d(20%,-40%,0);
+        transform: translate3d(20%,-35%,0);
         filter: url(#colormatrix) hue-rotate(0deg) brightness(1.5);
       }
       .bubble{
