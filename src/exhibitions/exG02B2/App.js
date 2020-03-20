@@ -9,7 +9,7 @@ import G02BContainer from 'containers/g02BContainer2';
 const App = (props) => {
   const [appData, setAppData] = useState(null);
   useEffect(() => {
-    api.fetchExhibitionJsonFromUrl('/json/g02b.json', setAppData);
+    api.fetchExhibitionJsonFromUrl('./json/g02b.json', setAppData);
   }, [])
   useEffect(() => {
     if(appData){

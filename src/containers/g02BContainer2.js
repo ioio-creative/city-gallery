@@ -3,6 +3,10 @@ import gsap from 'gsap';
 import './g02BContainer.scss';
 
 import hamburg from '../exhibitions/exG02B2/images/hamburg.png';
+import bubble1 from '../exhibitions/exG02B2/images/bubble.svg';
+import bubble2 from '../exhibitions/exG02B2/images/bubble2.svg';
+import bubble3 from '../exhibitions/exG02B2/images/bubble3.svg';
+import gallery from '../exhibitions/exG02B2/images/gallery.png';
 
 const G02BStatus = {
   IDLE: 1, // 
@@ -389,15 +393,67 @@ const G02BContainer = (props) => {
 
       <div ref={detailsPageElem} id="detailsPage" className={activeDetailPage ? 'active' : ''}>
         <div id="detailsContent">
-          <div id="title">
-            <span>{contentData && contentData.cities[domId].name},</span>
+          <div id="image" style={{backgroundImage:`url(${hamburg})`}}></div>
+          <div id="bubbleWrap1" className="bubbleWrap">
             <svg>
-                <text x="0" y="75%" fill="none" stroke="#2F2D7C">
-                  {contentData && contentData.cities[domId].location}
-                </text>
+              <defs>
+                <filter id="blur">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                  <feComposite in="SourceGraphic" in2="matrix" operator="atop"/>
+                </filter>
+                <filter id="colormatrix">
+                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="matrix" />
+                  <feComposite in="SourceGraphic" in2="matrix" operator="atop"/>
+                </filter>
+              </defs>
             </svg>
+            <div id="bubble1" className="bubble" style={{backgroundImage:`url(${bubble1})`}}></div>
+            <div id="bubble2" className="bubble" style={{backgroundImage:`url(${bubble3})`}}></div>
           </div>
-          <div id="description">{contentData && contentData.cities[domId].description}</div>
+          <div id="bubbleWrap2" className="bubbleWrap">
+            <svg>
+              <defs>
+                <filter id="blur">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                  <feComposite in="SourceGraphic" in2="matrix" operator="atop"/>
+                </filter>
+                <filter id="colormatrix">
+                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="matrix" />
+                  <feComposite in="SourceGraphic" in2="matrix" operator="atop"/>
+                </filter>
+              </defs>
+            </svg>
+            <div id="bubble1" className="bubble" style={{backgroundImage:`url(${bubble1})`}}></div>
+            <div id="bubble2" className="bubble" style={{backgroundImage:`url(${bubble3})`}}></div>
+          </div>
+          <div id="contentWrap">
+            <div id="title">
+              <span>{contentData && contentData.cities[domId].name},</span>
+              <svg>
+                  <text x="0" y="75%" fill="none" stroke="#2F2D7C">
+                    {contentData && contentData.cities[domId].location}
+                  </text>
+              </svg>
+            </div>
+            <div id="description">{contentData && contentData.cities[domId].description}</div>
+          </div>
+          <div id="galleryListWrap">
+            <div id="dragForMore">拖曳畫面探索更多</div>
+            <ul id="galleryList">
+              <li>
+                <div className="img"><img src={gallery} /></div>
+                <p>隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達25年的「港口新城」市區重建計劃於1997年展開。</p>
+              </li>
+              <li>
+                <div className="img"><img src={gallery} /></div>
+                <p>隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達25年的「港口新城」市區重建計劃於1997年展開。</p>
+              </li>
+              <li>
+                <div className="img"><img src={gallery} /></div>
+                <p>隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達25年的「港口新城」市區重建計劃於1997年展開。</p>
+              </li>
+            </ul>
+          </div>
         </div>
         <div id="bg"></div>
       </div>
