@@ -323,9 +323,9 @@ const G02BContainer = (props) => {
     if(idle){
       backToHome();
     }
-  },[idle])
+  },[idle]);
 
-  const backToHome = () => {console.log(currentColIdx,currentRowIdx)
+  const backToHome = () => {
     goCenterFunc.current.goCenter(currentColIdx,currentRowIdx);
     setIsHome(true);
     setDisableDrag(true);
