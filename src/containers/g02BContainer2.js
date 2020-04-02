@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import {random} from '../exhibitions/exG02A2/globalFuncFor3d';
 import './g02BContainer.scss';
 
-import hamburg from '../exhibitions/exG02B2/images/hamburg.png';
+import hamburg from '../exhibitions/exG02B2/images/img1.svg';
 import bubble1 from '../exhibitions/exG02B2/images/bubble.svg';
 import bubble2 from '../exhibitions/exG02B2/images/bubble2.svg';
 import gallery from '../exhibitions/exG02B2/images/gallery.png';
