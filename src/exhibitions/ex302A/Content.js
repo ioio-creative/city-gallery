@@ -1,7 +1,8 @@
 import React, {useEffect, useState, useRef, createRef} from 'react';
 import './style.scss';
 import gsap from 'gsap';
-import { calcPosFromLatLonRad } from 'exhibitions/exG02A2/globalFuncFor3d';
+
+import img1 from './images/img.png';
 
 const Content = props => {
     // const [dragging, setDragging] = useState(false);
@@ -13,6 +14,7 @@ const Content = props => {
     const contentWrapElem = useRef(null);
     const contentElems = useRef([...Array(5)].map(()=>createRef()));
     const sidebarElems = useRef([...Array(5)].map(()=>createRef()));
+    const imgElems = useRef([...Array(3)].map(()=>createRef()));
 
     
     useEffect(()=>{
@@ -28,7 +30,9 @@ const Content = props => {
             lastPos: {x:0, y:0},
             delta: {x:0, y:0}
         }
-        
+
+        let sidebarW = window.innerWidth * (455 / 1920);
+
         const onMouseDown = (event) => {
             if(isClickedSection){
                 if(!event.touches) event.preventDefault();
@@ -96,7 +100,6 @@ const Content = props => {
             for(let i=0; i<sidebarElems.current.length; i++){
                 const content = contentElems.current[i].current;
                 const sidebar = sidebarElems.current[i].current;
-                const sidebarW = window.innerWidth * (455 / 1920);
 
                 const offsetX = content.getBoundingClientRect().left;
                 let sx = Math.max(0, offsetX);
@@ -105,6 +108,13 @@ const Content = props => {
                     // console.log(offsetX+content.offsetWidth-sidebarW);
                 }
                 sidebar.style.transform = `translate3d(${sx}px,0,0)`;
+            }
+
+            for(let i=0; i<imgElems.current.length; i++){
+                const img = imgElems.current[i].current;
+                const imgX = -(img.getBoundingClientRect().left - sidebarW) * .06;
+                console.log(imgX);
+                img.querySelector('img').style.transform = `translate3d(${imgX}px,0,0) scale(1.2)`;
             }
         };
         
@@ -123,18 +133,22 @@ const Content = props => {
             }
         }
 
+        const onResize = () => {
+            sidebarW = window.innerWidth * (455 / 1920);
+        }
+
         const addEvent = () => {
             document.addEventListener("mousedown", onMouseDown, false);
             document.addEventListener("touchstart", onMouseDown, false);
             document.addEventListener("keydown", onKeyDown, false);
-            // window.addEventListener("resize", onResize, false);
+            window.addEventListener("resize", onResize, false);
         }
 
         const removeEvent = () => {
             document.removeEventListener("mousedown", onMouseDown, false);
             document.removeEventListener("touchstart", onMouseDown, false);
             document.removeEventListener("keydown", onKeyDown, false);
-            // window.removeEventListener("resize", onResize, false);
+            window.removeEventListener("resize", onResize, false);
         }
         
         animLoop();
@@ -241,8 +255,18 @@ const Content = props => {
             </div>
             <div ref={contentWrapElem} id="contentWrap">
                 <div ref={contentElems.current[0]} id="content1" className="content">
-                    <div className="item">section1 - 1</div>
-                    <div className="item">section1 - 2</div>
+                    <div className="item">
+                        section1 - 1
+                        <div ref={imgElems.current[0]} className="imgWrap"><img src={img1} /></div>
+                    </div>
+                    <div className="item">
+                        section1 - 2
+                        <div ref={imgElems.current[1]} className="imgWrap"><img src={img1} /></div>
+                    </div>
+                    <div className="item">
+                        section1 - 3
+                        <div ref={imgElems.current[2]} className="imgWrap"><img src={img1} /></div>
+                    </div>
                 </div>
                 <div ref={contentElems.current[1]} id="content2" className="content">
                     <div className="item">section2 - 1</div>
