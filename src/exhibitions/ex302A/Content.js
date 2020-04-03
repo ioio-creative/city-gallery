@@ -1,6 +1,7 @@
 import React, {useEffect, useState, useRef, createRef} from 'react';
 import './style.scss';
 import gsap from 'gsap';
+import { calcPosFromLatLonRad } from 'exhibitions/exG02A2/globalFuncFor3d';
 
 const Content = props => {
     // const [dragging, setDragging] = useState(false);
@@ -148,6 +149,10 @@ const Content = props => {
             const elem = sidebarElems.current[props.sectionIdx].current;
 
             const tl = gsap.timeline({delay:1});
+            
+            tl.set('#sidebarWrap', {className:'active'});
+            tl.set('#sectionWrap', {className:'hide'});
+            tl.set(contentWrapElem.current, {className:'active'});
             tl.fromTo(elem.querySelectorAll('#des span span'), 1, {force3D:true, y:'100%'}, {y:'0%', stagger:.01, ease:'power4.out'},'s');
             tl.fromTo(elem.querySelectorAll('#date span'), 1, {force3D:true, y:'100%'}, { y:'0%', stagger:.1, ease:'power4.out'},'b-=.6');
             tl.fromTo(elem.querySelectorAll('#line'), 1, {force3D:true, scaleX:0}, {scaleX:1, ease:'power3.inOut'},'s+=.6');
@@ -236,28 +241,24 @@ const Content = props => {
             </div>
             <div ref={contentWrapElem} id="contentWrap">
                 <div ref={contentElems.current[0]} id="content1" className="content">
-                    <div className="item">
-
-                    </div>
-                    <div className="item">
-
-                    </div>
+                    <div className="item">section1 - 1</div>
+                    <div className="item">section1 - 2</div>
                 </div>
                 <div ref={contentElems.current[1]} id="content2" className="content">
-                    <div className="item"></div>
-                    <div className="item"></div>
+                    <div className="item">section2 - 1</div>
+                    <div className="item">section2 - 2</div>
                 </div>
-                <div ref={contentElems.current[2]} id="content2" className="content">
-                    <div className="item"></div>
-                    <div className="item"></div>
+                <div ref={contentElems.current[2]} id="content3" className="content">
+                    <div className="item">section3 - 1</div>
+                    <div className="item">section3 - 2</div>
                 </div>
-                <div ref={contentElems.current[3]} id="content2" className="content">
-                    <div className="item"></div>
-                    <div className="item"></div>
+                <div ref={contentElems.current[3]} id="content4" className="content">
+                    <div className="item">section4 - 1</div>
+                    <div className="item">section4 - 2</div>
                 </div>
-                <div ref={contentElems.current[4]} id="content2" className="content">
-                    <div className="item"></div>
-                    <div className="item"></div>
+                <div ref={contentElems.current[4]} id="content5" className="content">
+                    <div className="item">section5 - 1</div>
+                    <div className="item">section5 - 2</div>
                 </div>
             </div>
         </>

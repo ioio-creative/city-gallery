@@ -192,11 +192,15 @@ body{
             .item{
                 min-width: 100vw;
                 height:100%;
+                text-align: center;
+                font-size:vw-calc(100);
+                line-height: 100vh;
+                color:#fff;
                 &:nth-child(odd){
-                    background:rgb(143, 163, 70);
+                    background:rgb(0, 156, 170);
                 }
                 &:nth-child(even){
-                    background:rgb(126, 70, 163);
+                    background:rgb(6, 145, 158);
                 }
             }
         }
@@ -211,25 +215,18 @@ body{
         &.active{
             opacity: 1;
             visibility: visible;
-            &.disable{
-                .sidebar{
-                    transition-duration: 0s;
-                }
-            }
+            // &.disable{
+            //     .sidebar{
+                    // transition-duration: 0s;
+                // }
+            // }
             .sidebar{
                 &.active{
-                    &.minimal{
-                        width:vw-calc(455);
-                        #img{
-                            opacity: 0;
-                            visibility: hidden;
-                            transition-duration: 1s, .3s, .3s;
-                        }
-                    }
                     #img{
                         opacity: 1;
                         visibility: visible;
-                        transform: translate3d(1px,1px,0);
+                        transform: translate3d(calc(100vw - #{vw-calc(455 - 1)}), 1px, 0);
+                        transition-duration: 1s, .6s, .6s;
                     }
                 }
             }
@@ -237,63 +234,58 @@ body{
         .sidebar{
             width:vw-calc(455);
             height:100vh;
-            background:#00B8C7;
             position: absolute;
             top:0;
             left: 0;
-            transition: width 1.6s cubic-bezier(0.16, 1, 0.3, 1);
-            overflow: hidden;
             color:#fff;
             font-weight: bold;
             perspective: 600px;
             &.active{
-                width:100vw;
-                z-index: 2;
+                &:after{
+                    transform: translate3d(0,0,0) scaleX(1);
+                }
                 #des{
                     width:vw-calc(630);
                     height:vw-calc(297);
                     font-size: vw-calc(40);
                     line-height: vw-calc(55);
-                    top:vw-calc(216);
+                    top:calc(52% - #{vw-calc(40)});
                     left:vw-calc(190);
+                    transform: translate3d(0,-100%,0);
                 }
                 #date{
                     font-size: vw-calc(40);
+                    top:calc(48% + #{vw-calc(40)});
                     left:vw-calc(190);
                 }
                 #img{
-                    transition-duration: 1s, .6s, .6s;
+                    //
+                    // transition-duration: 1s, .6s, .6s;
                 }
             }
-            // &.minimal{
-            //     #des{
-            //         width:vw-calc(272);
-            //         height:vw-calc(387);
-            //         font-size: vw-calc(25);
-            //         line-height: vw-calc(36);
-            //         font-weight: normal;
-            //         top:vw-calc(95);
-            //         left:vw-calc(95);
-            //     }
-            //     #date{
-            //         font-size: vw-calc(81);
-            //         line-height: vw-calc(83);
-            //         left:vw-calc(95);
-            //     }
-            //     #img{
-            //         opacity: 0;
-            //         visibility: hidden;
-            //     }
-            // }
+            &:after{
+                content:'';
+                width:100vw;
+                height:100%;
+                background:#00B8C7;
+                position: absolute;
+                top:0;
+                left:0;
+                z-index: -1;
+                transform-origin: left;
+                transform: translate3d(0,0,0) scaleX(calc(455 / 1920));
+                transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+            }
             #des{
                 width:vw-calc(272);
                 height:vw-calc(387);
                 font-size: vw-calc(25);
                 line-height: vw-calc(36);
                 font-weight: normal;
+                position: absolute;
                 top:vw-calc(95);
                 left:vw-calc(95);
-                position: absolute;
+                transform: translate3d(0,0%,0);
                 transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
                 span{
                     float: left;
@@ -306,7 +298,7 @@ body{
                 font-size: vw-calc(81);
                 line-height: vw-calc(83);
                 position: absolute;
-                top:vw-calc(580);
+                top:calc(48% + #{vw-calc(55)});
                 left:vw-calc(95);
                 overflow: hidden;
                 transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
@@ -318,21 +310,21 @@ body{
                 }
             }
             #img{
-                width:100%;
+                width:100vw;
                 height:vw-calc(670);
-                position: absolute;
+                position: fixed;
                 bottom:0%;
                 right:0%;
                 background:url('./images/building@2x.png') right bottom no-repeat;
                 background-size: auto 100%;
                 opacity: 0;
                 visibility: hidden;
-                transform: translate3d(5%, 1px, vw-calc(100));
+                transform: translate3d(calc(100vw - #{vw-calc(255)}), 1px, vw-calc(100));
                 transform-origin: right bottom;
                 transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), opacity .3s cubic-bezier(0.65, 0, 0.35, 1), visibility .3s cubic-bezier(0.65, 0, 0.35, 1);
             }
             #line{
-                width:100%;
+                width:100vw;
                 height:vw-calc(5);
                 background:#fff;
                 position: absolute;

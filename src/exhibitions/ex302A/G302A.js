@@ -195,10 +195,7 @@ const G302A = props => {
             setSectionIdx(i);
             setIsClickedSectionFunc.current.setIsClickedSection(true);
 
-            gsap.set('#sidebarWrap', {delay:.98, className:'active disable'});
-            gsap.set('#sidebarWrap', {delay:1, className:'active'});
-            gsap.set('#contentWrap', {delay:1, className:'active'});
-            gsap.set(sectionWrapElem.current, {delay:1, className:'hide'});
+            // gsap.set(sectionWrapElem.current, {delay:1, className:'hide'});
             // const tl = gsap.timeline({delay:.6});
             // tl.to(`.section:nth-child(${i+1}) #wrap`, 1, {width: 455 / 1920 * 100 + 'vw', ease:'power4.inOut'},'s');
             // tl.to(`.section:nth-child(${i+1}) .img`, .3, {autoAlpha:0, ease:'power1.inOut'},'s');
