@@ -4,10 +4,11 @@ import gsap from 'gsap';
 
 const Content = props => {
     // const [dragging, setDragging] = useState(false);
-    const [minimalSidebar, setminimalSidebar] = useState(false);
+    const [minimalSidebar, setMinimalSidebar] = useState(false);
     // const [contentIdx, setContentIdx] = useState(null);
     
     const setIsClickedSectionFunc = useRef(null);
+    const moveContentFunc = useRef(null);
     const contentWrapElem = useRef(null);
     const contentElems = useRef([...Array(5)].map(()=>createRef()));
     const sidebarElems = useRef([...Array(5)].map(()=>createRef()));
@@ -56,7 +57,7 @@ const Content = props => {
             mouse.lastPos.x = mouse.currentPos.x;
             mouse.lastPos.y = mouse.currentPos.y;
 
-            setminimalSidebar(true);
+            setMinimalSidebar(true);
             moveContentWrap();
         }
 
@@ -77,6 +78,12 @@ const Content = props => {
             contentWrapElemPos.x += mouse.delta.x;
             contentWrapElemPos.x = Math.min(0, Math.max(-maxWidth, contentWrapElemPos.x));
         }
+
+        const moveContent = (i) => {
+            contentWrapElemPos.x = -contentElems.current[i].current.offsetLeft;
+            contentWrapElemEasePos.x = contentWrapElemPos.x;
+        }
+        moveContentFunc.current = {moveContent}
         
         const animLoop = () => {
             requestAnimationFrame(animLoop);
@@ -84,6 +91,20 @@ const Content = props => {
             contentWrapElemEasePos.x += (contentWrapElemPos.x - contentWrapElemEasePos.x) * .1;
             const x = contentWrapElemEasePos.x;
             contentWrapElem.current.style.transform = `translate3d(${x}px,0,0)`;
+
+            for(let i=0; i<sidebarElems.current.length; i++){
+                const content = contentElems.current[i].current;
+                const sidebar = sidebarElems.current[i].current;
+                const sidebarW = window.innerWidth * (455 / 1920);
+
+                const offsetX = content.getBoundingClientRect().left;
+                let sx = Math.max(0, offsetX);
+                if(offsetX - sidebarW <= -content.offsetWidth){
+                    sx = Math.max(-sidebarW, offsetX+content.offsetWidth-sidebarW);
+                    // console.log(offsetX+content.offsetWidth-sidebarW);
+                }
+                sidebar.style.transform = `translate3d(${sx}px,0,0)`;
+            }
         };
         
         const onKeyDown = (e) => {
@@ -124,12 +145,14 @@ const Content = props => {
 
     useEffect(()=>{
         if(props.sectionIdx !== null){
-            const elem = contentElems.current[props.sectionIdx].current;
+            const elem = sidebarElems.current[props.sectionIdx].current;
 
             const tl = gsap.timeline({delay:1});
             tl.fromTo(elem.querySelectorAll('#des span span'), 1, {force3D:true, y:'100%'}, {y:'0%', stagger:.01, ease:'power4.out'},'s');
             tl.fromTo(elem.querySelectorAll('#date span'), 1, {force3D:true, y:'100%'}, { y:'0%', stagger:.1, ease:'power4.out'},'b-=.6');
-            tl.fromTo(elem.querySelectorAll('#line'), 1, {force3D:true, scaleX:0}, {scaleX:1, ease:'power3.inOut'},'b-=.6');
+            tl.fromTo(elem.querySelectorAll('#line'), 1, {force3D:true, scaleX:0}, {scaleX:1, ease:'power3.inOut'},'s+=.6');
+
+            moveContentFunc.current.moveContent(props.sectionIdx);
         }
     },[props.sectionIdx])
 
@@ -145,9 +168,9 @@ const Content = props => {
     }
 
     return (
-        <div ref={contentWrapElem} id="contentWrap">
-            <div ref={contentElems.current[0]} id="content1" className={`content${props.sectionIdx === 0 ? ' active' : ''}`}>
-                <div ref={sidebarElems.current[0]} id="sidebar" className={`${minimalSidebar ? 'minimal' : ''}`}>
+        <>
+            <div id="sidebarWrap">
+                <div ref={sidebarElems.current[0]} id="sidebar1" className={`sidebar${props.sectionIdx === 0 && !minimalSidebar ? ' active' : ''}`}>
                     <div id="des">
                         {
                             content.text1.split('').map((v, i)=>{
@@ -159,25 +182,85 @@ const Content = props => {
                     <div id="line"></div>
                     <div id="img"></div>
                 </div>
-                <div className="item">
-
-                </div>
-                <div className="item">
-
-                </div>
-            </div>
-            <div ref={contentElems.current[1]} id="content2" className={`content${props.sectionIdx === 1 ? ' active' : ''}`}>
-                <div ref={sidebarElems.current[1]} id="sidebar">
+                <div ref={sidebarElems.current[1]} id="sidebar2" className={`sidebar${props.sectionIdx === 1 && !minimalSidebar ? ' active' : ''}`}>
+                    <div id="des">
+                        {
+                            content.text1.split('').map((v, i)=>{
+                                return <span key={i}><span>{v}</span></span>
+                            })
+                        }
+                    </div>
+                    <div id="date"><span>1960</span><span>-</span><span>1979</span></div>
                     <div id="line"></div>
+                    <div id="img"></div>
                 </div>
-                <div className="item">
-
+                
+                <div ref={sidebarElems.current[2]} id="sidebar3" className={`sidebar${props.sectionIdx === 2 && !minimalSidebar ? ' active' : ''}`}>
+                    <div id="des">
+                        {
+                            content.text1.split('').map((v, i)=>{
+                                return <span key={i}><span>{v}</span></span>
+                            })
+                        }
+                    </div>
+                    <div id="date"><span>1960</span><span>-</span><span>1979</span></div>
+                    <div id="line"></div>
+                    <div id="img"></div>
                 </div>
-                <div className="item">
-
+                
+                <div ref={sidebarElems.current[3]} id="sidebar4" className={`sidebar${props.sectionIdx === 3 && !minimalSidebar ? ' active' : ''}`}>
+                    <div id="des">
+                        {
+                            content.text1.split('').map((v, i)=>{
+                                return <span key={i}><span>{v}</span></span>
+                            })
+                        }
+                    </div>
+                    <div id="date"><span>1960</span><span>-</span><span>1979</span></div>
+                    <div id="line"></div>
+                    <div id="img"></div>
+                </div>
+                
+                <div ref={sidebarElems.current[4]} id="sidebar5" className={`sidebar${props.sectionIdx === 4 && !minimalSidebar ? ' active' : ''}`}>
+                    <div id="des">
+                        {
+                            content.text1.split('').map((v, i)=>{
+                                return <span key={i}><span>{v}</span></span>
+                            })
+                        }
+                    </div>
+                    <div id="date"><span>1960</span><span>-</span><span>1979</span></div>
+                    <div id="line"></div>
+                    <div id="img"></div>
                 </div>
             </div>
-        </div>
+            <div ref={contentWrapElem} id="contentWrap">
+                <div ref={contentElems.current[0]} id="content1" className="content">
+                    <div className="item">
+
+                    </div>
+                    <div className="item">
+
+                    </div>
+                </div>
+                <div ref={contentElems.current[1]} id="content2" className="content">
+                    <div className="item"></div>
+                    <div className="item"></div>
+                </div>
+                <div ref={contentElems.current[2]} id="content2" className="content">
+                    <div className="item"></div>
+                    <div className="item"></div>
+                </div>
+                <div ref={contentElems.current[3]} id="content2" className="content">
+                    <div className="item"></div>
+                    <div className="item"></div>
+                </div>
+                <div ref={contentElems.current[4]} id="content2" className="content">
+                    <div className="item"></div>
+                    <div className="item"></div>
+                </div>
+            </div>
+        </>
     )
 }
 

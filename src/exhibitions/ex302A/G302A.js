@@ -195,7 +195,8 @@ const G302A = props => {
             setSectionIdx(i);
             setIsClickedSectionFunc.current.setIsClickedSection(true);
 
-            gsap.set('#contentWrap', {delay:.98, className:'active disable'});
+            gsap.set('#sidebarWrap', {delay:.98, className:'active disable'});
+            gsap.set('#sidebarWrap', {delay:1, className:'active'});
             gsap.set('#contentWrap', {delay:1, className:'active'});
             gsap.set(sectionWrapElem.current, {delay:1, className:'hide'});
             // const tl = gsap.timeline({delay:.6});
