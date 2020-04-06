@@ -6,13 +6,15 @@ import Content from './Content';
 
 const G302A = props => {
     const [contentData, setContentData] = useState(null);
-    const [sectionIdx, setSectionIdx] = useState(null);
+    const [clickedSectionIdx, setClickedSectionIdx] = useState(null);
+    const [currentSectionIdx, setCurrentSectionIdx] = useState(0);
     const [dragging, setDragging] = useState(false);
 
+    const sectionNum = 5;
     const sectionWrapElem = useRef(null);
-    const sectionElems = useRef([...Array(5)].map(()=>createRef()));
-    const sectionTextElems = useRef([...Array(5)].map(()=>createRef()));
-    const sectionImgElems = useRef([...Array(5)].map(()=>createRef()));
+    const sectionElems = useRef([...Array(sectionNum)].map(()=>createRef()));
+    const sectionTextElems = useRef([...Array(sectionNum)].map(()=>createRef()));
+    const sectionImgElems = useRef([...Array(sectionNum)].map(()=>createRef()));
     const nextSectionFunc = useRef(null);
     const prevSectionFunc = useRef(null);
     const setIsClickedSectionFunc = useRef(null);
@@ -21,12 +23,20 @@ const G302A = props => {
 
 
     useEffect(()=>{
+        let ww = window.innerWidth;
         let currentSection = 0;
+        let oldSection = 0;
         let isClickedSection = false;
         const sectionWrapElemPos = {x:0};
         const sectionWrapElemEasePos = {x:0};
-        const sectionElemEaseScale = [...Array(5).fill(1)];
-        let maxWidth = sectionWrapElem.current.offsetWidth - window.innerWidth;
+        const sectionWrapElemEase2Pos = {x:0};
+        const sectionElemEaseScale = [...Array(sectionNum).fill(1)];
+        const textElemEaseX = [...Array(sectionNum).fill(0)];
+        const textElemEaseScale = [...Array(sectionNum).fill(1)];
+        const textElemEaseOpacity = [...Array(sectionNum).fill(0)];
+        const imageElemEaseX = [...Array(sectionNum).fill(0)];
+        const imageElemEaseScale = [...Array(sectionNum).fill(1)];
+        let maxWidth = sectionWrapElem.current.offsetWidth - ww;
         const mouse = {
             currentPos: {x:0, y:0},
             startPos: {x:0, y:0},
@@ -91,11 +101,22 @@ const G302A = props => {
         }
 
         const moveSection = () => {
-            sectionWrapElemPos.x = -currentSection * (window.innerWidth/2);
+            sectionWrapElemPos.x = -currentSection * (ww/2);
+            setCurrentSectionIdx(currentSection);
+
+            if(oldSection !== currentSection){
+                const tl = gsap.timeline();
+                tl.set('#sectionNav #line span', {force3D:true, x: oldSection * 100 +'%', scaleX:0, overwrite:true});
+                tl.to('#sectionNav #line span', .3, {scaleX:currentSection-oldSection, ease:'power4.out'}, 's');
+                tl.set('#sectionNav #line span ', {x: currentSection * 100 +'%', scaleX:-(currentSection-oldSection)},'b');
+                tl.to('#sectionNav #line span', .4, {scaleX:0, ease:'power4.out'},'b');
+            }
+
+            oldSection = currentSection;
         }
 
         const nextSection = () => {
-            currentSection = Math.min(5-1, ++currentSection);
+            currentSection = Math.min(sectionNum-1, ++currentSection);
             moveSection();
         }
         nextSectionFunc.current = {nextSection};
@@ -114,33 +135,42 @@ const G302A = props => {
         const animLoop = () => {
             requestAnimationFrame(animLoop);
 
-            sectionWrapElemEasePos.x += (sectionWrapElemPos.x - sectionWrapElemEasePos.x) * .1;
-            const x = sectionWrapElemEasePos.x / maxWidth * 66.666;
+            sectionWrapElemEase2Pos.x += (sectionWrapElemPos.x - sectionWrapElemEase2Pos.x) * .2;
+            sectionWrapElemEasePos.x += (sectionWrapElemEase2Pos.x - sectionWrapElemEasePos.x) * .1;
+            const x = sectionWrapElemEasePos.x / maxWidth * (ww / 2 / sectionWrapElem.current.offsetWidth * 100 * (sectionNum-1) );
             sectionWrapElem.current.style.transform = `translate3d(${x}%,0,0)`;
 
-            for(let i=0; i<5; i++){
+            for(let i=0; i<sectionNum; i++){
                 const section = sectionElems.current[i].current;
                 const text = sectionTextElems.current[i].current;
                 const img = sectionImgElems.current[i].current;
-                const offsetLeft = (i * (window.innerWidth/2) + sectionWrapElemPos.x);
-                const scale = 1-Math.abs(offsetLeft * .3 / (window.innerWidth));
-                const textX = offsetLeft * .7 / (window.innerWidth);
-                const textS = 1-Math.abs(offsetLeft * .2 / (window.innerWidth));
-                const textO = 1-Math.abs(offsetLeft * 2 / (window.innerWidth));
-                const imgX = offsetLeft * .2 / (window.innerWidth);
+                const offsetLeft = (i * (ww/2) + sectionWrapElemPos.x);
+                const scale = 1-Math.abs(offsetLeft * .3 / (ww));
+                const textX = offsetLeft * .7 / (ww);
+                const textS = 1-Math.abs(offsetLeft * .2 / (ww));
+                const textO = 1-Math.abs(offsetLeft * 2 / (ww));
+                const imgX = offsetLeft * 1 / (ww);
+                const imgS = 1-Math.abs(offsetLeft * .2 / (ww));
                 
+                // console.log(i)
                 // update section idx
-                if(offsetLeft + window.innerWidth/2 > window.innerWidth/4 && offsetLeft + window.innerWidth/2 < window.innerWidth/1.333){
+                const center = (offsetLeft + ww/2);
+                if(center > ww/5 && center < ww/1.25){
                     currentSection = i;
                 }
                 
                 sectionElemEaseScale[i] += (scale - sectionElemEaseScale[i]) * .1;
                 section.style.transform = `translate3d(-50%,-50%,0) scale(${sectionElemEaseScale[i]})`;
 
-                text.style.transform = `translate3d(${textX * 100}%,0,0) scale(${textS})`;
-                text.style.opacity = textO;
+                textElemEaseX[i] += (textX - textElemEaseX[i]) * .1;
+                textElemEaseScale[i] += (textS - textElemEaseScale[i]) * .1;
+                textElemEaseOpacity[i] += (textO - textElemEaseOpacity[i]) * .1;
+                text.style.transform = `translate3d(${textElemEaseX[i] * 100}%,0,0) scale(${textElemEaseScale[i]})`;
+                text.style.opacity = textElemEaseOpacity[i];
 
-                img.style.transform = `translate3d(${imgX * 100}%,0,0) scale(0.8)`;
+                imageElemEaseX[i] += (imgX - imageElemEaseX[i]) * .1;
+                imageElemEaseScale[i] += (imgS - imageElemEaseScale[i]) * .1;
+                img.style.transform = `translate3d(${imageElemEaseX[i] * 100}%,0,0) scale(${imageElemEaseScale[i]})`;
             }
         }
         
@@ -160,7 +190,8 @@ const G302A = props => {
         }
 
         const onResize = () => {
-            maxWidth = sectionWrapElem.current.offsetWidth - window.innerWidth;
+            ww = window.innerWidth;
+            maxWidth = sectionWrapElem.current.offsetWidth - ww;
         }
 
         const addEvent = () => {
@@ -192,13 +223,8 @@ const G302A = props => {
 
     const onClickSection = (i) => {
         if(!dragging && !getIsClickedSectionFunc.current.getIsClickedSection() && i === getCurrentSectionFunc.current.getCurrentSection()){
-            setSectionIdx(i);
+            setClickedSectionIdx(i);
             setIsClickedSectionFunc.current.setIsClickedSection(true);
-
-            // gsap.set(sectionWrapElem.current, {delay:1, className:'hide'});
-            // const tl = gsap.timeline({delay:.6});
-            // tl.to(`.section:nth-child(${i+1}) #wrap`, 1, {width: 455 / 1920 * 100 + 'vw', ease:'power4.inOut'},'s');
-            // tl.to(`.section:nth-child(${i+1}) .img`, .3, {autoAlpha:0, ease:'power1.inOut'},'s');
         }
     }
 
@@ -208,70 +234,72 @@ const G302A = props => {
 
     return(
         <div id="home">
+            <div id="sectionNav" className={`${clickedSectionIdx !== null ? 'hide' : ''}`}>
+                <ul>
+                    {
+                        [...Array(sectionNum).fill(null)].map((v, i)=>{
+                            return <li key={i} className={`${currentSectionIdx === i ? 'active' : ''}`}><span>1960-1979</span></li>
+                        })
+                    }
+                </ul>
+                <div id="line"><span></span></div>
+            </div>
             <div ref={sectionWrapElem} id="sectionWrap">
-                <div ref={sectionElems.current[0]} id="section1" className={`section${sectionIdx === 0 ? ' active' : ''}`} onClick={()=>onClickSection(0)}>
+                {
+                    [...Array(sectionNum).fill(null)].map((v, i)=>{
+                        return <div key={i} ref={sectionElems.current[i]} id={`section${i+1}`} className={`section${clickedSectionIdx === i ? ' active' : ''}`} onClick={()=>onClickSection(i)}>
+                            <div id="wrap">
+                                <p ref={sectionTextElems.current[i]}>
+                                    <span>{content.text1}</span>
+                                </p>
+                                <div ref={sectionImgElems.current[i]} className="img"></div>
+                            </div>
+                        </div>
+                    })
+                }
+                {/* <div ref={sectionElems.current[0]} id="section1" className={`section${clickedSectionIdx === 0 ? ' active' : ''}`} onClick={()=>onClickSection(0)}>
                     <div id="wrap">
                         <p ref={sectionTextElems.current[0]}>
-                            {
-                                content.text1.split('').map((v, i)=>{
-                                    return <span key={i}><span>{v}</span></span>
-                                })
-                            }
+                            <span>{content.text1}</span>
                         </p>
                         <div ref={sectionImgElems.current[0]} className="img"></div>
                     </div>
                 </div>
-                <div ref={sectionElems.current[1]} id="section2" className={`section ${sectionIdx === 1 ? ' active' : ''}`} onClick={()=>onClickSection(1)}>
+                <div ref={sectionElems.current[1]} id="section2" className={`section ${clickedSectionIdx === 1 ? ' active' : ''}`} onClick={()=>onClickSection(1)}>
                     <div id="wrap">
                         <p ref={sectionTextElems.current[1]}>
-                            {
-                                content.text1.split('').map((v, i)=>{
-                                    return <span key={i}><span>{v}</span></span>
-                                })
-                            }
+                            <span>{content.text1}</span>
                         </p>
                         <div ref={sectionImgElems.current[1]} className="img"></div>
                     </div>
                 </div>
-                <div ref={sectionElems.current[2]} id="section3" className={`section ${sectionIdx === 2 ? ' active' : ''}`} onClick={()=>onClickSection(2)}>
+                <div ref={sectionElems.current[2]} id="section3" className={`section ${clickedSectionIdx === 2 ? ' active' : ''}`} onClick={()=>onClickSection(2)}>
                     <div id="wrap">
                         <p ref={sectionTextElems.current[2]}>
-                            {
-                                content.text1.split('').map((v, i)=>{
-                                    return <span key={i}><span>{v}</span></span>
-                                })
-                            }
+                            <span>{content.text1}</span>
                         </p>
                         <div ref={sectionImgElems.current[2]} className="img"></div>
                     </div>
                 </div>
-                <div ref={sectionElems.current[3]} id="section4" className={`section ${sectionIdx === 3 ? ' active' : ''}`} onClick={()=>onClickSection(3)}>
+                <div ref={sectionElems.current[3]} id="section4" className={`section ${clickedSectionIdx === 3 ? ' active' : ''}`} onClick={()=>onClickSection(3)}>
                     <div id="wrap">
                         <p ref={sectionTextElems.current[3]}>
-                            {
-                                content.text1.split('').map((v, i)=>{
-                                    return <span key={i}><span>{v}</span></span>
-                                })
-                            }
+                            <span>{content.text1}</span>
                         </p>
                         <div ref={sectionImgElems.current[3]} className="img"></div>
                     </div>
-                </div>
-                <div ref={sectionElems.current[4]} id="section5" className={`section ${sectionIdx === 4 ? ' active' : ''}`} onClick={()=>onClickSection(4)}>
+                </div> */}
+                {/* <div ref={sectionElems.current[4]} id="section5" className={`section ${clickedSectionIdx === 4 ? ' active' : ''}`} onClick={()=>onClickSection(4)}>
                     <div id="wrap">
                         <p ref={sectionTextElems.current[4]}>
-                            {
-                                content.text1.split('').map((v, i)=>{
-                                    return <span key={i}><span>{v}</span></span>
-                                })
-                            }
+                            <span>{content.text1}</span>
                         </p>
                         <div ref={sectionImgElems.current[4]} className="img"></div>
                     </div>
-                </div>
+                </div> */}
             </div>
             <Content 
-                sectionIdx={sectionIdx}
+                clickedSectionIdx={clickedSectionIdx}
                 isClickedSection={getIsClickedSectionFunc.current && getIsClickedSectionFunc.current.getIsClickedSection()}
             ></Content>
         </div>

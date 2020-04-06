@@ -112,9 +112,16 @@ const Content = props => {
 
             for(let i=0; i<imgElems.current.length; i++){
                 const img = imgElems.current[i].current;
-                const imgX = -(img.getBoundingClientRect().left - sidebarW) * .06;
-                console.log(imgX);
-                img.querySelector('img').style.transform = `translate3d(${imgX}px,0,0) scale(1.2)`;
+                const type = img.getAttribute('data-type');
+
+                if(type === 'translate'){
+                    const ix = -(img.getBoundingClientRect().left - sidebarW) * .06;
+                    img.querySelector('img').style.transform = `translate3d(${ix}px,0,0) scale(1.2)`;
+                }
+                else if(type === 'scale'){
+                    const is = Math.max(1, 1+(img.getBoundingClientRect().left - sidebarW) / maxWidth);
+                    img.querySelector('img').style.transform = `translate3d(0,0,0) scale(${is})`;
+                }
             }
         };
         
@@ -159,21 +166,21 @@ const Content = props => {
     },[]);
 
     useEffect(()=>{
-        if(props.sectionIdx !== null){
-            const elem = sidebarElems.current[props.sectionIdx].current;
+        if(props.clickedSectionIdx !== null){
+            const elem = sidebarElems.current[props.clickedSectionIdx].current;
 
             const tl = gsap.timeline({delay:1});
             
-            tl.set('#sidebarWrap', {className:'active'});
+            tl.set('#sidebarWrap', {className:'active disable'});
             tl.set('#sectionWrap', {className:'hide'});
             tl.set(contentWrapElem.current, {className:'active'});
             tl.fromTo(elem.querySelectorAll('#des span span'), 1, {force3D:true, y:'100%'}, {y:'0%', stagger:.01, ease:'power4.out'},'s');
             tl.fromTo(elem.querySelectorAll('#date span'), 1, {force3D:true, y:'100%'}, { y:'0%', stagger:.1, ease:'power4.out'},'b-=.6');
             tl.fromTo(elem.querySelectorAll('#line'), 1, {force3D:true, scaleX:0}, {scaleX:1, ease:'power3.inOut'},'s+=.6');
 
-            moveContentFunc.current.moveContent(props.sectionIdx);
+            moveContentFunc.current.moveContent(props.clickedSectionIdx);
         }
-    },[props.sectionIdx])
+    },[props.clickedSectionIdx])
 
     useEffect(()=>{
         if(props.isClickedSection !== null){
@@ -189,7 +196,7 @@ const Content = props => {
     return (
         <>
             <div id="sidebarWrap">
-                <div ref={sidebarElems.current[0]} id="sidebar1" className={`sidebar${props.sectionIdx === 0 && !minimalSidebar ? ' active' : ''}`}>
+                <div ref={sidebarElems.current[0]} id="sidebar1" className={`sidebar${props.clickedSectionIdx === 0 && !minimalSidebar ? ' active' : ''}`}>
                     <div id="des">
                         {
                             content.text1.split('').map((v, i)=>{
@@ -201,20 +208,7 @@ const Content = props => {
                     <div id="line"></div>
                     <div id="img"></div>
                 </div>
-                <div ref={sidebarElems.current[1]} id="sidebar2" className={`sidebar${props.sectionIdx === 1 && !minimalSidebar ? ' active' : ''}`}>
-                    <div id="des">
-                        {
-                            content.text1.split('').map((v, i)=>{
-                                return <span key={i}><span>{v}</span></span>
-                            })
-                        }
-                    </div>
-                    <div id="date"><span>1960</span><span>-</span><span>1979</span></div>
-                    <div id="line"></div>
-                    <div id="img"></div>
-                </div>
-                
-                <div ref={sidebarElems.current[2]} id="sidebar3" className={`sidebar${props.sectionIdx === 2 && !minimalSidebar ? ' active' : ''}`}>
+                <div ref={sidebarElems.current[1]} id="sidebar2" className={`sidebar${props.clickedSectionIdx === 1 && !minimalSidebar ? ' active' : ''}`}>
                     <div id="des">
                         {
                             content.text1.split('').map((v, i)=>{
@@ -227,7 +221,7 @@ const Content = props => {
                     <div id="img"></div>
                 </div>
                 
-                <div ref={sidebarElems.current[3]} id="sidebar4" className={`sidebar${props.sectionIdx === 3 && !minimalSidebar ? ' active' : ''}`}>
+                <div ref={sidebarElems.current[2]} id="sidebar3" className={`sidebar${props.clickedSectionIdx === 2 && !minimalSidebar ? ' active' : ''}`}>
                     <div id="des">
                         {
                             content.text1.split('').map((v, i)=>{
@@ -240,7 +234,20 @@ const Content = props => {
                     <div id="img"></div>
                 </div>
                 
-                <div ref={sidebarElems.current[4]} id="sidebar5" className={`sidebar${props.sectionIdx === 4 && !minimalSidebar ? ' active' : ''}`}>
+                <div ref={sidebarElems.current[3]} id="sidebar4" className={`sidebar${props.clickedSectionIdx === 3 && !minimalSidebar ? ' active' : ''}`}>
+                    <div id="des">
+                        {
+                            content.text1.split('').map((v, i)=>{
+                                return <span key={i}><span>{v}</span></span>
+                            })
+                        }
+                    </div>
+                    <div id="date"><span>1960</span><span>-</span><span>1979</span></div>
+                    <div id="line"></div>
+                    <div id="img"></div>
+                </div>
+                
+                <div ref={sidebarElems.current[4]} id="sidebar5" className={`sidebar${props.clickedSectionIdx === 4 && !minimalSidebar ? ' active' : ''}`}>
                     <div id="des">
                         {
                             content.text1.split('').map((v, i)=>{
@@ -257,32 +264,36 @@ const Content = props => {
                 <div ref={contentElems.current[0]} id="content1" className="content">
                     <div className="item">
                         section1 - 1
-                        <div ref={imgElems.current[0]} className="imgWrap"><img src={img1} /></div>
+                        <div ref={imgElems.current[0]} className="imgWrap" data-type="translate"><img src={img1} /></div>
                     </div>
                     <div className="item">
                         section1 - 2
-                        <div ref={imgElems.current[1]} className="imgWrap"><img src={img1} /></div>
+                        <div ref={imgElems.current[1]} className="imgWrap" data-type="scale"><img src={img1} /></div>
                     </div>
                     <div className="item">
                         section1 - 3
-                        <div ref={imgElems.current[2]} className="imgWrap"><img src={img1} /></div>
+                        <div ref={imgElems.current[2]} className="imgWrap" data-type="scale"><img src={img1} /></div>
                     </div>
                 </div>
                 <div ref={contentElems.current[1]} id="content2" className="content">
                     <div className="item">section2 - 1</div>
                     <div className="item">section2 - 2</div>
+                    <div className="item">section2 - 3</div>
                 </div>
                 <div ref={contentElems.current[2]} id="content3" className="content">
                     <div className="item">section3 - 1</div>
                     <div className="item">section3 - 2</div>
+                    <div className="item">section3 - 3</div>
                 </div>
                 <div ref={contentElems.current[3]} id="content4" className="content">
                     <div className="item">section4 - 1</div>
                     <div className="item">section4 - 2</div>
+                    <div className="item">section4 - 3</div>
                 </div>
                 <div ref={contentElems.current[4]} id="content5" className="content">
                     <div className="item">section5 - 1</div>
                     <div className="item">section5 - 2</div>
+                    <div className="item">section5 - 3</div>
                 </div>
             </div>
         </>

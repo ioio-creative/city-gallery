@@ -50,6 +50,9 @@ body{
         cursor: -moz-grabbing;
         cursor: -webkit-grabbing;
     }
+    ul, li{
+        list-style: none;
+    }
 }
 #home{
     width:100%;
@@ -68,8 +71,75 @@ body{
         left:0;
         transform: translate3d(0,-50%,0);
     }
+    #sectionNav{
+        width: vw-calc(553);
+        position: fixed;
+        top:vw-calc(72);
+        left:50%;
+        z-index: 997;
+        transform: translate3d(-50%,0,0);
+        display: flex;
+        align-items: center;
+        opacity: 1;
+        visibility: visible;
+        transition: all .6s cubic-bezier(0.65, 0, 0.35, 1);
+        &.hide{
+            opacity: 0;
+            visibility: hidden;
+        }
+        ul{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+            li{
+                width:vw-calc(20);
+                height: vw-calc(20);
+                border-radius: 50%;
+                background:#4A4A4A;
+                position: relative;
+                transition: all .3s cubic-bezier(0.65, 0, 0.35, 1);
+                &.active{
+                    background:#fff;
+                    transition-delay: .13s;
+                    span{
+                        color:#fff;
+                    }
+                }
+                span{
+                    font-size:vw-calc(16);
+                    color:#4A4A4A;
+                    white-space: nowrap;
+                    font-family: sans-serif;
+                    position: absolute;
+                    top:calc(100% + #{vw-calc(20)});
+                    left:50%;
+                    transform: translate3d(-50%,0,0);
+                    transition: all .3s cubic-bezier(0.65, 0, 0.35, 1);
+                }
+            }
+        }
+        #line{
+            width:100%;
+            height: vw-calc(1);
+            background:#ffffff50;
+            position: absolute;
+            top:50%;
+            span{
+                width:vw-calc(553 / ($child - 1));//100 / ($child - 1) * 1%;
+                height:1px;
+                background:#fff;
+                display: block;
+                position: absolute;
+                top:0;
+                transform: translate3d(0,0,0) scaleX(0);
+                transform-origin: left;
+            }
+        }
+    }
     #sectionWrap{
-        width:$halfScreenWidth * ($child+1) * 1vw;
+        width:$halfScreenWidth * ($child + 1) * 1vw;
         height:100%;
         position: relative;
         opacity: 1;
@@ -87,7 +157,7 @@ body{
             transform: translate3d(-50%,-50%,0);
             overflow: hidden;
             clip-path: circle(20.3% at 50% 50%);
-            transition: clip-path .8s cubic-bezier(0.83, 0, 0.17, 1);
+            transition: clip-path 1s cubic-bezier(0.83, 0, 0.17, 1);
 
             @for $i from 1 through $child {
                 &:nth-child(#{$i}) {
@@ -111,7 +181,7 @@ body{
                 height:100%;
                 background:#00B8C7;
                 clip-path: circle(20.0% at 50% 50%);
-                transition: clip-path .8s cubic-bezier(0.87, 0, 0.13, 1);
+                transition: clip-path 1s cubic-bezier(0.87, 0, 0.13, 1);
                 p{
                     width:vw-calc(308);
                     height:vw-calc(194);
@@ -132,7 +202,7 @@ body{
                     bottom:calc(50% - #{vw-calc(653/2)});
                     right:calc(50% - #{vw-calc(653/2)});
                     background:url('./images/building@2x.png') right bottom no-repeat;
-                    background-size: 100%;
+                    background-size: 80%;
                     transform: translate3d(0,0,0) scale(.8);
                     transform-origin: right bottom;
                     transition: opacity .6s cubic-bezier(0.65, 0, 0.35, 1), visibility .6s cubic-bezier(0.65, 0, 0.35, 1);
@@ -199,10 +269,10 @@ body{
                 // line-height: 100vh;
                 color:#fff;
                 &:nth-child(odd){
-                    background:rgb(0, 156, 170);
+                    background:rgb(0, 100, 109);
                 }
                 &:nth-child(even){
-                    background:rgb(6, 145, 158);
+                    background:rgb(0, 86, 94);
                 }
                 .imgWrap{
                     width:vw-calc(549);
@@ -263,6 +333,7 @@ body{
             perspective: 600px;
             &.active{
                 &:after{
+                    transition-duration: 0s;
                     transform: translate3d(0,0,0) scaleX(1);
                 }
                 #des{
@@ -278,10 +349,6 @@ body{
                     font-size: vw-calc(40);
                     top:calc(48% + #{vw-calc(40)});
                     left:vw-calc(190);
-                }
-                #img{
-                    //
-                    // transition-duration: 1s, .6s, .6s;
                 }
             }
             &:after{
