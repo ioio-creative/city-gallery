@@ -19,6 +19,7 @@ const G302A = props => {
     const prevSectionFunc = useRef(null);
     const setIsClickedSectionFunc = useRef(null);
     const getIsClickedSectionFunc = useRef(null);
+    const setCurrentSectionFunc = useRef(null);
     const getCurrentSectionFunc = useRef(null);
 
 
@@ -127,6 +128,12 @@ const G302A = props => {
         }
         prevSectionFunc.current = {prevSection};
 
+        const setCurrentSection = (i) => {
+            currentSection = i;
+            moveSection();
+        }
+        setCurrentSectionFunc.current = {setCurrentSection};
+
         const getCurrentSection = () => {
             return currentSection;
         }
@@ -228,6 +235,11 @@ const G302A = props => {
         }
     }
 
+    const goToSection = (i) => {
+        setCurrentSectionFunc.current.setCurrentSection(i);
+        setCurrentSectionIdx(i);
+    }
+
     const content = {
         'text1' : '政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。'
     }
@@ -238,7 +250,7 @@ const G302A = props => {
                 <ul>
                     {
                         [...Array(sectionNum).fill(null)].map((v, i)=>{
-                            return <li key={i} className={`${currentSectionIdx === i ? 'active' : ''}`}><span>1960-1979</span></li>
+                            return <li key={i} className={`${currentSectionIdx === i ? 'active' : ''}`} onClick={()=>goToSection(i)}><span>1960-1979</span></li>
                         })
                     }
                 </ul>
