@@ -14,16 +14,18 @@ const Content = props => {
     const contentWrapElem = useRef(null);
     const contentElems = useRef([...Array(5)].map(()=>createRef()));
     const sidebarElems = useRef([...Array(5)].map(()=>createRef()));
-    const imgElems = useRef([...Array(3)].map(()=>createRef()));
+    const imgElems = useRef([...Array(2)].map(()=>createRef()));
+    const textElems = useRef([...Array(2)].map(()=>createRef()));
 
     
     useEffect(()=>{
         // let currentContent = 0;
+        let ww = window.innerWidth;
         let isClickedSection = false;
         const contentWrapElemPos = {x:0};
         const contentWrapElemEasePos = {x:0};
         // const contentElemEaseScale = [...Array(5).fill(1)];
-        let maxWidth = contentWrapElem.current.offsetWidth - window.innerWidth;
+        let maxWidth = contentWrapElem.current.offsetWidth - ww;
         const mouse = {
             currentPos: {x:0, y:0},
             startPos: {x:0, y:0},
@@ -31,7 +33,7 @@ const Content = props => {
             delta: {x:0, y:0}
         }
 
-        let sidebarW = window.innerWidth * (455 / 1920);
+        let sidebarW = ww * (455 / 1920);
 
         const onMouseDown = (event) => {
             if(isClickedSection){
@@ -80,7 +82,7 @@ const Content = props => {
         setIsClickedSectionFunc.current = {setIsClickedSection}
         
         const moveContentWrap = () => {
-            contentWrapElemPos.x += mouse.delta.x;
+            contentWrapElemPos.x += mouse.delta.x * 2;
             contentWrapElemPos.x = Math.min(0, Math.max(-maxWidth, contentWrapElemPos.x));
         }
 
@@ -105,7 +107,6 @@ const Content = props => {
                 let sx = Math.max(0, offsetX);
                 if(offsetX - sidebarW <= -content.offsetWidth){
                     sx = Math.max(-sidebarW, offsetX+content.offsetWidth-sidebarW);
-                    // console.log(offsetX+content.offsetWidth-sidebarW);
                 }
                 sidebar.style.transform = `translate3d(${sx}px,0,0)`;
             }
@@ -121,6 +122,17 @@ const Content = props => {
                 else if(type === 'scale'){
                     const is = Math.max(1, 1+(img.getBoundingClientRect().left - sidebarW) / maxWidth);
                     img.querySelector('img').style.transform = `translate3d(0,0,0) scale(${is})`;
+                }
+            }
+
+            for(let i=0; i<textElems.current.length; i++){
+                const text = textElems.current[i].current;
+                
+                const offsetX = text.getBoundingClientRect().left - ww + ww/5;
+
+                if(offsetX < 0 && text.className !== 'done'){
+                    text.className = 'done';
+                    gsap.fromTo(text.querySelectorAll('span span'), 1, {force3D:true, y:'105%'}, {y:'0%', stagger:.06, ease:'power4.out'},'s');
                 }
             }
         };
@@ -141,7 +153,7 @@ const Content = props => {
         }
 
         const onResize = () => {
-            sidebarW = window.innerWidth * (455 / 1920);
+            sidebarW = ww * (455 / 1920);
         }
 
         const addEvent = () => {
@@ -190,7 +202,8 @@ const Content = props => {
 
     
     const content = {
-        'text1' : '政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。'
+        'text1' : '政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。',
+        'text2' : ['完成', '《土地利用計劃書》']
     }
 
     return (
@@ -272,11 +285,37 @@ const Content = props => {
                     </div>
                     <div className="item">
                         section1 - 3
-                        <div ref={imgElems.current[2]} className="imgWrap" data-type="scale"><img src={img1} /></div>
+                        <div id="text" ref={textElems.current[0]}>
+                            {
+                                content.text2.map((v, i)=>{
+                                    return <div key={i}>
+                                        {
+                                            v.split('').map((t, j)=>{
+                                                return <span key={j}><span>{t}</span></span>
+                                            })
+                                        }
+                                    </div>
+                                })
+                            }
+                        </div>
                     </div>
                 </div>
                 <div ref={contentElems.current[1]} id="content2" className="content">
-                    <div className="item">section2 - 1</div>
+                    <div className="item">section2 - 1
+                        <div id="text" ref={textElems.current[1]}>
+                            {
+                                content.text2.map((v, i)=>{
+                                    return <div key={i}>
+                                        {
+                                            v.split('').map((t, j)=>{
+                                                return <span key={j}><span>{t}</span></span>
+                                            })
+                                        }
+                                    </div>
+                                })
+                            }
+                        </div>
+                    </div>
                     <div className="item">section2 - 2</div>
                     <div className="item">section2 - 3</div>
                 </div>
