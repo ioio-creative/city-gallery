@@ -1,0 +1,302 @@
+{
+    "languages": [
+        {
+            "code": "en",
+            "display": "English",
+            "shortDisplay": "EN"
+        },
+        {
+            "code": "tc",
+            "display": "繁體中文",
+            "shortDisplay": "繁"
+        }
+    ],
+    "contents":{
+        "en":{
+            "global":{
+                "selectCity":"Select a City",
+                "hk":"Hong Kong"
+            },
+            "sections":[
+                {
+                    "year":"1960 - 1979",
+                    "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
+                    "items":[
+                        {
+                            "text":"1",
+                            "image": {
+                                "url":"",
+                                "translationType":"translate"
+                            }
+                        },
+                        {
+                            "text":"2",
+                            "image": {
+                                "url":"",
+                                "translationType":"scale"
+                            }
+                        },
+                        {
+                            "text":"3",
+                            "image": {
+                                "url":"",
+                                "translationType":"scale"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "year":"1960 - 1979",
+                    "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
+                    "items":[
+                        {
+                            "text":"1",
+                            "image": {
+                                "url":"",
+                                "translationType":"translate"
+                            }
+                        },
+                        {
+                            "text":"2",
+                            "image": {
+                                "url":"",
+                                "translationType":"scale"
+                            }
+                        },
+                        {
+                            "text":"3",
+                            "image": {
+                                "url":"",
+                                "translationType":"scale"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "year":"1960 - 1979",
+                    "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
+                    "items":[
+                        {
+                            "text":"1",
+                            "image": {
+                                "url":"",
+                                "translationType":"translate"
+                            }
+                        },
+                        {
+                            "text":"2",
+                            "image": {
+                                "url":"",
+                                "translationType":"scale"
+                            }
+                        },
+                        {
+                            "text":"3",
+                            "image": {
+                                "url":"",
+                                "translationType":"scale"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "year":"1960 - 1979",
+                    "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
+                    "items":[
+                        {
+                            "text":"1",
+                            "image": {
+                                "url":"",
+                                "translationType":"translate"
+                            }
+                        },
+                        {
+                            "text":"2",
+                            "image": {
+                                "url":"",
+                                "translationType":"scale"
+                            }
+                        },
+                        {
+                            "text":"3",
+                            "image": {
+                                "url":"",
+                                "translationType":"scale"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "year":"1960 - 1979",
+                    "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
+                    "items":[
+                        {
+                            "text":"1",
+                            "image": {
+                                "url":"",
+                                "translationType":"translate"
+                            }
+                        },
+                        {
+                            "text":"2",
+                            "image": {
+                                "url":"",
+                                "translationType":"scale"
+                            }
+                        },
+                        {
+                            "text":"3",
+                            "image": {
+                                "url":"",
+                                "translationType":"scale"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "tc":{
+            "global":{
+                "selectCity":"選擇城市",
+                "hk":"香港"
+            },
+            "sections":[
+                {
+                    "year":"1960 - 1979",
+                    "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
+                    "items":[
+                        {
+                            "text":"1",
+                            "image": {
+                                "url":"",
+                                "translationType":"translate"
+                            }
+                        },
+                        {
+                            "text":"2",
+                            "image": {
+                                "url":"",
+                                "translationType":"scale"
+                            }
+                        },
+                        {
+                            "text":"3",
+                            "image": {
+                                "url":"",
+                                "translationType":"scale"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "year":"1960 - 1979",
+                    "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
+                    "items":[
+                        {
+                            "text":"1",
+                            "image": {
+                                "url":"",
+                                "translationType":"translate"
+                            }
+                        },
+                        {
+                            "text":"2",
+                            "image": {
+                                "url":"",
+                                "translationType":"scale"
+                            }
+                        },
+                        {
+                            "text":"3",
+                            "image": {
+                                "url":"",
+                                "translationType":"scale"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "year":"1960 - 1979",
+                    "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
+                    "items":[
+                        {
+                            "text":"1",
+                            "image": {
+                                "url":"",
+                                "translationType":"translate"
+                            }
+                        },
+                        {
+                            "text":"2",
+                            "image": {
+                                "url":"",
+                                "translationType":"scale"
+                            }
+                        },
+                        {
+                            "text":"3",
+                            "image": {
+                                "url":"",
+                                "translationType":"scale"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "year":"1960 - 1979",
+                    "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
+                    "items":[
+                        {
+                            "text":"1",
+                            "image": {
+                                "url":"",
+                                "translationType":"translate"
+                            }
+                        },
+                        {
+                            "text":"2",
+                            "image": {
+                                "url":"",
+                                "translationType":"scale"
+                            }
+                        },
+                        {
+                            "text":"3",
+                            "image": {
+                                "url":"",
+                                "translationType":"scale"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "year":"1960 - 1979",
+                    "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
+                    "items":[
+                        {
+                            "text":"1",
+                            "image": {
+                                "url":"",
+                                "translationType":"translate"
+                            }
+                        },
+                        {
+                            "text":"2",
+                            "image": {
+                                "url":"",
+                                "translationType":"scale"
+                            }
+                        },
+                        {
+                            "text":"3",
+                            "image": {
+                                "url":"",
+                                "translationType":"scale"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

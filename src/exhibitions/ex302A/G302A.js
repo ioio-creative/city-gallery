@@ -10,7 +10,7 @@ const G302A = props => {
     const [currentSectionIdx, setCurrentSectionIdx] = useState(0);
     const [dragging, setDragging] = useState(false);
 
-    const sectionNum = 5;
+    const sectionNum = props.appData.contents['en'].sections.length;
     const sectionWrapElem = useRef(null);
     const sectionElems = useRef([...Array(sectionNum)].map(()=>createRef()));
     const sectionTextElems = useRef([...Array(sectionNum)].map(()=>createRef()));
@@ -21,6 +21,8 @@ const G302A = props => {
     const getIsClickedSectionFunc = useRef(null);
     const setCurrentSectionFunc = useRef(null);
     const getCurrentSectionFunc = useRef(null);
+    const startFunc = useRef(null);
+
 
 
     useEffect(()=>{
@@ -29,8 +31,8 @@ const G302A = props => {
         let oldSection = 0;
         let isClickedSection = false;
         const sectionWrapElemPos = {x:0};
-        const sectionWrapElemEasePos = {x:0};
-        const sectionWrapElemEase2Pos = {x:0};
+        const sectionWrapElemEasePos = {x:ww};
+        const sectionWrapElemEase2Pos = {x:ww};
         const sectionElemEaseScale = [...Array(sectionNum).fill(1)];
         const textElemEaseX = [...Array(sectionNum).fill(0)];
         const textElemEaseScale = [...Array(sectionNum).fill(1)];
@@ -86,6 +88,11 @@ const G302A = props => {
             document.removeEventListener('touchend', onMouseUp, false);
         }
 
+        const start = () => {
+            animLoop();
+        }
+        startFunc.current = {start}
+
         const setIsClickedSection = (bool) => {
             isClickedSection = bool;
         }
@@ -117,14 +124,18 @@ const G302A = props => {
         }
 
         const nextSection = () => {
-            currentSection = Math.min(sectionNum-1, ++currentSection);
-            moveSection();
+            if(!isClickedSection){
+                currentSection = Math.min(sectionNum-1, ++currentSection);
+                moveSection();
+            }
         }
         nextSectionFunc.current = {nextSection};
 
         const prevSection = () => {
-            currentSection = Math.max(0, --currentSection);
-            moveSection();
+            if(!isClickedSection){
+                currentSection = Math.max(0, --currentSection);
+                moveSection();
+            }
         }
         prevSectionFunc.current = {prevSection};
 
@@ -215,18 +226,23 @@ const G302A = props => {
             window.removeEventListener("resize", onResize, false);
         }
 
-        animLoop();
         addEvent();
         return () => {
             removeEvent();
         }
     },[]);
 
+
     useEffect(() => {
-        if(props.appData){
-          setContentData(props.appData.contents['zh']);
-        }
+        setContentData(props.appData.contents['tc']);
     }, [props.appData]);
+
+    
+    useEffect(() => {
+        setTimeout(()=>{
+            startFunc.current.start();
+        },1000);
+    },[]);
 
     const onClickSection = (i) => {
         if(!dragging && !getIsClickedSectionFunc.current.getIsClickedSection() && i === getCurrentSectionFunc.current.getCurrentSection()){
@@ -240,9 +256,6 @@ const G302A = props => {
         setCurrentSectionIdx(i);
     }
 
-    const content = {
-        'text1' : '政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。'
-    }
 
     return(
         <div id="home">
@@ -262,58 +275,22 @@ const G302A = props => {
                         return <div key={i} ref={sectionElems.current[i]} id={`section${i+1}`} className={`section${clickedSectionIdx === i ? ' active' : ''}`} onClick={()=>onClickSection(i)}>
                             <div id="wrap">
                                 <p ref={sectionTextElems.current[i]}>
-                                    <span>{content.text1}</span>
+                                    <span>{contentData && contentData.sections[i].text1}</span>
                                 </p>
                                 <div ref={sectionImgElems.current[i]} className="img"></div>
                             </div>
                         </div>
                     })
                 }
-                {/* <div ref={sectionElems.current[0]} id="section1" className={`section${clickedSectionIdx === 0 ? ' active' : ''}`} onClick={()=>onClickSection(0)}>
-                    <div id="wrap">
-                        <p ref={sectionTextElems.current[0]}>
-                            <span>{content.text1}</span>
-                        </p>
-                        <div ref={sectionImgElems.current[0]} className="img"></div>
-                    </div>
-                </div>
-                <div ref={sectionElems.current[1]} id="section2" className={`section ${clickedSectionIdx === 1 ? ' active' : ''}`} onClick={()=>onClickSection(1)}>
-                    <div id="wrap">
-                        <p ref={sectionTextElems.current[1]}>
-                            <span>{content.text1}</span>
-                        </p>
-                        <div ref={sectionImgElems.current[1]} className="img"></div>
-                    </div>
-                </div>
-                <div ref={sectionElems.current[2]} id="section3" className={`section ${clickedSectionIdx === 2 ? ' active' : ''}`} onClick={()=>onClickSection(2)}>
-                    <div id="wrap">
-                        <p ref={sectionTextElems.current[2]}>
-                            <span>{content.text1}</span>
-                        </p>
-                        <div ref={sectionImgElems.current[2]} className="img"></div>
-                    </div>
-                </div>
-                <div ref={sectionElems.current[3]} id="section4" className={`section ${clickedSectionIdx === 3 ? ' active' : ''}`} onClick={()=>onClickSection(3)}>
-                    <div id="wrap">
-                        <p ref={sectionTextElems.current[3]}>
-                            <span>{content.text1}</span>
-                        </p>
-                        <div ref={sectionImgElems.current[3]} className="img"></div>
-                    </div>
-                </div> */}
-                {/* <div ref={sectionElems.current[4]} id="section5" className={`section ${clickedSectionIdx === 4 ? ' active' : ''}`} onClick={()=>onClickSection(4)}>
-                    <div id="wrap">
-                        <p ref={sectionTextElems.current[4]}>
-                            <span>{content.text1}</span>
-                        </p>
-                        <div ref={sectionImgElems.current[4]} className="img"></div>
-                    </div>
-                </div> */}
             </div>
-            <Content 
-                clickedSectionIdx={clickedSectionIdx}
-                isClickedSection={getIsClickedSectionFunc.current && getIsClickedSectionFunc.current.getIsClickedSection()}
-            ></Content>
+            {
+                contentData && <Content 
+                    contentData={contentData}
+                    sectionNum={sectionNum}
+                    clickedSectionIdx={clickedSectionIdx}
+                    isClickedSection={getIsClickedSectionFunc.current && getIsClickedSectionFunc.current.getIsClickedSection()}
+                ></Content>
+            }
         </div>
     )
 }

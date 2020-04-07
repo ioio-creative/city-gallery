@@ -6,7 +6,7 @@ import G302A from './G302A';
 const App = (props) => {
   const [appData, setAppData] = useState(null);
   useEffect(() => {
-    api.fetchExhibitionJsonFromUrl('./json/g02b.json', setAppData);
+    api.fetchExhibitionJsonFromUrl('./json/302a.json', setAppData);
   }, [])
   useEffect(() => {
     if(appData){
@@ -16,7 +16,7 @@ const App = (props) => {
 
   return (
     <>
-      <G302A appData={appData} />
+      {appData && <G302A appData={appData} />}
     </>
   );
 }

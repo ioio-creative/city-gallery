@@ -7,15 +7,16 @@ import img1 from './images/img.png';
 const Content = props => {
     // const [dragging, setDragging] = useState(false);
     const [minimalSidebar, setMinimalSidebar] = useState(false);
-    // const [contentIdx, setContentIdx] = useState(null);
+    const [contentIdx, setContentIdx] = useState(null);
     
     const setIsClickedSectionFunc = useRef(null);
     const moveContentFunc = useRef(null);
+    const onResizeFunc = useRef(null);
     const contentWrapElem = useRef(null);
-    const contentElems = useRef([...Array(5)].map(()=>createRef()));
-    const sidebarElems = useRef([...Array(5)].map(()=>createRef()));
-    const imgElems = useRef([...Array(2)].map(()=>createRef()));
-    const textElems = useRef([...Array(2)].map(()=>createRef()));
+    const contentElems = useRef([...Array(props.sectionNum)].map(()=>createRef()));
+    const sidebarElems = useRef([...Array(props.sectionNum)].map(()=>createRef()));
+    const imgElems = useRef([...Array(0)].map(()=>createRef()));
+    const textElems = useRef([...Array(0)].map(()=>createRef()));
 
     
     useEffect(()=>{
@@ -91,11 +92,19 @@ const Content = props => {
             contentWrapElemEasePos.x = contentWrapElemPos.x;
         }
         moveContentFunc.current = {moveContent}
+
+        const prevSection = () => {
+
+        }
+
+        const nextSection = () => {
+
+        }
         
         const animLoop = () => {
             requestAnimationFrame(animLoop);
 
-            contentWrapElemEasePos.x += (contentWrapElemPos.x - contentWrapElemEasePos.x) * .1;
+            contentWrapElemEasePos.x += (contentWrapElemPos.x - contentWrapElemEasePos.x) * .08;
             const x = contentWrapElemEasePos.x;
             contentWrapElem.current.style.transform = `translate3d(${x}px,0,0)`;
 
@@ -120,7 +129,7 @@ const Content = props => {
                     img.querySelector('img').style.transform = `translate3d(${ix}px,0,0) scale(1.2)`;
                 }
                 else if(type === 'scale'){
-                    const is = Math.max(1, 1+(img.getBoundingClientRect().left - sidebarW) / maxWidth);
+                    const is = Math.max(1, 1 + (img.getBoundingClientRect().left - (ww/8)) / maxWidth * .8);
                     img.querySelector('img').style.transform = `translate3d(0,0,0) scale(${is})`;
                 }
             }
@@ -132,7 +141,7 @@ const Content = props => {
 
                 if(offsetX < 0 && text.className !== 'done'){
                     text.className = 'done';
-                    gsap.fromTo(text.querySelectorAll('span span'), 1, {force3D:true, y:'105%'}, {y:'0%', stagger:.06, ease:'power4.out'},'s');
+                    gsap.fromTo(text.querySelectorAll('span span'), 1, {force3D:true, y:'105%'}, {y:'0%', stagger:.08, ease:'power4.out'},'s');
                 }
             }
         };
@@ -155,6 +164,7 @@ const Content = props => {
         const onResize = () => {
             sidebarW = ww * (455 / 1920);
         }
+        onResizeFunc.current = {onResize};
 
         const addEvent = () => {
             document.addEventListener("mousedown", onMouseDown, false);
@@ -178,12 +188,16 @@ const Content = props => {
     },[]);
 
     useEffect(()=>{
+        onResizeFunc.current.onResize();
+    },[props.contentData]);
+
+    useEffect(()=>{
         if(props.clickedSectionIdx !== null){
             const elem = sidebarElems.current[props.clickedSectionIdx].current;
 
             const tl = gsap.timeline({delay:1});
             
-            tl.set('#sidebarWrap', {className:'active disable'});
+            tl.set('#sidebarWrap', {className:'active'});
             tl.set('#sectionWrap', {className:'hide'});
             tl.set(contentWrapElem.current, {className:'active'});
             tl.fromTo(elem.querySelectorAll('#des span span'), 1, {force3D:true, y:'100%'}, {y:'0%', stagger:.01, ease:'power4.out'},'s');
@@ -208,6 +222,25 @@ const Content = props => {
 
     return (
         <>
+            <div id="contentNavWrap">
+                <div id="contentNav1" className={`contentNav${props.clickedSectionIdx !== null && minimalSidebar ? ' active' : ''}`}>
+                    <div id="wrap">
+                        <ul>
+                            <li><span>規劃</span></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <div id="line"><span></span></div>
+                    </div>
+                </div>
+            </div>
             <div id="sidebarWrap">
                 <div ref={sidebarElems.current[0]} id="sidebar1" className={`sidebar${props.clickedSectionIdx === 0 && !minimalSidebar ? ' active' : ''}`}>
                     <div id="des">
@@ -274,7 +307,21 @@ const Content = props => {
                 </div>
             </div>
             <div ref={contentWrapElem} id="contentWrap">
-                <div ref={contentElems.current[0]} id="content1" className="content">
+                {
+                    props.contentData.sections.map((v,i)=>{
+                        return <div key={i} ref={contentElems.current[i]} id={`content${i+1}`} className="content">
+                             {
+                                v.items.map((c,j)=>{
+                                    return <div key={j} className="item">
+                                        section{i+1} - {c.text}
+                                        {/* <div ref={imgElems.current[0]} className="imgWrap" data-type="translate"><img src={img1} /></div> */}
+                                    </div>
+                                })
+                            }
+                        </div>
+                    })
+                }
+                {/* <div ref={contentElems.current[0]} id="content1" className="content">
                     <div className="item">
                         section1 - 1
                         <div ref={imgElems.current[0]} className="imgWrap" data-type="translate"><img src={img1} /></div>
@@ -285,6 +332,8 @@ const Content = props => {
                     </div>
                     <div className="item">
                         section1 - 3
+                        <div ref={imgElems.current[2]} className="imgWrap" data-type="scale"><img src={img1} /></div>
+                        <br/><br/>
                         <div id="text" ref={textElems.current[0]}>
                             {
                                 content.text2.map((v, i)=>{
@@ -333,7 +382,7 @@ const Content = props => {
                     <div className="item">section5 - 1</div>
                     <div className="item">section5 - 2</div>
                     <div className="item">section5 - 3</div>
-                </div>
+                </div> */}
             </div>
         </>
     )
