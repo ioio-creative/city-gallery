@@ -2,7 +2,7 @@ import React, {useEffect, useState, useRef, createRef} from 'react';
 import './style.scss';
 import gsap from 'gsap';
 
-import img1 from './images/img.png';
+// import img1 from './images/img.png';
 
 const Content = props => {
     // const [dragging, setDragging] = useState(false);
@@ -15,8 +15,8 @@ const Content = props => {
     const contentWrapElem = useRef(null);
     const contentElems = useRef([...Array(props.sectionNum)].map(()=>createRef()));
     const sidebarElems = useRef([...Array(props.sectionNum)].map(()=>createRef()));
-    const imgElems = useRef([...Array(0)].map(()=>createRef()));
-    const textElems = useRef([...Array(0)].map(()=>createRef()));
+    // const imgElems = useRef([...Array(0)].map(()=>createRef()));
+    // const textElems = useRef(null);
 
     
     useEffect(()=>{
@@ -35,6 +35,16 @@ const Content = props => {
         }
 
         let sidebarW = ww * (455 / 1920);
+        let titleElems = null;
+        let imgElems = null;
+
+        const init = () => {
+            titleElems = document.querySelectorAll('#title');
+            imgElems = document.querySelectorAll('.imgWrap');
+            
+            animLoop();
+            addEvent();
+        }
 
         const onMouseDown = (event) => {
             if(isClickedSection){
@@ -42,8 +52,6 @@ const Content = props => {
                 let e = (event.touches? event.touches[0]: event);
                 mouse.startPos = {x:e.clientX, y:e.clientY};
                 mouse.lastPos = {x:0, y:0};
-                
-                // setDragging(false);
 
                 document.addEventListener("mousemove", onMouseMove, false);
                 document.addEventListener("touchmove", onMouseMove, false);
@@ -70,7 +78,6 @@ const Content = props => {
         }
 
         const onMouseUp = () => {
-            // moveSection();
             document.removeEventListener("mousemove", onMouseMove, false);
             document.removeEventListener("touchmove", onMouseMove, false);
             document.removeEventListener('mouseup', onMouseUp, false);
@@ -120,8 +127,9 @@ const Content = props => {
                 sidebar.style.transform = `translate3d(${sx}px,0,0)`;
             }
 
-            for(let i=0; i<imgElems.current.length; i++){
-                const img = imgElems.current[i].current;
+            if(imgElems)
+            for(let i=0; i<imgElems.length; i++){
+                const img = imgElems[i];
                 const type = img.getAttribute('data-type');
 
                 if(type === 'translate'){
@@ -134,8 +142,9 @@ const Content = props => {
                 }
             }
 
-            for(let i=0; i<textElems.current.length; i++){
-                const text = textElems.current[i].current;
+            if(titleElems)
+            for(let i=0; i<titleElems.length; i++){
+                const text = titleElems[i];
                 
                 const offsetX = text.getBoundingClientRect().left - ww + ww/5;
 
@@ -180,8 +189,7 @@ const Content = props => {
             window.removeEventListener("resize", onResize, false);
         }
         
-        animLoop();
-        addEvent();
+        init();
         return () => {
             removeEvent();
         }
@@ -222,8 +230,8 @@ const Content = props => {
 
     return (
         <>
-            <div id="contentNavWrap">
-                <div id="contentNav1" className={`contentNav${props.clickedSectionIdx !== null && minimalSidebar ? ' active' : ''}`}>
+            <div id="contentNavWrap" className={`contentNav${props.clickedSectionIdx !== null && minimalSidebar ? ' active' : ''}`}>
+                <div id="contentNav1" className="contentNav">
                     <div id="wrap">
                         <ul>
                             <li><span>規劃</span></li>
@@ -313,8 +321,28 @@ const Content = props => {
                              {
                                 v.items.map((c,j)=>{
                                     return <div key={j} className="item">
-                                        section{i+1} - {c.text}
-                                        {/* <div ref={imgElems.current[0]} className="imgWrap" data-type="translate"><img src={img1} /></div> */}
+                                        <div id="wrap">
+                                            {
+                                                c.image.url &&
+                                                <div className="imgWrap" data-type={`${c.image.translationType}`}><img src={c.image.url} /></div>
+                                            }
+                                            {
+                                                c.text.title &&
+                                                <div id="title">
+                                                    {
+                                                        c.text.title.map((t, k)=>{
+                                                            return <div key={k}>
+                                                                {
+                                                                    t.split('').map((tv, l)=>{
+                                                                        return <span key={l}><span>{tv}</span></span>
+                                                                    })
+                                                                }
+                                                            </div>
+                                                        })
+                                                    }
+                                                </div>
+                                            }
+                                        </div>
                                     </div>
                                 })
                             }
@@ -334,7 +362,7 @@ const Content = props => {
                         section1 - 3
                         <div ref={imgElems.current[2]} className="imgWrap" data-type="scale"><img src={img1} /></div>
                         <br/><br/>
-                        <div id="text" ref={textElems.current[0]}>
+                        <div id="text" ref={titleElems.current[0]}>
                             {
                                 content.text2.map((v, i)=>{
                                     return <div key={i}>
