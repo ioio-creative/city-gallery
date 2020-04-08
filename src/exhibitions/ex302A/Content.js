@@ -128,31 +128,31 @@ const Content = props => {
             }
 
             if(imgElems)
-            for(let i=0; i<imgElems.length; i++){
-                const img = imgElems[i];
-                const type = img.getAttribute('data-type');
+                for(let i=0; i<imgElems.length; i++){
+                    const img = imgElems[i];
+                    const type = img.getAttribute('data-type');
 
-                if(type === 'translate'){
-                    const ix = -(img.getBoundingClientRect().left - sidebarW) * .06;
-                    img.querySelector('img').style.transform = `translate3d(${ix}px,0,0) scale(1.2)`;
+                    if(type === 'translate'){
+                        const ix = -(img.getBoundingClientRect().left - sidebarW) * .06;
+                        img.querySelector('img').style.transform = `translate3d(${ix}px,0,0) scale(1.2)`;
+                    }
+                    else if(type === 'scale'){
+                        const is = Math.max(1, 1 + (img.getBoundingClientRect().left - (ww/8)) / maxWidth * .8);
+                        img.querySelector('img').style.transform = `translate3d(0,0,0) scale(${is})`;
+                    }
                 }
-                else if(type === 'scale'){
-                    const is = Math.max(1, 1 + (img.getBoundingClientRect().left - (ww/8)) / maxWidth * .8);
-                    img.querySelector('img').style.transform = `translate3d(0,0,0) scale(${is})`;
-                }
-            }
 
             if(titleElems)
-            for(let i=0; i<titleElems.length; i++){
-                const text = titleElems[i];
-                
-                const offsetX = text.getBoundingClientRect().left - ww + ww/5;
+                for(let i=0; i<titleElems.length; i++){
+                    const text = titleElems[i];
+                    
+                    const offsetX = text.getBoundingClientRect().left - ww + ww/5;
 
-                if(offsetX < 0 && text.className !== 'done'){
-                    text.className = 'done';
-                    gsap.fromTo(text.querySelectorAll('span span'), 1, {force3D:true, y:'105%'}, {y:'0%', stagger:.08, ease:'power4.out'},'s');
+                    if(offsetX < 0 && text.className !== 'done'){
+                        text.className = 'done';
+                        gsap.fromTo(text.querySelectorAll('span span'), 1, {force3D:true, y:'105%'}, {y:'0%', stagger:.08, ease:'power4.out'},'s');
+                    }
                 }
-            }
         };
         
         const onKeyDown = (e) => {
@@ -250,69 +250,28 @@ const Content = props => {
                 </div>
             </div>
             <div id="sidebarWrap">
-                <div ref={sidebarElems.current[0]} id="sidebar1" className={`sidebar${props.clickedSectionIdx === 0 && !minimalSidebar ? ' active' : ''}`}>
-                    <div id="des">
-                        {
-                            content.text1.split('').map((v, i)=>{
-                                return <span key={i}><span>{v}</span></span>
-                            })
-                        }
-                    </div>
-                    <div id="date"><span>1960</span><span>-</span><span>1979</span></div>
-                    <div id="line"></div>
-                    <div id="img"></div>
-                </div>
-                <div ref={sidebarElems.current[1]} id="sidebar2" className={`sidebar${props.clickedSectionIdx === 1 && !minimalSidebar ? ' active' : ''}`}>
-                    <div id="des">
-                        {
-                            content.text1.split('').map((v, i)=>{
-                                return <span key={i}><span>{v}</span></span>
-                            })
-                        }
-                    </div>
-                    <div id="date"><span>1960</span><span>-</span><span>1979</span></div>
-                    <div id="line"></div>
-                    <div id="img"></div>
-                </div>
-                
-                <div ref={sidebarElems.current[2]} id="sidebar3" className={`sidebar${props.clickedSectionIdx === 2 && !minimalSidebar ? ' active' : ''}`}>
-                    <div id="des">
-                        {
-                            content.text1.split('').map((v, i)=>{
-                                return <span key={i}><span>{v}</span></span>
-                            })
-                        }
-                    </div>
-                    <div id="date"><span>1960</span><span>-</span><span>1979</span></div>
-                    <div id="line"></div>
-                    <div id="img"></div>
-                </div>
-                
-                <div ref={sidebarElems.current[3]} id="sidebar4" className={`sidebar${props.clickedSectionIdx === 3 && !minimalSidebar ? ' active' : ''}`}>
-                    <div id="des">
-                        {
-                            content.text1.split('').map((v, i)=>{
-                                return <span key={i}><span>{v}</span></span>
-                            })
-                        }
-                    </div>
-                    <div id="date"><span>1960</span><span>-</span><span>1979</span></div>
-                    <div id="line"></div>
-                    <div id="img"></div>
-                </div>
-                
-                <div ref={sidebarElems.current[4]} id="sidebar5" className={`sidebar${props.clickedSectionIdx === 4 && !minimalSidebar ? ' active' : ''}`}>
-                    <div id="des">
-                        {
-                            content.text1.split('').map((v, i)=>{
-                                return <span key={i}><span>{v}</span></span>
-                            })
-                        }
-                    </div>
-                    <div id="date"><span>1960</span><span>-</span><span>1979</span></div>
-                    <div id="line"></div>
-                    <div id="img"></div>
-                </div>
+                {
+                    props.contentData.sections.map((v,i)=>{
+                        return <div key={i} ref={sidebarElems.current[i]} id={`sidebar${i+1}`} className={`sidebar${props.clickedSectionIdx === i && !minimalSidebar ? ' active' : ''}`}>
+                            <div id="des">
+                                {
+                                    content.text1.split('').map((v, i)=>{
+                                        return <span key={i}><span>{v}</span></span>
+                                    })
+                                }
+                            </div>
+                            <div id="date">
+                                {
+                                    v.year.split(/(\d+)/g).filter(x => x).map((v, i)=>{
+                                        return <span ley={i}>{v}</span>
+                                    })
+                                }
+                            </div>
+                            <div id="line"></div>
+                            <div id="img"></div>
+                        </div>
+                    })
+                }
             </div>
             <div ref={contentWrapElem} id="contentWrap">
                 {
