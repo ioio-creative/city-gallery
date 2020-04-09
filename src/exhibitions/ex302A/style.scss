@@ -37,8 +37,13 @@
     margin:0;
 }
 
-$child: 5;
+$sectionnum: 5;
 $halfScreenWidth: 100 / 2;
+
+:root {
+    --sectionnum: #{$sectionnum};
+}
+
 body{
     background:#000;
     user-select: none;
@@ -157,7 +162,8 @@ body{
             left: 50%;
             transform: translate3d(-50%,-50%,0);
             span{
-                width:vw-calc(553 / ($child - 1));
+                // width:vw-calc(553 / ($child - 1));
+                width:calc((553 / (#{var(--sectionnum)} - 1)) / 1920 * 100 * 1vw);
                 height:vw-calc(1);
                 background:#fff;
                 display: block;
@@ -169,7 +175,8 @@ body{
         }
     }
     #sectionWrap{
-        width:$halfScreenWidth * ($child + 1) * 1vw;
+        // width:$halfScreenWidth * ($sectionnum + 1) * 1vw;
+        width:calc(#{$halfScreenWidth} * (#{var(--sectionnum)} + 1) * 1vw);
         height:100%;
         position: relative;
         z-index: 2;
@@ -191,11 +198,11 @@ body{
             clip-path: circle(20.3% at 50% 50%);
             transition: clip-path 1s cubic-bezier(0.83, 0, 0.17, 1);
 
-            @for $i from 1 through $child {
-                &:nth-child(#{$i}) {
-                    left: $i * $halfScreenWidth * 1vw;
-                }
-            }
+            // @for $i from 1 through --sectionnum{
+            //     &:nth-child(#{$i}) {
+            //         left: $i * $halfScreenWidth * 1vw;
+            //     }
+            // }
             &.active{
                 z-index: 2;
                 clip-path: circle(75.0% at 50% 50%);
@@ -305,7 +312,7 @@ body{
                     left: 50%;
                     transform: translate3d(-50%,-50%,0);
                     span{
-                        width:vw-calc(553 / ($child - 1));
+                        width:vw-calc(553 / ($sectionnum - 1));
                         height:vw-calc(1);
                         background:#fff;
                         display: block;

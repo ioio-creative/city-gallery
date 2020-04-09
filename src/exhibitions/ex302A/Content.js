@@ -263,7 +263,7 @@ const Content = props => {
                             <div id="date">
                                 {
                                     v.year.split(/(\d+)/g).filter(x => x).map((v, i)=>{
-                                        return <span ley={i}>{v}</span>
+                                        return <span key={i}>{v}</span>
                                     })
                                 }
                             </div>

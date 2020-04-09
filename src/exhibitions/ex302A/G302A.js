@@ -10,7 +10,7 @@ const G302A = props => {
     const [currentSectionIdx, setCurrentSectionIdx] = useState(0);
     const [dragging, setDragging] = useState(false);
 
-    const sectionNum = props.appData.contents['en'].sections.length;
+    const sectionNum = props.appData.contents['tc'].sections.length;
     const sectionWrapElem = useRef(null);
     const sectionElems = useRef([...Array(sectionNum)].map(()=>createRef()));
     const sectionTextElems = useRef([...Array(sectionNum)].map(()=>createRef()));
@@ -45,6 +45,15 @@ const G302A = props => {
             startPos: {x:0, y:0},
             lastPos: {x:0, y:0},
             delta: {x:0, y:0}
+        }
+
+        const init = () => {
+            document.documentElement.style.setProperty('--sectionnum', props.appData.contents['tc'].sections.length);
+            for(let i=0; i<sectionNum; i++){
+                const section = sectionElems.current[i].current;
+                section.style.left = `${(i+1) * 50}vw`;
+            }
+            onResize();
         }
         
         const onMouseDown = (event) => {
@@ -226,7 +235,9 @@ const G302A = props => {
             window.removeEventListener("resize", onResize, false);
         }
 
+        init();
         addEvent();
+
         return () => {
             removeEvent();
         }
