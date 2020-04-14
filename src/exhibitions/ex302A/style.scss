@@ -263,6 +263,9 @@ body{
         }
         .contentNav{
             width:calc(100vw - #{vw-calc(455)});
+            position: absolute;
+            bottom: 0;
+            right: 0;
             &.minimal{
                 #wrap{
                     width:calc(50% - #{vw-calc(304.9)});
@@ -292,7 +295,7 @@ body{
                             left:50%;
                             transform: translate3d(-50%,-50%,0) scale(1);
                         }
-                        span{
+                        p{
                             font-size:vw-calc(17);
                             white-space: nowrap;
                             position: absolute;
@@ -300,19 +303,38 @@ body{
                             left:50%;
                             color:#fff;
                             transform: translate3d(-50%,0,0);
+                            text-align: center;
+                            span{
+                                font-size: vw-calc(15);
+                                line-height: vw-calc(19);
+                                &.category{
+                                    font-size:vw-calc(17);
+                                    line-height: vw-calc(17);
+                                    &#planning{
+                                        color:#B931F5;
+                                    }
+                                    &#house{
+                                        color:#359E64;
+                                    }
+                                    &#traffic{
+                                        color:#F5B131;
+                                    }
+                                }
+                                
+                            }
                         }
                     }
                 }
                 #line{
                     width:calc(100% - #{vw-calc(60)});
                     height: vw-calc(1);
-                    background:#fff;
+                    background:#ffffff50;
                     position: absolute;
                     top: 50%;
                     left: 50%;
                     transform: translate3d(-50%,-50%,0);
                     span{
-                        width:vw-calc(553 / ($sectionnum - 1));
+                        width:100%;
                         height:vw-calc(1);
                         background:#fff;
                         display: block;

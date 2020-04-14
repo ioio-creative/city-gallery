@@ -170,16 +170,24 @@
                             "image": {
                                 "url":"./images/ex302a/img.png",
                                 "translationType":"translate"
+                            },
+                            "category":{
+                                "id":"planning",
+                                "name":"規劃"
                             }
                         },
                         {
                             "text":{
-                                "title":"",
+                                "title":["政府宣佈空前","龐大的","「十年建屋計劃」"],
                                 "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
                             },
                             "image": {
                                 "url":"./images/ex302a/cover_1930.png",
                                 "translationType":"scale"
+                            },
+                            "category":{
+                                "id":"house",
+                                "name":"房屋"
                             }
                         },
                         {
@@ -190,6 +198,24 @@
                             "image": {
                                 "url":"",
                                 "translationType":"scale"
+                            },
+                            "category":{
+                                "id":"traffic",
+                                "name":"交通"
+                            }
+                        },
+                        {
+                            "text":{
+                                "title":["政府宣佈空前","龐大的","「十年建屋計劃」"],
+                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
+                            },
+                            "image": {
+                                "url":"./images/ex302a/cover_1930.png",
+                                "translationType":"scale"
+                            },
+                            "category":{
+                                "id":"house",
+                                "name":"房屋"
                             }
                         }
                     ]
@@ -206,6 +232,10 @@
                             "image": {
                                 "url":"",
                                 "translationType":"translate"
+                            },
+                            "category":{
+                                "id":"planning",
+                                "name":"規劃"
                             }
                         },
                         {
@@ -216,6 +246,10 @@
                             "image": {
                                 "url":"",
                                 "translationType":"scale"
+                            },
+                            "category":{
+                                "id":"planning",
+                                "name":"規劃"
                             }
                         },
                         {
@@ -226,6 +260,10 @@
                             "image": {
                                 "url":"",
                                 "translationType":"scale"
+                            },
+                            "category":{
+                                "id":"planning",
+                                "name":"規劃"
                             }
                         }
                     ]
@@ -242,6 +280,10 @@
                             "image": {
                                 "url":"",
                                 "translationType":"translate"
+                            },
+                            "category":{
+                                "id":"planning",
+                                "name":"規劃"
                             }
                         },
                         {
@@ -252,6 +294,10 @@
                             "image": {
                                 "url":"",
                                 "translationType":"scale"
+                            },
+                            "category":{
+                                "id":"planning",
+                                "name":"規劃"
                             }
                         },
                         {
@@ -262,6 +308,10 @@
                             "image": {
                                 "url":"",
                                 "translationType":"scale"
+                            },
+                            "category":{
+                                "id":"planning",
+                                "name":"規劃"
                             }
                         }
                     ]
@@ -278,6 +328,10 @@
                             "image": {
                                 "url":"",
                                 "translationType":"translate"
+                            },
+                            "category":{
+                                "id":"planning",
+                                "name":"規劃"
                             }
                         },
                         {
@@ -288,6 +342,10 @@
                             "image": {
                                 "url":"",
                                 "translationType":"scale"
+                            },
+                            "category":{
+                                "id":"planning",
+                                "name":"規劃"
                             }
                         },
                         {
@@ -298,6 +356,10 @@
                             "image": {
                                 "url":"",
                                 "translationType":"scale"
+                            },
+                            "category":{
+                                "id":"planning",
+                                "name":"規劃"
                             }
                         }
                     ]
@@ -314,6 +376,10 @@
                             "image": {
                                 "url":"",
                                 "translationType":"translate"
+                            },
+                            "category":{
+                                "id":"planning",
+                                "name":"規劃"
                             }
                         },
                         {
@@ -324,6 +390,10 @@
                             "image": {
                                 "url":"",
                                 "translationType":"scale"
+                            },
+                            "category":{
+                                "id":"planning",
+                                "name":"規劃"
                             }
                         },
                         {
@@ -334,6 +404,10 @@
                             "image": {
                                 "url":"",
                                 "translationType":"scale"
+                            },
+                            "category":{
+                                "id":"planning",
+                                "name":"規劃"
                             }
                         }
                     ]

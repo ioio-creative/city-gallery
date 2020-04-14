@@ -273,8 +273,9 @@ const G302A = props => {
             <div id="sectionNav" className={`${clickedSectionIdx !== null ? 'hide' : ''}`}>
                 <ul>
                     {
-                        [...Array(sectionNum).fill(null)].map((v, i)=>{
-                            return <li key={i} className={`${currentSectionIdx === i ? 'active' : ''}`} onClick={()=>goToSection(i)}><span>1960-1979</span></li>
+                        contentData &&
+                        contentData.sections.map((v, i)=>{
+                            return <li key={i} className={`${currentSectionIdx === i ? 'active' : ''}`} onClick={()=>goToSection(i)}><span>{v.year}</span></li>
                         })
                     }
                 </ul>

@@ -7,14 +7,18 @@ import gsap from 'gsap';
 const Content = props => {
     // const [dragging, setDragging] = useState(false);
     const [minimalSidebar, setMinimalSidebar] = useState(false);
+    const [minimalContentNav, setMinimalContentNav] = useState(false);
     const [contentIdx, setContentIdx] = useState(null);
     
     const setIsClickedSectionFunc = useRef(null);
     const moveContentFunc = useRef(null);
-    const onResizeFunc = useRef(null);
+    const moveToItemFunc = useRef(null);
+    // const onResizeFunc = useRef(null);
     const contentWrapElem = useRef(null);
     const contentElems = useRef([...Array(props.sectionNum)].map(()=>createRef()));
     const sidebarElems = useRef([...Array(props.sectionNum)].map(()=>createRef()));
+    const contentNavElems = useRef([...Array(props.sectionNum)].map(()=>createRef()));
+    const contentNavLineElems = useRef([...Array(props.sectionNum)].map(()=>createRef()));
     // const imgElems = useRef([...Array(0)].map(()=>createRef()));
     // const textElems = useRef(null);
 
@@ -37,6 +41,7 @@ const Content = props => {
         let sidebarW = ww * (455 / 1920);
         let titleElems = null;
         let imgElems = null;
+
 
         const init = () => {
             titleElems = document.querySelectorAll('#title');
@@ -74,6 +79,7 @@ const Content = props => {
             mouse.lastPos.y = mouse.currentPos.y;
 
             setMinimalSidebar(true);
+            setMinimalContentNav(true);
             moveContentWrap();
         }
 
@@ -100,6 +106,15 @@ const Content = props => {
         }
         moveContentFunc.current = {moveContent}
 
+        const moveToItem = (i,j,lth) => {
+            const currentContent = contentElems.current[i].current;
+            const item = currentContent.querySelector(`.item:nth-child(${j+1})`);
+            contentWrapElemPos.x = -currentContent.offsetLeft -(currentContent.offsetWidth-window.innerWidth) / (lth-1) * j;
+            // console.log(currentContent.offsetLeft, currentContent.offsetWidth)
+            // contentWrapElemPos.x = -currentContent.offsetLeft - item.offsetLeft + sidebarW;
+        }
+        moveToItemFunc.current = {moveToItem}
+
         const prevSection = () => {
 
         }
@@ -115,7 +130,8 @@ const Content = props => {
             const x = contentWrapElemEasePos.x;
             contentWrapElem.current.style.transform = `translate3d(${x}px,0,0)`;
 
-            for(let i=0; i<sidebarElems.current.length; i++){
+            for(let i=0; i<props.sectionNum; i++){
+                // sidebar
                 const content = contentElems.current[i].current;
                 const sidebar = sidebarElems.current[i].current;
 
@@ -125,21 +141,43 @@ const Content = props => {
                     sx = Math.max(-sidebarW, offsetX+content.offsetWidth-sidebarW);
                 }
                 sidebar.style.transform = `translate3d(${sx}px,0,0)`;
+
+                //
+                //
+                // content nav
+                const contentNav = contentNavElems.current[i].current;
+                let cx = Math.max(0, offsetX);
+                if(offsetX <= -content.offsetWidth + contentNav.offsetWidth + sidebarW)
+                    cx = Math.max(-contentNav.offsetWidth, offsetX+content.offsetWidth-sidebarW-contentNav.offsetWidth);
+                contentNav.style.transform = `translate3d(${cx}px,0,0)`;
+                
+                const contentNavLine = contentNavLineElems.current[i].current;
+                let s = Math.max(0, Math.min(1, -offsetX/(content.offsetWidth-window.innerWidth)));
+                contentNavLine.style.transform = `translate3d(0,0,0) scaleX(${s})`;
+                
+                sx = null;
+                cx = null;
+                s = null;
             }
+
+
 
             if(imgElems)
                 for(let i=0; i<imgElems.length; i++){
                     const img = imgElems[i];
                     const type = img.getAttribute('data-type');
+                    let child = img.querySelector('img');
 
                     if(type === 'translate'){
                         const ix = -(img.getBoundingClientRect().left - sidebarW) * .06;
-                        img.querySelector('img').style.transform = `translate3d(${ix}px,0,0) scale(1.2)`;
+                        child.style.transform = `translate3d(${ix}px,0,0) scale(1.2)`;
                     }
                     else if(type === 'scale'){
                         const is = Math.max(1, 1 + (img.getBoundingClientRect().left - (ww/8)) / maxWidth * .8);
-                        img.querySelector('img').style.transform = `translate3d(0,0,0) scale(${is})`;
+                        child.style.transform = `translate3d(0,0,0) scale(${is})`;
                     }
+
+                    child = null;
                 }
 
             if(titleElems)
@@ -172,8 +210,8 @@ const Content = props => {
 
         const onResize = () => {
             sidebarW = ww * (455 / 1920);
+            maxWidth = contentWrapElem.current.offsetWidth - ww;         
         }
-        onResizeFunc.current = {onResize};
 
         const addEvent = () => {
             document.addEventListener("mousedown", onMouseDown, false);
@@ -190,14 +228,14 @@ const Content = props => {
         }
         
         init();
+        setTimeout(()=>{
+            onResize();
+        },1000);
         return () => {
             removeEvent();
         }
     },[]);
 
-    useEffect(()=>{
-        onResizeFunc.current.onResize();
-    },[props.contentData]);
 
     useEffect(()=>{
         if(props.clickedSectionIdx !== null){
@@ -222,6 +260,9 @@ const Content = props => {
         }
     },[props.isClickedSection])
 
+    const onClickNav = (i,j) => {
+        moveToItemFunc.current.moveToItem(i,j, props.contentData.sections[i].items.length);
+    }
     
     const content = {
         'text1' : '政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。',
@@ -231,23 +272,28 @@ const Content = props => {
     return (
         <>
             <div id="contentNavWrap" className={`contentNav${props.clickedSectionIdx !== null && minimalSidebar ? ' active' : ''}`}>
-                <div id="contentNav1" className="contentNav">
-                    <div id="wrap">
-                        <ul>
-                            <li><span>規劃</span></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                        <div id="line"><span></span></div>
-                    </div>
-                </div>
+                {
+                    props.contentData.sections.map((v,i)=>{
+                        return <div key={i} ref={contentNavElems.current[i]} id={`contentNav${i+1}`} className={`contentNav${minimalContentNav ? ' min' : ''}`}>
+                            <div id="wrap">
+                                <ul>
+                                {
+                                    v.items.map((c,j)=>{
+                                        return <li key={j} onClick={()=>onClickNav(i,j)}>
+                                            <p>
+                                                <span dangerouslySetInnerHTML={{__html:c.text.title.join('<br/>')}}></span>
+                                                <br/>
+                                                <span id={c.category.id} className="category">{c.category.name}</span>
+                                            </p>
+                                        </li>
+                                    })
+                                }   
+                                </ul>
+                                <div id="line"><span ref={contentNavLineElems.current[i]}></span></div>
+                            </div>
+                        </div>
+                    })
+                }
             </div>
             <div id="sidebarWrap">
                 {
@@ -308,68 +354,6 @@ const Content = props => {
                         </div>
                     })
                 }
-                {/* <div ref={contentElems.current[0]} id="content1" className="content">
-                    <div className="item">
-                        section1 - 1
-                        <div ref={imgElems.current[0]} className="imgWrap" data-type="translate"><img src={img1} /></div>
-                    </div>
-                    <div className="item">
-                        section1 - 2
-                        <div ref={imgElems.current[1]} className="imgWrap" data-type="scale"><img src={img1} /></div>
-                    </div>
-                    <div className="item">
-                        section1 - 3
-                        <div ref={imgElems.current[2]} className="imgWrap" data-type="scale"><img src={img1} /></div>
-                        <br/><br/>
-                        <div id="text" ref={titleElems.current[0]}>
-                            {
-                                content.text2.map((v, i)=>{
-                                    return <div key={i}>
-                                        {
-                                            v.split('').map((t, j)=>{
-                                                return <span key={j}><span>{t}</span></span>
-                                            })
-                                        }
-                                    </div>
-                                })
-                            }
-                        </div>
-                    </div>
-                </div>
-                <div ref={contentElems.current[1]} id="content2" className="content">
-                    <div className="item">section2 - 1
-                        <div id="text" ref={textElems.current[1]}>
-                            {
-                                content.text2.map((v, i)=>{
-                                    return <div key={i}>
-                                        {
-                                            v.split('').map((t, j)=>{
-                                                return <span key={j}><span>{t}</span></span>
-                                            })
-                                        }
-                                    </div>
-                                })
-                            }
-                        </div>
-                    </div>
-                    <div className="item">section2 - 2</div>
-                    <div className="item">section2 - 3</div>
-                </div>
-                <div ref={contentElems.current[2]} id="content3" className="content">
-                    <div className="item">section3 - 1</div>
-                    <div className="item">section3 - 2</div>
-                    <div className="item">section3 - 3</div>
-                </div>
-                <div ref={contentElems.current[3]} id="content4" className="content">
-                    <div className="item">section4 - 1</div>
-                    <div className="item">section4 - 2</div>
-                    <div className="item">section4 - 3</div>
-                </div>
-                <div ref={contentElems.current[4]} id="content5" className="content">
-                    <div className="item">section5 - 1</div>
-                    <div className="item">section5 - 2</div>
-                    <div className="item">section5 - 3</div>
-                </div> */}
             </div>
         </>
     )
