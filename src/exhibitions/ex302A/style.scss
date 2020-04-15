@@ -90,6 +90,35 @@ body{
         z-index: 0;
         opacity: .9;
     }
+    #language{
+        position: fixed;
+        bottom:vw-calc(84 - 15);
+        left:vw-calc(84 - 15);
+        z-index: 999;
+        display: flex;
+        div{
+            width:vw-calc(48 + 30);
+            height:vw-calc(48 + 30);
+            padding:vw-calc(15);
+            font-size:vw-calc(20);
+            &.active{
+                span{
+                    background:#fff;
+                    color:#000;
+                }
+            }
+            span{
+                width:100%;
+                height:100%;
+                border:vw-calc(1) solid #fff;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color:#fff;
+            }
+        }
+    }
     #sectionNav{
         width: vw-calc(553 + (80 / 2 * 2));
         position: fixed;
@@ -302,11 +331,15 @@ body{
                             bottom:100%;
                             left:50%;
                             color:#fff;
-                            transform: translate3d(-50%,0,0);
+                            transform: translate3d(-50%,10%,0);
                             text-align: center;
                             span{
                                 font-size: vw-calc(15);
                                 line-height: vw-calc(19);
+                                &:first-child{
+                                    padding-bottom: vw-calc(6);
+                                    display: inline-block;
+                                }
                                 &.category{
                                     font-size:vw-calc(17);
                                     line-height: vw-calc(17);

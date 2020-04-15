@@ -5,12 +5,12 @@ import gsap from 'gsap';
 import Content from './Content';
 
 const G302A = props => {
-    const [contentData, setContentData] = useState(null);
+    const [contentData, setContentData] = useState(props.appData.contents['tc']);
     const [clickedSectionIdx, setClickedSectionIdx] = useState(null);
     const [currentSectionIdx, setCurrentSectionIdx] = useState(0);
     const [dragging, setDragging] = useState(false);
 
-    const sectionNum = props.appData.contents['tc'].sections.length;
+    const sectionNum = contentData.sections.length;
     const sectionWrapElem = useRef(null);
     const sectionElems = useRef([...Array(sectionNum)].map(()=>createRef()));
     const sectionTextElems = useRef([...Array(sectionNum)].map(()=>createRef()));
@@ -48,7 +48,7 @@ const G302A = props => {
         }
 
         const init = () => {
-            document.documentElement.style.setProperty('--sectionnum', props.appData.contents['tc'].sections.length);
+            document.documentElement.style.setProperty('--sectionnum', contentData.sections.length);
             for(let i=0; i<sectionNum; i++){
                 const section = sectionElems.current[i].current;
                 section.style.left = `${(i+1) * 50}vw`;
@@ -244,9 +244,9 @@ const G302A = props => {
     },[]);
 
 
-    useEffect(() => {
-        setContentData(props.appData.contents['tc']);
-    }, [props.appData]);
+    // useEffect(() => {
+    //     setContentData(props.appData.contents['tc']);
+    // }, [props.appData]);
 
     
     useEffect(() => {
@@ -267,9 +267,16 @@ const G302A = props => {
         setCurrentSectionIdx(i);
     }
 
+    const onChangeLanguage = (lang) => {
+        setContentData(props.appData.contents[lang]);
+    }
 
     return(
         <div id="home">
+            <div id="language">
+                <div onClick={()=>onChangeLanguage('tc')}><span>繁</span></div>
+                <div onClick={()=>onChangeLanguage('en')}><span>EN</span></div>
+            </div>
             <div id="sectionNav" className={`${clickedSectionIdx !== null ? 'hide' : ''}`}>
                 <ul>
                     {

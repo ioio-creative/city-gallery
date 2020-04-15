@@ -287,7 +287,7 @@ const Content = props => {
                                             </p>
                                         </li>
                                     })
-                                }   
+                                }
                                 </ul>
                                 <div id="line"><span ref={contentNavLineElems.current[i]}></span></div>
                             </div>
