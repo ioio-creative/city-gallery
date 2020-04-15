@@ -1,6 +1,7 @@
 import React, {useEffect, useState, useRef, createRef} from 'react';
 import './style.scss';
 import gsap from 'gsap';
+import webSocket from 'socket.io-client';
 
 import Content from './Content';
 
@@ -22,7 +23,39 @@ const G302A = props => {
     const setCurrentSectionFunc = useRef(null);
     const getCurrentSectionFunc = useRef(null);
     const startFunc = useRef(null);
+    
+    const [socket,setSocket] = useState(null);
 
+    
+    useEffect(()=>{
+        const start = () => {
+
+        }
+
+        const moveLeft = () => {
+            prevSectionFunc.current.prevSection();
+        }
+        
+        const moveRight = () => {
+            nextSectionFunc.current.nextSection();
+        }
+
+        if(socket){
+            socket.on('start', start);
+            socket.on('left', moveLeft);
+            socket.on('right', moveRight);
+        }else{
+            // setSocket(webSocket('http://popsquare-server.herokuapp.com:80/'));
+        }
+        
+        return ()=>{
+            if(socket){
+                socket.off('start', start);
+                socket.off('left', moveLeft);
+                socket.off('right', moveRight);
+            }
+        }
+    },[socket]);
 
 
     useEffect(()=>{

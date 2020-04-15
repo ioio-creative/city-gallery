@@ -408,12 +408,12 @@ body{
                 padding:0 10vw;
                 white-space: nowrap;
                 color:#fff;
-                &:nth-child(odd){
-                    background:rgba(0, 100, 109, .3);
-                }
-                &:nth-child(even){
-                    background:rgba(0, 61, 66, 0.3);
-                }
+                // &:nth-child(odd){
+                //     background:rgba(0, 100, 109, .3);
+                // }
+                // &:nth-child(even){
+                //     background:rgba(0, 61, 66, 0.3);
+                // }
                 #wrap{
                     display: flex;
                     align-items: center;
