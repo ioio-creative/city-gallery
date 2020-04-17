@@ -6,7 +6,8 @@ import webSocket from 'socket.io-client';
 import Content from './Content';
 
 const G302A = props => {
-    const [contentData, setContentData] = useState(props.appData.contents['tc']);
+    const [language, setLanguage] = useState('tc');
+    const [contentData, setContentData] = useState(props.appData.contents[language]);
     const [clickedSectionIdx, setClickedSectionIdx] = useState(null);
     const [currentSectionIdx, setCurrentSectionIdx] = useState(0);
     const [dragging, setDragging] = useState(false);
@@ -301,14 +302,15 @@ const G302A = props => {
     }
 
     const onChangeLanguage = (lang) => {
+        setLanguage(lang);
         setContentData(props.appData.contents[lang]);
     }
 
     return(
         <div id="home">
             <div id="language">
-                <div onClick={()=>onChangeLanguage('tc')}><span>繁</span></div>
-                <div onClick={()=>onChangeLanguage('en')}><span>EN</span></div>
+                <div className={language==='tc'?'active':''} onClick={()=>onChangeLanguage('tc')}><span>繁</span></div>
+                <div className={language==='en'?'active':''} onClick={()=>onChangeLanguage('en')}><span>EN</span></div>
             </div>
             <div id="sectionNav" className={`${clickedSectionIdx !== null ? 'hide' : ''}`}>
                 <ul>

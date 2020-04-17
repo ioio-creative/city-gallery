@@ -101,6 +101,11 @@ body{
             height:vw-calc(48 + 30);
             padding:vw-calc(15);
             font-size:vw-calc(20);
+            transform: translate3d(0,0,0) scale(1);
+            transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
+            &:active{
+                transform: translate3d(0,0,0) scale(.8);
+            }
             &.active{
                 span{
                     background:#fff;
@@ -116,6 +121,7 @@ body{
                 justify-content: center;
                 align-items: center;
                 color:#fff;
+                transition: all .2s cubic-bezier(0.33, 1, 0.68, 1);
             }
         }
     }
