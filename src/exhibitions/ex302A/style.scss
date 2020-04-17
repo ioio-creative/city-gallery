@@ -94,8 +94,15 @@ body{
         position: fixed;
         bottom:vw-calc(84 - 15);
         left:vw-calc(84 - 15);
-        z-index: 999;
+        z-index: 1000;
         display: flex;
+        opacity: 1;
+        visibility: visible;
+        transition: all .8s cubic-bezier(0.16, 1, 0.3, 1);
+        &.hide{
+            opacity: 0;
+            visibility: hidden;
+        }
         div{
             width:vw-calc(48 + 30);
             height:vw-calc(48 + 30);
@@ -121,7 +128,7 @@ body{
                 justify-content: center;
                 align-items: center;
                 color:#fff;
-                transition: all .2s cubic-bezier(0.33, 1, 0.68, 1);
+                transition: all .1s cubic-bezier(0.33, 1, 0.68, 1);
             }
         }
     }

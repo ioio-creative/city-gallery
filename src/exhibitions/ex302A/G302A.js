@@ -11,6 +11,7 @@ const G302A = props => {
     const [clickedSectionIdx, setClickedSectionIdx] = useState(null);
     const [currentSectionIdx, setCurrentSectionIdx] = useState(0);
     const [dragging, setDragging] = useState(false);
+    const [minimalSidebar, setMinimalSidebar] = useState(false);
 
     const sectionNum = contentData.sections.length;
     const sectionWrapElem = useRef(null);
@@ -29,31 +30,55 @@ const G302A = props => {
 
     
     useEffect(()=>{
+        const delay = 1000;
+        let canLeft = true;
+        let canRight = true;
+        let started = false;
+
         const start = () => {
+            if(!started){
+                started = true;
+                startFunc.current.start();
+            }
+        }
+
+        const leave = () => {
 
         }
 
         const moveLeft = () => {
-            prevSectionFunc.current.prevSection();
+            if(canLeft && canRight){
+                canLeft = false;
+                setTimeout(()=>{
+                    canLeft = true;
+                },delay);
+                prevSectionFunc.current.prevSection();
+            }
         }
         
         const moveRight = () => {
-            nextSectionFunc.current.nextSection();
+            if(canLeft && canRight){
+                canRight = false;
+                setTimeout(()=>{
+                    canRight = true;
+                },delay);
+                nextSectionFunc.current.nextSection();
+            }
         }
 
         if(socket){
-            socket.on('start', start);
-            socket.on('left', moveLeft);
-            socket.on('right', moveRight);
+            socket.on('userEnter', start);
+            socket.on('navigationLeft', moveLeft);
+            socket.on('navigationRight', moveRight);
         }else{
-            // setSocket(webSocket('http://popsquare-server.herokuapp.com:80/'));
+            setSocket(webSocket('http://10.0.1.40:3003/'));
         }
         
         return ()=>{
             if(socket){
-                socket.off('start', start);
-                socket.off('left', moveLeft);
-                socket.off('right', moveRight);
+                socket.off('userEnter', start);
+                socket.off('navigationLeft', moveLeft);
+                socket.off('navigationRight', moveRight);
             }
         }
     },[socket]);
@@ -283,11 +308,11 @@ const G302A = props => {
     // }, [props.appData]);
 
     
-    useEffect(() => {
-        setTimeout(()=>{
-            startFunc.current.start();
-        },1000);
-    },[]);
+    // useEffect(() => {
+    //     setTimeout(()=>{
+    //         startFunc.current.start();
+    //     },1000);
+    // },[]);
 
     const onClickSection = (i) => {
         if(!dragging && !getIsClickedSectionFunc.current.getIsClickedSection() && i === getCurrentSectionFunc.current.getCurrentSection()){
@@ -308,7 +333,7 @@ const G302A = props => {
 
     return(
         <div id="home">
-            <div id="language">
+            <div id="language" className={`${clickedSectionIdx !== null && !minimalSidebar ? 'hide' : ''}`}>
                 <div className={language==='tc'?'active':''} onClick={()=>onChangeLanguage('tc')}><span>繁</span></div>
                 <div className={language==='en'?'active':''} onClick={()=>onChangeLanguage('en')}><span>EN</span></div>
             </div>
@@ -341,6 +366,8 @@ const G302A = props => {
                 contentData && <Content 
                     contentData={contentData}
                     sectionNum={sectionNum}
+                    minimalSidebar={minimalSidebar}
+                    setMinimalSidebar={setMinimalSidebar}
                     clickedSectionIdx={clickedSectionIdx}
                     isClickedSection={getIsClickedSectionFunc.current && getIsClickedSectionFunc.current.getIsClickedSection()}
                 ></Content>

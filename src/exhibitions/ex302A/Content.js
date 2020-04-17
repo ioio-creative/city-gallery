@@ -6,7 +6,7 @@ import gsap from 'gsap';
 
 const Content = props => {
     // const [dragging, setDragging] = useState(false);
-    const [minimalSidebar, setMinimalSidebar] = useState(false);
+    // const [minimalSidebar, setMinimalSidebar] = useState(false);
     const [minimalContentNav, setMinimalContentNav] = useState(false);
     const [contentIdx, setContentIdx] = useState(null);
     
@@ -78,7 +78,7 @@ const Content = props => {
             mouse.lastPos.x = mouse.currentPos.x;
             mouse.lastPos.y = mouse.currentPos.y;
 
-            setMinimalSidebar(true);
+            props.setMinimalSidebar(true);
             setMinimalContentNav(true);
             moveContentWrap();
         }
@@ -271,7 +271,7 @@ const Content = props => {
 
     return (
         <>
-            <div id="contentNavWrap" className={`contentNav${props.clickedSectionIdx !== null && minimalSidebar ? ' active' : ''}`}>
+            <div id="contentNavWrap" className={`contentNav${props.clickedSectionIdx !== null && props.minimalSidebar ? ' active' : ''}`}>
                 {
                     props.contentData.sections.map((v,i)=>{
                         return <div key={i} ref={contentNavElems.current[i]} id={`contentNav${i+1}`} className={`contentNav${minimalContentNav ? ' min' : ''}`}>
@@ -298,7 +298,7 @@ const Content = props => {
             <div id="sidebarWrap">
                 {
                     props.contentData.sections.map((v,i)=>{
-                        return <div key={i} ref={sidebarElems.current[i]} id={`sidebar${i+1}`} className={`sidebar${props.clickedSectionIdx === i && !minimalSidebar ? ' active' : ''}`}>
+                        return <div key={i} ref={sidebarElems.current[i]} id={`sidebar${i+1}`} className={`sidebar${props.clickedSectionIdx === i && !props.minimalSidebar ? ' active' : ''}`}>
                             <div id="des">
                                 {
                                     content.text1.split('').map((v, i)=>{
