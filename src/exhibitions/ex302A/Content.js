@@ -264,10 +264,6 @@ const Content = props => {
         moveToItemFunc.current.moveToItem(i,j, props.contentData.sections[i].items.length);
     }
     
-    const content = {
-        'text1' : '政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。',
-        'text2' : ['完成', '《土地利用計劃書》']
-    }
 
     return (
         <>
@@ -301,7 +297,7 @@ const Content = props => {
                         return <div key={i} ref={sidebarElems.current[i]} id={`sidebar${i+1}`} className={`sidebar${props.clickedSectionIdx === i && !props.minimalSidebar ? ' active' : ''}`}>
                             <div id="des">
                                 {
-                                    content.text1.split('').map((v, i)=>{
+                                    v.text1.split('').map((v, i)=>{
                                         return <span key={i}><span>{v}</span></span>
                                     })
                                 }

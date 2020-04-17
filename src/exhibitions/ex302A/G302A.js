@@ -47,7 +47,7 @@ const G302A = props => {
         }
 
         const moveLeft = () => {
-            if(canLeft && canRight){
+            if(started && canLeft && canRight){
                 canLeft = false;
                 setTimeout(()=>{
                     canLeft = true;
@@ -57,7 +57,7 @@ const G302A = props => {
         }
         
         const moveRight = () => {
-            if(canLeft && canRight){
+            if(started && canLeft && canRight){
                 canRight = false;
                 setTimeout(()=>{
                     canRight = true;
