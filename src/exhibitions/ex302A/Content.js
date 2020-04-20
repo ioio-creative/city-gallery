@@ -4,11 +4,20 @@ import gsap from 'gsap';
 
 // import img1 from './images/img.png';
 
+const usePrevious = (value) => {
+    const ref = useRef();
+    useEffect(() => {
+      ref.current = value;
+    });
+    return ref.current;
+}
+
 const Content = props => {
     // const [dragging, setDragging] = useState(false);
     // const [minimalSidebar, setMinimalSidebar] = useState(false);
     const [minimalContentNav, setMinimalContentNav] = useState(false);
     const [contentIdx, setContentIdx] = useState(null);
+    const prevIdx = usePrevious(props.clickedSectionIdx);
     
     const setIsClickedSectionFunc = useRef(null);
     const moveContentFunc = useRef(null);
@@ -243,16 +252,29 @@ const Content = props => {
 
             const tl = gsap.timeline({delay:1});
             
-            tl.set('#sidebarWrap', {className:'active'});
-            tl.set('#sectionWrap', {className:'hide'});
-            tl.set(contentWrapElem.current, {className:'active'});
+            tl.set('#sidebarWrap', {className:'active', clearProps:'opacity,visibility'});
+            tl.set('#sectionWrap', {className:'hide', clearProps:'opacity,visibility'});
+            tl.set(contentWrapElem.current, {className:'active', clearProps:'opacity,visibility'});
             tl.fromTo(elem.querySelectorAll('#des span span'), 1, {force3D:true, y:'100%'}, {y:'0%', stagger:.01, ease:'power4.out'},'s');
             tl.fromTo(elem.querySelectorAll('#date span'), 1, {force3D:true, y:'100%'}, { y:'0%', stagger:.1, ease:'power4.out'},'b-=.6');
             tl.fromTo(elem.querySelectorAll('#line'), 1, {force3D:true, scaleX:0}, {scaleX:1, ease:'power3.inOut'},'s+=.6');
 
             moveContentFunc.current.moveContent(props.clickedSectionIdx);
         }
-    },[props.clickedSectionIdx])
+        else{
+            if(prevIdx !== null && prevIdx !== undefined){
+                const tl = gsap.timeline();
+                tl.to(contentWrapElem.current, .3, {autoAlpha:0, ease:'power1.inOut'},'s');
+                tl.set(contentWrapElem.current, {className:'', clearProps:'opacity,visibility'},'s+=.3');
+                tl.to('#sidebarWrap', .3, {autoAlpha:0, ease:'power1.inOut'},'s');
+                tl.set('#sidebarWrap', {className:'', clearProps:'opacity,visibility'},'s+=.3');
+                tl.set('#sectionWrap', {className:''});
+                tl.fromTo('#sectionWrap', .6, {autoAlpha:0}, {autoAlpha:1, ease:'power1.inOut'});
+            }
+        }
+    },[props.clickedSectionIdx]);
+
+
 
     useEffect(()=>{
         if(props.isClickedSection !== null){

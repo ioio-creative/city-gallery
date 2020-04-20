@@ -25,6 +25,7 @@ const G302A = props => {
     const setCurrentSectionFunc = useRef(null);
     const getCurrentSectionFunc = useRef(null);
     const startFunc = useRef(null);
+    const leaveFunc = useRef(null);
     
     const [socket,setSocket] = useState(null);
 
@@ -43,7 +44,7 @@ const G302A = props => {
         }
 
         const leave = () => {
-
+            leaveFunc.current.leave();
         }
 
         const moveLeft = () => {
@@ -68,6 +69,7 @@ const G302A = props => {
 
         if(socket){
             socket.on('userEnter', start);
+            socket.on('userLeave', leave);
             socket.on('navigationLeft', moveLeft);
             socket.on('navigationRight', moveRight);
         }else{
@@ -77,6 +79,7 @@ const G302A = props => {
         return ()=>{
             if(socket){
                 socket.off('userEnter', start);
+                socket.off('userLeave', leave);
                 socket.off('navigationLeft', moveLeft);
                 socket.off('navigationRight', moveRight);
             }
@@ -160,6 +163,13 @@ const G302A = props => {
             animLoop();
         }
         startFunc.current = {start}
+
+        const leave = () => {
+            isClickedSection = false;
+            setMinimalSidebar(false);
+            setClickedSectionIdx(null);
+        }
+        leaveFunc.current = {leave}
 
         const setIsClickedSection = (bool) => {
             isClickedSection = bool;

@@ -45,7 +45,7 @@ $halfScreenWidth: 100 / 2;
 }
 
 body{
-    background:#000;
+    // background:#000;
     user-select: none;
     cursor: move; /* fallback if grab cursor is unsupported */
     cursor: grab;
@@ -65,7 +65,7 @@ body{
     height:100%;
     overflow: hidden;
     font-family: 'Noto Sans TC' ,sans-serif;
-    background: url('./images/bg@2x.png') no-repeat;
+    // background: url('./images/bg@2x.png') no-repeat;
     background-size:cover;
     overflow: hidden;
     &:before{
