@@ -44,7 +44,10 @@ const G302A = props => {
         }
 
         const leave = () => {
-            leaveFunc.current.leave();
+            if(started){
+                started = false;
+                leaveFunc.current.leave();
+            }
         }
 
         const moveLeft = () => {
@@ -89,6 +92,7 @@ const G302A = props => {
 
     useEffect(()=>{
         let ww = window.innerWidth;
+        let started = false;
         let currentSection = 0;
         let oldSection = 0;
         let isClickedSection = false;
@@ -160,14 +164,22 @@ const G302A = props => {
         }
 
         const start = () => {
-            animLoop();
+            sectionWrapElemPos.x = 0;
+            isClickedSection = false;
+            if(!started){
+                started = true;
+                animLoop();
+            }
         }
         startFunc.current = {start}
 
         const leave = () => {
-            isClickedSection = false;
+            isClickedSection = true;
             setMinimalSidebar(false);
             setClickedSectionIdx(null);
+
+            sectionWrapElemPos.x = window.innerWidth;
+            sectionWrapElemEasePos.x = window.innerWidth;
         }
         leaveFunc.current = {leave}
 
