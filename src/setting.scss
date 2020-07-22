@@ -63,14 +63,14 @@ $global-font-size: 100% !default;
   @return $rem-values;
 }
 
-@function vw-calc($props){
+@function vw-calc($props, $width:1920){
   $finalvalue: 0;
   @each $value in $props{
     @if $finalvalue != 0{
-      $finalvalue: $finalvalue #{$value / 1920 * 100}vw;
+      $finalvalue: $finalvalue #{$value / $width * 100}vw;
     }
     @else{
-      $finalvalue: #{$value / 1920 * 100}vw;
+      $finalvalue: #{$value / $width * 100}vw;
     }
   }
   @return $finalvalue;

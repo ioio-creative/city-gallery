@@ -8,6 +8,7 @@
     "express-formidable": "^1.2.0",
     "gsap": "^3.2.0",
     "node-sass": "^4.13.1",
+    "pixi.js": "^5.3.0",
     "react": "^16.8.6",
     "react-app-polyfill": "^1.0.2",
     "react-dom": "^16.8.6",

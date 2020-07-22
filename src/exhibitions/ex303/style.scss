@@ -1,0 +1,96 @@
+@import '../../setting.scss';
+
+$white:#fff;
+$black:#000;
+$lightblue:#70CCB8;
+$drakgreenblue:#074A45;
+
+$width:3840;
+
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    padding:0;
+    margin:0;
+}
+ul,
+li{
+    list-style: none;
+}
+span{
+    display: inline-block;
+}
+
+#main{
+    width:100%;
+    height:100%;
+    background:#3088A0;
+    font-family: 'Helvetica';
+    &.zoomed{
+        #indicator{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    #indicator{
+        position: fixed;
+        top:vw-calc(66, $width);
+        left:vw-calc(472, $width);
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s cubic-bezier(0.87, 0, 0.13, 1);
+        span{
+            margin-bottom:vw-calc(20, $width);
+            font-size:vw-calc(30, $width);
+        }
+        ul{
+            width:vw-calc(403, $width);
+            height:vw-calc(180, $width);
+            display: flex;
+            li{
+                width:25%;
+                height:100%;
+                border-left:vw-calc(3, $width) dashed $lightblue;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                background:$white;
+                &:before{
+                    content:'';
+                    width:100%;
+                    height:100%;
+                    border:vw-calc(3, $width) solid $drakgreenblue;
+                    position: absolute;
+                    top:0;
+                    left:0;
+                    transform: translate3d(vw-calc(-3, $width), vw-calc(-3, $width), 0);
+                }
+                &:after{
+                    content:'';
+                    width:100%;
+                    height:100%;
+                    background:$black;
+                    position: absolute;
+                    top:0;
+                    left:0;
+                    opacity: .7;
+                    visibility: visible;
+                }
+                &:first-child{
+                    border:0;
+                }
+                &.active{
+                    &:after{
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                }
+            }
+        }
+    }
+}
