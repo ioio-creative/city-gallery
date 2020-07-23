@@ -5,35 +5,59 @@ import Menu from './Menu'
 import Map from './Map'
 
 const G303 = () => {
+    const [yearIdx, setYearIdx] = useState(0);
     const [zoomed, setZoomed] = useState(false);
-    const [indicatorIdx, setIndicatorIdx] = useState(0);
-    const zoomHandle = useRef(null);
-    const moveHandle = useRef(null);
+    const [mapIndicatorIdx, setMapIndicatorIdx] = useState(0);
+    const handleZoom = useRef(null);
+    const handleMove = useRef(null);
+    const handleChangeCoastline = useRef(null);
+    const handleStart = useRef(null);
 
-    const onClickIndicator = (i) => {
-        setIndicatorIdx(i);
-        moveHandle.current.updateIndicatorIdx(i, zoomed);
+    const onClickMapIndicator = (i) => {
+        setMapIndicatorIdx(i);
+        handleMove.current.updateMapIndicatorIdx(i, zoomed);
+    }
+
+    const onClickYear = (i) => {
+        setYearIdx(i);
+        handleChangeCoastline.current.changeCoastline(i);
+    }
+
+    const onClickStart = () => {
+        handleStart.current.start();
     }
 
     return (
         <div id="main" className={zoomed ? 'zoomed' : ''}>
-            <div id="indicator">
+            <div id="yearSelector">
+                <ul>
+                {
+                    ['1900','1945','1985','2019'].map((v,i)=>{
+                        return <li key={i} className={i === yearIdx ? 'active' : ''} onClick={()=>onClickYear(i)}><span>{v}</span></li>
+                    })
+                }
+                </ul>
+                <div id="startBtn" onClick={onClickStart}>確定</div>
+            </div>
+            <div id="mapIndicator">
                 <span>分區</span>
                 <ul>
                     {
                         [...Array(4)].map((v,i)=>{
-                            return <li key={i} className={ i === indicatorIdx ? 'active' : '' } onClick={()=>onClickIndicator(i)}>{i+1}</li>
+                            return <li key={i} className={ i === mapIndicatorIdx ? 'active' : '' } onClick={()=>onClickMapIndicator(i)}>{i+1}</li>
                         })
                     }
                 </ul>
             </div>
             <Map 
-                setIndicatorIdx={setIndicatorIdx} 
+                setMapIndicatorIdx={setMapIndicatorIdx} 
                 setZoomed={setZoomed}
-                zoomHandle={zoomHandle}
-                moveHandle={moveHandle}
+                handleZoom={handleZoom}
+                handleMove={handleMove}
+                handleChangeCoastline={handleChangeCoastline}
+                handleStart={handleStart}
             />
-            <Menu zoomHandle={zoomHandle} />
+            <Menu handleZoom={handleZoom} />
         </div>
     )
 }

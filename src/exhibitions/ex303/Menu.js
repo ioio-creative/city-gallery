@@ -6,7 +6,7 @@ const Menu = props => {
 
     const switchMode = (m) => {
         setMode(m)
-        props.zoomHandle.current.zoomInOut(m);
+        props.handleZoom.current.zoomInOut(m);
     }
 
     return (
