@@ -19,8 +19,10 @@ const G303 = () => {
     }
 
     const onClickYear = (i) => {
-        setYearIdx(i);
-        handleChangeCoastline.current.changeCoastline(i);
+        if(i !== yearIdx){
+            setYearIdx(i);
+            handleChangeCoastline.current.changeCoastline(i);
+        }
     }
 
     const onClickStart = () => {

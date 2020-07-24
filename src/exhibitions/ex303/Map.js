@@ -20,8 +20,6 @@ const Map = props => {
 
     useEffect(()=>{console.log(diff)
         const gui = new dat.GUI({width: 300});
-        let app;
-        const maxWidth = 1920 * 2;
         const mapAssets = [
             {
                 name: 'hkIsland_diffuse',
@@ -68,11 +66,6 @@ const Map = props => {
                 src: noise2
             }
         ];
-        const map = {}
-        const allMap = new PIXI.Container();
-        const zoomedPos = {x:-window.innerWidth*.13, y:-window.innerHeight*.325};
-
-        const years = ['1900','1945','1985','2019'];
         const options = {
             progress: 0,
             year:{
@@ -89,6 +82,17 @@ const Map = props => {
                 map['hkIsland'].image.shader.uniforms.noiseTexture = new PIXI.Sprite.from('sand').texture.baseTexture;
             },
         }
+
+
+        let app;
+        const maxWidth = 1920 * 2;
+        const map = {}
+        const allMap = new PIXI.Container();
+        const startPos = {x:window.innerWidth / 1.94, y:window.innerHeight / .935};
+        const zoomedPos = {x:-window.innerWidth*.13, y:-window.innerHeight*.325};
+        const years = ['1900','1945','1985','2019'];
+        let showCoastline = false;
+        
 
         const initEngine = () => {
             app = new PIXI.Application({ 
@@ -146,8 +150,8 @@ const Map = props => {
                 geometry.addIndex([0,1,2,0,2,3])
 
                 this.image = new PIXI.Mesh(geometry, this.createShader());
-                this.image.x = window.innerWidth / 1.94;
-                this.image.y = window.innerHeight / .935;
+                this.image.x = startPos.x;
+                this.image.y = startPos.y;
                 allMap.addChild(this.image);
             }
 
@@ -319,14 +323,17 @@ const Map = props => {
             for(let i=0;i<years.length; i++){
                 const v = {p: options.year[`y${years[i]}`]};
                 if(i === idx){
-                    gsap.to(v, 2, {p:1, ease:'power2.out',
+                    gsap.to(v, 2, {p:1, delay:!showCoastline ? 0 : .8, ease:'power2.out',
                         onUpdate:function(){
                             options.year[`y${years[i]}`] = this._targets[0].p
                         }
                     });
+
+                    if(!showCoastline)
+                        showCoastline = true;
                 }
                 else{
-                    gsap.to(v, 2, {p:0, ease:'power2.out',
+                    gsap.to(v, 2, {p:0, ease:'power4.out',
                         onUpdate:function(){
                             options.year[`y${years[i]}`] = this._targets[0].p
                         }
@@ -337,7 +344,7 @@ const Map = props => {
         props.handleChangeCoastline.current = {changeCoastline}
 
         const start = () => {
-            gsap.to(options, 3, {progress:1, ease:'power3.inOut'});
+            gsap.to(options, 1.6, {progress:1, ease:'power2.inOut'});
         }
         props.handleStart.current = {start}
 

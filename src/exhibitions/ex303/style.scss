@@ -29,7 +29,7 @@ span{
 #main{
     width:100%;
     height:100%;
-    background:#3088A0;
+    background:#103042;
     font-family: 'Helvetica';
     &.zoomed{
         #mapIndicator{
@@ -158,7 +158,11 @@ span{
             position: absolute;
             top:100%;
             left:50%;
-            transform: translate3d(-50%,vw-calc(100,$width),0);
+            transform: translate3d(-50%,vw-calc(100,$width),0) scale(1);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            &:active{
+                transform: translate3d(-50%,vw-calc(100,$width),0) scale(.9);
+            }
         }
     }
 }
