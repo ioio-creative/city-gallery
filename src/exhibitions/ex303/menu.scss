@@ -21,6 +21,7 @@ $width:3840;
     position: fixed;
     bottom:0;
     left:50%;
+    z-index: 999;
     transform: translate3d(-50%,0,0);
     #lang{
         display: flex;

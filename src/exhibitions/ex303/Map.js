@@ -3,69 +3,25 @@ import dat from 'dat.gui'
 import * as PIXI from 'pixi.js'
 import gsap from 'gsap'
 
-import diff from './images/hkIsland_diffuse.svg'
-import start_diff from './images/hkIsland_start_diffuse.svg'
-import old_diff from './images/hkIsland_old_diffuse.svg'
-import mask from './images/hkIsland_mask.svg'
-import coastline1900_mask from './images/hkIsland_coastline1900_mask.svg'
-import coastline1945_mask from './images/hkIsland_coastline1945_mask.svg'
-import coastline1985_mask from './images/hkIsland_coastline1985_mask.svg'
-import coastline2019_mask from './images/hkIsland_coastline2019_mask.svg'
-import sand from './images/sand.png'
-import noise from './images/noise.png'
-import noise2 from './images/noise2.png'
+// import diff from './images/hkIsland_diffuse.svg'
+// import start_diff from './images/hkIsland_start_diffuse.svg'
+// import old_diff from './images/hkIsland_old_diffuse.svg'
+// import mask from './images/hkIsland_mask.svg'
+// import coastline1900_mask from './images/hkIsland_coastline1900_mask.svg'
+// import coastline1945_mask from './images/hkIsland_coastline1945_mask.svg'
+// import coastline1985_mask from './images/hkIsland_coastline1985_mask.svg'
+// import coastline2019_mask from './images/hkIsland_coastline2019_mask.svg'
+// import sand from './images/sand.png'
+// import noise from './images/noise.png'
+// import noise2 from './images/noise2.png'
 
 const Map = props => {
     const wrapElem = useRef(null);
+    const data = props.appData;
 
-    useEffect(()=>{console.log(diff)
+    useEffect(()=>{
         const gui = new dat.GUI({width: 300});
-        const mapAssets = [
-            {
-                name: 'hkIsland_diffuse',
-                src: diff
-            },
-            {
-                name: 'hkIsland_start_diffuse',
-                src: start_diff
-            },
-            {
-                name: 'hkIsland_old_diffuse',
-                src: old_diff
-            },
-            {
-                name: 'hkIsland_mask',
-                src: mask
-            },
-            {
-                name: 'hkIsland_coastline1900_mask',
-                src: coastline1900_mask
-            },
-            {
-                name: 'hkIsland_coastline1945_mask',
-                src: coastline1945_mask
-            },
-            {
-                name: 'hkIsland_coastline1985_mask',
-                src: coastline1985_mask
-            },
-            {
-                name: 'hkIsland_coastline2019_mask',
-                src: coastline2019_mask
-            },
-            {
-                name: 'sand',
-                src: sand
-            },
-            {
-                name: 'noise',
-                src: noise
-            },
-            {
-                name: 'noise2',
-                src: noise2
-            }
-        ];
+        const mapAssets = data.mapAssets;
         const options = {
             progress: 0,
             year:{
@@ -87,11 +43,17 @@ const Map = props => {
         let app;
         const maxWidth = 1920 * 2;
         const map = {}
-        const allMap = new PIXI.Container();
-        const startPos = {x:window.innerWidth / 1.94, y:window.innerHeight / .935};
+        const streets = []
+        const coastlineParts = []
+        const mapContainer = new PIXI.Container();
+        const markerContainer = new PIXI.Container();
+        const coastlinePartsContainer = new PIXI.Container();
+        const startPos = {x:window.innerWidth / 1.932, y:window.innerHeight / .935};
         const zoomedPos = {x:-window.innerWidth*.13, y:-window.innerHeight*.325};
         const years = ['1900','1945','1985','2019'];
-        let showCoastline = false;
+        let hasShownCoastline = false;
+        let selectedHighlight = null;
+        let whiteBG = null;
         
 
         const initEngine = () => {
@@ -109,9 +71,14 @@ const Map = props => {
         }
 
         const initStage = () => {
-            app.stage.addChild(allMap);
             // preload all images
             preload()
+            initWhiteBG();
+
+            app.stage.addChild(mapContainer);
+            app.stage.addChild(whiteBG);
+            app.stage.addChild(markerContainer);
+            app.stage.addChild(coastlinePartsContainer);
         }
 
         const initGUI = () => {
@@ -123,6 +90,14 @@ const Map = props => {
             gui.add(options,'threshold',0.001,1,0.01).name('threshold').listen();
             gui.add(options,'useNoiseTxt').name('Noise Texture');
             gui.add(options,'useSandTxt').name('Sand Texture');
+        }
+
+        const initWhiteBG = () => {
+            whiteBG = new PIXI.Graphics();
+            whiteBG.beginFill(0xffffff);
+            whiteBG.alpha = 0;
+            whiteBG.drawRect(0, 0, window.innerWidth, window.innerHeight);
+            whiteBG.endFill();
         }
 
         class Map {
@@ -137,7 +112,7 @@ const Map = props => {
                 const w = window.innerWidth * (this.width / maxWidth);
                 const ratio = this.height / this.width;
                 const h = w * ratio;
-// console.log((this.width / maxWidth))
+
                 return { w, h }
             }
 
@@ -152,7 +127,19 @@ const Map = props => {
                 this.image = new PIXI.Mesh(geometry, this.createShader());
                 this.image.x = startPos.x;
                 this.image.y = startPos.y;
-                allMap.addChild(this.image);
+                mapContainer.addChild(this.image);
+
+                // highlight
+                this.highlight = [];
+                for(let i=0; i<years.length; i++){
+                    const year = years[i];
+                    this.highlight[i] = new PIXI.Sprite.from(`hkIsland_coastline${year}_highlight`);
+                    this.highlight[i].anchor.set(0.5);
+                    this.highlight[i].x = startPos.x;
+                    this.highlight[i].y = startPos.y;
+                    this.highlight[i].alpha = 0;
+                    mapContainer.addChild(this.highlight[i]);
+                }
             }
 
             createShader() {
@@ -268,6 +255,102 @@ const Map = props => {
             }
         }
 
+        class Marker {
+            constructor(street) {
+                this.id = street.id;
+                this.x = street.marker.x;
+                this.y = street.marker.y;
+                this.data = street;
+            }
+
+            create() {
+                this.sprite = new PIXI.Sprite.from('marker');
+                this.sprite.anchor.set(.5, 1);
+                this.sprite.x = this.x;
+                this.sprite.y = this.y;
+                this.sprite.alpha = 0;
+                this.sprite.interactive = true;
+                this.sprite.buttonMode = true;
+                this.sprite.on('pointerdown', () => this.onClick());
+
+                markerContainer.addChild(this.sprite);
+            }
+
+            remove() {
+                this.sprite.parent.removeChild(this.sprite);
+                this.sprite = null;
+                this.x = null;
+                this.y = null;
+            }
+
+            onClick() {
+                props.setStreetData(this.data);
+            }
+        }
+
+        const showMarkers = (idx = 0) => {
+            for(let s=0; s<streets.length; s++){
+                for(let i=0; i<streets[s].length; i++){
+                    if(s === idx){
+                        streets[s][i].sprite.alpha = 1;
+                    }
+                    else{
+                        streets[s][i].sprite.alpha = 0;
+                    }
+                }
+            }
+        }
+
+        const hideMarkers = () => {
+            for(let s=0; s<streets.length; s++){
+                for(let i=0; i<streets[s].length; i++){
+                    streets[s][i].sprite.alpha = 0;
+                }
+            }
+        }
+        ///////////////////
+
+        class CoastlineParts {
+            constructor(pos, name) {
+                this.x = pos.x;
+                this.y = pos.y;
+                this.name = name;
+            }
+
+            create() {
+                const path = [0,0 , 90,0 , 220,40 , 245,80 , 240,155 , 190,145 , 0,25];
+
+                this.sprite = new PIXI.Sprite.from(this.name);
+                this.sprite.x = this.x;
+                this.sprite.y = this.y;
+                this.sprite.scale.set(1.08);
+                this.sprite.alpha = 0;
+                this.sprite.interactive = true;
+                this.sprite.buttonMode = true;
+                this.sprite.hitArea = new PIXI.Polygon(path);
+                this.sprite.on('pointerdown', () => this.onClick());
+
+                //
+                this.clickArea = new PIXI.Graphics();
+                this.clickArea.beginFill(0x3500FA, 0);
+                this.clickArea.drawPolygon(path);
+                this.clickArea.endFill();
+                this.sprite.addChild(this.clickArea);
+
+                coastlinePartsContainer.addChild(this.sprite);
+            }
+
+            showHitArea() {
+                this.clickArea.alpha = 1;
+            }
+
+            onClick() {
+                this.sprite.alpha = 1;
+                // props.setStreetData(this.data);
+            }
+        }
+        
+
         const preload = () => {
             const loader = new PIXI.Loader();
             for(let i=0, lth=mapAssets.length; i<lth; i++){
@@ -277,6 +360,22 @@ const Map = props => {
                 // create map
                 map['hkIsland'] = new Map(resources['hkIsland_diffuse'].texture);
                 map['hkIsland'].create();
+
+
+                for(let s=0, lth=data.streets.length; s<lth; s++){
+                    streets[s] = [];
+                    for(let i=0; i<data.streets[s].length; i++){
+                        const street = data.streets[s][i];
+                        streets[s][i] = new Marker(street);
+                        streets[s][i].create();
+                    }
+                }
+
+                for(let i=0, lth=data.coastlineParts.length; i<lth; i++){
+                    const parts = data.coastlineParts[i];
+                    coastlineParts[i] = new CoastlineParts(parts.pos, parts.image.name);
+                    coastlineParts[i].create();
+                }
 
             });
         }
@@ -294,57 +393,80 @@ const Map = props => {
             })
         }
 
-        const move = (idx = 0) => {
-            gsap.to(allMap, 1, {x:zoomedPos.x - (idx * (map['hkIsland'].image.width/(4-1))), y:zoomedPos.y, ease:'power3.inOut'});
+        const moveMap = (idx = 0) => {
+            gsap.to([mapContainer, markerContainer, coastlinePartsContainer], 1, {x:zoomedPos.x - (idx * (map['hkIsland'].image.width/(4-1))), y:zoomedPos.y, ease:'power3.inOut'});
+            // gsap.to('#markerOuterWrap', 1, {x:zoomedPos.x - (idx * (map['hkIsland'].image.width/(4-1))), y:zoomedPos.y, ease:'power3.inOut'});
         }
 
         const zoomInOut = (mode) => {
             if(mode === 'l'){
                 props.setZoomed(false);
-                gsap.to(allMap, 1, {x:0, y:0, ease:'power4.inOut'});
-                gsap.to(allMap.scale, 1, {x:1, y:1, ease:'power4.inOut'});
+                hideMarkers();
+                gsap.to(whiteBG, .6, {alpha:0, ease:'power1.inOut'});
+                gsap.to([mapContainer, markerContainer, coastlinePartsContainer], 1, {x:0, y:0, ease:'power4.inOut'});
+                gsap.to([mapContainer.scale, markerContainer.scale, coastlinePartsContainer.scale], 1, {x:1, y:1, ease:'power4.inOut'});
+                // gsap.to('#markerOuterWrap', 1.05, {force3D:true, x:0, y:0, scale:1, ease:'power4.inOut'});
             }
             else{
                 props.setZoomed(true);
                 props.setMapIndicatorIdx(0);
-                move();
-                gsap.to(allMap.scale, 1, {x:1.8, y:1.8, ease:'power3.inOut'});
+                moveMap();
+                showMarkers();
+                gsap.to(whiteBG, .6, {alpha:.5, ease:'power1.inOut'});
+                gsap.to([mapContainer.scale, markerContainer.scale, coastlinePartsContainer.scale], 1, {x:1.8, y:1.8, ease:'power3.inOut'});
+                // gsap.to('#markerOuterWrap', 1.01, {force3D:true, scale:1.8, ease:'power3.inOut'});
             }
         }
         props.handleZoom.current = {zoomInOut};
 
         const updateMapIndicatorIdx = (idx, zoomed) => {
-            if(zoomed)
-                move(idx);
+            if(zoomed){
+                moveMap(idx);
+                showMarkers(idx);
+            }
         }
         props.handleMove.current = {updateMapIndicatorIdx};
 
-        const changeCoastline = (idx) => {
-            for(let i=0;i<years.length; i++){
-                const v = {p: options.year[`y${years[i]}`]};
-                if(i === idx){
-                    gsap.to(v, 2, {p:1, delay:!showCoastline ? 0 : .8, ease:'power2.out',
-                        onUpdate:function(){
-                            options.year[`y${years[i]}`] = this._targets[0].p
-                        }
-                    });
-
-                    if(!showCoastline)
-                        showCoastline = true;
-                }
-                else{
-                    gsap.to(v, 2, {p:0, ease:'power4.out',
-                        onUpdate:function(){
-                            options.year[`y${years[i]}`] = this._targets[0].p
-                        }
-                    });
+        const selectCoastline = (idx) => {
+            const highlights = map['hkIsland'].highlight;
+            selectedHighlight = map['hkIsland'].highlight[idx];
+            for(let i=0; i<highlights.length; i++){
+                if(i !== idx){
+                    const highlight = highlights[i];
+                    gsap.to(highlight, .3, {alpha:0, ease:'power1.inOut'});
                 }
             }
+            gsap.to(selectedHighlight, .3, {alpha:1, ease:'power1.inOut'});
         }
-        props.handleChangeCoastline.current = {changeCoastline}
+        props.handleSelectCoastline.current = {selectCoastline}
+
+        const showCoastline = (idx) => {
+            for(let i=0;i<years.length; i++){
+                const v = {p: options.year[`y${years[i]}`]};
+                if(i <= idx){
+                    gsap.to(v, 4, {p:1, delay:!hasShownCoastline ? 0 : .8, ease:'power2.out',
+                        onUpdate:function(){
+                            options.year[`y${years[i]}`] = this._targets[0].p
+                        }
+                    });
+
+                    if(!hasShownCoastline)
+                        hasShownCoastline = true;
+                }
+                // else{
+                //     gsap.to(v, 2, {p:0, ease:'power4.out',
+                //         onUpdate:function(){
+                //             options.year[`y${years[i]}`] = this._targets[0].p
+                //         }
+                //     });
+                // }
+            }
+        }
+        props.handleShowCoastline.current = {showCoastline}
 
         const start = () => {
-            gsap.to(options, 1.6, {progress:1, ease:'power2.inOut'});
+            gsap.to(options, 4, {progress:1, ease:'power2.inOut'});
+            gsap.to(selectedHighlight, 1, {alpha:0, ease:'power1.inOut'});
         }
         props.handleStart.current = {start}
 

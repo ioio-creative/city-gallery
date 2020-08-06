@@ -1,1 +1,129 @@
-{}
+{
+    "mapAssets":[
+        {
+            "name": "hkIsland_diffuse",
+            "src": "./images/ex303/hkIsland_diffuse.svg"
+        },
+        {
+            "name": "hkIsland_start_diffuse",
+            "src": "./images/ex303/hkIsland_start_diffuse.svg"
+        },
+        {
+            "name": "hkIsland_old_diffuse",
+            "src": "./images/ex303/hkIsland_old_diffuse.svg"
+        },
+        {
+            "name": "hkIsland_mask",
+            "src": "./images/ex303/hkIsland_mask.svg"
+        },
+        {
+            "name": "hkIsland_coastline1900_mask",
+            "src": "./images/ex303/hkIsland_coastline1900_mask.svg"
+        },
+        {
+            "name": "hkIsland_coastline1945_mask",
+            "src": "./images/ex303/hkIsland_coastline1945_mask.svg"
+        },
+        {
+            "name": "hkIsland_coastline1985_mask",
+            "src": "./images/ex303/hkIsland_coastline1985_mask.svg"
+        },
+        {
+            "name": "hkIsland_coastline2019_mask",
+            "src": "./images/ex303/hkIsland_coastline2019_mask.svg"
+        },
+        {
+            "name": "hkIsland_coastline1900_highlight",
+            "src": "./images/ex303/hkIsland_coastline1900_highlight.svg"
+        },
+        {
+            "name": "hkIsland_coastline1945_highlight",
+            "src": "./images/ex303/hkIsland_coastline1945_highlight.svg"
+        },
+        {
+            "name": "hkIsland_coastline1985_highlight",
+            "src": "./images/ex303/hkIsland_coastline1985_highlight.svg"
+        },
+        {
+            "name": "hkIsland_coastline2019_highlight",
+            "src": "./images/ex303/hkIsland_coastline2019_highlight.svg"
+        },
+        {
+            "name": "sand",
+            "src": "./images/ex303/sand.png"
+        },
+        {
+            "name": "noise",
+            "src": "./images/ex303/noise.png"
+        },
+        {
+            "name": "noise2",
+            "src": "./images/ex303/noise2.png"
+        },
+        {
+            "name": "marker",
+            "src": "./images/ex303/marker.svg"
+        },
+        {
+            "name": "area",
+            "src": "./images/ex303/area.svg"
+        }
+    ],
+    "coastlineParts":[
+        {
+            "id": "",
+            "name": "第一期",
+            "image":{
+                "name": "area"
+            },
+            "pos":{
+                "x":1198,
+                "y":373
+            }
+        }
+    ],
+    "streets":[
+        [
+            {
+                "id": "_1",
+                "name": "中環",
+                "marker":{
+                    "x":995,
+                    "y":540
+                },
+                "image":{
+                    "src":"",
+                    "x":971,
+                    "y":483
+                },
+                "video":{
+                    "src":"",
+                    "thumbnail":{
+                        "src":""
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "id": "_2",
+                "name": "金鐘",
+                "marker":{
+                    "x":1251,
+                    "y":603
+                },
+                "image":{
+                    "src":"",
+                    "x":1471,
+                    "y":653
+                },
+                "video":{
+                    "src":"",
+                    "thumbnail":{
+                        "src":""
+                    }
+                }
+            }
+        ]
+    ]
+}
