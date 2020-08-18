@@ -324,7 +324,9 @@
                 span{
                     width:vw-calc(52);
                     height: vw-calc(36);
-                    background:#F53939;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size:contain;
                     margin:0 vw-calc(30);
                     box-shadow: 0 vw-calc(3 6) #00000029;
                     border-radius: vw-calc(3);
@@ -364,7 +366,15 @@
                     }
                 }
                 &#section1{
+                    #left{
+                        .wrap{
+                            padding-top:vw-calc(180);
+                        }
+                    }
                     #right{
+                        .wrap{
+                            padding-top:vw-calc(180);
+                        }
                         .dist{
                             right:vw-calc(104);
                         }
@@ -395,7 +405,7 @@
                     }
                     .dist{
                         position: absolute;
-                        bottom:vw-calc(180);
+                        bottom:vw-calc(150);
                         span{
                             height:vw-calc(10);
                             margin-left:vw-calc(15);
@@ -427,9 +437,12 @@
                 &#section2{
                     ul{
                         li{
-                            padding-top:vw-calc(18);
+                            padding-top:vw-calc(25);
                             &:first-child{
                                 padding-top:0;
+                            }
+                            &:nth-child(2){
+                                padding-top:vw-calc(15);
                             }
                             .medium{
                                 font-weight: bold;
@@ -665,6 +678,52 @@
                             }
                         }
                     }
+                    #left{
+                        .wrap{
+                            .imageWrap{
+                                #_1st{
+                                    .infos{
+                                        .name{
+                                            margin:0;
+                                        }
+                                        .ranking{
+                                            position: absolute;
+                                            top:0;
+                                            left:vw-calc(-20);
+                                            transform: translate3d(-100%,10%,0);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    #right{
+                        .wrap{
+                            .imageWrap{
+                                #_1st{
+                                    .infos{
+                                        top:auto;
+                                        bottom: calc(100% + #{vw-calc(100)});
+                                        left:0%;
+                                    }
+                                }
+                                #_2nd{
+                                    .infos{
+                                        top:auto;
+                                        bottom: calc(120%);
+                                        right:10%;
+                                    }
+                                }
+                                #_3rd{
+                                    .infos{
+                                        top:auto;
+                                        bottom: calc(105%);
+                                        left:0%;
+                                    }
+                                }
+                            }
+                        }
+                    }
                     .wrap{
                         .imageWrap{
                             width:100%;
@@ -672,7 +731,7 @@
                             position: absolute;
                             top:0;
                             left:0;
-                            padding-bottom: vw-calc(133);
+                            padding-bottom: vw-calc(180);
                             display: flex;
                             align-items: flex-end;
                             justify-content: center;
@@ -725,24 +784,27 @@
                                 }
                                 &#_1st{
                                     .infos{
-                                        top: vw-calc(-75);
-                                        left:140%;
+                                        top: vw-calc(-150);
+                                        left:120%;
                                         .height,
-                                        .floor{
+                                        .name{
                                             font-size:vw-calc(40);
-                                            line-height: vw-calc(48);
+                                            line-height: vw-calc(42);
                                         }
                                     }
                                 }
                                 &#_2nd{
                                     .infos{
-                                        top: vw-calc(-50);
+                                        top: vw-calc(-70);
                                         right:140%;
                                         text-align: right;
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: flex-end;
                                         .ranking{
-                                            right:vw-calc(-20);
-                                            left:auto;
-                                            transform: translate3d(100%,10%,0);
+                                            // right:vw-calc(-20);
+                                            // left:auto;
+                                            // transform: translate3d(100%,10%,0);
                                             font-size: vw-calc(16);
                                         }
                                     }
@@ -764,7 +826,7 @@
                                     transition: transform .8s cubic-bezier(0.165, 0.84, 0.44, 1);
                                 }
                                 .infos{
-                                    width:vw-calc(200);
+                                    width:vw-calc(350);
                                     position: absolute;
                                     text-align: left;
                                     opacity: 0;
@@ -783,20 +845,20 @@
                                         justify-content: center;
                                         padding-top: vw-calc(2);
                                         box-shadow: 0px vw-calc(3 6) #00000015;
-                                        position: absolute;
-                                        top:0;
-                                        left:vw-calc(-20);
-                                        transform: translate3d(-100%,10%,0);
                                     }
                                     .height,
-                                    .floor{
-                                        font-size:vw-calc(28);
+                                    .name{
+                                        font-size:vw-calc(30);
                                         line-height: vw-calc(36);
                                         color:#fff;
+                                        margin-top:vw-calc(10);
                                     }
-                                    .name{
-                                        font-size:vw-calc(16);
-                                        line-height:vw-calc(16);
+                                    .height{
+                                        margin-top:vw-calc(20);
+                                    }
+                                    .floor{
+                                        font-size:vw-calc(20);
+                                        line-height:vw-calc(20);
                                         margin-top:vw-calc(10);
                                         color:#222222;
                                     }
@@ -806,11 +868,19 @@
                     }
                 }
                 &#section4{
+                    #left{
+                        .wrap{
+                            .imageWrap{
+                                &:after{
+                                    background:#9CB9DB;
+                                }
+                            }
+                        }
+                    }
                     .wrap{
                         padding-top:vw-calc(200);
                         .big{
                             font-size:vw-calc(100);
-                            margin-top: vw-calc(17);
                         }
                         .imageWrap{
                             width:100%;
@@ -824,7 +894,7 @@
                                 content:'';
                                 width:100%;
                                 height:vw-calc(462);
-                                background:#BBC6D9;
+                                background:#86BABF;
                                 display: block;
                                 position: absolute;
                                 top:33%;
@@ -854,17 +924,27 @@
                     }
                 }
                 &#section5{
+                    #right{
+                        .wrap{
+                            &:after{
+                                background:url('./images/coinhouse2.svg') center no-repeat;
+                                background-size:100%;
+                                // top: 74%;
+                                // left: 58%;
+                            }
+                        }
+                    }
                     .wrap{
                         padding-top:vw-calc(190);
                         &:after{
                             content:'';
-                            width:vw-calc(306);
-                            height:vw-calc(331);
+                            width:vw-calc(873.934);
+                            height:vw-calc(821.86);
                             position: absolute;
-                            top:56.5%;
-                            left:50%;
+                            top: 74%;
+                            left: 58%;
                             z-index: 2;
-                            background:url('./images/house.svg') center no-repeat;
+                            background:url('./images/coinhouse.svg') center no-repeat;
                             background-size:100%;
                             transform: translate3d(-50%,-50%,0);
                             display: block;
@@ -876,7 +956,7 @@
                             }
                         }
                         .big:not(.title){
-                            margin-top:vw-calc(25);
+                            margin-top:vw-calc(10);
                         }
                         canvas{
                             width:100%;
@@ -958,9 +1038,9 @@
                         visibility: hidden;
                         transition: opacity .4s cubic-bezier(0.19, 1, 0.22, 1), visibility .4s cubic-bezier(0.19, 1, 0.22, 1);
                         .title{
-                            font-size:vw-calc(16);
+                            font-size:vw-calc(20);
                             &.big{
-                                font-size:vw-calc(21);
+                                font-size:vw-calc(25);
                                 font-weight: normal;
                             }
                         }
@@ -977,7 +1057,7 @@
                             font-size:vw-calc(18);
                             line-height: vw-calc(18);
                             position: absolute;
-                            bottom:vw-calc(55);
+                            bottom:vw-calc(100);
                         }
                     }
                 }

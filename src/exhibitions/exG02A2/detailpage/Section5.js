@@ -9,6 +9,10 @@ const Section5 = (props) => {
     const startFunc = useRef(null);
     const stopFunc = useRef(null);
 
+    const globalData = props.globalData;
+    const data = props.data;
+    const locationName = props.locationName;
+
     useEffect(()=>{
         const Coin = function(illo){
             const _this = this;
@@ -165,51 +169,53 @@ const Section5 = (props) => {
             rightCanvas.stop();
         }
         stopFunc.current = {stop}
-    },[])
+    },[locationName])
 
     useEffect(()=>{
-        if(props.detailIdx === 5){
-            startFunc.current.start(5, 20);
+        if(locationName){
+            if(props.detailIdx === 5){
+                startFunc.current.start(48915.89/1000 * .3, data[locationName].money.replace(',','')/1000 * .3);
+            }
+            else{
+                stopFunc.current.stop();
+            }
         }
-        else{
-            stopFunc.current.stop();
-        }
-    },[props.detailIdx])
+    },[props.detailIdx, locationName])
 
     return(
         <div id="section5" className={`section ${props.detailIdx === 5 ? 'active' : ''}`}>
             <div id="left" className="half">
                 <div className="wrap">
-                    <div className="title big">GDP per capita (nominal)</div>
-                    <div className="big">48,915.89USD</div>
+                    <div className="title big">{globalData && globalData.gdp}</div>
+                    <div className="big">{ data && data['hongkong'].money }</div>
                     <canvas ref={canvasLeft} id="leftCanvas" width="600" height="600"></canvas>
-                    <div className="coins">
+                    {/* <div className="coins">
                         {
                             [...Array(5)].map((v,i)=>{
                                 return <span key={i}></span>
                             })
                         }
-                    </div>
+                    </div> */}
                     <div className="source">
-                        Source:<br/>HK Census And Statistics Department Population 2018<br/>Hong Kong Geographic Data 2019
+                        {globalData && globalData.source}<br/><span dangerouslySetInnerHTML={{__html:data && data['hongkong'].source}}></span>
                     </div>
                 </div>
                 <div className="bg"><span></span></div>
             </div>
             <div id="right" className="half">
                 <div className="wrap">
-                    <div className="title big">GDP per capita (nominal)</div>
-                    <div className="big">74,266.31USD</div>
+                    <div className="title big">{globalData && globalData.gdp}</div>
+                    <div className="big">{ data && locationName && data[locationName].money }</div>
                     <canvas ref={canvasRight} id="rightCanvas" width="600" height="600"></canvas>
-                    <div className="coins">
+                    {/* <div className="coins">
                         {
                             [...Array(20)].map((v,i)=>{
                                 return <span key={i}></span>
                             })
                         }
-                    </div>
+                    </div> */}
                     <div className="source">
-                        Source:<br/>HK Census And Statistics Department Population 2018<br/>Hong Kong Geographic Data 2019
+                        {globalData && globalData.source}<br/><span dangerouslySetInnerHTML={{__html:data && locationName && data[locationName].source}}></span>
                     </div>
                 </div>
                 <div className="bg"><span></span></div>

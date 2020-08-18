@@ -8,6 +8,10 @@ const Section2 = props => {
     const startFunc = useRef(null);
     const stopFunc = useRef(null);
 
+    const globalData = props.globalData;
+    const data = props.data;
+    const locationName = props.locationName;
+
     useEffect(()=>{
         const leftStage = new PeoplesAnim(stageLeft.current);
         const rightStage = new PeoplesAnim(stageRight.current);
@@ -27,13 +31,15 @@ const Section2 = props => {
     },[])
 
     useEffect(()=>{
-        if(props.detailIdx === 2){
-            startFunc.current.start(20, 5);
+        if(locationName){
+            if(props.detailIdx === 2){
+                startFunc.current.start(6761/1000, data[locationName].populationDensity.value.replace(',','')/1000);
+            }
+            else{
+                stopFunc.current.stop();
+            }
         }
-        else{
-            stopFunc.current.stop();
-        }
-    },[props.detailIdx])
+    },[props.detailIdx,locationName])
 
     return(
         <div id={`section2`} className={`section ${props.detailIdx === 2 ? 'active' : ''}`}>
@@ -41,15 +47,15 @@ const Section2 = props => {
                 <div className="wrap">
                     <ul>
                         <li>
-                            <div className="title big">Population Density (/km<sup>2</sup>)</div>
+                            <div className="title big" dangerouslySetInnerHTML={{__html:globalData && globalData.populationDensity}}></div>
                             <div className="big">6,761.34</div>
                         </li>
                         <li>
-                            <div className="title">Population</div>
+                            <div className="title">{globalData && globalData.population}</div>
                             <div className="medium">7,482,500</div>
                         </li>
                         <li>
-                            <div className="title">Land Area (km<sup>2</sup>)</div>
+                            <div className="title" dangerouslySetInnerHTML={{__html:globalData && globalData.landArea}}></div>
                             <div className="medium">1,106.66</div>
                         </li>
                     </ul>
@@ -59,7 +65,7 @@ const Section2 = props => {
                                 <span><span></span></span>
                             </div>
                         </div>
-                        <p>500/km<sup>2</sup></p>
+                        <p dangerouslySetInnerHTML={{__html:data && data.distance}}></p>
                     </div>
                     <div className="imageWrap">
                         <div className="stageWrap">
@@ -67,7 +73,7 @@ const Section2 = props => {
                         </div>
                     </div>
                     <div className="source">
-                        Source:<br/>HK Census And Statistics Department Population 2018<br/>Hong Kong Geographic Data 2019
+                        {globalData && globalData.source}<br/><span dangerouslySetInnerHTML={{__html:data && data['hongkong'].source}}></span>
                     </div>
                 </div>
                 <div className="bg"><span></span></div>
@@ -76,16 +82,16 @@ const Section2 = props => {
                 <div className="wrap">
                     <ul>
                         <li>
-                            <div className="title big">Population Density (/km<sup>2</sup>)</div>
-                            <div className="big">14,568.96</div>
+                            <div className="title big" dangerouslySetInnerHTML={{__html:globalData && globalData.populationDensity}}></div>
+                            <div className="big">{data && locationName && data[locationName].populationDensity.value}</div>
                         </li>
                         <li>
-                            <div className="title">Population</div>
-                            <div className="medium">9,143,041</div>
+                            <div className="title">{globalData && globalData.population}</div>
+                            <div className="medium">{data && locationName && data[locationName].population.value}</div>
                         </li>
                         <li>
-                            <div className="title">Land Area (km<sup>2</sup>)</div>
-                            <div className="medium">627.57</div>
+                            <div className="title" dangerouslySetInnerHTML={{__html:globalData && globalData.landArea}}></div>
+                            <div className="medium">{data && locationName && data[locationName].landArea.value}</div>
                         </li>
                     </ul>
                     <div className="unit">
@@ -94,7 +100,7 @@ const Section2 = props => {
                                 <span><span></span></span>
                             </div>
                         </div>
-                        <p>500/km<sup>2</sup></p>
+                        <p dangerouslySetInnerHTML={{__html:data && data.distance}}></p>
                     </div>
                     <div className="imageWrap">
                         <div className="stageWrap">
@@ -102,7 +108,7 @@ const Section2 = props => {
                         </div>
                     </div>
                     <div className="source">
-                        Source:<br/>HK Census And Statistics Department Population 2018<br/>Hong Kong Geographic Data 2019
+                        {globalData && globalData.source}<br/><span dangerouslySetInnerHTML={{__html: data && locationName && data[locationName].source}}></span>
                     </div>
                 </div>
                 <div className="bg"><span></span></div>

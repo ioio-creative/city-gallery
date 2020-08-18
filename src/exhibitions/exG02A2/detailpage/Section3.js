@@ -1,54 +1,47 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef} from 'react'
+import gsap from 'gsap'
 
-import building1 from '../images/building1.png';
-import building2 from '../images/building2.png';
-import building3 from '../images/building3.png';
-import building4 from '../images/building4.png';
-import building5 from '../images/building5.png';
-import building6 from '../images/building6.png';
+// import building1 from './images/exG02a/section3/hongkong1st.svg';
+// import building2 from './images/exG02a/section3/hongkon2nd.svg';
+// import building3 from './images/exG02a/section3/hongkong3rd.svg';
+// import building4 from '../images/building4.png';
+// import building5 from '../images/building5.png';
+// import building6 from '../images/building6.png';
 
 const Section3 = props => {
     const startFunc = useRef(null);
     const stopFunc = useRef(null);
 
+    const globalData = props.globalData;
+    const data = props.data;
+    const locationName = props.locationName;
+
     useEffect(()=>{
-        const loadImage = () => {
-            const images = document.querySelectorAll('#section3 img');
-            for(let i=0; i<images.length; i++){
-                const img = images[i];
-                const src = img.getAttribute('data-src');
-                const _img = new Image();
+        if(locationName !== null){
+            gsap.set('#section3 img', {'height':0});
 
-                _img.onload = function(){
-                    img.style.height = this.height / 2 / 1920 * 100 + 'vw';
+            const loadImage = () => {
+                const images = document.querySelectorAll('#section3 img');
+                for(let i=0; i<images.length; i++){
+                    const img = images[i];
+                    const src = img.getAttribute('data-src');
+                    const _img = new Image();
+
+                    _img.onload = function(){
+                        img.style.height = this.height / 1920 * 100 + 'vw';
+                    }
+                    _img.src = src;
+                    img.src = src;
                 }
-                _img.src = src;
-                img.src = src;
             }
+            loadImage();
         }
-        loadImage();
 
-        const start = () => {
-        }
-        startFunc.current = {start};
-
-        const stop = () => {
-        }
-        stopFunc.current = {stop}
-    },[]);
+    },[locationName]);
     
     // load image after changed location
-    useEffect(()=>{
-    },[])
-    
-    useEffect(()=>{
-        if(props.detailIdx === 4){
-            startFunc.current.start();
-        }
-        else{
-            stopFunc.current.stop();
-        }
-    },[props.detailIdx])
+    // useEffect(()=>{
+    // },[])
 
     return (
         <div id="section3" className={`section ${props.detailIdx === 3 ? 'active' : ''}`}>
@@ -58,36 +51,36 @@ const Section3 = props => {
                         <div id="_2nd" className="building rectangle">
                             <div className="infos">
                                 <div className="ranking">2nd</div>
-                                <div className="height">416m</div>
-                                <div className="floor">88 Floors</div>
-                                <div className="name">Two International<br/>Finance Centre</div>
+                                <div className="name">{data && locationName && data['hongkong'].building[1].name}</div>
+                                <div className="height">{data && locationName && data['hongkong'].building[1].height}</div>
+                                <div className="floor">{data && locationName && data['hongkong'].building[1].floor}</div>
                             </div>
-                            <img src="" data-src={building2} />
+                            <img src="" data-src={'./images/exG02a/section3/hongkong2nd.svg'} />
                             <div className="shadow"></div>
                         </div>
                         <div id="_1st" className="building rectangle">
                             <div className="infos">
                                 <div className="ranking">1st</div>
-                                <div className="height">484m</div>
-                                <div className="floor">118 Floors</div>
-                                <div className="name">International Commerce Centre</div>
+                                <div className="name">{data && locationName && data['hongkong'].building[0].name}</div>
+                                <div className="height">{data && locationName && data['hongkong'].building[0].height}</div>
+                                <div className="floor">{data && locationName && data['hongkong'].building[0].floor}</div>
                             </div>
-                            <img src="" data-src={building1} />
+                            <img src="" data-src={'./images/exG02a/section3/hongkong1st.svg'} />
                             <div className="shadow"></div>
                         </div>
                         <div id="_3rd" className="building rectangle">
                             <div className="infos">
                                 <div className="ranking">3rd</div>
-                                <div className="height">374m</div>
-                                <div className="floor">78 Floors</div>
-                                <div className="name">Central Plaza</div>
+                                <div className="name">{data && locationName && data['hongkong'].building[2].name}</div>
+                                <div className="height">{data && locationName && data['hongkong'].building[2].height}</div>
+                                <div className="floor">{data && locationName && data['hongkong'].building[2].floor}</div>
                             </div>
-                            <img src="" data-src={building3} />
+                            <img src="" data-src={'./images/exG02a/section3/hongkong3rd.svg'} />
                             <div className="shadow"></div>
                         </div>
                     </div>
                     <div className="source">
-                        Source: <br/>Emporis
+                        {globalData && globalData.source}<br/><span dangerouslySetInnerHTML={{__html:data && data['hongkong'].source}}></span>
                     </div>
                 </div>
                 <div className="bg"><span></span></div>
@@ -95,39 +88,39 @@ const Section3 = props => {
             <div id="right" className="half">
                 <div className="wrap">
                     <div className="imageWrap">
-                        <div id="_2nd" className="building triangle">
+                        <div id="_2nd" className="building rectangle">
                             <div className="infos">
                                 <div className="ranking">2nd</div>
-                                <div className="height">333m</div>
-                                <div className="floor">7 Floors</div>
-                                <div className="name">Tokyo Tower</div>
+                                <div className="name">{data && locationName && data[locationName].building[1].name}</div>
+                                <div className="height">{data && locationName && data[locationName].building[1].height}</div>
+                                <div className="floor">{data && locationName && data[locationName].building[1].floor}</div>
                             </div>
-                            <img src="" data-src={building5} />
+                            <img src="" data-src={`./images/exG02a/section3/${locationName}2nd.svg`} />
                             <div className="shadow"></div>
                         </div>
-                        <div id="_1st" className="building triangle">
+                        <div id="_1st" className="building rectangle">
                             <div className="infos">
                                 <div className="ranking">1st</div>
-                                <div className="height">634m</div>
-                                <div className="floor">52 Floors</div>
-                                <div className="name">Tokyo Skytree</div>
+                                <div className="name">{data && locationName && data[locationName].building[0].name}</div>
+                                <div className="height">{data && locationName && data[locationName].building[0].height}</div>
+                                <div className="floor">{data && locationName && data[locationName].building[0].floor}</div>
                             </div>
-                            <img src="" data-src={building4} />
+                            <img src="" data-src={`./images/exG02a/section3/${locationName}1st.svg`} />
                             <div className="shadow"></div>
                         </div>
                         <div id="_3rd" className="building rectangle">
                             <div className="infos">
                                 <div className="ranking">3rd</div>
-                                <div className="height">255m</div>
-                                <div className="floor">52 Floors</div>
-                                <div className="name">Toranomon Hills</div>
+                                <div className="name">{data && locationName && data[locationName].building[2].name}</div>
+                                <div className="height">{data && locationName && data[locationName].building[2].height}</div>
+                                <div className="floor">{data && locationName && data[locationName].building[2].floor}</div>
                             </div>
-                            <img src="" data-src={building6} />
+                            <img src="" data-src={`./images/exG02a/section3/${locationName}3rd.svg`} />
                             <div className="shadow"></div>
                         </div>
                     </div>
                     <div className="source">
-                        Source:<br/> Emporis
+                        {globalData && globalData.source}<br/><span dangerouslySetInnerHTML={{__html: data && locationName && data[locationName].source}}></span>
                     </div>
                 </div>
                 <div className="bg"><span></span></div>

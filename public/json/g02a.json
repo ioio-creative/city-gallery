@@ -15,28 +15,256 @@
         "en":{
             "global":{
                 "selectCity":"Select a City",
-                "hk":"Hong Kong"
+                "scrollDown":"Scroll Down",
+                "source":"Source: ",
+                "populationDensity":"Population Density (/km<sup>2</sup>)",
+                "population":"Population",
+                "landArea":"Land Area (km<sup>2</sup>)",
+                "dailyTrips":"Percentage of Daily Trips <br/>by Public Transport",
+                "gdp":"GDP per capita (nominal)",
+                "usd":"USD"
             },
             "menu":[
                 "Urban Form",
-                "population density",
-                "tallest buildings",
-                "transportation",
+                "Population Density",
+                "Tallest Buildings",
+                "Transportation",
                 "GDP"
-            ]
+            ],
+            "section1":{
+                "populationArea":"Population Area",
+                "distance":"5km",
+                "source":"(Source Holder)",
+                "images":{
+                    "hongkong":{ "src":"./images/exG02a/section1/hongkong.svg" },
+                    "tokyo":{ "src":"./images/exG02a/section1/tokyo.svg" },
+                    "taiwan":{ "src":"./images/exG02a/section1/hongkong.svg" }
+                }
+            },
+            "section2":{
+                "distance":"5/km<sup>2</sup>",
+                "hongkong":{
+                    "source":"HK Census And Statistics Department Population 2018<br/>Hong Kong Geographic Data 2019"
+                },
+                "tokyo":{
+                    "populationDensity":{ "value":"14,568.96" },
+                    "population":{ "value":"9,143,041" },
+                    "landArea":{ "value":"627.57" },
+                    "source":"TOKYO STATISTICAL YEARBOOK 2017 - Population By District (xls)"
+                }
+            },
+            "section3":{
+                "hongkong":{
+                    "building":[
+                        {
+                            "name":"環球貿易廣場",
+                            "height":"484米",
+                            "floor":"118 層"
+                        },
+                        {
+                            "name":"國際金融中心二期",
+                            "height":"416米",
+                            "floor":"88 層"
+                        },
+                        {
+                            "name":"中環廣場",
+                            "height":"374米",
+                            "floor":"78 層"
+                        }
+                    ],
+                    "source":"Emporis地產資料庫"
+                },
+                "tokyo":{
+                    "building":[
+                        {
+                            "name":"虎之門之丘",
+                            "height":"255米",
+                            "floor":"52 層"
+                        },
+                        {
+                            "name":"中城塔",
+                            "height":"248米",
+                            "floor":"54 層"
+                        },
+                        {
+                            "name":"東京都廳第一本廳舍",
+                            "height":"243米",
+                            "floor":"48 層"
+                        }
+                    ],
+                    "source":"Emporis地產資料庫"
+                }
+            },
+            "section4":{
+                "hongkong":{
+                    "percentage":"88",
+                    "source":"The 2019 Deloitte City Mobility Index"
+                },
+                "tokyo":{
+                    "percentage":"10",
+                    "source":"Land Transport Authority Of Singapore In <br/>November 2014"
+                }
+            },
+            "section5":{
+                "hongkong":{
+                    "money":"48,915.89",
+                    "source":"Table 030 - Gross Domestic Product <br/>(GDP), Implicit Price Deflator Of GDP And <br/>Per Capita GDP"
+                },
+                "tokyo":{
+                    "money":"74,266.31",
+                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                }
+            }
         },
         "tc":{
             "global":{
                 "selectCity":"選擇城市",
-                "hk":"香港"
+                "scrollDown":"滾動以選取城市",
+                "source":"參考 : ",
+                "populationDensity":"城市人口密度（/平方公里<sup>2</sup>）",
+                "population":"人口",
+                "landArea":"陸地面積（平方公里<sup>2</sup>）",
+                "dailyTrips":"公共運輸每日乘搭比率",
+                "gdp":"人均本地生產總值（當時市價）",
+                "usd":"美元"
             },
             "menu":[
-                "城市形態",
-                "人口密度",
-                "最高建築物",
-                "運輸",
-                "國內生產總值"
-            ]
+                "城市型態",
+                "城市人口密度",
+                "最高大樓",
+                "交通",
+                "本地生產總值"
+            ],
+            "section1":{
+                "populationArea":"建設面積",
+                "distance":"5公里",
+                "source":"(Source Holder)",
+                "images":{
+                    "hongkong":{ "src":"./images/exG02a/section1/hongkong.svg" },
+                    "tokyo":{ "src":"./images/exG02a/section1/tokyo.svg" },
+                    "taiwan":{ "src":"./images/exG02a/section1/hongkong.svg" }
+                }
+            },
+            "section2":{
+                "distance":"500/公里<sup>2</sup>",
+                "hongkong":{
+                    "source":"香港政府統計處人口2018<br/>香港地理數據2019"
+                },
+                "tokyo":{
+                    "populationDensity":{ "value":"14,568.96" },
+                    "population":{ "value":"9,143,041" },
+                    "landArea":{ "value":"627.57" },
+                    "source":"東京都の統計 2017 - 地區人口"
+                },
+                "taiwan":{
+                    "populationDensity":{ "value":"4,568.96" },
+                    "population":{ "value":"1,143,041" },
+                    "landArea":{ "value":"627.57" },
+                    "source":"東京都の統計 2017 - 地區人口"
+                }
+            },
+            "section3":{
+                "hongkong":{
+                    "building":[
+                        {
+                            "name":"環球貿易廣場",
+                            "height":"484米",
+                            "floor":"118 層"
+                        },
+                        {
+                            "name":"國際金融中心二期",
+                            "height":"416米",
+                            "floor":"88 層"
+                        },
+                        {
+                            "name":"中環廣場",
+                            "height":"374米",
+                            "floor":"78 層"
+                        }
+                    ],
+                    "source":"Emporis地產資料庫"
+                },
+                "tokyo":{
+                    "building":[
+                        {
+                            "name":"虎之門之丘",
+                            "height":"255米",
+                            "floor":"52 層"
+                        },
+                        {
+                            "name":"中城塔",
+                            "height":"248米",
+                            "floor":"54 層"
+                        },
+                        {
+                            "name":"東京都廳第一本廳舍",
+                            "height":"243米",
+                            "floor":"48 層"
+                        }
+                    ],
+                    "source":"Emporis地產資料庫"
+                },
+                "taiwan":{
+                    "building":[
+                        {
+                            "name":"虎之門之丘",
+                            "height":"255米",
+                            "floor":"52 層"
+                        },
+                        {
+                            "name":"中城塔",
+                            "height":"248米",
+                            "floor":"54 層"
+                        },
+                        {
+                            "name":"東京都廳第一本廳舍",
+                            "height":"243米",
+                            "floor":"48 層"
+                        }
+                    ],
+                    "source":"Emporis地產資料庫"
+                }
+            },
+            "section4":{
+                "hongkong":{
+                    "percentage":"88",
+                    "carimages":[
+                        "./images/exG02a/section4/hongkongcar1.svg",
+                        "./images/exG02a/section4/hongkongcar2.svg",
+                        "./images/exG02a/section4/hongkongcar3.svg"
+                    ],
+                    "source":"2019年德勤城市流動性指數"
+                },
+                "tokyo":{
+                    "percentage":"50",
+                    "carimages":[
+                        "./images/exG02a/section4/tokyocar1.svg",
+                        "./images/exG02a/section4/tokyocar2.svg"
+                    ],
+                    "source":"2014 新加坡陸路運輸管理局"
+                },
+                "taiwan":{
+                    "percentage":"10",
+                    "carimages":[
+                        "./images/exG02a/section4/hongkongcar1.svg"
+                    ],
+                    "source":"2014 新加坡陸路運輸管理局"
+                }
+            },
+            "section5":{
+                "hongkong":{
+                    "money":"48,915.89",
+                    "source":"Table 030 - Gross Domestic Product <br/> (GDP), Implicit Price Deflator Of GDP And<br/> Per Capita GDP"
+                },
+                "tokyo":{
+                    "money":"74,266.31",
+                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                },
+                "taiwan":{
+                    "money":"4,266.31",
+                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                }
+            }
         }
     }
 }

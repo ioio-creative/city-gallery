@@ -11,7 +11,7 @@ import earthBumpMap from './images/earth/8081_earthbump4k.jpg';
 import earthSpecularMap from './images/earth/8081_earthspec4k.jpg';
 import earthNormalMap from './images/earth/earth_normalmap4k.jpg';
 import cloudObj from './low_poly_cloud.obj';
-import hkImage from './images/hk.png';
+// import hkImage from './images/hk.png';
 
 import Section1 from './detailpage/Section1';
 import Section2 from './detailpage/Section2';
@@ -33,14 +33,14 @@ const App = props => {
     const locationsWrapElem = useRef(null);
     const locationsElem = useRef(null);
     const locations = [
-        { name:'Hong Kong', lat:22.377720, lon:114.155267 },
-        { name:'Japan', lat:36.343782, lon:138.695725 },
-        { name:'Taiwan', lat:23.888775, lon:120.989626 },
-        { name:'Korea', lat:36.578477, lon:128.079916 },
-        { name:'USA', lat:39.956661, lon:-98.027880 },
-        { name:'France', lat:46.1385598, lon:-2.4472232 },
-        { name:'Australia', lat:-24.495995, lon:134.599090 },
-        { name:'Brasil', lat:-10.871609, lon:-50.468879 }
+        { name:{"en":"Hong Kong", "tc":"香港"}, lat:22.377720, lon:114.155267 },
+        { name:{"en":"Tokyo", "tc":"東京"}, lat:36.343782, lon:138.695725 },
+        { name:{"en":"Taiwan", "tc":"台灣"}, lat:23.888775, lon:120.989626 },
+        { name:{"en":"Korea", "tc":"韓國"}, lat:36.578477, lon:128.079916 },
+        { name:{"en":'USA', "tc":"美國"}, lat:39.956661, lon:-98.027880 },
+        { name:{"en":'France', "tc":"法國"}, lat:46.1385598, lon:-2.4472232 },
+        { name:{"en":'Australia', "tc":"澳洲"}, lat:-24.495995, lon:134.599090 },
+        { name:{"en":'Brasil', "tc":"巴西"}, lat:-10.871609, lon:-50.468879 }
     ]
     // const moveToFunc = useRef(null);
     const moveFromIdFunc = useRef(null);
@@ -1135,7 +1135,7 @@ const App = props => {
                 <div onClick={()=>onChangeLang('tc')}>繁體中文</div>
             </div>
             <div id="locationSelector">
-                <div id="hk" className="sameWidth big">{data && data.global.hk}</div>
+                <div id="hk" className="sameWidth big">{locations[0].name[language]}</div>
                 <div id="line"></div>
                 <div id="selector" className="sameWidth">
                     <div id="selectCity" className="big">{data && data.global.selectCity}</div>
@@ -1146,7 +1146,7 @@ const App = props => {
                                 locations.map((value, idx)=>{
                                     return(
                                         idx !== 0 ?
-                                            <li key={idx} className={selectedId === idx?'active':''} onClick={()=>{selectLocation(idx)}}><span>{value.name}</span></li>
+                                            <li key={idx} className={selectedId === idx?'active':''} onClick={()=>{selectLocation(idx)}}><span>{value.name[language]}</span></li>
                                         :
                                             false
                                     )
@@ -1157,7 +1157,7 @@ const App = props => {
                         <div id="scroll">
                             <div id="index"><span>{scrolledDetailIdx < 10 ? `0${scrolledDetailIdx}` : scrolledDetailIdx}</span>/10</div>
                             <span></span>
-                            <p>Scroll Down</p>
+                            <p>{data && data.global.scrollDown}</p>
                         </div>
                     </div>
                 </div>
@@ -1167,28 +1167,34 @@ const App = props => {
                     <div id="opening" className={`section ${detailIdx === 0 ? 'active' : ''}`}>
                         <div id="left" className="half">
                             <div className="wrap">
-                                <span className="name">Hong Kong</span>
-                                <div className="img" style={{backgroundImage:`url(${hkImage})`}}></div>
+                                <span className="name">{locations[0].name[language]}</span>
+                                <div className="img" style={{backgroundImage:`url(./images/exG02a/hongkongbg.png)`}}></div>
                             </div>
                             <div className="bg"><span></span></div>
                         </div>
                         <div id="right" className="half">
                             <div className="wrap">
-                                <span className="name">{selectedId && locations[selectedId].name}</span>
-                                <div className="img" style={{backgroundImage:`url(${hkImage})`}}></div>
+                                <span className="name">{selectedId && locations[selectedId].name[language]}</span>
+                                <div className="img" style={{backgroundImage:`url(./images/exG02a/${selectedId && locations[selectedId].name['en'].replace(' ','').toLowerCase()}bg.png)`}}></div>
                             </div>
                             <div className="bg"><span></span></div>
                         </div>
                     </div>
 
-                    <div className={`locationName left ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}>HONG KONG<span></span></div>
-                    <div className={`locationName right ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}><span></span>{selectedId && locations[selectedId].name}</div>
+                    <div className={`locationName left ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}>
+                        {locations[0].name[language]}
+                        <span style={{backgroundImage:`url(./images/exG02a/hongkongflag.svg)`}}></span>
+                    </div>
+                    <div className={`locationName right ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}>
+                        <span style={{backgroundImage:`url(./images/exG02a/${selectedId && locations[selectedId].name['en'].replace(' ','').toLowerCase()}flag.svg)`}}></span>
+                        {selectedId && locations[selectedId].name[language]}
+                    </div>
                     
-                    <Section1 detailIdx={detailIdx} location={selectedId && locations[selectedId].name} />
-                    <Section2 detailIdx={detailIdx} location={selectedId && locations[selectedId].name} />
-                    <Section3 detailIdx={detailIdx} location={selectedId && locations[selectedId].name} />
-                    <Section4 detailIdx={detailIdx} location={selectedId && locations[selectedId].name} />
-                    <Section5 detailIdx={detailIdx} location={selectedId && locations[selectedId].name} />
+                    <Section1 data={data && data.section1} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ','').toLowerCase()} />
+                    <Section2 data={data && data.section2} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ','').toLowerCase()} />
+                    <Section3 data={data && data.section3} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ','').toLowerCase()} />
+                    <Section4 data={data && data.section4} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ','').toLowerCase()} />
+                    <Section5 data={data && data.section5} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ','').toLowerCase()} />
                     
                 </div>
                 <div id="nav">
