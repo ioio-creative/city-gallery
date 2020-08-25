@@ -11,149 +11,696 @@
   ],
   "contents": {
     "en":{
+      "global": {
+        "dragHints": "<b>DRAG</b> to discover more cities",
+        "dragMore":"Drag to explore more",
+        "clickHints": "CLICK to see the details",
+        "exploreHints": "Discover more cities"
+      },
       "cities": [
         {
-          "name": "Habour Regeneration",
-          "location": "Hamburg"
+          "name": "Harbour Regeneration ",
+          "location": "Hamburg",
+          "image":{
+            "src":"./images/exG02b/hamburg.svg"
+          },
+          "description": "Do you know how many bridges there are in Germany's second largest city Hamburg? Some people say that it possesses the largest number in the world, approximately 2,500! It turns out that Hamburg has been an important port in Europe since the 14th century. There are thousands of bridges across the canal, carrying railways and connecting warehouses. The port area has developed into a city within a city across the river from the city center.",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            }
+          ]
+        },
+        {
+          "name": "Jungle Beyond Concrete",
+          "location": "Hong Kong",
+          "image":{
+            "src":"./images/exG02b/hongkong.png"
+          },
+          "description": "Do you know how many bridges there are in Germany's second largest city Hamburg? Some people say that it possesses the largest number in the world, approximately 2,500! It turns out that Hamburg has been an important port in Europe since the 14th century. There are thousands of bridges across the canal, carrying railways and connecting warehouses. The port area has developed into a city within a city across the river from the city center.",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            }
+          ]
+        },
+        {
+          "name": "Landmark Sewage",
+          "location": "Seoul",
+          "image":{
+            "src":"./images/exG02b/seoul.png"
+          },
+          "description": "Do you know how many bridges there are in Germany's second largest city Hamburg? Some people say that it possesses the largest number in the world, approximately 2,500! It turns out that Hamburg has been an important port in Europe since the 14th century. There are thousands of bridges across the canal, carrying railways and connecting warehouses. The port area has developed into a city within a city across the river from the city center.",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            }
+          ]
+        },
+        {
+          "name": "Gallery Underground",
+          "location": "Helsinki",
+          "image":{
+            "src":"./images/exG02b/helsinki.png"
+          },
+          "description": "Do you know how many bridges there are in Germany's second largest city Hamburg? Some people say that it possesses the largest number in the world, approximately 2,500! It turns out that Hamburg has been an important port in Europe since the 14th century. There are thousands of bridges across the canal, carrying railways and connecting warehouses. The port area has developed into a city within a city across the river from the city center.",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            }
+          ]
+        },
+        {
+          "name": "Green Tracks in the Sky ",
+          "location": "New York",
+          "image":{
+            "src":"./images/exG02b/newyork.png"
+          },
+          "description": "Do you know how many bridges there are in Germany's second largest city Hamburg? Some people say that it possesses the largest number in the world, approximately 2,500! It turns out that Hamburg has been an important port in Europe since the 14th century. There are thousands of bridges across the canal, carrying railways and connecting warehouses. The port area has developed into a city within a city across the river from the city center.",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            }
+          ]
+        },
+        {
+          "name": "Street as Playground",
+          "location": "Barcelona",
+          "image":{
+            "src":"./images/exG02b/barcelona.png"
+          },
+          "description": "Do you know how many bridges there are in Germany's second largest city Hamburg? Some people say that it possesses the largest number in the world, approximately 2,500! It turns out that Hamburg has been an important port in Europe since the 14th century. There are thousands of bridges across the canal, carrying railways and connecting warehouses. The port area has developed into a city within a city across the river from the city center.",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            }
+          ]
+        },
+        {
+          "name": "Floating Farm",
+          "location": "Rotterdam",
+          "image":{
+            "src":"./images/exG02b/rotterdam.png"
+          },
+          "description": "Do you know how many bridges there are in Germany's second largest city Hamburg? Some people say that it possesses the largest number in the world, approximately 2,500! It turns out that Hamburg has been an important port in Europe since the 14th century. There are thousands of bridges across the canal, carrying railways and connecting warehouses. The port area has developed into a city within a city across the river from the city center.",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            }
+          ]
+        },
+        {
+          "name": "Invisible Power Plant in Lake",
+          "location": "Huainan",
+          "image":{
+            "src":"./images/exG02b/huainan.png"
+          },
+          "description": "Do you know how many bridges there are in Germany's second largest city Hamburg? Some people say that it possesses the largest number in the world, approximately 2,500! It turns out that Hamburg has been an important port in Europe since the 14th century. There are thousands of bridges across the canal, carrying railways and connecting warehouses. The port area has developed into a city within a city across the river from the city center.",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            }
+          ]
         },
         {
           "name": "City of Cycling",
-          "location": "Copenhagen"
-        },
-        {
-          "name": "Safefy Harbour 2",
-          "location": "Flarido 2"
-        },
-        {
-          "name": "Safefy Harbour 3",
-          "location": "Flarido 3"
-        },
-        {
-          "name": "Safefy Harbour 4",
-          "location": "Flarido 4"
-        },
-        {
-          "name": "Safefy Harbour 5",
-          "location": "Flarido 5"
-        },
-        {
-          "name": "Safefy Harbour 6",
-          "location": "Flarido 6"
-        },
-        {
-          "name": "Safefy Harbour 7",
-          "location": "Flarido 7"
-        },
-        {
-          "name": "Safefy Harbour 8",
-          "location": "Flarido 8"
+          "location": "Copenhagen",
+          "image":{
+            "src":"./images/exG02b/copenhagen.png"
+          },
+          "description": "Do you know how many bridges there are in Germany's second largest city Hamburg? Some people say that it possesses the largest number in the world, approximately 2,500! It turns out that Hamburg has been an important port in Europe since the 14th century. There are thousands of bridges across the canal, carrying railways and connecting warehouses. The port area has developed into a city within a city across the river from the city center.",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            }
+          ]
         },
         {
           "name": "Safefy Harbour 9",
-          "location": "Flarido 9"
+          "location": "Flarido 9",
+          "image":{
+            "src":"./images/exG02b/copenhagen.png"
+          },
+          "description": "Do you know how many bridges there are in Germany's second largest city Hamburg? Some people say that it possesses the largest number in the world, approximately 2,500! It turns out that Hamburg has been an important port in Europe since the 14th century. There are thousands of bridges across the canal, carrying railways and connecting warehouses. The port area has developed into a city within a city across the river from the city center.",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            }
+          ]
         },
         {
           "name": "Safefy Harbour 10",
-          "location": "Flarido 10"
+          "location": "Flarido 10",
+          "image":{
+            "src":"./images/exG02b/copenhagen.png"
+          },
+          "description": "Do you know how many bridges there are in Germany's second largest city Hamburg? Some people say that it possesses the largest number in the world, approximately 2,500! It turns out that Hamburg has been an important port in Europe since the 14th century. There are thousands of bridges across the canal, carrying railways and connecting warehouses. The port area has developed into a city within a city across the river from the city center.",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            }
+          ]
         },
         {
-          "name": "Safefy Harbour 11",
-          "location": "Flarido 11"
+          "name": "Street as Playground",
+          "location": "Barcelona",
+          "image":{
+            "src":"./images/exG02b/barcelona.png"
+          },
+          "description": "Do you know how many bridges there are in Germany's second largest city Hamburg? Some people say that it possesses the largest number in the world, approximately 2,500! It turns out that Hamburg has been an important port in Europe since the 14th century. There are thousands of bridges across the canal, carrying railways and connecting warehouses. The port area has developed into a city within a city across the river from the city center.",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "With the advent of the free trade era in the EU, the halo of free ports was gone, followed by the fall of the shipping industry, leaving the lost memory of this “city in the city”. Aiming to transform Hamburg, a 25-year urban renewal program called “Hafen City” was launched in 1997. "
+              }
+            }
+          ]
         }
-      ],
-      "ui": {
-        "dragHints": "<b>DRAG</b> to discover more cities",
-        "clickHints": "CLICK to see the details",
-        "exploreHints": "Explor other cities"
-      }
+      ]
     },
     "zh": {
+      "global": {
+        "dragHints": "<b>拖曳</b>畫面探索更多城市",
+        "dragMore":"拖曳畫面探索更多",
+        "clickHints": "按下查看詳細資料",
+        "exploreHints": "探索更多城市"
+      },
       "cities": [
         {
           "name": "城市港口大改造",
           "location": "漢堡",
+          "image":{
+            "src":"./images/exG02b/hamburg.svg"
+          },
           "description": "你知道德國第二大城市漢堡有多少條橋嗎？有人說是全世界最多，約二千五百條！原來漢堡從十四世紀開始便是歐洲的重要港口，有大大小小的橋橫跨運河、承載鐵路，連接倉庫，港口區發展為與市中心隔河相望的城中城。",
           "detailBlocks": [
             {
-              "type": "text",
-              "content": "佛羅里達州是美國本土最南端的一個州，亦屬於墨西哥灣沿岸地區，是美國人口第三多的州，為著名的避寒聖地。中文俗稱為佛州，佛羅里達。"
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
             },
             {
-              "type": "image",
-              "content": {
-                "src": "img01.png",
-                "caption": "佛羅里達州是美國本土最南端的一個州，亦屬於墨西哥灣沿岸地區，是美國人口第三多的州，為著名的避寒聖地。中文俗稱為佛州，佛羅里達。"
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
               }
             },
             {  
-              "type": "image",
-              "content": {
-                "src": "img01.png",
-                "caption": "佛羅里達州是美國本土最南端的一個州，亦屬於墨西哥灣沿岸地區，是美國人口第三多的州，為著名的避寒聖地。中文俗稱為佛州，佛羅里達。"
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            }
+          ]
+        },
+        {
+          "name": "石屎森林外的生態花園",
+          "location": "香港",
+          "image":{
+            "src":"./images/exG02b/hongkong.png"
+          },
+          "description": "你知道德國第二大城市漢堡有多少條橋嗎？有人說是全世界最多，約二千五百條！原來漢堡從十四世紀開始便是歐洲的重要港口，有大大小小的橋橫跨運河、承載鐵路，連接倉庫，港口區發展為與市中心隔河相望的城中城。",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
               }
             },
             {
-              "type": "gallery",
-              "content": [
-                "img01.png",
-                "img02.png",
-                "img03.png",
-                "img04.png",
-                "img05.png"
-              ]
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            }
+          ]
+        },
+        {
+          "name": "網路之城",
+          "location": "首爾",
+          "image":{
+            "src":"./images/exG02b/seoul.png"
+          },
+          "description": "你知道德國第二大城市漢堡有多少條橋嗎？有人說是全世界最多，約二千五百條！原來漢堡從十四世紀開始便是歐洲的重要港口，有大大小小的橋橫跨運河、承載鐵路，連接倉庫，港口區發展為與市中心隔河相望的城中城。",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            }
+          ]
+        },
+        {
+          "name": "冰天遁地藝術館",
+          "location": "赫爾辛基",
+          "image":{
+            "src":"./images/exG02b/helsinki.png"
+          },
+          "description": "你知道德國第二大城市漢堡有多少條橋嗎？有人說是全世界最多，約二千五百條！原來漢堡從十四世紀開始便是歐洲的重要港口，有大大小小的橋橫跨運河、承載鐵路，連接倉庫，港口區發展為與市中心隔河相望的城中城。",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            }
+          ]
+        },
+        {
+          "name": "空中鐵路公園",
+          "location": "紐約",
+          "image":{
+            "src":"./images/exG02b/newyork.png"
+          },
+          "description": "你知道德國第二大城市漢堡有多少條橋嗎？有人說是全世界最多，約二千五百條！原來漢堡從十四世紀開始便是歐洲的重要港口，有大大小小的橋橫跨運河、承載鐵路，連接倉庫，港口區發展為與市中心隔河相望的城中城。",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            }
+          ]
+        },
+        {
+          "name": "牧場水上飄",
+          "location": "鹿特丹",
+          "image":{
+            "src":"./images/exG02b/rotterdam.png"
+          },
+          "description": "你知道德國第二大城市漢堡有多少條橋嗎？有人說是全世界最多，約二千五百條！原來漢堡從十四世紀開始便是歐洲的重要港口，有大大小小的橋橫跨運河、承載鐵路，連接倉庫，港口區發展為與市中心隔河相望的城中城。",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            }
+          ]
+        },
+        {
+          "name": "湖泊上的隱形發電廠",
+          "location": "淮南",
+          "image":{
+            "src":"./images/exG02b/huainan.png"
+          },
+          "description": "你知道德國第二大城市漢堡有多少條橋嗎？有人說是全世界最多，約二千五百條！原來漢堡從十四世紀開始便是歐洲的重要港口，有大大小小的橋橫跨運河、承載鐵路，連接倉庫，港口區發展為與市中心隔河相望的城中城。",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
             }
           ]
         },
         {
           "name": "單車之城",
-          "location": "哥本哈根"
-        },
-        {
-          "name": "巨型都市",
-          "location": "北京"
-        },
-        {
-          "name": "網路之城",
-          "location": "首爾"
-        },
-        {
-          "name": "汽車之城",
-          "location": "曼谷"
-        },
-        {
-          "name": "佛羅里達5",
-          "location": "5"
-        },
-        {
-          "name": "佛羅里達6",
-          "location": "6"
-        },
-        {
-          "name": "佛羅里達7",
-          "location": "7"
-        },
-        {
-          "name": "佛羅里達8",
-          "location": "8"
+          "location": "哥本哈根",
+          "image":{
+            "src":"./images/exG02b/copenhagen.png"
+          },
+          "description": "你知道德國第二大城市漢堡有多少條橋嗎？有人說是全世界最多，約二千五百條！原來漢堡從十四世紀開始便是歐洲的重要港口，有大大小小的橋橫跨運河、承載鐵路，連接倉庫，港口區發展為與市中心隔河相望的城中城。",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            }
+          ]
         },
         {
           "name": "佛羅里達9",
-          "location": "9"
+          "location": "9",
+          "image":{
+            "src":"./images/exG02b/hamburg.svg"
+          },
+          "description": "你知道德國第二大城市漢堡有多少條橋嗎？有人說是全世界最多，約二千五百條！原來漢堡從十四世紀開始便是歐洲的重要港口，有大大小小的橋橫跨運河、承載鐵路，連接倉庫，港口區發展為與市中心隔河相望的城中城。",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            }
+          ]
         },
         {
           "name": "佛羅里達10",
-          "location": "10"
+          "location": "10",
+          "image":{
+            "src":"./images/exG02b/hamburg.svg"
+          },
+          "description": "你知道德國第二大城市漢堡有多少條橋嗎？有人說是全世界最多，約二千五百條！原來漢堡從十四世紀開始便是歐洲的重要港口，有大大小小的橋橫跨運河、承載鐵路，連接倉庫，港口區發展為與市中心隔河相望的城中城。",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            }
+          ]
         },
         {
           "name": "佛羅里達11",
-          "location": "11"
+          "location": "11",
+          "image":{
+            "src":"./images/exG02b/hamburg.svg"
+          },
+          "description": "你知道德國第二大城市漢堡有多少條橋嗎？有人說是全世界最多，約二千五百條！原來漢堡從十四世紀開始便是歐洲的重要港口，有大大小小的橋橫跨運河、承載鐵路，連接倉庫，港口區發展為與市中心隔河相望的城中城。",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            }
+          ]
+        },
+        {
+          "name": "馬路中心的活動天地",
+          "location": "巴塞隆拿",
+          "image":{
+            "src":"./images/exG02b/barcelona.png"
+          },
+          "description": "你知道德國第二大城市漢堡有多少條橋嗎？有人說是全世界最多，約二千五百條！原來漢堡從十四世紀開始便是歐洲的重要港口，有大大小小的橋橫跨運河、承載鐵路，連接倉庫，港口區發展為與市中心隔河相望的城中城。",
+          "detailBlocks": [
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            },
+            {
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            },
+            {  
+              "image": {
+                "src": "./images/exG02b/gallery.png",
+                "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達二十五年的「港口新城」市區重建計劃於1997年展開。老舊的工業區搖身一變，成為現代化生活空間，除了住宅、商廈、還有文化和歷史建築等，同時包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
+              }
+            }
+          ]
         }
-      ],
-      "ui": {
-        "dragHints": "<b>拖曳</b>畫面探索更多城市",
-        "clickHints": "按下查看詳細資料",
-        "exploreHints": "探索更多城市"
-      }
+      ]
     }
   }
 }

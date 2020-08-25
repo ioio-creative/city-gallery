@@ -3,10 +3,12 @@ import gsap from 'gsap';
 import {random} from '../exhibitions/exG02A2/globalFuncFor3d';
 import './g02BContainer.scss';
 
-import hamburg from '../exhibitions/exG02B2/images/img1.svg';
 import bubble1 from '../exhibitions/exG02B2/images/bubble.svg';
 import bubble2 from '../exhibitions/exG02B2/images/bubble2.svg';
-import gallery from '../exhibitions/exG02B2/images/gallery.png';
+import circle1 from '../exhibitions/exG02B2/images/circle1.svg';
+import circle2 from '../exhibitions/exG02B2/images/circle2.svg';
+import circle3 from '../exhibitions/exG02B2/images/circle3.svg';
+// import gallery from '../exhibitions/exG02B2/images/gallery.png';
 
 const G02BStatus = {
   IDLE: 1, // 
@@ -21,7 +23,9 @@ const CityBlock = (props) => {
     style={{transform: `translate3d(${props.offsetX}px, ${props.offsetY}px, 0px)`}}
   >
     <div className="contentWrap" onClick={props.onClickBlock}>
-      <div className="cityImage" style={{backgroundImage:`url(${hamburg})`}}></div>
+      <div className="cityImage">
+        <div className="img" style={{backgroundImage:`url(${props.data && props.data.cities[cityIdx].image.src})`}}></div>
+      </div>
       <div className="cityName">
         <div className="location">{props.data && props.data.cities[cityIdx].name}</div>
         <div className="realName">{props.data && props.data.cities[cityIdx].location}</div>
@@ -122,9 +126,9 @@ const CitiesList = (props) => {
 
       const idx = [];//[1,5,8,1,4];
       for(let i=0; i<5; i++){
-        if(i === 2)
-          idx[i] = props.data.cities.length - 2;
-        else
+        // if(i === 2)
+        //   idx[i] = props.data.cities.length - 2;
+        // else
           idx[i] = Math.round(random(0, props.data.cities.length-1));
       }
       setStartColIdx(idx);
@@ -168,6 +172,7 @@ const G02BContainer = (props) => {
   const moveToClickedBlockFunc = useRef(null);
   const getDisableDragFunc = useRef(null);
   const detailsPageElem = useRef(null);
+  const galleryListElem = useRef(null);
 
   const [domId, setDomId] = useState(0);
   const blockWidth = window.innerWidth / 3.1;
@@ -210,7 +215,7 @@ const G02BContainer = (props) => {
 
     const onMouseDown = (event) => {
       if(!isDragDisabled){
-        idle();
+        // idle();
         setDragging(false);
         let e = (event.touches? event.touches[0]: event);
         const mx = e.clientX;
@@ -359,6 +364,8 @@ const G02BContainer = (props) => {
     gsap.to('#detailsContent', .3, {delay:delay+1, autoAlpha:1, ease:'power1.inOut'});
     gsap.to(['#exploreBtn'],.3,{delay:delay+1, autoAlpha:1, ease:'power1.inOut'});
     setActiveDetailPage(true);
+
+    galleryListElem.current.scrollTop = 0;
   }
 
   const closeDetailPage = (goHome) => {
@@ -386,6 +393,13 @@ const G02BContainer = (props) => {
 
   return (
     <div id="G02BContainer" className={`${isHome?'home ':''}${language}`}>
+      <svg width="0" height="0">
+        <defs>
+          <clipPath id="smask" clipPathUnits="objectBoundingBox" transform="translate(.1,0) scale(0.00204, 0.00284)">
+            <path d="M132.4 76.9c93.3 0 82-84.9 244.6-76.3 92.1 13 184.2 151.1 33.1 319.4-65.3 65.5-195 7.2-246.1 7.2C61.9 324.4 0 299.1 0 213.6S39.1 76.9 132.4 76.9z" fill="none"/>
+          </clipPath>
+        </defs>
+      </svg>
       <div id="homeInfo">
         <div>Please select language</div>
         <div>請選擇語言</div>
@@ -397,8 +411,8 @@ const G02BContainer = (props) => {
           }
         </div>
       </div>
-      <div id="drag" dangerouslySetInnerHTML={{__html:contentData && contentData.ui.dragHints}}></div>
-      <div id="exploreBtn" className="btn" onClick={closeContent}><span>{contentData && contentData.ui.exploreHints}</span></div>
+      <div id="drag" dangerouslySetInnerHTML={{__html:contentData && contentData.global.dragHints}}></div>
+      <div id="exploreBtn" className="btn" onClick={closeContent}><span>{contentData && contentData.global.exploreHints}</span></div>
       <div id="homeBtn" className="btn" onClick={backToHome}></div>
       <CitiesList 
         data={contentData}
@@ -414,19 +428,21 @@ const G02BContainer = (props) => {
 
       <div ref={detailsPageElem} id="detailsPage" className={activeDetailPage ? 'active' : ''}>
         <div id="detailsContent">
-          <div id="image" style={{backgroundImage:`url(${hamburg})`}}></div>
+          <div id="imageWrap">
+            <div className="img" style={{backgroundImage:`url(./images/exG02b/hamburg.svg)`}}></div>
+          </div>
           <svg width="0" height="0">
-              <defs>
-                <filter id="blur">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                  <feComposite in="SourceGraphic" in2="matrix" operator="atop"/>
-                </filter>
-                <filter id="colormatrix">
-                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="matrix" />
-                  <feComposite in="SourceGraphic" in2="matrix" operator="atop"/>
-                </filter>
-              </defs>
-            </svg>
+            <defs>
+              <filter id="blur">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feComposite in="SourceGraphic" in2="matrix" operator="atop"/>
+              </filter>
+              <filter id="colormatrix">
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="matrix" />
+                <feComposite in="SourceGraphic" in2="matrix" operator="atop"/>
+              </filter>
+            </defs>
+          </svg>
           <div id="bubbleWrap1" className="bubbleWrap">
             <div id="bubble1" className="bubble" style={{backgroundImage:`url(${bubble1})`}}></div>
             <div id="bubble2" className="bubble" style={{backgroundImage:`url(${bubble2})`}}></div>
@@ -435,9 +451,12 @@ const G02BContainer = (props) => {
             <div id="bubble1" className="bubble" style={{backgroundImage:`url(${bubble1})`}}></div>
             <div id="bubble2" className="bubble" style={{backgroundImage:`url(${bubble2})`}}></div>
           </div>
+          <div id="circle1" className="circle" style={{backgroundImage:`url(${circle1})`}}></div>
+          <div id="circle2" className="circle" style={{backgroundImage:`url(${circle2})`}}></div>
+          <div id="circle3" className="circle" style={{backgroundImage:`url(${circle3})`}}></div>
           <div id="contentWrap">
             <div id="title">
-              <span>{contentData && contentData.cities[domId].name},</span>
+              <span>{contentData && contentData.cities[domId].name}</span>
               <svg>
                   <text x="0" y="75%" fill="none" stroke="#2F2D7C">
                     {contentData && contentData.cities[domId].location}
@@ -447,20 +466,18 @@ const G02BContainer = (props) => {
             <div id="description">{contentData && contentData.cities[domId].description}</div>
           </div>
           <div id="galleryListWrap">
-            <div id="dragForMore">拖曳畫面探索更多</div>
-            <ul id="galleryList">
-              <li>
-                <div className="img"><img src={gallery} /></div>
-                <p>隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達25年的「港口新城」市區重建計劃於1997年展開。</p>
-              </li>
-              <li>
-                <div className="img"><img src={gallery} /></div>
-                <p>隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達25年的「港口新城」市區重建計劃於1997年展開。</p>
-              </li>
-              <li>
-                <div className="img"><img src={gallery} /></div>
-                <p>隨著歐盟自由貿易時代來臨，自由港的優勢不再，航運業持續萎縮下，這塊城中城逐漸被閒置遺忘。為了改造漢堡，長達25年的「港口新城」市區重建計劃於1997年展開。</p>
-              </li>
+            <div id="dragForMore">{contentData && contentData.global.dragMore}</div>
+            <ul ref={galleryListElem} id="galleryList">
+              {
+                contentData && 
+                contentData.cities[domId].detailBlocks &&
+                contentData.cities[domId].detailBlocks.map((v,i)=>{
+                  return <li key={i}>
+                    <div className="img"><img src={v.image.src} /></div>
+                    <p>{v.image.caption}</p>
+                  </li>
+                })
+              }
             </ul>
           </div>
         </div>
