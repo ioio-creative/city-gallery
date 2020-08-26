@@ -241,6 +241,10 @@ const Section4 = props => {
                     <div ref={leftImageWrap} id="leftImageWrap" className="imageWrap">
                         <div id="leftTrain"><div style={{backgroundImage:`url(./images/exG02a/section4/hongkongtrain.svg)`,width:858/1920*100+'vw', height:564/1920*100+'vw'}}></div></div>
                     </div>
+                    <div id="bg">
+                        <div id="train"></div>
+                        <div id="road"></div>
+                    </div>
                     <div className="source">
                         {globalData && globalData.source}<br/><span dangerouslySetInnerHTML={{__html: data && data['hongkong'].source}}></span>
                     </div>
@@ -253,6 +257,10 @@ const Section4 = props => {
                     <div className="big">{ data && locationName && data[locationName].percentage }%</div>
                     <div ref={rightImageWrap} id="rightImageWrap" className="imageWrap">
                         <div id="rightTrain"><div style={{backgroundImage:`url(./images/exG02a/section4/${locationName}train.svg)`,width:858/1920*100+'vw', height:564/1920*100+'vw'}}></div></div>
+                    </div>
+                    <div id="bg">
+                        <div id="train"></div>
+                        <div id="road"></div>
                     </div>
                     <div className="source">
                         {globalData && globalData.source}<br/><span dangerouslySetInnerHTML={{__html: data && locationName && data[locationName].source}}></span>

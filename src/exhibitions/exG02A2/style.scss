@@ -870,17 +870,29 @@
                 &#section4{
                     #left{
                         .wrap{
-                            .imageWrap{
-                                &:after{
-                                    background:#9CB9DB;
+                            #bg{
+                                #road{
+                                    &:before{
+                                        background:url('../exG02A2/images/roadline.svg') center no-repeat;
+                                        background-size:100%;
+                                    }
+                                    &:after{
+                                        background:#9CB9DB;
+                                    }
                                 }
                             }
                         }
                     }
                     .wrap{
                         padding-top:vw-calc(200);
+                        .title{
+                            position: relative;
+                            z-index: 2;
+                        }
                         .big{
                             font-size:vw-calc(100);
+                            position: relative;
+                            z-index: 2;
                         }
                         .imageWrap{
                             width:100%;
@@ -888,21 +900,8 @@
                             position: absolute;
                             top:0;
                             left:0;
-                            z-index: -1;
+                            z-index: 1;
                             overflow: hidden;
-                            &:after{
-                                content:'';
-                                width:100%;
-                                height:vw-calc(462);
-                                background:#86BABF;
-                                display: block;
-                                position: absolute;
-                                top:33%;
-                                left:0;
-                                opacity: .3;
-                                transform: translate3d(0,0,0) skewY(30deg);
-                                z-index: -1;
-                            }
                             &>div{
                                 width:0;
                                 height:0;
@@ -918,6 +917,73 @@
                                     background-size:100%;
                                     background-repeat: no-repeat;
                                     transform: translate3d(-100%, -108%, 0);
+                                }
+                            }
+                        }
+                        #bg{
+                            width:100%;
+                            height:100%;
+                            position: absolute;
+                            top:0;
+                            left:0;
+                            z-index: 0;
+                            overflow: hidden;
+                            #train{
+                                width:100%;
+                                height:vw-calc(50);
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                position: absolute;
+                                top:22%;
+                                left:0;
+                                opacity: .3;
+                                transform: translate3d(0,0,0) skewY(30deg);
+                                z-index: -1;
+                                &:before{
+                                    content:'';
+                                    width:100%;
+                                    height:vw-calc(7);
+                                    background:linear-gradient(90deg, rgba(156,185,219,0.18) 0%, rgba(220,237,255,1) 100%);
+                                    display: block;
+                                }
+                                &:after{
+                                    content:'';
+                                    width:100%;
+                                    height:vw-calc(7);
+                                    background:linear-gradient(90deg, rgba(156,185,219,0.18) 0%, rgba(220,237,255,1) 100%);
+                                    display: block;
+                                }
+                            }
+                            #road{
+                                width:100%;
+                                height:vw-calc(432);
+                                position: absolute;
+                                top:38%;
+                                left:0;
+                                z-index: -1;
+                                &:before{
+                                    content:'';
+                                    width:100%;
+                                    height:130%;
+                                    background:url('../exG02A2/images/roadline2.svg') center no-repeat;
+                                    background-size:100%;
+                                    display: block;
+                                    position: relative;
+                                    top:-15%;
+                                    z-index: 2;
+                                }
+                                &:after{
+                                    content:'';
+                                    width:100%;
+                                    height:100%;
+                                    background:#86BABF;
+                                    position: absolute;
+                                    top:0;
+                                    left:0;
+                                    transform: translate3d(0,0,0) skewY(30deg);
+                                    display: block;
+                                    opacity: .4;
                                 }
                             }
                         }
@@ -1026,6 +1092,7 @@
                         }
                         .source{
                             right:vw-calc(104);
+                            z-index: 3;
                         }
                     }
                     .wrap{
