@@ -57,51 +57,67 @@
                 "hongkong":{
                     "building":[
                         {
-                            "name":"環球貿易廣場",
-                            "height":"484米",
-                            "floor":"118 層"
+                            "name":"International Commerce Centre",
+                            "height":"484m",
+                            "floor":"118 Floors"
                         },
                         {
-                            "name":"國際金融中心二期",
-                            "height":"416米",
-                            "floor":"88 層"
+                            "name":"Two International Finance Centre",
+                            "height":"416m",
+                            "floor":"88 Floors"
                         },
                         {
-                            "name":"中環廣場",
-                            "height":"374米",
-                            "floor":"78 層"
+                            "name":"Central Plaza",
+                            "height":"374m",
+                            "floor":"78 Floors"
                         }
                     ],
-                    "source":"Emporis地產資料庫"
+                    "source":"Emporis"
                 },
                 "tokyo":{
                     "building":[
                         {
-                            "name":"虎之門之丘",
-                            "height":"255米",
-                            "floor":"52 層"
+                            "name":"Toranomon Hills",
+                            "height":"255m",
+                            "floor":"52 Floors"
                         },
                         {
-                            "name":"中城塔",
-                            "height":"248米",
-                            "floor":"54 層"
+                            "name":"Mid Town Tower",
+                            "height":"248m",
+                            "floor":"54 Floors"
                         },
                         {
-                            "name":"東京都廳第一本廳舍",
-                            "height":"243米",
-                            "floor":"48 層"
+                            "name":"Tokyo Metropolitan Government Building",
+                            "height":"243m",
+                            "floor":"48 Floors"
                         }
                     ],
-                    "source":"Emporis地產資料庫"
+                    "source":"Emporis"
                 }
             },
             "section4":{
                 "hongkong":{
                     "percentage":"88",
+                    "carimages":[
+                        "./images/exG02a/section4/hongkongcar1.svg",
+                        "./images/exG02a/section4/hongkongcar2.svg",
+                        "./images/exG02a/section4/hongkongcar3.svg"
+                    ],
                     "source":"The 2019 Deloitte City Mobility Index"
                 },
                 "tokyo":{
                     "percentage":"10",
+                    "carimages":[
+                        "./images/exG02a/section4/tokyocar1.svg",
+                        "./images/exG02a/section4/tokyocar2.svg"
+                    ],
+                    "source":"Land Transport Authority Of Singapore In <br/>November 2014"
+                },
+                "taiwan":{
+                    "percentage":"10",
+                    "carimages":[
+                        "./images/exG02a/section4/hongkongcar1.svg"
+                    ],
                     "source":"Land Transport Authority Of Singapore In <br/>November 2014"
                 }
             },
