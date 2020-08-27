@@ -426,10 +426,10 @@
                             width:100%;
                             height:100%;
                             position: absolute;
-                            top:5%;
+                            top:4%;
                             left:0;
                             background-position: center;
-                            background-size: 85%;
+                            background-size: 78%;
                             background-repeat: no-repeat;
                         }
                     }
@@ -885,14 +885,8 @@
                     }
                     .wrap{
                         padding-top:vw-calc(200);
-                        .title{
-                            position: relative;
-                            z-index: 2;
-                        }
                         .big{
                             font-size:vw-calc(100);
-                            position: relative;
-                            z-index: 2;
                         }
                         .imageWrap{
                             width:100%;
@@ -935,7 +929,7 @@
                                 flex-direction: column;
                                 justify-content: space-between;
                                 position: absolute;
-                                top:22%;
+                                top:20%;
                                 left:0;
                                 opacity: .3;
                                 transform: translate3d(0,0,0) skewY(30deg);
@@ -1106,6 +1100,8 @@
                         transition: opacity .4s cubic-bezier(0.19, 1, 0.22, 1), visibility .4s cubic-bezier(0.19, 1, 0.22, 1);
                         .title{
                             font-size:vw-calc(20);
+                            position: relative;
+                            z-index: 4;
                             &.big{
                                 font-size:vw-calc(25);
                                 font-weight: normal;
@@ -1114,6 +1110,8 @@
                         .big{
                             font-size:vw-calc(70);
                             font-weight: bold;
+                            position: relative;
+                            z-index: 4;
                         }
                         .medium{
                             font-size:vw-calc(30);

@@ -289,6 +289,7 @@ body{
     width:vw-calc(79);
     height: vw-calc(79);
     background:url('../exhibitions/exG02B2/images/dragicon.svg') center no-repeat;
+    background-size:100%;
     position: absolute;
     left:vw-calc(52);
     top:50%;
@@ -575,6 +576,7 @@ body{
         width:vw-calc(171);
         height:vw-calc(171*0.713);
         background:url('../exhibitions/exG02B2/images/icon.svg') center no-repeat;
+        background-size:100%;
         position: absolute;
         bottom:calc(100% + #{vw-calc(9)});
         right:0;
