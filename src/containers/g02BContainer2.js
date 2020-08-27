@@ -429,7 +429,7 @@ const G02BContainer = (props) => {
       <div ref={detailsPageElem} id="detailsPage" className={activeDetailPage ? 'active' : ''}>
         <div id="detailsContent">
           <div id="imageWrap">
-            <div className="img" style={{backgroundImage:`url(./images/exG02b/hamburg.svg)`}}></div>
+            <div className="img" style={{backgroundImage:`url(${contentData && contentData.cities[domId].image.src})`}}></div>
           </div>
           <svg width="0" height="0">
             <defs>
