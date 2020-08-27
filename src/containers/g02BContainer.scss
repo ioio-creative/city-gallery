@@ -89,15 +89,16 @@ body{
     cursor: -webkit-grabbing;
   }
   &.home{
-    .center{
-      opacity: 0;
-      visibility: hidden;
-    }
+    // .center{
+    //   opacity: 0;
+    //   visibility: hidden;
+    // }
     #homeInfo{
       opacity: 1;
       visibility: visible;
     }
     .cityBlock{
+      opacity: .6;
       .contentWrap{
         &:after{
           opacity: 0;

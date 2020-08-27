@@ -173,6 +173,7 @@ const G02BContainer = (props) => {
   const getDisableDragFunc = useRef(null);
   const detailsPageElem = useRef(null);
   const galleryListElem = useRef(null);
+  const setIsIdleFunc = useRef(null); // local function
 
   const [domId, setDomId] = useState(0);
   const blockWidth = window.innerWidth / 3.1;
@@ -212,10 +213,11 @@ const G02BContainer = (props) => {
     let player = null;
     let isDragDisabled = false;
     let timer = null;
+    let isIdle = true;
 
     const onMouseDown = (event) => {
       if(!isDragDisabled){
-        // idle();
+        idle();
         setDragging(false);
         let e = (event.touches? event.touches[0]: event);
         const mx = e.clientX;
@@ -284,14 +286,26 @@ const G02BContainer = (props) => {
       if(timer){
         clearTimeout(timer);
         setIdle(false);
+        isIdle = false;
       }
       timer = setTimeout(()=>{
         setIdle(true);
+        isIdle = true;
       },1000*60);
     }
 
+    const setIsIdle = (bool) => {
+      isIdle = bool;
+    }
+    setIsIdleFunc.current = {setIsIdle};
+
     const loop = ()=>{
       player = requestAnimationFrame(loop);
+
+      if(isIdle){
+        elemPos.x-=.2;
+        elemPos.y-=.3;
+      }
 
       setEaseElemPos({
         x:easeElemPos.x += (elemPos.x - easeElemPos.x) * .1,
@@ -331,7 +345,8 @@ const G02BContainer = (props) => {
   },[idle]);
 
   const backToHome = () => {
-    goCenterFunc.current.goCenter(currentColIdx,currentRowIdx);
+    // goCenterFunc.current.goCenter(currentColIdx,currentRowIdx);
+    setIsIdleFunc.current.setIsIdle(true);
     setIsHome(true);
     setDisableDrag(true);
 
@@ -386,6 +401,8 @@ const G02BContainer = (props) => {
     setDisableDrag(false);
     setContentData(props.appData.contents[lang]);
     setLanguage(lang);
+    setIsIdleFunc.current.setIsIdle(false);
+    goCenterFunc.current.goCenter(currentColIdx,currentRowIdx);
 
     gsap.to(['#drag', '#homeBtn'],.3,{autoAlpha:1, ease:'power1.inOut'});
   }
