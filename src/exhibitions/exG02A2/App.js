@@ -144,6 +144,12 @@ const App = props => {
 
             // cameraControl = new CameraControlsSystem(camera, meshEarth);
             objectControl = new ObjectControl(groupedMesh);
+
+            // const {targetTheta, targetPhi} = calcThetaPhiFromLatLon(locations[0].lat, locations[0].lon);
+            // objectControl.setRotate(targetTheta, targetPhi + 25 * THREE.Math.DEG2RAD);
+            // setTimeout(()=>{
+            //     objectControl.enableAutoRotate();
+            // },1000)
             // dev = devMode(scene);
             
             renderer.setAnimationLoop(function() {
