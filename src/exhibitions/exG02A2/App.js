@@ -30,6 +30,8 @@ const App = props => {
     const disableRotateFunc = useRef(null);
     const enableAutoRotateFunc = useRef(null);
     const selectLocationFunc = useRef(null);
+    const toWhiteColorFunc = useRef(null);
+    const resetPointsColorFunc = useRef(null);
     const locationsWrapElem = useRef(null);
     const locationsElem = useRef(null);
     const locations = [
@@ -52,6 +54,7 @@ const App = props => {
     const [data, setData] = useState(null);
     const [allData, setAllData] = useState(null);
     const [language, setLanguage] = useState('en');
+    const [hideEarth, setHideEarth] = useState(false);
 
     useEffect(()=>{
         let scene = undefined,
@@ -700,9 +703,11 @@ const App = props => {
 
         const onMouseUp = () => {
             if(!dragging){
-                if(currentHoveredInstanceId !== null && currentHoveredInstanceId !== oldHoveredInstanceId && currentHoveredInstanceId !== 0){
+                if(currentHoveredInstanceId !== null && currentHoveredInstanceId !== 0){
+                // if(currentHoveredInstanceId !== null && currentHoveredInstanceId !== oldHoveredInstanceId && currentHoveredInstanceId !== 0){
                     selectLocation();
                     moveFromIdFunc.current.moveFromId(currentHoveredInstanceId);
+                    currentHoveredInstanceId = null;
                 }
             }
             document.removeEventListener('mouseup', onMouseUp, false);
@@ -711,7 +716,7 @@ const App = props => {
 
         const selectLocation = (id) => {
             if(id) currentHoveredInstanceId = id;
-            if(currentHoveredInstanceId !== oldHoveredInstanceId){
+            // if(currentHoveredInstanceId !== oldHoveredInstanceId){
                 objectControl.disableAutoRotate();
                 objectControl.disable();
 
@@ -756,10 +761,13 @@ const App = props => {
 
 
                 // point bg
-                const meshs = [pointsMesh, linesMesh];
-                resetColor(meshs);
-                toWhiteColor(meshs);
+                resetPointsColor();
+                toWhiteColor();
                 animCanvasTexture.start();
+                setTimeout(()=>{
+                    animCanvasTexture.destroy();
+                    setHideEarth(true);
+                },1600)
                 pointsBgMaterial.uniforms.activeInstanceId.value = currentHoveredInstanceId;
                 oldHoveredInstanceId = currentHoveredInstanceId;
 
@@ -768,11 +776,12 @@ const App = props => {
                 gsap.to('#locationsOuterWrap', .3, {autoAlpha:1, ease:'power1.inOut'});
                 
                 showDetails();
-            }
+            // }
         }
         selectLocationFunc.current = {selectLocation}
 
-        const toWhiteColor = (meshs) => {
+        const toWhiteColor = () => {
+            const meshs = [pointsMesh, linesMesh];
             const id = currentHoveredInstanceId;
             for(let i=0; i<meshs.length; i++){
                 const mesh = meshs[i];
@@ -788,8 +797,10 @@ const App = props => {
                 });
             }
         }
+        toWhiteColorFunc.current = {toWhiteColor}
 
-        const resetColor = (meshs) => {
+        const resetPointsColor = () => {
+            const meshs = [pointsMesh, linesMesh];
             const id = oldHoveredInstanceId;
             if(id !== currentHoveredInstanceId && id !== null){
                 for(let i=0; i<meshs.length; i++){
@@ -806,7 +817,9 @@ const App = props => {
                     });
                 }
             }
+            pointsBgMaterial.uniforms.activeInstanceId.value = -1;
         }
+        resetPointsColorFunc.current = {resetPointsColor}
 
         const showDetails = () => {
             gsap.set('#detailPage',{delay:1, className:'active'});
@@ -1125,12 +1138,14 @@ const App = props => {
         gsap.set('#detailPage',{className:''});
         setDetailIdx(null);
         enableRotate();
+        resetPointsColorFunc.current.resetPointsColor();
         enableAutoRotateFunc.current.enableAutoRotate();
+        setHideEarth(false);
     }
 
 
     return (
-        <div id="home">
+        <div id="home" className={hideEarth ? 'hideEarth' : ''}>
             <div ref={canvasWrap} id="canvasWrap"></div>
             <div id="touch">
                 Touch screen to select<br/>觸碰螢幕以選取

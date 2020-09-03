@@ -51,6 +51,12 @@
                     "population":{ "value":"9,143,041" },
                     "landArea":{ "value":"627.57" },
                     "source":"TOKYO STATISTICAL YEARBOOK 2017 - Population By District (xls)"
+                },
+                "taiwan":{
+                    "populationDensity":{ "value":"4,568.96" },
+                    "population":{ "value":"1,143,041" },
+                    "landArea":{ "value":"627.57" },
+                    "source":"TOKYO STATISTICAL YEARBOOK 2017 - Population By District (xls)"
                 }
             },
             "section3":{
@@ -75,6 +81,26 @@
                     "source":"Emporis"
                 },
                 "tokyo":{
+                    "building":[
+                        {
+                            "name":"Toranomon Hills",
+                            "height":"255m",
+                            "floor":"52 Floors"
+                        },
+                        {
+                            "name":"Mid Town Tower",
+                            "height":"248m",
+                            "floor":"54 Floors"
+                        },
+                        {
+                            "name":"Tokyo Metropolitan Government Building",
+                            "height":"243m",
+                            "floor":"48 Floors"
+                        }
+                    ],
+                    "source":"Emporis"
+                },
+                "taiwan":{
                     "building":[
                         {
                             "name":"Toranomon Hills",
@@ -127,6 +153,10 @@
                     "source":"Table 030 - Gross Domestic Product <br/>(GDP), Implicit Price Deflator Of GDP And <br/>Per Capita GDP"
                 },
                 "tokyo":{
+                    "money":"74,266.31",
+                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                },
+                "taiwan":{
                     "money":"74,266.31",
                     "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
                 }
