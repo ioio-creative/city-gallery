@@ -76,7 +76,7 @@ const G302A = props => {
             socket.on('navigationLeft', moveLeft);
             socket.on('navigationRight', moveRight);
         }else{
-            //setSocket(webSocket('http://10.0.1.40:3003/'));
+            setSocket(webSocket('http://localhost:80/'));
         }
         
         return ()=>{
@@ -330,11 +330,11 @@ const G302A = props => {
     // }, [props.appData]);
 
     
-    useEffect(() => {
-        setTimeout(()=>{
-            startFunc.current.start();
-        },1000);
-    },[]);
+    // useEffect(() => {
+    //     setTimeout(()=>{
+    //         startFunc.current.start();
+    //     },1000);
+    // },[]);
 
     const onClickSection = (i) => {
         if(!dragging && !getIsClickedSectionFunc.current.getIsClickedSection() && i === getCurrentSectionFunc.current.getCurrentSection()){
