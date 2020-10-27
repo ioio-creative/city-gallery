@@ -15,13 +15,16 @@ const usePrevious = (value) => {
 const Content = props => {
     // const [dragging, setDragging] = useState(false);
     // const [minimalSidebar, setMinimalSidebar] = useState(false);
-    const [minimalContentNav, setMinimalContentNav] = useState(false);
-    const [contentIdx, setContentIdx] = useState(null);
+    const [minimalContentNav, setMinimalContentNav] = useState(true);
+    // const [currentSectionIdx, setCurrentSectionIdx] = useState(props.currentSectionIdx);
+    const [navIdx, setNavIdx] = useState(null);
     const prevIdx = usePrevious(props.clickedSectionIdx);
     
     const setIsClickedSectionFunc = useRef(null);
     const moveContentFunc = useRef(null);
     const moveToItemFunc = useRef(null);
+    const getCurrentSectionIdxFunc = useRef(null);
+    const getDataFunc = useRef(null);
     // const onResizeFunc = useRef(null);
     const contentWrapElem = useRef(null);
     const contentElems = useRef([...Array(props.sectionNum)].map(()=>createRef()));
@@ -50,6 +53,10 @@ const Content = props => {
         let sidebarW = ww * (455 / 1920);
         let titleElems = null;
         let imgElems = null;
+        let currentSectionIdx = 0;
+        // let oldCurrentSectionIdx = 0;
+        let data = null;
+        const sectionNum = props.sectionNum;
 
 
         const init = () => {
@@ -88,7 +95,7 @@ const Content = props => {
             mouse.lastPos.y = mouse.currentPos.y;
 
             props.setMinimalSidebar(true);
-            setMinimalContentNav(true);
+            if(!minimalContentNav) setMinimalContentNav(true);
             moveContentWrap();
         }
 
@@ -131,6 +138,16 @@ const Content = props => {
         const nextSection = () => {
 
         }
+
+        const getCurrentSectionIdx = (idx) => {
+            currentSectionIdx = idx;
+        }
+        getCurrentSectionIdxFunc.current = {getCurrentSectionIdx}
+
+        const getData = (_data) => {
+            data = _data;
+        }
+        getDataFunc.current = {getData}
         
         const animLoop = () => {
             requestAnimationFrame(animLoop);
@@ -138,8 +155,10 @@ const Content = props => {
             contentWrapElemEasePos.x += (contentWrapElemPos.x - contentWrapElemEasePos.x) * .08;
             const x = contentWrapElemEasePos.x;
             contentWrapElem.current.style.transform = `translate3d(${x}px,0,0)`;
+            
 
-            for(let i=0; i<props.sectionNum; i++){
+
+            for(let i=0; i<sectionNum; i++){
                 // sidebar
                 const content = contentElems.current[i].current;
                 const sidebar = sidebarElems.current[i].current;
@@ -164,6 +183,16 @@ const Content = props => {
                 let s = Math.max(0, Math.min(1, -offsetX/(content.offsetWidth-window.innerWidth)));
                 contentNavLine.style.transform = `translate3d(0,0,0) scaleX(${s})`;
                 
+                if(data)
+                    if(offsetX <= window.innerWidth/2 && offsetX+content.offsetWidth >= window.innerWidth/2){
+                        const pageOfNav = Math.floor(s / (1/(data.sections[i].items.length-1)))
+                        setNavIdx(pageOfNav);
+                        props.setCurrentSectionIdx(i);
+                        // console.log(i+pageOfNav)
+                    }
+                // if(i === currentSectionIdx && data)
+                //     console.log(currentSectionIdx, offsetX, Math.floor(s / (1/(data.sections[currentSectionIdx].items.length-1))))
+                    
                 sx = null;
                 cx = null;
                 s = null;
@@ -249,7 +278,6 @@ const Content = props => {
     useEffect(()=>{
         if(props.clickedSectionIdx !== null){
             const elem = sidebarElems.current[props.clickedSectionIdx].current;
-
             const tl = gsap.timeline({delay:1});
             
             tl.set('#sidebarWrap', {className:'active', clearProps:'opacity,visibility'});
@@ -274,13 +302,19 @@ const Content = props => {
         }
     },[props.clickedSectionIdx]);
 
-
+    useEffect(()=>{
+        getCurrentSectionIdxFunc.current.getCurrentSectionIdx(props.currentSectionIdx);
+    },[props.currentSectionIdx])
 
     useEffect(()=>{
         if(props.isClickedSection !== null){
             setIsClickedSectionFunc.current.setIsClickedSection(props.isClickedSection);
         }
     },[props.isClickedSection])
+
+    useEffect(()=>{
+        getDataFunc.current.getData(props.contentData);
+    },[props.contentData])
 
     const onClickNav = (i,j) => {
         moveToItemFunc.current.moveToItem(i,j, props.contentData.sections[i].items.length);
@@ -292,12 +326,12 @@ const Content = props => {
             <div id="contentNavWrap" className={`contentNav${props.clickedSectionIdx !== null && props.minimalSidebar ? ' active' : ''}`}>
                 {
                     props.contentData.sections.map((v,i)=>{
-                        return <div key={i} ref={contentNavElems.current[i]} id={`contentNav${i+1}`} className={`contentNav${minimalContentNav ? ' min' : ''}`}>
+                        return <div key={i} ref={contentNavElems.current[i]} id={`contentNav${i+1}`} className={`contentNav${minimalContentNav ? ' minimal' : ''}`}>
                             <div id="wrap">
                                 <ul>
                                 {
                                     v.items.map((c,j)=>{
-                                        return <li key={j} onClick={()=>onClickNav(i,j)}>
+                                        return <li key={j} className={props.currentSectionIdx === i && navIdx === j ? 'active' : ''} onClick={()=>onClickNav(i,j)}>
                                             <p>
                                                 <span dangerouslySetInnerHTML={{__html:c.text.title.join('<br/>')}}></span>
                                                 <br/>

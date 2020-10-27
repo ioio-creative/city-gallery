@@ -65,7 +65,7 @@ body{
     height:100%;
     overflow: hidden;
     font-family: 'Noto Sans TC' ,sans-serif;
-    // background: url('./images/bg@2x.png') no-repeat;
+    background: url('./images/bg@2x.png') no-repeat;
     background-size:cover;
     overflow: hidden;
     &:before{
@@ -79,17 +79,17 @@ body{
         z-index: 1;
         transform: translate3d(0,-50%,0);
     }
-    // &:after{
-    //     content:'';
-    //     width:100%;
-    //     height:100%;
-    //     background:#000;
-    //     position: absolute;
-    //     top:0;
-    //     left:0;
-    //     z-index: 0;
-    //     opacity: .9;
-    // }
+    &:after{
+        content:'';
+        width:100%;
+        height:100%;
+        background:#000;
+        position: absolute;
+        top:0;
+        left:0;
+        z-index: 0;
+        opacity: .9;
+    }
     #language{
         position: fixed;
         bottom:vw-calc(84 - 15);
@@ -310,7 +310,31 @@ body{
             right: 0;
             &.minimal{
                 #wrap{
-                    width:calc(50% - #{vw-calc(304.9)});
+                    width:calc(50% - #{vw-calc(390)});
+                    ul{
+                        li{  
+                            &.active{
+                                &:after{
+                                    transform: translate3d(-50%,-50%,0) scale(1);
+                                }
+                                p{
+                                    span{
+                                        &.category{
+                                            opacity: 1 !important;
+                                            visibility: visible !important;
+                                        }
+                                    }
+                                }
+                            }
+                            p{
+                                span{
+                                    transform: translate3d(0,-50%,0);
+                                    opacity: 0 !important;
+                                    visibility: hidden !important;
+                                }
+                            }
+                        }
+                    }
                 }
             }
             #wrap{
@@ -337,6 +361,29 @@ body{
                             left:50%;
                             transform: translate3d(-50%,-50%,0) scale(1);
                         }
+                        &:after{
+                            content:'';
+                            width:vw-calc(60);
+                            height:vw-calc(60);
+                            border-radius: 50%;
+                            border: vw-calc(1) solid #fff;
+                            position: absolute;
+                            top:50%;
+                            left:50%;
+                            transform: translate3d(-50%,-50%,0) scale(0);
+                            transition: all .6s cubic-bezier(0.65, 0, 0.35, 1);
+                        }
+                        &.active{
+                            &:after{
+                                transform: translate3d(-50%,-50%,0) scale(.8);
+                            }
+                            p{
+                                span{
+                                    opacity: 1;
+                                    visibility: visible;
+                                }
+                            }
+                        }
                         p{
                             font-size:vw-calc(17);
                             white-space: nowrap;
@@ -344,14 +391,17 @@ body{
                             bottom:100%;
                             left:50%;
                             color:#fff;
-                            transform: translate3d(-50%,10%,0);
+                            transform: translate3d(-50%,0%,0);
                             text-align: center;
                             span{
                                 font-size: vw-calc(15);
-                                line-height: vw-calc(19);
+                                line-height: vw-calc(20);
+                                display: inline-block;
+                                opacity: 1;
+                                visibility: visible;
+                                transition: all .6s cubic-bezier(0.65, 0, 0.35, 1);
                                 &:first-child{
                                     padding-bottom: vw-calc(6);
-                                    display: inline-block;
                                 }
                                 &.category{
                                     font-size:vw-calc(17);

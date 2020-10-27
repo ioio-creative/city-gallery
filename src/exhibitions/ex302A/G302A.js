@@ -330,11 +330,11 @@ const G302A = props => {
     // }, [props.appData]);
 
     
-    // useEffect(() => {
-    //     setTimeout(()=>{
-    //         startFunc.current.start();
-    //     },1000);
-    // },[]);
+    useEffect(() => {
+        setTimeout(()=>{
+            startFunc.current.start();
+        },1000);
+    },[]);
 
     const onClickSection = (i) => {
         if(!dragging && !getIsClickedSectionFunc.current.getIsClickedSection() && i === getCurrentSectionFunc.current.getCurrentSection()){
@@ -388,6 +388,8 @@ const G302A = props => {
                 contentData && <Content 
                     contentData={contentData}
                     sectionNum={sectionNum}
+                    currentSectionIdx={currentSectionIdx}
+                    setCurrentSectionIdx={setCurrentSectionIdx}
                     minimalSidebar={minimalSidebar}
                     setMinimalSidebar={setMinimalSidebar}
                     clickedSectionIdx={clickedSectionIdx}
