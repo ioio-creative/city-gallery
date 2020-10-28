@@ -25,6 +25,7 @@ const Content = props => {
     const moveToItemFunc = useRef(null);
     const getCurrentSectionIdxFunc = useRef(null);
     const getDataFunc = useRef(null);
+    const triggerMinimal = useRef(null);
     // const onResizeFunc = useRef(null);
     const contentWrapElem = useRef(null);
     const contentElems = useRef([...Array(props.sectionNum)].map(()=>createRef()));
@@ -55,6 +56,7 @@ const Content = props => {
         let imgElems = null;
         let currentSectionIdx = 0;
         // let oldCurrentSectionIdx = 0;
+        let isStartedToMove = false;
         let data = null;
         const sectionNum = props.sectionNum;
 
@@ -84,6 +86,9 @@ const Content = props => {
         const onMouseMove = (event) => {
             if(!event.touches) event.preventDefault();
             let e = (event.touches? event.touches[0]: event);
+
+            if(!isStartedToMove)
+                isStartedToMove = true;
 
             mouse.currentPos.x = e.clientX - mouse.startPos.x;
             mouse.currentPos.y = e.clientY - mouse.startPos.y;
@@ -157,45 +162,62 @@ const Content = props => {
             contentWrapElem.current.style.transform = `translate3d(${x}px,0,0)`;
             
 
+            if(isClickedSection){
+                for(let i=0; i<sectionNum; i++){
+                    //
+                    //
+                    // sidebar
+                    const content = contentElems.current[i].current;
+                    const sidebar = sidebarElems.current[i].current;
 
-            for(let i=0; i<sectionNum; i++){
-                // sidebar
-                const content = contentElems.current[i].current;
-                const sidebar = sidebarElems.current[i].current;
-
-                const offsetX = content.getBoundingClientRect().left;
-                let sx = Math.max(0, offsetX);
-                if(offsetX - sidebarW <= -content.offsetWidth){
-                    sx = Math.max(-sidebarW, offsetX+content.offsetWidth-sidebarW);
-                }
-                sidebar.style.transform = `translate3d(${sx}px,0,0)`;
-
-                //
-                //
-                // content nav
-                const contentNav = contentNavElems.current[i].current;
-                let cx = Math.max(0, offsetX);
-                if(offsetX <= -content.offsetWidth + contentNav.offsetWidth + sidebarW)
-                    cx = Math.max(-contentNav.offsetWidth, offsetX+content.offsetWidth-sidebarW-contentNav.offsetWidth);
-                contentNav.style.transform = `translate3d(${cx}px,0,0)`;
-                
-                const contentNavLine = contentNavLineElems.current[i].current;
-                let s = Math.max(0, Math.min(1, -offsetX/(content.offsetWidth-window.innerWidth)));
-                contentNavLine.style.transform = `translate3d(0,0,0) scaleX(${s})`;
-                
-                if(data)
-                    if(offsetX <= window.innerWidth/2 && offsetX+content.offsetWidth >= window.innerWidth/2){
-                        const pageOfNav = Math.floor(s / (1/(data.sections[i].items.length-1)))
-                        setNavIdx(pageOfNav);
-                        props.setCurrentSectionIdx(i);
-                        // console.log(i+pageOfNav)
+                    const offsetX = content.getBoundingClientRect().left;
+                    let sx = Math.max(0, offsetX);
+                    if(offsetX - sidebarW <= -content.offsetWidth){
+                        sx = Math.max(-sidebarW, offsetX+content.offsetWidth-sidebarW);
                     }
-                // if(i === currentSectionIdx && data)
-                //     console.log(currentSectionIdx, offsetX, Math.floor(s / (1/(data.sections[currentSectionIdx].items.length-1))))
+                    sidebar.style.transform = `translate3d(${sx}px,0,0)`;
+
+                    if(currentSectionIdx === i){
+                        if(sx === 0 && isStartedToMove){
+                            if(sidebar.classList.contains('active'))
+                                sidebar.classList.remove('active');
+                        }
+                    }
+                    //else{
+                        // if(sx + sidebar.offsetWidth < 0){
+                        //     if(!sidebar.classList.contains('active'))
+                        //         sidebar.classList.add('active');
+                        // }
+                    // }
+
+
+                    //
+                    //
+                    // content nav
+                    const contentNav = contentNavElems.current[i].current;
+                    let cx = Math.max(0, offsetX);
+                    if(offsetX <= -content.offsetWidth + contentNav.offsetWidth + sidebarW)
+                        cx = Math.max(-contentNav.offsetWidth, offsetX+content.offsetWidth-sidebarW-contentNav.offsetWidth);
+                    contentNav.style.transform = `translate3d(${cx}px,0,0)`;
                     
-                sx = null;
-                cx = null;
-                s = null;
+                    const contentNavLine = contentNavLineElems.current[i].current;
+                    let s = Math.max(0, Math.min(1, -offsetX/(content.offsetWidth-window.innerWidth)));
+                    contentNavLine.style.transform = `translate3d(0,0,0) scaleX(${s})`;
+                    
+                    if(data)
+                        if(offsetX <= window.innerWidth/2 && offsetX+content.offsetWidth >= window.innerWidth/2){
+                            const pageOfNav = Math.floor((s+.04) / (1/(data.sections[i].items.length-1)))
+                            setNavIdx(pageOfNav);
+                            props.setCurrentSectionIdx(i);
+                            // console.log(i,pageOfNav)
+                        }
+                    // if(i === currentSectionIdx && data)
+                    //     console.log(currentSectionIdx, offsetX, Math.floor(s / (1/(data.sections[currentSectionIdx].items.length-1))))
+                        
+                    sx = null;
+                    cx = null;
+                    s = null;
+                }
             }
 
 
@@ -316,8 +338,18 @@ const Content = props => {
         getDataFunc.current.getData(props.contentData);
     },[props.contentData])
 
+    useEffect(()=>{
+        if(!minimalContentNav){
+            if(triggerMinimal.current) clearTimeout(triggerMinimal.current);
+            triggerMinimal.current = setTimeout(()=>{
+                setMinimalContentNav(true);
+            },1000 * 10);
+        }
+    },[minimalContentNav])
+
     const onClickNav = (i,j) => {
-        moveToItemFunc.current.moveToItem(i,j, props.contentData.sections[i].items.length);
+        if(!minimalContentNav)
+            moveToItemFunc.current.moveToItem(i,j, props.contentData.sections[i].items.length);
     }
     
 
@@ -326,7 +358,7 @@ const Content = props => {
             <div id="contentNavWrap" className={`contentNav${props.clickedSectionIdx !== null && props.minimalSidebar ? ' active' : ''}`}>
                 {
                     props.contentData.sections.map((v,i)=>{
-                        return <div key={i} ref={contentNavElems.current[i]} id={`contentNav${i+1}`} className={`contentNav${minimalContentNav ? ' minimal' : ''}`}>
+                        return <div key={i} ref={contentNavElems.current[i]} id={`contentNav${i+1}`} className={`contentNav${minimalContentNav ? ' minimal' : ''}`} onClick={()=>minimalContentNav ? setMinimalContentNav(false) : null}>
                             <div id="wrap">
                                 <ul>
                                 {
@@ -350,7 +382,7 @@ const Content = props => {
             <div id="sidebarWrap">
                 {
                     props.contentData.sections.map((v,i)=>{
-                        return <div key={i} ref={sidebarElems.current[i]} id={`sidebar${i+1}`} className={`sidebar${props.clickedSectionIdx === i && !props.minimalSidebar ? ' active' : ''}`}>
+                        return <div key={i} ref={sidebarElems.current[i]} id={`sidebar${i+1}`} className={`sidebar${i >= props.clickedSectionIdx ? ' active' : ''}`}>
                             <div id="des">
                                 {
                                     v.text1.split('').map((v, i)=>{
