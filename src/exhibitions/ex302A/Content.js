@@ -16,11 +16,14 @@ const Content = props => {
     // const [dragging, setDragging] = useState(false);
     // const [minimalSidebar, setMinimalSidebar] = useState(false);
     const [minimalContentNav, setMinimalContentNav] = useState(true);
+    const [galleryItems, setGalleryItems] = useState(null);
+    const [openedGallery, setOpenedGallery] = useState(false);
     // const [currentSectionIdx, setCurrentSectionIdx] = useState(props.currentSectionIdx);
     const [navIdx, setNavIdx] = useState(null);
     const prevIdx = usePrevious(props.clickedSectionIdx);
     
     const setIsClickedSectionFunc = useRef(null);
+    const setIsOpenedGalleryFunc = useRef(null);
     const moveContentFunc = useRef(null);
     const moveToItemFunc = useRef(null);
     const getCurrentSectionIdxFunc = useRef(null);
@@ -32,6 +35,9 @@ const Content = props => {
     const sidebarElems = useRef([...Array(props.sectionNum)].map(()=>createRef()));
     const contentNavElems = useRef([...Array(props.sectionNum)].map(()=>createRef()));
     const contentNavLineElems = useRef([...Array(props.sectionNum)].map(()=>createRef()));
+    const galleryListElem = useRef(null);
+    const controlBarElem = useRef(null);
+    const controlBarBtnElem = useRef(null);
     // const imgElems = useRef([...Array(0)].map(()=>createRef()));
     // const textElems = useRef(null);
 
@@ -40,10 +46,14 @@ const Content = props => {
         // let currentContent = 0;
         let ww = window.innerWidth;
         let isClickedSection = false;
+        let isOpenedGallery = false;
         const contentWrapElemPos = {x:0};
         const contentWrapElemEasePos = {x:0};
+        const galleryPos = {x:0};
+        const galleryEasePos = {x:0};
         // const contentElemEaseScale = [...Array(5).fill(1)];
         let maxWidth = contentWrapElem.current.offsetWidth - ww;
+        let maxGalleryWidth = 0;//contentWrapElem.current.offsetWidth - ww;
         const mouse = {
             currentPos: {x:0, y:0},
             startPos: {x:0, y:0},
@@ -52,7 +62,9 @@ const Content = props => {
         }
 
         let sidebarW = ww * (455 / 1920);
-        let titleElems = null;
+        // let imgYearElems = null;
+        // let imgDesWrapElems = null;
+        let itemElems = null;
         let imgElems = null;
         let currentSectionIdx = 0;
         // let oldCurrentSectionIdx = 0;
@@ -62,7 +74,9 @@ const Content = props => {
 
 
         const init = () => {
-            titleElems = document.querySelectorAll('#title');
+            // imgYearElems = document.querySelectorAll('#imgYear');
+            itemElems = document.querySelectorAll('.item');
+            // imgDesWrapElems = document.querySelectorAll('#imgDesWrap');
             imgElems = document.querySelectorAll('.imgWrap');
             
             animLoop();
@@ -77,7 +91,7 @@ const Content = props => {
                 mouse.lastPos = {x:0, y:0};
 
                 document.addEventListener("mousemove", onMouseMove, false);
-                document.addEventListener("touchmove", onMouseMove, false);
+                document.addEventListener("touchmove", onMouseMove, {passive: false});
                 document.addEventListener("mouseup", onMouseUp, false);
                 document.addEventListener("touchend", onMouseUp, false);
             }
@@ -102,11 +116,12 @@ const Content = props => {
             props.setMinimalSidebar(true);
             if(!minimalContentNav) setMinimalContentNav(true);
             moveContentWrap();
+            if(isOpenedGallery) moveGallery();
         }
 
         const onMouseUp = () => {
             document.removeEventListener("mousemove", onMouseMove, false);
-            document.removeEventListener("touchmove", onMouseMove, false);
+            document.removeEventListener("touchmove", onMouseMove, {passive: false});
             document.removeEventListener('mouseup', onMouseUp, false);
             document.removeEventListener('touchend', onMouseUp, false);
         }
@@ -136,6 +151,30 @@ const Content = props => {
         }
         moveToItemFunc.current = {moveToItem}
 
+        //
+        //
+        // gallery
+        const setIsOpenedGallery = (bool) => {
+            isOpenedGallery = bool;
+        }
+        setIsOpenedGalleryFunc.current = {setIsOpenedGallery}
+
+        const moveGallery = () => {
+            if(maxGalleryWidth <= 0)
+                maxGalleryWidth = galleryListElem.current.offsetWidth - ww;
+
+            if(maxGalleryWidth > 0){
+                galleryPos.x += mouse.delta.x * 2;
+                galleryPos.x = Math.min(0, Math.max(-maxGalleryWidth, galleryPos.x));
+            }
+        }
+
+        const moveControlBar = (progress) => {
+            /************ store controlBarElem.current.offsetWidth **********/
+            controlBarBtnElem.current.style.transform = `translate3d(${(controlBarElem.current.offsetWidth - controlBarBtnElem.current.offsetWidth) * progress}px,0,0)`;
+        }
+
+
         const prevSection = () => {
 
         }
@@ -143,6 +182,7 @@ const Content = props => {
         const nextSection = () => {
 
         }
+
 
         const getCurrentSectionIdx = (idx) => {
             currentSectionIdx = idx;
@@ -157,100 +197,106 @@ const Content = props => {
         const animLoop = () => {
             requestAnimationFrame(animLoop);
 
-            contentWrapElemEasePos.x += (contentWrapElemPos.x - contentWrapElemEasePos.x) * .08;
-            const x = contentWrapElemEasePos.x;
-            contentWrapElem.current.style.transform = `translate3d(${x}px,0,0)`;
-            
+            if(!isOpenedGallery){
+                contentWrapElemEasePos.x += (contentWrapElemPos.x - contentWrapElemEasePos.x) * .08;
+                const x = contentWrapElemEasePos.x;
+                contentWrapElem.current.style.transform = `translate3d(${x}px,0,0)`;
+                
 
-            if(isClickedSection){
-                for(let i=0; i<sectionNum; i++){
-                    //
-                    //
-                    // sidebar
-                    const content = contentElems.current[i].current;
-                    const sidebar = sidebarElems.current[i].current;
+                if(isClickedSection){
+                    for(let i=0; i<sectionNum; i++){
+                        //
+                        //
+                        // sidebar
+                        const content = contentElems.current[i].current;
+                        const sidebar = sidebarElems.current[i].current;
 
-                    const offsetX = content.getBoundingClientRect().left;
-                    let sx = Math.max(0, offsetX);
-                    if(offsetX - sidebarW <= -content.offsetWidth){
-                        sx = Math.max(-sidebarW, offsetX+content.offsetWidth-sidebarW);
-                    }
-                    sidebar.style.transform = `translate3d(${sx}px,0,0)`;
-
-                    if(currentSectionIdx === i){
-                        if(sx === 0 && isStartedToMove){
-                            if(sidebar.classList.contains('active'))
-                                sidebar.classList.remove('active');
+                        const offsetX = content.getBoundingClientRect().left;
+                        let sx = Math.max(0, offsetX);
+                        if(offsetX - sidebarW <= -content.offsetWidth){
+                            sx = Math.max(-sidebarW, offsetX+content.offsetWidth-sidebarW);
                         }
-                    }
-                    //else{
-                        // if(sx + sidebar.offsetWidth < 0){
-                        //     if(!sidebar.classList.contains('active'))
-                        //         sidebar.classList.add('active');
+                        sidebar.style.transform = `translate3d(${sx}px,0,0)`;
+
+                        if(currentSectionIdx === i){
+                            if(sx === 0 && isStartedToMove){
+                                if(sidebar.classList.contains('active'))
+                                    sidebar.classList.remove('active');
+                            }
+                        }
+                        //else{
+                            // if(sx + sidebar.offsetWidth < 0){
+                            //     if(!sidebar.classList.contains('active'))
+                            //         sidebar.classList.add('active');
+                            // }
                         // }
-                    // }
 
 
-                    //
-                    //
-                    // content nav
-                    const contentNav = contentNavElems.current[i].current;
-                    let cx = Math.max(0, offsetX);
-                    if(offsetX <= -content.offsetWidth + contentNav.offsetWidth + sidebarW)
-                        cx = Math.max(-contentNav.offsetWidth, offsetX+content.offsetWidth-sidebarW-contentNav.offsetWidth);
-                    contentNav.style.transform = `translate3d(${cx}px,0,0)`;
-                    
-                    const contentNavLine = contentNavLineElems.current[i].current;
-                    let s = Math.max(0, Math.min(1, -offsetX/(content.offsetWidth-window.innerWidth)));
-                    contentNavLine.style.transform = `translate3d(0,0,0) scaleX(${s})`;
-                    
-                    if(data)
-                        if(offsetX <= window.innerWidth/2 && offsetX+content.offsetWidth >= window.innerWidth/2){
-                            const pageOfNav = Math.floor((s+.04) / (1/(data.sections[i].items.length-1)))
-                            setNavIdx(pageOfNav);
-                            props.setCurrentSectionIdx(i);
-                            // console.log(i,pageOfNav)
-                        }
-                    // if(i === currentSectionIdx && data)
-                    //     console.log(currentSectionIdx, offsetX, Math.floor(s / (1/(data.sections[currentSectionIdx].items.length-1))))
+                        //
+                        //
+                        // content nav
+                        const contentNav = contentNavElems.current[i].current;
+                        let cx = Math.max(0, offsetX);
+                        if(offsetX <= -content.offsetWidth + contentNav.offsetWidth + sidebarW)
+                            cx = Math.max(-contentNav.offsetWidth, offsetX+content.offsetWidth-sidebarW-contentNav.offsetWidth);
+                        contentNav.style.transform = `translate3d(${cx}px,0,0)`;
                         
-                    sx = null;
-                    cx = null;
-                    s = null;
+                        const contentNavLine = contentNavLineElems.current[i].current;
+                        let s = Math.max(0, Math.min(1, -offsetX/(content.offsetWidth-window.innerWidth)));
+                        contentNavLine.style.transform = `translate3d(0,0,0) scaleX(${s})`;
+                        
+                        if(data)
+                            if(offsetX <= window.innerWidth/2 && offsetX+content.offsetWidth >= window.innerWidth/2){
+                                const pageOfNav = Math.floor((s+.04) / (1/(data.sections[i].items.length-1)))
+                                setNavIdx(pageOfNav);
+                                props.setCurrentSectionIdx(i);
+                                // console.log(i,pageOfNav)
+                            }
+                        // if(i === currentSectionIdx && data)
+                        //     console.log(currentSectionIdx, offsetX, Math.floor(s / (1/(data.sections[currentSectionIdx].items.length-1))))
+                            
+                        sx = null;
+                        cx = null;
+                        s = null;
+                    }
                 }
+
+
+
+                if(imgElems)
+                    for(let i=0; i<imgElems.length; i++){
+                        const img = imgElems[i];
+                        const type = img.getAttribute('data-type');
+                        let child = img.querySelector('img');
+
+                        if(type === 'translate'){
+                            const ix = -(img.getBoundingClientRect().left - sidebarW) * .06;
+                            child.style.transform = `translate3d(${ix}px,0,0) scale(1.2)`;
+                        }
+                        else if(type === 'scale'){
+                            const is = Math.max(1, 1 + (img.getBoundingClientRect().left - (ww/8)) / maxWidth);
+                            child.style.transform = `translate3d(0,0,0) scale(${is})`;
+                        }
+
+                        child = null;
+                    }
+
+                if(itemElems)
+                    for(let i=0; i<itemElems.length; i++){
+                        const item = itemElems[i];
+                        
+                        const offsetX = item.getBoundingClientRect().left - ww/2.5;
+                        if(offsetX < 0 && !item.classList.contains('done')){
+                            item.classList.add('done');
+                            gsap.fromTo(item.querySelectorAll('#top span span'), 1, {force3D:true, y:'105%'}, {y:'0%', stagger:.08, ease:'power4.out'},'s');
+                        }
+                    }
             }
-
-
-
-            if(imgElems)
-                for(let i=0; i<imgElems.length; i++){
-                    const img = imgElems[i];
-                    const type = img.getAttribute('data-type');
-                    let child = img.querySelector('img');
-
-                    if(type === 'translate'){
-                        const ix = -(img.getBoundingClientRect().left - sidebarW) * .06;
-                        child.style.transform = `translate3d(${ix}px,0,0) scale(1.2)`;
-                    }
-                    else if(type === 'scale'){
-                        const is = Math.max(1, 1 + (img.getBoundingClientRect().left - (ww/8)) / maxWidth * .8);
-                        child.style.transform = `translate3d(0,0,0) scale(${is})`;
-                    }
-
-                    child = null;
-                }
-
-            if(titleElems)
-                for(let i=0; i<titleElems.length; i++){
-                    const text = titleElems[i];
-                    
-                    const offsetX = text.getBoundingClientRect().left - ww + ww/5;
-
-                    if(offsetX < 0 && text.className !== 'done'){
-                        text.className = 'done';
-                        gsap.fromTo(text.querySelectorAll('span span'), 1, {force3D:true, y:'105%'}, {y:'0%', stagger:.08, ease:'power4.out'},'s');
-                    }
-                }
+            else{
+                galleryEasePos.x += (galleryPos.x - galleryEasePos.x) * .08;
+                galleryListElem.current.style.transform = `translate3d(${galleryEasePos.x}px,0,0)`;
+                moveControlBar(galleryEasePos.x/-maxGalleryWidth);
+            }
         };
         
         const onKeyDown = (e) => {
@@ -275,14 +321,14 @@ const Content = props => {
 
         const addEvent = () => {
             document.addEventListener("mousedown", onMouseDown, false);
-            document.addEventListener("touchstart", onMouseDown, false);
+            document.addEventListener("touchstart", onMouseDown, { passive: false });
             document.addEventListener("keydown", onKeyDown, false);
             window.addEventListener("resize", onResize, false);
         }
 
         const removeEvent = () => {
             document.removeEventListener("mousedown", onMouseDown, false);
-            document.removeEventListener("touchstart", onMouseDown, false);
+            document.removeEventListener("touchstart", onMouseDown, { passive: false });
             document.removeEventListener("keydown", onKeyDown, false);
             window.removeEventListener("resize", onResize, false);
         }
@@ -339,19 +385,32 @@ const Content = props => {
     },[props.contentData])
 
     useEffect(()=>{
-        if(!minimalContentNav){
-            if(triggerMinimal.current) clearTimeout(triggerMinimal.current);
-            triggerMinimal.current = setTimeout(()=>{
-                setMinimalContentNav(true);
-            },1000 * 10);
-        }
-    },[minimalContentNav])
+        setIsOpenedGalleryFunc.current.setIsOpenedGallery(openedGallery);
+    },[openedGallery])
+
+    // useEffect(()=>{
+    //     if(!minimalContentNav){
+    //         if(triggerMinimal.current) clearTimeout(triggerMinimal.current);
+    //         triggerMinimal.current = setTimeout(()=>{
+    //             setMinimalContentNav(true);
+    //         },1000 * 10);
+    //     }
+    // },[minimalContentNav])
 
     const onClickNav = (i,j) => {
         if(!minimalContentNav)
             moveToItemFunc.current.moveToItem(i,j, props.contentData.sections[i].items.length);
+
+        if(triggerMinimal.current) clearTimeout(triggerMinimal.current);
+        triggerMinimal.current = setTimeout(()=>{
+            setMinimalContentNav(true);
+        },1000);
     }
     
+    const showGallery = (galleryData) => {
+        setGalleryItems(galleryData);
+        setOpenedGallery(true);
+    }
 
     return (
         <>
@@ -363,12 +422,11 @@ const Content = props => {
                                 <ul>
                                 {
                                     v.items.map((c,j)=>{
-                                        return <li key={j} className={props.currentSectionIdx === i && navIdx === j ? 'active' : ''} onClick={()=>onClickNav(i,j)}>
-                                            <p>
-                                                <span dangerouslySetInnerHTML={{__html:c.text.title.join('<br/>')}}></span>
-                                                <br/>
-                                                <span id={c.category.id} className="category">{c.category.name}</span>
-                                            </p>
+                                        return <li key={j} id={c.category.id} className={props.currentSectionIdx === i && navIdx === j ? 'active' : ''} onClick={()=>onClickNav(i,j)}>
+                                            {/* <p> */}
+                                            {/* </p> */}
+                                            <span className="category">{c.category.name}</span>
+                                            <span id="year" className="eb" dangerouslySetInnerHTML={{__html:c.text.year}}></span>
                                         </li>
                                     })
                                 }
@@ -383,14 +441,16 @@ const Content = props => {
                 {
                     props.contentData.sections.map((v,i)=>{
                         return <div key={i} ref={sidebarElems.current[i]} id={`sidebar${i+1}`} className={`sidebar${i >= props.clickedSectionIdx ? ' active' : ''}`}>
-                            <div id="des">
-                                {
-                                    v.text1.split('').map((v, i)=>{
-                                        return <span key={i}><span>{v}</span></span>
-                                    })
-                                }
+                            <div id="desWrap">
+                                <div id="des">
+                                    {
+                                        v.text1.split('').map((v, i)=>{
+                                            return <span key={i}><span>{v}</span></span>
+                                        })
+                                    }
+                                </div>
                             </div>
-                            <div id="date">
+                            <div id="date" className="eb">
                                 {
                                     v.year.split(/(\d+)/g).filter(x => x).map((v, i)=>{
                                         return <span key={i}>{v}</span>
@@ -410,26 +470,41 @@ const Content = props => {
                              {
                                 v.items.map((c,j)=>{
                                     return <div key={j} className="item">
-                                        <div id="wrap">
-                                            {
-                                                c.image.url &&
-                                                <div className="imgWrap" data-type={`${c.image.translationType}`}><img src={c.image.url} /></div>
-                                            }
-                                            {
-                                                c.text.title &&
-                                                <div id="title">
-                                                    {
-                                                        c.text.title.map((t, k)=>{
-                                                            return <div key={k}>
-                                                                {
-                                                                    t.split('').map((tv, l)=>{
-                                                                        return <span key={l}><span>{tv}</span></span>
-                                                                    })
-                                                                }
-                                                            </div>
-                                                        })
-                                                    }
+                                        <div id="top">
+                                            <div id="imgOuterWrap">
+                                                {
+                                                    c.image.src &&
+                                                    <div className="imgWrap" data-type={`${c.image.translationType}`}>
+                                                        <img src={c.image.src} />
+                                                        {
+                                                            c.image.gallery &&
+                                                            c.image.gallery.length > 0 &&
+                                                                <div id="galleryBtn" onClick={()=>showGallery(c.image.gallery)}></div>
+                                                        }
+                                                    </div>
+                                                }
+                                                <div id="imgDesWrap">
+                                                    <div id="imgYear" className="eb">
+                                                        {
+                                                            c.text.year.toString().split('').map((t, k)=>{
+                                                                return <div key={k}><span><span>{t}</span></span></div>
+                                                            })
+                                                        }
+                                                    </div>
+                                                    <div id="imgDes">
+                                                        {
+                                                            c.image.description.split('<br/>').map((t,l)=>{
+                                                                return <div><span key={l}><span>{t}</span></span></div>
+                                                            })
+                                                        }
+                                                    </div>
                                                 </div>
+                                            </div>
+                                            <div id={c.category.id} className="category">{c.category.name}</div>
+                                        </div>
+                                        <div id="bot">
+                                            {
+                                                c.text.content && <div id="itemContent" dangerouslySetInnerHTML={{__html:c.text.content}}></div>
                                             }
                                         </div>
                                     </div>
@@ -439,6 +514,30 @@ const Content = props => {
                     })
                 }
             </div>
+            {
+                galleryItems &&
+                <div id="gallery">
+                    <div id="galleryContent">
+                        <ul ref={galleryListElem}>
+                        {
+                            galleryItems.map((v,i)=>{
+                                return <li key={i}>
+                                    <img src={v.src} />
+                                    <p id="des">{v.description}</p>
+                                    <p id="ref">{v.reference}</p>
+                                </li>
+                            })
+                        }
+                        </ul>
+                        <div id="controlWrap">
+                            <div ref={controlBarElem} id="controlBar">
+                                <div ref={controlBarBtnElem} id="controlBarBtn"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="bg"></div>
+                </div>
+            }
         </>
     )
 }
