@@ -276,8 +276,6 @@ const G302A = props => {
                     currentSection = i;
                 }
                 
-                sectionElemEaseScale[i] += (scale - sectionElemEaseScale[i]) * .1;
-                section.style.transform = `translate3d(-50%,-50%,0) scale(${sectionElemEaseScale[i]})`;
 
                 textElemEaseX[i] += (textX - textElemEaseX[i]) * .1;
                 textElemEaseScale[i] += (textS - textElemEaseScale[i]) * .1;
@@ -288,6 +286,10 @@ const G302A = props => {
                 imageElemEaseX[i] += (imgX - imageElemEaseX[i]) * .1;
                 imageElemEaseScale[i] += (imgS - imageElemEaseScale[i]) * .1;
                 img.style.transform = `translate3d(${imageElemEaseX[i] * 100}%,0,0) scale(${imageElemEaseScale[i]})`;
+                
+                sectionElemEaseScale[i] += (scale - sectionElemEaseScale[i]) * .1;
+                section.style.transform = `translate3d(-50%,-50%,0) scale(${sectionElemEaseScale[i]})`;
+                // section.style.opacity = textElemEaseOpacity[i] * .8 + .2;
             }
         }
         
@@ -396,7 +398,7 @@ const G302A = props => {
                                     <p ref={sectionTextElems.current[i]}>
                                         <span>{contentData && contentData.sections[i].text1}</span>
                                     </p>
-                                    <div ref={sectionImgElems.current[i]} className="img"></div>
+                                    <div ref={sectionImgElems.current[i]} className="img" style={{backgroundImage:`url(${contentData && contentData.sections[i].coverincircle.src})`}}></div>
                                 </div>
                             </div>
                             <div id="exploreBtn">探索</div>

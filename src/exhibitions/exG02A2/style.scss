@@ -906,6 +906,7 @@
                                 height:0;
                                 position: absolute;
                                 left:0;
+                                will-change: transform;
                                 &.line1{
                                     top:10vw;
                                 }

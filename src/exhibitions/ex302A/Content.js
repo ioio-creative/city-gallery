@@ -242,9 +242,18 @@ const Content = props => {
 
                         if(currentSectionIdx === i){
                             if(sx === 0 && isStartedToMove){
-                                if(sidebar.classList.contains('active'))
+                                if(sidebar.classList.contains('active')){
                                     sidebar.classList.remove('active');
+                                    sidebar.classList.add('minimize');
+                                }
                             }
+                        }
+                        else if(i > currentSectionIdx){
+                            if(sx >= window.innerWidth)
+                                if(!sidebar.classList.contains('active')){
+                                    sidebar.classList.add('active');
+                                    sidebar.classList.remove('minimize');
+                                }
                         }
                         //else{
                             // if(sx + sidebar.offsetWidth < 0){
@@ -488,7 +497,7 @@ const Content = props => {
                                 }
                             </div>
                             <div id="line"></div>
-                            <div id="img"></div>
+                            <div id="img" style={{backgroundImage:`url(${v.coverinsidebar.src}`}}></div>
                         </div>
                     })
                 }
