@@ -93,6 +93,7 @@ const G302A = props => {
     useEffect(()=>{
         let ww = window.innerWidth;
         let started = false;
+        let moving = false;
         let currentSection = 0;
         let oldSection = 0;
         let isClickedSection = false;
@@ -130,29 +131,37 @@ const G302A = props => {
                 mouse.lastPos = {x:0, y:0};
                 
                 setDragging(false);
+                moving = false;
 
-                document.addEventListener("mousemove", onMouseMove, false);
-                document.addEventListener("touchmove", onMouseMove, false);
+                if(event.touches)
+                    document.addEventListener("touchmove", onMouseMove, false);
+                else
+                    document.addEventListener("mousemove", onMouseMove);
                 document.addEventListener("mouseup", onMouseUp, false);
                 document.addEventListener("touchend", onMouseUp, false);
             }
         }
 
         const onMouseMove = (event) => {
-            if(!event.touches) event.preventDefault();
-            let e = (event.touches? event.touches[0]: event);
+            if(!isClickedSection){
+                if(!event.touches) event.preventDefault();
+                let e = (event.touches? event.touches[0]: event);
 
-            mouse.currentPos.x = e.clientX - mouse.startPos.x;
-            mouse.currentPos.y = e.clientY - mouse.startPos.y;
+                mouse.currentPos.x = e.clientX - mouse.startPos.x;
+                mouse.currentPos.y = e.clientY - mouse.startPos.y;
 
-            mouse.delta.x = mouse.currentPos.x - mouse.lastPos.x;
-            mouse.delta.y = mouse.currentPos.y - mouse.lastPos.y;
+                mouse.delta.x = mouse.currentPos.x - mouse.lastPos.x;
+                mouse.delta.y = mouse.currentPos.y - mouse.lastPos.y;
 
-            mouse.lastPos.x = mouse.currentPos.x;
-            mouse.lastPos.y = mouse.currentPos.y;
+                mouse.lastPos.x = mouse.currentPos.x;
+                mouse.lastPos.y = mouse.currentPos.y;
 
-            setDragging(true);
-            moveSectionWrap();
+                if(moving){
+                    setDragging(true);
+                }
+                moveSectionWrap();
+                moving = true;
+            }
         }
 
         const onMouseUp = () => {
@@ -355,6 +364,14 @@ const G302A = props => {
 
     return(
         <div id="home">
+            {/* <svg width="100" height="100">
+                <defs>
+                    <mask id="circle-mask">
+                        <rect fill="#000000" x="0" y="0" width="100" height="100"></rect>
+                        <circle fill="#000000" cx="50" cy="50" r="50"></circle>
+                    </mask>
+                </defs>
+            </svg> */}
             <div id="language" className={`${clickedSectionIdx !== null && !minimalSidebar ? 'hide' : ''}`}>
                 <div className={language==='tc'?'active':''} onClick={()=>onChangeLanguage('tc')}><span>繁</span></div>
                 <div className={language==='en'?'active':''} onClick={()=>onChangeLanguage('en')}><span>EN</span></div>
@@ -373,13 +390,16 @@ const G302A = props => {
             <div ref={sectionWrapElem} id="sectionWrap">
                 {
                     [...Array(sectionNum).fill(null)].map((v, i)=>{
-                        return <div key={i} ref={sectionElems.current[i]} id={`section${i+1}`} className={`section${clickedSectionIdx === i ? ' active' : ''}`} onClick={()=>onClickSection(i)}>
-                            <div id="wrap">
-                                <p ref={sectionTextElems.current[i]}>
-                                    <span>{contentData && contentData.sections[i].text1}</span>
-                                </p>
-                                <div ref={sectionImgElems.current[i]} className="img"></div>
+                        return <div key={i} ref={sectionElems.current[i]} id={`section${i+1}`} className={`section${clickedSectionIdx === i ? ' active' : ''} ${currentSectionIdx === i ? ' current' : ''}`} onClick={()=>onClickSection(i)}>
+                            <div id="outerWrap">
+                                <div id="wrap">
+                                    <p ref={sectionTextElems.current[i]}>
+                                        <span>{contentData && contentData.sections[i].text1}</span>
+                                    </p>
+                                    <div ref={sectionImgElems.current[i]} className="img"></div>
+                                </div>
                             </div>
+                            <div id="exploreBtn">探索</div>
                         </div>
                     })
                 }

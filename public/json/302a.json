@@ -337,7 +337,18 @@
                                 "src":"./images/ex302a/img.png",
                                 "translationType":"scale",
                                 "description":"九廣鐵路(英段)<br/>通車",
-                                "gallery":null
+                                "gallery":[
+                                    {
+                                        "src":"./images/ex302a/img.png",
+                                        "description":"（這是假字）當年主建築物的外觀。",
+                                        "reference":"圖片參考: KCRC"
+                                    },
+                                    {
+                                        "src":"./images/ex302a/img.png",
+                                        "description":"（這是假字）當年主建築物的外觀。",
+                                        "reference":"圖片參考: KCRC"
+                                    }
+                                ]
                             },
                             "category":{
                                 "id":"house",

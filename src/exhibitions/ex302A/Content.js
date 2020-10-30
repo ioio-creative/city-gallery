@@ -47,6 +47,7 @@ const Content = props => {
         let ww = window.innerWidth;
         let isClickedSection = false;
         let isOpenedGallery = false;
+        let isClickedControlBarBtn = false;
         const contentWrapElemPos = {x:0};
         const contentWrapElemEasePos = {x:0};
         const galleryPos = {x:0};
@@ -54,7 +55,7 @@ const Content = props => {
         // const contentElemEaseScale = [...Array(5).fill(1)];
         let maxWidth = contentWrapElem.current.offsetWidth - ww;
         let maxGalleryWidth = 0;//contentWrapElem.current.offsetWidth - ww;
-        const mouse = {
+        let mouse = {
             currentPos: {x:0, y:0},
             startPos: {x:0, y:0},
             lastPos: {x:0, y:0},
@@ -70,6 +71,9 @@ const Content = props => {
         // let oldCurrentSectionIdx = 0;
         let isStartedToMove = false;
         let data = null;
+        let controlBarWidth = controlBarElem.current.offsetWidth;
+        let controlBarBtnWidth = controlBarBtnElem.current.offsetWidth;
+        let maxControlWidth = controlBarWidth - controlBarBtnWidth;
         const sectionNum = props.sectionNum;
 
 
@@ -89,9 +93,12 @@ const Content = props => {
                 let e = (event.touches? event.touches[0]: event);
                 mouse.startPos = {x:e.clientX, y:e.clientY};
                 mouse.lastPos = {x:0, y:0};
+                maxGalleryWidth = galleryListElem.current.offsetWidth - ww;
 
-                document.addEventListener("mousemove", onMouseMove, false);
-                document.addEventListener("touchmove", onMouseMove, {passive: false});
+                if(event.touches)
+                    document.addEventListener("touchmove", onMouseMove, false);
+                else
+                    document.addEventListener("mousemove", onMouseMove, false);
                 document.addEventListener("mouseup", onMouseUp, false);
                 document.addEventListener("touchend", onMouseUp, false);
             }
@@ -114,16 +121,27 @@ const Content = props => {
             mouse.lastPos.y = mouse.currentPos.y;
 
             props.setMinimalSidebar(true);
-            if(!minimalContentNav) setMinimalContentNav(true);
-            moveContentWrap();
-            if(isOpenedGallery) moveGallery();
+            
+            if(isOpenedGallery){
+                if(!isClickedControlBarBtn)
+                    moveGallery();
+                else
+                    moveGalleryByControlBtn();
+            }
+            else
+                moveContentWrap();
         }
 
         const onMouseUp = () => {
+            isClickedControlBarBtn = false;
             document.removeEventListener("mousemove", onMouseMove, false);
-            document.removeEventListener("touchmove", onMouseMove, {passive: false});
+            document.removeEventListener("touchmove", onMouseMove, false);
             document.removeEventListener('mouseup', onMouseUp, false);
             document.removeEventListener('touchend', onMouseUp, false);
+        }
+
+        const onClickControlBarBtn = () => {
+            isClickedControlBarBtn = true;
         }
 
         const setIsClickedSection = (bool) => {
@@ -144,7 +162,7 @@ const Content = props => {
 
         const moveToItem = (i,j,lth) => {
             const currentContent = contentElems.current[i].current;
-            const item = currentContent.querySelector(`.item:nth-child(${j+1})`);
+            // const item = currentContent.querySelector(`.item:nth-child(${j+1})`);
             contentWrapElemPos.x = -currentContent.offsetLeft -(currentContent.offsetWidth-window.innerWidth) / (lth-1) * j;
             // console.log(currentContent.offsetLeft, currentContent.offsetWidth)
             // contentWrapElemPos.x = -currentContent.offsetLeft - item.offsetLeft + sidebarW;
@@ -153,35 +171,39 @@ const Content = props => {
 
         //
         //
-        // gallery
+        // [start] gallery
         const setIsOpenedGallery = (bool) => {
             isOpenedGallery = bool;
+            if(bool) galleryPos.x = 0;
         }
         setIsOpenedGalleryFunc.current = {setIsOpenedGallery}
 
         const moveGallery = () => {
-            if(maxGalleryWidth <= 0)
-                maxGalleryWidth = galleryListElem.current.offsetWidth - ww;
-
             if(maxGalleryWidth > 0){
                 galleryPos.x += mouse.delta.x * 2;
                 galleryPos.x = Math.min(0, Math.max(-maxGalleryWidth, galleryPos.x));
             }
         }
 
-        const moveControlBar = (progress) => {
-            /************ store controlBarElem.current.offsetWidth **********/
-            controlBarBtnElem.current.style.transform = `translate3d(${(controlBarElem.current.offsetWidth - controlBarBtnElem.current.offsetWidth) * progress}px,0,0)`;
+        const moveGalleryByControlBtn = () => {
+            galleryPos.x += -mouse.delta.x;
+            galleryPos.x = Math.min(0, Math.max(-maxGalleryWidth, galleryPos.x));
         }
 
-
-        const prevSection = () => {
-
+        const moveControlBarBtn = (progress) => {
+            controlBarBtnElem.current.style.transform = `translate3d(${maxControlWidth * progress}px,0,0)`;
         }
+        // [end] gallery
+        //
+        //
 
-        const nextSection = () => {
+        // const prevSection = () => {
 
-        }
+        // }
+
+        // const nextSection = () => {
+
+        // }
 
 
         const getCurrentSectionIdx = (idx) => {
@@ -295,7 +317,7 @@ const Content = props => {
             else{
                 galleryEasePos.x += (galleryPos.x - galleryEasePos.x) * .08;
                 galleryListElem.current.style.transform = `translate3d(${galleryEasePos.x}px,0,0)`;
-                moveControlBar(galleryEasePos.x/-maxGalleryWidth);
+                moveControlBarBtn(galleryEasePos.x/-maxGalleryWidth);
             }
         };
         
@@ -324,6 +346,9 @@ const Content = props => {
             document.addEventListener("touchstart", onMouseDown, { passive: false });
             document.addEventListener("keydown", onKeyDown, false);
             window.addEventListener("resize", onResize, false);
+            
+            controlBarBtnElem.current.addEventListener("mousedown", onClickControlBarBtn, false);
+            controlBarBtnElem.current.addEventListener("touchstart", onClickControlBarBtn, false);
         }
 
         const removeEvent = () => {
@@ -331,6 +356,9 @@ const Content = props => {
             document.removeEventListener("touchstart", onMouseDown, { passive: false });
             document.removeEventListener("keydown", onKeyDown, false);
             window.removeEventListener("resize", onResize, false);
+
+            controlBarBtnElem.current.removeEventListener("mousedown", onClickControlBarBtn, false);
+            controlBarBtnElem.current.removeEventListener("touchstart", onClickControlBarBtn, false);
         }
         
         init();
@@ -388,6 +416,7 @@ const Content = props => {
         setIsOpenedGalleryFunc.current.setIsOpenedGallery(openedGallery);
     },[openedGallery])
 
+
     // useEffect(()=>{
     //     if(!minimalContentNav){
     //         if(triggerMinimal.current) clearTimeout(triggerMinimal.current);
@@ -404,7 +433,7 @@ const Content = props => {
         if(triggerMinimal.current) clearTimeout(triggerMinimal.current);
         triggerMinimal.current = setTimeout(()=>{
             setMinimalContentNav(true);
-        },1000);
+        },10000);
     }
     
     const showGallery = (galleryData) => {
@@ -441,6 +470,7 @@ const Content = props => {
                 {
                     props.contentData.sections.map((v,i)=>{
                         return <div key={i} ref={sidebarElems.current[i]} id={`sidebar${i+1}`} className={`sidebar${i >= props.clickedSectionIdx ? ' active' : ''}`}>
+                            <div id="bg" style={{backgroundImage:`url('./images/ex302a/sidebarbg.jpg')`}}></div>
                             <div id="desWrap">
                                 <div id="des">
                                     {
@@ -494,7 +524,7 @@ const Content = props => {
                                                     <div id="imgDes">
                                                         {
                                                             c.image.description.split('<br/>').map((t,l)=>{
-                                                                return <div><span key={l}><span>{t}</span></span></div>
+                                                                return <div key={l}><span><span>{t}</span></span></div>
                                                             })
                                                         }
                                                     </div>
@@ -515,11 +545,11 @@ const Content = props => {
                 }
             </div>
             {
-                galleryItems &&
-                <div id="gallery">
+                <div id="gallery" className={openedGallery ? 'active' : ''}>
                     <div id="galleryContent">
                         <ul ref={galleryListElem}>
                         {
+                            galleryItems &&
                             galleryItems.map((v,i)=>{
                                 return <li key={i}>
                                     <img src={v.src} />
@@ -535,6 +565,8 @@ const Content = props => {
                             </div>
                         </div>
                     </div>
+                    <div id="galleryTotalNum" className="eb"><span>{galleryItems && galleryItems.length}</span></div>
+                    <div id="backBtn" onClick={()=>setOpenedGallery(false)}>返回</div>
                     <div id="bg"></div>
                 </div>
             }
