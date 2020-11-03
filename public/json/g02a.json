@@ -36,15 +36,41 @@
                 "distance":"5km",
                 "source":"(Source Holder)",
                 "images":{
-                    "hongkong":{ "src":"./images/exG02a/section1/hongkong.svg" },
-                    "tokyo":{ "src":"./images/exG02a/section1/tokyo.svg" },
-                    "taiwan":{ "src":"./images/exG02a/section1/hongkong.svg" }
+                    "hongkong":{ "src":"./images/exG02a/section1/G02A_UrbanForm_HongKong.svg" },
+                    "beijing":{ "src":"./images/exG02a/section1/G02A_UrbanForm_Beijing.svg" },
+                    "cairo":{ "src":"./images/exG02a/section1/G02A_UrbanForm_Cairo.svg" },
+                    "london":{ "src":"./images/exG02a/section1/G02A_UrbanForm_London.svg" },
+                    "paris":{ "src":"./images/exG02a/section1/G02A_UrbanForm_Paris.svg" },
+                    "mexicocity":{ "src":"./images/exG02a/section1/G02A_UrbanForm_MexicoCity.svg" },
+                    "mumbai":{ "src":"./images/exG02a/section1/G02A_UrbanForm_Mumbai.svg" },
+                    "newyork":{ "src":"./images/exG02a/section1/G02A_UrbanForm_NewYork.svg" },
+                    "singapore":{ "src":"./images/exG02a/section1/G02A_UrbanForm_Singapore.svg" },
+                    "sydney":{ "src":"./images/exG02a/section1/G02A_UrbanForm_Sydney.svg" },
+                    "tokyo":{ "src":"./images/exG02a/section1/G02A_UrbanForm_Tokyo.svg" }
                 }
             },
             "section2":{
                 "distance":"5/km<sup>2</sup>",
                 "hongkong":{
                     "source":"HK Census And Statistics Department Population 2018<br/>Hong Kong Geographic Data 2019"
+                },
+                "beijing":{
+                    "populationDensity":{ "value":"1,312.00" },
+                    "population":{ "value":"21,536,000" },
+                    "landArea":{ "value":"16,410.54" },
+                    "source":"北京市统计局K<br/>北京市2019年国民经济和社会发展统计公报"
+                },
+                "cairo":{
+                    "populationDensity":{ "value":"5792.00" },
+                    "population":{ "value":"9,570,,400" },
+                    "landArea":{ "value":"3085.12" },
+                    "source":"Official Portal of Cairo Governorate & State Information Service"
+                },
+                "london":{
+                    "populationDensity":{ "value":"5701.00" },
+                    "population":{ "value":"8,961,989" },
+                    "landArea":{ "value":"1,571.00" },
+                    "source":"Population estimates for the UK, England and Wales, Scotland and Northern Ireland, Office for National Statistics, the UK"
                 },
                 "tokyo":{
                     "populationDensity":{ "value":"14,568.96" },
@@ -69,7 +95,7 @@
                         },
                         {
                             "name":"Two International Finance Centre",
-                            "height":"416m",
+                            "height":"415m",
                             "floor":"88 Floors"
                         },
                         {
@@ -80,7 +106,27 @@
                     ],
                     "source":"Emporis"
                 },
-                "tokyo":{
+                "beijing":{
+                    "building":[
+                        {
+                            "name":"Zhongguo Zun/ CITIC Tower",
+                            "height":"528m",
+                            "floor":"108 Floors"
+                        },
+                        {
+                            "name":"China World Trade Center Tower III",
+                            "height":"330m",
+                            "floor":"74 Floors"
+                        },
+                        {
+                            "name":"China World Trade Center Tower IIIB",
+                            "height":"288m",
+                            "floor":"58 Floors"
+                        }
+                    ],
+                    "source":"Emporis"
+                },
+                "cairo":{
                     "building":[
                         {
                             "name":"Toranomon Hills",
@@ -100,7 +146,147 @@
                     ],
                     "source":"Emporis"
                 },
-                "taiwan":{
+                "london":{
+                    "building":[
+                        {
+                            "name":"The Shard",
+                            "height":"306m",
+                            "floor":"73 Floors"
+                        },
+                        {
+                            "name":"22 Bishopsgate",
+                            "height":"278m",
+                            "floor":"63 Floors"
+                        },
+                        {
+                            "name":"110 Bishopsgate (previously named Heron Tower)",
+                            "height":"242m",
+                            "floor":"46 Floors"
+                        }
+                    ],
+                    "source":"Emporis"
+                },
+                "paris":{
+                    "building":[
+                        {
+                            "name":"Tour Montparnasse",
+                            "height":"210m",
+                            "floor":"60 Floors"
+                        },
+                        {
+                            "name":"Tribunal de Paris",
+                            "height":"160m",
+                            "floor":"40 Floors"
+                        },
+                        {
+                            "name":"Hyatt Regency Paris Etoile",
+                            "height":"137m",
+                            "floor":"39 Floors"
+                        }
+                    ],
+                    "source":"Emporis"
+                },
+                "mexicocity":{
+                    "building":[
+                        {
+                            "name":"Torre Reforma",
+                            "height":"245m",
+                            "floor":"57 Floors"
+                        },
+                        {
+                            "name":"Chapultepec Uno/Punto Chapultepec",
+                            "height":"240.5m",
+                            "floor":"59 Floors"
+                        },
+                        {
+                            "name":"Torre BBVA Bancomer",
+                            "height":"235m",
+                            "floor":"50 Floors"
+                        }
+                    ],
+                    "source":"Emporis"
+                },
+                "mumbai":{
+                    "building":[
+                        {
+                            "name":"Lodha The Park 4",
+                            "height":"268m",
+                            "floor":"76 Floors"
+                        },
+                        {
+                            "name":"Omkar 1973 Tower A",
+                            "height":"268m",
+                            "floor":"76 Floors"
+                        },
+                        {
+                            "name":"Lodha The Park 1",
+                            "height":"268m",
+                            "floor":"76 Floors"
+                        }
+                    ],
+                    "source":"Emporis"
+                },
+                "newyork":{
+                    "building":[
+                        {
+                            "name":"One World Trade Center",
+                            "height":"541m",
+                            "floor":"104 Floors"
+                        },
+                        {
+                            "name":"Central Park Tower",
+                            "height":"472m",
+                            "floor":"95 Floors"
+                        },
+                        {
+                            "name":"111 West 57th Street",
+                            "height":"435m",
+                            "floor":"84 Floors"
+                        }
+                    ],
+                    "source":"Emporis"
+                },
+                "singapore":{
+                    "building":[
+                        {
+                            "name":"Tanjong Pagar Centre/ Guoco Tower",
+                            "height":"290m",
+                            "floor":"68 Floors"
+                        },
+                        {
+                            "name":"Republic Plaza",
+                            "height":"280m",
+                            "floor":"66 Floors"
+                        },
+                        {
+                            "name":"United Overseas Bank Plaza One",
+                            "height":"280m",
+                            "floor":"66 Floors"
+                        }
+                    ],
+                    "source":"Emporis"
+                },
+                "sydney":{
+                    "building":[
+                        {
+                            "name":"Chifley Tower",
+                            "height":"244m",
+                            "floor":"50 Floors"
+                        },
+                        {
+                            "name":"Citigroup Centre",
+                            "height":"243m",
+                            "floor":"50 Floors"
+                        },
+                        {
+                            "name":"Deutsche Bank Place",
+                            "height":"240m",
+                            "floor":"39 Floors"
+                        }
+                    ],
+                    "source":"Emporis"
+                },
+                "tokyo":{
                     "building":[
                         {
                             "name":"Toranomon Hills",
@@ -131,20 +317,85 @@
                     ],
                     "source":"The 2019 Deloitte City Mobility Index"
                 },
+                "beijing":{
+                    "percentage":"36",
+                    "carimages":[
+                        "./images/exG02a/section4/beijingcar1.svg",
+                        "./images/exG02a/section4/beijingcar2.svg"
+                    ],
+                    "source":"The 2019 Deloitte City Mobility Index"
+                },
+                "cairo":{
+                    "percentage":"69",
+                    "carimages":[
+                        "./images/exG02a/section4/cairocar1.svg",
+                        "./images/exG02a/section4/cairocar2.svg"
+                    ],
+                    "source":"The 2019 Deloitte City Mobility Index"
+                },
+                "london":{
+                    "percentage":"35",
+                    "carimages":[
+                        "./images/exG02a/section4/londoncar1.svg",
+                        "./images/exG02a/section4/londoncar2.svg"
+                    ],
+                    "source":"The 2019 Deloitte City Mobility Index"
+                },
+                "paris":{
+                    "percentage":"25",
+                    "carimages":[
+                        "./images/exG02a/section4/pariscar1.svg",
+                        "./images/exG02a/section4/pariscar2.svg"
+                    ],
+                    "source":"The 2019 Deloitte City Mobility Index"
+                },
+                "mexicocity":{
+                    "percentage":"71",
+                    "carimages":[
+                        "./images/exG02a/section4/mexicocitycar1.svg",
+                        "./images/exG02a/section4/mexicocitycar2.svg"
+                    ],
+                    "source":"The 2019 Deloitte City Mobility Index"
+                },
+                "mumbai":{
+                    "percentage":"70",
+                    "carimages":[
+                        "./images/exG02a/section4/mumbaicar1.svg",
+                        "./images/exG02a/section4/mumbaicar2.svg"
+                    ],
+                    "source":"The 2019 Deloitte City Mobility Index"
+                },
+                "newyork":{
+                    "percentage":"35",
+                    "carimages":[
+                        "./images/exG02a/section4/newyorkcar1.svg",
+                        "./images/exG02a/section4/newyorkcar2.svg"
+                    ],
+                    "source":"The 2019 Deloitte City Mobility Index"
+                },
+                "singapore":{
+                    "percentage":"53",
+                    "carimages":[
+                        "./images/exG02a/section4/singaporecar1.svg",
+                        "./images/exG02a/section4/singaporecar2.svg"
+                    ],
+                    "source":"The 2019 Deloitte City Mobility Index"
+                },
+                "sydney":{
+                    "percentage":"27",
+                    "carimages":[
+                        "./images/exG02a/section4/sydneycar1.svg",
+                        "./images/exG02a/section4/sydneycar2.svg"
+                    ],
+                    "source":"The 2019 Deloitte City Mobility Index"
+                },
                 "tokyo":{
-                    "percentage":"10",
+                    "percentage":"47",
                     "carimages":[
                         "./images/exG02a/section4/tokyocar1.svg",
                         "./images/exG02a/section4/tokyocar2.svg"
                     ],
-                    "source":"Land Transport Authority Of Singapore In <br/>November 2014"
-                },
-                "taiwan":{
-                    "percentage":"10",
-                    "carimages":[
-                        "./images/exG02a/section4/hongkongcar1.svg"
-                    ],
-                    "source":"Land Transport Authority Of Singapore In <br/>November 2014"
+                    "source":"The 2019 Deloitte City Mobility Index"
                 }
             },
             "section5":{
@@ -152,11 +403,43 @@
                     "money":"48,915.89",
                     "source":"Table 030 - Gross Domestic Product <br/>(GDP), Implicit Price Deflator Of GDP And <br/>Per Capita GDP"
                 },
-                "tokyo":{
+                "beijing":{
                     "money":"74,266.31",
                     "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
                 },
-                "taiwan":{
+                "cairo":{
+                    "money":"74,266.31",
+                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                },
+                "london":{
+                    "money":"74,266.31",
+                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                },
+                "paris":{
+                    "money":"74,266.31",
+                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                },
+                "mexicocity":{
+                    "money":"74,266.31",
+                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                },
+                "mumbai":{
+                    "money":"74,266.31",
+                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                },
+                "newyork":{
+                    "money":"74,266.31",
+                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                },
+                "singapore":{
+                    "money":"74,266.31",
+                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                },
+                "sydney":{
+                    "money":"74,266.31",
+                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                },
+                "tokyo":{
                     "money":"74,266.31",
                     "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
                 }

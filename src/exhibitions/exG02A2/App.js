@@ -36,13 +36,16 @@ const App = props => {
     const locationsElem = useRef(null);
     const locations = [
         { name:{"en":"Hong Kong", "tc":"香港"}, lat:22.377720, lon:114.155267 },
-        { name:{"en":"Tokyo", "tc":"東京"}, lat:36.343782, lon:138.695725 },
-        { name:{"en":"Taiwan", "tc":"台灣"}, lat:23.888775, lon:120.989626 },
-        { name:{"en":"Korea", "tc":"韓國"}, lat:36.578477, lon:128.079916 },
-        { name:{"en":'USA', "tc":"美國"}, lat:39.956661, lon:-98.027880 },
-        { name:{"en":'France', "tc":"法國"}, lat:46.1385598, lon:-2.4472232 },
-        { name:{"en":'Australia', "tc":"澳洲"}, lat:-24.495995, lon:134.599090 },
-        { name:{"en":'Brasil', "tc":"巴西"}, lat:-10.871609, lon:-50.468879 }
+        { name:{"en":"Beijing", "tc":"北京"}, lat:39.920244, lon:116.411309 },
+        { name:{"en":'Cairo', "tc":"開羅"}, lat:30.050844, lon:31.236143 },
+        { name:{"en":'London', "tc":"倫敦"}, lat:51.510833, lon:-0.127461 },
+        { name:{"en":'Paris', "tc":"巴黎"}, lat:48.862788, lon:2.339303 },
+        { name:{"en":'Mexico City', "tc":"墨西哥城"}, lat:19.595333, lon:-99.142672 },
+        { name:{"en":'Mumbai', "tc":"孟買"}, lat:19.144194, lon:72.883378 },
+        { name:{"en":'New York', "tc":"紐約"}, lat:40.763200, lon:-74.041618 },
+        { name:{"en":'Singapore', "tc":"新加坡"}, lat:1.349690, lon:103.881340 },
+        { name:{"en":'Sydney', "tc":"悉尼"}, lat:-33.817029, lon:151.213937 },
+        { name:{"en":"Tokyo", "tc":"東京"}, lat:35.680331, lon:139.767505 }
     ]
     // const moveToFunc = useRef(null);
     const moveFromIdFunc = useRef(null);

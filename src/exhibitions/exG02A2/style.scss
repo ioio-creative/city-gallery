@@ -241,6 +241,7 @@
                         &.active{
                             span{
                                 transform: translate3d(0,-6%,0) scale(1);
+                                width: 404px;
                             }
                         }
                         &:not(.active):active{

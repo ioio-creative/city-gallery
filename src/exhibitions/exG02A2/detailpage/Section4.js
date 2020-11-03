@@ -240,6 +240,7 @@ const Section4 = props => {
                     <div className="big">{ data && data['hongkong'].percentage }%</div>
                     <div ref={leftImageWrap} id="leftImageWrap" className="imageWrap">
                         <div id="leftTrain"><div style={{backgroundImage:`url(./images/exG02a/section4/hongkongtrain.svg)`,width:858/1920*100+'vw', height:564/1920*100+'vw'}}></div></div>
+                        {/* <div id="leftTrain"><div style={{backgroundImage:`url(./images/exG02a/section4/hongkongtrain.svg)`,width:44.0875+'vw', height:31.875+'vw'}}></div></div> */}
                     </div>
                     <div id="bg">
                         <div id="train"></div>
@@ -256,7 +257,8 @@ const Section4 = props => {
                     <div className="title medium" dangerouslySetInnerHTML={{__html:globalData && globalData.dailyTrips}}></div>
                     <div className="big">{ data && locationName && data[locationName].percentage }%</div>
                     <div ref={rightImageWrap} id="rightImageWrap" className="imageWrap">
-                        <div id="rightTrain"><div style={{backgroundImage:`url(./images/exG02a/section4/${locationName}train.svg)`,width:858/1920*100+'vw', height:564/1920*100+'vw'}}></div></div>
+                        {/* <div id="rightTrain"><div style={{backgroundImage:`url(./images/exG02a/section4/${locationName}train.svg)`,width:858/1920*100+'vw', height:564/1920*100+'vw'}}></div></div> */}
+                        <div id="rightTrain"><div style={{backgroundImage:`url(./images/exG02a/section4/${locationName}train.svg)`,width:46.6875+'vw', height:33.375+'vw'}}></div></div>
                     </div>
                     <div id="bg">
                         <div id="train"></div>
