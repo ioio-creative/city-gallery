@@ -1104,9 +1104,11 @@ const App = props => {
     },[]);
 
     const onChangeLang = (lang) => {
-        zoomInFunc.current.zoomIn();
-        setLanguage(lang);
-        setData(allData.content[lang]);
+        if (allData){
+            zoomInFunc.current.zoomIn();
+            setLanguage(lang);
+            setData(allData.content[lang]);
+        }
     }
 
     const onChangeDetail = (idx) => {
@@ -1192,14 +1194,14 @@ const App = props => {
                         <div id="left" className="half">
                             <div className="wrap">
                                 <span className="name">{locations[0].name[language]}</span>
-                                <div className="img" style={{backgroundImage:`url(./images/exG02a/hongkongbg.png)`}}></div>
+                                <div className="img" style={{backgroundImage:`url(./images/exG02a/hongkongbg.jpg)`}}></div>
                             </div>
                             <div className="bg"><span></span></div>
                         </div>
                         <div id="right" className="half">
                             <div className="wrap">
                                 <span className="name">{selectedId && locations[selectedId].name[language]}</span>
-                                <div className="img" style={{backgroundImage:`url(./images/exG02a/${selectedId && locations[selectedId].name['en'].replace(' ','').toLowerCase()}bg.png)`}}></div>
+                                <div className="img" style={{backgroundImage:`url(./images/exG02a/${selectedId && locations[selectedId].name['en'].replace(' ','').toLowerCase()}bg.jpg)`}}></div>
                             </div>
                             <div className="bg"><span></span></div>
                         </div>
@@ -1207,10 +1209,10 @@ const App = props => {
 
                     <div className={`locationName left ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}>
                         {locations[0].name[language]}
-                        <span style={{backgroundImage:`url(./images/exG02a/hongkongflag.svg)`}}></span>
+                        <span style={{backgroundImage:`url(./images/exG02a/hongkongflag.png)`}}></span>
                     </div>
                     <div className={`locationName right ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}>
-                        <span style={{backgroundImage:`url(./images/exG02a/${selectedId && locations[selectedId].name['en'].replace(' ','').toLowerCase()}flag.svg)`}}></span>
+                        <span style={{backgroundImage:`url(./images/exG02a/${selectedId && locations[selectedId].name['en'].replace(' ','').toLowerCase()}flag.png)`}}></span>
                         {selectedId && locations[selectedId].name[language]}
                     </div>
                     

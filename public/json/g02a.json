@@ -52,36 +52,66 @@
             "section2":{
                 "distance":"5/km<sup>2</sup>",
                 "hongkong":{
-                    "source":"HK Census And Statistics Department Population 2018<br/>Hong Kong Geographic Data 2019"
+                    "source":"GovHK, <br/>Hong Kong Special Administrative Region 2019"
                 },
                 "beijing":{
-                    "populationDensity":{ "value":"1,312.00" },
+                    "populationDensity":{ "value":"1,312.33" },
                     "population":{ "value":"21,536,000" },
                     "landArea":{ "value":"16,410.54" },
                     "source":"北京市统计局K<br/>北京市2019年国民经济和社会发展统计公报"
                 },
                 "cairo":{
-                    "populationDensity":{ "value":"5792.00" },
-                    "population":{ "value":"9,570,,400" },
+                    "populationDensity":{ "value":"3,189.69" },
+                    "population":{ "value":"9,840,,591" },
                     "landArea":{ "value":"3085.12" },
-                    "source":"Official Portal of Cairo Governorate & State Information Service"
+                    "source":"Official Portal of Cairo Governorate & <br/>State Information Service 2019"
                 },
                 "london":{
-                    "populationDensity":{ "value":"5701.00" },
+                    "populationDensity":{ "value":"5,701.00" },
                     "population":{ "value":"8,961,989" },
-                    "landArea":{ "value":"1,571.00" },
-                    "source":"Population estimates for the UK, England and Wales, Scotland and Northern Ireland, Office for National Statistics, the UK"
+                    "landArea":{ "value":"1,572.00" },
+                    "source":"Population estimates for the UK, England and Wales, Scotland and Northern Ireland, <br/>Office for National Statistics, the UK 2019"
                 },
-                "tokyo":{
-                    "populationDensity":{ "value":"14,568.96" },
-                    "population":{ "value":"9,143,041" },
+                "paris":{
+                    "populationDensity":{ "value":"8,598.00" },
+                    "population":{ "value":"7,200,000" },
+                    "landArea":{ "value":"814.00" },
+                    "source":" Rapport annuel d’activités 2018,<br/>Métropole du Grand Paris"
+                },
+                "mexicocity":{
+                    "populationDensity":{ "value":"6,016.67" },
+                    "population":{ "value":"8,985,339" },
                     "landArea":{ "value":"627.57" },
+                    "source":"officia Wikiciudad by Gobierno de la Ciudad de México & <br/>INEIG - Ciudad de México (09) - Población 2015"
+                },
+                "mumbai":{
+                    "populationDensity":{ "value":"28,990.98" },
+                    "population":{ "value":"12,689,644" },
+                    "landArea":{ "value":"437.71" },
+                    "source":"Municipal Corporation of Greater Mumbai 2016"
+                },
+                "newyork":{
+                    "populationDensity":{ "value":"10,639.93" },
+                    "population":{ "value":"8,340,000" },
+                    "landArea":{ "value":"783.84" },
+                    "source":"NYC Department of City Planning 2019"
+                },
+                "singapore":{
+                    "populationDensity":{ "value":"7,866.00" },
+                    "population":{ "value":"5,703,600" },
+                    "landArea":{ "value":"725.70" },
                     "source":"TOKYO STATISTICAL YEARBOOK 2017 - Population By District (xls)"
                 },
-                "taiwan":{
-                    "populationDensity":{ "value":"4,568.96" },
-                    "population":{ "value":"1,143,041" },
-                    "landArea":{ "value":"627.57" },
+                "sydney":{
+                    "populationDensity":{ "value":"429.50" },
+                    "population":{ "value":"5,312,163" },
+                    "landArea":{ "value":"12,368.20" },
+                    "source":"TOKYO STATISTICAL YEARBOOK 2017 - Population By District (xls)"
+                },
+                "tokyo":{
+                    "populationDensity":{ "value":"6,305.91" },
+                    "population":{ "value":"13,834,925" },
+                    "landArea":{ "value":"2194.00" },
                     "source":"TOKYO STATISTICAL YEARBOOK 2017 - Population By District (xls)"
                 }
             },
@@ -315,7 +345,7 @@
                         "./images/exG02a/section4/hongkongcar2.svg",
                         "./images/exG02a/section4/hongkongcar3.svg"
                     ],
-                    "source":"The 2019 Deloitte City Mobility Index"
+                    "source":"Deloitte 2018"
                 },
                 "beijing":{
                     "percentage":"36",
@@ -323,7 +353,7 @@
                         "./images/exG02a/section4/beijingcar1.svg",
                         "./images/exG02a/section4/beijingcar2.svg"
                     ],
-                    "source":"The 2019 Deloitte City Mobility Index"
+                    "source":"Deloitte 2018"
                 },
                 "cairo":{
                     "percentage":"69",
@@ -331,7 +361,7 @@
                         "./images/exG02a/section4/cairocar1.svg",
                         "./images/exG02a/section4/cairocar2.svg"
                     ],
-                    "source":"The 2019 Deloitte City Mobility Index"
+                    "source":"Sustainable Transport Project for Egypt 2015<br/>*This data belongs to Greater Cairo"
                 },
                 "london":{
                     "percentage":"35",
@@ -339,7 +369,7 @@
                         "./images/exG02a/section4/londoncar1.svg",
                         "./images/exG02a/section4/londoncar2.svg"
                     ],
-                    "source":"The 2019 Deloitte City Mobility Index"
+                    "source":"Deloitte 2020"
                 },
                 "paris":{
                     "percentage":"25",
@@ -347,7 +377,7 @@
                         "./images/exG02a/section4/pariscar1.svg",
                         "./images/exG02a/section4/pariscar2.svg"
                     ],
-                    "source":"The 2019 Deloitte City Mobility Index"
+                    "source":"Deloitte 2019"
                 },
                 "mexicocity":{
                     "percentage":"71",
@@ -355,7 +385,7 @@
                         "./images/exG02a/section4/mexicocitycar1.svg",
                         "./images/exG02a/section4/mexicocitycar2.svg"
                     ],
-                    "source":"The 2019 Deloitte City Mobility Index"
+                    "source":"Deloitte 2019<br/>*This data belongs to The Metropolitan Zone of the Valle de México (Valle de México)"
                 },
                 "mumbai":{
                     "percentage":"70",
@@ -363,7 +393,7 @@
                         "./images/exG02a/section4/mumbaicar1.svg",
                         "./images/exG02a/section4/mumbaicar2.svg"
                     ],
-                    "source":"The 2019 Deloitte City Mobility Index"
+                    "source":"Deloitte 2019<br/>*This data belongs to Mumbai Metropolitan Area"
                 },
                 "newyork":{
                     "percentage":"35",
@@ -371,7 +401,7 @@
                         "./images/exG02a/section4/newyorkcar1.svg",
                         "./images/exG02a/section4/newyorkcar2.svg"
                     ],
-                    "source":"The 2019 Deloitte City Mobility Index"
+                    "source":"Deloitte 2018<br/>*This data belongs to New York (NY-NJ-CT) urbanized area"
                 },
                 "singapore":{
                     "percentage":"53",
@@ -379,7 +409,7 @@
                         "./images/exG02a/section4/singaporecar1.svg",
                         "./images/exG02a/section4/singaporecar2.svg"
                     ],
-                    "source":"The 2019 Deloitte City Mobility Index"
+                    "source":"Deloitte 2020"
                 },
                 "sydney":{
                     "percentage":"27",
@@ -387,7 +417,7 @@
                         "./images/exG02a/section4/sydneycar1.svg",
                         "./images/exG02a/section4/sydneycar2.svg"
                     ],
-                    "source":"The 2019 Deloitte City Mobility Index"
+                    "source":"Deloitte 2020<br/>*This data belongs to Sydney Urban Area and Localities"
                 },
                 "tokyo":{
                     "percentage":"47",
@@ -395,53 +425,53 @@
                         "./images/exG02a/section4/tokyocar1.svg",
                         "./images/exG02a/section4/tokyocar2.svg"
                     ],
-                    "source":"The 2019 Deloitte City Mobility Index"
+                    "source":"Deloitte 2020"
                 }
             },
             "section5":{
                 "hongkong":{
-                    "money":"48,915.89",
-                    "source":"Table 030 - Gross Domestic Product <br/>(GDP), Implicit Price Deflator Of GDP And <br/>Per Capita GDP"
+                    "money":"382,046.00",
+                    "source":"2019 Gross Domestic Product, <br/>Census and Statistics Department, <br/>Hong Kong Special Administrative Region"
                 },
                 "beijing":{
-                    "money":"74,266.31",
-                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                    "money":"187,681.15",
+                    "source":"北京市统计局<br/>北京市2019年国民经济和社会发展统计公报"
                 },
                 "cairo":{
-                    "money":"74,266.31",
-                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                    "money":"55,512.60",
+                    "source":"Planning and Design for Sustainable Urban Mobility,<br/>UN-Habitat 2013"
                 },
                 "london":{
-                    "money":"74,266.31",
-                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                    "money":"567,312.56",
+                    "source":"Regional economic activity by gross domestic product,<br/>Office for National Statistics, the UK 2018"
                 },
                 "paris":{
-                    "money":"74,266.31",
-                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                    "money":"625,105.00",
+                    "source":"Greater Paris Metropolis In Action,<br/>Métropole du Grand Paris 2019"
                 },
                 "mexicocity":{
-                    "money":"74,266.31",
-                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                    "money":"310,908.00",
+                    "source":"Regions and Cities at a Glance 2018 - Mexico,<br/>OECD"
                 },
                 "mumbai":{
-                    "money":"74,266.31",
-                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                    "money":"34,821.95",
+                    "source":"Economic Survey of Maharashtra 2019-20,<br/>Directorate Of Economics And Statisitcs,<br/>Planning Department,<br/>Government of Maharashtra, Mumbai"
                 },
                 "newyork":{
-                    "money":"74,266.31",
-                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                    "money":"693,481.48",
+                    "source":"GDP and Personal Income,<br/>Bureau of Economic Analysis,<br/>U.S. Department of Commerce 2020<br/> *This data belongs to New York State"
                 },
                 "singapore":{
-                    "money":"74,266.31",
-                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                    "money":"510,389.56",
+                    "source":"Singapore Department of Statistics 2019"
                 },
                 "sydney":{
-                    "money":"74,266.31",
-                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                    "money":"492,481.75",
+                    "source":" Economic performance of Australia’s cities and regions,<br/>SGS Economics and Planning"
                 },
                 "tokyo":{
-                    "money":"74,266.31",
-                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+                    "money":"572,960.86",
+                    "source":"Tokyo Metropolitan Accounts Preliminary and Projected,<br/>Tokyo Metropolitan Government 2019"
                 }
             }
         },

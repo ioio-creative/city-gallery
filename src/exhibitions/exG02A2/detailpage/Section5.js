@@ -187,7 +187,7 @@ const Section5 = (props) => {
             <div id="left" className="half">
                 <div className="wrap">
                     <div className="title big">{globalData && globalData.gdp}</div>
-                    <div className="big">{ data && data['hongkong'].money }</div>
+                    <div className="big">{ data && data['hongkong'].money }HKD</div>
                     <canvas ref={canvasLeft} id="leftCanvas" width="600" height="600"></canvas>
                     {/* <div className="coins">
                         {
@@ -205,7 +205,7 @@ const Section5 = (props) => {
             <div id="right" className="half">
                 <div className="wrap">
                     <div className="title big">{globalData && globalData.gdp}</div>
-                    <div className="big">{ data && locationName && data[locationName].money }</div>
+                    <div className="big">{ data && locationName && data[locationName].money }HKD</div>
                     <canvas ref={canvasRight} id="rightCanvas" width="600" height="600"></canvas>
                     {/* <div className="coins">
                         {
