@@ -33,7 +33,8 @@ const Section2 = props => {
     useEffect(()=>{
         if(locationName){
             if(props.detailIdx === 2){
-                startFunc.current.start(6761/1000, data[locationName].populationDensity.value.replace(',','')/1000);
+                // startFunc.current.start(6761/1000, data[locationName].populationDensity.value.replace(',','')/1000);
+                startFunc.current.start(6761/234, data[locationName].populationDensity.value.replace(',','')/234);
             }
             else{
                 stopFunc.current.stop();
@@ -48,11 +49,11 @@ const Section2 = props => {
                     <ul>
                         <li>
                             <div className="title big" dangerouslySetInnerHTML={{__html:globalData && globalData.populationDensity}}></div>
-                            <div className="big">6,761.34</div>
+                            <div className="big">6,795.22</div>
                         </li>
                         <li>
                             <div className="title">{globalData && globalData.population}</div>
-                            <div className="medium">7,482,500</div>
+                            <div className="medium">7,520,000</div>
                         </li>
                         <li>
                             <div className="title" dangerouslySetInnerHTML={{__html:globalData && globalData.landArea}}></div>

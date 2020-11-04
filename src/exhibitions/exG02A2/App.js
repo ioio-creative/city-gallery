@@ -1209,10 +1209,11 @@ const App = props => {
 
                     <div className={`locationName left ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}>
                         {locations[0].name[language]}
-                        <span style={{backgroundImage:`url(./images/exG02a/hongkongflag.png)`}}></span>
+                        <span style={{backgroundImage:`url(./images/exG02a/hongkongflag.svg)`}}></span>
                     </div>
                     <div className={`locationName right ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}>
-                        <span style={{backgroundImage:`url(./images/exG02a/${selectedId && locations[selectedId].name['en'].replace(' ','').toLowerCase()}flag.png)`}}></span>
+                        {selectedId && locations[selectedId].name['en'].replace(' ','') !== "Tokyo" && <span style={{backgroundImage:`url(./images/exG02a/${selectedId && locations[selectedId].name['en'].replace(' ','').toLowerCase()}flag.png)`, borderRadius:5+'px'}}></span>}
+                        {selectedId && locations[selectedId].name['en'].replace(' ','') === "Tokyo" && <span style={{backgroundImage:`url(./images/exG02a/${selectedId && locations[selectedId].name['en'].replace(' ','').toLowerCase()}flag.svg)`}}></span>}
                         {selectedId && locations[selectedId].name[language]}
                     </div>
                     
