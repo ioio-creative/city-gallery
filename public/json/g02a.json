@@ -780,12 +780,12 @@
             "./images/exG02a/section4/hongkongcar2.svg",
             "./images/exG02a/section4/hongkongcar3.svg"
           ],
-          "source": "2018年德勤城市流動性指數"
+          "source": "Deloitte 2018"
         },
         "beijing": {
           "percentage": "36",
           "carimages": ["./images/exG02a/section4/beijingcar1.svg", "./images/exG02a/section4/beijingcar2.svg"],
-          "source": "2018年德勤城市流動性指數"
+          "source": "Deloitte 2018"
         },
         "cairo": {
           "percentage": "69",
@@ -795,42 +795,42 @@
         "london": {
           "percentage": "35",
           "carimages": ["./images/exG02a/section4/londoncar1.svg", "./images/exG02a/section4/londoncar2.svg"],
-          "source": "2020年德勤城市流動性指數"
+          "source": "Deloitte 2020"
         },
         "paris": {
           "percentage": "25",
           "carimages": ["./images/exG02a/section4/pariscar1.svg", "./images/exG02a/section4/pariscar2.svg"],
-          "source": "2019年德勤城市流動性指數"
+          "source": "Deloitte 2019"
         },
         "mexicocity": {
           "percentage": "71",
           "carimages": ["./images/exG02a/section4/mexicocitycar1.svg", "./images/exG02a/section4/mexicocitycar2.svg"],
-          "source": "2019年德勤城市流動性指數<br/>*This data belongs to The Metropolitan Zone of the Valle de México (Valle de México)"
+          "source": "Deloitte 2019<br/>*This data belongs to The Metropolitan Zone of the Valle de México (Valle de México)"
         },
         "mumbai": {
           "percentage": "70",
           "carimages": ["./images/exG02a/section4/mumbaicar1.svg", "./images/exG02a/section4/mumbaicar2.svg"],
-          "source": "2019年德勤城市流動性指數<br/>*This data belongs to Mumbai Metropolitan Area"
+          "source": "Deloitte 2019<br/>*This data belongs to Mumbai Metropolitan Area"
         },
         "newyork": {
           "percentage": "35",
           "carimages": ["./images/exG02a/section4/newyorkcar1.svg", "./images/exG02a/section4/newyorkcar2.svg"],
-          "source": "2018年德勤城市流動性指數<br/>*This data belongs to New York (NY-NJ-CT) urbanized area"
+          "source": "Deloitte 2018<br/>*This data belongs to New York (NY-NJ-CT) urbanized area"
         },
         "singapore": {
           "percentage": "53",
           "carimages": ["./images/exG02a/section4/singaporecar1.svg", "./images/exG02a/section4/singaporecar2.svg"],
-          "source": "2020年德勤城市流動性指數"
+          "source": "Deloitte 2020"
         },
         "sydney": {
           "percentage": "27",
           "carimages": ["./images/exG02a/section4/sydneycar1.svg", "./images/exG02a/section4/sydneycar2.svg"],
-          "source": "2020年德勤城市流動性指數<br/>*This data belongs to Sydney Urban Area and Localities"
+          "source": "Deloitte 2020<br/>*This data belongs to Sydney Urban Area and Localities"
         },
         "tokyo": {
           "percentage": "47",
           "carimages": ["./images/exG02a/section4/tokyocar1.svg", "./images/exG02a/section4/tokyocar2.svg"],
-          "source": "2020年德勤城市流動性指數"
+          "source": "Deloitte 2020"
         }
       },
       "section5": {
@@ -876,7 +876,7 @@
         },
         "tokyo": {
           "money": "572,960.86",
-          "source": "都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+          "source": "Tokyo Metropolitan Accounts Preliminary and Projected,<br/>Tokyo Metropolitan Government 2019"
         }
       }
     }
