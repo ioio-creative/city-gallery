@@ -1,629 +1,884 @@
 {
-    "languages": [
-        {
-            "code": "en",
-            "display": "English",
-            "shortDisplay": "EN"
-        },
-        {
-            "code": "tc",
-            "display": "繁體中文",
-            "shortDisplay": "繁"
-        }
-    ],
-    "content":{
-        "en":{
-            "global":{
-                "selectCity":"Select a City",
-                "scrollDown":"Scroll Down",
-                "source":"Source: ",
-                "populationDensity":"Population Density (/km<sup>2</sup>)",
-                "population":"Population",
-                "landArea":"Land Area (km<sup>2</sup>)",
-                "dailyTrips":"Percentage of Daily Trips <br/>by Public Transport",
-                "gdp":"GDP per capita (nominal)",
-                "usd":"USD"
-            },
-            "menu":[
-                "Urban Form",
-                "Population Density",
-                "Tallest Buildings",
-                "Transportation",
-                "GDP"
-            ],
-            "section1":{
-                "populationArea":"Population Area",
-                "distance":"5km",
-                "source":"(Source Holder)",
-                "images":{
-                    "hongkong":{ "src":"./images/exG02a/section1/G02A_UrbanForm_HongKong.svg" },
-                    "beijing":{ "src":"./images/exG02a/section1/G02A_UrbanForm_Beijing.svg" },
-                    "cairo":{ "src":"./images/exG02a/section1/G02A_UrbanForm_Cairo.svg" },
-                    "london":{ "src":"./images/exG02a/section1/G02A_UrbanForm_London.svg" },
-                    "paris":{ "src":"./images/exG02a/section1/G02A_UrbanForm_Paris.svg" },
-                    "mexicocity":{ "src":"./images/exG02a/section1/G02A_UrbanForm_MexicoCity.svg" },
-                    "mumbai":{ "src":"./images/exG02a/section1/G02A_UrbanForm_Mumbai.svg" },
-                    "newyork":{ "src":"./images/exG02a/section1/G02A_UrbanForm_NewYork.svg" },
-                    "singapore":{ "src":"./images/exG02a/section1/G02A_UrbanForm_Singapore.svg" },
-                    "sydney":{ "src":"./images/exG02a/section1/G02A_UrbanForm_Sydney.svg" },
-                    "tokyo":{ "src":"./images/exG02a/section1/G02A_UrbanForm_Tokyo.svg" }
-                }
-            },
-            "section2":{
-                "distance":"5/km<sup>2</sup>",
-                "hongkong":{
-                    "source":"GovHK, <br/>Hong Kong Special Administrative Region 2019"
-                },
-                "beijing":{
-                    "populationDensity":{ "value":"1,312.33" },
-                    "population":{ "value":"21,536,000" },
-                    "landArea":{ "value":"16,410.54" },
-                    "source":"北京市统计局K<br/>北京市2019年国民经济和社会发展统计公报"
-                },
-                "cairo":{
-                    "populationDensity":{ "value":"3,189.69" },
-                    "population":{ "value":"9,840,,591" },
-                    "landArea":{ "value":"3085.12" },
-                    "source":"Official Portal of Cairo Governorate & <br/>State Information Service 2019"
-                },
-                "london":{
-                    "populationDensity":{ "value":"5,701.00" },
-                    "population":{ "value":"8,961,989" },
-                    "landArea":{ "value":"1,572.00" },
-                    "source":"Population estimates for the UK, England and Wales, Scotland and Northern Ireland, <br/>Office for National Statistics, the UK 2019"
-                },
-                "paris":{
-                    "populationDensity":{ "value":"8,598.00" },
-                    "population":{ "value":"7,200,000" },
-                    "landArea":{ "value":"814.00" },
-                    "source":" Rapport annuel d’activités 2018,<br/>Métropole du Grand Paris"
-                },
-                "mexicocity":{
-                    "populationDensity":{ "value":"6,016.67" },
-                    "population":{ "value":"8,985,339" },
-                    "landArea":{ "value":"627.57" },
-                    "source":"officia Wikiciudad by Gobierno de la Ciudad de México & <br/>INEIG - Ciudad de México (09) - Población 2015"
-                },
-                "mumbai":{
-                    "populationDensity":{ "value":"28,990.98" },
-                    "population":{ "value":"12,689,644" },
-                    "landArea":{ "value":"437.71" },
-                    "source":"Municipal Corporation of Greater Mumbai 2016"
-                },
-                "newyork":{
-                    "populationDensity":{ "value":"10,639.93" },
-                    "population":{ "value":"8,340,000" },
-                    "landArea":{ "value":"783.84" },
-                    "source":"NYC Department of City Planning 2019"
-                },
-                "singapore":{
-                    "populationDensity":{ "value":"7,866.00" },
-                    "population":{ "value":"5,703,600" },
-                    "landArea":{ "value":"725.70" },
-                    "source":"TOKYO STATISTICAL YEARBOOK 2017 - Population By District (xls)"
-                },
-                "sydney":{
-                    "populationDensity":{ "value":"429.50" },
-                    "population":{ "value":"5,312,163" },
-                    "landArea":{ "value":"12,368.20" },
-                    "source":"TOKYO STATISTICAL YEARBOOK 2017 - Population By District (xls)"
-                },
-                "tokyo":{
-                    "populationDensity":{ "value":"6,305.91" },
-                    "population":{ "value":"13,834,925" },
-                    "landArea":{ "value":"2194.00" },
-                    "source":"TOKYO STATISTICAL YEARBOOK 2017 - Population By District (xls)"
-                }
-            },
-            "section3":{
-                "hongkong":{
-                    "building":[
-                        {
-                            "name":"International Commerce Centre",
-                            "height":"484m",
-                            "floor":"118 Floors"
-                        },
-                        {
-                            "name":"Two International Finance Centre",
-                            "height":"415m",
-                            "floor":"88 Floors"
-                        },
-                        {
-                            "name":"Central Plaza",
-                            "height":"374m",
-                            "floor":"78 Floors"
-                        }
-                    ],
-                    "source":"Emporis"
-                },
-                "beijing":{
-                    "building":[
-                        {
-                            "name":"Zhongguo Zun/ CITIC Tower",
-                            "height":"528m",
-                            "floor":"108 Floors"
-                        },
-                        {
-                            "name":"China World Trade Center Tower III",
-                            "height":"330m",
-                            "floor":"74 Floors"
-                        },
-                        {
-                            "name":"China World Trade Center Tower IIIB",
-                            "height":"288m",
-                            "floor":"58 Floors"
-                        }
-                    ],
-                    "source":"Emporis"
-                },
-                "cairo":{
-                    "building":[
-                        {
-                            "name":"Toranomon Hills",
-                            "height":"255m",
-                            "floor":"52 Floors"
-                        },
-                        {
-                            "name":"Mid Town Tower",
-                            "height":"248m",
-                            "floor":"54 Floors"
-                        },
-                        {
-                            "name":"Tokyo Metropolitan Government Building",
-                            "height":"243m",
-                            "floor":"48 Floors"
-                        }
-                    ],
-                    "source":"Emporis"
-                },
-                "london":{
-                    "building":[
-                        {
-                            "name":"The Shard",
-                            "height":"306m",
-                            "floor":"73 Floors"
-                        },
-                        {
-                            "name":"22 Bishopsgate",
-                            "height":"278m",
-                            "floor":"63 Floors"
-                        },
-                        {
-                            "name":"110 Bishopsgate (previously named Heron Tower)",
-                            "height":"242m",
-                            "floor":"46 Floors"
-                        }
-                    ],
-                    "source":"Emporis"
-                },
-                "paris":{
-                    "building":[
-                        {
-                            "name":"Tour Montparnasse",
-                            "height":"210m",
-                            "floor":"60 Floors"
-                        },
-                        {
-                            "name":"Tribunal de Paris",
-                            "height":"160m",
-                            "floor":"40 Floors"
-                        },
-                        {
-                            "name":"Hyatt Regency Paris Etoile",
-                            "height":"137m",
-                            "floor":"39 Floors"
-                        }
-                    ],
-                    "source":"Emporis"
-                },
-                "mexicocity":{
-                    "building":[
-                        {
-                            "name":"Torre Reforma",
-                            "height":"245m",
-                            "floor":"57 Floors"
-                        },
-                        {
-                            "name":"Chapultepec Uno/Punto Chapultepec",
-                            "height":"240.5m",
-                            "floor":"59 Floors"
-                        },
-                        {
-                            "name":"Torre BBVA Bancomer",
-                            "height":"235m",
-                            "floor":"50 Floors"
-                        }
-                    ],
-                    "source":"Emporis"
-                },
-                "mumbai":{
-                    "building":[
-                        {
-                            "name":"Lodha The Park 4",
-                            "height":"268m",
-                            "floor":"76 Floors"
-                        },
-                        {
-                            "name":"Omkar 1973 Tower A",
-                            "height":"268m",
-                            "floor":"76 Floors"
-                        },
-                        {
-                            "name":"Lodha The Park 1",
-                            "height":"268m",
-                            "floor":"76 Floors"
-                        }
-                    ],
-                    "source":"Emporis"
-                },
-                "newyork":{
-                    "building":[
-                        {
-                            "name":"One World Trade Center",
-                            "height":"541m",
-                            "floor":"104 Floors"
-                        },
-                        {
-                            "name":"Central Park Tower",
-                            "height":"472m",
-                            "floor":"95 Floors"
-                        },
-                        {
-                            "name":"111 West 57th Street",
-                            "height":"435m",
-                            "floor":"84 Floors"
-                        }
-                    ],
-                    "source":"Emporis"
-                },
-                "singapore":{
-                    "building":[
-                        {
-                            "name":"Tanjong Pagar Centre/ Guoco Tower",
-                            "height":"290m",
-                            "floor":"68 Floors"
-                        },
-                        {
-                            "name":"Republic Plaza",
-                            "height":"280m",
-                            "floor":"66 Floors"
-                        },
-                        {
-                            "name":"United Overseas Bank Plaza One",
-                            "height":"280m",
-                            "floor":"66 Floors"
-                        }
-                    ],
-                    "source":"Emporis"
-                },
-                "sydney":{
-                    "building":[
-                        {
-                            "name":"Chifley Tower",
-                            "height":"244m",
-                            "floor":"50 Floors"
-                        },
-                        {
-                            "name":"Citigroup Centre",
-                            "height":"243m",
-                            "floor":"50 Floors"
-                        },
-                        {
-                            "name":"Deutsche Bank Place",
-                            "height":"240m",
-                            "floor":"39 Floors"
-                        }
-                    ],
-                    "source":"Emporis"
-                },
-                "tokyo":{
-                    "building":[
-                        {
-                            "name":"Toranomon Hills",
-                            "height":"255m",
-                            "floor":"52 Floors"
-                        },
-                        {
-                            "name":"Mid Town Tower",
-                            "height":"248m",
-                            "floor":"54 Floors"
-                        },
-                        {
-                            "name":"Tokyo Metropolitan Government Building",
-                            "height":"243m",
-                            "floor":"48 Floors"
-                        }
-                    ],
-                    "source":"Emporis"
-                }
-            },
-            "section4":{
-                "hongkong":{
-                    "percentage":"88",
-                    "carimages":[
-                        "./images/exG02a/section4/hongkongcar1.svg",
-                        "./images/exG02a/section4/hongkongcar2.svg",
-                        "./images/exG02a/section4/hongkongcar3.svg"
-                    ],
-                    "source":"Deloitte 2018"
-                },
-                "beijing":{
-                    "percentage":"36",
-                    "carimages":[
-                        "./images/exG02a/section4/beijingcar1.svg",
-                        "./images/exG02a/section4/beijingcar2.svg"
-                    ],
-                    "source":"Deloitte 2018"
-                },
-                "cairo":{
-                    "percentage":"69",
-                    "carimages":[
-                        "./images/exG02a/section4/cairocar1.svg",
-                        "./images/exG02a/section4/cairocar2.svg"
-                    ],
-                    "source":"Sustainable Transport Project for Egypt 2015<br/>*This data belongs to Greater Cairo"
-                },
-                "london":{
-                    "percentage":"35",
-                    "carimages":[
-                        "./images/exG02a/section4/londoncar1.svg",
-                        "./images/exG02a/section4/londoncar2.svg"
-                    ],
-                    "source":"Deloitte 2020"
-                },
-                "paris":{
-                    "percentage":"25",
-                    "carimages":[
-                        "./images/exG02a/section4/pariscar1.svg",
-                        "./images/exG02a/section4/pariscar2.svg"
-                    ],
-                    "source":"Deloitte 2019"
-                },
-                "mexicocity":{
-                    "percentage":"71",
-                    "carimages":[
-                        "./images/exG02a/section4/mexicocitycar1.svg",
-                        "./images/exG02a/section4/mexicocitycar2.svg"
-                    ],
-                    "source":"Deloitte 2019<br/>*This data belongs to The Metropolitan Zone of the Valle de México (Valle de México)"
-                },
-                "mumbai":{
-                    "percentage":"70",
-                    "carimages":[
-                        "./images/exG02a/section4/mumbaicar1.svg",
-                        "./images/exG02a/section4/mumbaicar2.svg"
-                    ],
-                    "source":"Deloitte 2019<br/>*This data belongs to Mumbai Metropolitan Area"
-                },
-                "newyork":{
-                    "percentage":"35",
-                    "carimages":[
-                        "./images/exG02a/section4/newyorkcar1.svg",
-                        "./images/exG02a/section4/newyorkcar2.svg"
-                    ],
-                    "source":"Deloitte 2018<br/>*This data belongs to New York (NY-NJ-CT) urbanized area"
-                },
-                "singapore":{
-                    "percentage":"53",
-                    "carimages":[
-                        "./images/exG02a/section4/singaporecar1.svg",
-                        "./images/exG02a/section4/singaporecar2.svg"
-                    ],
-                    "source":"Deloitte 2020"
-                },
-                "sydney":{
-                    "percentage":"27",
-                    "carimages":[
-                        "./images/exG02a/section4/sydneycar1.svg",
-                        "./images/exG02a/section4/sydneycar2.svg"
-                    ],
-                    "source":"Deloitte 2020<br/>*This data belongs to Sydney Urban Area and Localities"
-                },
-                "tokyo":{
-                    "percentage":"47",
-                    "carimages":[
-                        "./images/exG02a/section4/tokyocar1.svg",
-                        "./images/exG02a/section4/tokyocar2.svg"
-                    ],
-                    "source":"Deloitte 2020"
-                }
-            },
-            "section5":{
-                "hongkong":{
-                    "money":"382,046.00",
-                    "source":"2019 Gross Domestic Product, <br/>Census and Statistics Department, <br/>Hong Kong Special Administrative Region"
-                },
-                "beijing":{
-                    "money":"187,681.15",
-                    "source":"北京市统计局<br/>北京市2019年国民经济和社会发展统计公报"
-                },
-                "cairo":{
-                    "money":"55,512.60",
-                    "source":"Planning and Design for Sustainable Urban Mobility,<br/>UN-Habitat 2013"
-                },
-                "london":{
-                    "money":"567,312.56",
-                    "source":"Regional economic activity by gross domestic product,<br/>Office for National Statistics, the UK 2018"
-                },
-                "paris":{
-                    "money":"625,105.00",
-                    "source":"Greater Paris Metropolis In Action,<br/>Métropole du Grand Paris 2019"
-                },
-                "mexicocity":{
-                    "money":"310,908.00",
-                    "source":"Regions and Cities at a Glance 2018 - Mexico,<br/>OECD"
-                },
-                "mumbai":{
-                    "money":"34,821.95",
-                    "source":"Economic Survey of Maharashtra 2019-20,<br/>Directorate Of Economics And Statisitcs,<br/>Planning Department,<br/>Government of Maharashtra, Mumbai"
-                },
-                "newyork":{
-                    "money":"693,481.48",
-                    "source":"GDP and Personal Income,<br/>Bureau of Economic Analysis,<br/>U.S. Department of Commerce 2020<br/> *This data belongs to New York State"
-                },
-                "singapore":{
-                    "money":"510,389.56",
-                    "source":"Singapore Department of Statistics 2019"
-                },
-                "sydney":{
-                    "money":"492,481.75",
-                    "source":" Economic performance of Australia’s cities and regions,<br/>SGS Economics and Planning"
-                },
-                "tokyo":{
-                    "money":"572,960.86",
-                    "source":"Tokyo Metropolitan Accounts Preliminary and Projected,<br/>Tokyo Metropolitan Government 2019"
-                }
-            }
-        },
-        "tc":{
-            "global":{
-                "selectCity":"選擇城市",
-                "scrollDown":"滾動以選取城市",
-                "source":"參考 : ",
-                "populationDensity":"城市人口密度（/平方公里<sup>2</sup>）",
-                "population":"人口",
-                "landArea":"陸地面積（平方公里<sup>2</sup>）",
-                "dailyTrips":"公共運輸每日乘搭比率",
-                "gdp":"人均本地生產總值（當時市價）",
-                "usd":"美元"
-            },
-            "menu":[
-                "城市型態",
-                "城市人口密度",
-                "最高大樓",
-                "交通",
-                "本地生產總值"
-            ],
-            "section1":{
-                "populationArea":"建設面積",
-                "distance":"5公里",
-                "source":"(Source Holder)",
-                "images":{
-                    "hongkong":{ "src":"./images/exG02a/section1/hongkong.svg" },
-                    "tokyo":{ "src":"./images/exG02a/section1/tokyo.svg" },
-                    "taiwan":{ "src":"./images/exG02a/section1/hongkong.svg" }
-                }
-            },
-            "section2":{
-                "distance":"500/公里<sup>2</sup>",
-                "hongkong":{
-                    "source":"香港政府統計處人口2018<br/>香港地理數據2019"
-                },
-                "tokyo":{
-                    "populationDensity":{ "value":"14,568.96" },
-                    "population":{ "value":"9,143,041" },
-                    "landArea":{ "value":"627.57" },
-                    "source":"東京都の統計 2017 - 地區人口"
-                },
-                "taiwan":{
-                    "populationDensity":{ "value":"4,568.96" },
-                    "population":{ "value":"1,143,041" },
-                    "landArea":{ "value":"627.57" },
-                    "source":"東京都の統計 2017 - 地區人口"
-                }
-            },
-            "section3":{
-                "hongkong":{
-                    "building":[
-                        {
-                            "name":"環球貿易廣場",
-                            "height":"484米",
-                            "floor":"118 層"
-                        },
-                        {
-                            "name":"國際金融中心二期",
-                            "height":"416米",
-                            "floor":"88 層"
-                        },
-                        {
-                            "name":"中環廣場",
-                            "height":"374米",
-                            "floor":"78 層"
-                        }
-                    ],
-                    "source":"Emporis地產資料庫"
-                },
-                "tokyo":{
-                    "building":[
-                        {
-                            "name":"虎之門之丘",
-                            "height":"255米",
-                            "floor":"52 層"
-                        },
-                        {
-                            "name":"中城塔",
-                            "height":"248米",
-                            "floor":"54 層"
-                        },
-                        {
-                            "name":"東京都廳第一本廳舍",
-                            "height":"243米",
-                            "floor":"48 層"
-                        }
-                    ],
-                    "source":"Emporis地產資料庫"
-                },
-                "taiwan":{
-                    "building":[
-                        {
-                            "name":"虎之門之丘",
-                            "height":"255米",
-                            "floor":"52 層"
-                        },
-                        {
-                            "name":"中城塔",
-                            "height":"248米",
-                            "floor":"54 層"
-                        },
-                        {
-                            "name":"東京都廳第一本廳舍",
-                            "height":"243米",
-                            "floor":"48 層"
-                        }
-                    ],
-                    "source":"Emporis地產資料庫"
-                }
-            },
-            "section4":{
-                "hongkong":{
-                    "percentage":"88",
-                    "carimages":[
-                        "./images/exG02a/section4/hongkongcar1.svg",
-                        "./images/exG02a/section4/hongkongcar2.svg",
-                        "./images/exG02a/section4/hongkongcar3.svg"
-                    ],
-                    "source":"2019年德勤城市流動性指數"
-                },
-                "tokyo":{
-                    "percentage":"50",
-                    "carimages":[
-                        "./images/exG02a/section4/tokyocar1.svg",
-                        "./images/exG02a/section4/tokyocar2.svg"
-                    ],
-                    "source":"2014 新加坡陸路運輸管理局"
-                },
-                "taiwan":{
-                    "percentage":"10",
-                    "carimages":[
-                        "./images/exG02a/section4/hongkongcar1.svg"
-                    ],
-                    "source":"2014 新加坡陸路運輸管理局"
-                }
-            },
-            "section5":{
-                "hongkong":{
-                    "money":"48,915.89",
-                    "source":"Table 030 - Gross Domestic Product <br/> (GDP), Implicit Price Deflator Of GDP And<br/> Per Capita GDP"
-                },
-                "tokyo":{
-                    "money":"74,266.31",
-                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
-                },
-                "taiwan":{
-                    "money":"4,266.31",
-                    "source":"都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
-                }
-            }
-        }
+  "languages": [
+    {
+      "code": "en",
+      "display": "English",
+      "shortDisplay": "EN"
+    },
+    {
+      "code": "tc",
+      "display": "繁體中文",
+      "shortDisplay": "繁"
     }
+  ],
+  "content": {
+    "en": {
+      "global": {
+        "selectCity": "Select a City",
+        "scrollDown": "Scroll Down",
+        "source": "Source: ",
+        "populationDensity": "Population Density (/km<sup>2</sup>)",
+        "population": "Population",
+        "landArea": "Land Area (km<sup>2</sup>)",
+        "dailyTrips": "Percentage of Daily Trips <br/>by Public Transport",
+        "gdp": "GDP per capita (nominal)",
+        "usd": "USD"
+      },
+      "menu": ["Urban Form", "Population Density", "Tallest Buildings", "Transportation", "GDP"],
+      "section1": {
+        "populationArea": "Population Area",
+        "distance": "5km",
+        "source": "(Source Holder)",
+        "images": {
+          "hongkong": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_HongKong.svg"
+          },
+          "beijing": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_Beijing.svg"
+          },
+          "cairo": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_Cairo.svg"
+          },
+          "london": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_London.svg"
+          },
+          "paris": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_Paris.svg"
+          },
+          "mexicocity": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_MexicoCity.svg"
+          },
+          "mumbai": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_Mumbai.svg"
+          },
+          "newyork": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_NewYork.svg"
+          },
+          "singapore": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_Singapore.svg"
+          },
+          "sydney": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_Sydney.svg"
+          },
+          "tokyo": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_Tokyo.svg"
+          }
+        }
+      },
+      "section2": {
+        "distance": "5/km<sup>2</sup>",
+        "hongkong": {
+          "source": "GovHK, <br/>Hong Kong Special Administrative Region 2019"
+        },
+        "beijing": {
+          "populationDensity": { "value": "1,312.33" },
+          "population": { "value": "21,536,000" },
+          "landArea": { "value": "16,410.54" },
+          "source": "北京市统计局K<br/>北京市2019年国民经济和社会发展统计公报"
+        },
+        "cairo": {
+          "populationDensity": { "value": "3,189.69" },
+          "population": { "value": "9,840,,591" },
+          "landArea": { "value": "3085.12" },
+          "source": "Official Portal of Cairo Governorate & <br/>State Information Service 2019"
+        },
+        "london": {
+          "populationDensity": { "value": "5,701.00" },
+          "population": { "value": "8,961,989" },
+          "landArea": { "value": "1,572.00" },
+          "source": "Population estimates for the UK, England and Wales, Scotland and Northern Ireland, <br/>Office for National Statistics, the UK 2019"
+        },
+        "paris": {
+          "populationDensity": { "value": "8,598.00" },
+          "population": { "value": "7,200,000" },
+          "landArea": { "value": "814.00" },
+          "source": " Rapport annuel d’activités 2018,<br/>Métropole du Grand Paris"
+        },
+        "mexicocity": {
+          "populationDensity": { "value": "6,016.67" },
+          "population": { "value": "8,985,339" },
+          "landArea": { "value": "627.57" },
+          "source": "officia Wikiciudad by Gobierno de la Ciudad de México & <br/>INEIG - Ciudad de México (09) - Población 2015"
+        },
+        "mumbai": {
+          "populationDensity": { "value": "28,990.98" },
+          "population": { "value": "12,689,644" },
+          "landArea": { "value": "437.71" },
+          "source": "Municipal Corporation of Greater Mumbai 2016"
+        },
+        "newyork": {
+          "populationDensity": { "value": "10,639.93" },
+          "population": { "value": "8,340,000" },
+          "landArea": { "value": "783.84" },
+          "source": "NYC Department of City Planning 2019"
+        },
+        "singapore": {
+          "populationDensity": { "value": "7,866.00" },
+          "population": { "value": "5,703,600" },
+          "landArea": { "value": "725.70" },
+          "source": "TOKYO STATISTICAL YEARBOOK 2017 - Population By District (xls)"
+        },
+        "sydney": {
+          "populationDensity": { "value": "429.50" },
+          "population": { "value": "5,312,163" },
+          "landArea": { "value": "12,368.20" },
+          "source": "TOKYO STATISTICAL YEARBOOK 2017 - Population By District (xls)"
+        },
+        "tokyo": {
+          "populationDensity": { "value": "6,305.91" },
+          "population": { "value": "13,834,925" },
+          "landArea": { "value": "2194.00" },
+          "source": "TOKYO STATISTICAL YEARBOOK 2017 - Population By District (xls)"
+        }
+      },
+      "section3": {
+        "hongkong": {
+          "building": [
+            {
+              "name": "International Commerce Centre",
+              "height": "484m",
+              "floor": "118 Floors"
+            },
+            {
+              "name": "Two International Finance Centre",
+              "height": "415m",
+              "floor": "88 Floors"
+            },
+            {
+              "name": "Central Plaza",
+              "height": "374m",
+              "floor": "78 Floors"
+            }
+          ],
+          "source": "Emporis"
+        },
+        "beijing": {
+          "building": [
+            {
+              "name": "Zhongguo Zun/ CITIC Tower",
+              "height": "528m",
+              "floor": "108 Floors"
+            },
+            {
+              "name": "China World Trade Center Tower III",
+              "height": "330m",
+              "floor": "74 Floors"
+            },
+            {
+              "name": "China World Trade Center Tower IIIB",
+              "height": "288m",
+              "floor": "58 Floors"
+            }
+          ],
+          "source": "Emporis"
+        },
+        "cairo": {
+          "building": [
+            {
+              "name": "Ministry of Foreign Affairs",
+              "height": "143m",
+              "floor": "45 Floors"
+            },
+            {
+              "name": "El Gezira Tower Movenpick Hotel",
+              "height": "142m",
+              "floor": "43 Floors"
+            },
+            {
+              "name": "Grand Nile Tower",
+              "height": "142m",
+              "floor": "34 Floors"
+            }
+          ],
+          "source": "Emporis"
+        },
+        "london": {
+          "building": [
+            {
+              "name": "The Shard",
+              "height": "306m",
+              "floor": "73 Floors"
+            },
+            {
+              "name": "22 Bishopsgate",
+              "height": "278m",
+              "floor": "63 Floors"
+            },
+            {
+              "name": "110 Bishopsgate (previously named Heron Tower)",
+              "height": "242m",
+              "floor": "46 Floors"
+            }
+          ],
+          "source": "Emporis"
+        },
+        "paris": {
+          "building": [
+            {
+              "name": "Tour Montparnasse",
+              "height": "210m",
+              "floor": "60 Floors"
+            },
+            {
+              "name": "Tribunal de Paris",
+              "height": "160m",
+              "floor": "40 Floors"
+            },
+            {
+              "name": "Hyatt Regency Paris Etoile",
+              "height": "137m",
+              "floor": "39 Floors"
+            }
+          ],
+          "source": "Emporis"
+        },
+        "mexicocity": {
+          "building": [
+            {
+              "name": "Torre Reforma",
+              "height": "245m",
+              "floor": "57 Floors"
+            },
+            {
+              "name": "Chapultepec Uno/Punto Chapultepec",
+              "height": "240.5m",
+              "floor": "59 Floors"
+            },
+            {
+              "name": "Torre BBVA Bancomer",
+              "height": "235m",
+              "floor": "50 Floors"
+            }
+          ],
+          "source": "Emporis"
+        },
+        "mumbai": {
+          "building": [
+            {
+              "name": "Lodha The Park 4",
+              "height": "268m",
+              "floor": "76 Floors"
+            },
+            {
+              "name": "Omkar 1973 Tower A",
+              "height": "268m",
+              "floor": "76 Floors"
+            },
+            {
+              "name": "Lodha The Park 1",
+              "height": "268m",
+              "floor": "76 Floors"
+            }
+          ],
+          "source": "Emporis"
+        },
+        "newyork": {
+          "building": [
+            {
+              "name": "One World Trade Center",
+              "height": "541m",
+              "floor": "104 Floors"
+            },
+            {
+              "name": "Central Park Tower",
+              "height": "472m",
+              "floor": "95 Floors"
+            },
+            {
+              "name": "111 West 57th Street",
+              "height": "435m",
+              "floor": "84 Floors"
+            }
+          ],
+          "source": "Emporis"
+        },
+        "singapore": {
+          "building": [
+            {
+              "name": "Tanjong Pagar Centre/ Guoco Tower",
+              "height": "290m",
+              "floor": "68 Floors"
+            },
+            {
+              "name": "Republic Plaza",
+              "height": "280m",
+              "floor": "66 Floors"
+            },
+            {
+              "name": "United Overseas Bank Plaza One",
+              "height": "280m",
+              "floor": "66 Floors"
+            }
+          ],
+          "source": "Emporis"
+        },
+        "sydney": {
+          "building": [
+            {
+              "name": "Chifley Tower",
+              "height": "244m",
+              "floor": "50 Floors"
+            },
+            {
+              "name": "Citigroup Centre",
+              "height": "243m",
+              "floor": "50 Floors"
+            },
+            {
+              "name": "Deutsche Bank Place",
+              "height": "240m",
+              "floor": "39 Floors"
+            }
+          ],
+          "source": "Emporis"
+        },
+        "tokyo": {
+          "building": [
+            {
+              "name": "Toranomon Hills",
+              "height": "255m",
+              "floor": "52 Floors"
+            },
+            {
+              "name": "Mid Town Tower",
+              "height": "248m",
+              "floor": "54 Floors"
+            },
+            {
+              "name": "Tokyo Metropolitan Government Building",
+              "height": "243m",
+              "floor": "48 Floors"
+            }
+          ],
+          "source": "Emporis"
+        }
+      },
+      "section4": {
+        "hongkong": {
+          "percentage": "88",
+          "carimages": [
+            "./images/exG02a/section4/hongkongcar1.svg",
+            "./images/exG02a/section4/hongkongcar2.svg",
+            "./images/exG02a/section4/hongkongcar3.svg"
+          ],
+          "source": "Deloitte 2018"
+        },
+        "beijing": {
+          "percentage": "36",
+          "carimages": ["./images/exG02a/section4/beijingcar1.svg", "./images/exG02a/section4/beijingcar2.svg"],
+          "source": "Deloitte 2018"
+        },
+        "cairo": {
+          "percentage": "69",
+          "carimages": ["./images/exG02a/section4/cairocar1.svg", "./images/exG02a/section4/cairocar2.svg"],
+          "source": "Sustainable Transport Project for Egypt 2015<br/>*This data belongs to Greater Cairo"
+        },
+        "london": {
+          "percentage": "35",
+          "carimages": ["./images/exG02a/section4/londoncar1.svg", "./images/exG02a/section4/londoncar2.svg"],
+          "source": "Deloitte 2020"
+        },
+        "paris": {
+          "percentage": "25",
+          "carimages": ["./images/exG02a/section4/pariscar1.svg", "./images/exG02a/section4/pariscar2.svg"],
+          "source": "Deloitte 2019"
+        },
+        "mexicocity": {
+          "percentage": "71",
+          "carimages": ["./images/exG02a/section4/mexicocitycar1.svg", "./images/exG02a/section4/mexicocitycar2.svg"],
+          "source": "Deloitte 2019<br/>*This data belongs to The Metropolitan Zone of the Valle de México (Valle de México)"
+        },
+        "mumbai": {
+          "percentage": "70",
+          "carimages": ["./images/exG02a/section4/mumbaicar1.svg", "./images/exG02a/section4/mumbaicar2.svg"],
+          "source": "Deloitte 2019<br/>*This data belongs to Mumbai Metropolitan Area"
+        },
+        "newyork": {
+          "percentage": "35",
+          "carimages": ["./images/exG02a/section4/newyorkcar1.svg", "./images/exG02a/section4/newyorkcar2.svg"],
+          "source": "Deloitte 2018<br/>*This data belongs to New York (NY-NJ-CT) urbanized area"
+        },
+        "singapore": {
+          "percentage": "53",
+          "carimages": ["./images/exG02a/section4/singaporecar1.svg", "./images/exG02a/section4/singaporecar2.svg"],
+          "source": "Deloitte 2020"
+        },
+        "sydney": {
+          "percentage": "27",
+          "carimages": ["./images/exG02a/section4/sydneycar1.svg", "./images/exG02a/section4/sydneycar2.svg"],
+          "source": "Deloitte 2020<br/>*This data belongs to Sydney Urban Area and Localities"
+        },
+        "tokyo": {
+          "percentage": "47",
+          "carimages": ["./images/exG02a/section4/tokyocar1.svg", "./images/exG02a/section4/tokyocar2.svg"],
+          "source": "Deloitte 2020"
+        }
+      },
+      "section5": {
+        "hongkong": {
+          "money": "382,046.00",
+          "source": "2019 Gross Domestic Product, <br/>Census and Statistics Department, <br/>Hong Kong Special Administrative Region"
+        },
+        "beijing": {
+          "money": "187,681.15",
+          "source": "北京市统计局<br/>北京市2019年国民经济和社会发展统计公报"
+        },
+        "cairo": {
+          "money": "55,512.60",
+          "source": "Planning and Design for Sustainable Urban Mobility,<br/>UN-Habitat 2013"
+        },
+        "london": {
+          "money": "567,312.56",
+          "source": "Regional economic activity by gross domestic product,<br/>Office for National Statistics, the UK 2018"
+        },
+        "paris": {
+          "money": "625,105.00",
+          "source": "Greater Paris Metropolis In Action,<br/>Métropole du Grand Paris 2019"
+        },
+        "mexicocity": {
+          "money": "310,908.00",
+          "source": "Regions and Cities at a Glance 2018 - Mexico,<br/>OECD"
+        },
+        "mumbai": {
+          "money": "34,821.95",
+          "source": "Economic Survey of Maharashtra 2019-20,<br/>Directorate Of Economics And Statisitcs,<br/>Planning Department,<br/>Government of Maharashtra, Mumbai"
+        },
+        "newyork": {
+          "money": "693,481.48",
+          "source": "GDP and Personal Income,<br/>Bureau of Economic Analysis,<br/>U.S. Department of Commerce 2020<br/> *This data belongs to New York State"
+        },
+        "singapore": {
+          "money": "510,389.56",
+          "source": "Singapore Department of Statistics 2019"
+        },
+        "sydney": {
+          "money": "492,481.75",
+          "source": " Economic performance of Australia’s cities and regions,<br/>SGS Economics and Planning"
+        },
+        "tokyo": {
+          "money": "572,960.86",
+          "source": "Tokyo Metropolitan Accounts Preliminary and Projected,<br/>Tokyo Metropolitan Government 2019"
+        }
+      }
+    },
+    "tc": {
+      "global": {
+        "selectCity": "選擇城市",
+        "scrollDown": "滾動以選取城市",
+        "source": "參考 : ",
+        "populationDensity": "城市人口密度（/平方公里<sup>2</sup>）",
+        "population": "人口",
+        "landArea": "陸地面積（平方公里<sup>2</sup>）",
+        "dailyTrips": "公共運輸每日乘搭比率",
+        "gdp": "人均本地生產總值（當時市價）",
+        "usd": "美元"
+      },
+      "menu": ["城市型態", "城市人口密度", "最高大樓", "交通", "本地生產總值"],
+      "section1": {
+        "populationArea": "建設面積",
+        "distance": "5公里",
+        "source": "(Source Holder)",
+        "images": {
+          "hongkong": { "src": "./images/exG02a/section1/hongkong.svg" },
+          "tokyo": { "src": "./images/exG02a/section1/tokyo.svg" },
+          "taiwan": { "src": "./images/exG02a/section1/hongkong.svg" }
+        }
+      },
+      "section2": {
+        "distance": "500/公里<sup>2</sup>",
+        "hongkong": {
+          "source": "香港政府統計處人口2018<br/>香港地理數據2019"
+        },
+        "beijing": {
+          "populationDensity": { "value": "1,312.33" },
+          "population": { "value": "21,536,000" },
+          "landArea": { "value": "16,410.54" },
+          "source": "北京市统计局K<br/>北京市2019年国民经济和社会发展统计公报"
+        },
+        "cairo": {
+          "populationDensity": { "value": "3,189.69" },
+          "population": { "value": "9,840,,591" },
+          "landArea": { "value": "3085.12" },
+          "source": "Official Portal of Cairo Governorate & <br/>State Information Service 2019"
+        },
+        "london": {
+          "populationDensity": { "value": "5,701.00" },
+          "population": { "value": "8,961,989" },
+          "landArea": { "value": "1,572.00" },
+          "source": "Population estimates for the UK, England and Wales, Scotland and Northern Ireland, <br/>Office for National Statistics, the UK 2019"
+        },
+        "paris": {
+          "populationDensity": { "value": "8,598.00" },
+          "population": { "value": "7,200,000" },
+          "landArea": { "value": "814.00" },
+          "source": " Rapport annuel d’activités 2018,<br/>Métropole du Grand Paris"
+        },
+        "mexicocity": {
+          "populationDensity": { "value": "6,016.67" },
+          "population": { "value": "8,985,339" },
+          "landArea": { "value": "627.57" },
+          "source": "officia Wikiciudad by Gobierno de la Ciudad de México & <br/>INEIG - Ciudad de México (09) - Población 2015"
+        },
+        "mumbai": {
+          "populationDensity": { "value": "28,990.98" },
+          "population": { "value": "12,689,644" },
+          "landArea": { "value": "437.71" },
+          "source": "Municipal Corporation of Greater Mumbai 2016"
+        },
+        "newyork": {
+          "populationDensity": { "value": "10,639.93" },
+          "population": { "value": "8,340,000" },
+          "landArea": { "value": "783.84" },
+          "source": "NYC Department of City Planning 2019"
+        },
+        "singapore": {
+          "populationDensity": { "value": "7,866.00" },
+          "population": { "value": "5,703,600" },
+          "landArea": { "value": "725.70" },
+          "source": "TOKYO STATISTICAL YEARBOOK 2017 - Population By District (xls)"
+        },
+        "sydney": {
+          "populationDensity": { "value": "429.50" },
+          "population": { "value": "5,312,163" },
+          "landArea": { "value": "12,368.20" },
+          "source": "TOKYO STATISTICAL YEARBOOK 2017 - Population By District (xls)"
+        },
+        "tokyo": {
+          "populationDensity": { "value": "6,305.91" },
+          "population": { "value": "13,834,925" },
+          "landArea": { "value": "2194.00" },
+          "source": "東京都の統計 2017 - 地區人口"
+        }
+      },
+      "section3": {
+        "hongkong": {
+          "building": [
+            {
+              "name": "環球貿易廣場",
+              "height": "484米",
+              "floor": "118 層"
+            },
+            {
+              "name": "國際金融中心二期",
+              "height": "416米",
+              "floor": "88 層"
+            },
+            {
+              "name": "中環廣場",
+              "height": "374米",
+              "floor": "78 層"
+            }
+          ],
+          "source": "Emporis地產資料庫"
+        },
+        "beijing": {
+          "building": [
+            {
+              "name": "中信集團總部大樓",
+              "height": "528米",
+              "floor": "108 層"
+            },
+            {
+              "name": "中國國際貿易中心第三期",
+              "height": "330米",
+              "floor": "74 層"
+            },
+            {
+              "name": "中國國際貿易中心三期B階段",
+              "height": "288米",
+              "floor": "58 層"
+            }
+          ],
+          "source": "Emporis地產資料庫"
+        },
+        "cairo": {
+          "building": [
+            {
+              "name": "外交部",
+              "height": "143米",
+              "floor": "45 層"
+            },
+            {
+              "name": "瑞享酒店傑濟拉大樓",
+              "height": "142米",
+              "floor": "43 層"
+            },
+            {
+              "name": "尼羅河大廈酒店",
+              "height": "142米",
+              "floor": "34 層"
+            }
+          ],
+          "source": "Emporis地產資料庫"
+        },
+        "london": {
+          "building": [
+            {
+              "name": "碎片大廈",
+              "height": "306米",
+              "floor": "73 層"
+            },
+            {
+              "name": "主教門22號",
+              "height": "278米",
+              "floor": "63 層"
+            },
+            {
+              "name": "主教門110號",
+              "height": "242米",
+              "floor": "46 層"
+            }
+          ],
+          "source": "Emporis地產資料庫"
+        },
+        "paris": {
+          "building": [
+            {
+              "name": "蒙帕納斯大樓",
+              "height": "210米",
+              "floor": "60 層"
+            },
+            {
+              "name": "巴黎法院",
+              "height": "160米",
+              "floor": "40 層"
+            },
+            {
+              "name": "巴黎星辰凱悅酒店",
+              "height": "137米",
+              "floor": "39 層"
+            }
+          ],
+          "source": "Emporis地產資料庫"
+        },
+        "mexicocity": {
+          "building": [
+            {
+              "name": "雷福馬之塔",
+              "height": "245米",
+              "floor": "57 層"
+            },
+            {
+              "name": "Chapultepec Uno/Punto Chapultepec",
+              "height": "240.5米",
+              "floor": "59 層"
+            },
+            {
+              "name": "Torre BBVA Bancomer",
+              "height": "235米",
+              "floor": "50 層"
+            }
+          ],
+          "source": "Emporis地產資料庫"
+        },
+        "mumbai": {
+          "building": [
+            {
+              "name": "Lodha The Park 4",
+              "height": "268米",
+              "floor": "76 層"
+            },
+            {
+              "name": "Omkar 1973 Tower A",
+              "height": "268米",
+              "floor": "76 層"
+            },
+            {
+              "name": "Lodha The Park 1",
+              "height": "268米",
+              "floor": "76 層"
+            }
+          ],
+          "source": "Emporis地產資料庫"
+        },
+        "newyork": {
+          "building": [
+            {
+              "name": "世界貿易中心一號大樓",
+              "height": "541米",
+              "floor": "104 層"
+            },
+            {
+              "name": "中央公園塔",
+              "height": "472米",
+              "floor": "95 層"
+            },
+            {
+              "name": "西57街111號",
+              "height": "435米",
+              "floor": "84 層"
+            }
+          ],
+          "source": "Emporis地產資料庫"
+        },
+        "singapore": {
+          "building": [
+            {
+              "name": "丹戎巴葛中心",
+              "height": "290米",
+              "floor": "68 層"
+            },
+            {
+              "name": "共和大廈",
+              "height": "280米",
+              "floor": "66 層"
+            },
+            {
+              "name": "大華銀行大廈一座",
+              "height": "280米",
+              "floor": "66 層"
+            }
+          ],
+          "source": "Emporis地產資料庫"
+        },
+        "sydney": {
+          "building": [
+            {
+              "name": "奇夫利大廈",
+              "height": "244米",
+              "floor": "50 層"
+            },
+            {
+              "name": "花旗集團中心",
+              "height": "243米",
+              "floor": "50 層"
+            },
+            {
+              "name": "德意志銀行大廈",
+              "height": "240米",
+              "floor": "39 層"
+            }
+          ],
+          "source": "Emporis地產資料庫"
+        },
+        "tokyo": {
+          "building": [
+            {
+              "name": "虎之門之丘",
+              "height": "255米",
+              "floor": "52 層"
+            },
+            {
+              "name": "中城塔",
+              "height": "248米",
+              "floor": "54 層"
+            },
+            {
+              "name": "東京都廳第一本廳舍",
+              "height": "243米",
+              "floor": "48 層"
+            }
+          ],
+          "source": "Emporis地產資料庫"
+        }
+      },
+      "section4": {
+        "hongkong": {
+          "percentage": "88",
+          "carimages": [
+            "./images/exG02a/section4/hongkongcar1.svg",
+            "./images/exG02a/section4/hongkongcar2.svg",
+            "./images/exG02a/section4/hongkongcar3.svg"
+          ],
+          "source": "2018年德勤城市流動性指數"
+        },
+        "beijing": {
+          "percentage": "36",
+          "carimages": ["./images/exG02a/section4/beijingcar1.svg", "./images/exG02a/section4/beijingcar2.svg"],
+          "source": "2018年德勤城市流動性指數"
+        },
+        "cairo": {
+          "percentage": "69",
+          "carimages": ["./images/exG02a/section4/cairocar1.svg", "./images/exG02a/section4/cairocar2.svg"],
+          "source": "Sustainable Transport Project for Egypt 2015<br/>*This data belongs to Greater Cairo"
+        },
+        "london": {
+          "percentage": "35",
+          "carimages": ["./images/exG02a/section4/londoncar1.svg", "./images/exG02a/section4/londoncar2.svg"],
+          "source": "2020年德勤城市流動性指數"
+        },
+        "paris": {
+          "percentage": "25",
+          "carimages": ["./images/exG02a/section4/pariscar1.svg", "./images/exG02a/section4/pariscar2.svg"],
+          "source": "2019年德勤城市流動性指數"
+        },
+        "mexicocity": {
+          "percentage": "71",
+          "carimages": ["./images/exG02a/section4/mexicocitycar1.svg", "./images/exG02a/section4/mexicocitycar2.svg"],
+          "source": "2019年德勤城市流動性指數<br/>*This data belongs to The Metropolitan Zone of the Valle de México (Valle de México)"
+        },
+        "mumbai": {
+          "percentage": "70",
+          "carimages": ["./images/exG02a/section4/mumbaicar1.svg", "./images/exG02a/section4/mumbaicar2.svg"],
+          "source": "2019年德勤城市流動性指數<br/>*This data belongs to Mumbai Metropolitan Area"
+        },
+        "newyork": {
+          "percentage": "35",
+          "carimages": ["./images/exG02a/section4/newyorkcar1.svg", "./images/exG02a/section4/newyorkcar2.svg"],
+          "source": "2018年德勤城市流動性指數<br/>*This data belongs to New York (NY-NJ-CT) urbanized area"
+        },
+        "singapore": {
+          "percentage": "53",
+          "carimages": ["./images/exG02a/section4/singaporecar1.svg", "./images/exG02a/section4/singaporecar2.svg"],
+          "source": "2020年德勤城市流動性指數"
+        },
+        "sydney": {
+          "percentage": "27",
+          "carimages": ["./images/exG02a/section4/sydneycar1.svg", "./images/exG02a/section4/sydneycar2.svg"],
+          "source": "2020年德勤城市流動性指數<br/>*This data belongs to Sydney Urban Area and Localities"
+        },
+        "tokyo": {
+          "percentage": "47",
+          "carimages": ["./images/exG02a/section4/tokyocar1.svg", "./images/exG02a/section4/tokyocar2.svg"],
+          "source": "2020年德勤城市流動性指數"
+        }
+      },
+      "section5": {
+        "hongkong": {
+          "money": "382,046.00",
+          "source": "2019 Gross Domestic Product, <br/>Census and Statistics Department, <br/>Hong Kong Special Administrative Region"
+        },
+        "beijing": {
+          "money": "187,681.15",
+          "source": "北京市统计局<br/>北京市2019年国民经济和社会发展统计公报"
+        },
+        "cairo": {
+          "money": "55,512.60",
+          "source": "Planning and Design for Sustainable Urban Mobility,<br/>UN-Habitat 2013"
+        },
+        "london": {
+          "money": "567,312.56",
+          "source": "Regional economic activity by gross domestic product,<br/>Office for National Statistics, the UK 2018"
+        },
+        "paris": {
+          "money": "625,105.00",
+          "source": "Greater Paris Metropolis In Action,<br/>Métropole du Grand Paris 2019"
+        },
+        "mexicocity": {
+          "money": "310,908.00",
+          "source": "Regions and Cities at a Glance 2018 - Mexico,<br/>OECD"
+        },
+        "mumbai": {
+          "money": "34,821.95",
+          "source": "Economic Survey of Maharashtra 2019-20,<br/>Directorate Of Economics And Statisitcs,<br/>Planning Department,<br/>Government of Maharashtra, Mumbai"
+        },
+        "newyork": {
+          "money": "693,481.48",
+          "source": "GDP and Personal Income,<br/>Bureau of Economic Analysis,<br/>U.S. Department of Commerce 2020<br/> *This data belongs to New York State"
+        },
+        "singapore": {
+          "money": "510,389.56",
+          "source": "Singapore Department of Statistics 2019"
+        },
+        "sydney": {
+          "money": "492,481.75",
+          "source": " Economic performance of Australia’s cities and regions,<br/>SGS Economics and Planning"
+        },
+        "tokyo": {
+          "money": "572,960.86",
+          "source": "都民経済計算（都内総生産等）<br/>平成29年度速報 （平成29年 / 2017年）"
+        }
+      }
+    }
+  }
 }
