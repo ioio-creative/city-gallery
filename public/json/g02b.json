@@ -264,7 +264,7 @@
             },
             {
               "image": {
-                "src": "/images/exG02b/KualaLumpur/photo2.png",
+                "src": "",
                 "caption": ""
               }
             }
@@ -592,19 +592,19 @@
           "name": "聰明隧道",
           "location": "吉隆坡",
           "image": {
-            "src": "/images/exG02b/KualaLumpur/Malaysia.png"
+            "src": "./images/exG02b/KualaLumpur/Malaysia.png"
           },
           "description": "有沒有想過，隧道除了是車道，還可以是「水道」？在熱帶多雨的馬來西亞吉隆坡，每到下雨天，水患嚴重，甚至連巿中心地標 - 占美回教堂都成為澤國。因此，2007年，吉隆坡建成了全球首創的「聰明隧道」。晴天時行車，雨天時變身巨型排洪管道。這是紓緩交通擠塞，同時減少水浸風險的「聰明之道」。",
           "detailBlocks": [
             {
               "image": {
-                "src": "/images/exG02b/KualaLumpur/photo1.jpg",
+                "src": "./images/exG02b/KualaLumpur/photo1.jpg",
                 "caption": "隧道長九點七公里，是亞洲第二長的防洪水道，分三層，上兩層共有四條車道，連接高速公路；底層管道連接蓄洪池、多條河流及湖泊。平日不開放，雨天時用作水道。"
               }
             },
             {
               "image": {
-                "src": "/images/exG02b/KualaLumpur/photo2.png",
+                "src": "./images/exG02b/KualaLumpur/photo2.png",
                 "caption": "隧道有三種模式，晴天或雨量少時只開放兩層車道，底層水道並不使用（模式一）；若遇上中度雨量，底層水道會同時打開排洪（模式二）；若遇上暴雨，便連行車道都以自動水密門關閉，整條隧道都變成排洪水道，可容納高達三百萬立方公尺水量，約等於三十四個標準泳池（模式三）。隧道落成後，成功應付多次暴雨。其創新設計致使它於2011年獲聯合國最佳人居環境榮譽獎章。"
               }
             },
