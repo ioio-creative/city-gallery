@@ -479,9 +479,39 @@
         "distance": "5公里",
         "source": "(Source Holder)",
         "images": {
-          "hongkong": { "src": "./images/exG02a/section1/hongkong.svg" },
-          "tokyo": { "src": "./images/exG02a/section1/tokyo.svg" },
-          "taiwan": { "src": "./images/exG02a/section1/hongkong.svg" }
+          "hongkong": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_HongKong.svg"
+          },
+          "beijing": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_Beijing.svg"
+          },
+          "cairo": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_Cairo.svg"
+          },
+          "london": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_London.svg"
+          },
+          "paris": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_Paris.svg"
+          },
+          "mexicocity": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_MexicoCity.svg"
+          },
+          "mumbai": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_Mumbai.svg"
+          },
+          "newyork": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_NewYork.svg"
+          },
+          "singapore": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_Singapore.svg"
+          },
+          "sydney": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_Sydney.svg"
+          },
+          "tokyo": {
+            "src": "./images/exG02a/section1/G02A_UrbanForm_Tokyo.svg"
+          }
         }
       },
       "section2": {
@@ -569,7 +599,7 @@
               "floor": "78 層"
             }
           ],
-          "source": "Emporis地產資料庫"
+          "source": "Emporis"
         },
         "beijing": {
           "building": [
@@ -589,7 +619,7 @@
               "floor": "58 層"
             }
           ],
-          "source": "Emporis地產資料庫"
+          "source": "Emporis"
         },
         "cairo": {
           "building": [
@@ -609,7 +639,7 @@
               "floor": "34 層"
             }
           ],
-          "source": "Emporis地產資料庫"
+          "source": "Emporis"
         },
         "london": {
           "building": [
@@ -629,7 +659,7 @@
               "floor": "46 層"
             }
           ],
-          "source": "Emporis地產資料庫"
+          "source": "Emporis"
         },
         "paris": {
           "building": [
@@ -649,7 +679,7 @@
               "floor": "39 層"
             }
           ],
-          "source": "Emporis地產資料庫"
+          "source": "Emporis"
         },
         "mexicocity": {
           "building": [
@@ -669,7 +699,7 @@
               "floor": "50 層"
             }
           ],
-          "source": "Emporis地產資料庫"
+          "source": "Emporis"
         },
         "mumbai": {
           "building": [
@@ -689,7 +719,7 @@
               "floor": "76 層"
             }
           ],
-          "source": "Emporis地產資料庫"
+          "source": "Emporis"
         },
         "newyork": {
           "building": [
@@ -709,7 +739,7 @@
               "floor": "84 層"
             }
           ],
-          "source": "Emporis地產資料庫"
+          "source": "Emporis"
         },
         "singapore": {
           "building": [
@@ -729,7 +759,7 @@
               "floor": "66 層"
             }
           ],
-          "source": "Emporis地產資料庫"
+          "source": "Emporis"
         },
         "sydney": {
           "building": [
@@ -749,7 +779,7 @@
               "floor": "39 層"
             }
           ],
-          "source": "Emporis地產資料庫"
+          "source": "Emporis"
         },
         "tokyo": {
           "building": [
@@ -769,7 +799,7 @@
               "floor": "48 層"
             }
           ],
-          "source": "Emporis地產資料庫"
+          "source": "Emporis"
         }
       },
       "section4": {

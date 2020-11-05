@@ -58,6 +58,7 @@ const App = props => {
     const [allData, setAllData] = useState(null);
     const [language, setLanguage] = useState('en');
     const [hideEarth, setHideEarth] = useState(false);
+    const [aniLock, setAniLock] = useState([false,false,false,false,false]);
 
     useEffect(()=>{
         let scene = undefined,
@@ -691,9 +692,12 @@ const App = props => {
         }
 
         const onMouseDown = () => {
-            dragging = false;
-            document.addEventListener("mouseup", onMouseUp, false);
-            document.addEventListener("touchend", onMouseUp, false);
+            if (document.querySelector('#home').classList[0] === undefined){
+                dragging = false;
+                // console.log("first mousedown");
+                document.addEventListener("mouseup", onMouseUp, false);
+                document.addEventListener("touchend", onMouseUp, false);
+            }
         }
 
         const onMouseMove = (event) => {
@@ -830,6 +834,7 @@ const App = props => {
 
             setTimeout(()=>{
                 setDetailIdx(0);
+                console.log("what happened")
             },1000);
             // gsap.set('#opening',{delay:2, className:'section active'});
         }
@@ -869,6 +874,7 @@ const App = props => {
 
             if(intersection.length > 0){
                 currentHoveredInstanceId = intersection[ 0 ].instanceId;
+                // console.log("balls clicked");
                 if(currentHoveredInstanceId !== prevHoveredInstanceId){
                     document.body.style.cursor = 'pointer';
                     prevHoveredInstanceId = currentHoveredInstanceId;
@@ -1004,6 +1010,7 @@ const App = props => {
             mouse.lastPos.y = 0;
             clicked = true;
             setScrolling(false);
+            console.log("second mousedown");
             disableRotate();
             document.addEventListener('mousemove', onMouseMove, false);
             document.addEventListener('mouseup', onMouseUp, false);
@@ -1113,11 +1120,29 @@ const App = props => {
 
     const onChangeDetail = (idx) => {
         if(detailIdx !== idx){
+            setAniLock((prevAniLock)=>{
+                let tempArray = prevAniLock;
+                tempArray[idx-1] = true;
+                return tempArray
+            });
             setDetailIdx(idx);
             setZindex(zindex+1);
-            gsap.set(`#section${idx}`, {zIndex:zindex});
-            gsap.fromTo(`#section${idx} .bg span`, 1, {y:'100%'},{force3D:true, y:'-100%', stagger:.08, ease:'expo.out'});
-            gsap.fromTo(`#section${idx} .bg`, .6, {y:'100%'},{force3D:true, y:'0%', stagger:.08, ease:'expo.inOut'});
+            let temp = gsap.timeline({onComplete: ()=>{
+                setAniLock((prevAniLock)=>{
+                    let tempArray = prevAniLock;
+                    tempArray[idx-1] = false;
+                    return tempArray
+                });
+                console.log("finish", aniLock);
+                }
+            });
+            temp.set(`#section${idx}`, {zIndex:zindex});
+            temp.fromTo(`#section${idx} .bg span`, 1, {y:'100%'},{force3D:true, y:'-100%', stagger:.08, ease:'expo.out'});
+            temp.fromTo(`#section${idx} .bg`, .6, {y:'100%'},{force3D:true, y:'0%', stagger:.08, ease:'expo.inOut'});
+            // temp.to({}, {duration:4});
+            // gsap.set(`#section${idx}`, {zIndex:zindex});
+            // gsap.fromTo(`#section${idx} .bg span`, 1, {y:'100%'},{force3D:true, y:'-100%', stagger:.08, ease:'expo.out'});
+            // gsap.fromTo(`#section${idx} .bg`, .6, {y:'100%'},{force3D:true, y:'0%', stagger:.08, ease:'expo.inOut'});
         }
     }
 
@@ -1133,19 +1158,23 @@ const App = props => {
         if(!scrolling){
             moveFromIdFunc.current.moveFromId(id);
             selectLocationFunc.current.selectLocation(id);
+            console.log("debug");
         }
     }
 
     const onBackHome = () => {
-        gsap.to(`.section.active .bg`, .6, {force3D:true, y:'100%', overwrite:true, stagger:.04, ease:'expo.out'});
-        gsap.set(`.section:not(.active) .bg`, {y:'100%'});
-        gsap.set(`.section .bg span`, {y:'100%'});
-        gsap.set('#detailPage',{className:''});
-        setDetailIdx(null);
-        enableRotate();
-        resetPointsColorFunc.current.resetPointsColor();
-        enableAutoRotateFunc.current.enableAutoRotate();
-        setHideEarth(false);
+        if (aniLock.every(x => x===false)){
+            gsap.to(`.section.active .bg`, .6, {force3D:true, y:'100%', overwrite:true, stagger:.04, ease:'expo.out'});
+            gsap.set(`.section:not(.active) .bg`, {y:'100%'});
+            gsap.set(`.section .bg span`, {y:'100%'});
+            gsap.set('#detailPage',{className:''});
+            setDetailIdx(null);
+            enableRotate();
+            resetPointsColorFunc.current.resetPointsColor();
+            enableAutoRotateFunc.current.enableAutoRotate();
+            setHideEarth(false);
+            console.log("enter");
+        }
     }
 
 
@@ -1156,9 +1185,11 @@ const App = props => {
                 Touch screen to select<br/>觸碰螢幕以選取
             </div>
             <div id="lang">
+                {allData && <>
                 <p>Please select language<br/>請選擇語言</p>
                 <div onClick={()=>onChangeLang('en')}>English</div>
                 <div onClick={()=>onChangeLang('tc')}>繁體中文</div>
+                </>}
             </div>
             <div id="locationSelector">
                 <div id="hk" className="sameWidth big">{locations[0].name[language]}</div>
@@ -1229,7 +1260,7 @@ const App = props => {
                     <ul>
                         {
                             data && data.menu.map((value, idx)=>{
-                                return <li key={idx} className={detailIdx === idx+1 ? 'active' : ''} onClick={()=>onChangeDetail(idx+1)}><span>{value}</span></li>
+                                return <li key={idx} className={detailIdx === idx+1 ? 'active' : ''} onClick={()=>{onChangeDetail(idx+1)}}><span>{value}</span></li>
                             })
                         }
                         {/* <li className={detailIdx === 1 ? 'active' : ''} onClick={()=>onChangeDetail(1)}><span>Urban Form</span></li>
