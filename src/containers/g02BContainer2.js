@@ -20,9 +20,7 @@ const CityBlock = props => {
   return (
     <div
       id={cityIdx}
-      className={`cityBlock${props.activeCenterClass ? ' center' : ''}${
-        props.active ? ' clicked' : ''
-      }`}
+      className={`cityBlock${props.activeCenterClass ? ' center' : ''}${props.active ? ' clicked' : ''}`}
       style={{
         transform: `translate3d(${props.offsetX}px, ${props.offsetY}px, 0px)`
       }}
@@ -32,19 +30,13 @@ const CityBlock = props => {
           <div
             className='img'
             style={{
-              backgroundImage: `url(${
-                props.data && props.data.cities[cityIdx].image.src
-              })`
+              backgroundImage: `url(${props.data && props.data.cities[cityIdx].image.src})`
             }}
           ></div>
         </div>
         <div className='cityName'>
-          <div className='location'>
-            {props.data && props.data.cities[cityIdx].name}
-          </div>
-          <div className='realName'>
-            {props.data && props.data.cities[cityIdx].location}
-          </div>
+          <div className='location'>{props.data && props.data.cities[cityIdx].name}</div>
+          <div className='realName'>{props.data && props.data.cities[cityIdx].location}</div>
         </div>
         <div className='otherLangName'>
           <b>{props.data && props.otherLangData.cities[cityIdx].name}</b>,{' '}
@@ -133,13 +125,13 @@ const CitiesList = props => {
     if (props.data) {
       setLth(props.data.cities.length);
 
-      const idx = []; //[1,5,8,1,4];
-      for (let i = 0; i < 5; i++) {
-        // if(i === 2)
-        //   idx[i] = props.data.cities.length - 2;
-        // else
-        idx[i] = Math.round(random(0, props.data.cities.length - 1));
-      }
+      const idx = [1, 8, 5, 2, 9]; //[1,5,8,1,4];
+      // for (let i = 0; i < 5; i++) {
+      //   // if(i === 2)
+      //   //   idx[i] = props.data.cities.length - 2;
+      //   // else
+      //   idx[i] = Math.round(random(0, props.data.cities.length - 1));
+      // }
       setStartColIdx(idx);
     }
   }, [props.data]);
@@ -156,8 +148,7 @@ const CitiesList = props => {
           return [...Array(5)].map((v, xIdx) => {
             const colLth = col.length;
             const rowLth = row.length;
-            const id =
-              (startColIdx[yIdx] + (((col[xIdx] % lth) + lth) % lth)) % lth;
+            const id = (startColIdx[yIdx] + (((col[xIdx] % lth) + lth) % lth)) % lth;
             return (
               <CityBlock
                 key={yIdx * 5 + xIdx}
@@ -277,14 +268,8 @@ const G02BContainer = props => {
     };
 
     const goCenter = (colIdx, rowIdx) => {
-      elemPos.x =
-        (-blockWidth * (colIdx * 2)) / 2 +
-        window.innerWidth / 2 -
-        blockWidth / 2;
-      elemPos.y =
-        (-blockHeight * (rowIdx * 2)) / 2 +
-        window.innerHeight / 2 -
-        blockHeight / 2;
+      elemPos.x = (-blockWidth * (colIdx * 2)) / 2 + window.innerWidth / 2 - blockWidth / 2;
+      elemPos.y = (-blockHeight * (rowIdx * 2)) / 2 + window.innerHeight / 2 - blockHeight / 2;
 
       mouse.currentPos = { x: 0, y: 0 };
     };
@@ -333,12 +318,8 @@ const G02BContainer = props => {
         y: (easeElemPos.y += (elemPos.y - easeElemPos.y) * 0.1)
       });
 
-      setCurrentColIdx(
-        -Math.floor((easeElemPos.x - blockWidth / 2) / blockWidth)
-      );
-      setCurrentRowIdx(
-        -Math.floor((easeElemPos.y + blockHeight / 8) / blockHeight)
-      );
+      setCurrentColIdx(-Math.floor((easeElemPos.x - blockWidth / 2) / blockWidth));
+      setCurrentRowIdx(-Math.floor((easeElemPos.y + blockHeight / 8) / blockHeight));
     };
 
     loop();
@@ -390,10 +371,7 @@ const G02BContainer = props => {
     if (!dragging && !isHome) {
       setDisableDrag(true);
       setBlockElemIdx(domIdx);
-      moveToClickedBlockFunc.current.moveToClickedBlock(
-        col[c] * blockWidth,
-        row[r] * blockHeight
-      );
+      moveToClickedBlockFunc.current.moveToClickedBlock(col[c] * blockWidth, row[r] * blockHeight);
 
       openDetailPage(domIdx);
     }
@@ -403,25 +381,11 @@ const G02BContainer = props => {
     const elem = document.querySelector(`.cityBlock:nth-child(${domIdx + 1})`);
     const delay =
       Math.abs(
-        (elem.getBoundingClientRect().left +
-          blockWidth / 2 -
-          window.innerWidth / 2) /
-          (window.innerWidth / 1.1)
-      ) +
-      Math.abs(
-        (elem.getBoundingClientRect().top +
-          blockWidth / 2 -
-          window.innerHeight / 2) /
-          window.innerWidth
-      );
+        (elem.getBoundingClientRect().left + blockWidth / 2 - window.innerWidth / 2) / (window.innerWidth / 1.1)
+      ) + Math.abs((elem.getBoundingClientRect().top + blockWidth / 2 - window.innerHeight / 2) / window.innerWidth);
 
     gsap.to(['#drag'], 0.3, { autoAlpha: 0, ease: 'power1.inOut' });
-    gsap.fromTo(
-      '#detailsPage #bg',
-      0.3,
-      { autoAlpha: 0 },
-      { delay: delay, autoAlpha: 1, ease: 'power1.inOut' }
-    );
+    gsap.fromTo('#detailsPage #bg', 0.3, { autoAlpha: 0 }, { delay: delay, autoAlpha: 1, ease: 'power1.inOut' });
     gsap.fromTo(
       '#detailsPage #bg',
       1.3,
@@ -478,11 +442,7 @@ const G02BContainer = props => {
     <div id='G02BContainer' className={`${isHome ? 'home ' : ''}${language}`}>
       <svg width='0' height='0'>
         <defs>
-          <clipPath
-            id='smask'
-            clipPathUnits='objectBoundingBox'
-            transform='translate(.1,0) scale(0.00204, 0.00284)'
-          >
+          <clipPath id='smask' clipPathUnits='objectBoundingBox' transform='translate(.1,0) scale(0.00204, 0.00284)'>
             <path
               d='M132.4 76.9c93.3 0 82-84.9 244.6-76.3 92.1 13 184.2 151.1 33.1 319.4-65.3 65.5-195 7.2-246.1 7.2C61.9 324.4 0 299.1 0 213.6S39.1 76.9 132.4 76.9z'
               fill='none'
@@ -496,11 +456,7 @@ const G02BContainer = props => {
         <div id='lang'>
           {props.appData &&
             props.appData.languages.map((value, index) => (
-              <div
-                key={index}
-                className='btn'
-                onClick={() => onChangeLang(value.locale)}
-              >
+              <div key={index} className='btn' onClick={() => onChangeLang(value.locale)}>
                 {value.display}
               </div>
             ))}
@@ -518,10 +474,7 @@ const G02BContainer = props => {
       <div id='homeBtn' className='btn' onClick={backToHome}></div>
       <CitiesList
         data={contentData}
-        otherLangData={
-          props.appData &&
-          props.appData.contents[language === 'zh' ? 'en' : 'zh']
-        }
+        otherLangData={props.appData && props.appData.contents[language === 'zh' ? 'en' : 'zh']}
         posX={easeElemPos.x}
         posY={easeElemPos.y}
         currentColIdx={currentColIdx}
@@ -531,30 +484,20 @@ const G02BContainer = props => {
         setDomId={setDomId}
       />
 
-      <div
-        ref={detailsPageElem}
-        id='detailsPage'
-        className={activeDetailPage ? 'active' : ''}
-      >
+      <div ref={detailsPageElem} id='detailsPage' className={activeDetailPage ? 'active' : ''}>
         <div id='detailsContent'>
           <div id='imageWrap'>
             <div
               className='img'
               style={{
-                backgroundImage: `url(${
-                  contentData && contentData.cities[domId].image.src
-                })`
+                backgroundImage: `url(${contentData && contentData.cities[domId].image.src})`
               }}
             ></div>
           </div>
           <svg width='0' height='0'>
             <defs>
               <filter id='blur'>
-                <feGaussianBlur
-                  in='SourceGraphic'
-                  stdDeviation='10'
-                  result='blur'
-                />
+                <feGaussianBlur in='SourceGraphic' stdDeviation='10' result='blur' />
                 <feComposite in='SourceGraphic' in2='matrix' operator='atop' />
               </filter>
               <filter id='colormatrix'>
@@ -569,44 +512,16 @@ const G02BContainer = props => {
             </defs>
           </svg>
           <div id='bubbleWrap1' className='bubbleWrap'>
-            <div
-              id='bubble1'
-              className='bubble'
-              style={{ backgroundImage: `url(${bubble1})` }}
-            ></div>
-            <div
-              id='bubble2'
-              className='bubble'
-              style={{ backgroundImage: `url(${bubble2})` }}
-            ></div>
+            <div id='bubble1' className='bubble' style={{ backgroundImage: `url(${bubble1})` }}></div>
+            <div id='bubble2' className='bubble' style={{ backgroundImage: `url(${bubble2})` }}></div>
           </div>
           <div id='bubbleWrap2' className='bubbleWrap'>
-            <div
-              id='bubble1'
-              className='bubble'
-              style={{ backgroundImage: `url(${bubble1})` }}
-            ></div>
-            <div
-              id='bubble2'
-              className='bubble'
-              style={{ backgroundImage: `url(${bubble2})` }}
-            ></div>
+            <div id='bubble1' className='bubble' style={{ backgroundImage: `url(${bubble1})` }}></div>
+            <div id='bubble2' className='bubble' style={{ backgroundImage: `url(${bubble2})` }}></div>
           </div>
-          <div
-            id='circle1'
-            className='circle'
-            style={{ backgroundImage: `url(${circle1})` }}
-          ></div>
-          <div
-            id='circle2'
-            className='circle'
-            style={{ backgroundImage: `url(${circle2})` }}
-          ></div>
-          <div
-            id='circle3'
-            className='circle'
-            style={{ backgroundImage: `url(${circle3})` }}
-          ></div>
+          <div id='circle1' className='circle' style={{ backgroundImage: `url(${circle1})` }}></div>
+          <div id='circle2' className='circle' style={{ backgroundImage: `url(${circle2})` }}></div>
+          <div id='circle3' className='circle' style={{ backgroundImage: `url(${circle3})` }}></div>
           <div id='contentWrap'>
             <div id='title'>
               <span>{contentData && contentData.cities[domId].name}</span>
@@ -616,14 +531,10 @@ const G02BContainer = props => {
                 </text>
               </svg>
             </div>
-            <div id='description'>
-              {contentData && contentData.cities[domId].description}
-            </div>
+            <div id='description'>{contentData && contentData.cities[domId].description}</div>
           </div>
           <div id='galleryListWrap'>
-            <div id='dragForMore'>
-              {contentData && contentData.global.dragMore}
-            </div>
+            <div id='dragForMore'>{contentData && contentData.global.dragMore}</div>
             <ul ref={galleryListElem} id='galleryList'>
               {contentData &&
                 contentData.cities[domId].detailBlocks &&
