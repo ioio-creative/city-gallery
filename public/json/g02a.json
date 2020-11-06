@@ -24,44 +24,44 @@
         "gdp": "GDP per capita (nominal)",
         "usd": "USD"
       },
-      "menu": ["Urban Form", "Population Density", "Tallest Buildings", "Transportation", "GDP"],
+      "menu": ["Urban Form", "Population Density", "Tallest Buildings", "Transportation", "GDP Per Capita"],
       "section1": {
         "populationArea": "Population Area",
         "distance": "5km",
         "source": "(Source Holder)",
         "images": {
           "hongkong": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_HongKong.svg"
+            "src": "./images/exG02a/section1/hongkongmap.svg"
           },
           "beijing": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_Beijing.svg"
+            "src": "./images/exG02a/section1/beijingmap.svg"
           },
           "cairo": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_Cairo.svg"
+            "src": "./images/exG02a/section1/cairomap.svg"
           },
           "london": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_London.svg"
+            "src": "./images/exG02a/section1/londonmap.svg"
           },
           "paris": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_Paris.svg"
+            "src": "./images/exG02a/section1/parismap.svg"
           },
           "mexicocity": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_MexicoCity.svg"
+            "src": "./images/exG02a/section1/mexicomap.svg"
           },
           "mumbai": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_Mumbai.svg"
+            "src": "./images/exG02a/section1/mumbaimap.svg"
           },
           "newyork": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_NewYork.svg"
+            "src": "./images/exG02a/section1/newyorkmap.svg"
           },
           "singapore": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_Singapore.svg"
+            "src": "./images/exG02a/section1/singaporemap.svg"
           },
           "sydney": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_Sydney.svg"
+            "src": "./images/exG02a/section1/sydneymap.svg"
           },
           "tokyo": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_Tokyo.svg"
+            "src": "./images/exG02a/section1/tokyomap.svg"
           }
         }
       },
@@ -473,44 +473,44 @@
         "gdp": "人均本地生產總值（當時市價）",
         "usd": "美元"
       },
-      "menu": ["城市型態", "城市人口密度", "最高大樓", "交通", "本地生產總值"],
+      "menu": ["城市型態", "城市人口密度", "最高大樓", "交通", "人均本地生產總值"],
       "section1": {
         "populationArea": "建設面積",
         "distance": "5公里",
         "source": "(Source Holder)",
         "images": {
           "hongkong": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_HongKong.svg"
+            "src": "./images/exG02a/section1/hongkongmap.svg"
           },
           "beijing": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_Beijing.svg"
+            "src": "./images/exG02a/section1/beijingmap.svg"
           },
           "cairo": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_Cairo.svg"
+            "src": "./images/exG02a/section1/cairomap.svg"
           },
           "london": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_London.svg"
+            "src": "./images/exG02a/section1/londonmap.svg"
           },
           "paris": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_Paris.svg"
+            "src": "./images/exG02a/section1/parismap.svg"
           },
           "mexicocity": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_MexicoCity.svg"
+            "src": "./images/exG02a/section1/mexicomap.svg"
           },
           "mumbai": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_Mumbai.svg"
+            "src": "./images/exG02a/section1/mumbaimap.svg"
           },
           "newyork": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_NewYork.svg"
+            "src": "./images/exG02a/section1/newyorkmap.svg"
           },
           "singapore": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_Singapore.svg"
+            "src": "./images/exG02a/section1/singaporemap.svg"
           },
           "sydney": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_Sydney.svg"
+            "src": "./images/exG02a/section1/sydneymap.svg"
           },
           "tokyo": {
-            "src": "./images/exG02a/section1/G02A_UrbanForm_Tokyo.svg"
+            "src": "./images/exG02a/section1/tokyomap.svg"
           }
         }
       },

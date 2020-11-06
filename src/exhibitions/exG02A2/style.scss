@@ -148,6 +148,7 @@
                 position: absolute;
                 top: 50%;
                 right: vw-calc(-130);
+                right: -2.67083vw;
                 transform: translate3d(100%,-50%,0);
                 font-size:vw-calc(20);
                 color:#003557;
@@ -196,12 +197,12 @@
             }
             #locationsOuterWrap{
                 position: absolute;
-                top:50%;
-                left:40%;
-                transform: translate3d(-50%,-50%,0);
+                top: 50%;
+                left: 47%;
+                transform: translate3d(-50%, -50%, 0);
                 opacity: 0;
                 visibility: hidden;
-                width: 610px;
+                width: 713px;
                 &:before{
                     content:'';
                     width: 0;
@@ -211,7 +212,7 @@
                     border-right:vw-calc(23) solid #ffffff;
                     position: absolute;
                     top:50%;
-                    left:100%;
+                    left:101.1%;
                 }
                 // &:after{
                 //     content:'';
@@ -239,10 +240,12 @@
                         line-height: vw-calc(100);
                         // border: 1px solid;
                         padding:vw-calc(10 0);
+                        display: flex;
+                        justify-content: center;
                         &.active{
                             span{
                                 transform: translate3d(0,-6%,0) scale(1);
-                                width: 404px;
+                                width: 800px;
                             }
                         }
                         &:not(.active):active{
@@ -436,7 +439,7 @@
                             top:4%;
                             left:0;
                             background-position: center;
-                            background-size: 78%;
+                            // background-size: 78%;
                             background-repeat: no-repeat;
                         }
                     }
@@ -697,7 +700,8 @@
                                             position: absolute;
                                             top:0;
                                             left:vw-calc(-20);
-                                            transform: translate3d(-100%,10%,0);
+                                            left: -3.04167vw;
+                                            // transform: translate3d(-100%,10%,0);
                                         }
                                     }
                                 }
@@ -712,6 +716,29 @@
                                         top:auto;
                                         bottom: calc(100% + #{vw-calc(100)});
                                         left:0%;
+                                        &.mumbai1{
+                                            top: -8.7vw;
+                                        }
+                                        &.newyork1{
+                                            left: -5.8vw;
+                                            top: -5.2vw;
+                                        }
+                                        &.singapore1{
+                                            left: -2.8vw;
+                                            top: -16.8vw;
+                                            >.name{
+                                                width: 461px;
+                                            }
+                                        }
+                                        &.london1{
+                                            top: -16.8vw;
+                                        }
+                                        &.beijing1{
+                                            top: -11vw;
+                                            >.name{
+                                                width: 700px;
+                                            }
+                                        }
                                     }
                                 }
                                 #_2nd{
@@ -719,6 +746,16 @@
                                         top:auto;
                                         bottom: calc(120%);
                                         right:10%;
+                                        &.newyork2{
+                                            left: -18.8vw;
+                                            top: -5vw;
+                                        }
+                                        &.singapore2{
+                                            left: -18.8vw;
+                                            top: -5vw;
+                                            left: -17.8vw;
+                                            top: -9vw;
+                                        }
                                     }
                                 }
                                 #_3rd{
@@ -739,12 +776,13 @@
                             top:0;
                             left:0;
                             padding-bottom: vw-calc(180);
+                            padding-bottom: 6.375vw;
                             display: flex;
                             align-items: flex-end;
                             justify-content: center;
                             .building{
                                 width: auto;
-                                max-height: vw-calc(490);
+                                // max-height: vw-calc(490);
                                 margin-left:vw-calc(45);
                                 display: flex;
                                 align-items: flex-end;
@@ -759,7 +797,7 @@
                                     top:0;
                                     left:0;
                                     z-index: -1;
-                                    transform: translate3d(0,0,0) rotate3d(1, 0, 0, 60deg) skewX(-30deg);
+                                    transform: translate3d(0,0,0) rotate3d(1, 0, 0, 53deg) skewX(-30deg);
                                     transform-origin: bottom;
                                     &:before{
                                         content:'';
@@ -773,10 +811,12 @@
                                 }
                                 &.rectangle{
                                     .shadow{
-                                        width:80%;
-                                        &:before{
-                                            background:rgba(0,0,0,.3);
-                                        }
+                                        width:84%;
+                                        filter: contrast(0);
+                                        background-size: cover;
+                                        // &:before{
+                                        //     // background:rgba(0,0,0,.3);
+                                        // }
                                     }
                                 }
                                 &.triangle{
@@ -859,6 +899,7 @@
                                         line-height: vw-calc(36);
                                         color:#fff;
                                         margin-top:vw-calc(10);
+                                        width: 310px;
                                     }
                                     .height{
                                         margin-top:vw-calc(10);
@@ -1006,16 +1047,25 @@
                         padding-top:vw-calc(190);
                         div.gdpbg{
                             content:'';
-                            width:vw-calc(873.934);
-                            height:vw-calc(821.86);
+                            // width:vw-calc(873.934);
+                            // height:vw-calc(821.86);
+                            // position: absolute;
+                            // top: 74%;
+                            // left: 58%;
+                            width: 34.6174vw;
+                            height: 43.80521vw;
                             position: absolute;
-                            top: 74%;
-                            left: 58%;
+                            top: 77.7%;
+                            left: 50.4%;
                             z-index: 2;
                             // background:url('./images/coinhouse.svg') center no-repeat;
                             background-size:100%;
                             transform: translate3d(-50%,-50%,0);
                             display: block;
+                        }
+                        img{
+                            position: absolute;
+                            z-index: 3;
                         }
                         .title{
                             &.big{
@@ -1117,6 +1167,7 @@
                         }
                         .big{
                             font-size:vw-calc(70);
+                            font-size: 2.84583vw;
                             font-weight: bold;
                             position: relative;
                             z-index: 4;

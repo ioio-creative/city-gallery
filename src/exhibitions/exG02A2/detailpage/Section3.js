@@ -56,7 +56,7 @@ const Section3 = props => {
                                 <div className="floor">{data && locationName && data['hongkong'].building[1].floor}</div>
                             </div>
                             <img src="" data-src={'./images/exG02a/section3/hongkong2nd.svg'} />
-                            <div className="shadow"></div>
+                            <div className="shadow" style={{backgroundImage:`url(./images/exG02a/section3/hongkong2nd.svg)`}}></div>
                         </div>
                         <div id="_1st" className="building rectangle">
                             <div className="infos">
@@ -66,7 +66,7 @@ const Section3 = props => {
                                 <div className="floor">{data && locationName && data['hongkong'].building[0].floor}</div>
                             </div>
                             <img src="" data-src={'./images/exG02a/section3/hongkong1st.svg'} />
-                            <div className="shadow"></div>
+                            <div className="shadow" style={{backgroundImage:`url(./images/exG02a/section3/hongkong1st.svg)`}}></div>
                         </div>
                         <div id="_3rd" className="building rectangle">
                             <div className="infos">
@@ -76,7 +76,7 @@ const Section3 = props => {
                                 <div className="floor">{data && locationName && data['hongkong'].building[2].floor}</div>
                             </div>
                             <img src="" data-src={'./images/exG02a/section3/hongkong3rd.svg'} />
-                            <div className="shadow"></div>
+                            <div className="shadow" style={{backgroundImage:`url(./images/exG02a/section3/hongkong3rd.svg)`}}></div>
                         </div>
                     </div>
                     <div className="source">
@@ -89,34 +89,34 @@ const Section3 = props => {
                 <div className="wrap">
                     <div className="imageWrap">
                         <div id="_2nd" className="building rectangle">
-                            <div className="infos">
+                            <div className={`infos ${locationName}2`}>
                                 <div className="ranking">2nd</div>
                                 <div className="name">{data && locationName && data[locationName].building[1].name}</div>
                                 <div className="height">{data && locationName && data[locationName].building[1].height}</div>
                                 <div className="floor">{data && locationName && data[locationName].building[1].floor}</div>
                             </div>
                             <img src="" data-src={`./images/exG02a/section3/${locationName}2nd.svg`} />
-                            <div className="shadow"></div>
+                            <div className="shadow" style={{backgroundImage:`url(./images/exG02a/section3/${locationName}2nd.svg)`}}></div>
                         </div>
                         <div id="_1st" className="building rectangle">
-                            <div className="infos">
+                            <div className={`infos ${locationName}1`}>
                                 <div className="ranking">1st</div>
                                 <div className="name">{data && locationName && data[locationName].building[0].name}</div>
                                 <div className="height">{data && locationName && data[locationName].building[0].height}</div>
                                 <div className="floor">{data && locationName && data[locationName].building[0].floor}</div>
                             </div>
-                            <img src="" data-src={`./images/exG02a/section3/${locationName}1st.svg`} />
-                            <div className="shadow"></div>
+                            <img src="" data-src={`./images/exG02a/section3/${locationName}1st.svg`}/>
+                            <div className="shadow" style={{backgroundImage:`url(./images/exG02a/section3/${locationName}1st.svg)`}}></div>
                         </div>
                         <div id="_3rd" className="building rectangle">
-                            <div className="infos">
+                            <div className={`infos ${locationName}3`}>
                                 <div className="ranking">3rd</div>
                                 <div className="name">{data && locationName && data[locationName].building[2].name}</div>
                                 <div className="height">{data && locationName && data[locationName].building[2].height}</div>
                                 <div className="floor">{data && locationName && data[locationName].building[2].floor}</div>
                             </div>
                             <img src="" data-src={`./images/exG02a/section3/${locationName}3rd.svg`} />
-                            <div className="shadow"></div>
+                            <div className="shadow" style={{backgroundImage:`url(./images/exG02a/section3/${locationName}3rd.svg)`}}></div>
                         </div>
                     </div>
                     <div className="source">
