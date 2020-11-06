@@ -201,6 +201,7 @@
                 transform: translate3d(-50%,-50%,0);
                 opacity: 0;
                 visibility: hidden;
+                width: 610px;
                 &:before{
                     content:'';
                     width: 0;
@@ -993,8 +994,8 @@
                 &#section5{
                     #right{
                         .wrap{
-                            &:after{
-                                background:url('./images/coinhouse2.svg') center no-repeat;
+                            div.gdpbg{
+                                // background:url('./images/coinhouse2.svg') center no-repeat;
                                 background-size:100%;
                                 // top: 74%;
                                 // left: 58%;
@@ -1003,7 +1004,7 @@
                     }
                     .wrap{
                         padding-top:vw-calc(190);
-                        &:after{
+                        div.gdpbg{
                             content:'';
                             width:vw-calc(873.934);
                             height:vw-calc(821.86);
@@ -1011,7 +1012,7 @@
                             top: 74%;
                             left: 58%;
                             z-index: 2;
-                            background:url('./images/coinhouse.svg') center no-repeat;
+                            // background:url('./images/coinhouse.svg') center no-repeat;
                             background-size:100%;
                             transform: translate3d(-50%,-50%,0);
                             display: block;

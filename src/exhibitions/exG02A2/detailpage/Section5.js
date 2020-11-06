@@ -186,6 +186,7 @@ const Section5 = (props) => {
         <div id="section5" className={`section ${props.detailIdx === 5 ? 'active' : ''}`}>
             <div id="left" className="half">
                 <div className="wrap">
+                    <div className='gdpbg' style={{backgroundImage:`url(./images/exG02a/section5/hongkonggdp.png)`}}></div>
                     <div className="title big">{globalData && globalData.gdp}</div>
                     <div className="big">{ data && data['hongkong'].money }HKD</div>
                     <canvas ref={canvasLeft} id="leftCanvas" width="600" height="600"></canvas>
@@ -204,6 +205,7 @@ const Section5 = (props) => {
             </div>
             <div id="right" className="half">
                 <div className="wrap">
+                    <div className='gdpbg' style={{backgroundImage:`url(./images/exG02a/section5/${locationName}gdp.png)`}}></div>
                     <div className="title big">{globalData && globalData.gdp}</div>
                     <div className="big">{ data && locationName && data[locationName].money }HKD</div>
                     <canvas ref={canvasRight} id="rightCanvas" width="600" height="600"></canvas>
