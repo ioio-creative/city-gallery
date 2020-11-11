@@ -21,8 +21,9 @@
         {
           "name": "Harbour Regeneration ",
           "location": "Hamburg",
+          "icon": ["./images/exG02b/Icon/EN/hamburg_icon1.svg", "", ""],
           "image": {
-            "src": "./images/exG02b/Hamburg/hamburg.svg"
+            "src": "./images/exG02b/Hamburg/_hamburg.svg"
           },
           "description": "Do you know how many bridges are there in Hamburg, the second largest city in Germany? Some say that Hamburg has around 2,500 bridges in total, the greatest number in the world. In fact, since the 14th century, Hamburg has been a key port in Europe with bridges in all sizes straddling over canals, accommodating railways and linking up godowns. The port district has developed into a city within city, overlooking the town centre across the river.",
           "detailBlocks": [
@@ -49,6 +50,11 @@
         {
           "name": "Biodiversity beyond Concrete Jungles",
           "location": "Hong Kong",
+          "icon": [
+            "./images/exG02b/Icon/EN/hongkong_icon1.svg",
+            "./images/exG02b/Icon/EN/hongkong_icon2.svg",
+            "./images/exG02b/Icon/EN/hongkong_icon3.svg"
+          ],
           "image": {
             "src": "./images/exG02b/HongKong/hongkong.png"
           },
@@ -77,6 +83,11 @@
         {
           "name": "From Nullah to Blue-green Hotspot",
           "location": "Seoul",
+          "icon": [
+            "./images/exG02b/Icon/EN/seoul_icon1.svg",
+            "./images/exG02b/Icon/EN/seoul_icon2.svg",
+            "./images/exG02b/Icon/EN/seoul_icon3.svg"
+          ],
           "image": {
             "src": "./images/exG02b/Seoul/seoul.png"
           },
@@ -105,6 +116,11 @@
         {
           "name": "Gallery Underground",
           "location": "Helsinki",
+          "icon": [
+            "./images/exG02b/Icon/EN/helsinki_icon1.svg",
+            "./images/exG02b/Icon/EN/helsinki_icon2.svg",
+            "./images/exG02b/Icon/EN/helsinki_icon3.svg"
+          ],
           "image": {
             "src": "./images/exG02b/Helsinki/helsinki.png"
           },
@@ -133,6 +149,11 @@
         {
           "name": "High Line",
           "location": "New York",
+          "icon": [
+            "./images/exG02b/Icon/EN/newyork_icon1.svg",
+            "./images/exG02b/Icon/EN/newyork_icon2.svg",
+            "./images/exG02b/Icon/EN/newyork_icon3.svg"
+          ],
           "image": {
             "src": "./images/exG02b/NewYork/newyork.png"
           },
@@ -161,6 +182,11 @@
         {
           "name": "Floating Farm",
           "location": "Rotterdam",
+          "icon": [
+            "./images/exG02b/Icon/EN/rotterdam_icon1.svg",
+            "./images/exG02b/Icon/EN/rotterdam_icon2.svg",
+            "./images/exG02b/Icon/EN/rotterdam_icon3.svg"
+          ],
           "image": {
             "src": "./images/exG02b/Rotterdam/rotterdam.png"
           },
@@ -189,6 +215,11 @@
         {
           "name": "An Invisible Power Plant on a Lake",
           "location": "Huainan",
+          "icon": [
+            "./images/exG02b/Icon/EN/huainan_icon1.svg",
+            "./images/exG02b/Icon/EN/huainan_icon2.svg",
+            "./images/exG02b/Icon/EN/huainan_icon3.svg"
+          ],
           "image": {
             "src": "./images/exG02b/Huainan/huainan.png"
           },
@@ -217,6 +248,11 @@
         {
           "name": "Carbon Neutral Capital",
           "location": "Copenhagen",
+          "icon": [
+            "./images/exG02b/Icon/EN/copenhagen_icon1.svg",
+            "./images/exG02b/Icon/EN/copenhagen_icon2.svg",
+            "./images/exG02b/Icon/EN/copenhagen_icon3.svg"
+          ],
           "image": {
             "src": "./images/exG02b/Copenhagen/copenhagen.png"
           },
@@ -245,6 +281,7 @@
         {
           "name": "A SMART Tunnel",
           "location": "Kuala Lumpur",
+          "icon": ["./images/exG02b/Icon/EN/malaysia_icon1.svg", "./images/exG02b/Icon/EN/malaysia_icon2.svg", ""],
           "image": {
             "src": "./images/exG02b/KualaLumpur/Malaysia.png"
           },
@@ -273,6 +310,7 @@
         {
           "name": "Street as Playground",
           "location": "Barcelona",
+          "icon": ["./images/exG02b/Icon/EN/barcelona_icon1.svg", "./images/exG02b/Icon/EN/barcelona_icon2.svg", ""],
           "image": {
             "src": "./images/exG02b/Barcelona/barcelona.png"
           },
@@ -311,26 +349,27 @@
         {
           "name": "城市港口大改造",
           "location": "漢堡",
+          "icon": ["./images/exG02b/Icon/CN/hamburg_icon1.svg", "", ""],
           "image": {
-            "src": "./images/exG02b/Hamburg/hamburg.svg"
+            "src": "./images/exG02b/Hamburg/_hamburg.svg"
           },
           "description": "你知道德國第二大城市漢堡有多少條橋嗎？有人說漢堡擁有全世界最多的橋，共約二千五百條！原來漢堡從十四世紀開始便是歐洲的重要港口，有大大小小的橋橫跨運河、承載鐵路，連接倉庫，港口區發展為與市中心隔河相望的城中城。",
           "detailBlocks": [
             {
               "image": {
-                "src": "./images/exG02b/Hamburg/photo1.png",
+                "src": "./images/exG02b/Hamburg/photo1.jpg",
                 "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再。在航運業持續萎縮的情況下，這座港口城市逐漸被閒置遺忘。為了改造漢堡，長達二十五年名為「漢堡港城」的市區重建計劃於1997年展開。"
               }
             },
             {
               "image": {
-                "src": "./images/exG02b/Hamburg/photo2.png",
+                "src": "./images/exG02b/Hamburg/photo2.jpg",
                 "caption": "老舊的工業區搖身一變，成為現代化生活空間，除了住宅及商廈外，還有文化和歷史建築，同時也包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
               }
             },
             {
               "image": {
-                "src": "./images/exG02b/Hamburg/photo3.png",
+                "src": "./images/exG02b/Hamburg/photo3.jpg",
                 "caption": "預計整個發展區將為一萬五千人提供住所，並創造四萬五千份工作。2017年落成的易北音樂廳，建築師活化舊倉庫建築，融合現代設計，成為新一代的漢堡地標。"
               }
             }
@@ -339,6 +378,11 @@
         {
           "name": "石屎森林外的生物多樣性",
           "location": "香港",
+          "icon": [
+            "./images/exG02b/Icon/CN/hongkong_icon1.svg",
+            "./images/exG02b/Icon/CN/hongkong_icon2.svg",
+            "./images/exG02b/Icon/CN/hongkong_icon3.svg"
+          ],
           "image": {
             "src": "./images/exG02b/HongKong/hongkong.png"
           },
@@ -367,6 +411,11 @@
         {
           "name": "由水渠化為藍綠景點",
           "location": "首爾",
+          "icon": [
+            "./images/exG02b/Icon/CN/seoul_icon1.svg",
+            "./images/exG02b/Icon/CN/seoul_icon2.svg",
+            "./images/exG02b/Icon/CN/seoul_icon3.svg"
+          ],
           "image": {
             "src": "./images/exG02b/Seoul/seoul.png"
           },
@@ -395,6 +444,11 @@
         {
           "name": "冰天遁地藝術館",
           "location": "赫爾辛基",
+          "icon": [
+            "./images/exG02b/Icon/CN/helsinki_icon1.svg",
+            "./images/exG02b/Icon/CN/helsinki_icon2.svg",
+            "./images/exG02b/Icon/CN/helsinki_icon3.svg"
+          ],
           "image": {
             "src": "./images/exG02b/Helsinki/helsinki.png"
           },
@@ -423,6 +477,11 @@
         {
           "name": "高線公園",
           "location": "紐約",
+          "icon": [
+            "./images/exG02b/Icon/CN/newyork_icon1.svg",
+            "./images/exG02b/Icon/CN/newyork_icon2.svg",
+            "./images/exG02b/Icon/CN/newyork_icon3.svg"
+          ],
           "image": {
             "src": "./images/exG02b/NewYork/newyork.png"
           },
@@ -451,6 +510,11 @@
         {
           "name": "牧場水上飄",
           "location": "鹿特丹",
+          "icon": [
+            "./images/exG02b/Icon/CN/rotterdam_icon1.svg",
+            "./images/exG02b/Icon/CN/rotterdam_icon2.svg",
+            "./images/exG02b/Icon/CN/rotterdam_icon3.svg"
+          ],
           "image": {
             "src": "./images/exG02b/Rotterdam/rotterdam.png"
           },
@@ -479,6 +543,11 @@
         {
           "name": "湖泊上的隱形發電廠",
           "location": "淮南",
+          "icon": [
+            "./images/exG02b/Icon/CN/huainan_icon1.svg",
+            "./images/exG02b/Icon/CN/huainan_icon2.svg",
+            "./images/exG02b/Icon/CN/huainan_icon3.svg"
+          ],
           "image": {
             "src": "./images/exG02b/Huainan/huainan.png"
           },
@@ -507,6 +576,7 @@
         {
           "name": "零碳排放首都",
           "location": "哥本哈根",
+          "icon": ["./images/exG02b/Icon/CN/copenhagen_icon1.svg", "./images/exG02b/Icon/CN/copenhagen_icon2.svg", ""],
           "image": {
             "src": "./images/exG02b/Copenhagen/copenhagen.png"
           },
@@ -514,19 +584,19 @@
           "detailBlocks": [
             {
               "image": {
-                "src": "../images/exG02b/Copenhagen/photo1.png",
+                "src": "./images/exG02b/Copenhagen/photo1.png",
                 "caption": "哥本哈根市政府的氣候計劃結合了能源、交通、房屋、建造、健康、教育、文化等多方面的措施而實行。哥本哈根是世界聞名的單車之城，全城單車數量比汽車多五倍。市內單車徑全長三百五十公里，近一半的居民每天選擇以單車代步上班上學。"
               }
             },
             {
               "image": {
-                "src": "../images/exG02b/Copenhagen/photo2.png",
+                "src": "./images/exG02b/Copenhagen/photo2.png",
                 "caption": "2009年，丹麥更成立了世界上第一個單車大使館。在推廣單車運動之餘，單車大使館亦負責統計並分析哥本哈根居民騎單車的特色，收集數據為騎單車人士改善未來的規劃。哥本哈根市政府將會進一步擴展公共交通網絡和單車徑、提倡電動車、翻新改建低能源效益大廈，並投入更多資源推動低污染的科技研發。"
               }
             },
             {
               "image": {
-                "src": "../images/exG02b/Copenhagen/photo3.png",
+                "src": "./images/exG02b/Copenhagen/photo3.png",
                 "caption": "另一頂標誌性項目名為Copenhill。Copenhill既是一座轉廢為能設施，將都市固體廢物高效能地轉化為能源，亦是以創新的設計將建築物外部結合滑雪道、行山徑、攀石牆的，成為康樂活動區。天台公園更以樹木、灌木、石景等，營造自然生態環境。"
               }
             }
@@ -535,6 +605,7 @@
         {
           "name": "聰明隧道",
           "location": "吉隆坡",
+          "icon": ["./images/exG02b/Icon/CN/malaysia_icon1.svg", "./images/exG02b/Icon/CN/malaysia_icon2.svg", ""],
           "image": {
             "src": "./images/exG02b/KualaLumpur/Malaysia.png"
           },
@@ -563,6 +634,7 @@
         {
           "name": "馬路中心的活動天地",
           "location": "巴塞隆拿",
+          "icon": ["./images/exG02b/Icon/CN/barcelona_icon1.svg", "./images/exG02b/Icon/CN/barcelona_icon2.svg", ""],
           "image": {
             "src": "./images/exG02b/Barcelona/barcelona.png"
           },

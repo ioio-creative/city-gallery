@@ -3,41 +3,30 @@
 
 @font-face {
   font-family: 'ITC Avant Garde Gothic Std';
-  src: url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bk.woff2')
-      format('woff2'),
+  src: url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bk.woff2') format('woff2'),
     url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bk.woff') format('woff'),
-    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bk.ttf')
-      format('truetype'),
-    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bk.svg#ITCAvantGardeStd-Bk')
-      format('svg');
+    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bk.ttf') format('truetype'),
+    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bk.svg#ITCAvantGardeStd-Bk') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'ITC Avant Garde Gothic Std';
-  src: url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bold.woff2')
-      format('woff2'),
-    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bold.woff')
-      format('woff'),
-    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bold.ttf')
-      format('truetype'),
-    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bold.svg#ITCAvantGardeStd-Bold')
-      format('svg');
+  src: url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bold.woff2') format('woff2'),
+    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bold.woff') format('woff'),
+    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bold.ttf') format('truetype'),
+    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bold.svg#ITCAvantGardeStd-Bold') format('svg');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'ITC Avant Garde Gothic Std';
-  src: url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Demi.woff2')
-      format('woff2'),
-    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Demi.woff')
-      format('woff'),
-    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Demi.ttf')
-      format('truetype'),
-    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Demi.svg#ITCAvantGardeStd-Demi')
-      format('svg');
+  src: url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Demi.woff2') format('woff2'),
+    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Demi.woff') format('woff'),
+    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Demi.ttf') format('truetype'),
+    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Demi.svg#ITCAvantGardeStd-Demi') format('svg');
   font-weight: 500;
   font-style: normal;
 }
@@ -166,8 +155,7 @@ body {
   text-align: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
-    visibility 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1), visibility 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
   #lang {
     margin-top: vw-calc(45);
     display: flex;
@@ -244,8 +232,7 @@ body {
     content: '';
     width: vw-calc(29);
     height: vw-calc(29);
-    background: url('../exhibitions/exG02B2/images/arrowleft.svg') center
-      no-repeat;
+    background: url('../exhibitions/exG02B2/images/arrowleft.svg') center no-repeat;
     background-size: 100%;
     position: absolute;
     top: 50%;
@@ -262,8 +249,7 @@ body {
   height: vw-calc(127);
   border-radius: vw-calc(70);
   box-shadow: 0 vw-calc(10 20) #00000033;
-  background: #fff url('../exhibitions/exG02B2/images/homeicon.svg') center
-    no-repeat;
+  background: #fff url('../exhibitions/exG02B2/images/homeicon.svg') center no-repeat;
   background-size: 50%;
   position: absolute;
   bottom: vw-calc(76);
@@ -305,8 +291,7 @@ body {
     content: '';
     width: vw-calc(79);
     height: vw-calc(79);
-    background: url('../exhibitions/exG02B2/images/dragicon.svg') center
-      no-repeat;
+    background: url('../exhibitions/exG02B2/images/dragicon.svg') center no-repeat;
     background-size: 100%;
     position: absolute;
     left: vw-calc(52);
@@ -320,8 +305,7 @@ body {
     width: 32.258vw;
     position: absolute;
     padding-top: 32.258vw;
-    transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
-      visibility 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), visibility 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     .contentWrap {
       width: calc(100% - #{vw-calc(80)});
       height: calc(100% - #{vw-calc(80)});
@@ -339,8 +323,7 @@ body {
         bottom: vw-calc(44);
         right: vw-calc(47);
         z-index: 1;
-        background: #d6d6d6 url('../exhibitions/exG02B2/images/arrowright.svg')
-          54% no-repeat;
+        background: #d6d6d6 url('../exhibitions/exG02B2/images/arrowright.svg') 54% no-repeat;
         background-size: 32%;
         border-radius: 50%;
         transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -554,7 +537,7 @@ body {
           height: vw-calc(90);
           position: relative;
           top: vw-calc(-7);
-          margin-left: vw-calc(20);
+          // margin-left: vw-calc(20);
           text {
             font-size: vw-calc(80);
             stroke-width: vw-calc(1);
@@ -572,6 +555,31 @@ body {
         color: #555555;
       }
     }
+    #cityIcon {
+      img {
+        position: absolute;
+        height: 58px;
+        width: auto;
+      }
+      .icon1 {
+        background-size: 100%;
+        position: absolute;
+        left: 1687px;
+        top: 102px;
+      }
+      .icon2 {
+        background-size: 100%;
+        position: absolute;
+        left: 1460px;
+        top: 102px;
+      }
+      .icon3 {
+        background-size: 100%;
+        position: absolute;
+        left: 1246px;
+        top: 102px;
+      }
+    }
     #galleryListWrap {
       width: vw-calc(520);
       height: calc(100vh - #{vw-calc(200)});
@@ -583,36 +591,30 @@ body {
         content: '';
         width: 100%;
         height: 41%;
-        background: linear-gradient(
-          0deg,
-          rgba(255, 247, 237, 1) 55%,
-          rgba(255, 247, 237, 0) 100%
-        );
+        background: linear-gradient(0deg, rgba(255, 247, 237, 1) 55%, rgba(255, 247, 237, 0) 100%);
         position: absolute;
         bottom: vw-calc(-70);
         left: 0;
         z-index: 2;
         pointer-events: none;
       }
-      &:after {
-        content: '';
-        width: vw-calc(171);
-        height: vw-calc(171 * 0.713);
-        background: url('../exhibitions/exG02B2/images/icon.svg') center
-          no-repeat;
-        background-size: 100%;
-        position: absolute;
-        bottom: calc(100% + #{vw-calc(9)});
-        right: 0;
-      }
+      // &:after {
+      //   content: '';
+      //   width: vw-calc(171);
+      //   height: vw-calc(171 * 0.713);
+      //   background: url('../exhibitions/exG02B2/images/icon.svg') center no-repeat;
+      //   background-size: 100%;
+      //   position: absolute;
+      //   bottom: calc(100% + #{vw-calc(9)});
+      //   right: 0;
+      // }
       #dragForMore {
         padding-left: vw-calc(47);
         padding-top: vw-calc(2);
         padding-bottom: vw-calc(2);
         color: #8b8686;
         font-size: vw-calc(20);
-        background: url('../exhibitions/exG02B2/images/arrowdown.svg') left 0
-          no-repeat;
+        background: url('../exhibitions/exG02B2/images/arrowdown.svg') left 0 no-repeat;
         background-size: vw-calc(28);
         position: absolute;
         bottom: vw-calc(76);
@@ -638,11 +640,7 @@ body {
               content: '';
               width: 100%;
               height: 10%;
-              background: linear-gradient(
-                0deg,
-                rgba(255, 247, 237, 1) 20%,
-                rgba(255, 247, 237, 0) 100%
-              );
+              background: linear-gradient(0deg, rgba(255, 247, 237, 1) 20%, rgba(255, 247, 237, 0) 100%);
               position: absolute;
               bottom: 0;
               left: 0;

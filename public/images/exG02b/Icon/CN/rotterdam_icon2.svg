@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="151" height="57" viewBox="0 0 151 57">
+  <g id="rotterdam_icon2" transform="translate(-1467 -103)">
+    <g id="组_4383" data-name="组 4383" transform="translate(1476.069 110.623)">
+      <path id="路径_2223" data-name="路径 2223" d="M358.114,291.582v11.059l-9.37-5.559L339,302.641V291.522" transform="translate(-328.516 -285.4)" fill="none" stroke="#f26a2c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="路径_2224" data-name="路径 2224" d="M323.348,317.348v11.369l9.994,5.872,9.557-5.5-9.776-5.872.219,11.369" transform="translate(-322.859 -294.736)" fill="none" stroke="#f26a2c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="路径_2225" data-name="路径 2225" d="M354.261,300.228V311.16l9.37-5.372,9.745,5.372-9.557,5.622V328.4l9.557-5.622V311.16" transform="translate(-334.033 -288.547)" fill="none" stroke="#f26a2c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="路径_2226" data-name="路径 2226" d="M338.315,287.786l9.994,6.454,10.1-6.454-10.1-5.851Z" transform="translate(-328.269 -281.935)" fill="#f26a2c"/>
+      <path id="路径_2227" data-name="路径 2227" d="M322.582,313.661l10.484,6.77,10.221-6.369-10.71-6.252Z" transform="translate(-322.582 -291.288)" fill="#f26a2c"/>
+      <path id="路径_2228" data-name="路径 2228" d="M353.576,317.1v12.181l9.807,5.747.187-12.618Z" transform="translate(-333.785 -294.647)" fill="#f26a2c"/>
+    </g>
+    <g id="组_4385" data-name="组 4385" transform="translate(1467 103)">
+      <g id="椭圆_9" data-name="椭圆 9" fill="none" stroke="#e9662a" stroke-width="3">
+        <circle cx="28.5" cy="28.5" r="28.5" stroke="none"/>
+        <circle cx="28.5" cy="28.5" r="27" fill="none"/>
+      </g>
+    </g>
+    <g id="组_4446" data-name="组 4446" transform="translate(1348.689 114.138)">
+      <text id="產業創新_和基礎設施" data-name="產業創新
+和基礎設施" transform="translate(185.311 -0.138)" fill="#f26a2c" font-size="15" font-family="YuGothicUI-Bold, Yu Gothic UI" font-weight="700"><tspan x="0" y="16">產業創新</tspan><tspan y="16" font-family="SegoeUI-Bold, Segoe UI"></tspan><tspan x="0" y="34">和基礎設施</tspan></text>
+    </g>
+  </g>
+</svg>

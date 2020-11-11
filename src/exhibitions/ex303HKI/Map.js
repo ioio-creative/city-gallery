@@ -21,7 +21,7 @@ const Map = props => {
 
   useEffect(() => {
     const gui = new dat.GUI({ width: 300 });
-    const mapAssets = data.mapAssets;
+    const mapAssets = data.hki.mapAssets;
     const options = {
       progress: 0,
       year: {
@@ -357,17 +357,17 @@ const Map = props => {
         map['hkIsland'] = new Map(resources['hkIsland_diffuse'].texture);
         map['hkIsland'].create();
 
-        for (let s = 0, lth = data.streets.length; s < lth; s++) {
+        for (let s = 0, lth = data.hki.streets.length; s < lth; s++) {
           streets[s] = [];
-          for (let i = 0; i < data.streets[s].length; i++) {
-            const street = data.streets[s][i];
+          for (let i = 0; i < data.hki.streets[s].length; i++) {
+            const street = data.hki.streets[s][i];
             streets[s][i] = new Marker(street);
             streets[s][i].create();
           }
         }
 
-        for (let i = 0, lth = data.coastlineParts.length; i < lth; i++) {
-          const parts = data.coastlineParts[i];
+        for (let i = 0, lth = data.hki.coastlineParts.length; i < lth; i++) {
+          const parts = data.hki.coastlineParts[i];
           coastlineParts[i] = new CoastlineParts(parts.pos, parts.image.name);
           coastlineParts[i].create();
         }

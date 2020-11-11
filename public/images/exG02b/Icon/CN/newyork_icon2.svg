@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="143" height="58" viewBox="0 0 143 58">
+  <g id="newyork_icon2" transform="translate(-1425 -133)">
+    <g id="组_4427" data-name="组 4427" transform="translate(1425.333 133.333)">
+      <g id="椭圆_9" data-name="椭圆 9" transform="translate(-0.333 -0.333)" fill="none" stroke="#f2811e" stroke-width="3">
+        <circle cx="29" cy="29" r="29" stroke="none"/>
+        <circle cx="29" cy="29" r="27.5" fill="none"/>
+      </g>
+      <g id="组_4377" data-name="组 4377" transform="translate(5.46 9.221)">
+        <g id="组_4331" data-name="组 4331" transform="translate(0 0)">
+          <path id="路径_2209" data-name="路径 2209" d="M-2111.83,446.087l-5.966,7.278h11.335Z" transform="translate(2117.795 -427.951)" fill="#f2811e"/>
+          <path id="路径_2210" data-name="路径 2210" d="M-2117.8,501.652v8.471h3.912v-5.25h3.512v5.25h3.912v-8.471Z" transform="translate(2117.795 -475.044)" fill="#f2811e"/>
+          <rect id="矩形_233" data-name="矩形 233" width="10.738" height="2.625" transform="translate(36.002 20.642)" fill="#f2811e"/>
+          <path id="路径_2211" data-name="路径 2211" d="M-2035.043,327.13v35.437h10.739V327.13Zm4.3,31.082h-2.426v-2.426h2.426Zm0-5.641h-2.426v-2.426h2.426Zm0-5.946h-2.426V344.2h2.426Zm0-5.793h-2.426v-2.426h2.426Zm0-5.946h-2.426V332.46h2.426Zm4.269,23.326h-2.427v-2.426h2.427Zm0-5.641h-2.427v-2.426h2.427Zm0-5.946h-2.427V344.2h2.427Zm0-5.793h-2.427v-2.426h2.427Zm0-5.946h-2.427V332.46h2.427Z" transform="translate(2047.66 -327.13)" fill="#f2811e" stroke="#f2811e" stroke-width="1"/>
+          <path id="路径_2212" data-name="路径 2212" d="M-1881.652,489.13v10.739h10.739V489.13Zm4.654,6.562h-3.5v-2.161h3.5Zm0-3.354h-3.5v-2.161h3.5Zm4.879,3.354h-3.5v-2.161h3.5Zm0-3.354h-3.5v-2.161h3.5Z" transform="translate(1917.654 -464.431)" fill="#f2811e"/>
+          <path id="路径_2213" data-name="路径 2213" d="M-1957.565,379.319v15.75h10.738v-29.59Zm4.6,11.667h-2.943v-1.969h2.943Zm0-3.659h-2.943v-1.969h2.943Zm0-3.354h-2.943V382h2.943Zm0-4.166v1.183h-2.943v-1.183l2.943-3.679Zm4.474,11.179h-2.943v-1.969h2.943Zm0-3.659h-2.943v-1.969h2.943Zm0-3.354h-2.943V382h2.943Zm0-3.506h-2.943V378.5h2.943Zm0-3.354h-2.943v-1.969h2.943Zm0-3.45h-2.943l2.943-3.679Z" transform="translate(1981.993 -359.631)" fill="#f2811e"/>
+        </g>
+      </g>
+    </g>
+    <g id="组_4428" data-name="组 4428" transform="translate(1305.689 145.138)">
+      <text id="可持續城市_和社區" data-name="可持續城市
+和社區" transform="translate(185.311 -0.138)" fill="#f2811e" font-size="15" font-family="YuGothicUI-Bold, Yu Gothic UI" font-weight="700"><tspan x="0" y="16">可持續城市</tspan><tspan y="16" font-family="SegoeUI-Bold, Segoe UI"></tspan><tspan x="0" y="34">和社區</tspan></text>
+    </g>
+  </g>
+</svg>
