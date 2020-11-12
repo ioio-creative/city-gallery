@@ -1,701 +1,2428 @@
 {
-    "languages": [
-        {
-            "code": "en",
-            "display": "English",
-            "shortDisplay": "EN"
-        },
-        {
-            "code": "tc",
-            "display": "繁體中文",
-            "shortDisplay": "繁"
-        }
-    ],
-    "contents":{
-        "en":{
-            "global":{
-            },
-            "sections":[
-                {
-                    "year":"1841 - 1939",
-                    "text1": "en政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
-                    "items":[
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"./images/ex302a/img.png",
-                                "translationType":"translate",
-                                "description":"The Kowloon-Canton Rallway<br/>British Section Opened"
-                            },
-                            "category":{
-                                "id":"planning",
-                                "name":"規劃"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"./images/ex302a/cover_1930.png",
-                                "translationType":"scale",
-                                "description":"The Kowloon-Canton Rallway<br/>British Section Opened"
-                            },
-                            "category":{
-                                "id":"house",
-                                "name":"房屋"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"",
-                                "translationType":"scale",
-                                "description":"The Kowloon-Canton Rallway<br/>British Section Opened"
-                            },
-                            "category":{
-                                "id":"traffic",
-                                "name":"交通"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"./images/ex302a/cover_1930.png",
-                                "translationType":"scale",
-                                "description":"The Kowloon-Canton Rallway<br/>British Section Opened"
-                            },
-                            "category":{
-                                "id":"house",
-                                "name":"房屋"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "year":"1940 - 1959",
-                    "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
-                    "items":[
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"",
-                                "translationType":"translate",
-                                "description":"The Kowloon-Canton Rallway<br/>British Section Opened"
-                            },
-                            "category":{
-                                "id":"planning",
-                                "name":"規劃"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"",
-                                "translationType":"scale",
-                                "description":"The Kowloon-Canton Rallway<br/>British Section Opened"
-                            },
-                            "category":{
-                                "id":"planning",
-                                "name":"規劃"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"",
-                                "translationType":"scale",
-                                "description":"The Kowloon-Canton Rallway<br/>British Section Opened"
-                            },
-                            "category":{
-                                "id":"planning",
-                                "name":"規劃"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "year":"1960 - 1979",
-                    "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
-                    "items":[
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"",
-                                "translationType":"translate",
-                                "description":"The Kowloon-Canton Rallway<br/>British Section Opened"
-                            },
-                            "category":{
-                                "id":"planning",
-                                "name":"規劃"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"",
-                                "translationType":"scale",
-                                "description":"The Kowloon-Canton Rallway<br/>British Section Opened"
-                            },
-                            "category":{
-                                "id":"planning",
-                                "name":"規劃"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"",
-                                "translationType":"scale",
-                                "description":"The Kowloon-Canton Rallway<br/>British Section Opened"
-                            },
-                            "category":{
-                                "id":"planning",
-                                "name":"規劃"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "year":"1980 - 1999",
-                    "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
-                    "items":[
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"",
-                                "translationType":"translate",
-                                "description":"The Kowloon-Canton Rallway<br/>British Section Opened"
-                            },
-                            "category":{
-                                "id":"planning",
-                                "name":"規劃"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"",
-                                "translationType":"scale",
-                                "description":"The Kowloon-Canton Rallway<br/>British Section Opened"
-                            },
-                            "category":{
-                                "id":"planning",
-                                "name":"規劃"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"",
-                                "translationType":"scale",
-                                "description":"The Kowloon-Canton Rallway<br/>British Section Opened"
-                            },
-                            "category":{
-                                "id":"planning",
-                                "name":"規劃"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "year":"2000 - 2019",
-                    "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
-                    "items":[
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"",
-                                "translationType":"translate",
-                                "description":"The Kowloon-Canton Rallway<br/>British Section Opened"
-                            },
-                            "category":{
-                                "id":"planning",
-                                "name":"規劃"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"",
-                                "translationType":"scale",
-                                "description":"The Kowloon-Canton Rallway<br/>British Section Opened"
-                            },
-                            "category":{
-                                "id":"planning",
-                                "name":"規劃"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"",
-                                "translationType":"scale",
-                                "description":"The Kowloon-Canton Rallway<br/>British Section Opened"
-                            },
-                            "category":{
-                                "id":"planning",
-                                "name":"規劃"
-                            }
-                        }
-                    ]
-                }
-            ]
-        },
-        "tc":{
-            "global":{
-            },
-            "sections":[
-                {
-                    "year":"1841 - 1939",
-                    "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
-                    "coverinsidebar":{
-                        "src":"./images/ex302a/cover.png"
-                    },
-                    "coverincircle":{
-                        "src":"./images/ex302a/coverincircle1.png"
-                    },
-                    "items":[
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"./images/ex302a/img.png",
-                                "translationType":"translate",
-                                "description":"九廣鐵路(英段)<br/>通車",
-                                "reference":"圖片參考: KCRC",
-                                "gallery":[
-                                    {
-                                        "src":"./images/ex302a/img.png",
-                                        "description":"（這是假字）當年主建築物的外觀。",
-                                        "reference":"圖片參考: KCRC"
-                                    },
-                                    {
-                                        "src":"./images/ex302a/img.png",
-                                        "description":"（這是假字）當年主建築物的外觀。",
-                                        "reference":"圖片參考: KCRC"
-                                    },
-                                    {
-                                        "src":"./images/ex302a/img.png",
-                                        "description":"（這是假字）當年主建築物的外觀。",
-                                        "reference":"圖片參考: KCRC"
-                                    }
-                                ]
-                            },
-                            "category":{
-                                "id":"planning",
-                                "name":"規劃"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940
-                            },
-                            "image": {
-                                "src":"./images/ex302a/img.png",
-                                "translationType":"scale",
-                                "description":"九廣鐵路(英段)<br/>通車",
-                                "gallery":[
-                                    {
-                                        "src":"./images/ex302a/img.png",
-                                        "description":"（這是假字）當年主建築物的外觀。",
-                                        "reference":"圖片參考: KCRC"
-                                    },
-                                    {
-                                        "src":"./images/ex302a/img.png",
-                                        "description":"（這是假字）當年主建築物的外觀。",
-                                        "reference":"圖片參考: KCRC"
-                                    }
-                                ]
-                            },
-                            "category":{
-                                "id":"house",
-                                "name":"房屋"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"./images/ex302a/cover_1930.png",
-                                "translationType":"scale",
-                                "description":"九廣鐵路(英段)<br/>通車",
-                                "gallery":null
-                            },
-                            "category":{
-                                "id":"traffic",
-                                "name":"交通"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"./images/ex302a/cover_1930.png",
-                                "translationType":"scale",
-                                "description":"九廣鐵路(英段)<br/>通車",
-                                "gallery":null
-                            },
-                            "category":{
-                                "id":"house",
-                                "name":"房屋"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "year":"1940 - 1959",
-                    "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
-                    "coverinsidebar":{
-                        "src":"./images/ex302a/cover_1930.png"
-                    },
-                    "coverincircle":{
-                        "src":"./images/ex302a/coverincircle.png"
-                    },
-                    "items":[
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"./images/ex302a/img.png",
-                                "translationType":"translate",
-                                "description":"九廣鐵路(英段)<br/>通車",
-                                "gallery":null
-                            },
-                            "category":{
-                                "id":"planning",
-                                "name":"規劃"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940
-                            },
-                            "image": {
-                                "src":"./images/ex302a/img.png",
-                                "translationType":"scale",
-                                "description":"九廣鐵路(英段)<br/>通車",
-                                "gallery":null
-                            },
-                            "category":{
-                                "id":"house",
-                                "name":"房屋"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"./images/ex302a/cover_1930.png",
-                                "translationType":"scale",
-                                "description":"九廣鐵路(英段)<br/>通車",
-                                "gallery":null
-                            },
-                            "category":{
-                                "id":"traffic",
-                                "name":"交通"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"./images/ex302a/cover_1930.png",
-                                "translationType":"scale",
-                                "description":"九廣鐵路(英段)<br/>通車",
-                                "gallery":null
-                            },
-                            "category":{
-                                "id":"house",
-                                "name":"房屋"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "year":"1960 - 1979",
-                    "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
-                    "coverinsidebar":{
-                        "src":"./images/ex302a/cover.png"
-                    },
-                    "coverincircle":{
-                        "src":"./images/ex302a/coverincircle.png"
-                    },
-                    "items":[
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"./images/ex302a/img.png",
-                                "translationType":"translate",
-                                "description":"九廣鐵路(英段)<br/>通車",
-                                "gallery":null
-                            },
-                            "category":{
-                                "id":"planning",
-                                "name":"規劃"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940
-                            },
-                            "image": {
-                                "src":"./images/ex302a/img.png",
-                                "translationType":"scale",
-                                "description":"九廣鐵路(英段)<br/>通車",
-                                "gallery":null
-                            },
-                            "category":{
-                                "id":"house",
-                                "name":"房屋"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"./images/ex302a/cover_1930.png",
-                                "translationType":"scale",
-                                "description":"九廣鐵路(英段)<br/>通車",
-                                "gallery":null
-                            },
-                            "category":{
-                                "id":"traffic",
-                                "name":"交通"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"./images/ex302a/cover_1930.png",
-                                "translationType":"scale",
-                                "description":"九廣鐵路(英段)<br/>通車",
-                                "gallery":null
-                            },
-                            "category":{
-                                "id":"house",
-                                "name":"房屋"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "year":"1980 - 1999",
-                    "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
-                    "coverinsidebar":{
-                        "src":"./images/ex302a/cover.png"
-                    },
-                    "coverincircle":{
-                        "src":"./images/ex302a/coverincircle.png"
-                    },
-                    "items":[
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"./images/ex302a/img.png",
-                                "translationType":"translate",
-                                "description":"九廣鐵路(英段)<br/>通車",
-                                "gallery":null
-                            },
-                            "category":{
-                                "id":"planning",
-                                "name":"規劃"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940
-                            },
-                            "image": {
-                                "src":"./images/ex302a/img.png",
-                                "translationType":"scale",
-                                "description":"九廣鐵路(英段)<br/>通車",
-                                "gallery":null
-                            },
-                            "category":{
-                                "id":"house",
-                                "name":"房屋"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"./images/ex302a/cover_1930.png",
-                                "translationType":"scale",
-                                "description":"九廣鐵路(英段)<br/>通車",
-                                "gallery":null
-                            },
-                            "category":{
-                                "id":"traffic",
-                                "name":"交通"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"./images/ex302a/cover_1930.png",
-                                "translationType":"scale",
-                                "description":"九廣鐵路(英段)<br/>通車",
-                                "gallery":null
-                            },
-                            "category":{
-                                "id":"house",
-                                "name":"房屋"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "year":"2000 - 2019",
-                    "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
-                    "coverinsidebar":{
-                        "src":"./images/ex302a/cover.png"
-                    },
-                    "coverincircle":{
-                        "src":"./images/ex302a/coverincircle.png"
-                    },
-                    "items":[
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"./images/ex302a/img.png",
-                                "translationType":"translate",
-                                "description":"九廣鐵路(英段)<br/>通車",
-                                "gallery":null
-                            },
-                            "category":{
-                                "id":"planning",
-                                "name":"規劃"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940
-                            },
-                            "image": {
-                                "src":"./images/ex302a/img.png",
-                                "translationType":"scale",
-                                "description":"九廣鐵路(英段)<br/>通車",
-                                "gallery":null
-                            },
-                            "category":{
-                                "id":"house",
-                                "name":"房屋"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"./images/ex302a/cover_1930.png",
-                                "translationType":"scale",
-                                "description":"九廣鐵路(英段)<br/>通車",
-                                "gallery":null
-                            },
-                            "category":{
-                                "id":"traffic",
-                                "name":"交通"
-                            }
-                        },
-                        {
-                            "text":{
-                                "year":1940,
-                                "content":"60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-                            },
-                            "image": {
-                                "src":"./images/ex302a/cover_1930.png",
-                                "translationType":"scale",
-                                "description":"九廣鐵路(英段)<br/>通車",
-                                "gallery":null
-                            },
-                            "category":{
-                                "id":"house",
-                                "name":"房屋"
-                            }
-                        }
-                    ]
-                }
-            ]
-        }
+  "languages": [
+    {
+      "code": "en",
+      "display": "English",
+      "shortDisplay": "EN"
+    },
+    {
+      "code": "tc",
+      "display": "繁體中文",
+      "shortDisplay": "繁"
     }
+  ],
+  "contents": {
+    "en": {
+      "global": {},
+      "sections": [
+        {
+          "year": "1841 - 1939",
+          "text1": "From the opening of the port in 1841, till the outbreak of the Second World War, development of Hong Kong mainly focused on the \"Victoria City\" on Hong Kong Island. Kowloon was later gradually developed, and the Town Planning Ordinance was promulgated in 1939 to establish a holistic town planning mechanism.",
+          "coverinsidebar": {
+            "src": "./images/ex302a/cover.png"
+          },
+          "coverincircle": {
+            "src": "./images/ex302a/coverincircle1.png"
+          },
+          "items": [
+            {
+              "text": {
+                "year": 1863,
+                "content": "In 1860, the government began to build the first reservoir in Hong Kong, the Pok Fu Lam Reservoir. Leveraging on the topography of Pok Fu Lam Valley, it collects rainwater from a dam and supplies water to Hong Kong Island. The project was completed in 1863."
+              },
+              "image": {
+                "src": "./images/ex302a/1863_img1.png",
+                "translationType": "Infrastructure/Environment",
+                "description": "九廣鐵路(英段)<br/>通車",
+                "reference": "Source: ISD",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1863_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1863_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 1872,
+                "content": "In 1869, the government granded a piece of land at Po Yan Street in Sheung Wan for the first Chinese Hospital in Hong Kong, Tung Wah Hospital. The Hospital was built in 1872 to provide free Chinese medicial services to the sick and the poor. "
+              },
+              "image": {
+                "src": "./images/ex302a/1872_img1.jpg",
+                "translationType": "Infrastructure/Environment",
+                "description": "The First Chinese Hospital in Hong Kong",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1872_img1.jpg",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: Tung Wah"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 1890,
+                "content": "In 1890, the Hongkong Electric Company Limited built the first power plant in Hong Kong on the hillside near Wing Fung Street in Wan Chai, which provided electricity for street lamps from Central to Bonham Strand East. In 1919, the North Point Power Station was opened, and the Wan Chai Power Plant became a reserve station until it was closed down and demolished in 1922."
+              },
+              "image": {
+                "src": "./images/ex302a/1890_img1.png",
+                "translationType": "Infrastructure/Environment",
+                "description": "Electricity Supply",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1890_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: archive.org(p168)"
+                  },
+                  {
+                    "src": "./images/ex302a/1890_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1890_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 1910,
+                "content": "In 1906, the Kowloon-Canton Railway (British Section) project started and opened in 1910. This was the first railway connecting Hong Kong and Mainland China. It was 35 kilometers long with 5 tunnels and 48 bridges. In 1911, the Canton-Kowloon Railway (China Section) was opened, and the through train service from Kowloon to Guangzhou commenced."
+              },
+              "image": {
+                "src": "./images/ex302a/1910_img1.png",
+                "translationType": "Transport",
+                "description": "The Kowloon–Canton Railway British Section Opened",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1910_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1910_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1910_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  },
+                  {
+                    "src": "./images/ex302a/1910_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  },
+                  {
+                    "src": "./images/ex302a/1910_img5.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  }
+                ]
+              },
+              "category": {
+                "id": "transport",
+                "name": "Transport"
+              }
+            },
+            {
+              "text": {
+                "year": 1930,
+                "content": "In 1912, Chinese businessmen Mr. Ho Kai and Mr. Au Tak formed a company to reclaim land in Kowloon Bay for a residential housing scheme. The reclaimed land was named after the company as \"Kai Tak\". Later, the company closed down due to the economic recession, leaving the land unused. The government hence bought back the land to build the airport. In 1930, Kai Tak Airport opened."
+              },
+              "image": {
+                "src": "./images/ex302a/1910_img1.png",
+                "translationType": "Transport",
+                "description": "Kai Tak Airport",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1930_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/1930_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/1930_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: GRS"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "transport",
+                "name": "Transport"
+              }
+            },
+            {
+              "text": {
+                "year": 1939,
+                "content": "In 1939, the government promulgated the \"Town Planning Ordinance\", authorizing the Town Planning Board to formulate the City’s development blueprints for systematic designation of land use layouts as well as building plans for developed districts and new-development areas."
+              },
+              "image": {
+                "src": "./images/ex302a/1910_img1.png",
+                "translationType": "Planning Authorities/Legislations",
+                "description": "Promulgation of the Town Planning Ordinance",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1939_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/1939_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1939_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1939_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "legislations",
+                "name": "Planning Authorities/Legislations"
+              }
+            }
+          ]
+        },
+        {
+          "year": "1940 - 1959",
+          "text1": "Faced so many problems needed to be solved after the war, Sir Abercrombie, the Government consultant, prepared the first long-term planning strategy for Hong Kong. In the early 1950s, a huge number of new immigrants moved into Hong Kong, causing a serious shortage of housing units. After the Shek Kip Mei fire, the Government decided to build the first batch of public housing estates for the general public.",
+          "coverinsidebar": {
+            "src": "./images/ex302a/cover_1930.png"
+          },
+          "coverincircle": {
+            "src": "./images/ex302a/coverincircle.png"
+          },
+          "items": [
+            {
+              "text": {
+                "year": 1946,
+                "content": "After World War II, the Government drove new planning initiatives to develop the Kowloon Peninsula south of Boundary Street. Tsim Sha Tsui was planned as a cultural and commercial hub while Ho Man Tin Hill a major residential area. On the western Peninsula, Yau Ma Tei and Tai Kok Tsui were reserved for high density residential and industrial developments with public infrastructure such as hospitals and fire stations."
+              },
+              "image": {
+                "src": "./images/ex302a/1946_img1.png",
+                "translationType": "Land Supply/Housing",
+                "description": "Development of the Kowloon Peninsula",
+                "reference": "Source: GRS",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1946_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/1946_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/1946_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/1946_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1946_img5.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  }
+                ]
+              },
+              "category": {
+                "id": "housing",
+                "name": "Land Supply/Housing"
+              }
+            },
+            {
+              "text": {
+                "year": 1947,
+                "content": "In 1947, the Public Works Department established a dedicated Town Planning Division for town planning affairs. In 1990, after several times of reorganization, the Planning Department was established, consolidating diverse town planning functions of different departments. Since then, the Planning Department is responsible for the preparation of various types of plans, formulation of land use guidelines and provision of services to the Town Planning Broad."
+              },
+              "image": {
+                "src": "",
+                "translationType": "Planning Authorities/Legislations",
+                "description": "The Dedicated Division for Town Planning",
+                "gallery": [
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "planning",
+                "name": "Planning Authorities/Legislations"
+              }
+            },
+            {
+              "text": {
+                "year": 1948,
+                "content": "In 1948, the Abercrombie Report (also known as the Hong Kong Preliminary Planning Report), the first long-term town planning blueprint in Hong Kong, was announced by the Government consultant, Sir Abercrombie. It provided plausible proposals to tackle two major issues - land shortage and rising population."
+              },
+              "image": {
+                "src": "./images/ex302a/1948_img1.png",
+                "translationType": "Strategic Plan",
+                "description": "A Visionary Planning Blueprint, the Abercrombie Report",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1948_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1948_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: To be advised by Plan D"
+                  },
+                  {
+                    "src": "./images/ex302a/1948_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: To be advised by Plan D"
+                  },
+                  {
+                    "src": "./images/ex302a/1948_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1948_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  }
+                ]
+              },
+              "category": {
+                "id": "strategic",
+                "name": "Strategic Plan"
+              }
+            },
+            {
+              "text": {
+                "year": 1954,
+                "content": "On Christmas night 1953, a fire broke out in the squatter area in Shek Kip Mei. Over 53 000 people were made homeless. To address the housing problem, the Government built resettlement blocks for the fire victims and other squatter dwellers. By the end of 1954, eight six-storey resettlement blocks (Mark I), first of its kind, were built in Shek Kip Mei, which were the first batch of public housing."
+              },
+              "image": {
+                "src": "./images/ex302a/1954_img1a.png",
+                "translationType": "Land Supply/Housing",
+                "description": "The First Batch of Public Housing",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1954_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1954_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1954_img3a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  },
+                  {
+                    "src": "./images/ex302a/1954_img4a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  },
+                  {
+                    "src": "./images/ex302a/1954_img5a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  }
+                ]
+              },
+              "category": {
+                "id": "housing",
+                "name": "Land Supply/Housing"
+              }
+            },
+            {
+              "text": {
+                "year": 1954,
+                "content": "After World War II, key business in Hong Kong shifted from re-export trade to light industries. In 1954, the Government developed Kwun Tong as the first satellite town, which included residential as well as industrial zones, housing the surging population while providing sufficient labour for the industries."
+              },
+              "image": {
+                "src": "./images/ex302a/1954_img1b.png",
+                "translationType": "Economic/Tourism",
+                "description": "The First Satellite Town",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1954_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1954_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1954_img3b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  },
+                  {
+                    "src": "./images/ex302a/1954_img4b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "economic",
+                "name": "Economic/Tourism"
+              }
+            }
+          ]
+        },
+        {
+          "year": "1960 - 1979",
+          "text1": "In the 1950s and 1960s, the manufacturing industry flourished. The government further developed infrastructure, such as the Lion Rock Tunnel and Dongjiang-Shenzhen Water Supply Scheme. In the 1970s, the government launched the “Ten-year Housing Programme” to build a large number of public housing and develop new towns, and continued to expand the transportation network. The opening of the Mass Transit Railway in 1979 marked the beginning of the mass transportation system.",
+          "coverinsidebar": {
+            "src": "./images/ex302a/cover.png"
+          },
+          "coverincircle": {
+            "src": "./images/ex302a/coverincircle.png"
+          },
+          "items": [
+            {
+              "text": {
+                "year": 1965,
+                "content": "In 1963, Hong Kong had a serious shortage of fresh water. Governments of Hong Kong and Guangdong Province hence agreed to build the Dongjiang-Shenzhen Water Supply Scheme. The first phase of the project was completed in 1965. Dongjiang water flows into Yantian Reservoir and Shenzhen Reservoir from more than 80 kilometers away, and reaches Muk Wu Water Pumping Station at the border via 3 kilometers of steel pipes."
+              },
+              "image": {
+                "src": "./images/ex302a/1965_img1.png",
+                "translationType": "Infrastructure/Environment",
+                "description": "Dongjiang-Shenzhen Water Supply Scheme (DJ-SZ WSS)",
+                "reference": "Source: GRS",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1965_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1965_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1965_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1965_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 1967,
+                "content": "Between 1967 and 1978, Wah Fu Estate was completed in the southern district of Hong Kong Island. It is the first public housing estate planned in Hong Kong based on the concept of a self-sustainable community, with a shopping mall, schools, a bus terminal, and other community facilities."
+              },
+              "image": {
+                "src": "./images/ex302a/1967_img1.png",
+                "translationType": "Land Supply/Housing",
+                "description": "The First Self-Sustainable Public Housing Estate",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1967_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1967_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1967_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1967_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "housing",
+                "name": "Land Supply/Housing"
+              }
+            },
+            {
+              "text": {
+                "year": 1972,
+                "content": "The Government announced a Ten-year Housing Programme in 1972 and established the Hong Kong Housing Authority (HA) in 1973, putting management of all resettlement blocks and low-cost housing under one roof. Since its establishment, the HA is responsible for the development and the implementation of public housing programmes in Hong Kong."
+              },
+              "image": {
+                "src": "./images/ex302a/1972_img1a.png",
+                "translationType": "Land Supply/Housing",
+                "description": "Ten-year Housing Programme",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1972_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1972_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1972_img3a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1972_img4a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "housing",
+                "name": "Land Supply/Housing"
+              }
+            },
+            {
+              "text": {
+                "year": 1972,
+                "content": "The Abercrombie Report published in 1948 proposed an undersea tunnel to connect the urban center of Hong Kong and Kowloon, which would strengthen the outbound transport network from downtown and expand the urban area. In 1972, the first undersea tunnel in the center of Victoria Harbour, the Hung Hom Undersea Tunnel, was officially opened, which gradually replaced the ferry as a means of transport. In 1989 and 1997, the second and third undersea tunnels were also opened. The three tunnels were designed to cater for 275,000 vehicles per day."
+              },
+              "image": {
+                "src": "./images/ex302a/1972_img1b.png",
+                "translationType": "Transport",
+                "description": "Opening of Hung Hom Cross-Harbour Tunnel ",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1972_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1972_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1972_img3b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1972_img4b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1972_img5b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  }
+                ]
+              },
+              "category": {
+                "id": "transport",
+                "name": "Transport"
+              }
+            },
+            {
+              "text": {
+                "year": 1972,
+                "content": "Hong Kong developed into a regional transport and logistics hub with its premier location on the east-west trade route as a gateway to the Pearl River Delta. In 1972, the Container Terminal 1 of the Kwai Chung Container Terminal was put into operation and expanded to Container Terminal 5 in 1976. Before 1997, Container Terminals 6 to 8 were also built. There are currently nine terminals in Kwai Chung Container Terminals, which can handle more than 20 million TEUs each year."
+              },
+              "image": {
+                "src": "./images/ex302a/1972_img1c.png",
+                "translationType": "Land Supply/Housing",
+                "description": "Ten-year Housing Programme",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1972_img1c.png",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "./images/ex302a/1972_img2c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1972_img3c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "transport",
+                "name": "Transport"
+              }
+            },
+            {
+              "text": {
+                "year": 1973,
+                "content": "In 1973, the government launched a few new town development projects. In the early 1970s, construction of the first generation of new towns - Tsuen Wan, Sha Tin, and Tuen Mun started. The second generation new towns are Tai Po, Fanling/Sheung Shui, and Yuen Long, and the third generation include Tseung Kwan O, Tin Shui Wai, and Tung Chung. In 2019, the total population of the nine new towns was approximately 3.52 million."
+              },
+              "image": {
+                "src": "./images/ex302a/1973_img1.png",
+                "translationType": "Land Supply/Housing",
+                "description": "Development of New Towns",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1973_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1973_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1973_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1973_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1973_img5.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  }
+                ]
+              },
+              "category": {
+                "id": "housing",
+                "name": "Land Supply/Housing"
+              }
+            },
+            {
+              "text": {
+                "year": 1976,
+                "content": "The Country Parks Ordinance promulgated in 1976 provides a legal framework for the establishment of the Country and Marine Parks Board, as well as designation, development and management of country parks and special areas. The country parks and special areas designated by the Country Parks Ordinance currently cover approximately 443 km2. The Country Parks Ordinance and the Marine Parks Ordinance promulgated in 1995 was a milestone for the conservation of Hong Kong’s countryside and marine nature."
+              },
+              "image": {
+                "src": "./images/ex302a/1976_img1.png",
+                "translationType": "Infrastructure/Environment",
+                "description": "Conservation of the Countryside",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1976_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1976_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1976_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1976_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 1978,
+                "content": "In 1978, Hong Kong's first industrial Estate, Tai Po Industrial Estate, was completed. It provides ready-to-use industrial land for companies which cannot operate in multi-storey factories or commercial buildings and those with new or improved technologies."
+              },
+              "image": {
+                "src": "./images/ex302a/1978_img1.png",
+                "translationType": "Economic/Tourism",
+                "description": "The First Industrial Estate in Hong Kong",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1978_img1.png",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "./images/ex302a/1978_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1978_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "economic",
+                "name": "Economic/Tourism"
+              }
+            },
+            {
+              "text": {
+                "year": 1979,
+                "content": "Since the 1960s, with the growth of Hong Kong's economy, pressure for urban development had been mounting. The government had to conduct a holistic review of Hong Kong's long-term land use and population distribution. In light of this, in 1965, the government began to compile the Colony Outline Plan. In 1974, based on the current socio-economic conditions and development priorities, the Plan was substantially revised and renamed as the Hong Kong Outline Plan."
+              },
+              "image": {
+                "src": "",
+                "translationType": "Strategic Plan",
+                "description": "Hong Kong Outline Plan",
+                "gallery": [
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img3a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img4a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img5a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  }
+                ]
+              },
+              "category": {
+                "id": "strategic",
+                "name": "Strategic Plan"
+              }
+            },
+            {
+              "text": {
+                "year": 1979,
+                "content": "In 1979, part of the current Kwun Tong Line, the first phase of the Modified Initial System, commenced public service. The Mass Transit Railway (MTR) was then put into operation in stages, marking the beginning of the mass rapid transit system in Hong Kong. In 2007, the Mass Transit Railway Corporation and the Kowloon-Canton Railway Corporation merged as the MTR Corporation Limited (MTR)."
+              },
+              "image": {
+                "src": "./images/ex302a/1979_img1b.png",
+                "translationType": "Transport",
+                "description": "Underground Railway",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1979_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img3b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img4b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "transport",
+                "name": "Transport"
+              }
+            }
+          ]
+        },
+        {
+          "year": "1980 - 1999",
+          "text1": "In the 1980s, the departments in charge of town planning related affairs, including the Public Works Department and Town Planning Office, were reorganized into the present institutional framework gradually. In the late 1980s, the 10-project Hong Kong Airport Core Programme was announced, providing a far-reaching foundation for infrastructure development in and beyond the 1990s. In the early 1990s, the Metroplan was passed to propose the initiatives of “road and railways as backbone” and identify the seven strategic development districts below sub-regions. In 1998, the new Hong Kong International Airport at Chek Lap Kok was opened.",
+          "coverinsidebar": {
+            "src": "./images/ex302a/cover.png"
+          },
+          "coverincircle": {
+            "src": "./images/ex302a/coverincircle.png"
+          },
+          "items": [
+            {
+              "text": {
+                "year": 1984,
+                "content": "In 1984, the first Territorial Development Strategy (TDS) was promulgated to provide a land use-transport framework for urban development of Hong Kong. Since then, the development focus shifted from the new towns to the Metro Area on both sides of the Harbour. Road and railway transport networks became the backbone of development."
+              },
+              "image": {
+                "src": "./images/ex302a/1984_img1.png",
+                "translationType": "Strategic Plan",
+                "description": "Territorial Development Strategy",
+                "reference": "Source: GRS",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1984_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1984_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1984_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1984_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "strategic",
+                "name": "Strategic Plan"
+              }
+            },
+            {
+              "text": {
+                "year": 1988,
+                "content": "In 1987, the Land Development Corporation Ordinance (LDCO) was enacted. A year later, Land Development Corporation (LDC) was established for urban renewal projects, operating with a prudent  commercial principle. Developers were encouraged to participate in urban renewal projects with the LDC in a public-private partnership."
+              },
+              "image": {
+                "src": "./images/ex302a/1988_img1.png",
+                "translationType": "Planning Authorities/Legislations",
+                "description": "Establishment of the Land Development Corporation",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1988_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: URA 土地發展公司年報 1997-1998"
+                  },
+                  {
+                    "src": "./images/ex302a/1988_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1988_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1988_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: URA 土地發展公司年報 1997-1998"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "legislations",
+                "name": "Planning Authorities/Legislations"
+              }
+            },
+            {
+              "text": {
+                "year": 1989,
+                "content": "In 1989, the Port and Airport Development Strategy (PADS) was launched, setting out an overall long-term planning framework for port and airport development in Hong Kong, which included the Hong Kong Airport Core Programme (also known as the Rose Garden Project). Chek Lap Kok on Lantau was proposed as site for the New Hong Kong International Airport."
+              },
+              "image": {
+                "src": "./images/ex302a/1989_img1.png",
+                "translationType": "Transport",
+                "description": "Port and Airport Development Strategy",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1989_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1989_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1989_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1989_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "transport",
+                "name": "Transport"
+              }
+            },
+            {
+              "text": {
+                "year": 1990,
+                "content": "In 1990, the Planning Department was established under the Planning, Environment and Lands Branch, consolidating all planning functions undertaken by the Town Planning Division, the Strategic Planning Unit, and various offices under the Territory Development Department. Since then, the Planning Department is committed to make Hong Kong a better place to live and work in."
+              },
+              "image": {
+                "src": "./images/ex302a/1990_img1.png",
+                "translationType": "Planning Authorities/Legislations",
+                "description": "Establishment of the Planning Department",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1990_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "legislations",
+                "name": "Planning Authorities/Legislations"
+              }
+            },
+            {
+              "text": {
+                "year": 1991,
+                "content": "In 1991, the Town Planning (Amendment) Ordinance was promulgated, strengthening the enforcement power of the Planning Department. To prevent further degradation of the environment in the rural New Territories, the Planning Department has been empowered to take enforcement action against unauthorized developments within Development Permission Areas (DPAs)."
+              },
+              "image": {
+                "src": "./images/ex302a/1991_img1.png",
+                "translationType": "Planning Authorities/Legislations",
+                "description": "Amendments to the Town Planning Ordinance",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1991_img1.png",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "./images/ex302a/1991_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "legislations",
+                "name": "Planning Authorities/Legislations"
+              }
+            },
+            {
+              "text": {
+                "year": 1995,
+                "content": "In 1995, about 1,500 hectares of wetland in the Mai Po and Inner Deep Bay region was listed as a Ramser Site. The site serves as an important over-wintering and refuelling station site for the waterbirds during their migration between the Arctic Russia and Australia. The site has recorded 51 globally threatened species and near-threatened bird species over the years."
+              },
+              "image": {
+                "src": "./images/ex302a/1995_img1a.png",
+                "translationType": "Infrastructure/Environment",
+                "description": "Mai Po Inner Deep Bay Ramser Site",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1995_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1995_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1995_img3a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1995_img4a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 1995,
+                "content": "In 1995, about 1,500 hectares of wetland in the Mai Po and Inner Deep Bay region was listed as a Ramser Site. The site serves as an important over-wintering and refuelling station site for the waterbirds during their migration between the Arctic Russia and Australia. The site has recorded 51 globally threatened species and near-threatened bird species over the years."
+              },
+              "image": {
+                "src": "./images/ex302a/1995_img1b.png",
+                "translationType": "Infrastructure/Environment",
+                "description": "Marine Parks",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1995_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1995_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1995_img3b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1995_img4b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1995_img5b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 1997,
+                "content": "To protect and preserve the Harbour, the Protection of the Harbour Ordinance (PHO) was enacted in 1999,  prohibiting reclamation projects at the Harbour. Since then, reclamation projects in the Metro Area were either suspended or be resized."
+              },
+              "image": {
+                "src": "./images/ex302a/1997_img1a.png",
+                "translationType": "Planning Authorities/Legislations",
+                "description": "Protection of the Victoria Harbour",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1997_img1a.png",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "./images/ex302a/1997_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1997_img3a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "legislations",
+                "name": "Planning Authorities/Legislations"
+              }
+            },
+            {
+              "text": {
+                "year": 1997,
+                "content": "In 1997, the Study on Sustainable Development for the 21st Century in Hong Kong (SUSDEV 21) was commissioned by the Government. The SUSDEV 21 not only developed definitions and guiding principles for sustainable development, but also facilitated the Government to include sustainable development concerns during decision-making."
+              },
+              "image": {
+                "src": "./images/ex302a/1997_img1b.png",
+                "translationType": "Strategic plan",
+                "description": "Sustainable Development",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1997_img1b.png",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "./images/ex302a/1997_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1997_img3b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "strategic",
+                "name": "Strategic Plan"
+              }
+            },
+            {
+              "text": {
+                "year": 1998,
+                "content": "In 1998, theGovernment promulgated the Territorial Development Strategy Review (TDSR), formulating a long-term strategy till 2011. To meet the increasing housing needs, the development potential of the North-Western New Territories, North-Eastern New Territories, Southern Hong Kong Island, and Lamma Island were studied in the TDSR."
+              },
+              "image": {
+                "src": "./images/ex302a/1998_img1.png",
+                "translationType": "Strategic Plan",
+                "description": "Territorial Development Strategy Review",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1998_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1998_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1998_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img5.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  }
+                ]
+              },
+              "category": {
+                "id": "strategic",
+                "name": "Strategic Plan"
+              }
+            }
+          ]
+        },
+        {
+          "year": "2000 - 2019",
+          "text1": "With the new global economic trends, Hong Kong is embracing new challenges. In 2007, the government published \"Hong Kong 2030: Planning Vision and Strategy\", a new development framework for the next two decades. It proposed New Development Areas in the northeastern New Territories, and closer cooperation between Guangdong, Hong Kong and Macao, as well as further development of transportation networks.",
+          "coverinsidebar": {
+            "src": "./images/ex302a/cover.png"
+          },
+          "coverincircle": {
+            "src": "./images/ex302a/coverincircle.png"
+          },
+          "items": [
+            {
+              "text": {
+                "year": 2001,
+                "content": "In 2001, sewage treatment facilities of the Harbour Area Treatment Scheme Stage 1 came into operation, which treats about 75% of the sewage generated from both sides of the Victoria Harbour every day; Stage 2A opened in 2015, trainspotting the remaining sewage, from the northern and southwestern Hong Kong Island, to Stonecutters Island Sewage Treatment Plant for centralized treatment through a tunnel."
+              },
+              "image": {
+                "src": "./images/ex302a/2001_img1a.png",
+                "translationType": "Infrastructure/Environment",
+                "description": "2001 Sewerage Treatment and Disposal",
+                "reference": "Source: ISD",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2001_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2001_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2001_img3a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 2001,
+                "content": "In 2001, the Urban Renewal Authority (URA) was set up to replace the Land Development Corporation (LDC) and the first Urban Renewal Strategy was announced. The URA streamlined the land assembly procedures and allocated resources more effectively to rehouse affected tenants."
+              },
+              "image": {
+                "src": "./images/ex302a/2001_img1b.png",
+                "translationType": "Planning Authorities",
+                "description": "Establishment of the Urban Renewal Authority",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2001_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: Tung Wah"
+                  },
+                  {
+                    "src": "./images/ex302a/2001_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: Tung Wah"
+                  },
+                  {
+                    "src": "./images/ex302a/2001_img3b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: Tung Wah"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "authorities",
+                "name": "Planning Authorities"
+              }
+            },
+            {
+              "text": {
+                "year": 2002,
+                "content": "In 2002, the first three buildings in Hong Kong Science Park were opened. The Hong Kong Science and Technology Park Cooperation, a statutory body established in 2001, is responsible for the operation and the management of the Park and other facilities. There are five technology clusters in the Park, namly, Biomedical Technology, Electronics, Green Technology, Information and Communications Technology, and Material and Precision Engineering."
+              },
+              "image": {
+                "src": "./images/ex302a/2002_img1a.png",
+                "translationType": "Economic/Tourism",
+                "description": "Hong Kong Science Park",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2002_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: archive.org(p168)"
+                  },
+                  {
+                    "src": "./images/ex302a/2002_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2002_img3a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2002_img4a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2002_img5a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  }
+                ]
+              },
+              "category": {
+                "id": "economic",
+                "name": "Economic/Tourism"
+              }
+            },
+            {
+              "text": {
+                "year": 2002,
+                "content": "In 2002, the Cyberport project was completed to facilitate the development of information and communication technologies (ICT) in Hong Kong. Leveraging on the advanced ICT infrastructure, the Cyberport focuses on building key clusters of digital technology, which include FinTech, eCommerce, IoT/Wearables, and Big Data/AI."
+              },
+              "image": {
+                "src": "./images/ex302a/2002_img1.png",
+                "translationType": "scale",
+                "description": "Cyberport",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2002_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: archive.org(p168)"
+                  },
+                  {
+                    "src": "./images/ex302a/2002_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2002_img3b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2002_img4b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "economic",
+                "name": "Economic/Tourism"
+              }
+            },
+            {
+              "text": {
+                "year": 2004,
+                "content": "Town Planning Ordinance was amended in 2004 to streamline the plan-making process, promote transparency of the planning approval process for public engagement, strengthen enforcement control against unauthorized developments, as well as enhancing the efficiency of the Town Planning Board."
+              },
+              "image": {
+                "src": "./images/ex302a/2004_img1a.png",
+                "translationType": "Planning Authorities/Legislations",
+                "description": "Town Planning (Amendment) Ordinance 2004",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2004_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/2004_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: GRS"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "transport",
+                "name": "Transport"
+              }
+            },
+            {
+              "text": {
+                "year": 1939,
+                "content": "In 1939, the government promulgated the \"Town Planning Ordinance\", authorizing the Town Planning Board to formulate the City’s development blueprints for systematic designation of land use layouts as well as building plans for developed districts and new-development areas."
+              },
+              "image": {
+                "src": "./images/ex302a/1910_img1.png",
+                "translationType": "scale",
+                "description": "Promulgation of the Town Planning Ordinance",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1939_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/1939_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1939_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1939_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "legislations",
+                "name": "Planning Authorities/Legislations"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "tc": {
+      "global": {},
+      "sections": [
+        {
+          "year": "1841 - 1939",
+          "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
+          "coverinsidebar": {
+            "src": "./images/ex302a/cover.png"
+          },
+          "coverincircle": {
+            "src": "./images/ex302a/coverincircle1.png"
+          },
+          "items": [
+            {
+              "text": {
+                "year": 1940,
+                "content": "60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
+              },
+              "image": {
+                "src": "./images/ex302a/img.png",
+                "translationType": "translate",
+                "description": "九廣鐵路(英段)<br/>通車",
+                "reference": "圖片參考: KCRC",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/img.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  },
+                  {
+                    "src": "./images/ex302a/img.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  },
+                  {
+                    "src": "./images/ex302a/img.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  }
+                ]
+              },
+              "category": {
+                "id": "planning",
+                "name": "規劃"
+              }
+            },
+            {
+              "text": {
+                "year": 1940
+              },
+              "image": {
+                "src": "./images/ex302a/img.png",
+                "translationType": "scale",
+                "description": "九廣鐵路(英段)<br/>通車",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/img.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  },
+                  {
+                    "src": "./images/ex302a/img.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  }
+                ]
+              },
+              "category": {
+                "id": "house",
+                "name": "房屋"
+              }
+            },
+            {
+              "text": {
+                "year": 1940,
+                "content": "60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
+              },
+              "image": {
+                "src": "./images/ex302a/cover_1930.png",
+                "translationType": "scale",
+                "description": "九廣鐵路(英段)<br/>通車",
+                "gallery": null
+              },
+              "category": {
+                "id": "traffic",
+                "name": "交通"
+              }
+            },
+            {
+              "text": {
+                "year": 1940,
+                "content": "60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
+              },
+              "image": {
+                "src": "./images/ex302a/cover_1930.png",
+                "translationType": "scale",
+                "description": "九廣鐵路(英段)<br/>通車",
+                "gallery": null
+              },
+              "category": {
+                "id": "house",
+                "name": "房屋"
+              }
+            }
+          ]
+        },
+        {
+          "year": "1940 - 1959",
+          "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
+          "coverinsidebar": {
+            "src": "./images/ex302a/cover_1930.png"
+          },
+          "coverincircle": {
+            "src": "./images/ex302a/coverincircle.png"
+          },
+          "items": [
+            {
+              "text": {
+                "year": 1863,
+                "content": "In 1860, the government began to build the first reservoir in Hong Kong, the Pok Fu Lam Reservoir. Leveraging on the topography of Pok Fu Lam Valley, it collects rainwater from a dam and supplies water to Hong Kong Island. The project was completed in 1863."
+              },
+              "image": {
+                "src": "./images/ex302a/1863_img1.png",
+                "translationType": "Infrastructure/Environment",
+                "description": "九廣鐵路(英段)<br/>通車",
+                "reference": "Source: ISD",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1863_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1863_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 1872,
+                "content": "In 1869, the government granded a piece of land at Po Yan Street in Sheung Wan for the first Chinese Hospital in Hong Kong, Tung Wah Hospital. The Hospital was built in 1872 to provide free Chinese medicial services to the sick and the poor. "
+              },
+              "image": {
+                "src": "./images/ex302a/1872_img1.png",
+                "translationType": "scale",
+                "description": "The First Chinese Hospital in Hong Kong",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1872_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: Tung Wah"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 1890,
+                "content": "In 1890, the Hongkong Electric Company Limited built the first power plant in Hong Kong on the hillside near Wing Fung Street in Wan Chai, which provided electricity for street lamps from Central to Bonham Strand East. In 1919, the North Point Power Station was opened, and the Wan Chai Power Plant became a reserve station until it was closed down and demolished in 1922."
+              },
+              "image": {
+                "src": "./images/ex302a/1890_img1.png",
+                "translationType": "scale",
+                "description": "Electricity Supply",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1890_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: archive.org(p168)"
+                  },
+                  {
+                    "src": "./images/ex302a/1890_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1890_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 1910,
+                "content": "In 1906, the Kowloon-Canton Railway (British Section) project started and opened in 1910. This was the first railway connecting Hong Kong and Mainland China. It was 35 kilometers long with 5 tunnels and 48 bridges. In 1911, the Canton-Kowloon Railway (China Section) was opened, and the through train service from Kowloon to Guangzhou commenced."
+              },
+              "image": {
+                "src": "./images/ex302a/1910_img1.png",
+                "translationType": "scale",
+                "description": "The Kowloon–Canton Railway British Section Opened",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1910_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1910_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1910_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  },
+                  {
+                    "src": "./images/ex302a/1910_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  },
+                  {
+                    "src": "./images/ex302a/1910_img5.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  }
+                ]
+              },
+              "category": {
+                "id": "transport",
+                "name": "Transport"
+              }
+            },
+            {
+              "text": {
+                "year": 1930,
+                "content": "In 1912, Chinese businessmen Mr. Ho Kai and Mr. Au Tak formed a company to reclaim land in Kowloon Bay for a residential housing scheme. The reclaimed land was named after the company as \"Kai Tak\". Later, the company closed down due to the economic recession, leaving the land unused. The government hence bought back the land to build the airport. In 1930, Kai Tak Airport opened."
+              },
+              "image": {
+                "src": "./images/ex302a/1910_img1.png",
+                "translationType": "scale",
+                "description": "Kai Tak Airport",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1930_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/1930_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/1930_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: GRS"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "transport",
+                "name": "Transport"
+              }
+            },
+            {
+              "text": {
+                "year": 1939,
+                "content": "In 1939, the government promulgated the \"Town Planning Ordinance\", authorizing the Town Planning Board to formulate the City’s development blueprints for systematic designation of land use layouts as well as building plans for developed districts and new-development areas."
+              },
+              "image": {
+                "src": "./images/ex302a/1910_img1.png",
+                "translationType": "scale",
+                "description": "Promulgation of the Town Planning Ordinance",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1939_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/1939_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1939_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1939_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "legislations",
+                "name": "Planning Authorities/Legislations"
+              }
+            }
+          ]
+        },
+        {
+          "year": "1960 - 1979",
+          "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
+          "coverinsidebar": {
+            "src": "./images/ex302a/cover.png"
+          },
+          "coverincircle": {
+            "src": "./images/ex302a/coverincircle.png"
+          },
+          "items": [
+            {
+              "text": {
+                "year": 1940,
+                "content": "60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
+              },
+              "image": {
+                "src": "./images/ex302a/img.png",
+                "translationType": "translate",
+                "description": "九廣鐵路(英段)<br/>通車",
+                "gallery": null
+              },
+              "category": {
+                "id": "planning",
+                "name": "規劃"
+              }
+            },
+            {
+              "text": {
+                "year": 1940
+              },
+              "image": {
+                "src": "./images/ex302a/img.png",
+                "translationType": "scale",
+                "description": "九廣鐵路(英段)<br/>通車",
+                "gallery": null
+              },
+              "category": {
+                "id": "house",
+                "name": "房屋"
+              }
+            },
+            {
+              "text": {
+                "year": 1940,
+                "content": "60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
+              },
+              "image": {
+                "src": "./images/ex302a/cover_1930.png",
+                "translationType": "scale",
+                "description": "九廣鐵路(英段)<br/>通車",
+                "gallery": null
+              },
+              "category": {
+                "id": "traffic",
+                "name": "交通"
+              }
+            },
+            {
+              "text": {
+                "year": 1940,
+                "content": "60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
+              },
+              "image": {
+                "src": "./images/ex302a/cover_1930.png",
+                "translationType": "scale",
+                "description": "九廣鐵路(英段)<br/>通車",
+                "gallery": null
+              },
+              "category": {
+                "id": "house",
+                "name": "房屋"
+              }
+            }
+          ]
+        },
+        {
+          "year": "1980 - 1999",
+          "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
+          "coverinsidebar": {
+            "src": "./images/ex302a/cover.png"
+          },
+          "coverincircle": {
+            "src": "./images/ex302a/coverincircle.png"
+          },
+          "items": [
+            {
+              "text": {
+                "year": 1863,
+                "content": "In 1860, the government began to build the first reservoir in Hong Kong, the Pok Fu Lam Reservoir. Leveraging on the topography of Pok Fu Lam Valley, it collects rainwater from a dam and supplies water to Hong Kong Island. The project was completed in 1863."
+              },
+              "image": {
+                "src": "./images/ex302a/1863_img1.png",
+                "translationType": "Infrastructure/Environment",
+                "description": "九廣鐵路(英段)<br/>通車",
+                "reference": "Source: ISD",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1863_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1863_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 1872,
+                "content": "In 1869, the government granded a piece of land at Po Yan Street in Sheung Wan for the first Chinese Hospital in Hong Kong, Tung Wah Hospital. The Hospital was built in 1872 to provide free Chinese medicial services to the sick and the poor. "
+              },
+              "image": {
+                "src": "./images/ex302a/1872_img1.png",
+                "translationType": "scale",
+                "description": "The First Chinese Hospital in Hong Kong",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1872_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: Tung Wah"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 1890,
+                "content": "In 1890, the Hongkong Electric Company Limited built the first power plant in Hong Kong on the hillside near Wing Fung Street in Wan Chai, which provided electricity for street lamps from Central to Bonham Strand East. In 1919, the North Point Power Station was opened, and the Wan Chai Power Plant became a reserve station until it was closed down and demolished in 1922."
+              },
+              "image": {
+                "src": "./images/ex302a/1890_img1.png",
+                "translationType": "scale",
+                "description": "Electricity Supply",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1890_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: archive.org(p168)"
+                  },
+                  {
+                    "src": "./images/ex302a/1890_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1890_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 1910,
+                "content": "In 1906, the Kowloon-Canton Railway (British Section) project started and opened in 1910. This was the first railway connecting Hong Kong and Mainland China. It was 35 kilometers long with 5 tunnels and 48 bridges. In 1911, the Canton-Kowloon Railway (China Section) was opened, and the through train service from Kowloon to Guangzhou commenced."
+              },
+              "image": {
+                "src": "./images/ex302a/1910_img1.png",
+                "translationType": "scale",
+                "description": "The Kowloon–Canton Railway British Section Opened",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1910_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1910_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1910_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  },
+                  {
+                    "src": "./images/ex302a/1910_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  },
+                  {
+                    "src": "./images/ex302a/1910_img5.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  }
+                ]
+              },
+              "category": {
+                "id": "transport",
+                "name": "Transport"
+              }
+            },
+            {
+              "text": {
+                "year": 1930,
+                "content": "In 1912, Chinese businessmen Mr. Ho Kai and Mr. Au Tak formed a company to reclaim land in Kowloon Bay for a residential housing scheme. The reclaimed land was named after the company as \"Kai Tak\". Later, the company closed down due to the economic recession, leaving the land unused. The government hence bought back the land to build the airport. In 1930, Kai Tak Airport opened."
+              },
+              "image": {
+                "src": "./images/ex302a/1910_img1.png",
+                "translationType": "scale",
+                "description": "Kai Tak Airport",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1930_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/1930_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/1930_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: GRS"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "transport",
+                "name": "Transport"
+              }
+            },
+            {
+              "text": {
+                "year": 1939,
+                "content": "In 1939, the government promulgated the \"Town Planning Ordinance\", authorizing the Town Planning Board to formulate the City’s development blueprints for systematic designation of land use layouts as well as building plans for developed districts and new-development areas."
+              },
+              "image": {
+                "src": "./images/ex302a/1910_img1.png",
+                "translationType": "scale",
+                "description": "Promulgation of the Town Planning Ordinance",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1939_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/1939_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1939_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1939_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "legislations",
+                "name": "Planning Authorities/Legislations"
+              }
+            }
+          ]
+        },
+        {
+          "year": "2000 - 2019",
+          "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
+          "coverinsidebar": {
+            "src": "./images/ex302a/cover.png"
+          },
+          "coverincircle": {
+            "src": "./images/ex302a/coverincircle.png"
+          },
+          "items": [
+            {
+              "text": {
+                "year": 1940,
+                "content": "60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
+              },
+              "image": {
+                "src": "./images/ex302a/img.png",
+                "translationType": "translate",
+                "description": "九廣鐵路(英段)<br/>通車",
+                "gallery": null
+              },
+              "category": {
+                "id": "planning",
+                "name": "規劃"
+              }
+            },
+            {
+              "text": {
+                "year": 1940
+              },
+              "image": {
+                "src": "./images/ex302a/img.png",
+                "translationType": "scale",
+                "description": "九廣鐵路(英段)<br/>通車",
+                "gallery": null
+              },
+              "category": {
+                "id": "house",
+                "name": "房屋"
+              }
+            },
+            {
+              "text": {
+                "year": 1940,
+                "content": "60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
+              },
+              "image": {
+                "src": "./images/ex302a/cover_1930.png",
+                "translationType": "scale",
+                "description": "九廣鐵路(英段)<br/>通車",
+                "gallery": null
+              },
+              "category": {
+                "id": "traffic",
+                "name": "交通"
+              }
+            },
+            {
+              "text": {
+                "year": 1940,
+                "content": "60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
+              },
+              "image": {
+                "src": "./images/ex302a/cover_1930.png",
+                "translationType": "scale",
+                "description": "九廣鐵路(英段)<br/>通車",
+                "gallery": null
+              },
+              "category": {
+                "id": "house",
+                "name": "房屋"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
 }
