@@ -32,7 +32,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1863_img1.png",
-                "translationType": "Infrastructure/Environment",
+                "translationType": "translate",
                 "description": "九廣鐵路(英段)<br/>通車",
                 "reference": "Source: ISD",
                 "gallery": [
@@ -75,7 +75,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1872_img1.jpg",
-                "translationType": "Infrastructure/Environment",
+                "translationType": "scale",
                 "description": "The First Chinese Hospital in Hong Kong",
                 "gallery": [
                   {
@@ -117,7 +117,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1890_img1.png",
-                "translationType": "Infrastructure/Environment",
+                "translationType": "scale",
                 "description": "Electricity Supply",
                 "gallery": [
                   {
@@ -159,7 +159,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1910_img1.png",
-                "translationType": "Transport",
+                "translationType": "scale",
                 "description": "The Kowloon–Canton Railway British Section Opened",
                 "gallery": [
                   {
@@ -201,7 +201,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1910_img1.png",
-                "translationType": "Transport",
+                "translationType": "scale",
                 "description": "Kai Tak Airport",
                 "gallery": [
                   {
@@ -243,7 +243,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1910_img1.png",
-                "translationType": "Planning Authorities/Legislations",
+                "translationType": "scale",
                 "description": "Promulgation of the Town Planning Ordinance",
                 "gallery": [
                   {
@@ -297,7 +297,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1946_img1.png",
-                "translationType": "Land Supply/Housing",
+                "translationType": "translate",
                 "description": "Development of the Kowloon Peninsula",
                 "reference": "Source: GRS",
                 "gallery": [
@@ -340,7 +340,7 @@
               },
               "image": {
                 "src": "",
-                "translationType": "Planning Authorities/Legislations",
+                "translationType": "scale",
                 "description": "The Dedicated Division for Town Planning",
                 "gallery": [
                   {
@@ -382,7 +382,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1948_img1.png",
-                "translationType": "Strategic Plan",
+                "translationType": "scale",
                 "description": "A Visionary Planning Blueprint, the Abercrombie Report",
                 "gallery": [
                   {
@@ -424,7 +424,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1954_img1a.png",
-                "translationType": "Land Supply/Housing",
+                "translationType": "scale",
                 "description": "The First Batch of Public Housing",
                 "gallery": [
                   {
@@ -466,7 +466,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1954_img1b.png",
-                "translationType": "Economic/Tourism",
+                "translationType": "scale",
                 "description": "The First Satellite Town",
                 "gallery": [
                   {
@@ -520,7 +520,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1965_img1.png",
-                "translationType": "Infrastructure/Environment",
+                "translationType": "translate",
                 "description": "Dongjiang-Shenzhen Water Supply Scheme (DJ-SZ WSS)",
                 "reference": "Source: GRS",
                 "gallery": [
@@ -563,7 +563,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1967_img1.png",
-                "translationType": "Land Supply/Housing",
+                "translationType": "scale",
                 "description": "The First Self-Sustainable Public Housing Estate",
                 "gallery": [
                   {
@@ -605,7 +605,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1972_img1a.png",
-                "translationType": "Land Supply/Housing",
+                "translationType": "scale",
                 "description": "Ten-year Housing Programme",
                 "gallery": [
                   {
@@ -647,7 +647,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1972_img1b.png",
-                "translationType": "Transport",
+                "translationType": "scale",
                 "description": "Opening of Hung Hom Cross-Harbour Tunnel ",
                 "gallery": [
                   {
@@ -689,7 +689,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1972_img1c.png",
-                "translationType": "Land Supply/Housing",
+                "translationType": "scale",
                 "description": "Ten-year Housing Programme",
                 "gallery": [
                   {
@@ -731,7 +731,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1973_img1.png",
-                "translationType": "Land Supply/Housing",
+                "translationType": "scale",
                 "description": "Development of New Towns",
                 "gallery": [
                   {
@@ -773,7 +773,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1976_img1.png",
-                "translationType": "Infrastructure/Environment",
+                "translationType": "scale",
                 "description": "Conservation of the Countryside",
                 "gallery": [
                   {
@@ -815,7 +815,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1978_img1.png",
-                "translationType": "Economic/Tourism",
+                "translationType": "scale",
                 "description": "The First Industrial Estate in Hong Kong",
                 "gallery": [
                   {
@@ -857,7 +857,7 @@
               },
               "image": {
                 "src": "",
-                "translationType": "Strategic Plan",
+                "translationType": "scale",
                 "description": "Hong Kong Outline Plan",
                 "gallery": [
                   {
@@ -899,7 +899,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1979_img1b.png",
-                "translationType": "Transport",
+                "translationType": "scale",
                 "description": "Underground Railway",
                 "gallery": [
                   {
@@ -953,7 +953,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1984_img1.png",
-                "translationType": "Strategic Plan",
+                "translationType": "translate",
                 "description": "Territorial Development Strategy",
                 "reference": "Source: GRS",
                 "gallery": [
@@ -996,7 +996,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1988_img1.png",
-                "translationType": "Planning Authorities/Legislations",
+                "translationType": "scale",
                 "description": "Establishment of the Land Development Corporation",
                 "gallery": [
                   {
@@ -1038,7 +1038,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1989_img1.png",
-                "translationType": "Transport",
+                "translationType": "scale",
                 "description": "Port and Airport Development Strategy",
                 "gallery": [
                   {
@@ -1080,7 +1080,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1990_img1.png",
-                "translationType": "Planning Authorities/Legislations",
+                "translationType": "scale",
                 "description": "Establishment of the Planning Department",
                 "gallery": [
                   {
@@ -1122,7 +1122,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1991_img1.png",
-                "translationType": "Planning Authorities/Legislations",
+                "translationType": "scale",
                 "description": "Amendments to the Town Planning Ordinance",
                 "gallery": [
                   {
@@ -1164,7 +1164,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1995_img1a.png",
-                "translationType": "Infrastructure/Environment",
+                "translationType": "scale",
                 "description": "Mai Po Inner Deep Bay Ramser Site",
                 "gallery": [
                   {
@@ -1206,7 +1206,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1995_img1b.png",
-                "translationType": "Infrastructure/Environment",
+                "translationType": "scale",
                 "description": "Marine Parks",
                 "gallery": [
                   {
@@ -1248,7 +1248,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1997_img1a.png",
-                "translationType": "Planning Authorities/Legislations",
+                "translationType": "scale",
                 "description": "Protection of the Victoria Harbour",
                 "gallery": [
                   {
@@ -1290,7 +1290,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1997_img1b.png",
-                "translationType": "Strategic plan",
+                "translationType": "scale",
                 "description": "Sustainable Development",
                 "gallery": [
                   {
@@ -1332,7 +1332,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1998_img1.png",
-                "translationType": "Strategic Plan",
+                "translationType": "scale",
                 "description": "Territorial Development Strategy Review",
                 "gallery": [
                   {
@@ -1386,7 +1386,7 @@
               },
               "image": {
                 "src": "./images/ex302a/2001_img1a.png",
-                "translationType": "Infrastructure/Environment",
+                "translationType": "translate",
                 "description": "2001 Sewerage Treatment and Disposal",
                 "reference": "Source: ISD",
                 "gallery": [
@@ -1429,7 +1429,7 @@
               },
               "image": {
                 "src": "./images/ex302a/2001_img1b.png",
-                "translationType": "Planning Authorities",
+                "translationType": "scale",
                 "description": "Establishment of the Urban Renewal Authority",
                 "gallery": [
                   {
@@ -1471,7 +1471,7 @@
               },
               "image": {
                 "src": "./images/ex302a/2002_img1a.png",
-                "translationType": "Economic/Tourism",
+                "translationType": "scale",
                 "description": "Hong Kong Science Park",
                 "gallery": [
                   {
@@ -1512,7 +1512,7 @@
                 "content": "In 2002, the Cyberport project was completed to facilitate the development of information and communication technologies (ICT) in Hong Kong. Leveraging on the advanced ICT infrastructure, the Cyberport focuses on building key clusters of digital technology, which include FinTech, eCommerce, IoT/Wearables, and Big Data/AI."
               },
               "image": {
-                "src": "./images/ex302a/2002_img1.png",
+                "src": "./images/ex302a/2002_img1b.png",
                 "translationType": "scale",
                 "description": "Cyberport",
                 "gallery": [
@@ -1555,18 +1555,355 @@
               },
               "image": {
                 "src": "./images/ex302a/2004_img1a.png",
-                "translationType": "Planning Authorities/Legislations",
+                "translationType": "scale",
                 "description": "Town Planning (Amendment) Ordinance 2004",
                 "gallery": [
                   {
                     "src": "./images/ex302a/2004_img1a.png",
                     "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: GRS"
+                    "reference": "Source: GRS"
                   },
                   {
                     "src": "./images/ex302a/2004_img2a.png",
                     "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: GRS"
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "legislations",
+                "name": "Planning Authorities/Legislations"
+              }
+            },
+            {
+              "text": {
+                "year": 2004,
+                "content": "In 2004, the Harborfront Enhancement Committee, the precedent of Harbourfront Commission, was set up. The Committee was to advise the government on the planning, land uses and developments along the existing and new harborfront of the Victoria Harbour with sustainable development principles."
+              },
+              "image": {
+                "src": "./images/ex302a/2004_img1b.png",
+                "translationType": "scale",
+                "description": "Harborfront Enhancement Committee",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2004_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2004_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2004_img3b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "strategic",
+                "name": "Strategic Plan"
+              }
+            },
+            {
+              "text": {
+                "year": 2004,
+                "content": "In 2004, the first large-scale underground flood storage tank under the Tai Hang Tung ruby pitch and football pitch was completed. The 100,000 m3 capacity storage tank can handle rainstorms of 50-year return period. Other flood prevention strategies and mitigation projects include stormwater pumping stations, stormwater drainage tunnel systems, bypass floodway and storm drains."
+              },
+              "image": {
+                "src": "./images/ex302a/2004_img1c.png",
+                "translationType": "scale",
+                "description": "Flood Prevention Strategy",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2004_img1c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2004_img2c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2004_img3c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2004_img4c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 2006,
+                "content": "In 2006, Ngong Ping 360 was opened. The 5.7-km cable car line between Tung Chung and Ngong Ping is the longest bi-cable ropeway in Asia. The Ngong Ping tourism project encompassed the religious heritage in Lantau, with attractions such as the Big Buddha, Po Lin Monastery, and Wisdom Path."
+              },
+              "image": {
+                "src": "./images/ex302a/2006_img1.png",
+                "translationType": "translate",
+                "description": "Ngong Ping, Lantau",
+                "reference": "Source: ISD",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2006_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2006_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2006_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "economic",
+                "name": "Economic/Tourism"
+              }
+            },
+            {
+              "text": {
+                "year": 2007,
+                "content": "In 2007, the government promulgated the Hong Kong 2030 Planning Vision and Strategy. With the overarching goal for sustainable development, key recommendations and initiatives included: Balancing Conservation and Development, Creating Place, Creating Quality Living Environment, Regenerating the Rural Area, Bolstering the Economy, and Anchoring Hong Kong Position in the Region."
+              },
+              "image": {
+                "src": "./images/ex302a/2007_img1a.png",
+                "translationType": "scale",
+                "description": "Hong Kong 2030 Planning Vision and Strategy",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2007_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: Tung Wah"
+                  },
+                  {
+                    "src": "./images/ex302a/2007_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: Tung Wah"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "strategic",
+                "name": "Strategic Plan"
+              }
+            },
+            {
+              "text": {
+                "year": 2007,
+                "content": "To strike a balance between sustainable development and heritage conservation, the government launched the Revitalizing Historic Buildings Through Partnership Scheme in 2007, which was to preserve and put historical buildings into innovative use. Non-profit organizations were invited to submit proposals to revitalize government historical buildings."
+              },
+              "image": {
+                "src": "./images/ex302a/2007_img1b.png",
+                "translationType": "scale",
+                "description": "Revitalizing Historic Buildings Through Partnership Scheme",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2007_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: archive.org(p168)"
+                  },
+                  {
+                    "src": "./images/ex302a/2007_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2007_img3b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2007_img4b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 2009,
+                "content": "Hong Kong Geopark was officially designated as a National Geoparks of China in 2009 and was accepted as a member of the Global Geoparks Network later in 2011. The Geopark then was renamed as Hong Kong UNESCO Global Geopark in 2015. Located in the East and Northeast New Territories, the park includes the Sai Kung Volcanic Rock Region and the Northeast New Territories Sedimentary Rock Region."
+              },
+              "image": {
+                "src": "./images/ex302a/2009_img1.png",
+                "translationType": "scale",
+                "description": "Geopark",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2009_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: archive.org(p168)"
+                  },
+                  {
+                    "src": "./images/ex302a/2009_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2009_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2009_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 2010,
+                "content": "In 2010, the Harborfront Commission was set up to play an advocacy, oversight and pro-active advisory role in the planning, urban design, management and operation of the harborfront areas, their adjacent waters and associated facilities, in a bid to foster and facilitate the development of the Victoria harborfront."
+              },
+              "image": {
+                "src": "./images/ex302a/2010_img1.png",
+                "translationType": "scale",
+                "description": "Town Planning (Amendment) Ordinance 2010",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2010_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/2010_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "legislations",
+                "name": "Planning Authorities/Legislations"
+              }
+            },
+            {
+              "text": {
+                "year": 2011,
+                "content": "In 2011, the Airport Authority published the Hong Kong International Airport Master Plan 2030, which proposed to reclaim 650 hectors of land to develop the Three-Runway System. Started in 2016, the project will take eight years for construction. Upon its completion, the practical maximum annual capacity will be about 620,000 air traffic movements per year."
+              },
+              "image": {
+                "src": "./images/ex302a/2011_img1a.png",
+                "translationType": "scale",
+                "description": "Three-Runway System",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2011_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2011_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
                   },
                   {
                     "src": "",
@@ -1592,33 +1929,33 @@
             },
             {
               "text": {
-                "year": 1939,
-                "content": "In 1939, the government promulgated the \"Town Planning Ordinance\", authorizing the Town Planning Board to formulate the City’s development blueprints for systematic designation of land use layouts as well as building plans for developed districts and new-development areas."
+                "year": 2011,
+                "content": "In 2011, the government announced the Revised Urban Renewal Strategy, which proposed a “People First, District-based, Public participatory” approach for urban renewal so as to balance the interests and needs of various stakeholders."
               },
               "image": {
-                "src": "./images/ex302a/1910_img1.png",
+                "src": "./images/ex302a/2011_img1b.png",
                 "translationType": "scale",
-                "description": "Promulgation of the Town Planning Ordinance",
+                "description": "Revised Urban Renewal Strategy",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/1939_img1.png",
+                    "src": "./images/ex302a/2011_img1b.png",
                     "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: PlanD"
+                    "reference": "Source: PlanD"
                   },
                   {
-                    "src": "./images/ex302a/1939_img2.png",
+                    "src": "./images/ex302a/2011_img2b.png",
                     "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: ISD"
                   },
                   {
-                    "src": "./images/ex302a/1939_img3.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: ISD"
+                    "src": "",
+                    "description": "",
+                    "reference": ""
                   },
                   {
-                    "src": "./images/ex302a/1939_img4.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: ISD"
+                    "src": "",
+                    "description": "",
+                    "reference": ""
                   },
                   {
                     "src": "",
@@ -1628,8 +1965,639 @@
                 ]
               },
               "category": {
-                "id": "legislations",
-                "name": "Planning Authorities/Legislations"
+                "id": "strategic",
+                "name": "Strategic Plan"
+              }
+            },
+            {
+              "text": {
+                "year": 2011,
+                "content": "In 2011, the Urban Design Study for the New Central Harborfront was completed. With the vision to create a vibrant, attractive, accessible New Central Harborfront, an urban design framework for the area stretching the Central Piers towards the Hong Kong Convention and Exhibition Centre (HKCEC) in Wan Chai was proposed."
+              },
+              "image": {
+                "src": "./images/ex302a/2011_img1c.png",
+                "translationType": "translate",
+                "description": "Urban Design Study for the New Central Harborfront",
+                "reference": "Source: ISD",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2011_img1c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2011_img2c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2011_img3c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2011_img4c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "strategic",
+                "name": "Strategic Plan"
+              }
+            },
+            {
+              "text": {
+                "year": 2012,
+                "content": "In 2012, the multi-disciplinary Energizing Kowloon East Office (EKEO) was established to steer, supervise, oversee and monitor the development of Kowloon East with a view to facilitating its transformation into another premier CBD of Hong Kong to support economic growth and strengthen global competitiveness."
+              },
+              "image": {
+                "src": "./images/ex302a/2012_img1.png",
+                "translationType": "scale",
+                "description": "CDB2 at Kowloon East",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2012_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: Tung Wah"
+                  },
+                  {
+                    "src": "./images/ex302a/2012_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: Tung Wah"
+                  },
+                  {
+                    "src": "./images/ex302a/2012_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: Tung Wah"
+                  },
+                  {
+                    "src": "./images/ex302a/2012_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: Tung Wah"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "strategic",
+                "name": "Strategic Plan"
+              }
+            },
+            {
+              "text": {
+                "year": 2013,
+                "content": "In 2013, the Kai Tak Cruise Terminal was opened to leverage on the rapid growing trends and opportunities in the global and regional cruise industry, and to consolidate Hong Kong's position as the premier cruise center in the region. The terminal is about 850 meters in length, and can berth world-class cruise liners up to 110,000 tons of gross displacement and 220,000 volumn tons."
+              },
+              "image": {
+                "src": "./images/ex302a/2013_img1.png",
+                "translationType": "scale",
+                "description": "Cruise Terminal",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2013_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: archive.org(p168)"
+                  },
+                  {
+                    "src": "./images/ex302a/2013_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2013_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2013_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "economic",
+                "name": "Economic/Tourism"
+              }
+            },
+            {
+              "text": {
+                "year": 2014,
+                "content": "The Government released the \"Railway Development Strategy 2014\", initially recommending the implementation of seven new railway schemes between 2018 and 2026, including the Northern Link, Kwu Tung Station, Hung Shui Kiu Station, Tung Chung West Extension, East Kowloon Line, South Island Line (West Section), North Island Line, and Tuen Mun South Extension."
+              },
+              "image": {
+                "src": "./images/ex302a/2014_img1a.png",
+                "translationType": "scale",
+                "description": "Extension of the Railway Network",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2014_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: archive.org(p168)"
+                  },
+                  {
+                    "src": "./images/ex302a/2014_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2014_img3a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "transport",
+                "name": "Transport"
+              }
+            },
+            {
+              "text": {
+                "year": 2014,
+                "content": "The government announced the Long Term Housing Strategy (LTHS) in 1987, 1998, and 2014. The 2014 LTHS set out three strategic directions for building more public rental housing units, supplying more subsidised sale flats, and stabilising the residential property market."
+              },
+              "image": {
+                "src": "./images/ex302a/2014_img1b.png",
+                "translationType": "scale",
+                "description": "Long Term Housing Strategy",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2014_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/2014_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/2014_img3b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/2014_img4b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "housing",
+                "name": "Land Supply/Housing"
+              }
+            },
+            {
+              "text": {
+                "year": 2014,
+                "content": "In 2014, the government successively planned new development areas and extension of new towns, including the reclamation works of Tung Chung New Town Extension Project, which began in 2017 and 2019. The land formation works in the Kwu Tung North and Fanling North New Development Areas and in Hung Shui Kiu/Ha Tsuen have also started."
+              },
+              "image": {
+                "src": "./images/ex302a/2014_img1c.png",
+                "translationType": "scale",
+                "description": "New Development Areas and Extension of New Towns",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2014_img1c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/2014_img2c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/2014_img3c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/2014_img4c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "housing",
+                "name": "Land Supply/Housing"
+              }
+            },
+            {
+              "text": {
+                "year": 2016,
+                "content": "In 2016, the Hong Kong Maritime and Port Board was established to set the direction for the long-term development of Hong Kong's port and maritime services, foster the development of maritime manpower, and devise promotion strategies and initiatives to enhance Hong Kong's status as an international maritime centre."
+              },
+              "image": {
+                "src": "./images/ex302a/2016_img1.png",
+                "translationType": "scale",
+                "description": "Hong Kong Maritime and Port Board",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2016_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2016_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2016_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "economic",
+                "name": "Economic/Tourism"
+              }
+            },
+            {
+              "text": {
+                "year": 2017,
+                "content": "In 2017, the government announced Hong Kong's Climate Action Plan 2030+, which set a new carbon intensity target - to reduce carbon intensity by 65% ​​to 70% by 2030 from the 2005 level. The Plan proposed a series of action plans, including more common and larger-scale adoption of renewable energy. "
+              },
+              "image": {
+                "src": "./images/ex302a/2017_img1a.png",
+                "translationType": "scale",
+                "description": "Hong Kong's Climate Action Plan 2030+",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2017_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2017_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2017_img3a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 2017,
+                "content": "In 2017, the Hong Kong SAR Government and the Shenzhen Municipal People’s Government signed the Memorandum of Understanding on Jointly Developing the Lok Ma Chau Loop, joining hands to develop the Lok Ma Chau Loop into a Hong Kong/Shenzhen Innovation and Technology Park, which fosters the development of innovation and technology."
+              },
+              "image": {
+                "src": "./images/ex302a/2017_img1b.png",
+                "translationType": "scale",
+                "description": "Development of the Hong Kong-Shenzhen Innovation and Technology Park in the Loop ",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2017_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "economic",
+                "name": "Economic/Tourism"
+              }
+            },
+            {
+              "text": {
+                "year": 2017,
+                "content": "In 2017, the government announced Hong Kong's Climate Action Plan 2030+, which set a new carbon intensity target - to reduce carbon intensity by 65% ​​to 70% by 2030 from the 2005 level. The Plan proposed a series of action plans, including more common and larger-scale adoption of renewable energy. "
+              },
+              "image": {
+                "src": "./images/ex302a/2017_img1c.png",
+                "translationType": "scale",
+                "description": "Smart City",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2017_img1c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2017_img2c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2017_img3c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2017_img4c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "economic",
+                "name": "Economic/Tourism"
+              }
+            },
+            {
+              "text": {
+                "year": 2018,
+                "content": "In 2018, O · PARK1, located in Siu Ho Wan, North Lantau Island, was officially put into operation. This is Hong Kong's first organic resource recovery center, which adopts anaerobic digestion technology to convert food waste into biogas for electricity generation. It is capable of handling 200 tonnes of food waste per day, saving the valuable space in landfills."
+              },
+              "image": {
+                "src": "./images/ex302a/2018_img1a.png",
+                "translationType": "scale",
+                "description": "The First Organic Resource Recovery Center",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2018_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2018_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 2018,
+                "content": "In 2018, the Hong Kong section of the Guangzhou-Shenzhen-Hong Kong Express Rail Link (XRL) was opened, with a total length of about 26 km. The XRL runs along a dedicated underground rail corridor from the West Kowloon Station and connects with the national high speed rail network through Futian Station and Guangzhounan Station."
+              },
+              "image": {
+                "src": "./images/ex302a/2018_img1b.png",
+                "translationType": "scale",
+                "description": "Guangzhou-Shenzhen-Hong Kong Express Rail Link",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2018_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2018_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2018_img3b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "transport",
+                "name": "Transport"
+              }
+            },
+            {
+              "text": {
+                "year": 2018,
+                "content": "In 2018, the Hong Kong-Zhuhai-Macao Bridge was completed and opened in line with the increasingly close economic cooperation between the Hong Kong SAR and the Mainland. The Liantang/Heung Yuen Wai Port also opened in 2020, serving as a more efficient cross-border passage from Hong Kong to Shenzhen East, Huizhou and East Guangdong. "
+              },
+              "image": {
+                "src": "./images/ex302a/2018_img1c.png",
+                "translationType": "scale",
+                "description": "New Land-based Cross-border passage",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2018_img1c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2018_img2c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "transport",
+                "name": "Transport"
+              }
+            },
+            {
+              "text": {
+                "year": 2018,
+                "content": "The \"Hong Kong 2030+: Towards a Planning Vision and Strategy Transcending 2030\" (\"Hong Kong 2030+\") published in 2020 put forward three development strategies to cope with new challenges in the future - planning for a liveable high-density city, embracing new economic challenges and opportunities, and creating capacity for sustainable growth. "
+              },
+              "image": {
+                "src": "./images/ex302a/2018_img1d.png",
+                "translationType": "scale",
+                "description": "Towards a Planning Vision and Strategy Transcending 2030",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2018_img1d.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2018_img2d.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "strategic",
+                "name": "Strategic plan"
+              }
+            },
+            {
+              "text": {
+                "year": 2019,
+                "content": "In 2019, the state officially announced the “Outline Development Plan for the Guangdong-Hong Kong-Macao Greater Bay Area”. The objectives are to further deepen cooperation amongst Guangdong, Hong Kong and Macao, fully leverage the composite advantages of the three places, facilitate in-depth integration within the region, and promote coordinated regional economic development, with a view to developing an international first-class bay area ideal for living, working and travelling."
+              },
+              "image": {
+                "src": "./images/ex302a/2019_img1.png",
+                "translationType": "scale",
+                "description": "Guangdong-Hong Kong-Macao Regional Cooperation",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2019_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "economic",
+                "name": "Economic/Tourism"
               }
             }
           ]
@@ -1641,7 +2609,7 @@
       "sections": [
         {
           "year": "1841 - 1939",
-          "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
+          "text1": "1841年開埠至第二次世界大戰爆發前，香港主要發展區集中在港島的「維多利亞城」，其後逐漸拓展九龍，並於1939年實施城市規劃條例，建立整體規劃制度。",
           "coverinsidebar": {
             "src": "./images/ex302a/cover.png"
           },
@@ -1651,100 +2619,262 @@
           "items": [
             {
               "text": {
-                "year": 1940,
-                "content": "60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
+                "year": 1863,
+                "content": "1860年，政府開始建造全港第一個水塘——薄扶林水塘，利用薄扶林谷的地勢，以水壩收集雨水後供應港島使用，工程於1863年完工。"
               },
               "image": {
-                "src": "./images/ex302a/img.png",
+                "src": "./images/ex302a/1863_img1.png",
                 "translationType": "translate",
-                "description": "九廣鐵路(英段)<br/>通車",
-                "reference": "圖片參考: KCRC",
+                "description": "水務設施",
+                "reference": "Source: ISD",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/img.png",
+                    "src": "./images/ex302a/1863_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1863_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 1872,
+                "content": "1869年，政府在上環普仁街撥出土地，興建香港第一間華人醫院——東華醫院。1872年，東華醫院落成啟用，為貧苦市民提供免費中醫藥服務。"
+              },
+              "image": {
+                "src": "./images/ex302a/1872_img1.jpg",
+                "translationType": "scale",
+                "description": "香港第一間華人醫院",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1872_img1.jpg",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: Tung Wah"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 1890,
+                "content": "1890年，香港電燈有限公司在灣仔永豐街旁山坡地段建成了香港第一所發電廠，為中區至文咸東街一帶的電街燈提供電力。1919年，北角發電廠啟用，灣仔發電廠轉為後備用途，直至1922年關閉並拆卸。"
+              },
+              "image": {
+                "src": "./images/ex302a/1890_img1.png",
+                "translationType": "scale",
+                "description": "電力供應",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1890_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: archive.org(p168)"
+                  },
+                  {
+                    "src": "./images/ex302a/1890_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1890_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 1910,
+                "content": "1906年，九廣鐵路（英段）工程展開，並於1910年開通，這是連接香港和中國內地的第一條鐵路，全長35公里，包括5條隧道和48條橋樑。1911年，廣九鐵路（華段）開通，九龍往廣州的直通車開始營運。"
+              },
+              "image": {
+                "src": "./images/ex302a/1910_img1.png",
+                "translationType": "scale",
+                "description": "九廣鐵路（英段）通車 ",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1910_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1910_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1910_img3.png",
                     "description": "（這是假字）當年主建築物的外觀。",
                     "reference": "圖片參考: KCRC"
                   },
                   {
-                    "src": "./images/ex302a/img.png",
+                    "src": "./images/ex302a/1910_img4.png",
                     "description": "（這是假字）當年主建築物的外觀。",
                     "reference": "圖片參考: KCRC"
                   },
                   {
-                    "src": "./images/ex302a/img.png",
+                    "src": "./images/ex302a/1910_img5.png",
                     "description": "（這是假字）當年主建築物的外觀。",
                     "reference": "圖片參考: KCRC"
                   }
                 ]
               },
               "category": {
-                "id": "planning",
-                "name": "規劃"
+                "id": "transport",
+                "name": "Transport"
               }
             },
             {
               "text": {
-                "year": 1940
+                "year": 1930,
+                "content": "1912年，華人何啟和區德合組公司，於九龍灣填海並計劃興建樓房，該填海區便以公司名稱「啟德」命名。後來，公司因經濟衰退倒閉，填海土地閒置，政府便購回土地興建機場。1930年，香港啟德機場啟用。"
               },
               "image": {
-                "src": "./images/ex302a/img.png",
+                "src": "./images/ex302a/1910_img1.png",
                 "translationType": "scale",
-                "description": "九廣鐵路(英段)<br/>通車",
+                "description": "啟德",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/img.png",
+                    "src": "./images/ex302a/1930_img1.png",
                     "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: KCRC"
+                    "reference": "圖片參考: GRS"
                   },
                   {
-                    "src": "./images/ex302a/img.png",
+                    "src": "./images/ex302a/1930_img2.png",
                     "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: KCRC"
+                    "reference": "圖片參考: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/1930_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: GRS"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
                   }
                 ]
               },
               "category": {
-                "id": "house",
-                "name": "房屋"
+                "id": "transport",
+                "name": "Transport"
               }
             },
             {
               "text": {
-                "year": 1940,
-                "content": "60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
+                "year": 1939,
+                "content": "1939年，政府頒布《城市規劃條例》，授權城市規劃委員會擬備城市規劃發展藍圖。目的是為了有系統地擬備現存或擬開拓地區的布局設計，以及適宜在該等地區內興建的建築物類型的圖則。"
               },
               "image": {
-                "src": "./images/ex302a/cover_1930.png",
+                "src": "./images/ex302a/1910_img1.png",
                 "translationType": "scale",
-                "description": "九廣鐵路(英段)<br/>通車",
-                "gallery": null
+                "description": "頒布《城市規劃條例》",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1939_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/1939_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1939_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1939_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
               },
               "category": {
-                "id": "traffic",
-                "name": "交通"
-              }
-            },
-            {
-              "text": {
-                "year": 1940,
-                "content": "60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-              },
-              "image": {
-                "src": "./images/ex302a/cover_1930.png",
-                "translationType": "scale",
-                "description": "九廣鐵路(英段)<br/>通車",
-                "gallery": null
-              },
-              "category": {
-                "id": "house",
-                "name": "房屋"
+                "id": "legislations",
+                "name": "Planning Authorities/Legislations"
               }
             }
           ]
         },
         {
           "year": "1940 - 1959",
-          "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
+          "text1": "二戰後百廢待興，政府顧問亞柏康比為香港制定了第一份長遠的規劃策略。五十年代初，大量內地移民來港，安全衛生問題加上石硤尾大火，促使政府興建首批公營房屋。",
           "coverinsidebar": {
             "src": "./images/ex302a/cover_1930.png"
           },
@@ -1754,61 +2884,61 @@
           "items": [
             {
               "text": {
-                "year": 1863,
-                "content": "In 1860, the government began to build the first reservoir in Hong Kong, the Pok Fu Lam Reservoir. Leveraging on the topography of Pok Fu Lam Valley, it collects rainwater from a dam and supplies water to Hong Kong Island. The project was completed in 1863."
+                "year": 1946,
+                "content": "二戰後，政府重新規劃界限街以南的九龍區發展：尖沙咀為商業及文化中心，中部何文田山為住宅集中地，西面油麻地和大角嘴預留為高密度住宅區及工業區，設有公共設施如醫院、消防局等。"
               },
               "image": {
-                "src": "./images/ex302a/1863_img1.png",
-                "translationType": "Infrastructure/Environment",
-                "description": "九廣鐵路(英段)<br/>通車",
-                "reference": "Source: ISD",
+                "src": "./images/ex302a/1946_img1.png",
+                "translationType": "translate",
+                "description": "九龍區發展",
+                "reference": "Source: GRS",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/1863_img1.png",
+                    "src": "./images/ex302a/1946_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/1946_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/1946_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/1946_img4.png",
                     "description": "（這是假字）當年主建築物的外觀。",
                     "reference": "Source: ISD"
                   },
                   {
-                    "src": "./images/ex302a/1863_img2.png",
+                    "src": "./images/ex302a/1946_img5.png",
                     "description": "（這是假字）當年主建築物的外觀。",
                     "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "",
-                    "description": "",
-                    "reference": ""
-                  },
-                  {
-                    "src": "",
-                    "description": "",
-                    "reference": ""
-                  },
-                  {
-                    "src": "",
-                    "description": "",
-                    "reference": ""
                   }
                 ]
               },
               "category": {
-                "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "id": "housing",
+                "name": "Land Supply/Housing"
               }
             },
             {
               "text": {
-                "year": 1872,
-                "content": "In 1869, the government granded a piece of land at Po Yan Street in Sheung Wan for the first Chinese Hospital in Hong Kong, Tung Wah Hospital. The Hospital was built in 1872 to provide free Chinese medicial services to the sick and the poor. "
+                "year": 1947,
+                "content": "1947年，工務司署成立城市設計組，專責城市規劃事宜。經過多次的部門更迭後，1990年，政府把分散的規劃職能合併，成立規劃署，負責擬備各類圖則、制定土地用途指引，以及為城市規劃委員會提供服務。"
               },
               "image": {
-                "src": "./images/ex302a/1872_img1.png",
+                "src": "",
                 "translationType": "scale",
-                "description": "The First Chinese Hospital in Hong Kong",
+                "description": "城市規劃的專責部門",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/1872_img1.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "Source: Tung Wah"
+                    "src": "",
+                    "description": "",
+                    "reference": ""
                   },
                   {
                     "src": "",
@@ -1833,183 +2963,141 @@
                 ]
               },
               "category": {
-                "id": "infrastructure",
-                "name": "Infrastructure/Environment"
-              }
-            },
-            {
-              "text": {
-                "year": 1890,
-                "content": "In 1890, the Hongkong Electric Company Limited built the first power plant in Hong Kong on the hillside near Wing Fung Street in Wan Chai, which provided electricity for street lamps from Central to Bonham Strand East. In 1919, the North Point Power Station was opened, and the Wan Chai Power Plant became a reserve station until it was closed down and demolished in 1922."
-              },
-              "image": {
-                "src": "./images/ex302a/1890_img1.png",
-                "translationType": "scale",
-                "description": "Electricity Supply",
-                "gallery": [
-                  {
-                    "src": "./images/ex302a/1890_img1.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "Source: archive.org(p168)"
-                  },
-                  {
-                    "src": "./images/ex302a/1890_img2.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1890_img3.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "",
-                    "description": "",
-                    "reference": ""
-                  },
-                  {
-                    "src": "",
-                    "description": "",
-                    "reference": ""
-                  }
-                ]
-              },
-              "category": {
-                "id": "infrastructure",
-                "name": "Infrastructure/Environment"
-              }
-            },
-            {
-              "text": {
-                "year": 1910,
-                "content": "In 1906, the Kowloon-Canton Railway (British Section) project started and opened in 1910. This was the first railway connecting Hong Kong and Mainland China. It was 35 kilometers long with 5 tunnels and 48 bridges. In 1911, the Canton-Kowloon Railway (China Section) was opened, and the through train service from Kowloon to Guangzhou commenced."
-              },
-              "image": {
-                "src": "./images/ex302a/1910_img1.png",
-                "translationType": "scale",
-                "description": "The Kowloon–Canton Railway British Section Opened",
-                "gallery": [
-                  {
-                    "src": "./images/ex302a/1910_img1.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1910_img2.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1910_img3.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: KCRC"
-                  },
-                  {
-                    "src": "./images/ex302a/1910_img4.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: KCRC"
-                  },
-                  {
-                    "src": "./images/ex302a/1910_img5.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: KCRC"
-                  }
-                ]
-              },
-              "category": {
-                "id": "transport",
-                "name": "Transport"
-              }
-            },
-            {
-              "text": {
-                "year": 1930,
-                "content": "In 1912, Chinese businessmen Mr. Ho Kai and Mr. Au Tak formed a company to reclaim land in Kowloon Bay for a residential housing scheme. The reclaimed land was named after the company as \"Kai Tak\". Later, the company closed down due to the economic recession, leaving the land unused. The government hence bought back the land to build the airport. In 1930, Kai Tak Airport opened."
-              },
-              "image": {
-                "src": "./images/ex302a/1910_img1.png",
-                "translationType": "scale",
-                "description": "Kai Tak Airport",
-                "gallery": [
-                  {
-                    "src": "./images/ex302a/1930_img1.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: GRS"
-                  },
-                  {
-                    "src": "./images/ex302a/1930_img2.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: GRS"
-                  },
-                  {
-                    "src": "./images/ex302a/1930_img3.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: GRS"
-                  },
-                  {
-                    "src": "",
-                    "description": "",
-                    "reference": ""
-                  },
-                  {
-                    "src": "",
-                    "description": "",
-                    "reference": ""
-                  }
-                ]
-              },
-              "category": {
-                "id": "transport",
-                "name": "Transport"
-              }
-            },
-            {
-              "text": {
-                "year": 1939,
-                "content": "In 1939, the government promulgated the \"Town Planning Ordinance\", authorizing the Town Planning Board to formulate the City’s development blueprints for systematic designation of land use layouts as well as building plans for developed districts and new-development areas."
-              },
-              "image": {
-                "src": "./images/ex302a/1910_img1.png",
-                "translationType": "scale",
-                "description": "Promulgation of the Town Planning Ordinance",
-                "gallery": [
-                  {
-                    "src": "./images/ex302a/1939_img1.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: PlanD"
-                  },
-                  {
-                    "src": "./images/ex302a/1939_img2.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1939_img3.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1939_img4.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "",
-                    "description": "",
-                    "reference": ""
-                  }
-                ]
-              },
-              "category": {
-                "id": "legislations",
+                "id": "planning",
                 "name": "Planning Authorities/Legislations"
+              }
+            },
+            {
+              "text": {
+                "year": 1948,
+                "content": "1948年，政府顧問亞柏康比發表《亞柏康比報告》（又名《初步規劃報告書》），這是香港首份具備長遠發展策略的規劃藍圖，針對缺乏土地以及人口不斷增加兩大難題，提供了具體建議。"
+              },
+              "image": {
+                "src": "./images/ex302a/1948_img1.png",
+                "translationType": "scale",
+                "description": "長遠的規劃藍圖《亞柏康比報告》",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1948_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1948_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: To be advised by Plan D"
+                  },
+                  {
+                    "src": "./images/ex302a/1948_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: To be advised by Plan D"
+                  },
+                  {
+                    "src": "./images/ex302a/1948_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1948_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  }
+                ]
+              },
+              "category": {
+                "id": "strategic",
+                "name": "Strategic Plan"
+              }
+            },
+            {
+              "text": {
+                "year": 1954,
+                "content": "1953年聖誕夜，石硤尾寮屋區發生大火，超過53,000人無家可歸。為解決房屋問題，政府著手興建徙置大廈安置災民和其他寮屋居民。1954年底，首八幢徙置大廈（第一型）於石硤尾落成，是為第一批公共房屋。"
+              },
+              "image": {
+                "src": "./images/ex302a/1954_img1a.png",
+                "translationType": "scale",
+                "description": "第一批公共房屋",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1954_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1954_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1954_img3a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  },
+                  {
+                    "src": "./images/ex302a/1954_img4a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  },
+                  {
+                    "src": "./images/ex302a/1954_img5a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  }
+                ]
+              },
+              "category": {
+                "id": "housing",
+                "name": "Land Supply/Housing"
+              }
+            },
+            {
+              "text": {
+                "year": 1954,
+                "content": "二戰後，香港的經濟重心從轉口貿易轉為輕工業。1954年，觀塘開始發展為香港第一個衛星城市，區內包含了工業區和住宅區，安置急增的人口之餘，亦為鄰近的工業區提供了勞動力。"
+              },
+              "image": {
+                "src": "./images/ex302a/1954_img1b.png",
+                "translationType": "scale",
+                "description": "第一個衛星城市 ",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1954_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1954_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1954_img3b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  },
+                  {
+                    "src": "./images/ex302a/1954_img4b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: KCRC"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "economic",
+                "name": "Economic/Tourism"
               }
             }
           ]
         },
         {
           "year": "1960 - 1979",
-          "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
+          "text1": "製造業於五、六十年代發展蓬勃，政府進一步發展基建，例如獅子山隧道、東江水工程等等。至七十年代，政府推出「十年建屋計劃」，大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡。1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
           "coverinsidebar": {
             "src": "./images/ex302a/cover.png"
           },
@@ -2019,97 +3107,32 @@
           "items": [
             {
               "text": {
-                "year": 1940,
-                "content": "60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
+                "year": 1965,
+                "content": "1963年，香港食水短缺問題嚴重，政府與廣東當局協議興建東江—深圳供水工程，第一期工程於1965年完成。東江水從80多公里外流入雁田水庫和深圳水庫，再經3公里長的鋼管，到達香港邊境的木湖抽水站。"
               },
               "image": {
-                "src": "./images/ex302a/img.png",
+                "src": "./images/ex302a/1965_img1.png",
                 "translationType": "translate",
-                "description": "九廣鐵路(英段)<br/>通車",
-                "gallery": null
-              },
-              "category": {
-                "id": "planning",
-                "name": "規劃"
-              }
-            },
-            {
-              "text": {
-                "year": 1940
-              },
-              "image": {
-                "src": "./images/ex302a/img.png",
-                "translationType": "scale",
-                "description": "九廣鐵路(英段)<br/>通車",
-                "gallery": null
-              },
-              "category": {
-                "id": "house",
-                "name": "房屋"
-              }
-            },
-            {
-              "text": {
-                "year": 1940,
-                "content": "60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-              },
-              "image": {
-                "src": "./images/ex302a/cover_1930.png",
-                "translationType": "scale",
-                "description": "九廣鐵路(英段)<br/>通車",
-                "gallery": null
-              },
-              "category": {
-                "id": "traffic",
-                "name": "交通"
-              }
-            },
-            {
-              "text": {
-                "year": 1940,
-                "content": "60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
-              },
-              "image": {
-                "src": "./images/ex302a/cover_1930.png",
-                "translationType": "scale",
-                "description": "九廣鐵路(英段)<br/>通車",
-                "gallery": null
-              },
-              "category": {
-                "id": "house",
-                "name": "房屋"
-              }
-            }
-          ]
-        },
-        {
-          "year": "1980 - 1999",
-          "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
-          "coverinsidebar": {
-            "src": "./images/ex302a/cover.png"
-          },
-          "coverincircle": {
-            "src": "./images/ex302a/coverincircle.png"
-          },
-          "items": [
-            {
-              "text": {
-                "year": 1863,
-                "content": "In 1860, the government began to build the first reservoir in Hong Kong, the Pok Fu Lam Reservoir. Leveraging on the topography of Pok Fu Lam Valley, it collects rainwater from a dam and supplies water to Hong Kong Island. The project was completed in 1863."
-              },
-              "image": {
-                "src": "./images/ex302a/1863_img1.png",
-                "translationType": "Infrastructure/Environment",
-                "description": "九廣鐵路(英段)<br/>通車",
-                "reference": "Source: ISD",
+                "description": "東江—深圳供水工程（東深工程）",
+                "reference": "Source: GRS",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/1863_img1.png",
+                    "src": "./images/ex302a/1965_img1.png",
                     "description": "（這是假字）當年主建築物的外觀。",
                     "reference": "Source: ISD"
                   },
                   {
-                    "src": "./images/ex302a/1863_img2.png",
+                    "src": "./images/ex302a/1965_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1965_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1965_img4.png",
                     "description": "（這是假字）當年主建築物的外觀。",
                     "reference": "Source: ISD"
                   },
@@ -2117,6 +3140,862 @@
                     "src": "",
                     "description": "",
                     "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 1967,
+                "content": "1967至1978年間，位於港島南區的華富邨落成。華富邨是香港第一個以自給自足社區概念規劃的公共屋邨，邨內設有商場、學校、巴士總站，以及其他社區配套設施。"
+              },
+              "image": {
+                "src": "./images/ex302a/1967_img1.png",
+                "translationType": "scale",
+                "description": "首個自給自足的公共屋邨",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1967_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1967_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1967_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1967_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "housing",
+                "name": "Land Supply/Housing"
+              }
+            },
+            {
+              "text": {
+                "year": 1972,
+                "content": "1972年，政府宣布「十年建屋計劃」，並於1973年成立香港房屋委員會，接管所有徙置大廈及政府廉租屋邨之餘，亦肩負起推展公共房屋計劃的責任。"
+              },
+              "image": {
+                "src": "./images/ex302a/1972_img1a.png",
+                "translationType": "scale",
+                "description": "「十年建屋計劃」",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1972_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1972_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1972_img3a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1972_img4a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "housing",
+                "name": "Land Supply/Housing"
+              }
+            },
+            {
+              "text": {
+                "year": 1972,
+                "content": "1948年的《亞柏康比報告》已提出興建海底隧道聯繫香港和九龍的城市核心，並加強核心區的對外（新界區）交通，擴張市區範圍。1972年，位於維港中部的第一條海底隧道——紅磡海底隧道正式通車，渡海小輪的交通角色逐漸被取代。1989年及1997年，第二條和第三條海底隧道亦相繼通車，三條隧道的設計容量合共為275,000架次。"
+              },
+              "image": {
+                "src": "./images/ex302a/1972_img1b.png",
+                "translationType": "scale",
+                "description": "紅磡海底隧道通車",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1972_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1972_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1972_img3b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1972_img4b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1972_img5b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  }
+                ]
+              },
+              "category": {
+                "id": "transport",
+                "name": "Transport"
+              }
+            },
+            {
+              "text": {
+                "year": 1972,
+                "content": "香港發展為區內運輸及物流樞紐，建基於其在東西貿易航線上的優越地理位置及作為通往珠江三角洲所經門戶的角色。1972年，葵涌貨櫃碼頭的一號貨櫃碼頭投入運作，1976年擴展至五號貨櫃碼頭。1997年前，六號至八號貨櫃碼頭亦相繼落成。葵涌貨櫃碼頭現有九個碼頭，每年能處理超過2,000萬個標準貨櫃箱。"
+              },
+              "image": {
+                "src": "./images/ex302a/1972_img1c.png",
+                "translationType": "scale",
+                "description": "航運樞紐",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1972_img1c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1972_img2c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1972_img3c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "transport",
+                "name": "Transport"
+              }
+            },
+            {
+              "text": {
+                "year": 1973,
+                "content": "1973年，政府展開新市鎮發展計劃，第一代新市鎮——荃灣、沙田和屯門於七十年代初動工。第二代新市鎮是大埔、粉嶺／上水及元朗，第三代則是將軍澳、天水圍和東涌。2019年，九個新市鎮的整體人口約352萬。"
+              },
+              "image": {
+                "src": "./images/ex302a/1973_img1.png",
+                "translationType": "scale",
+                "description": "發展新市鎮",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1973_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1973_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1973_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1973_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1973_img5.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  }
+                ]
+              },
+              "category": {
+                "id": "housing",
+                "name": "Land Supply/Housing"
+              }
+            },
+            {
+              "text": {
+                "year": 1976,
+                "content": "1976年頒布的《郊野公園條例》，為設立郊野公園及海岸公園委員會提供了法律根據，並規管郊野公園和特別地區的指定、管制和管理。目前《郊野公園條例》指定的郊野公園和特別地區佔地約443平方公里。《郊野公園條例》連同1995年頒布的《海岸公園條例》為保護香港郊野及海洋自然生態立下里程碑。"
+              },
+              "image": {
+                "src": "./images/ex302a/1976_img1.png",
+                "translationType": "scale",
+                "description": "保護郊野",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1976_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1976_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1976_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1976_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 1978,
+                "content": "1978年，香港第一個工業邨——大埔工業邨落成，邨內提供已經開發完備的工業用地，給予未能在多層工廠或商業大廈內運作，以及擁有新型或經改良技術的公司使用。"
+              },
+              "image": {
+                "src": "./images/ex302a/1978_img1.png",
+                "translationType": "scale",
+                "description": "香港第一座工業邨 ",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1978_img1.png",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "./images/ex302a/1978_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1978_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "economic",
+                "name": "Economic/Tourism"
+              }
+            },
+            {
+              "text": {
+                "year": 1979,
+                "content": "香港自60年代開始經濟不斷發展，城市發展的壓力也不斷增加，政府必須對香港長遠的土地用途和人口分布進行全面檢討。1965年，政府開始編制《土地利用計劃書》，全面檢討香港長遠的土地用途和人口分布。1974 年，政府因應當時的社會經濟情況和發展優先次序，大幅度修訂上述計劃書，並重新命名為《香港發展綱略》。"
+              },
+              "image": {
+                "src": "",
+                "translationType": "scale",
+                "description": "《香港發展綱略》",
+                "gallery": [
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img3a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img4a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img5a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  }
+                ]
+              },
+              "category": {
+                "id": "strategic",
+                "name": "Strategic Plan"
+              }
+            },
+            {
+              "text": {
+                "year": 1979,
+                "content": "1979年，為現時觀塘綫一部分的第一期修正早期系統通車，地下鐵路開始分階段投入服務，標誌著香港快速集體運輸系統的開始。2007年，地下鐵路公司和九廣鐵路公司合併為香港鐵路有限公司（港鐵）。"
+              },
+              "image": {
+                "src": "./images/ex302a/1979_img1b.png",
+                "translationType": "scale",
+                "description": "地下鐵路y",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1979_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img3b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img4b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "transport",
+                "name": "Transport"
+              }
+            }
+          ]
+        },
+        {
+          "year": "1980 - 1999",
+          "text1": "八十年代，負責規劃工作的工務司署和城市設計處等部門逐一改組，逐漸接近現時架構。八十年代末，包括十項工程項目的香港機場核心計劃推出，為往後數十年的機場發展奠定重要基礎。九十年代初通過「都會計劃」，以主要公路和鐵路為骨幹，重點發展七個「都會區」。1998年，赤鱲角香港國際機場投入服務。",
+          "coverinsidebar": {
+            "src": "./images/ex302a/cover.png"
+          },
+          "coverincircle": {
+            "src": "./images/ex302a/coverincircle.png"
+          },
+          "items": [
+            {
+              "text": {
+                "year": 1984,
+                "content": "1984年，政府發表《全港發展策略》，就1991至2001年土地及交通發展提供框架。發展重點從以往新市鎮轉移至到維港兩岸都會區，並以公路和鐵路構成的網絡為城市發展的骨幹。"
+              },
+              "image": {
+                "src": "./images/ex302a/1984_img1.png",
+                "translationType": "translate",
+                "description": "《全港發展策略》",
+                "reference": "Source: GRS",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1984_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1984_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1984_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1984_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "strategic",
+                "name": "Strategic Plan"
+              }
+            },
+            {
+              "text": {
+                "year": 1988,
+                "content": "1987年，政府頒布了《土地發展公司條例》，並於1988年成立土地發展公司，以審慎商業原則運作，推行市區重建計劃，並推動私人發展商以公私合營的模式參與市區重建。"
+              },
+              "image": {
+                "src": "./images/ex302a/1988_img1.png",
+                "translationType": "scale",
+                "description": "成立土地發展公司",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1988_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: URA 土地發展公司年報 1997-1998"
+                  },
+                  {
+                    "src": "./images/ex302a/1988_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1988_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1988_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: URA 土地發展公司年報 1997-1998"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "legislations",
+                "name": "Planning Authorities/Legislations"
+              }
+            },
+            {
+              "text": {
+                "year": 1989,
+                "content": "1989年，政府宣布《港口及機場發展策略》，為本港港口及機場的整體發展定下長遠的規劃大綱。相關項目包括香港機場核心計劃（又稱「玫瑰園計劃」），選址大嶼山赤鱲角興建全新的香港國際機場。"
+              },
+              "image": {
+                "src": "./images/ex302a/1989_img1.png",
+                "translationType": "scale",
+                "description": "《港口及機場發展策略》",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1989_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1989_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1989_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1989_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "transport",
+                "name": "Transport"
+              }
+            },
+            {
+              "text": {
+                "year": 1990,
+                "content": "1990年，規劃署成立，隸屬當時的規劃環境地政科。規劃署集中過往由城市規劃處、發展策略組，以及拓展署屬下的各拓展辦事處負責的規劃功能，肩負起使香港成為更美好的安居樂業地方的使命。"
+              },
+              "image": {
+                "src": "./images/ex302a/1990_img1.png",
+                "translationType": "scale",
+                "description": "規劃署成立",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1990_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "legislations",
+                "name": "Planning Authorities/Legislations"
+              }
+            },
+            {
+              "text": {
+                "year": 1991,
+                "content": "1991年，《1991年城市規劃（修訂）條例》正式生效，加強了規劃署的執行管制權力。規劃署獲授權在發展審批地區內對違例發展採取管制行動，避免新界鄉郊的環境受到進一步破壞。"
+              },
+              "image": {
+                "src": "./images/ex302a/1991_img1.png",
+                "translationType": "scale",
+                "description": "修訂《城市規劃條例》",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1991_img1.png",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "./images/ex302a/1991_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "legislations",
+                "name": "Planning Authorities/Legislations"
+              }
+            },
+            {
+              "text": {
+                "year": 1995,
+                "content": "1995年，米埔及內后海灣約1,500公頃濕地正式列為拉姆薩爾濕地。這片濕地對遷飛候鳥非常重要，是牠們從北極圈俄羅斯遷飛至澳洲期間的過冬棲息地和補給站，現時觀察到51種全球受威脅及近危品種鳥類。"
+              },
+              "image": {
+                "src": "./images/ex302a/1995_img1a.png",
+                "translationType": "scale",
+                "description": "拉姆薩爾濕地",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1995_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1995_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1995_img3a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1995_img4a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 1995,
+                "content": "1995年，政府訂立了《海岸公園條例》，目的在於保護和護理海洋環境及種類繁多的海洋動植物。1996年，政府劃定位於東部水域的海下灣海岸公園和印洲塘海岸公園。現時全港共有六個海岸公園。"
+              },
+              "image": {
+                "src": "./images/ex302a/1995_img1b.png",
+                "translationType": "scale",
+                "description": "海岸公園",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1995_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1995_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1995_img3b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1995_img4b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1995_img5b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 1997,
+                "content": "1997年通過的《保護海港條例》訂明，為了保護和保存維多利亞港，禁止於海港內進行填海工程。條例通過後，都會區內尚未開展的填海項目或被擱置，或縮減填海面積。"
+              },
+              "image": {
+                "src": "./images/ex302a/1997_img1a.png",
+                "translationType": "scale",
+                "description": "保護維多利亞港",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1997_img1a.png",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "./images/ex302a/1997_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1997_img3a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "legislations",
+                "name": "Planning Authorities/Legislations"
+              }
+            },
+            {
+              "text": {
+                "year": 1997,
+                "content": "1997年，政府展開《香港二十一世紀可持續發展研究》，制訂「可持續發展」的定義和指標，並提出建議的政府組織架構，促使政府的決策過程納入「可持續發展」的考慮因素。"
+              },
+              "image": {
+                "src": "./images/ex302a/1997_img1b.png",
+                "translationType": "scale",
+                "description": "可持續發展",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1997_img1b.png",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "./images/ex302a/1997_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1997_img3b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "strategic",
+                "name": "Strategic Plan"
+              }
+            },
+            {
+              "text": {
+                "year": 1998,
+                "content": "1998年，政府發表《全港發展策略檢討》報告，制定至2011年為止的長遠計劃。報告提出研究新界西北部、新界東北部、港島南部和南丫島的發展潛質，應付不斷增加的房屋需求。"
+              },
+              "image": {
+                "src": "./images/ex302a/1998_img1.png",
+                "translationType": "scale",
+                "description": "《全港發展策略檢討》",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1998_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1998_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1998_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img5.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "圖片參考: ISD"
+                  }
+                ]
+              },
+              "category": {
+                "id": "strategic",
+                "name": "Strategic Plan"
+              }
+            }
+          ]
+        },
+        {
+          "year": "2000 - 2019",
+          "text1": "在全球經濟新趨勢下，本港面對新挑戰。2007年政府發表《香港2030：規劃遠景與策略》，為香港未來二十年提出了新的發展框架，包括拓展新界東北等新發展區，並進一步深化粵港澳合作，加強交通配套。",
+          "coverinsidebar": {
+            "src": "./images/ex302a/cover.png"
+          },
+          "coverincircle": {
+            "src": "./images/ex302a/coverincircle.png"
+          },
+          "items": [
+            {
+              "text": {
+                "year": 2001,
+                "content": "1986年，政府制定污水排放策略和「污水收集整體計劃」。2001年，「淨化海港計劃」的第一期污水處理設施投入運作，每日處理約75%從維港兩岸產生的污水；第二期甲項目亦於2015年啟用，將餘下港島北部及西南部的污水，經由隧道輸往昂船洲污水處理廠中央處理。計劃顯著改善維港水質，保障公眾健康。"
+              },
+              "image": {
+                "src": "./images/ex302a/2001_img1a.png",
+                "translationType": "translate",
+                "description": "污水處理及排放",
+                "reference": "Source: ISD",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2001_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2001_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2001_img3a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
                   },
                   {
                     "src": "",
@@ -2137,16 +4016,316 @@
             },
             {
               "text": {
-                "year": 1872,
-                "content": "In 1869, the government granded a piece of land at Po Yan Street in Sheung Wan for the first Chinese Hospital in Hong Kong, Tung Wah Hospital. The Hospital was built in 1872 to provide free Chinese medicial services to the sick and the poor. "
+                "year": 2001,
+                "content": "2001年，市區重建局成立，取代土地發展公司，同年頒布首份《市區重建策略》。市區重建局簡化了土地徵集程序，並更有效地運用資源安置受影響的住宅租戶。"
               },
               "image": {
-                "src": "./images/ex302a/1872_img1.png",
+                "src": "./images/ex302a/2001_img1b.png",
                 "translationType": "scale",
-                "description": "The First Chinese Hospital in Hong Kong",
+                "description": "成立市區重建局",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/1872_img1.png",
+                    "src": "./images/ex302a/2001_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: Tung Wah"
+                  },
+                  {
+                    "src": "./images/ex302a/2001_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: Tung Wah"
+                  },
+                  {
+                    "src": "./images/ex302a/2001_img3b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: Tung Wah"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "authorities",
+                "name": "Planning Authorities"
+              }
+            },
+            {
+              "text": {
+                "year": 2002,
+                "content": "2002年，香港白石角科學園首三幢大樓啟用，由法定機構香港科技園公司負責運作和管理園內和其他多項設施。園內五大科技群組為生物醫藥、電子、綠色科技、資訊及通訊科技，以及物料與精密工程。"
+              },
+              "image": {
+                "src": "./images/ex302a/2002_img1a.png",
+                "translationType": "scale",
+                "description": "白石角科學園",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2002_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: archive.org(p168)"
+                  },
+                  {
+                    "src": "./images/ex302a/2002_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2002_img3a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2002_img4a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2002_img5a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  }
+                ]
+              },
+              "category": {
+                "id": "economic",
+                "name": "Economic/Tourism"
+              }
+            },
+            {
+              "text": {
+                "year": 2002,
+                "content": "2002年，數碼港項目相繼落成，旨在支持和推動香港資訊及通訊科技的發展。數碼港具備先進完善的資訊科技和電訊基建設施，集中發展的數碼科技範疇包括：金融科技、電子商貿、大數據和人工智能等。"
+              },
+              "image": {
+                "src": "./images/ex302a/2002_img1b.png",
+                "translationType": "scale",
+                "description": "數碼港",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2002_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: archive.org(p168)"
+                  },
+                  {
+                    "src": "./images/ex302a/2002_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2002_img3b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2002_img4b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "economic",
+                "name": "Economic/Tourism"
+              }
+            },
+            {
+              "text": {
+                "year": 2004,
+                "content": "是次修訂加快了制訂圖則的過程，並提高了審批規劃許可程序的透明度，讓公眾人士有更多機會參與其中。此外，亦加強執法，管制違例發展，以及提高城市規劃委員會的運作效率。"
+              },
+              "image": {
+                "src": "./images/ex302a/2004_img1a.png",
+                "translationType": "scale",
+                "description": "《2004年城市規劃（修訂）條例》",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2004_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/2004_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "legislations",
+                "name": "Planning Authorities/Legislations"
+              }
+            },
+            {
+              "text": {
+                "year": 2004,
+                "content": "2004年成立的共建維港委員會，為海濱事務委員會前身。該委員會目的為根據可持續發展的原則，就維多利亞港現有和新海旁的規劃、土地用途和發展，向政府提供意見。"
+              },
+              "image": {
+                "src": "./images/ex302a/2004_img1b.png",
+                "translationType": "scale",
+                "description": "共建維港委員會",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2004_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2004_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2004_img3b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "strategic",
+                "name": "Strategic Plan"
+              }
+            },
+            {
+              "text": {
+                "year": 2004,
+                "content": "2004年，香港首個大型地下蓄洪池完工，設於大坑東欖球場和足球場地下，容量為十萬立方米，可抵禦50年一遇的暴雨。其他防洪策略和工程包括興建雨水泵房、雨水排放隧道系統、排水繞道和雨水渠等。"
+              },
+              "image": {
+                "src": "./images/ex302a/2004_img1c.png",
+                "translationType": "scale",
+                "description": "防洪策略",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2004_img1c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2004_img2c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2004_img3c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2004_img4c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 2006,
+                "content": "2006年，昂坪360正式通車，提供來往東涌及昂坪的索道服務，全長5.7公里，是亞洲最長的雙繩索纜車系統。昂坪整個旅遊項目融合了大嶼山的宗教文化，鄰近景點包括天壇大佛、寶蓮禪寺和心經簡林。"
+              },
+              "image": {
+                "src": "./images/ex302a/2006_img1.png",
+                "translationType": "translate",
+                "description": "大嶼山昂坪",
+                "reference": "Source: ISD",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2006_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2006_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2006_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "economic",
+                "name": "Economic/Tourism"
+              }
+            },
+            {
+              "text": {
+                "year": 2007,
+                "content": "2007年，政府公布《香港2030：規劃遠景與策略》，在可持續發展的總體目標下，建議平衡保育及發展、創造地方特色、締造宜居社區、復修鄉郊地區、促進經濟發展和鞏固香港在區內的地位。"
+              },
+              "image": {
+                "src": "./images/ex302a/2007_img1a.png",
+                "translationType": "scale",
+                "description": "《香港2030：規劃遠景與策略》",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2007_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: Tung Wah"
+                  },
+                  {
+                    "src": "./images/ex302a/2007_img2a.png",
                     "description": "（這是假字）當年主建築物的外觀。",
                     "reference": "Source: Tung Wah"
                   },
@@ -2164,48 +4343,43 @@
                     "src": "",
                     "description": "",
                     "reference": ""
-                  },
-                  {
-                    "src": "",
-                    "description": "",
-                    "reference": ""
                   }
                 ]
               },
               "category": {
-                "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "id": "strategic",
+                "name": "Strategic Plan"
               }
             },
             {
               "text": {
-                "year": 1890,
-                "content": "In 1890, the Hongkong Electric Company Limited built the first power plant in Hong Kong on the hillside near Wing Fung Street in Wan Chai, which provided electricity for street lamps from Central to Bonham Strand East. In 1919, the North Point Power Station was opened, and the Wan Chai Power Plant became a reserve station until it was closed down and demolished in 1922."
+                "year": 2007,
+                "content": "2007年，政府為在發展和保育文物兩者之間取得平衡，推出了「活化歷史建築伙伴計劃」，讓非牟利機構申請活化政府歷史建築。計劃目的為保存歷史建築，並以創新的方法予以善用。"
               },
               "image": {
-                "src": "./images/ex302a/1890_img1.png",
+                "src": "./images/ex302a/2007_img1b.png",
                 "translationType": "scale",
-                "description": "Electricity Supply",
+                "description": "「活化歷史建築伙伴計劃」",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/1890_img1.png",
+                    "src": "./images/ex302a/2007_img1b.png",
                     "description": "（這是假字）當年主建築物的外觀。",
                     "reference": "Source: archive.org(p168)"
                   },
                   {
-                    "src": "./images/ex302a/1890_img2.png",
+                    "src": "./images/ex302a/2007_img2b.png",
                     "description": "（這是假字）當年主建築物的外觀。",
                     "reference": "Source: ISD"
                   },
                   {
-                    "src": "./images/ex302a/1890_img3.png",
+                    "src": "./images/ex302a/2007_img3b.png",
                     "description": "（這是假字）當年主建築物的外觀。",
                     "reference": "Source: ISD"
                   },
                   {
-                    "src": "",
-                    "description": "",
-                    "reference": ""
+                    "src": "./images/ex302a/2007_img4b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
                   },
                   {
                     "src": "",
@@ -2221,70 +4395,65 @@
             },
             {
               "text": {
-                "year": 1910,
-                "content": "In 1906, the Kowloon-Canton Railway (British Section) project started and opened in 1910. This was the first railway connecting Hong Kong and Mainland China. It was 35 kilometers long with 5 tunnels and 48 bridges. In 1911, the Canton-Kowloon Railway (China Section) was opened, and the through train service from Kowloon to Guangzhou commenced."
+                "year": 2009,
+                "content": "2009年，香港地質公園成為中國國家地質公園，2011年加入世界地質公園網絡，並於2015年更名為「香港聯合國教科文組織世界地質公園」。位於香港東部的地質公園包含西貢火山岩及新界東北沉積岩兩個園區。"
               },
               "image": {
-                "src": "./images/ex302a/1910_img1.png",
+                "src": "./images/ex302a/2009_img1.png",
                 "translationType": "scale",
-                "description": "The Kowloon–Canton Railway British Section Opened",
+                "description": "地質公園",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/1910_img1.png",
+                    "src": "./images/ex302a/2009_img1.png",
                     "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: archive.org(p168)"
                   },
                   {
-                    "src": "./images/ex302a/1910_img2.png",
+                    "src": "./images/ex302a/2009_img2.png",
                     "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: ISD"
                   },
                   {
-                    "src": "./images/ex302a/1910_img3.png",
+                    "src": "./images/ex302a/2009_img3.png",
                     "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: KCRC"
+                    "reference": "Source: ISD"
                   },
                   {
-                    "src": "./images/ex302a/1910_img4.png",
+                    "src": "./images/ex302a/2009_img4.png",
                     "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: KCRC"
+                    "reference": "Source: ISD"
                   },
                   {
-                    "src": "./images/ex302a/1910_img5.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: KCRC"
+                    "src": "",
+                    "description": "",
+                    "reference": ""
                   }
                 ]
               },
               "category": {
-                "id": "transport",
-                "name": "Transport"
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
               }
             },
             {
               "text": {
-                "year": 1930,
-                "content": "In 1912, Chinese businessmen Mr. Ho Kai and Mr. Au Tak formed a company to reclaim land in Kowloon Bay for a residential housing scheme. The reclaimed land was named after the company as \"Kai Tak\". Later, the company closed down due to the economic recession, leaving the land unused. The government hence bought back the land to build the airport. In 1930, Kai Tak Airport opened."
+                "year": 2010,
+                "content": "2010年，政府成立海濱事務委員會，就海濱的規劃、城市設計、管理及營運海濱用地、海港範圍內鄰近水域及相關設施等方面，擔當倡導、監察及積極的諮詢角色，目標是促進及推動維港兩岸海濱的發展。"
               },
               "image": {
-                "src": "./images/ex302a/1910_img1.png",
+                "src": "./images/ex302a/2010_img1.png",
                 "translationType": "scale",
-                "description": "Kai Tak Airport",
+                "description": "海濱事務委員會",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/1930_img1.png",
+                    "src": "./images/ex302a/2010_img1.png",
                     "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: GRS"
+                    "reference": "Source: GRS"
                   },
                   {
-                    "src": "./images/ex302a/1930_img2.png",
+                    "src": "./images/ex302a/2010_img2.png",
                     "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: GRS"
-                  },
-                  {
-                    "src": "./images/ex302a/1930_img3.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: GRS"
+                    "reference": "Source: GRS"
                   },
                   {
                     "src": "",
@@ -2295,43 +4464,6 @@
                     "src": "",
                     "description": "",
                     "reference": ""
-                  }
-                ]
-              },
-              "category": {
-                "id": "transport",
-                "name": "Transport"
-              }
-            },
-            {
-              "text": {
-                "year": 1939,
-                "content": "In 1939, the government promulgated the \"Town Planning Ordinance\", authorizing the Town Planning Board to formulate the City’s development blueprints for systematic designation of land use layouts as well as building plans for developed districts and new-development areas."
-              },
-              "image": {
-                "src": "./images/ex302a/1910_img1.png",
-                "translationType": "scale",
-                "description": "Promulgation of the Town Planning Ordinance",
-                "gallery": [
-                  {
-                    "src": "./images/ex302a/1939_img1.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: PlanD"
-                  },
-                  {
-                    "src": "./images/ex302a/1939_img2.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1939_img3.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1939_img4.png",
-                    "description": "（這是假字）當年主建築物的外觀。",
-                    "reference": "圖片參考: ISD"
                   },
                   {
                     "src": "",
@@ -2344,80 +4476,720 @@
                 "id": "legislations",
                 "name": "Planning Authorities/Legislations"
               }
-            }
-          ]
-        },
-        {
-          "year": "2000 - 2019",
-          "text1": "政府推出「十年建屋計劃」， 大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡，1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
-          "coverinsidebar": {
-            "src": "./images/ex302a/cover.png"
-          },
-          "coverincircle": {
-            "src": "./images/ex302a/coverincircle.png"
-          },
-          "items": [
+            },
             {
               "text": {
-                "year": 1940,
-                "content": "60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
+                "year": 2011,
+                "content": "2011年，香港機場管理局發表《香港國際機場2030規劃大綱》，建議填海650公頃，發展機場三跑道系統。工程於2016年展開，預計需時八年完成。建成後，預計機場每年實際最高跑道容量約為62萬架次。"
               },
               "image": {
-                "src": "./images/ex302a/img.png",
+                "src": "./images/ex302a/2011_img1a.png",
+                "translationType": "scale",
+                "description": "機場三跑道系統",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2011_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2011_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "transport",
+                "name": "Transport"
+              }
+            },
+            {
+              "text": {
+                "year": 2011,
+                "content": "2011年，政府公布經修訂的《市區重建策略》，提出採用「以人為先，地區為本，與民共議」的方針進行市區更新工程，務求在重建過程中平衡各方的利益和需要。"
+              },
+              "image": {
+                "src": "./images/ex302a/2011_img1b.png",
+                "translationType": "scale",
+                "description": "修訂《市區重建策略》",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2011_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2011_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "strategic",
+                "name": "Strategic Plan"
+              }
+            },
+            {
+              "text": {
+                "year": 2011,
+                "content": "2011年，政府完成了中環新海濱城市設計研究，提出了改善中環碼頭至香港會議展覽中心新翼一帶的城市設計大綱，目標是締造一個朝氣蓬勃、綠化和暢達的中環新海濱。"
+              },
+              "image": {
+                "src": "./images/ex302a/2011_img1c.png",
                 "translationType": "translate",
-                "description": "九廣鐵路(英段)<br/>通車",
-                "gallery": null
+                "description": "中環新海濱城市設計",
+                "reference": "Source: ISD",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2011_img1c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2011_img2c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2011_img3c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2011_img4c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
               },
               "category": {
-                "id": "planning",
-                "name": "規劃"
+                "id": "strategic",
+                "name": "Strategic Plan"
               }
             },
             {
               "text": {
-                "year": 1940
+                "year": 2012,
+                "content": "2012年，起動九龍東辦事處正式成立，由多個不同界別專業人士組成，負責引領、督導、監督和監察九龍東的發展，將之轉型為另一個核心商業區，以支持香港的經濟增長和加強香港在全球的競爭力。"
               },
               "image": {
-                "src": "./images/ex302a/img.png",
+                "src": "./images/ex302a/2012_img1.png",
                 "translationType": "scale",
-                "description": "九廣鐵路(英段)<br/>通車",
-                "gallery": null
+                "description": "推動發展第二個核心商業區",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2012_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: Tung Wah"
+                  },
+                  {
+                    "src": "./images/ex302a/2012_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: Tung Wah"
+                  },
+                  {
+                    "src": "./images/ex302a/2012_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: Tung Wah"
+                  },
+                  {
+                    "src": "./images/ex302a/2012_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: Tung Wah"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
               },
               "category": {
-                "id": "house",
-                "name": "房屋"
+                "id": "strategic",
+                "name": "Strategic Plan"
               }
             },
             {
               "text": {
-                "year": 1940,
-                "content": "60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
+                "year": 2013,
+                "content": "2013年，啟德郵輪碼頭啟用，以充分利用全球及區內郵輪業迅速增長的趨勢和機遇，並鞏固香港作為區內首要郵輪中心的地位。碼頭全長約850米，可以供排水量達11萬噸、總噸位達22萬噸的世界級郵輪停泊。"
               },
               "image": {
-                "src": "./images/ex302a/cover_1930.png",
+                "src": "./images/ex302a/2013_img1.png",
                 "translationType": "scale",
-                "description": "九廣鐵路(英段)<br/>通車",
-                "gallery": null
+                "description": "郵輪碼頭",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2013_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: archive.org(p168)"
+                  },
+                  {
+                    "src": "./images/ex302a/2013_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2013_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2013_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
               },
               "category": {
-                "id": "traffic",
-                "name": "交通"
+                "id": "economic",
+                "name": "Economic/Tourism"
               }
             },
             {
               "text": {
-                "year": 1940,
-                "content": "60年代經濟轉型，社會急速發展，政府必須對香港日後的土地用途和人口分布進行全面檢討。因此，政府在1965年開始編制《土地利用計劃書》，並於1971年完成。"
+                "year": 2014,
+                "content": "政府公布《鐵路發展策略2014》，初步建議於2018至2026年期間推展七個新鐵路方案，包括北環線及古洞站、洪水橋站、東涌西延線、東九龍線、南港島線（西段）、北港島線和屯門南延線項目。"
               },
               "image": {
-                "src": "./images/ex302a/cover_1930.png",
+                "src": "./images/ex302a/2014_img1a.png",
                 "translationType": "scale",
-                "description": "九廣鐵路(英段)<br/>通車",
-                "gallery": null
+                "description": "擴展鐵路網絡",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2014_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: archive.org(p168)"
+                  },
+                  {
+                    "src": "./images/ex302a/2014_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2014_img3a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
               },
               "category": {
-                "id": "house",
-                "name": "房屋"
+                "id": "transport",
+                "name": "Transport"
+              }
+            },
+            {
+              "text": {
+                "year": 2014,
+                "content": "政府先後於1987年、1998年及2014年公布長遠房屋策略。2014年公布的《長遠房屋策略》，就加建公共租住房屋和資助出售單位，以及穩定私人住宅物業價格，提出了三大策略性方向。"
+              },
+              "image": {
+                "src": "./images/ex302a/2014_img1b.png",
+                "translationType": "scale",
+                "description": "長遠房屋策略",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2014_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/2014_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/2014_img3b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/2014_img4b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "housing",
+                "name": "Land Supply/Housing"
+              }
+            },
+            {
+              "text": {
+                "year": 2014,
+                "content": "2014年，政府陸續規劃新發展區和擴展原有新市鎮，包括於2017年和2019年開始東涌新市鎮擴展計劃的填海工程。古洞北及粉嶺北新發展區的土地平整工程和洪水橋／廈村的土地平整工程亦相繼動工。"
+              },
+              "image": {
+                "src": "./images/ex302a/2014_img1c.png",
+                "translationType": "scale",
+                "description": "新發展區和擴展新市鎮",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2014_img1c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/2014_img2c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/2014_img3c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "./images/ex302a/2014_img4c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "housing",
+                "name": "Land Supply/Housing"
+              }
+            },
+            {
+              "text": {
+                "year": 2016,
+                "content": "2016年，香港海運港口局正式成立，為港口及海運服務業訂定長遠發展方向、推動業界人力資源發展，及制定推廣策略和措施，以提升香港的國際海運中心地位。"
+              },
+              "image": {
+                "src": "./images/ex302a/2016_img1.png",
+                "translationType": "scale",
+                "description": "香港海運港口局",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2016_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2016_img2.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2016_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "economic",
+                "name": "Economic/Tourism"
+              }
+            },
+            {
+              "text": {
+                "year": 2017,
+                "content": "2017年，政府公布了《香港氣候行動藍圖2030＋》，訂立新的碳強度目標——以2005年為基準，於2030年把碳強度降低65%至70%。藍圖提出了一系列行動計劃，包括更廣泛和具規模地採用可再生能源等措施。"
+              },
+              "image": {
+                "src": "./images/ex302a/2017_img1a.png",
+                "translationType": "scale",
+                "description": "《香港氣候行動藍圖2030＋》",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2017_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2017_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2017_img3a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 2017,
+                "content": "2017年，香港特區政府和深圳市人民政府簽署了《關於港深推進落馬洲河套地區共同發展的合作備忘錄》，為支持香港的創科業，雙方將合作發展河套地區為「港深創新及科技園」。"
+              },
+              "image": {
+                "src": "./images/ex302a/2017_img1b.png",
+                "translationType": "scale",
+                "description": "河套地區創新及科技園發展",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2017_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "economic",
+                "name": "Economic/Tourism"
+              }
+            },
+            {
+              "text": {
+                "year": 2017,
+                "content": "2017年，政府公布了《香港智慧城市藍圖》，就「智慧出行」、「智慧生活」、「智慧環境」、「智慧市民」、「智慧政府」和「智慧經濟」六個範疇，提出未來五年的措施，推動香港發展為智慧城市。"
+              },
+              "image": {
+                "src": "./images/ex302a/2017_img1c.png",
+                "translationType": "scale",
+                "description": "智慧城市",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2017_img1c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2017_img2c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2017_img3c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/2017_img4c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "economic",
+                "name": "Economic/Tourism"
+              }
+            },
+            {
+              "text": {
+                "year": 2018,
+                "content": "2018年，位於北大嶼山小蠔灣的O · PARK1正式投入運作。這是香港第一所有機資源回收中心，採用了厭氧分解技術將廚餘轉化為生物氣以作發電，每天可處理200公噸廚餘，減少佔用寶貴的堆填區空間。"
+              },
+              "image": {
+                "src": "./images/ex302a/2018_img1a.png",
+                "translationType": "scale",
+                "description": "第一所有機資源回收中心",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2018_img1a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2018_img2a.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "infrastructure",
+                "name": "Infrastructure/Environment"
+              }
+            },
+            {
+              "text": {
+                "year": 2018,
+                "content": "2018年，廣深港高速鐵路香港段通車，全長約26公里，由香港西九龍站開始，經過專用隧道至深圳福田站及廣州南站，並連接國家整個高鐵網絡。"
+              },
+              "image": {
+                "src": "./images/ex302a/2018_img1b.png",
+                "translationType": "scale",
+                "description": "廣深港高速鐵路",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2018_img1b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2018_img2b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2018_img3b.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "transport",
+                "name": "Transport"
+              }
+            },
+            {
+              "text": {
+                "year": 2018,
+                "content": "2018年，港珠澳大橋落成並啟用，以配合香港特區和內地日趨緊密的經濟合作，而蓮塘／香園圍口岸亦於2020年開通，為香港與深圳東、惠州和粵東之間提供更有效率的跨境通道。"
+              },
+              "image": {
+                "src": "./images/ex302a/2018_img1c.png",
+                "translationType": "scale",
+                "description": "新跨境陸路通道",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2018_img1c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2018_img2c.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "transport",
+                "name": "Transport"
+              }
+            },
+            {
+              "text": {
+                "year": 2018,
+                "content": "2020年公布的《香港2030＋：跨越2030年的規劃遠景與策略》就著未來的新挑戰，提出三大發展策略：規劃宜居的高密度城市、迎接新的經濟挑戰與機遇和創造容量以達致可持續發展。"
+              },
+              "image": {
+                "src": "./images/ex302a/2018_img1d.png",
+                "translationType": "scale",
+                "description": "跨越2030年的規劃遠景與策略",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2018_img1d.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "./images/ex302a/2018_img2d.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: ISD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "strategic",
+                "name": "Strategic plan"
+              }
+            },
+            {
+              "text": {
+                "year": 2019,
+                "content": "2019年，國家正式公布了《粵港澳大灣區發展規劃綱要》，目標是進一步深化粵港澳合作，充分發揮三地綜合優勢，促成區內的深度融合，推動區域經濟協同發展，建設宜居、宜業、宜遊的國際一流灣區。"
+              },
+              "image": {
+                "src": "./images/ex302a/2019_img1.png",
+                "translationType": "scale",
+                "description": "粵港澳區域合作",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2019_img1.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: PlanD"
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  },
+                  {
+                    "src": "",
+                    "description": "",
+                    "reference": ""
+                  }
+                ]
+              },
+              "category": {
+                "id": "economic",
+                "name": "Economic/Tourism"
               }
             }
           ]
