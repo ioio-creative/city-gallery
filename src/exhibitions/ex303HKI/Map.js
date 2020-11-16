@@ -448,25 +448,37 @@ const Map = props => {
     const showCoastline = idx => {
       for (let i = 0; i < years.length; i++) {
         const v = { p: options.year[`y${years[i]}`] };
-        if (i <= idx) {
-          gsap.to(v, 4, {
-            p: 1,
-            delay: !hasShownCoastline ? 0 : 0.8,
-            ease: 'power2.out',
+        if (hasShownCoastline) {
+          gsap.to(v, 2, {
+            p: 0,
+            ease: 'power4.out',
             onUpdate: function () {
               options.year[`y${years[i]}`] = this._targets[0].p;
+            },
+            onComplete: () => {
+              if (i <= idx) {
+                gsap.to(v, 4, {
+                  p: 1,
+                  ease: 'power2.out',
+                  onUpdate: function () {
+                    options.year[`y${years[i]}`] = this._targets[0].p;
+                  }
+                });
+              }
             }
           });
-
-          if (!hasShownCoastline) hasShownCoastline = true;
+        } else {
+          if (i <= idx) {
+            gsap.to(v, 4, {
+              p: 1,
+              ease: 'power2.out',
+              onUpdate: function () {
+                options.year[`y${years[i]}`] = this._targets[0].p;
+              }
+            });
+            hasShownCoastline = true;
+          }
         }
-        // else{
-        //     gsap.to(v, 2, {p:0, ease:'power4.out',
-        //         onUpdate:function(){
-        //             options.year[`y${years[i]}`] = this._targets[0].p
-        //         }
-        //     });
-        // }
       }
     };
     props.handleShowCoastline.current = { showCoastline };

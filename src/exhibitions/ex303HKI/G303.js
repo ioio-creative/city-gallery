@@ -32,7 +32,7 @@ const G303 = props => {
 
   const onClickStart = () => {
     if (yearIdx !== null) {
-      setStarted(true);
+      // setStarted(true);
       handleStart.current.start();
       handleShowCoastline.current.showCoastline(yearIdx);
     }
@@ -68,15 +68,13 @@ const G303 = props => {
       </div>
       <div id='streetInfo'>
         {streetData && <h1>{streetData.name}</h1>}
-        {/* <div id="markerOuterWrap">
-                    <div id="markerWrap">
-                        {
-                            props.appData.streets[mapIndicatorIdx].map((v,i)=>{
-                                return <span key={i} style={{transform:`translate3d(${v.marker.x}px, ${v.marker.y}px, 0`}}></span>
-                            })
-                        }
-                    </div>
-                </div> */}
+        {/* <div id='markerOuterWrap'>
+          <div id='markerWrap'>
+            {props.appData.streets[mapIndicatorIdx].map((v, i) => {
+              return <span key={i} style={{ transform: `translate3d(${v.marker.x}px, ${v.marker.y}px, 0` }}></span>;
+            })}
+          </div>
+        </div> */}
       </div>
       <Map
         appData={props.appData}
