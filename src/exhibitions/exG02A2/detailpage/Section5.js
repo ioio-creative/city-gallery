@@ -117,14 +117,14 @@ const Section5 = (props) => {
             }
         }
 
-        CoinAnim.prototype.start = function(numOfCoins){
-            this.numOfCoins = numOfCoins;
-            this.update();
-        }
-        CoinAnim.prototype.stop = function(){
-            if(this.player)
-                cancelAnimationFrame(this.player);
-        }
+        // CoinAnim.prototype.start = function(numOfCoins){
+        //     this.numOfCoins = numOfCoins;
+        //     this.update();
+        // }
+        // CoinAnim.prototype.stop = function(){  
+        //     if(this.player)
+        //         cancelAnimationFrame(this.player);
+        // }
 
         // const createCoins = (elems) => {
         //     const pos = [];
