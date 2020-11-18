@@ -131,52 +131,52 @@
   "hh": {
     "mapAssets": [
       {
-        "name": "hkIsland_diffuse",
-        "src": "./images/ex303/hkIsland_diffuse.svg"
+        "name": "hh_diffuse",
+        "src": "./images/ex303/hh_diffuse.svg"
       },
       {
-        "name": "hkIsland_start_diffuse",
-        "src": "./images/ex303/hkIsland_start_diffuse.svg"
+        "name": "hh_start_diffuse",
+        "src": "./images/ex303/hh_start_diffuse.svg"
       },
       {
-        "name": "hkIsland_old_diffuse",
-        "src": "./images/ex303/hkIsland_old_diffuse.svg"
+        "name": "hh_old_diffuse",
+        "src": "./images/ex303/hh_old_diffuse.svg"
       },
       {
-        "name": "hkIsland_mask",
-        "src": "./images/ex303/hkIsland_mask.svg"
+        "name": "hh_mask",
+        "src": "./images/ex303/hh_mask.svg"
       },
       {
-        "name": "hkIsland_coastline1900_mask",
-        "src": "./images/ex303/hkIsland_coastline1900_mask.svg"
+        "name": "hh_coastline1900_mask",
+        "src": "./images/ex303/hh_coastline1900_mask.svg"
       },
       {
-        "name": "hkIsland_coastline1945_mask",
-        "src": "./images/ex303/hkIsland_coastline1945_mask.svg"
+        "name": "hh_coastline1945_mask",
+        "src": "./images/ex303/hh_coastline1945_mask.svg"
       },
       {
-        "name": "hkIsland_coastline1985_mask",
-        "src": "./images/ex303/hkIsland_coastline1985_mask.svg"
+        "name": "hh_coastline1985_mask",
+        "src": "./images/ex303/hh_coastline1985_mask.svg"
       },
       {
-        "name": "hkIsland_coastline2019_mask",
-        "src": "./images/ex303/hkIsland_coastline2019_mask.svg"
+        "name": "hh_coastline2019_mask",
+        "src": "./images/ex303/hh_coastline2019_mask.svg"
       },
       {
-        "name": "hkIsland_coastline1900_highlight",
-        "src": "./images/ex303/hkIsland_coastline1900_highlight.svg"
+        "name": "hh_coastline1900_highlight",
+        "src": "./images/ex303/hh_coastline1900_highlight.svg"
       },
       {
-        "name": "hkIsland_coastline1945_highlight",
-        "src": "./images/ex303/hkIsland_coastline1945_highlight.svg"
+        "name": "hh_coastline1945_highlight",
+        "src": "./images/ex303/hh_coastline1945_highlight.svg"
       },
       {
-        "name": "hkIsland_coastline1985_highlight",
-        "src": "./images/ex303/hkIsland_coastline1985_highlight.svg"
+        "name": "hh_coastline1985_highlight",
+        "src": "./images/ex303/hh_coastline1985_highlight.svg"
       },
       {
-        "name": "hkIsland_coastline2019_highlight",
-        "src": "./images/ex303/hkIsland_coastline2019_highlight.svg"
+        "name": "hh_coastline2019_highlight",
+        "src": "./images/ex303/hh_coastline2019_highlight.svg"
       },
       {
         "name": "sand",
@@ -260,52 +260,52 @@
   "kc": {
     "mapAssets": [
       {
-        "name": "hkIsland_diffuse",
-        "src": "./images/ex303/hkIsland_diffuse.svg"
+        "name": "kc_diffuse",
+        "src": "./images/ex303/kc_diffuse.svg"
       },
       {
-        "name": "hkIsland_start_diffuse",
-        "src": "./images/ex303/hkIsland_start_diffuse.svg"
+        "name": "kc_start_diffuse",
+        "src": "./images/ex303/kc_start_diffuse.svg"
       },
       {
-        "name": "hkIsland_old_diffuse",
-        "src": "./images/ex303/hkIsland_old_diffuse.svg"
+        "name": "kc_old_diffuse",
+        "src": "./images/ex303/kc_old_diffuse.svg"
       },
       {
-        "name": "hkIsland_mask",
-        "src": "./images/ex303/hkIsland_mask.svg"
+        "name": "kc_mask",
+        "src": "./images/ex303/kc_mask.svg"
       },
       {
-        "name": "hkIsland_coastline1900_mask",
-        "src": "./images/ex303/hkIsland_coastline1900_mask.svg"
+        "name": "kc_coastline1900_mask",
+        "src": "./images/ex303/kc_coastline1900_mask.svg"
       },
       {
-        "name": "hkIsland_coastline1945_mask",
-        "src": "./images/ex303/hkIsland_coastline1945_mask.svg"
+        "name": "kc_coastline1945_mask",
+        "src": "./images/ex303/kc_coastline1945_mask.svg"
       },
       {
-        "name": "hkIsland_coastline1985_mask",
-        "src": "./images/ex303/hkIsland_coastline1985_mask.svg"
+        "name": "kc_coastline1985_mask",
+        "src": "./images/ex303/kc_coastline1985_mask.svg"
       },
       {
-        "name": "hkIsland_coastline2019_mask",
-        "src": "./images/ex303/hkIsland_coastline2019_mask.svg"
+        "name": "kc_coastline2019_mask",
+        "src": "./images/ex303/kc_coastline2019_mask.svg"
       },
       {
-        "name": "hkIsland_coastline1900_highlight",
-        "src": "./images/ex303/hkIsland_coastline1900_highlight.svg"
+        "name": "kc_coastline1900_highlight",
+        "src": "./images/ex303/kc_coastline1900_highlight.svg"
       },
       {
-        "name": "hkIsland_coastline1945_highlight",
-        "src": "./images/ex303/hkIsland_coastline1945_highlight.svg"
+        "name": "kc_coastline1945_highlight",
+        "src": "./images/ex303/kc_coastline1945_highlight.svg"
       },
       {
-        "name": "hkIsland_coastline1985_highlight",
-        "src": "./images/ex303/hkIsland_coastline1985_highlight.svg"
+        "name": "kc_coastline1985_highlight",
+        "src": "./images/ex303/kc_coastline1985_highlight.svg"
       },
       {
-        "name": "hkIsland_coastline2019_highlight",
-        "src": "./images/ex303/hkIsland_coastline2019_highlight.svg"
+        "name": "kc_coastline2019_highlight",
+        "src": "./images/ex303/kc_coastline2019_highlight.svg"
       },
       {
         "name": "sand",
@@ -389,52 +389,52 @@
   "yt": {
     "mapAssets": [
       {
-        "name": "hkIsland_diffuse",
-        "src": "./images/ex303/hkIsland_diffuse.svg"
+        "name": "yt_diffuse",
+        "src": "./images/ex303/yt_diffuse.svg"
       },
       {
-        "name": "hkIsland_start_diffuse",
-        "src": "./images/ex303/hkIsland_start_diffuse.svg"
+        "name": "yt_start_diffuse",
+        "src": "./images/ex303/yt_start_diffuse.svg"
       },
       {
-        "name": "hkIsland_old_diffuse",
-        "src": "./images/ex303/hkIsland_old_diffuse.svg"
+        "name": "yt_old_diffuse",
+        "src": "./images/ex303/yt_old_diffuse.svg"
       },
       {
-        "name": "hkIsland_mask",
-        "src": "./images/ex303/hkIsland_mask.svg"
+        "name": "yt_mask",
+        "src": "./images/ex303/yt_mask.svg"
       },
       {
-        "name": "hkIsland_coastline1900_mask",
-        "src": "./images/ex303/hkIsland_coastline1900_mask.svg"
+        "name": "yt_coastline1900_mask",
+        "src": "./images/ex303/yt_coastline1900_mask.svg"
       },
       {
-        "name": "hkIsland_coastline1945_mask",
-        "src": "./images/ex303/hkIsland_coastline1945_mask.svg"
+        "name": "yt_coastline1945_mask",
+        "src": "./images/ex303/yt_coastline1945_mask.svg"
       },
       {
-        "name": "hkIsland_coastline1985_mask",
-        "src": "./images/ex303/hkIsland_coastline1985_mask.svg"
+        "name": "yt_coastline1985_mask",
+        "src": "./images/ex303/yt_coastline1985_mask.svg"
       },
       {
-        "name": "hkIsland_coastline2019_mask",
-        "src": "./images/ex303/hkIsland_coastline2019_mask.svg"
+        "name": "yt_coastline2019_mask",
+        "src": "./images/ex303/yt_coastline2019_mask.svg"
       },
       {
-        "name": "hkIsland_coastline1900_highlight",
-        "src": "./images/ex303/hkIsland_coastline1900_highlight.svg"
+        "name": "yt_coastline1900_highlight",
+        "src": "./images/ex303/yt_coastline1900_highlight.svg"
       },
       {
-        "name": "hkIsland_coastline1945_highlight",
-        "src": "./images/ex303/hkIsland_coastline1945_highlight.svg"
+        "name": "yt_coastline1945_highlight",
+        "src": "./images/ex303/yt_coastline1945_highlight.svg"
       },
       {
-        "name": "hkIsland_coastline1985_highlight",
-        "src": "./images/ex303/hkIsland_coastline1985_highlight.svg"
+        "name": "yt_coastline1985_highlight",
+        "src": "./images/ex303/yt_coastline1985_highlight.svg"
       },
       {
-        "name": "hkIsland_coastline2019_highlight",
-        "src": "./images/ex303/hkIsland_coastline2019_highlight.svg"
+        "name": "yt_coastline2019_highlight",
+        "src": "./images/ex303/yt_coastline2019_highlight.svg"
       },
       {
         "name": "sand",

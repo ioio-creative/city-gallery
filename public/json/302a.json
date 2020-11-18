@@ -1460,8 +1460,8 @@
                 ]
               },
               "category": {
-                "id": "authorities",
-                "name": "Planning Authorities"
+                "id": "legislations",
+                "name": "Planning Authorities/Legislations"
               }
             },
             {
@@ -4052,8 +4052,8 @@
                 ]
               },
               "category": {
-                "id": "authorities",
-                "name": "Planning Authorities"
+                "id": "legislations",
+                "name": "Planning Authorities/Legislations"
               }
             },
             {
