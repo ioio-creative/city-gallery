@@ -454,6 +454,25 @@ const Map = props => {
     const showCoastline = idx => {
       for (let i = 0; i < years.length; i++) {
         const v = { p: options.year[`y${years[i]}`] };
+        // if (hasShownCoastline && i > idx) {
+        //   gsap.to(v, 2, {
+        //     p: 0,
+        //     ease: 'power4.out',
+        //     onUpdate: function () {
+        //       options.year[`y${years[i]}`] = this._targets[0].p;
+        //     },
+        //     onComplete: () => {
+        //       if (i <= idx) {
+        //         gsap.to(v, 4, {
+        //           p: 1,
+        //           ease: 'power2.out',
+        //           onUpdate: function () {
+        //             options.year[`y${years[i]}`] = this._targets[0].p;
+        //           }
+        //         });
+        //       }
+        //     }
+        //   });
         if (hasShownCoastline) {
           gsap.to(v, 2, {
             p: 0,
