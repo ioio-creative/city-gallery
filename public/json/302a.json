@@ -19,10 +19,10 @@
           "year": "1841 - 1939",
           "text1": "From the opening of the port in 1841, till the outbreak of the Second World War, development of Hong Kong mainly focused on the \"Victoria City\" on Hong Kong Island. Kowloon was later gradually developed, and the Town Planning Ordinance was promulgated in 1939 to establish a holistic town planning mechanism.",
           "coverinsidebar": {
-            "src": "./images/ex302a/cover.png"
+            "src": "./images/ex302a/1841_cover.png"
           },
           "coverincircle": {
-            "src": "./images/ex302a/coverincircle1.png"
+            "src": "./images/ex302a/1841_coverincircle.png"
           },
           "items": [
             {
@@ -284,10 +284,10 @@
           "year": "1940 - 1959",
           "text1": "Faced so many problems needed to be solved after the war, Sir Abercrombie, the Government consultant, prepared the first long-term planning strategy for Hong Kong. In the early 1950s, a huge number of new immigrants moved into Hong Kong, causing a serious shortage of housing units. After the Shek Kip Mei fire, the Government decided to build the first batch of public housing estates for the general public.",
           "coverinsidebar": {
-            "src": "./images/ex302a/cover_1930.png"
+            "src": "./images/ex302a/1940_cover.png"
           },
           "coverincircle": {
-            "src": "./images/ex302a/coverincircle.png"
+            "src": "./images/ex302a/1940_coverincircle.png"
           },
           "items": [
             {
@@ -371,7 +371,7 @@
                 ]
               },
               "category": {
-                "id": "planning",
+                "id": "legislations",
                 "name": "Planning Authorities/Legislations"
               }
             },
@@ -507,10 +507,10 @@
           "year": "1960 - 1979",
           "text1": "In the 1950s and 1960s, the manufacturing industry flourished. The government further developed infrastructure, such as the Lion Rock Tunnel and Dongjiang-Shenzhen Water Supply Scheme. In the 1970s, the government launched the “Ten-year Housing Programme” to build a large number of public housing and develop new towns, and continued to expand the transportation network. The opening of the Mass Transit Railway in 1979 marked the beginning of the mass transportation system.",
           "coverinsidebar": {
-            "src": "./images/ex302a/cover.png"
+            "src": "./images/ex302a/1960_cover.png"
           },
           "coverincircle": {
-            "src": "./images/ex302a/coverincircle.png"
+            "src": "./images/ex302a/1960_coverincircle.png"
           },
           "items": [
             {
@@ -940,10 +940,10 @@
           "year": "1980 - 1999",
           "text1": "In the 1980s, the departments in charge of town planning related affairs, including the Public Works Department and Town Planning Office, were reorganized into the present institutional framework gradually. In the late 1980s, the 10-project Hong Kong Airport Core Programme was announced, providing a far-reaching foundation for infrastructure development in and beyond the 1990s. In the early 1990s, the Metroplan was passed to propose the initiatives of “road and railways as backbone” and identify the seven strategic development districts below sub-regions. In 1998, the new Hong Kong International Airport at Chek Lap Kok was opened.",
           "coverinsidebar": {
-            "src": "./images/ex302a/cover.png"
+            "src": "./images/ex302a/1980_cover.png"
           },
           "coverincircle": {
-            "src": "./images/ex302a/coverincircle.png"
+            "src": "./images/ex302a/1980_coverincircle.png"
           },
           "items": [
             {
@@ -1373,10 +1373,10 @@
           "year": "2000 - 2019",
           "text1": "With the new global economic trends, Hong Kong is embracing new challenges. In 2007, the government published \"Hong Kong 2030: Planning Vision and Strategy\", a new development framework for the next two decades. It proposed New Development Areas in the northeastern New Territories, and closer cooperation between Guangdong, Hong Kong and Macao, as well as further development of transportation networks.",
           "coverinsidebar": {
-            "src": "./images/ex302a/cover.png"
+            "src": "./images/ex302a/2000_cover.png"
           },
           "coverincircle": {
-            "src": "./images/ex302a/coverincircle.png"
+            "src": "./images/ex302a/2000_coverincircle.png"
           },
           "items": [
             {
@@ -2611,10 +2611,10 @@
           "year": "1841 - 1939",
           "text1": "1841年開埠至第二次世界大戰爆發前，香港主要發展區集中在港島的「維多利亞城」，其後逐漸拓展九龍，並於1939年實施城市規劃條例，建立整體規劃制度。",
           "coverinsidebar": {
-            "src": "./images/ex302a/cover.png"
+            "src": "./images/ex302a/1841_cover.png"
           },
           "coverincircle": {
-            "src": "./images/ex302a/coverincircle1.png"
+            "src": "./images/ex302a/1841_coverincircle.png"
           },
           "items": [
             {
@@ -2876,10 +2876,10 @@
           "year": "1940 - 1959",
           "text1": "二戰後百廢待興，政府顧問亞柏康比為香港制定了第一份長遠的規劃策略。五十年代初，大量內地移民來港，安全衛生問題加上石硤尾大火，促使政府興建首批公營房屋。",
           "coverinsidebar": {
-            "src": "./images/ex302a/cover_1930.png"
+            "src": "./images/ex302a/1940_cover.png"
           },
           "coverincircle": {
-            "src": "./images/ex302a/coverincircle.png"
+            "src": "./images/ex302a/1940_coverincircle.png"
           },
           "items": [
             {
@@ -2963,7 +2963,7 @@
                 ]
               },
               "category": {
-                "id": "planning",
+                "id": "legislations",
                 "name": "Planning Authorities/Legislations"
               }
             },
@@ -3099,10 +3099,10 @@
           "year": "1960 - 1979",
           "text1": "製造業於五、六十年代發展蓬勃，政府進一步發展基建，例如獅子山隧道、東江水工程等等。至七十年代，政府推出「十年建屋計劃」，大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡。1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
           "coverinsidebar": {
-            "src": "./images/ex302a/cover.png"
+            "src": "./images/ex302a/1960_cover.png"
           },
           "coverincircle": {
-            "src": "./images/ex302a/coverincircle.png"
+            "src": "./images/ex302a/1960_coverincircle.png"
           },
           "items": [
             {
@@ -3532,10 +3532,10 @@
           "year": "1980 - 1999",
           "text1": "八十年代，負責規劃工作的工務司署和城市設計處等部門逐一改組，逐漸接近現時架構。八十年代末，包括十項工程項目的香港機場核心計劃推出，為往後數十年的機場發展奠定重要基礎。九十年代初通過「都會計劃」，以主要公路和鐵路為骨幹，重點發展七個「都會區」。1998年，赤鱲角香港國際機場投入服務。",
           "coverinsidebar": {
-            "src": "./images/ex302a/cover.png"
+            "src": "./images/ex302a/1980_cover.png"
           },
           "coverincircle": {
-            "src": "./images/ex302a/coverincircle.png"
+            "src": "./images/ex302a/1980_coverincircle.png"
           },
           "items": [
             {
@@ -3965,10 +3965,10 @@
           "year": "2000 - 2019",
           "text1": "在全球經濟新趨勢下，本港面對新挑戰。2007年政府發表《香港2030：規劃遠景與策略》，為香港未來二十年提出了新的發展框架，包括拓展新界東北等新發展區，並進一步深化粵港澳合作，加強交通配套。",
           "coverinsidebar": {
-            "src": "./images/ex302a/cover.png"
+            "src": "./images/ex302a/2000_cover.png"
           },
           "coverincircle": {
-            "src": "./images/ex302a/coverincircle.png"
+            "src": "./images/ex302a/2000_coverincircle.png"
           },
           "items": [
             {

@@ -7,7 +7,7 @@
       },
       {
         "name": "hkIsland_start_diffuse",
-        "src": "./images/ex303/hkIsland_start_diffuse.svg"
+        "src": "./images/ex303/Pre1900_HKI_ori.png"
       },
       {
         "name": "hkIsland_old_diffuse",
@@ -15,7 +15,7 @@
       },
       {
         "name": "hkIsland_mask",
-        "src": "./images/ex303/1900 Victoria Harbour.png"
+        "src": "./images/ex303/1900_Victoria_Harbour_b&w.png"
       },
       {
         "name": "hkIsland_coastline1900_mask",

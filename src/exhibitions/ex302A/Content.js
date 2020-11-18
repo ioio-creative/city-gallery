@@ -31,10 +31,18 @@ const Content = props => {
   const triggerMinimal = useRef(null);
   // const onResizeFunc = useRef(null);
   const contentWrapElem = useRef(null);
-  const contentElems = useRef([...Array(props.sectionNum)].map(() => createRef()));
-  const sidebarElems = useRef([...Array(props.sectionNum)].map(() => createRef()));
-  const contentNavElems = useRef([...Array(props.sectionNum)].map(() => createRef()));
-  const contentNavLineElems = useRef([...Array(props.sectionNum)].map(() => createRef()));
+  const contentElems = useRef(
+    [...Array(props.sectionNum)].map(() => createRef())
+  );
+  const sidebarElems = useRef(
+    [...Array(props.sectionNum)].map(() => createRef())
+  );
+  const contentNavElems = useRef(
+    [...Array(props.sectionNum)].map(() => createRef())
+  );
+  const contentNavLineElems = useRef(
+    [...Array(props.sectionNum)].map(() => createRef())
+  );
   const galleryListElem = useRef(null);
   const controlBarElem = useRef(null);
   const controlBarBtnElem = useRef(null);
@@ -92,9 +100,9 @@ const Content = props => {
         mouse.startPos = { x: e.clientX, y: e.clientY };
         mouse.lastPos = { x: 0, y: 0 };
         maxGalleryWidth = galleryListElem.current.offsetWidth - ww;
-        console.log(maxGalleryWidth);
 
-        if (event.touches) document.addEventListener('touchmove', onMouseMove, false);
+        if (event.touches)
+          document.addEventListener('touchmove', onMouseMove, false);
         else document.addEventListener('mousemove', onMouseMove, false);
         document.addEventListener('mouseup', onMouseUp, false);
         document.addEventListener('touchend', onMouseUp, false);
@@ -143,7 +151,10 @@ const Content = props => {
 
     const moveContentWrap = () => {
       contentWrapElemPos.x += mouse.delta.x * 2;
-      contentWrapElemPos.x = Math.min(0, Math.max(-maxWidth, contentWrapElemPos.x));
+      contentWrapElemPos.x = Math.min(
+        0,
+        Math.max(-maxWidth, contentWrapElemPos.x)
+      );
     };
 
     const moveContent = i => {
@@ -156,7 +167,8 @@ const Content = props => {
       const currentContent = contentElems.current[i].current;
       // const item = currentContent.querySelector(`.item:nth-child(${j+1})`);
       contentWrapElemPos.x =
-        -currentContent.offsetLeft - ((currentContent.offsetWidth - window.innerWidth) / (lth - 1)) * j;
+        -currentContent.offsetLeft -
+        ((currentContent.offsetWidth - window.innerWidth) / (lth - 1)) * j;
       // console.log(currentContent.offsetLeft, currentContent.offsetWidth)
       // contentWrapElemPos.x = -currentContent.offsetLeft - item.offsetLeft + sidebarW;
     };
@@ -184,7 +196,9 @@ const Content = props => {
     };
 
     const moveControlBarBtn = progress => {
-      controlBarBtnElem.current.style.transform = `translate3d(${maxControlWidth * progress}px,0,0)`;
+      controlBarBtnElem.current.style.transform = `translate3d(${
+        maxControlWidth * progress
+      }px,0,0)`;
     };
     // [end] gallery
     //
@@ -212,7 +226,8 @@ const Content = props => {
       requestAnimationFrame(animLoop);
 
       if (!isOpenedGallery) {
-        contentWrapElemEasePos.x += (contentWrapElemPos.x - contentWrapElemEasePos.x) * 0.08;
+        contentWrapElemEasePos.x +=
+          (contentWrapElemPos.x - contentWrapElemEasePos.x) * 0.08;
         const x = contentWrapElemEasePos.x;
         contentWrapElem.current.style.transform = `translate3d(${x}px,0,0)`;
 
@@ -227,7 +242,10 @@ const Content = props => {
             const offsetX = content.getBoundingClientRect().left;
             let sx = Math.max(0, offsetX);
             if (offsetX - sidebarW <= -content.offsetWidth) {
-              sx = Math.max(-sidebarW, offsetX + content.offsetWidth - sidebarW);
+              sx = Math.max(
+                -sidebarW,
+                offsetX + content.offsetWidth - sidebarW
+              );
             }
             sidebar.style.transform = `translate3d(${sx}px,0,0)`;
 
@@ -257,17 +275,34 @@ const Content = props => {
             // content nav
             const contentNav = contentNavElems.current[i].current;
             let cx = Math.max(0, offsetX);
-            if (offsetX <= -content.offsetWidth + contentNav.offsetWidth + sidebarW)
-              cx = Math.max(-contentNav.offsetWidth, offsetX + content.offsetWidth - sidebarW - contentNav.offsetWidth);
+            if (
+              offsetX <=
+              -content.offsetWidth + contentNav.offsetWidth + sidebarW
+            )
+              cx = Math.max(
+                -contentNav.offsetWidth,
+                offsetX +
+                  content.offsetWidth -
+                  sidebarW -
+                  contentNav.offsetWidth
+              );
             contentNav.style.transform = `translate3d(${cx}px,0,0)`;
 
             const contentNavLine = contentNavLineElems.current[i].current;
-            let s = Math.max(0, Math.min(1, -offsetX / (content.offsetWidth - window.innerWidth)));
+            let s = Math.max(
+              0,
+              Math.min(1, -offsetX / (content.offsetWidth - window.innerWidth))
+            );
             contentNavLine.style.transform = `translate3d(0,0,0) scaleX(${s})`;
 
             if (data)
-              if (offsetX <= window.innerWidth / 2 && offsetX + content.offsetWidth >= window.innerWidth / 2) {
-                const pageOfNav = Math.floor((s + 0.04) / (1 / (data.sections[i].items.length - 1)));
+              if (
+                offsetX <= window.innerWidth / 2 &&
+                offsetX + content.offsetWidth >= window.innerWidth / 2
+              ) {
+                const pageOfNav = Math.floor(
+                  (s + 0.04) / (1 / (data.sections[i].items.length - 1))
+                );
                 setNavIdx(pageOfNav);
                 props.setCurrentSectionIdx(i);
                 // console.log(i,pageOfNav)
@@ -291,7 +326,10 @@ const Content = props => {
               const ix = -(img.getBoundingClientRect().left - sidebarW) * 0.06;
               child.style.transform = `translate3d(${ix}px,0,0) scale(1.2)`;
             } else if (type === 'scale') {
-              const is = Math.max(1, 1 + (img.getBoundingClientRect().left - ww / 8) / maxWidth);
+              const is = Math.max(
+                1,
+                1 + (img.getBoundingClientRect().left - ww / 8) / maxWidth
+              );
               child.style.transform = `translate3d(0,0,0) scale(${is})`;
             }
 
@@ -347,18 +385,36 @@ const Content = props => {
       document.addEventListener('keydown', onKeyDown, false);
       window.addEventListener('resize', onResize, false);
 
-      controlBarBtnElem.current.addEventListener('mousedown', onClickControlBarBtn, false);
-      controlBarBtnElem.current.addEventListener('touchstart', onClickControlBarBtn, false);
+      controlBarBtnElem.current.addEventListener(
+        'mousedown',
+        onClickControlBarBtn,
+        false
+      );
+      controlBarBtnElem.current.addEventListener(
+        'touchstart',
+        onClickControlBarBtn,
+        false
+      );
     };
 
     const removeEvent = () => {
       document.removeEventListener('mousedown', onMouseDown, false);
-      document.removeEventListener('touchstart', onMouseDown, { passive: false });
+      document.removeEventListener('touchstart', onMouseDown, {
+        passive: false
+      });
       document.removeEventListener('keydown', onKeyDown, false);
       window.removeEventListener('resize', onResize, false);
 
-      controlBarBtnElem.current.removeEventListener('mousedown', onClickControlBarBtn, false);
-      controlBarBtnElem.current.removeEventListener('touchstart', onClickControlBarBtn, false);
+      controlBarBtnElem.current.removeEventListener(
+        'mousedown',
+        onClickControlBarBtn,
+        false
+      );
+      controlBarBtnElem.current.removeEventListener(
+        'touchstart',
+        onClickControlBarBtn,
+        false
+      );
     };
 
     init();
@@ -375,9 +431,18 @@ const Content = props => {
       const elem = sidebarElems.current[props.clickedSectionIdx].current;
       const tl = gsap.timeline({ delay: 1 });
 
-      tl.set('#sidebarWrap', { className: 'active', clearProps: 'opacity,visibility' });
-      tl.set('#sectionWrap', { className: 'hide', clearProps: 'opacity,visibility' });
-      tl.set(contentWrapElem.current, { className: 'active', clearProps: 'opacity,visibility' });
+      tl.set('#sidebarWrap', {
+        className: 'active',
+        clearProps: 'opacity,visibility'
+      });
+      tl.set('#sectionWrap', {
+        className: 'hide',
+        clearProps: 'opacity,visibility'
+      });
+      tl.set(contentWrapElem.current, {
+        className: 'active',
+        clearProps: 'opacity,visibility'
+      });
       tl.fromTo(
         elem.querySelectorAll('#des span span'),
         1,
@@ -404,23 +469,45 @@ const Content = props => {
     } else {
       if (prevIdx !== null && prevIdx !== undefined) {
         const tl = gsap.timeline();
-        tl.to(contentWrapElem.current, 0.3, { autoAlpha: 0, ease: 'power1.inOut' }, 's');
-        tl.set(contentWrapElem.current, { className: '', clearProps: 'opacity,visibility' }, 's+=.3');
+        tl.to(
+          contentWrapElem.current,
+          0.3,
+          { autoAlpha: 0, ease: 'power1.inOut' },
+          's'
+        );
+        tl.set(
+          contentWrapElem.current,
+          { className: '', clearProps: 'opacity,visibility' },
+          's+=.3'
+        );
         tl.to('#sidebarWrap', 0.3, { autoAlpha: 0, ease: 'power1.inOut' }, 's');
-        tl.set('#sidebarWrap', { className: '', clearProps: 'opacity,visibility' }, 's+=.3');
+        tl.set(
+          '#sidebarWrap',
+          { className: '', clearProps: 'opacity,visibility' },
+          's+=.3'
+        );
         tl.set('#sectionWrap', { className: '' });
-        tl.fromTo('#sectionWrap', 0.6, { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power1.inOut' });
+        tl.fromTo(
+          '#sectionWrap',
+          0.6,
+          { autoAlpha: 0 },
+          { autoAlpha: 1, ease: 'power1.inOut' }
+        );
       }
     }
   }, [props.clickedSectionIdx]);
 
   useEffect(() => {
-    getCurrentSectionIdxFunc.current.getCurrentSectionIdx(props.currentSectionIdx);
+    getCurrentSectionIdxFunc.current.getCurrentSectionIdx(
+      props.currentSectionIdx
+    );
   }, [props.currentSectionIdx]);
 
   useEffect(() => {
     if (props.isClickedSection !== null) {
-      setIsClickedSectionFunc.current.setIsClickedSection(props.isClickedSection);
+      setIsClickedSectionFunc.current.setIsClickedSection(
+        props.isClickedSection
+      );
     }
   }, [props.isClickedSection]);
 
@@ -442,7 +529,12 @@ const Content = props => {
   // },[minimalContentNav])
 
   const onClickNav = (i, j) => {
-    if (!minimalContentNav) moveToItemFunc.current.moveToItem(i, j, props.contentData.sections[i].items.length);
+    if (!minimalContentNav)
+      moveToItemFunc.current.moveToItem(
+        i,
+        j,
+        props.contentData.sections[i].items.length
+      );
 
     if (triggerMinimal.current) clearTimeout(triggerMinimal.current);
     triggerMinimal.current = setTimeout(() => {
@@ -459,7 +551,11 @@ const Content = props => {
     <>
       <div
         id='contentNavWrap'
-        className={`contentNav${props.clickedSectionIdx !== null && props.minimalSidebar ? ' active' : ''}`}
+        className={`contentNav${
+          props.clickedSectionIdx !== null && props.minimalSidebar
+            ? ' active'
+            : ''
+        }`}
       >
         {props.contentData.sections.map((v, i) => {
           return (
@@ -468,7 +564,9 @@ const Content = props => {
               ref={contentNavElems.current[i]}
               id={`contentNav${i + 1}`}
               className={`contentNav${minimalContentNav ? ' minimal' : ''}`}
-              onClick={() => (minimalContentNav ? setMinimalContentNav(false) : null)}
+              onClick={() =>
+                minimalContentNav ? setMinimalContentNav(false) : null
+              }
             >
               <div id='wrap'>
                 <ul>
@@ -477,13 +575,21 @@ const Content = props => {
                       <li
                         key={j}
                         id={c.category.id}
-                        className={props.currentSectionIdx === i && navIdx === j ? 'active' : ''}
+                        className={
+                          props.currentSectionIdx === i && navIdx === j
+                            ? 'active'
+                            : ''
+                        }
                         onClick={() => onClickNav(i, j)}
                       >
                         {/* <p> */}
                         {/* </p> */}
                         <span className='category'>{c.category.name}</span>
-                        <span id='year' className='eb' dangerouslySetInnerHTML={{ __html: c.text.year }}></span>
+                        <span
+                          id='year'
+                          className='eb'
+                          dangerouslySetInnerHTML={{ __html: c.text.year }}
+                        ></span>
                       </li>
                     );
                   })}
@@ -503,22 +609,22 @@ const Content = props => {
               key={i}
               ref={sidebarElems.current[i]}
               id={`sidebar${i + 1}`}
-              className={`sidebar${i >= props.clickedSectionIdx ? ' active' : ''}`}
+              className={`sidebar${
+                i >= props.clickedSectionIdx ? ' active' : ''
+              }`}
             >
-              <div id='bg' style={{ backgroundImage: `url('./images/ex302a/sidebarbg.jpg')` }}></div>
+              <div
+                id='bg'
+                style={{
+                  backgroundImage: `url('./images/ex302a/sidebarbg_${i}.png')`
+                }}
+              ></div>
               <div id='desWrap'>
                 <div id='des'>
-                  {props.language === 'tc' && v.text1.split('').map((v, i) => {
+                  {v.text1.split('').map((v, i) => {
                     return (
                       <span key={i}>
                         <span>{v}</span>
-                      </span>
-                    );
-                  })}
-                  {props.language === 'en' && v.text1.split(' ').map((v, i) => {
-                    return (
-                      <span key={i}>
-                        <span>{v}&nbsp;</span>
                       </span>
                     );
                   })}
@@ -533,7 +639,10 @@ const Content = props => {
                   })}
               </div>
               <div id='line'></div>
-              <div id='img' style={{ backgroundImage: `url(${v.coverinsidebar.src}` }}></div>
+              <div
+                id='img'
+                style={{ backgroundImage: `url(${v.coverinsidebar.src}` }}
+              ></div>
             </div>
           );
         })}
@@ -541,17 +650,28 @@ const Content = props => {
       <div ref={contentWrapElem} id='contentWrap'>
         {props.contentData.sections.map((v, i) => {
           return (
-            <div key={i} ref={contentElems.current[i]} id={`content${i + 1}`} className='content'>
+            <div
+              key={i}
+              ref={contentElems.current[i]}
+              id={`content${i + 1}`}
+              className='content'
+            >
               {v.items.map((c, j) => {
                 return (
                   <div key={j} className='item'>
                     <div id='top'>
                       <div id='imgOuterWrap'>
                         {c.image.src && (
-                          <div className='imgWrap' data-type={`${c.image.translationType}`}>
+                          <div
+                            className='imgWrap'
+                            data-type={`${c.image.translationType}`}
+                          >
                             <img src={c.image.src} />
                             {c.image.gallery && c.image.gallery.length > 0 && (
-                              <div id='galleryBtn' onClick={() => showGallery(c.image.gallery)}></div>
+                              <div
+                                id='galleryBtn'
+                                onClick={() => showGallery(c.image.gallery)}
+                              ></div>
                             )}
                           </div>
                         )}
@@ -589,7 +709,10 @@ const Content = props => {
                     </div>
                     <div id='bot'>
                       {c.text.content && (
-                        <div id='itemContent' dangerouslySetInnerHTML={{ __html: c.text.content }}></div>
+                        <div
+                          id='itemContent'
+                          dangerouslySetInnerHTML={{ __html: c.text.content }}
+                        ></div>
                       )}
                     </div>
                   </div>

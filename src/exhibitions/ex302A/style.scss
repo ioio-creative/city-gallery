@@ -514,22 +514,17 @@ body {
               }
               &#transport {
                 &:before {
-                  background: #f5b131;
+                  background: #f5318b;
                 }
               }
               &#legislations {
                 &:before {
-                  background: #b931f5;
+                  background: #F57531;
                 }
               }
               &#housing {
                 &:before {
-                  background: #359e64;
-                }
-              }
-              &#planning {
-                &:before {
-                  background: #b931f5;
+                  background: #1ce6f7;
                 }
               }
               &#strategic {
@@ -539,7 +534,7 @@ body {
               }
               &#economic {
                 &:before {
-                  background: #b931f5;
+                  background:#359e64;
                 }
               }
               &#authorities {
@@ -559,27 +554,22 @@ body {
             }
             &#infrastructure {
               span.category {
-                color: #f5a731;
+                color:#f5b131;
               }
             }
             &#transport {
               span.category {
-                color: #f5b131;
+                color: #f5318b;
               }
             }
             &#legislations {
               span.category {
-                color: #b931f5;
+                color: #F57531;
               }
             }
             &#housing {
               span.category {
-                color: #359e64;
-              }
-            }
-            &#planning {
-              span.category {
-                color: #b931f5;
+                color: #1ce6f7;
               }
             }
             &#strategic {
@@ -589,12 +579,12 @@ body {
             }
             &#economic {
               span.category {
-                color: #b931f5;
+                color: #359e64;
               }
             }
             &#authorities {
               span.category {
-                color: #b931f5;
+                color: #217AFF;
               }
             }
             span {
@@ -753,59 +743,52 @@ body {
               flex-direction: column;
               align-items: flex-end;
               &#infrastructure {
-                color: #f5a731;
+                color:#f5b131;
                 &:before,
                 &:after {
-                  color: #f5a731;
+                   background-color: #f5b131;
                 }
               }
               &#transport {
-                color: #f5b131;
+                color: #f5318b;
                 &:before,
                 &:after {
-                  color: #f5b131;
+                   background-color: #f5318b;
                 }
               }
               &#legislations {
-                color: #b931f5;
+                color: #F57531;
                 &:before,
                 &:after {
-                  color: #b931f5;
+                   background-color: #F57531;
                 }
               }
               &#housing {
-                color: #359e64;
+                color: #1ce6f7;
                 &:before,
                 &:after {
-                  color: #359e64;
-                }
-              }
-              &#planning {
-                color: #b931f5;
-                &:before,
-                &:after {
-                  color: #b931f5;
+                  background-color: #1ce6f7;
                 }
               }
               &#strategic {
                 color: #b931f5;
                 &:before,
                 &:after {
-                  color: #b931f5;
+                   background-color: #b931f5;
                 }
               }
               &#economic {
-                color: #b931f5;
+                color: #359e64;
                 &:before,
                 &:after {
-                  color: #b931f5;
+                   background-color: #359e64;
                 }
               }
               &#authorities {
-                color: #b931f5;
+                color: #217AFF;
                 &:before,
                 &:after {
-                  color: #b931f5;
+                   background-color: #217AFF;
                 }
               }
               &:before,
@@ -921,6 +904,8 @@ body {
       .sidebar {
         &.active {
           #img {
+            // position: absolute;
+            // z-index: 2;
             opacity: 1;
             visibility: visible;
             mix-blend-mode: normal;
@@ -947,6 +932,7 @@ body {
       box-shadow: vw-calc(15 0 30) black;
       &.minimize {
         #img {
+          // z-index: 2;
           opacity: 1;
           visibility: visible;
           mix-blend-mode: soft-light;
@@ -1083,7 +1069,7 @@ body {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: left top;
-        mix-blend-mode: color-burn;
+        mix-blend-mode: hard-light;
         // opacity: 0;
         // visibility: hidden;
         clip-path: polygon(0 0, 0% 0, 0 0%);
