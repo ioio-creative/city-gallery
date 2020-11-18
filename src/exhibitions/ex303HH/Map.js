@@ -3,14 +3,14 @@ import dat from 'dat.gui';
 import * as PIXI from 'pixi.js';
 import gsap from 'gsap';
 
-// import diff from './images/hkIsland_diffuse.svg'
-// import start_diff from './images/hkIsland_start_diffuse.svg'
-// import old_diff from './images/hkIsland_old_diffuse.svg'
-// import mask from './images/hkIsland_mask.svg'
-// import coastline1900_mask from './images/hkIsland_coastline1900_mask.svg'
-// import coastline1945_mask from './images/hkIsland_coastline1945_mask.svg'
-// import coastline1985_mask from './images/hkIsland_coastline1985_mask.svg'
-// import coastline2019_mask from './images/hkIsland_coastline2019_mask.svg'
+// import diff from './images/hh_diffuse.svg'
+// import start_diff from './images/hh_start_diffuse.svg'
+// import old_diff from './images/hh_old_diffuse.svg'
+// import mask from './images/hh_mask.svg'
+// import coastline1900_mask from './images/hh_coastline1900_mask.svg'
+// import coastline1945_mask from './images/hh_coastline1945_mask.svg'
+// import coastline1985_mask from './images/hh_coastline1985_mask.svg'
+// import coastline2019_mask from './images/hh_coastline2019_mask.svg'
 // import sand from './images/sand.png'
 // import noise from './images/noise.png'
 // import noise2 from './images/noise2.png'
@@ -32,10 +32,10 @@ const Map = props => {
       },
       threshold: 0.001,
       useNoiseTxt: function () {
-        map['hkIsland'].image.shader.uniforms.noiseTexture = new PIXI.Sprite.from('noise').texture.baseTexture;
+        map['hh'].image.shader.uniforms.noiseTexture = new PIXI.Sprite.from('noise').texture.baseTexture;
       },
       useSandTxt: function () {
-        map['hkIsland'].image.shader.uniforms.noiseTexture = new PIXI.Sprite.from('sand').texture.baseTexture;
+        map['hh'].image.shader.uniforms.noiseTexture = new PIXI.Sprite.from('sand').texture.baseTexture;
       }
     };
 
@@ -131,7 +131,7 @@ const Map = props => {
         this.highlight = [];
         for (let i = 0; i < years.length; i++) {
           const year = years[i];
-          this.highlight[i] = new PIXI.Sprite.from(`hkIsland_coastline${year}_highlight`);
+          this.highlight[i] = new PIXI.Sprite.from(`hh_coastline${year}_highlight`);
           this.highlight[i].anchor.set(0.5);
           this.highlight[i].x = startPos.x;
           this.highlight[i].y = startPos.y;
@@ -143,93 +143,93 @@ const Map = props => {
       createShader() {
         const shader = new PIXI.Shader.from(
           `
-                        precision mediump float;
+            precision mediump float;
 
-                        attribute vec2 aPosition;
-                        attribute vec2 aUvs;
+            attribute vec2 aPosition;
+            attribute vec2 aUvs;
 
-                        uniform mat3 translationMatrix;
-                        uniform mat3 projectionMatrix;
+            uniform mat3 translationMatrix;
+            uniform mat3 projectionMatrix;
 
-                        varying vec2 vUvs;
+            varying vec2 vUvs;
 
-                        void main() {
-                            vUvs = aUvs;
-                            gl_Position = vec4((projectionMatrix * translationMatrix * vec3(aPosition, 1.0)).xy, 0.0, 1.0);
-                        }
-                    `,
+            void main() {
+              vUvs = aUvs;
+              gl_Position = vec4((projectionMatrix * translationMatrix * vec3(aPosition, 1.0)).xy, 0.0, 1.0);
+            }
+          `,
           `
-                        uniform sampler2D diffuse;
-                        uniform sampler2D startDiffuse;
-                        uniform sampler2D oldDiffuse;
-                        uniform sampler2D maskTexture;
-                        uniform sampler2D coastline1900Mask;
-                        uniform sampler2D coastline1945Mask;
-                        uniform sampler2D coastline1985Mask;
-                        uniform sampler2D coastline2019Mask;
-                        uniform sampler2D noiseTexture;
-                        uniform sampler2D noise2Texture;
-                        uniform float progress;
-                        uniform float progress1900;
-                        uniform float progress1945;
-                        uniform float progress1985;
-                        uniform float progress2019;
-                        uniform float threshold;
+            uniform sampler2D diffuse;
+            uniform sampler2D startDiffuse;
+            uniform sampler2D oldDiffuse;
+            uniform sampler2D maskTexture;
+            uniform sampler2D coastline1900Mask;
+            uniform sampler2D coastline1945Mask;
+            uniform sampler2D coastline1985Mask;
+            uniform sampler2D coastline2019Mask;
+            uniform sampler2D noiseTexture;
+            uniform sampler2D noise2Texture;
+            uniform float progress;
+            uniform float progress1900;
+            uniform float progress1945;
+            uniform float progress1985;
+            uniform float progress2019;
+            uniform float threshold;
 
-                        varying vec2 vUvs;
-                        
-                        void main(void){
-                            vec4 diffuseColor = texture2D(diffuse, vUvs);
-                            vec4 startDiffuseColor = texture2D(startDiffuse, vUvs);
-                            vec4 oldDiffuseColor = texture2D(oldDiffuse, vUvs);
-                            vec4 maskTextureColor = texture2D(maskTexture, vUvs);
-                            vec4 coastline1900MaskColor = texture2D(coastline1900Mask, vUvs);
-                            vec4 coastline1945MaskColor = texture2D(coastline1945Mask, vUvs);
-                            vec4 coastline1985MaskColor = texture2D(coastline1985Mask, vUvs);
-                            vec4 coastline2019MaskColor = texture2D(coastline2019Mask, vUvs);
-                            vec4 noiseTextureColor = texture2D(noiseTexture, vUvs);
-                            vec4 noise2TextureColor = texture2D(noise2Texture, vUvs);
+            varying vec2 vUvs;
+            
+            void main(void){
+              vec4 diffuseColor = texture2D(diffuse, vUvs);
+              vec4 startDiffuseColor = texture2D(startDiffuse, vUvs);
+              vec4 oldDiffuseColor = texture2D(oldDiffuse, vUvs);
+              vec4 maskTextureColor = texture2D(maskTexture, vUvs);
+              vec4 coastline1900MaskColor = texture2D(coastline1900Mask, vUvs);
+              vec4 coastline1945MaskColor = texture2D(coastline1945Mask, vUvs);
+              vec4 coastline1985MaskColor = texture2D(coastline1985Mask, vUvs);
+              vec4 coastline2019MaskColor = texture2D(coastline2019Mask, vUvs);
+              vec4 noiseTextureColor = texture2D(noiseTexture, vUvs);
+              vec4 noise2TextureColor = texture2D(noise2Texture, vUvs);
 
-                            float _threshold = threshold;
-                            vec4 coastlineColor = vec4(0.0);
-                            vec4 coastline1900Color = vec4(0.0);
-                            vec4 coastline1945Color = vec4(0.0);
-                            vec4 coastline1985Color = vec4(0.0);
-                            vec4 coastline2019Color = vec4(0.0);
+              float _threshold = threshold;
+              vec4 coastlineColor = vec4(0.0);
+              vec4 coastline1900Color = vec4(0.0);
+              vec4 coastline1945Color = vec4(0.0);
+              vec4 coastline1985Color = vec4(0.0);
+              vec4 coastline2019Color = vec4(0.0);
 
 
-                            if(coastline1900MaskColor.r >= .1){
-                                float value = progress1900 * (1. + _threshold);
-                                float v = clamp( (noise2TextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
-                                coastline1900Color = mix(vec4(0., 0., 0., 0.), vec4(0. / 255., 91. / 255., 87. / 255., 1.), v);
-                            }
-                            if(coastline1945MaskColor.r >= .1){
-                                float value = progress1945 * (1. + _threshold);
-                                float v = clamp( (noise2TextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
-                                coastline1945Color = mix(vec4(0., 0., 0., 0.), vec4(0. / 255., 122. / 255., 114. / 255., 1.), v);
-                            }
-                            if(coastline1985MaskColor.r >= .1){
-                                float value = progress1985 * (1. + _threshold);
-                                float v = clamp( (noise2TextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
-                                coastline1985Color = mix(vec4(0., 0., 0., 0.), vec4(28. / 255., 185. / 255., 169. / 255., 1.), v);
-                            }
-                            if(coastline2019MaskColor.r >= .1){
-                                float value = progress2019 * (1. + _threshold);
-                                float v = clamp( (noise2TextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
-                                coastline2019Color = mix(vec4(0., 0., 0., 0.), vec4(119. / 255., 204. / 255., 189. / 255., 1.), v);
-                            }
-                            
-                            gl_FragColor = mix(coastline2019Color, coastline1985Color, coastline1985Color.a);
-                            gl_FragColor = mix(gl_FragColor, coastline1945Color, coastline1945Color.a);
-                            gl_FragColor = mix(gl_FragColor, coastline1900Color, coastline1900Color.a);
-                            
-                            if(maskTextureColor.r >= .1){
-                                float value = progress * (1. + _threshold);
-                                float v = clamp( (noiseTextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
-                                gl_FragColor = mix(startDiffuseColor, diffuseColor, v);
-                            }
-                        }
-                    `,
+              if(coastline1900MaskColor.r >= .1){
+                  float value = progress1900 * (1. + _threshold);
+                  float v = clamp( (noise2TextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
+                  coastline1900Color = mix(vec4(0., 0., 0., 0.), vec4(0. / 255., 91. / 255., 87. / 255., 1.), v);
+              }
+              if(coastline1945MaskColor.r >= .1){
+                  float value = progress1945 * (1. + _threshold);
+                  float v = clamp( (noise2TextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
+                  coastline1945Color = mix(vec4(0., 0., 0., 0.), vec4(0. / 255., 122. / 255., 114. / 255., 1.), v);
+              }
+              if(coastline1985MaskColor.r >= .1){
+                  float value = progress1985 * (1. + _threshold);
+                  float v = clamp( (noise2TextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
+                  coastline1985Color = mix(vec4(0., 0., 0., 0.), vec4(28. / 255., 185. / 255., 169. / 255., 1.), v);
+              }
+              if(coastline2019MaskColor.r >= .1){
+                  float value = progress2019 * (1. + _threshold);
+                  float v = clamp( (noise2TextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
+                  coastline2019Color = mix(vec4(0., 0., 0., 0.), vec4(119. / 255., 204. / 255., 189. / 255., 1.), v);
+              }
+              
+              gl_FragColor = mix(coastline2019Color, coastline1985Color, coastline1985Color.a);
+              gl_FragColor = mix(gl_FragColor, coastline1945Color, coastline1945Color.a);
+              gl_FragColor = mix(gl_FragColor, coastline1900Color, coastline1900Color.a);
+              
+              if(maskTextureColor.r >= .1){
+                  float value = progress * (1. + _threshold);
+                  float v = clamp( (noiseTextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
+                  gl_FragColor = mix(startDiffuseColor, diffuseColor, v);
+              }
+            }
+          `,
           {
             progress: options.progress,
             progress1900: options.year.y1900,
@@ -238,13 +238,13 @@ const Map = props => {
             progress2019: options.year.y2019,
             threshold: options.threshold,
             diffuse: this.texture,
-            startDiffuse: new PIXI.Sprite.from('hkIsland_start_diffuse').texture.baseTexture,
-            oldDiffuse: new PIXI.Sprite.from('hkIsland_old_diffuse').texture.baseTexture,
-            maskTexture: new PIXI.Sprite.from('hkIsland_mask').texture.baseTexture,
-            coastline1900Mask: new PIXI.Sprite.from('hkIsland_coastline1900_mask').texture.baseTexture,
-            coastline1945Mask: new PIXI.Sprite.from('hkIsland_coastline1945_mask').texture.baseTexture,
-            coastline1985Mask: new PIXI.Sprite.from('hkIsland_coastline1985_mask').texture.baseTexture,
-            coastline2019Mask: new PIXI.Sprite.from('hkIsland_coastline2019_mask').texture.baseTexture,
+            startDiffuse: new PIXI.Sprite.from('hh_start_diffuse').texture.baseTexture,
+            oldDiffuse: new PIXI.Sprite.from('hh_old_diffuse').texture.baseTexture,
+            maskTexture: new PIXI.Sprite.from('hh_mask').texture.baseTexture,
+            coastline1900Mask: new PIXI.Sprite.from('hh_coastline1900_mask').texture.baseTexture,
+            coastline1945Mask: new PIXI.Sprite.from('hh_coastline1945_mask').texture.baseTexture,
+            coastline1985Mask: new PIXI.Sprite.from('hh_coastline1985_mask').texture.baseTexture,
+            coastline2019Mask: new PIXI.Sprite.from('hh_coastline2019_mask').texture.baseTexture,
             noiseTexture: new PIXI.Sprite.from('sand').texture.baseTexture,
             noise2Texture: new PIXI.Sprite.from('noise2').texture.baseTexture
           }
@@ -354,8 +354,8 @@ const Map = props => {
       }
       loader.load((loader, resources) => {
         // create map
-        map['hkIsland'] = new Map(resources['hkIsland_diffuse'].texture);
-        map['hkIsland'].create();
+        map['hh'] = new Map(resources['hh_diffuse'].texture);
+        map['hh'].create();
 
         for (let s = 0, lth = data.hh.streets.length; s < lth; s++) {
           streets[s] = [];
@@ -376,24 +376,24 @@ const Map = props => {
 
     const startAnim = () => {
       app.ticker.add(delta => {
-        if (map['hkIsland']) {
-          map['hkIsland'].image.shader.uniforms.progress = options.progress;
-          map['hkIsland'].image.shader.uniforms.progress1900 = options.year.y1900;
-          map['hkIsland'].image.shader.uniforms.progress1945 = options.year.y1945;
-          map['hkIsland'].image.shader.uniforms.progress1985 = options.year.y1985;
-          map['hkIsland'].image.shader.uniforms.progress2019 = options.year.y2019;
-          map['hkIsland'].image.shader.uniforms.threshold = options.threshold;
+        if (map['hh']) {
+          map['hh'].image.shader.uniforms.progress = options.progress;
+          map['hh'].image.shader.uniforms.progress1900 = options.year.y1900;
+          map['hh'].image.shader.uniforms.progress1945 = options.year.y1945;
+          map['hh'].image.shader.uniforms.progress1985 = options.year.y1985;
+          map['hh'].image.shader.uniforms.progress2019 = options.year.y2019;
+          map['hh'].image.shader.uniforms.threshold = options.threshold;
         }
       });
     };
 
     const moveMap = (idx = 0) => {
       gsap.to([mapContainer, markerContainer, coastlinePartsContainer], 1, {
-        x: zoomedPos.x - idx * (map['hkIsland'].image.width / (4 - 1)),
+        x: zoomedPos.x - idx * (map['hh'].image.width / (4 - 1)),
         y: zoomedPos.y,
         ease: 'power3.inOut'
       });
-      // gsap.to('#markerOuterWrap', 1, {x:zoomedPos.x - (idx * (map['hkIsland'].image.width/(4-1))), y:zoomedPos.y, ease:'power3.inOut'});
+      // gsap.to('#markerOuterWrap', 1, {x:zoomedPos.x - (idx * (map['hh'].image.width/(4-1))), y:zoomedPos.y, ease:'power3.inOut'});
     };
 
     const zoomInOut = mode => {
@@ -433,8 +433,8 @@ const Map = props => {
     props.handleMove.current = { updateMapIndicatorIdx };
 
     const selectCoastline = idx => {
-      const highlights = map['hkIsland'].highlight;
-      selectedHighlight = map['hkIsland'].highlight[idx];
+      const highlights = map['hh'].highlight;
+      selectedHighlight = map['hh'].highlight[idx];
       for (let i = 0; i < highlights.length; i++) {
         if (i !== idx) {
           const highlight = highlights[i];

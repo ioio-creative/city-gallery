@@ -143,93 +143,93 @@ const Map = props => {
       createShader() {
         const shader = new PIXI.Shader.from(
           `
-                        precision mediump float;
+            precision mediump float;
 
-                        attribute vec2 aPosition;
-                        attribute vec2 aUvs;
+            attribute vec2 aPosition;
+            attribute vec2 aUvs;
 
-                        uniform mat3 translationMatrix;
-                        uniform mat3 projectionMatrix;
+            uniform mat3 translationMatrix;
+            uniform mat3 projectionMatrix;
 
-                        varying vec2 vUvs;
+            varying vec2 vUvs;
 
-                        void main() {
-                            vUvs = aUvs;
-                            gl_Position = vec4((projectionMatrix * translationMatrix * vec3(aPosition, 1.0)).xy, 0.0, 1.0);
-                        }
-                    `,
+            void main() {
+              vUvs = aUvs;
+              gl_Position = vec4((projectionMatrix * translationMatrix * vec3(aPosition, 1.0)).xy, 0.0, 1.0);
+            }
+          `,
           `
-                        uniform sampler2D diffuse;
-                        uniform sampler2D startDiffuse;
-                        uniform sampler2D oldDiffuse;
-                        uniform sampler2D maskTexture;
-                        uniform sampler2D coastline1900Mask;
-                        uniform sampler2D coastline1945Mask;
-                        uniform sampler2D coastline1985Mask;
-                        uniform sampler2D coastline2019Mask;
-                        uniform sampler2D noiseTexture;
-                        uniform sampler2D noise2Texture;
-                        uniform float progress;
-                        uniform float progress1900;
-                        uniform float progress1945;
-                        uniform float progress1985;
-                        uniform float progress2019;
-                        uniform float threshold;
+            uniform sampler2D diffuse;
+            uniform sampler2D startDiffuse;
+            uniform sampler2D oldDiffuse;
+            uniform sampler2D maskTexture;
+            uniform sampler2D coastline1900Mask;
+            uniform sampler2D coastline1945Mask;
+            uniform sampler2D coastline1985Mask;
+            uniform sampler2D coastline2019Mask;
+            uniform sampler2D noiseTexture;
+            uniform sampler2D noise2Texture;
+            uniform float progress;
+            uniform float progress1900;
+            uniform float progress1945;
+            uniform float progress1985;
+            uniform float progress2019;
+            uniform float threshold;
 
-                        varying vec2 vUvs;
-                        
-                        void main(void){
-                            vec4 diffuseColor = texture2D(diffuse, vUvs);
-                            vec4 startDiffuseColor = texture2D(startDiffuse, vUvs);
-                            vec4 oldDiffuseColor = texture2D(oldDiffuse, vUvs);
-                            vec4 maskTextureColor = texture2D(maskTexture, vUvs);
-                            vec4 coastline1900MaskColor = texture2D(coastline1900Mask, vUvs);
-                            vec4 coastline1945MaskColor = texture2D(coastline1945Mask, vUvs);
-                            vec4 coastline1985MaskColor = texture2D(coastline1985Mask, vUvs);
-                            vec4 coastline2019MaskColor = texture2D(coastline2019Mask, vUvs);
-                            vec4 noiseTextureColor = texture2D(noiseTexture, vUvs);
-                            vec4 noise2TextureColor = texture2D(noise2Texture, vUvs);
+            varying vec2 vUvs;
+            
+            void main(void){
+              vec4 diffuseColor = texture2D(diffuse, vUvs);
+              vec4 startDiffuseColor = texture2D(startDiffuse, vUvs);
+              vec4 oldDiffuseColor = texture2D(oldDiffuse, vUvs);
+              vec4 maskTextureColor = texture2D(maskTexture, vUvs);
+              vec4 coastline1900MaskColor = texture2D(coastline1900Mask, vUvs);
+              vec4 coastline1945MaskColor = texture2D(coastline1945Mask, vUvs);
+              vec4 coastline1985MaskColor = texture2D(coastline1985Mask, vUvs);
+              vec4 coastline2019MaskColor = texture2D(coastline2019Mask, vUvs);
+              vec4 noiseTextureColor = texture2D(noiseTexture, vUvs);
+              vec4 noise2TextureColor = texture2D(noise2Texture, vUvs);
 
-                            float _threshold = threshold;
-                            vec4 coastlineColor = vec4(0.0);
-                            vec4 coastline1900Color = vec4(0.0);
-                            vec4 coastline1945Color = vec4(0.0);
-                            vec4 coastline1985Color = vec4(0.0);
-                            vec4 coastline2019Color = vec4(0.0);
+              float _threshold = threshold;
+              vec4 coastlineColor = vec4(0.0);
+              vec4 coastline1900Color = vec4(0.0);
+              vec4 coastline1945Color = vec4(0.0);
+              vec4 coastline1985Color = vec4(0.0);
+              vec4 coastline2019Color = vec4(0.0);
 
 
-                            if(coastline1900MaskColor.r >= .1){
-                                float value = progress1900 * (1. + _threshold);
-                                float v = clamp( (noise2TextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
-                                coastline1900Color = mix(vec4(0., 0., 0., 0.), vec4(0. / 255., 91. / 255., 87. / 255., 1.), v);
-                            }
-                            if(coastline1945MaskColor.r >= .1){
-                                float value = progress1945 * (1. + _threshold);
-                                float v = clamp( (noise2TextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
-                                coastline1945Color = mix(vec4(0., 0., 0., 0.), vec4(0. / 255., 122. / 255., 114. / 255., 1.), v);
-                            }
-                            if(coastline1985MaskColor.r >= .1){
-                                float value = progress1985 * (1. + _threshold);
-                                float v = clamp( (noise2TextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
-                                coastline1985Color = mix(vec4(0., 0., 0., 0.), vec4(28. / 255., 185. / 255., 169. / 255., 1.), v);
-                            }
-                            if(coastline2019MaskColor.r >= .1){
-                                float value = progress2019 * (1. + _threshold);
-                                float v = clamp( (noise2TextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
-                                coastline2019Color = mix(vec4(0., 0., 0., 0.), vec4(119. / 255., 204. / 255., 189. / 255., 1.), v);
-                            }
-                            
-                            gl_FragColor = mix(coastline2019Color, coastline1985Color, coastline1985Color.a);
-                            gl_FragColor = mix(gl_FragColor, coastline1945Color, coastline1945Color.a);
-                            gl_FragColor = mix(gl_FragColor, coastline1900Color, coastline1900Color.a);
-                            
-                            if(maskTextureColor.r >= .1){
-                                float value = progress * (1. + _threshold);
-                                float v = clamp( (noiseTextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
-                                gl_FragColor = mix(startDiffuseColor, diffuseColor, v);
-                            }
-                        }
-                    `,
+              if(coastline1900MaskColor.r >= .1){
+                  float value = progress1900 * (1. + _threshold);
+                  float v = clamp( (noise2TextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
+                  coastline1900Color = mix(vec4(0., 0., 0., 0.), vec4(0. / 255., 91. / 255., 87. / 255., 1.), v);
+              }
+              if(coastline1945MaskColor.r >= .1){
+                  float value = progress1945 * (1. + _threshold);
+                  float v = clamp( (noise2TextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
+                  coastline1945Color = mix(vec4(0., 0., 0., 0.), vec4(0. / 255., 122. / 255., 114. / 255., 1.), v);
+              }
+              if(coastline1985MaskColor.r >= .1){
+                  float value = progress1985 * (1. + _threshold);
+                  float v = clamp( (noise2TextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
+                  coastline1985Color = mix(vec4(0., 0., 0., 0.), vec4(28. / 255., 185. / 255., 169. / 255., 1.), v);
+              }
+              if(coastline2019MaskColor.r >= .1){
+                  float value = progress2019 * (1. + _threshold);
+                  float v = clamp( (noise2TextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
+                  coastline2019Color = mix(vec4(0., 0., 0., 0.), vec4(119. / 255., 204. / 255., 189. / 255., 1.), v);
+              }
+              
+              gl_FragColor = mix(coastline2019Color, coastline1985Color, coastline1985Color.a);
+              gl_FragColor = mix(gl_FragColor, coastline1945Color, coastline1945Color.a);
+              gl_FragColor = mix(gl_FragColor, coastline1900Color, coastline1900Color.a);
+              
+              if(maskTextureColor.r >= .1){
+                  float value = progress * (1. + _threshold);
+                  float v = clamp( (noiseTextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
+                  gl_FragColor = mix(startDiffuseColor, diffuseColor, v);
+              }
+            }
+          `,
           {
             progress: options.progress,
             progress1900: options.year.y1900,
