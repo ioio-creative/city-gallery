@@ -92,6 +92,7 @@ const Content = props => {
         mouse.startPos = { x: e.clientX, y: e.clientY };
         mouse.lastPos = { x: 0, y: 0 };
         maxGalleryWidth = galleryListElem.current.offsetWidth - ww;
+        console.log(maxGalleryWidth);
 
         if (event.touches) document.addEventListener('touchmove', onMouseMove, false);
         else document.addEventListener('mousemove', onMouseMove, false);
@@ -507,10 +508,17 @@ const Content = props => {
               <div id='bg' style={{ backgroundImage: `url('./images/ex302a/sidebarbg.jpg')` }}></div>
               <div id='desWrap'>
                 <div id='des'>
-                  {v.text1.split('').map((v, i) => {
+                  {props.language === 'tc' && v.text1.split('').map((v, i) => {
                     return (
                       <span key={i}>
                         <span>{v}</span>
+                      </span>
+                    );
+                  })}
+                  {props.language === 'en' && v.text1.split(' ').map((v, i) => {
+                    return (
+                      <span key={i}>
+                        <span>{v}&nbsp;</span>
                       </span>
                     );
                   })}

@@ -117,14 +117,14 @@ const Section5 = (props) => {
             }
         }
 
-        // CoinAnim.prototype.start = function(numOfCoins){
-        //     this.numOfCoins = numOfCoins;
-        //     this.update();
-        // }
-        // CoinAnim.prototype.stop = function(){  
-        //     if(this.player)
-        //         cancelAnimationFrame(this.player);
-        // }
+        CoinAnim.prototype.start = function(numOfCoins){
+            this.numOfCoins = numOfCoins;
+            this.update();
+        }
+        CoinAnim.prototype.stop = function(){  
+            if(this.player)
+                cancelAnimationFrame(this.player);
+        }
 
         // const createCoins = (elems) => {
         //     const pos = [];
@@ -185,8 +185,8 @@ const Section5 = (props) => {
     useEffect(()=>{
         if(locationName){
             if(props.detailIdx === 5){
-                startFunc.current.start(382046/1000 * .3, data[locationName].money.replace(',','')/1000 * .3);
-                // startFunc.current.start(1, 1);
+                // startFunc.current.start(382046/1000 * .3, data[locationName].money.replace(',','')/1000 * .3);
+                startFunc.current.start(0, 0);
             }
             else{
                 stopFunc.current.stop();

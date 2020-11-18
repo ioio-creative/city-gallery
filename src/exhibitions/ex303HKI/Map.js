@@ -47,7 +47,8 @@ const Map = props => {
     const mapContainer = new PIXI.Container();
     const markerContainer = new PIXI.Container();
     const coastlinePartsContainer = new PIXI.Container();
-    const startPos = { x: window.innerWidth / 1.932, y: window.innerHeight / 0.935 };
+    // const startPos = { x: window.innerWidth / 1.932, y: window.innerHeight / 0.935 };
+    const startPos = { x: window.innerWidth / 1.9, y: window.innerHeight / 1 };
     const zoomedPos = { x: -window.innerWidth * 0.13, y: -window.innerHeight * 0.325 };
     const years = ['1900', '1945', '1985', '2019'];
     let hasShownCoastline = false;
@@ -110,7 +111,7 @@ const Map = props => {
         const w = window.innerWidth * (this.width / maxWidth);
         const ratio = this.height / this.width;
         const h = w * ratio;
-
+        console.log("ori w:", this.width, "ori h:", this.height, "ori w:", w, "ori h:", h);
         return { w, h };
       }
 
@@ -118,7 +119,8 @@ const Map = props => {
         const { w, h } = this.getSize();
 
         const geometry = new PIXI.Geometry();
-        geometry.addAttribute('aPosition', [-w / 2, -h / 2, w / 2, -h / 2, w / 2, h / 2, -w / 2, h / 2], 2);
+        // geometry.addAttribute('aPosition', [-w / 2, -h / 2, w / 2, -h / 2, w / 2, h / 2, -w / 2, h / 2], 2);
+        geometry.addAttribute('aPosition', [-w/2, -h/2, w/2, -h/2, w/2, h/2, -w/2, h/2], 2);
         geometry.addAttribute('aUvs', [0, 0, 1, 0, 1, 1, 0, 1], 2);
         geometry.addIndex([0, 1, 2, 0, 2, 3]);
 
@@ -237,10 +239,10 @@ const Map = props => {
             progress1985: options.year.y1985,
             progress2019: options.year.y2019,
             threshold: options.threshold,
-            diffuse: this.texture,
-            startDiffuse: new PIXI.Sprite.from('hkIsland_start_diffuse').texture.baseTexture,
-            oldDiffuse: new PIXI.Sprite.from('hkIsland_old_diffuse').texture.baseTexture,
-            maskTexture: new PIXI.Sprite.from('hkIsland_mask').texture.baseTexture,
+            diffuse: this.texture,                                                             //map with all shader
+            startDiffuse: new PIXI.Sprite.from('hkIsland_start_diffuse').texture.baseTexture,  //initial pic
+            oldDiffuse: new PIXI.Sprite.from('hkIsland_old_diffuse').texture.baseTexture,      //end pic 
+            maskTexture: new PIXI.Sprite.from('hkIsland_mask').texture.baseTexture,            //whole island mask
             coastline1900Mask: new PIXI.Sprite.from('hkIsland_coastline1900_mask').texture.baseTexture,
             coastline1945Mask: new PIXI.Sprite.from('hkIsland_coastline1945_mask').texture.baseTexture,
             coastline1985Mask: new PIXI.Sprite.from('hkIsland_coastline1985_mask').texture.baseTexture,
@@ -354,8 +356,12 @@ const Map = props => {
       }
       loader.load((loader, resources) => {
         // create map
+        // console.log(resources['hkIsland_diffuse'].texture);
+        console.log(resources['hkIsland_start_diffuse'].texture);
+        console.log(resources['hkIsland_mask'].texture);
         map['hkIsland'] = new Map(resources['hkIsland_diffuse'].texture);
         map['hkIsland'].create();
+        // console.log(map['hkIsland'])
 
         for (let s = 0, lth = data.hki.streets.length; s < lth; s++) {
           streets[s] = [];

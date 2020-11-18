@@ -408,6 +408,7 @@ const G302A = props => {
             </div>
             {
                 contentData && <Content 
+                    language={language}
                     contentData={contentData}
                     sectionNum={sectionNum}
                     currentSectionIdx={currentSectionIdx}

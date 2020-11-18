@@ -3,7 +3,7 @@
     "mapAssets": [
       {
         "name": "hkIsland_diffuse",
-        "src": "./images/ex303/hkIsland_diffuse.svg"
+        "src": "./images/ex303/Pre-1900_HKI.png"
       },
       {
         "name": "hkIsland_start_diffuse",
@@ -11,11 +11,11 @@
       },
       {
         "name": "hkIsland_old_diffuse",
-        "src": "./images/ex303/hkIsland_old_diffuse.svg"
+        "src": "./images/ex303/Pre-1900_HKI.png"
       },
       {
         "name": "hkIsland_mask",
-        "src": "./images/ex303/hkIsland_mask.svg"
+        "src": "./images/ex303/1900 Victoria Harbour.png"
       },
       {
         "name": "hkIsland_coastline1900_mask",

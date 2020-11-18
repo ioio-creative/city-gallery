@@ -16,7 +16,7 @@ const Section1 = props => {
                     </div>
                     <div className="dist">{data && data.distance}<span style={{width:`${60 / 1920 * 100}vw`}}></span></div>
                     <div className="source">
-                        {globalData && globalData.source}{data && data.source}
+                        {globalData && globalData.source}<br/><span dangerouslySetInnerHTML={{__html:data && data.images.hongkong.source}}></span>
                     </div>
                 </div>
                 <div className="bg"><span></span></div>
@@ -29,7 +29,7 @@ const Section1 = props => {
                     </div>
                     <div className="dist">{data && data.distance}<span style={{width:`${60 / 1920 * 100}vw`}}></span></div>
                     <div className="source">
-                        {globalData && globalData.source}{data && data.source}
+                        {globalData && globalData.source}<br/><span dangerouslySetInnerHTML={{__html:data && locationName && data.images[locationName].source}}></span>
                     </div>
                 </div>
                 <div className="bg"><span></span></div>

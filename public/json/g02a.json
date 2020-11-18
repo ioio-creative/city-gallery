@@ -31,37 +31,48 @@
         "source": "(Source Holder)",
         "images": {
           "hongkong": {
-            "src": "./images/exG02a/section1/hongkongmap.svg"
+            "src": "./images/exG02a/section1/hongkongmap.svg",
+            "source": "Lands Department,<br/>Hong Kong Special Administrative Region"
           },
           "beijing": {
-            "src": "./images/exG02a/section1/beijingmap.svg"
+            "src": "./images/exG02a/section1/beijingmap.svg",
+            "source": "地理国情监测云平台"
           },
           "cairo": {
-            "src": "./images/exG02a/section1/cairomap.svg"
+            "src": "./images/exG02a/section1/cairomap.svg",
+            "source": "Official Portal of Cairo Governorate"
           },
           "london": {
-            "src": "./images/exG02a/section1/londonmap.svg"
+            "src": "./images/exG02a/section1/londonmap.svg",
+            "source": "Greater London Authority"
           },
           "paris": {
-            "src": "./images/exG02a/section1/parismap.svg"
+            "src": "./images/exG02a/section1/parismap.svg",
+            "source": "Greater Paris Metropolis In Action,<br/>Métropole du Grand Paris"
           },
           "mexicocity": {
-            "src": "./images/exG02a/section1/mexicomap.svg"
+            "src": "./images/exG02a/section1/mexicomap.svg",
+            "source": "Atlas de Riesgos de la Ciudad de México"
           },
           "mumbai": {
-            "src": "./images/exG02a/section1/mumbaimap.svg"
+            "src": "./images/exG02a/section1/mumbaimap.svg",
+            "source": "Municipal Corporation of Greater Mumbai"
           },
           "newyork": {
-            "src": "./images/exG02a/section1/newyorkmap.svg"
+            "src": "./images/exG02a/section1/newyorkmap.svg",
+            "source": "NYC Department of City Planning"
           },
           "singapore": {
-            "src": "./images/exG02a/section1/singaporemap.svg"
+            "src": "./images/exG02a/section1/singaporemap.svg",
+            "source": "Meteorological Service Singapore"
           },
           "sydney": {
-            "src": "./images/exG02a/section1/sydneymap.svg"
+            "src": "./images/exG02a/section1/sydneymap.svg",
+            "source": "Australian Bureau of Statistics"
           },
           "tokyo": {
-            "src": "./images/exG02a/section1/tokyomap.svg"
+            "src": "./images/exG02a/section1/tokyomap.svg",
+            "source": "Tokyo Metropolitan Government"
           }
         }
       },
@@ -480,37 +491,48 @@
         "source": "(Source Holder)",
         "images": {
           "hongkong": {
-            "src": "./images/exG02a/section1/hongkongmap.svg"
+            "src": "./images/exG02a/section1/hongkongmap.svg",
+            "source": "Lands Department,<br/>Hong Kong Special Administrative Region"
           },
           "beijing": {
-            "src": "./images/exG02a/section1/beijingmap.svg"
+            "src": "./images/exG02a/section1/beijingmap.svg",
+            "source": "地理国情监测云平台"
           },
           "cairo": {
-            "src": "./images/exG02a/section1/cairomap.svg"
+            "src": "./images/exG02a/section1/cairomap.svg",
+            "source": "Official Portal of Cairo Governorate"
           },
           "london": {
-            "src": "./images/exG02a/section1/londonmap.svg"
+            "src": "./images/exG02a/section1/londonmap.svg",
+            "source": "Greater London Authority"
           },
           "paris": {
-            "src": "./images/exG02a/section1/parismap.svg"
+            "src": "./images/exG02a/section1/parismap.svg",
+            "source": "Greater Paris Metropolis In Action,<br/>Métropole du Grand Paris"
           },
           "mexicocity": {
-            "src": "./images/exG02a/section1/mexicomap.svg"
+            "src": "./images/exG02a/section1/mexicomap.svg",
+            "source": "Atlas de Riesgos de la Ciudad de México"
           },
           "mumbai": {
-            "src": "./images/exG02a/section1/mumbaimap.svg"
+            "src": "./images/exG02a/section1/mumbaimap.svg",
+            "source": "Municipal Corporation of Greater Mumbai"
           },
           "newyork": {
-            "src": "./images/exG02a/section1/newyorkmap.svg"
+            "src": "./images/exG02a/section1/newyorkmap.svg",
+            "source": "NYC Department of City Planning"
           },
           "singapore": {
-            "src": "./images/exG02a/section1/singaporemap.svg"
+            "src": "./images/exG02a/section1/singaporemap.svg",
+            "source": "Meteorological Service Singapore"
           },
           "sydney": {
-            "src": "./images/exG02a/section1/sydneymap.svg"
+            "src": "./images/exG02a/section1/sydneymap.svg",
+            "source": "Australian Bureau of Statistics"
           },
           "tokyo": {
-            "src": "./images/exG02a/section1/tokyomap.svg"
+            "src": "./images/exG02a/section1/tokyomap.svg",
+            "source": "Tokyo Metropolitan Government"
           }
         }
       },

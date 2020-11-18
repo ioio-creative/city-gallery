@@ -843,7 +843,8 @@ body {
             position: relative;
             overflow: hidden;
             img {
-              width: auto;
+              // width: auto;
+              width: 500px;
               height: 100%;
               transform: translate3d(0, 0, 0) scale(1);
             }
