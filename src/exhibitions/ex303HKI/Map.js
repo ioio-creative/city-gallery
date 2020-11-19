@@ -471,10 +471,9 @@ const Map = props => {
         hasShownCoastline = false;
         for (let i = 0; i < years.length; i++) {
           const v = { p: options.year[`y${years[i]}`] };
-
           gsap.to(v, 1, {
             p: 0,
-            ease: 'power4.out',
+            ease: 'power2.out',
             onUpdate: function () {
               options.year[`y${years[i]}`] = this._targets[0].p;
             }

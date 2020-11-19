@@ -37,8 +37,8 @@ const Menu = props => {
             );
           })}
         <div id='switch' className={`${mode} ${props.yearIdx === 3 ? '' : 'hide'}`}>
-          <span onClick={() => {switchMode('l');props.gameMode("l");}}>海岸線</span>
-          <span onClick={() => {switchMode('r');props.gameMode("r");}}>街道</span>
+          <span onClick={() => {switchMode('l');props.leaveZoom();}}>海岸線</span>
+          <span onClick={() => {switchMode('r');props.toFakeZoom();}}>街道</span>
         </div>
         <div className={`descriptionBox ${props.yearIdx === 0 || props.yearIdx === 1 || props.yearIdx === 2 ? '' : 'hide'}`}>海岸綫 <span>———</span> 香港島</div>
       </div>

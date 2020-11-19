@@ -16,6 +16,7 @@
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
+    "react-video-js-player": "^1.1.1",
     "redux": "^4.0.4",
     "socket.io-client": "^2.3.0",
     "stats.js": "^0.17.0",
@@ -25,6 +26,7 @@
     "three-orbitcontrols": "^2.102.1",
     "three-subdivision-modifier": "^1.0.5",
     "three.meshline": "^1.2.0",
+    "video-react": "^0.14.1",
     "zdog": "^1.1.1"
   },
   "scripts": {

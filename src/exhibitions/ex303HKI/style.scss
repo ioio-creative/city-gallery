@@ -8,6 +8,10 @@ $brown:#59472A;
 
 $width:3840;
 
+body{
+    overflow: hidden;
+}
+
 *{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -36,11 +40,113 @@ span{
     height:100%;
     // background:#103042;
     font-family: 'Helvetica';
-    #coast{
-        transition: opacity linear 0.3s, visibility linear 0.3s;
+    #coast, #street{
+        // transition: all 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+        position: absolute;
+    }
+    .dot{
+        position: absolute;
+        &.d1{
+            top: 364px;
+            left: 1259px;
+        }
+        &.d2{
+            top: 544px;
+            left: 913px;
+        }
+        &.active{
+            path{
+                fill: red;
+            }
+        }
+    }
+    .road{
+        position: absolute;
+        width: auto;
+        height: auto;
+        &.r1{
+            top: 392px;
+            left: 1185px;
+        }
+        &.r2{
+            top: 596px;
+            left: 887px;
+        }
+    }
+    .disclaimer{
+        position: absolute;
+        width: auto;
+        height: auto;
+        left: 3353px;
+        top: 78px;
+        z-index: 1;
+    }
+    .toLeft{
+        position: absolute;
+        width: 67px;
+        height: 67px;
+        top: 507px;
+        left: 1808px;
+    }
+    .toRight{
+        position: absolute;
+        width: 67px;
+        height: 67px;
+        top: 507px;
+        left: 1976px;
+    }
+    .video-js{
+        top: 261px;
+        left: 2335px;
+        position: absolute;
+        width: 925px;
+        height: 558px;
+    }
+    .cross{
+        position: absolute;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: solid 1px black;
+        color: #074A45;
+        background-color: white;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 261px;
+        left: 3224px;
+        z-index: 3;
+    }
+    .correction{
+        position: absolute;
+        width: auto;
+        height: auto;
+        opacity: 0.2;
+        z-index: 2;
+    }
+    .videoWrap{
+        position: absolute;
+        width: 3840px;
+        height: 1080px;
+        background-color: #fff;
+        opacity: 0;
+        transition: opacity 0.5s linear;
+        display: flex;
+        align-items: center;
+        &.active{
+            opacity: 0.6;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            left: 1915px;
+            height: 1080px;
+            border-right: solid 5px black;
+        }
     }
     .yearMark{
-        position: fixed;
+        position: absolute;
         transition: opacity linear 0.3s, visibility linear 0.3s;
         width: 377px;
         height: 244px;
@@ -48,7 +154,7 @@ span{
         top: 800px;
     }
     .legend{
-        position: fixed;
+        position: absolute;
         transition: opacity linear 0.3s, visibility linear 0.3s;
         width: 212px;
         height: 313px;
@@ -56,13 +162,13 @@ span{
         top: 707px;
     }
     .coastLine{
-        position: fixed;
+        position: absolute;
         transition: opacity linear 0.3s, visibility linear 0.3s;
         width: auto;
         height: auto;
     }
     .nav_2019_sea{
-        position: fixed;
+        position: absolute;
         transition: opacity linear 0.3s, visibility linear 0.3s;
         width: auto;
         height: auto;
@@ -72,10 +178,11 @@ span{
     }
     .smallMap{
         position: absolute;
+        z-index: 1;
         width: auto;
         height: auto;
-        top: 140px;
-        left: 472px;
+        top: 141px;
+        left: 473px;
         transition: all 0.3s cubic-bezier(0.87, 0, 0.13, 1);
     }
     .shader{
@@ -99,6 +206,9 @@ span{
         }
     }
     .wrap{
+        width: 3840px;
+        height: 1080px;
+        overflow: hidden;
         position: absolute;
         transition: opacity linear 0.3s, visibility linear 0.3s;
         .island{
@@ -118,6 +228,22 @@ span{
             top: 0px;
             opacity: 0;
             transition: opacity linear 0.3s, visibility linear 0.3s;
+        }
+        .zoomMap{
+            transform: scale(1) translate3d(0px, 0px, 0px);
+            transition: all 1s linear;
+            &.zoom1{
+                transform: scale(1.89) translate3d(583px, 53px, 0px);
+            }
+            &.zoom2{
+                transform: scale(1.89) translate3d(99px, -20px, 0px);
+            }
+            &.zoom3{
+                transform: scale(1.19) translate3d(-262px, -86px, 0px);
+            }
+            &.zoom4{
+                transform: scale(1.19) translate3d(-1188.3px, 86px, 0px);
+            }
         }
         &.active{
             opacity: 1;
