@@ -621,13 +621,22 @@ const Content = props => {
               ></div>
               <div id='desWrap'>
                 <div id='des'>
-                  {v.text1.split('').map((v, i) => {
-                    return (
-                      <span key={i}>
-                        <span>{v}</span>
-                      </span>
-                    );
-                  })}
+                  {props.language === 'tc' &&
+                    v.text1.split('').map((v, i) => {
+                      return (
+                        <span key={i}>
+                          <span>{v}</span>
+                        </span>
+                      );
+                    })}
+                  {props.language === 'en' &&
+                    v.text1.split(' ').map((v, i) => {
+                      return (
+                        <span key={i}>
+                          <span>{v}&nbsp;</span>
+                        </span>
+                      );
+                    })}
                 </div>
               </div>
               <div id='date' className='eb'>
@@ -731,7 +740,7 @@ const Content = props => {
                   return (
                     <li key={i}>
                       <img src={v.src} />
-                      <p id='des'>{v.description}</p>
+                      {/* <p id='des'>{v.description}</p> */}
                       <p id='ref'>{v.reference}</p>
                     </li>
                   );

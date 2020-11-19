@@ -11,6 +11,8 @@
       "attr_quotes": "single"
     }
   },
+  "editor.wordWrapColumn": 300,
+  "prettier.printWidth": 300,
   "prettier.trailingComma": "none",
   "prettier.arrowParens": "avoid",
   "editor.formatOnSave": false,

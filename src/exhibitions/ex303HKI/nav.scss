@@ -1,0 +1,39 @@
+@import '../../setting.scss';
+
+$white:#fff;
+$black:#000;
+$lightblue:#70CCB8;
+$drakgreenblue:#074A45;
+
+$width:3840;
+
+#navWrap{
+  z-index: 10;
+  position: absolute;
+  top: 898px;
+  left: 1168px;
+  width: 864px;
+  height: 112px;
+  display: flex;
+  justify-content: space-between;
+  .left{
+    width: 660px;
+    height: 112px;
+    background-color: #fff;
+    border-radius: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .yearButton{
+      width: 154px;
+      height: 57px;
+      border-radius: 57px;
+      border-style: solid;
+      border-width: 1px;
+      border-color: #074A45;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

@@ -3,35 +3,35 @@
     "mapAssets": [
       {
         "name": "hkIsland_diffuse",
-        "src": "./images/ex303/Pre-1900_HKI.png"
-      },
-      {
-        "name": "hkIsland_start_diffuse",
-        "src": "./images/ex303/Pre1900_HKI_ori.png"
-      },
-      {
-        "name": "hkIsland_old_diffuse",
-        "src": "./images/ex303/Pre-1900_HKI.png"
+        "src": "./images/ex303/1900_fill_green.svg"
       },
       {
         "name": "hkIsland_mask",
-        "src": "./images/ex303/1900_Victoria_Harbour_b&w.png"
+        "src": "./images/ex303/1900_fill_land1.png"
+      },
+      {
+        "name": "hkIsland_start_diffuse",
+        "src": "./images/ex303/1900_fill_land1.png"
+      },
+      {
+        "name": "hkIsland_old_diffuse",
+        "src": "./images/ex303/1900_mask_12.png"
       },
       {
         "name": "hkIsland_coastline1900_mask",
-        "src": "./images/ex303/hkIsland_coastline1900_mask.svg"
+        "src": "./images/ex303/1900_fill_land.png"
       },
       {
         "name": "hkIsland_coastline1945_mask",
-        "src": "./images/ex303/hkIsland_coastline1945_mask.svg"
+        "src": "./images/ex303/2019_fill_land_2.png"
       },
       {
         "name": "hkIsland_coastline1985_mask",
-        "src": "./images/ex303/hkIsland_coastline1985_mask.svg"
+        "src": "./images/ex303/2019_fill_land_3.png"
       },
       {
         "name": "hkIsland_coastline2019_mask",
-        "src": "./images/ex303/hkIsland_coastline2019_mask.svg"
+        "src": "./images/ex303/2019_fill_land_4.png"
       },
       {
         "name": "hkIsland_coastline1900_highlight",

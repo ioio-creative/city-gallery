@@ -26,11 +26,68 @@ span{
     display: inline-block;
 }
 
+.hide{
+    opacity: 0;
+    visibility: hidden;
+}
+
 #main{
     width:100%;
     height:100%;
-    background:#103042;
+    // background:#103042;
     font-family: 'Helvetica';
+    .shader{
+        position: relative;
+        z-index: 1;
+    }
+    .hmWrap{
+        position: absolute;
+        transition: opacity linear 0.3s, visibility linear 0.3s;
+        img{
+            vertical-align: top;
+        }
+        &::after{
+        content: '';
+        background-color: #134e71b0;
+        display: block;
+        position: absolute;
+        width: 3840px;
+        height: 1080px;
+        top: 0;
+        }
+    }
+    .wrap{
+        position: absolute;
+        transition: opacity linear 0.3s, visibility linear 0.3s;
+        .island{
+            position: absolute;
+            top: 0px;
+            z-index: 10;
+            transition: opacity linear 0.3s, visibility linear 0.3s;
+        }
+        .full{
+            position: absolute;
+            top: 0px;
+            opacity: 0.5;
+            transition: opacity linear 0.3s, visibility linear 0.3s;
+        }
+        .filled{
+            position: absolute;
+            top: 0px;
+            opacity: 0;
+            transition: opacity linear 0.3s, visibility linear 0.3s;
+        }
+        &.active{
+            opacity: 1;
+            visibility: visible;
+            .full.true{
+                opacity: 1;
+            }
+            // .filled1900.true{
+            //     opacity: 1;
+            // }
+        }
+    }
     &.started{
         #yearSelector{
             opacity: 0;
@@ -113,6 +170,7 @@ span{
         }
     }
     #yearSelector{
+        z-index: 10;
         width:vw-calc(264, $width);
         position: absolute;
         top:50%;

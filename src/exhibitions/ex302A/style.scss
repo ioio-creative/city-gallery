@@ -537,11 +537,6 @@ body {
                   background:#359e64;
                 }
               }
-              &#authorities {
-                &:before {
-                  background: #b931f5;
-                }
-              }
               span {
                 opacity: 1;
                 visibility: visible;
@@ -580,11 +575,6 @@ body {
             &#economic {
               span.category {
                 color: #359e64;
-              }
-            }
-            &#authorities {
-              span.category {
-                color: #217AFF;
               }
             }
             span {
@@ -782,13 +772,6 @@ body {
                 &:before,
                 &:after {
                    background-color: #359e64;
-                }
-              }
-              &#authorities {
-                color: #217AFF;
-                &:before,
-                &:after {
-                   background-color: #217AFF;
                 }
               }
               &:before,
@@ -1128,6 +1111,7 @@ body {
           #ref {
             font-size: vw-calc(15);
             color: #535353;
+            color: white;
             padding-top: vw-calc(5);
           }
         }
