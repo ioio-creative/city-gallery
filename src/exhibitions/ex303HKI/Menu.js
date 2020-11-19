@@ -21,12 +21,12 @@ const Menu = props => {
     //       <li id='en'>ENG</li>
     //     </ul>
     //   </div>
-    //   <div id='switch' className={mode}>
-    //     <span onClick={() => switchMode('l')}>海岸線</span>
-    //     <span onClick={() => switchMode('r')}>街道</span>
-    //   </div>
+    // <div id='switch' className={mode}>
+    //   <span onClick={() => switchMode('l')}>海岸線</span>
+    //   <span onClick={() => switchMode('r')}>街道</span>
     // </div>
-    <div id='navWrap'>
+    // </div>
+    <div id='navWrap' className={`${props.show ? '' : 'hide'}`}>
       <div className='left'>
         <div
           className='yearButton'
@@ -36,9 +36,11 @@ const Menu = props => {
         >
           選擇年份
         </div>
+        <div id='switch' className={`${mode} ${props.yearIdx === 3 ? '' : 'hide'}`}>
+          <span onClick={() => switchMode('l')}>海岸線</span>
+          <span onClick={() => switchMode('r')}>街道</span>
+        </div>
       </div>
-      <span onClick={() => switchMode('l')}>海岸線</span>
-      <span onClick={() => switchMode('r')}>街道</span>
       <div className='right'></div>
     </div>
   );

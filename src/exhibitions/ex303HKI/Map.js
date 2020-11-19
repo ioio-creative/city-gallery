@@ -51,7 +51,8 @@ const Map = props => {
     const startPos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
     const zoomedPos = {
       x: -window.innerWidth * 0.13,
-      y: -window.innerHeight * 0.325
+      // y: -window.innerHeight * 0.325
+      y: -window.innerHeight * 0.4
     };
     const years = ['1900', '1945', '1985', '2019'];
     let hasShownCoastline = false;
@@ -466,71 +467,94 @@ const Map = props => {
     props.handleSelectCoastline.current = { selectCoastline };
 
     const showCoastline = idx => {
-      for (let i = 0; i < years.length; i++) {
-        const v = { p: options.year[`y${years[i]}`] };
-        // if (hasShownCoastline && i > idx) {
-        //   gsap.to(v, 2, {
-        //     p: 0,
-        //     ease: 'power4.out',
-        //     onUpdate: function () {
-        //       options.year[`y${years[i]}`] = this._targets[0].p;
-        //     },
-        //     onComplete: () => {
-        //       if (i <= idx) {
-        //         gsap.to(v, 4, {
-        //           p: 1,
-        //           ease: 'power2.out',
-        //           onUpdate: function () {
-        //             options.year[`y${years[i]}`] = this._targets[0].p;
-        //           }
-        //         });
-        //       }
-        //     }
-        //   });
-        if (hasShownCoastline) {
-          gsap.to(v, 2, {
+      if (idx === -1) {
+        hasShownCoastline = false;
+        for (let i = 0; i < years.length; i++) {
+          const v = { p: options.year[`y${years[i]}`] };
+
+          gsap.to(v, 1, {
             p: 0,
             ease: 'power4.out',
             onUpdate: function () {
               options.year[`y${years[i]}`] = this._targets[0].p;
-            },
-            onComplete: () => {
+            }
+          });
+        }
+      } else {
+        for (let i = 0; i < years.length; i++) {
+          (i => {
+            const v = { p: options.year[`y${years[i]}`] };
+            // if (hasShownCoastline && i > idx) {
+            //   gsap.to(v, 2, {
+            //     p: 0,
+            //     ease: 'power4.out',
+            //     onUpdate: function () {
+            //       options.year[`y${years[i]}`] = this._targets[0].p;
+            //     },
+            //     onComplete: () => {
+            //       if (i <= idx) {
+            //         gsap.to(v, 4, {
+            //           p: 1,
+            //           ease: 'power2.out',
+            //           onUpdate: function () {
+            //             options.year[`y${years[i]}`] = this._targets[0].p;
+            //           }
+            //         });
+            //       }
+            //     }
+            //   });
+            if (hasShownCoastline) {
+              gsap.to(v, 1, {
+                p: 0,
+                ease: 'power4.out',
+                onUpdate: function () {
+                  options.year[`y${years[i]}`] = this._targets[0].p;
+                },
+                onComplete: () => {
+                  if (i <= idx) {
+                    gsap.to(v, 6, {
+                      p: 1,
+                      delay: 0.5 * i,
+                      ease: 'power2.out',
+                      onUpdate: function () {
+                        options.year[`y${years[i]}`] = this._targets[0].p;
+                      }
+                    });
+                  }
+                }
+              });
+            } else {
               if (i <= idx) {
-                gsap.to(v, 4, {
+                gsap.to(v, 6, {
                   p: 1,
                   ease: 'power2.out',
                   onUpdate: function () {
                     options.year[`y${years[i]}`] = this._targets[0].p;
                   }
                 });
+                hasShownCoastline = true;
               }
             }
-          });
-        } else {
-          if (i <= idx) {
-            gsap.to(v, 4, {
-              p: 1,
-              ease: 'power2.out',
-              onUpdate: function () {
-                options.year[`y${years[i]}`] = this._targets[0].p;
-              }
-            });
-            hasShownCoastline = true;
-          }
+          })(i);
         }
       }
     };
     props.handleShowCoastline.current = { showCoastline };
 
-    const start = () => {
+    const start = i => {
       // gsap.to(options, 4, { progress: 1, ease: 'power2.inOut' });
-      gsap.to(options, 8, {
+      gsap.to(options, 2, {
         progress: 1,
         ease: 'power2.inOut'
       });
-      gsap.to({}, 5, {
+      gsap.to({}, i + 2.5, {
         onComplete: () => {
           props.setOpacity(true);
+        }
+      });
+      gsap.to({}, i + 2.5 + 1, {
+        onComplete: () => {
+          props.show(true);
         }
       });
       gsap.to(selectedHighlight, 1, { alpha: 0, ease: 'power1.inOut' });

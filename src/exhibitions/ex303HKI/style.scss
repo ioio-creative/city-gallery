@@ -36,6 +36,37 @@ span{
     height:100%;
     // background:#103042;
     font-family: 'Helvetica';
+    .yearMark{
+        position: fixed;
+        transition: opacity linear 0.3s, visibility linear 0.3s;
+        width: 377px;
+        height: 244px;
+        left: 80px;
+        top: 800px;
+    }
+    .legend{
+        position: fixed;
+        transition: opacity linear 0.3s, visibility linear 0.3s;
+        width: 212px;
+        height: 313px;
+        left: 3531px;
+        top: 707px;
+    }
+    .coastLine{
+        position: fixed;
+        transition: opacity linear 0.3s, visibility linear 0.3s;
+        width: auto;
+        height: auto;
+    }
+    .nav_2019_sea{
+        position: fixed;
+        transition: opacity linear 0.3s, visibility linear 0.3s;
+        width: auto;
+        height: auto;
+        top: 898px;
+        left: 2023px;
+        z-index: 11;
+    }
     .shader{
         position: relative;
         z-index: 1;

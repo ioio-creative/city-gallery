@@ -6,12 +6,14 @@ import Map from './Map';
 
 const G303 = props => {
   const [started, setStarted] = useState(false);
-  const [yearIdx, setYearIdx] = useState(null);
+  const [yearIdx, setYearIdx] = useState(0);
   const [zoomed, setZoomed] = useState(false);
   const [mapIndicatorIdx, setMapIndicatorIdx] = useState(0);
   const [streetData, setStreetData] = useState(null);
   const [hm, setHm] = useState(true);
   const [fill, setFill] = useState(false);
+  const [showNav, setShowNav] = useState(false);
+  const [showYear, setShowYear] = useState(true);
 
   const handleZoom = useRef(null);
   const handleMove = useRef(null);
@@ -40,7 +42,9 @@ const G303 = props => {
     if (yearIdx !== null) {
       setHm(false);
       // setStarted(true);
-      handleStart.current.start();
+      setShowNav(false);
+      setShowYear(false);
+      handleStart.current.start(yearIdx);
       handleShowCoastline.current.showCoastline(yearIdx);
     }
   };
@@ -48,16 +52,23 @@ const G303 = props => {
   const onBack = () => {
     setFill(false);
     setHm(true);
-    setYearIdx(null);
-    handleSelectCoastline.current.selectCoastline(null);
+    setYearIdx(0);
+    setShowNav(false);
+    setShowYear(true);
     handleShowCoastline.current.showCoastline(-1);
+    // handleSelectCoastline.current.selectCoastline(null);
   };
+
+  const show = tf => {
+    setShowNav(tf);
+  };
+
   return (
     <div id='main' className={`${started ? 'started' : ''}${zoomed ? ' zoomed' : ''}`}>
       {/* fake dog */}
       {/* <div className='back'>Back</div> */}
       <div className={`hmWrap ${hm ? '' : 'hide'}`}>
-        <img className='baseMap' alt='' src='./images/ex303/1900_BaseMap.png'></img>
+        <img className='baseMap' alt='' src={`./images/ex303/303_YearSelection_${yearIdx}.png`}></img>
       </div>
 
       <div className={`wrap ${yearIdx === 0 && !hm ? 'active' : 'hide'}`}>
@@ -81,7 +92,12 @@ const G303 = props => {
       </div>
       {/* fake dog */}
 
-      <div id='yearSelector' className={yearIdx === null ? 'disabled' : ''}>
+      <img className={`legend ${fill ? '' : 'hide'}`} alt='' src='./images/ex303/HKI_legend.png'></img>
+      <img className={`yearMark ${!hm ? '' : 'hide'}`} src={`./images/ex303/${yearIdx}_mark.png`}></img>
+      <img className={`coastLine ${!hm ? '' : 'hide'}`} src={`./images/ex303/2019_coastLine.svg`}></img>
+      <img className={`nav_2019_sea ${yearIdx === 3 && showNav ? '' : 'hide'}`} src={`./images/ex303/2019_nav_right.png`}></img>
+
+      <div id='yearSelector' className={`${yearIdx === null ? 'disabled' : ''} ${showYear ? '' : 'hide'}`}>
         <ul>
           {['1900', '1945', '1985', '2019'].map((v, i) => {
             return (
@@ -129,9 +145,10 @@ const G303 = props => {
           handleShowCoastline={handleShowCoastline}
           handleSelectCoastline={handleSelectCoastline}
           handleStart={handleStart}
+          show={setShowNav}
         />
       }
-      <Menu handleZoom={handleZoom} back={onBack} />
+      <Menu handleZoom={handleZoom} back={onBack} show={showNav} yearIdx={yearIdx} />
     </div>
   );
 };
