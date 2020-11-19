@@ -6,7 +6,7 @@ import G303 from './G303';
 const App = (props) => {
   const [appData, setAppData] = useState(null);
   useEffect(() => {
-    api.fetchExhibitionJsonFromUrl('./json/303.json', setAppData);
+    // api.fetchExhibitionJsonFromUrl('./json/303.json', setAppData);
   }, [])
   useEffect(() => {
     if(appData){
@@ -14,10 +14,6 @@ const App = (props) => {
     }
   }, [appData]);
 
-  return (
-    <>
-      {appData && <G303 appData={appData} />}
-    </>
-  );
+  return <G303 />;
 }
 export default App;
