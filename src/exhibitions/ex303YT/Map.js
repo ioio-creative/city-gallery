@@ -3,14 +3,14 @@ import dat from 'dat.gui';
 import * as PIXI from 'pixi.js';
 import gsap from 'gsap';
 
-// import diff from './images/hkIsland_diffuse.svg'
-// import start_diff from './images/hkIsland_start_diffuse.svg'
-// import old_diff from './images/hkIsland_old_diffuse.svg'
-// import mask from './images/hkIsland_mask.svg'
-// import coastline1900_mask from './images/hkIsland_coastline1900_mask.svg'
-// import coastline1945_mask from './images/hkIsland_coastline1945_mask.svg'
-// import coastline1985_mask from './images/hkIsland_coastline1985_mask.svg'
-// import coastline2019_mask from './images/hkIsland_coastline2019_mask.svg'
+// import diff from './images/yt_diffuse.svg'
+// import start_diff from './images/yt_start_diffuse.svg'
+// import old_diff from './images/yt_old_diffuse.svg'
+// import mask from './images/yt_mask.svg'
+// import coastline1900_mask from './images/yt_coastline1900_mask.svg'
+// import coastline1945_mask from './images/yt_coastline1945_mask.svg'
+// import coastline1985_mask from './images/yt_coastline1985_mask.svg'
+// import coastline2019_mask from './images/yt_coastline2019_mask.svg'
 // import sand from './images/sand.png'
 // import noise from './images/noise.png'
 // import noise2 from './images/noise2.png'
@@ -32,10 +32,10 @@ const Map = props => {
       },
       threshold: 0.001,
       useNoiseTxt: function () {
-        map['hkIsland'].image.shader.uniforms.noiseTexture = new PIXI.Sprite.from('noise').texture.baseTexture;
+        map['yt'].image.shader.uniforms.noiseTexture = new PIXI.Sprite.from('noise').texture.baseTexture;
       },
       useSandTxt: function () {
-        map['hkIsland'].image.shader.uniforms.noiseTexture = new PIXI.Sprite.from('sand').texture.baseTexture;
+        map['yt'].image.shader.uniforms.noiseTexture = new PIXI.Sprite.from('sand').texture.baseTexture;
       }
     };
 
@@ -131,7 +131,7 @@ const Map = props => {
         this.highlight = [];
         for (let i = 0; i < years.length; i++) {
           const year = years[i];
-          this.highlight[i] = new PIXI.Sprite.from(`hkIsland_coastline${year}_highlight`);
+          this.highlight[i] = new PIXI.Sprite.from(`yt_coastline${year}_highlight`);
           this.highlight[i].anchor.set(0.5);
           this.highlight[i].x = startPos.x;
           this.highlight[i].y = startPos.y;
@@ -238,13 +238,13 @@ const Map = props => {
             progress2019: options.year.y2019,
             threshold: options.threshold,
             diffuse: this.texture,
-            startDiffuse: new PIXI.Sprite.from('hkIsland_start_diffuse').texture.baseTexture,
-            oldDiffuse: new PIXI.Sprite.from('hkIsland_old_diffuse').texture.baseTexture,
-            maskTexture: new PIXI.Sprite.from('hkIsland_mask').texture.baseTexture,
-            coastline1900Mask: new PIXI.Sprite.from('hkIsland_coastline1900_mask').texture.baseTexture,
-            coastline1945Mask: new PIXI.Sprite.from('hkIsland_coastline1945_mask').texture.baseTexture,
-            coastline1985Mask: new PIXI.Sprite.from('hkIsland_coastline1985_mask').texture.baseTexture,
-            coastline2019Mask: new PIXI.Sprite.from('hkIsland_coastline2019_mask').texture.baseTexture,
+            startDiffuse: new PIXI.Sprite.from('yt_start_diffuse').texture.baseTexture,
+            oldDiffuse: new PIXI.Sprite.from('yt_old_diffuse').texture.baseTexture,
+            maskTexture: new PIXI.Sprite.from('yt_mask').texture.baseTexture,
+            coastline1900Mask: new PIXI.Sprite.from('yt_coastline1900_mask').texture.baseTexture,
+            coastline1945Mask: new PIXI.Sprite.from('yt_coastline1945_mask').texture.baseTexture,
+            coastline1985Mask: new PIXI.Sprite.from('yt_coastline1985_mask').texture.baseTexture,
+            coastline2019Mask: new PIXI.Sprite.from('yt_coastline2019_mask').texture.baseTexture,
             noiseTexture: new PIXI.Sprite.from('sand').texture.baseTexture,
             noise2Texture: new PIXI.Sprite.from('noise2').texture.baseTexture
           }
@@ -354,8 +354,8 @@ const Map = props => {
       }
       loader.load((loader, resources) => {
         // create map
-        map['hkIsland'] = new Map(resources['hkIsland_diffuse'].texture);
-        map['hkIsland'].create();
+        map['yt'] = new Map(resources['yt_diffuse'].texture);
+        map['yt'].create();
 
         for (let s = 0, lth = data.yt.streets.length; s < lth; s++) {
           streets[s] = [];
@@ -376,24 +376,24 @@ const Map = props => {
 
     const startAnim = () => {
       app.ticker.add(delta => {
-        if (map['hkIsland']) {
-          map['hkIsland'].image.shader.uniforms.progress = options.progress;
-          map['hkIsland'].image.shader.uniforms.progress1900 = options.year.y1900;
-          map['hkIsland'].image.shader.uniforms.progress1945 = options.year.y1945;
-          map['hkIsland'].image.shader.uniforms.progress1985 = options.year.y1985;
-          map['hkIsland'].image.shader.uniforms.progress2019 = options.year.y2019;
-          map['hkIsland'].image.shader.uniforms.threshold = options.threshold;
+        if (map['yt']) {
+          map['yt'].image.shader.uniforms.progress = options.progress;
+          map['yt'].image.shader.uniforms.progress1900 = options.year.y1900;
+          map['yt'].image.shader.uniforms.progress1945 = options.year.y1945;
+          map['yt'].image.shader.uniforms.progress1985 = options.year.y1985;
+          map['yt'].image.shader.uniforms.progress2019 = options.year.y2019;
+          map['yt'].image.shader.uniforms.threshold = options.threshold;
         }
       });
     };
 
     const moveMap = (idx = 0) => {
       gsap.to([mapContainer, markerContainer, coastlinePartsContainer], 1, {
-        x: zoomedPos.x - idx * (map['hkIsland'].image.width / (4 - 1)),
+        x: zoomedPos.x - idx * (map['yt'].image.width / (4 - 1)),
         y: zoomedPos.y,
         ease: 'power3.inOut'
       });
-      // gsap.to('#markerOuterWrap', 1, {x:zoomedPos.x - (idx * (map['hkIsland'].image.width/(4-1))), y:zoomedPos.y, ease:'power3.inOut'});
+      // gsap.to('#markerOuterWrap', 1, {x:zoomedPos.x - (idx * (map['yt'].image.width/(4-1))), y:zoomedPos.y, ease:'power3.inOut'});
     };
 
     const zoomInOut = mode => {
@@ -433,8 +433,8 @@ const Map = props => {
     props.handleMove.current = { updateMapIndicatorIdx };
 
     const selectCoastline = idx => {
-      const highlights = map['hkIsland'].highlight;
-      selectedHighlight = map['hkIsland'].highlight[idx];
+      const highlights = map['yt'].highlight;
+      selectedHighlight = map['yt'].highlight[idx];
       for (let i = 0; i < highlights.length; i++) {
         if (i !== idx) {
           const highlight = highlights[i];
