@@ -6,7 +6,7 @@ $lightblue:#70CCB8;
 $drakgreenblue:#074A45;
 $brown:#59472A;
 
-$width:3840;
+$width:1920;
 
 *{
     -webkit-box-sizing: border-box;
@@ -202,60 +202,148 @@ span{
         }
     }
     #streetInfo{
-        // width:100%;
-        // height:100%;
         position: fixed;
         z-index: 2;
         opacity:0;
         visibility: hidden;
-        // &:after{
-        //     content:'';
-        //     width:100%;
-        //     height:100%;
-        //     position: absolute;
-        //     top:0;
-        //     left:0;
-        //     z-index: 1;
-        //     background:$white;
-        //     opacity: .5;
-        //     visibility: hidden;
-        // }
         h1{
             font-size:vw-calc(100, $width);
             color:$drakgreenblue;
             transform: translate3d(17vw, 81vh, 0);
         }
-        // #markerOuterWrap{
-        //     width:100%;
-        //     height:100%;
-        //     position: absolute;
-        //     top: 0;
-        //     left:0;
-        //     z-index: 2;
-        //     transform-origin: left top;
-        //     #markerWrap{
-        //         width:84.42708vw;
-        //         height:84.42708 * 0.573vw;
-        //         position: absolute;
-        //         bottom:-93.2%;
-        //         left: 9.5%;
-        //         // transform: translate3d(-50%,-50%,0);
-        //         // transform-origin: left;
-        //         span{
-        //             width:0;
-        //             height:0;
-        //             display: block;
-        //             &:before{
-        //                 content:'';
-        //                 width:vw-calc(45, $width);
-        //                 height:vw-calc(55, $width);
-        //                 background:url('./images/marker.svg') center no-repeat;
-        //                 background-size:100%;
-        //                 transform: translate3d(-50%,-100%,0);
-        //                 display: block;
-        //             }
-        //         }
-        //     }
-        // }
     }
+}
+
+#g303Dummy {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: $drakgreenblue;
+}
+#yearSelector {
+    position: absolute;
+    z-index: 9;
+    top: 50%;
+    left: 10%;
+    width: 150px;
+    text-align: center;
+    font-size: 50px;
+    transform: translateY(-50%);
+    transition: all 0.4s;
+    color: #70CCB8;
+    font-family: 'Times New Roman';
+    font-weight: bold;
+    font-style: italic;  
+    #startBtn {
+        visibility: visible;
+        opacity: 1;
+        transition: all 0.6s;
+        font-size: 20px;
+        background-color: #FFFFFF;
+        color: #70CCB8;
+        padding: 15px;
+        border-radius: 30px;
+        font-weight: normal;
+    }
+    &.disabled {
+        #startBtn {
+            visibility: hidden;
+            opacity: 0;
+        }
+        ul {
+            margin-bottom: 0px;
+        }
+        li {
+            // font-size: 50px;
+        }
+    }
+    &.hide {
+        visibility: hidden;
+        opacity: 0;
+    }
+    ul {
+        position: relative;
+        margin-bottom: 120px;
+        transition: all 0.4s;
+        text-align: center;
+        &:before, &:after {
+            content: '';
+            width: 1px;
+            height: 20px;
+            background: #fff;
+            position: absolute;
+            left: 50%;
+        }
+        &:before {
+            bottom: 100%;
+            margin-bottom: 20px;
+        }
+        &:after {
+            top: 100%;
+            margin-top: 20px;
+        }
+        li {
+            font-size: 30px;
+            transition: all 0.4s;
+            margin: 20px 0;
+            &.active {
+                font-size: 60px;
+                margin: 0;
+                color: #FFF;
+            }   
+        }
+    }
+}
+#mapWrapper,
+#mapCover {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#mapCover {
+    z-index: 1;
+    background-color: $drakgreenblue;
+    mix-blend-mode: normal;
+    transition: all 2s;
+    &.show {
+        mix-blend-mode: multiply;
+
+    }
+    &.hide {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+#mapWrapper img,
+#mapCover img {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 4s;
+    &.active {
+        opacity: 1;
+        &.cover {
+            transition-delay: 0.5s;
+        }
+    }
+}
+#mapCover img.active {
+    animation: flash 0.8s infinite alternate;
+    // opacity: 0;
+}
+@keyframes flash {
+    0% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.4;
+    }
+
 }

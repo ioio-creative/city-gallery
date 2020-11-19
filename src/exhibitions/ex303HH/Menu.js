@@ -15,14 +15,15 @@ const Menu = props => {
                 <span>語言</span>
                 <ul>
                     <li>繁</li>
-                    <li>簡</li>
+                    {/* <li>簡</li> */}
                     <li id="en">ENG</li>
                 </ul>
             </div>
             <div id="switch" className={mode}>
                 <span onClick={()=>switchMode('l')} >海岸線</span>
-                <span onClick={()=>switchMode('r')}>街道</span>
+                {/* <span onClick={()=>switchMode('r')}>街道</span> */}
             </div>
+            <div id="home" onClick={props.homeBtn}>Home</div>
         </div>
     )
 }

@@ -7,7 +7,7 @@ const routes = {
   ex302A: '/ex302A',
   ex303HKI: '/ex303HKI',
   ex303KC: '/ex303KC',
-  ex303HH: '/ex303HH',
+  ex303WK: '/ex303WK',
   ex303YT: '/ex303YT',
   ex402: '/ex402'
 };
