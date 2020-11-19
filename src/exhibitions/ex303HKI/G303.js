@@ -14,6 +14,7 @@ const G303 = props => {
   const [fill, setFill] = useState(false);
   const [showNav, setShowNav] = useState(false);
   const [showYear, setShowYear] = useState(true);
+  const [gameMode, setGameMode] = useState("l");
 
   const handleZoom = useRef(null);
   const handleMove = useRef(null);
@@ -52,50 +53,66 @@ const G303 = props => {
   const onBack = () => {
     setFill(false);
     setHm(true);
-    setYearIdx(0);
+    // setYearIdx(0);
     setShowNav(false);
     setShowYear(true);
     handleShowCoastline.current.showCoastline(-1);
     // handleSelectCoastline.current.selectCoastline(null);
   };
 
-  const show = tf => {
-    setShowNav(tf);
-  };
 
   return (
-    <div id='main' className={`${started ? 'started' : ''}${zoomed ? ' zoomed' : ''}`}>
+    // <div id='main' className={`${started ? 'started' : ''}${zoomed ? ' zoomed' : ''}`}>
+    <div id='main' className={`${started ? 'started' : ''}${gameMode === "r" ? ' zoomed' : ''}`}>
       {/* fake dog */}
-      {/* <div className='back'>Back</div> */}
-      <div className={`hmWrap ${hm ? '' : 'hide'}`}>
-        <img className='baseMap' alt='' src={`./images/ex303/303_YearSelection_${yearIdx}.png`}></img>
-      </div>
+      <div id='coast' className={`${gameMode === 'l' ? "" : "hide" }`}>
 
-      <div className={`wrap ${yearIdx === 0 && !hm ? 'active' : 'hide'}`}>
-        <img className={`island`} alt='' src='./images/ex303/1900_HKI.png'></img>
-        <img className={`full ${fill ? 'true' : ''}`} alt='' src='./images/ex303/1900_BaseMap.png'></img>
-      </div>
+        <div className={`hmWrap ${hm ? '' : 'hide'}`}>
+          <img className='baseMap' alt='' src={`./images/ex303/303_YearSelection_${yearIdx}.png`}></img>
+        </div>
 
-      <div className={`wrap ${yearIdx === 1 && !hm ? 'active' : 'hide'}`}>
-        <img className={`island`} alt='' src='./images/ex303/1945_HKI.png'></img>
-        <img className={`full ${fill ? 'true' : ''}`} alt='' src='./images/ex303/1945_BaseMap.png'></img>
-      </div>
+        <div className={`wrap ${yearIdx === 0 && !hm ? 'active' : 'hide'}`}>
+          <img className={`island`} alt='' src='./images/ex303/1900_HKI.png'></img>
+          <img className={`full ${fill ? 'true' : ''}`} alt='' src='./images/ex303/1900_BaseMap.png'></img>
+        </div>
 
-      <div className={`wrap ${yearIdx === 2 && !hm ? 'active' : 'hide'}`}>
-        <img className={`island`} alt='' src='./images/ex303/1985_HKI.png'></img>
-        <img className={`full ${fill ? 'true' : ''}`} alt='' src='./images/ex303/1985_BaseMap.png'></img>
-      </div>
+        <div className={`wrap ${yearIdx === 1 && !hm ? 'active' : 'hide'}`}>
+          <img className={`island`} alt='' src='./images/ex303/1945_HKI.png'></img>
+          <img className={`full ${fill ? 'true' : ''}`} alt='' src='./images/ex303/1945_BaseMap.png'></img>
+        </div>
 
-      <div className={`wrap ${yearIdx === 3 && !hm ? 'active' : 'hide'}`}>
-        <img className={`island`} alt='' src='./images/ex303/2019_HKI.png'></img>
-        <img className={`full ${fill ? 'true' : ''}`} alt='' src='./images/ex303/2019_BaseMap.png'></img>
+        <div className={`wrap ${yearIdx === 2 && !hm ? 'active' : 'hide'}`}>
+          <img className={`island`} alt='' src='./images/ex303/1985_HKI.png'></img>
+          <img className={`full ${fill ? 'true' : ''}`} alt='' src='./images/ex303/1985_BaseMap.png'></img>
+        </div>
+
+        <div className={`wrap ${yearIdx === 3 && !hm ? 'active' : 'hide'}`}>
+          <img className={`island`} alt='' src='./images/ex303/2019_HKI.png'></img>
+          <img className={`full ${fill ? 'true' : ''}`} alt='' src='./images/ex303/2019_BaseMap.png'></img>
+        </div>
+
+        <Map
+          appData={props.appData}
+          setOpacity={fullOpacity}
+          setStreetData={setStreetData}
+          setMapIndicatorIdx={setMapIndicatorIdx}
+          setZoomed={setZoomed}
+          handleZoom={handleZoom}
+          handleMove={handleMove}
+          handleShowCoastline={handleShowCoastline}
+          handleSelectCoastline={handleSelectCoastline}
+          handleStart={handleStart}
+          show={setShowNav}
+        />
+        <img className={`yearMark ${!hm ? '' : 'hide'}`} src={`./images/ex303/${yearIdx}_mark.png`}></img>
+        <img className={`nav_2019_sea ${yearIdx === 3 && showNav ? '' : 'hide'}`} src={`./images/ex303/2019_nav_right.png`}></img>
+        <img className={`nav_2019_sea ${(yearIdx === 0 || yearIdx === 1 || yearIdx === 2) && showNav ? '' : 'hide'}`} src={`./images/ex303/non_2019_nav_right.png`}></img>
       </div>
       {/* fake dog */}
+      <img className={`nav_2019_sea ${gameMode === "r" ? '' : 'hide'}`} src={`./images/ex303/SNM_nav_right.png`}></img>
+      <img className={`smallMap ${gameMode === "r" ? '' : 'hide'}`} src={`./images/ex303/small_map.png`}></img>
 
       <img className={`legend ${fill ? '' : 'hide'}`} alt='' src='./images/ex303/HKI_legend.png'></img>
-      <img className={`yearMark ${!hm ? '' : 'hide'}`} src={`./images/ex303/${yearIdx}_mark.png`}></img>
-      <img className={`coastLine ${!hm ? '' : 'hide'}`} src={`./images/ex303/2019_coastLine.svg`}></img>
-      <img className={`nav_2019_sea ${yearIdx === 3 && showNav ? '' : 'hide'}`} src={`./images/ex303/2019_nav_right.png`}></img>
 
       <div id='yearSelector' className={`${yearIdx === null ? 'disabled' : ''} ${showYear ? '' : 'hide'}`}>
         <ul>
@@ -133,22 +150,8 @@ const G303 = props => {
           </div>
         </div> */}
       </div>
-      {
-        <Map
-          appData={props.appData}
-          setOpacity={fullOpacity}
-          setStreetData={setStreetData}
-          setMapIndicatorIdx={setMapIndicatorIdx}
-          setZoomed={setZoomed}
-          handleZoom={handleZoom}
-          handleMove={handleMove}
-          handleShowCoastline={handleShowCoastline}
-          handleSelectCoastline={handleSelectCoastline}
-          handleStart={handleStart}
-          show={setShowNav}
-        />
-      }
-      <Menu handleZoom={handleZoom} back={onBack} show={showNav} yearIdx={yearIdx} />
+        
+      <Menu handleZoom={handleZoom} back={onBack} show={showNav} yearIdx={yearIdx} gameMode={setGameMode} mapIndicatorIdx={mapIndicatorIdx}/>
     </div>
   );
 };

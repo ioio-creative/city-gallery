@@ -3,12 +3,12 @@ import './menu.scss';
 import './nav.scss';
 
 const Menu = props => {
-  const [mode, setMode] = useState();
+  const [mode, setMode] = useState("l");
   const [lang, setLang] = useState('tc');
 
   const switchMode = m => {
     setMode(m);
-    props.handleZoom.current.zoomInOut(m);
+    // props.handleZoom.current.zoomInOut(m);
   };
 
   return (
@@ -28,18 +28,19 @@ const Menu = props => {
     // </div>
     <div id='navWrap' className={`${props.show ? '' : 'hide'}`}>
       <div className='left'>
-        <div
-          className='yearButton'
-          onClick={() => {
-            props.back();
-          }}
-        >
-          選擇年份
-        </div>
+        <div className={`yearButton ${mode === "l" ? "" : "hide"}`}  onClick={() => {props.back();}}>選擇年份</div>
+        {['上環區', '中環及灣仔區', '銅鑼灣區', '鰂魚涌區'].map((v, i) => {
+            return (
+              <div key={i} className={`streetName ${mode === "r" && i === props.mapIndicatorIdx ? 'active' : 'hide'}`}>
+                {v}
+              </div>
+            );
+          })}
         <div id='switch' className={`${mode} ${props.yearIdx === 3 ? '' : 'hide'}`}>
-          <span onClick={() => switchMode('l')}>海岸線</span>
-          <span onClick={() => switchMode('r')}>街道</span>
+          <span onClick={() => {switchMode('l');props.gameMode("l");}}>海岸線</span>
+          <span onClick={() => {switchMode('r');props.gameMode("r");}}>街道</span>
         </div>
+        <div className={`descriptionBox ${props.yearIdx === 0 || props.yearIdx === 1 || props.yearIdx === 2 ? '' : 'hide'}`}>海岸綫 <span>———</span> 香港島</div>
       </div>
       <div className='right'></div>
     </div>

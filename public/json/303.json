@@ -3,7 +3,7 @@
     "mapAssets": [
       {
         "name": "hkIsland_diffuse",
-        "src": "./images/ex303/2019_BaseMap.png"
+        "src": "./images/ex303/1900_BaseMap.png"
       },
       {
         "name": "hkIsland_mask",
@@ -19,7 +19,7 @@
       },
       {
         "name": "hkIsland_coastline1900_mask",
-        "src": "./images/ex303/1900_fill_land.png"
+        "src": "./images/ex303/2019_fill_land_1.png"
       },
       {
         "name": "hkIsland_coastline1945_mask",

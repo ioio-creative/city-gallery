@@ -36,6 +36,9 @@ span{
     height:100%;
     // background:#103042;
     font-family: 'Helvetica';
+    #coast{
+        transition: opacity linear 0.3s, visibility linear 0.3s;
+    }
     .yearMark{
         position: fixed;
         transition: opacity linear 0.3s, visibility linear 0.3s;
@@ -66,6 +69,14 @@ span{
         top: 898px;
         left: 2023px;
         z-index: 11;
+    }
+    .smallMap{
+        position: absolute;
+        width: auto;
+        height: auto;
+        top: 140px;
+        left: 472px;
+        transition: all 0.3s cubic-bezier(0.87, 0, 0.13, 1);
     }
     .shader{
         position: relative;
@@ -155,6 +166,7 @@ span{
             font-size:vw-calc(30, $width);
         }
         ul{
+            opacity: 0.7;
             width:vw-calc(403, $width);
             height:vw-calc(180, $width);
             display: flex;
