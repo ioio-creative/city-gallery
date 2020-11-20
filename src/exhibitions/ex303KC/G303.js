@@ -54,8 +54,8 @@ const G303 = props => {
 
   const onClickYear = e => {
     setYearIdx(e);
-    if (e === 3) setStreetName(true);
-    else setStreetName(false);
+    // if (e === 3) setStreetName(true);
+    // else setStreetName(false);
   };
   const onClickStart = () => {
     setSelectedYear(true);

@@ -65,7 +65,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "Infrastructure/ Environment"
               }
             },
             {
@@ -107,7 +107,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "Infrastructure/ Environment"
               }
             },
             {
@@ -149,7 +149,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "Infrastructure/ Environment"
               }
             },
             {
@@ -275,7 +275,7 @@
               },
               "category": {
                 "id": "legislations",
-                "name": "Planning Authorities/Legislations"
+                "name": "Planning Authorities/ Legislations"
               }
             }
           ]
@@ -330,7 +330,7 @@
               },
               "category": {
                 "id": "housing",
-                "name": "Land Supply/Housing"
+                "name": "Land Supply/ Housing"
               }
             },
             {
@@ -339,12 +339,12 @@
                 "content": "In 1947, the Public Works Department established a dedicated Town Planning Division for town planning affairs. In 1990, after several times of reorganization, the Planning Department was established, consolidating diverse town planning functions of different departments. Since then, the Planning Department is responsible for the preparation of various types of plans, formulation of land use guidelines and provision of services to the Town Planning Broad."
               },
               "image": {
-                "src": "",
+                "src": "./images/ex302a/1946_img1.png",
                 "translationType": "scale",
                 "description": "The Dedicated Division for Town Planning",
                 "gallery": [
                   {
-                    "src": "",
+                    "src": "./images/ex302a/1946_img1.png",
                     "description": "",
                     "reference": ""
                   },
@@ -372,7 +372,7 @@
               },
               "category": {
                 "id": "legislations",
-                "name": "Planning Authorities/Legislations"
+                "name": "Planning Authorities/ Legislations"
               }
             },
             {
@@ -456,7 +456,7 @@
               },
               "category": {
                 "id": "housing",
-                "name": "Land Supply/Housing"
+                "name": "Land Supply/ Housing"
               }
             },
             {
@@ -498,7 +498,7 @@
               },
               "category": {
                 "id": "economic",
-                "name": "Economic/Tourism"
+                "name": "Economic/ Tourism"
               }
             }
           ]
@@ -553,7 +553,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "Infrastructure/ Environment"
               }
             },
             {
@@ -595,7 +595,7 @@
               },
               "category": {
                 "id": "housing",
-                "name": "Land Supply/Housing"
+                "name": "Land Supply/ Housing"
               }
             },
             {
@@ -637,7 +637,7 @@
               },
               "category": {
                 "id": "housing",
-                "name": "Land Supply/Housing"
+                "name": "Land Supply/ Housing"
               }
             },
             {
@@ -763,7 +763,7 @@
               },
               "category": {
                 "id": "housing",
-                "name": "Land Supply/Housing"
+                "name": "Land Supply/ Housing"
               }
             },
             {
@@ -805,7 +805,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "Infrastructure/ Environment"
               }
             },
             {
@@ -847,7 +847,7 @@
               },
               "category": {
                 "id": "economic",
-                "name": "Economic/Tourism"
+                "name": "Economic/ Tourism"
               }
             },
             {
@@ -856,7 +856,7 @@
                 "content": "Since the 1960s, with the growth of Hong Kong's economy, pressure for urban development had been mounting. The government had to conduct a holistic review of Hong Kong's long-term land use and population distribution. In light of this, in 1965, the government began to compile the Colony Outline Plan. In 1974, based on the current socio-economic conditions and development priorities, the Plan was substantially revised and renamed as the Hong Kong Outline Plan."
               },
               "image": {
-                "src": "",
+                "src": "./images/ex302a/1946_img1.png",
                 "translationType": "scale",
                 "description": "Hong Kong Outline Plan",
                 "gallery": [
@@ -1028,7 +1028,7 @@
               },
               "category": {
                 "id": "legislations",
-                "name": "Planning Authorities/Legislations"
+                "name": "Planning Authorities/ Legislations"
               }
             },
             {
@@ -1112,7 +1112,7 @@
               },
               "category": {
                 "id": "legislations",
-                "name": "Planning Authorities/Legislations"
+                "name": "Planning Authorities/ Legislations"
               }
             },
             {
@@ -1154,7 +1154,7 @@
               },
               "category": {
                 "id": "legislations",
-                "name": "Planning Authorities/Legislations"
+                "name": "Planning Authorities/ Legislations"
               }
             },
             {
@@ -1196,7 +1196,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "Infrastructure/ Environment"
               }
             },
             {
@@ -1238,7 +1238,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "Infrastructure/ Environment"
               }
             },
             {
@@ -1280,7 +1280,7 @@
               },
               "category": {
                 "id": "legislations",
-                "name": "Planning Authorities/Legislations"
+                "name": "Planning Authorities/ Legislations"
               }
             },
             {
@@ -1419,7 +1419,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "Infrastructure/ Environment"
               }
             },
             {
@@ -1461,7 +1461,7 @@
               },
               "category": {
                 "id": "legislations",
-                "name": "Planning Authorities/Legislations"
+                "name": "Planning Authorities/ Legislations"
               }
             },
             {
@@ -1503,7 +1503,7 @@
               },
               "category": {
                 "id": "economic",
-                "name": "Economic/Tourism"
+                "name": "Economic/ Tourism"
               }
             },
             {
@@ -1545,7 +1545,7 @@
               },
               "category": {
                 "id": "economic",
-                "name": "Economic/Tourism"
+                "name": "Economic/ Tourism"
               }
             },
             {
@@ -1587,7 +1587,7 @@
               },
               "category": {
                 "id": "legislations",
-                "name": "Planning Authorities/Legislations"
+                "name": "Planning Authorities/ Legislations"
               }
             },
             {
@@ -1671,7 +1671,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "Infrastructure/ Environment"
               }
             },
             {
@@ -1714,7 +1714,7 @@
               },
               "category": {
                 "id": "economic",
-                "name": "Economic/Tourism"
+                "name": "Economic/ Tourism"
               }
             },
             {
@@ -1798,7 +1798,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "Infrastructure/ Environment"
               }
             },
             {
@@ -1840,7 +1840,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "Infrastructure/ Environment"
               }
             },
             {
@@ -1864,14 +1864,14 @@
                     "reference": "Source: GRS"
                   },
                   {
-                    "src": "",
-                    "description": "",
-                    "reference": ""
+                    "src": "./images/ex302a/2010_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
                   },
                   {
-                    "src": "",
-                    "description": "",
-                    "reference": ""
+                    "src": "./images/ex302a/2010_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
                   },
                   {
                     "src": "",
@@ -1882,7 +1882,7 @@
               },
               "category": {
                 "id": "legislations",
-                "name": "Planning Authorities/Legislations"
+                "name": "Planning Authorities/ Legislations"
               }
             },
             {
@@ -2093,7 +2093,7 @@
               },
               "category": {
                 "id": "economic",
-                "name": "Economic/Tourism"
+                "name": "Economic/ Tourism"
               }
             },
             {
@@ -2177,7 +2177,7 @@
               },
               "category": {
                 "id": "housing",
-                "name": "Land Supply/Housing"
+                "name": "Land Supply/ Housing"
               }
             },
             {
@@ -2219,7 +2219,7 @@
               },
               "category": {
                 "id": "housing",
-                "name": "Land Supply/Housing"
+                "name": "Land Supply/ Housing"
               }
             },
             {
@@ -2261,7 +2261,7 @@
               },
               "category": {
                 "id": "economic",
-                "name": "Economic/Tourism"
+                "name": "Economic/ Tourism"
               }
             },
             {
@@ -2303,7 +2303,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "Infrastructure/ Environment"
               }
             },
             {
@@ -2345,7 +2345,7 @@
               },
               "category": {
                 "id": "economic",
-                "name": "Economic/Tourism"
+                "name": "Economic/ Tourism"
               }
             },
             {
@@ -2387,7 +2387,7 @@
               },
               "category": {
                 "id": "economic",
-                "name": "Economic/Tourism"
+                "name": "Economic/ Tourism"
               }
             },
             {
@@ -2429,7 +2429,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "Infrastructure/ Environment"
               }
             },
             {
@@ -2597,7 +2597,7 @@
               },
               "category": {
                 "id": "economic",
-                "name": "Economic/Tourism"
+                "name": "Economic/ Tourism"
               }
             }
           ]
@@ -2657,7 +2657,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "基建/ 環境"
               }
             },
             {
@@ -2699,7 +2699,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "基建/ 環境"
               }
             },
             {
@@ -2741,7 +2741,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "基建/ 環境"
               }
             },
             {
@@ -2783,7 +2783,7 @@
               },
               "category": {
                 "id": "transport",
-                "name": "Transport"
+                "name": "交通"
               }
             },
             {
@@ -2825,7 +2825,7 @@
               },
               "category": {
                 "id": "transport",
-                "name": "Transport"
+                "name": "交通"
               }
             },
             {
@@ -2867,7 +2867,7 @@
               },
               "category": {
                 "id": "legislations",
-                "name": "Planning Authorities/Legislations"
+                "name": "規劃組織/ 法例"
               }
             }
           ]
@@ -2922,7 +2922,7 @@
               },
               "category": {
                 "id": "housing",
-                "name": "Land Supply/Housing"
+                "name": "土地供應/ 房屋"
               }
             },
             {
@@ -2931,12 +2931,12 @@
                 "content": "1947年，工務司署成立城市設計組，專責城市規劃事宜。經過多次的部門更迭後，1990年，政府把分散的規劃職能合併，成立規劃署，負責擬備各類圖則、制定土地用途指引，以及為城市規劃委員會提供服務。"
               },
               "image": {
-                "src": "",
+                "src": "./images/ex302a/1946_img1.png",
                 "translationType": "scale",
                 "description": "城市規劃的專責部門",
                 "gallery": [
                   {
-                    "src": "",
+                    "src": "./images/ex302a/1946_img1.png",
                     "description": "",
                     "reference": ""
                   },
@@ -2964,7 +2964,7 @@
               },
               "category": {
                 "id": "legislations",
-                "name": "Planning Authorities/Legislations"
+                "name": "規劃組織/ 法例"
               }
             },
             {
@@ -3006,7 +3006,7 @@
               },
               "category": {
                 "id": "strategic",
-                "name": "Strategic Plan"
+                "name": "策略規劃"
               }
             },
             {
@@ -3048,7 +3048,7 @@
               },
               "category": {
                 "id": "housing",
-                "name": "Land Supply/Housing"
+                "name": "土地供應/ 房屋"
               }
             },
             {
@@ -3090,7 +3090,7 @@
               },
               "category": {
                 "id": "economic",
-                "name": "Economic/Tourism"
+                "name": "經濟/ 旅遊"
               }
             }
           ]
@@ -3145,7 +3145,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "基建/ 環境"
               }
             },
             {
@@ -3187,7 +3187,7 @@
               },
               "category": {
                 "id": "housing",
-                "name": "Land Supply/Housing"
+                "name": "土地供應/ 房屋"
               }
             },
             {
@@ -3229,7 +3229,7 @@
               },
               "category": {
                 "id": "housing",
-                "name": "Land Supply/Housing"
+                "name": "土地供應/ 房屋"
               }
             },
             {
@@ -3271,7 +3271,7 @@
               },
               "category": {
                 "id": "transport",
-                "name": "Transport"
+                "name": "交通"
               }
             },
             {
@@ -3313,7 +3313,7 @@
               },
               "category": {
                 "id": "transport",
-                "name": "Transport"
+                "name": "交通"
               }
             },
             {
@@ -3355,7 +3355,7 @@
               },
               "category": {
                 "id": "housing",
-                "name": "Land Supply/Housing"
+                "name": "土地供應/ 房屋"
               }
             },
             {
@@ -3397,7 +3397,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "基建/ 環境"
               }
             },
             {
@@ -3439,7 +3439,7 @@
               },
               "category": {
                 "id": "economic",
-                "name": "Economic/Tourism"
+                "name": "經濟/ 旅遊"
               }
             },
             {
@@ -3448,7 +3448,7 @@
                 "content": "香港自60年代開始經濟不斷發展，城市發展的壓力也不斷增加，政府必須對香港長遠的土地用途和人口分布進行全面檢討。1965年，政府開始編制《土地利用計劃書》，全面檢討香港長遠的土地用途和人口分布。1974 年，政府因應當時的社會經濟情況和發展優先次序，大幅度修訂上述計劃書，並重新命名為《香港發展綱略》。"
               },
               "image": {
-                "src": "",
+                "src": "./images/ex302a/1946_img1.png",
                 "translationType": "scale",
                 "description": "《香港發展綱略》",
                 "gallery": [
@@ -3481,7 +3481,7 @@
               },
               "category": {
                 "id": "strategic",
-                "name": "Strategic Plan"
+                "name": "策略規劃"
               }
             },
             {
@@ -3523,7 +3523,7 @@
               },
               "category": {
                 "id": "transport",
-                "name": "Transport"
+                "name": "交通"
               }
             }
           ]
@@ -3578,7 +3578,7 @@
               },
               "category": {
                 "id": "strategic",
-                "name": "Strategic Plan"
+                "name": "策略規劃"
               }
             },
             {
@@ -3620,7 +3620,7 @@
               },
               "category": {
                 "id": "legislations",
-                "name": "Planning Authorities/Legislations"
+                "name": "規劃組織/ 法例"
               }
             },
             {
@@ -3662,7 +3662,7 @@
               },
               "category": {
                 "id": "transport",
-                "name": "Transport"
+                "name": "交通"
               }
             },
             {
@@ -3704,7 +3704,7 @@
               },
               "category": {
                 "id": "legislations",
-                "name": "Planning Authorities/Legislations"
+                "name": "規劃組織/ 法例"
               }
             },
             {
@@ -3746,7 +3746,7 @@
               },
               "category": {
                 "id": "legislations",
-                "name": "Planning Authorities/Legislations"
+                "name": "規劃組織/ 法例"
               }
             },
             {
@@ -3788,7 +3788,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "基建/ 環境"
               }
             },
             {
@@ -3830,7 +3830,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "基建/ 環境"
               }
             },
             {
@@ -3872,7 +3872,7 @@
               },
               "category": {
                 "id": "legislations",
-                "name": "Planning Authorities/Legislations"
+                "name": "規劃組織/ 法例"
               }
             },
             {
@@ -3914,7 +3914,7 @@
               },
               "category": {
                 "id": "strategic",
-                "name": "Strategic Plan"
+                "name": "策略規劃"
               }
             },
             {
@@ -3956,7 +3956,7 @@
               },
               "category": {
                 "id": "strategic",
-                "name": "Strategic Plan"
+                "name": "策略規劃"
               }
             }
           ]
@@ -4011,7 +4011,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "基建/ 環境"
               }
             },
             {
@@ -4053,7 +4053,7 @@
               },
               "category": {
                 "id": "legislations",
-                "name": "Planning Authorities/Legislations"
+                "name": "規劃組織/ 法例"
               }
             },
             {
@@ -4095,7 +4095,7 @@
               },
               "category": {
                 "id": "economic",
-                "name": "Economic/Tourism"
+                "name": "經濟/ 旅遊"
               }
             },
             {
@@ -4137,7 +4137,7 @@
               },
               "category": {
                 "id": "economic",
-                "name": "Economic/Tourism"
+                "name": "經濟/ 旅遊"
               }
             },
             {
@@ -4179,7 +4179,7 @@
               },
               "category": {
                 "id": "legislations",
-                "name": "Planning Authorities/Legislations"
+                "name": "規劃組織/ 法例"
               }
             },
             {
@@ -4221,7 +4221,7 @@
               },
               "category": {
                 "id": "strategic",
-                "name": "Strategic Plan"
+                "name": "策略規劃"
               }
             },
             {
@@ -4263,7 +4263,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "基建/ 環境"
               }
             },
             {
@@ -4306,7 +4306,7 @@
               },
               "category": {
                 "id": "economic",
-                "name": "Economic/Tourism"
+                "name": "經濟/ 旅遊"
               }
             },
             {
@@ -4348,7 +4348,7 @@
               },
               "category": {
                 "id": "strategic",
-                "name": "Strategic Plan"
+                "name": "策略規劃"
               }
             },
             {
@@ -4390,7 +4390,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "基建/ 環境"
               }
             },
             {
@@ -4432,7 +4432,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "基建/ 環境"
               }
             },
             {
@@ -4456,14 +4456,14 @@
                     "reference": "Source: GRS"
                   },
                   {
-                    "src": "",
-                    "description": "",
-                    "reference": ""
+                    "src": "./images/ex302a/2010_img3.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
                   },
                   {
-                    "src": "",
-                    "description": "",
-                    "reference": ""
+                    "src": "./images/ex302a/2010_img4.png",
+                    "description": "（這是假字）當年主建築物的外觀。",
+                    "reference": "Source: GRS"
                   },
                   {
                     "src": "",
@@ -4474,7 +4474,7 @@
               },
               "category": {
                 "id": "legislations",
-                "name": "Planning Authorities/Legislations"
+                "name": "規劃組織/ 法例"
               }
             },
             {
@@ -4516,7 +4516,7 @@
               },
               "category": {
                 "id": "transport",
-                "name": "Transport"
+                "name": "交通"
               }
             },
             {
@@ -4558,7 +4558,7 @@
               },
               "category": {
                 "id": "strategic",
-                "name": "Strategic Plan"
+                "name": "策略規劃"
               }
             },
             {
@@ -4601,7 +4601,7 @@
               },
               "category": {
                 "id": "strategic",
-                "name": "Strategic Plan"
+                "name": "策略規劃"
               }
             },
             {
@@ -4643,7 +4643,7 @@
               },
               "category": {
                 "id": "strategic",
-                "name": "Strategic Plan"
+                "name": "策略規劃"
               }
             },
             {
@@ -4685,7 +4685,7 @@
               },
               "category": {
                 "id": "economic",
-                "name": "Economic/Tourism"
+                "name": "經濟/ 旅遊"
               }
             },
             {
@@ -4727,7 +4727,7 @@
               },
               "category": {
                 "id": "transport",
-                "name": "Transport"
+                "name": "交通"
               }
             },
             {
@@ -4769,7 +4769,7 @@
               },
               "category": {
                 "id": "housing",
-                "name": "Land Supply/Housing"
+                "name": "土地供應/ 房屋"
               }
             },
             {
@@ -4811,7 +4811,7 @@
               },
               "category": {
                 "id": "housing",
-                "name": "Land Supply/Housing"
+                "name": "土地供應/ 房屋"
               }
             },
             {
@@ -4853,7 +4853,7 @@
               },
               "category": {
                 "id": "economic",
-                "name": "Economic/Tourism"
+                "name": "經濟/ 旅遊"
               }
             },
             {
@@ -4895,7 +4895,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "基建/ 環境"
               }
             },
             {
@@ -4937,7 +4937,7 @@
               },
               "category": {
                 "id": "economic",
-                "name": "Economic/Tourism"
+                "name": "經濟/ 旅遊"
               }
             },
             {
@@ -4979,7 +4979,7 @@
               },
               "category": {
                 "id": "economic",
-                "name": "Economic/Tourism"
+                "name": "經濟/ 旅遊"
               }
             },
             {
@@ -5021,7 +5021,7 @@
               },
               "category": {
                 "id": "infrastructure",
-                "name": "Infrastructure/Environment"
+                "name": "基建/ 環境"
               }
             },
             {
@@ -5063,7 +5063,7 @@
               },
               "category": {
                 "id": "transport",
-                "name": "Transport"
+                "name": "交通"
               }
             },
             {
@@ -5105,7 +5105,7 @@
               },
               "category": {
                 "id": "transport",
-                "name": "Transport"
+                "name": "交通"
               }
             },
             {
@@ -5147,7 +5147,7 @@
               },
               "category": {
                 "id": "strategic",
-                "name": "Strategic plan"
+                "name": "策略規劃"
               }
             },
             {
@@ -5189,7 +5189,7 @@
               },
               "category": {
                 "id": "economic",
-                "name": "Economic/Tourism"
+                "name": "經濟/ 旅遊"
               }
             }
           ]
