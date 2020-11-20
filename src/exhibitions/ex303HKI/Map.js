@@ -70,7 +70,7 @@ const Map = props => {
       wrapElem.current.appendChild(app.view);
 
       initStage();
-      initGUI();
+      // initGUI();
     };
 
     const initStage = () => {
@@ -510,6 +510,7 @@ const Map = props => {
                   options.year[`y${years[i]}`] = this._targets[0].p;
                 },
                 onComplete: () => {
+                  console.log(idx);
                   if (i <= idx) {
                     gsap.to(v, 6, {
                       p: 1,

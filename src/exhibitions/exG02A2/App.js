@@ -23,6 +23,7 @@ const App = props => {
   // const count = useSelector(state => state.count);
   const canvasWrap = useRef(null);
   const zoomInFunc = useRef(null);
+  const zoomOutFunc = useRef(null);
   const enableRotateFunc = useRef(null);
   const disableRotateFunc = useRef(null);
   const enableAutoRotateFunc = useRef(null);
@@ -31,6 +32,10 @@ const App = props => {
   const resetPointsColorFunc = useRef(null);
   const locationsWrapElem = useRef(null);
   const locationsElem = useRef(null);
+  const timeLineRef = useRef(null);
+  const canvasTextureRef = useRef(null);
+  const showDetailsRef = useRef(null);
+  const objectControlRef = useState(null);
   const locations = [
     { name: { en: 'Hong Kong', tc: '香港' }, lat: 22.37772, lon: 114.155267 },
     { name: { en: 'Beijing', tc: '北京' }, lat: 39.920244, lon: 116.411309 },
@@ -144,6 +149,7 @@ const App = props => {
 
       // cameraControl = new CameraControlsSystem(camera, meshEarth);
       objectControl = new ObjectControl(groupedMesh);
+      objectControlRef.current = objectControl;
 
       // const {targetTheta, targetPhi} = calcThetaPhiFromLatLon(locations[0].lat, locations[0].lon);
       // objectControl.setRotate(targetTheta, targetPhi + 25 * THREE.Math.DEG2RAD);
@@ -156,6 +162,10 @@ const App = props => {
         update();
         render();
       });
+    };
+
+    const clearIdx = () => {
+      currentHoveredInstanceId = null;
     };
 
     const initLight = () => {
@@ -294,6 +304,7 @@ const App = props => {
 
     const createPointsBg = () => {
       canvasTexture = new createCanvasTexture();
+      canvasTextureRef.current = canvasTexture;
       animCanvasTexture = new createAnimCanvasTexture();
       const geometry = new THREE.BufferGeometry();
       const vertices = [];
@@ -392,6 +403,18 @@ const App = props => {
       this.show = () => {
         gsap.to(_this.animValue, 1, {
           a: 0.3,
+          onUpdate: function () {
+            const value = this.targets()[0];
+            draw(value.a);
+
+            if (pointsBgMaterial) pointsBgMaterial.uniforms.textures.value[0].needsUpdate = true;
+          }
+        });
+      };
+
+      this.hide = () => {
+        gsap.to(_this.animValue, 1, {
+          a: 0,
           onUpdate: function () {
             const value = this.targets()[0];
             draw(value.a);
@@ -645,6 +668,53 @@ const App = props => {
       }, 1000);
     };
 
+    const reversePops = () => {
+      for (let i = 0; i < locations.length; i++) {
+        pointsMesh.getMatrixAt(i, instanceMatrix);
+        linesMesh.getMatrixAt(i, instanceMatrix2);
+
+        const scaleValue = { s: 0 };
+        const positionValue = { x: pointOffsets[i * 3] / 2, y: pointOffsets[i * 3 + 1] / 2, z: pointOffsets[i * 3 + 2] / 2 };
+        const pointTransform = new THREE.Object3D();
+        const lineTransform = new THREE.Object3D();
+        pointTransform.applyMatrix4(instanceMatrix);
+        lineTransform.applyMatrix4(instanceMatrix2);
+
+        const tl = gsap.timeline({ delay: i * 0.15 });
+        tl.to(positionValue, 0.4, {
+          x: 0,
+          y: 0,
+          z: 0,
+          ease: 'power4.out', //z:1+1/52
+          onUpdate: function () {
+            const value = this.targets()[0];
+            lineTransform.position.set(value.x, value.y, value.z);
+            lineTransform.updateMatrix();
+            linesMesh.setMatrixAt(i, lineTransform.matrix);
+            linesMesh.instanceMatrix.needsUpdate = true;
+          }
+        });
+        tl.fromTo(
+          scaleValue,
+          2,
+          { s: 1 },
+          {
+            s: 0.0001,
+            ease: 'elastic.out(1.3, 0.3)',
+            onUpdate: function () {
+              const value = this.targets()[0];
+              pointTransform.scale.set(value.s, value.s, value.s);
+              pointTransform.updateMatrix();
+              pointsMesh.setMatrixAt(i, pointTransform.matrix);
+              pointsMesh.instanceMatrix.needsUpdate = true;
+            }
+          },
+          '-=.2'
+        );
+      }
+      canvasTextureRef.current.hide();
+    };
+
     // const getRotation = (vec) =>{
     //     var planeVector1 = new THREE.Vector3(0,1,0);
     //     var matrix1 = new THREE.Matrix4();
@@ -694,7 +764,6 @@ const App = props => {
       if (id) currentHoveredInstanceId = id;
       // if(currentHoveredInstanceId !== oldHoveredInstanceId){
       objectControl.disableAutoRotate();
-      objectControl.disable();
 
       // find short rotation distance
       const { targetTheta, targetPhi } = calcThetaPhiFromLatLon(locations[currentHoveredInstanceId].lat, locations[currentHoveredInstanceId].lon);
@@ -726,21 +795,21 @@ const App = props => {
       });
 
       // point bg
-      resetPointsColor();
-      toWhiteColor();
-      animCanvasTexture.start();
-      setTimeout(() => {
-        animCanvasTexture.destroy();
-        setHideEarth(true);
-      }, 1600);
-      pointsBgMaterial.uniforms.activeInstanceId.value = currentHoveredInstanceId;
-      oldHoveredInstanceId = currentHoveredInstanceId;
+      //   resetPointsColor();
+      //   toWhiteColor();
+      //   animCanvasTexture.start();
+      //   setTimeout(() => {
+      //     animCanvasTexture.destroy();
+      //     setHideEarth(true);
+      //   }, 1600);
+      //   pointsBgMaterial.uniforms.activeInstanceId.value = currentHoveredInstanceId;
+      //   oldHoveredInstanceId = currentHoveredInstanceId;
 
       //
       gsap.to('#selectCity', 0.3, { autoAlpha: 0, ease: 'power1.inOut' });
       gsap.to('#locationsOuterWrap', 0.3, { autoAlpha: 1, ease: 'power1.inOut' });
 
-      showDetails();
+      //   showDetails();
       // }
     };
     selectLocationFunc.current = { selectLocation };
@@ -795,7 +864,18 @@ const App = props => {
     };
     resetPointsColorFunc.current = { resetPointsColor };
 
-    const showDetails = () => {
+    const showDetails = idx => {
+      currentHoveredInstanceId = idx;
+      objectControl.disable();
+      resetPointsColor();
+      toWhiteColor();
+      animCanvasTexture.start();
+      setTimeout(() => {
+        animCanvasTexture.destroy();
+        setHideEarth(true);
+      }, 1600);
+      pointsBgMaterial.uniforms.activeInstanceId.value = currentHoveredInstanceId;
+      oldHoveredInstanceId = currentHoveredInstanceId;
       gsap.set('#detailPage', { delay: 1, className: 'active' });
       gsap.fromTo('#opening .bg', 0.8, { y: '100%' }, { force3D: true, delay: 1, y: '0%', stagger: 0.08, ease: 'expo.inOut' });
 
@@ -805,15 +885,23 @@ const App = props => {
       }, 1000);
       // gsap.set('#opening',{delay:2, className:'section active'});
     };
+    showDetailsRef.current = { showDetails };
 
     const zoomIn = () => {
-      const tl = gsap.timeline();
+      const tl = gsap.timeline({ onComplete: pops, onReverseComplete: reversePops });
+      timeLineRef.current = tl;
       tl.to('#lang', 0.3, { autoAlpha: 0, ease: 'power1.inOut' });
       tl.to(camera.position, 1.6, { y: 20, z: 60, ease: 'power3.inOut' }, '-=.1');
       tl.to('#locationSelector', 0.3, { autoAlpha: 1, ease: 'power1.inOut' }, 'end');
-      tl.call(pops, null, 'end');
+      //   tl.call(pops, null, 'end');
     };
     zoomInFunc.current = { zoomIn };
+
+    const zoomOut = () => {
+      timeLineRef.current.reverse();
+      setSelectedId(null);
+    };
+    zoomOutFunc.current = { zoomOut, clearIdx };
 
     const disableRotate = () => {
       objectControl.disable();
@@ -1077,6 +1165,33 @@ const App = props => {
       zoomInFunc.current.zoomIn();
       setLanguage(lang);
       setData(allData.content[lang]);
+      //   const { targetTheta, targetPhi } = calcThetaPhiFromLatLon(locations[0].lat, locations[0].lon);
+      //   const { theta, phi } = objectControlRef.current.getCurrentThetaPhi();
+      //   const animValue = { theta: theta, phi: phi };
+      //   let shortTheta;
+
+      //   const currentTargetTheta = theta - targetTheta > 0 ? theta - targetTheta : Math.PI * 2 + (theta - targetTheta);
+
+      //   const fixedTargetTheta = theta - targetTheta > 0 ? currentTargetTheta % (Math.PI * 2) : currentTargetTheta < 0 ? Math.PI * 2 + (currentTargetTheta % (Math.PI * 2)) : currentTargetTheta % (Math.PI * 2); // 0 -> 6.28 -> 0 -> 6.28
+
+      //   if (fixedTargetTheta > Math.PI && fixedTargetTheta < Math.PI * 2) {
+      //     // left side
+      //     shortTheta = Math.PI * 2 + (theta - fixedTargetTheta);
+      //   } else {
+      //     // right side
+      //     shortTheta = theta - fixedTargetTheta;
+      //   }
+
+      //   gsap.to(camera.position, 1.3, { y: 0, z: 100, ease: 'power3.out' });
+      //   gsap.to(animValue, 1.3, {
+      //     theta: shortTheta,
+      //     phi: targetPhi,
+      //     ease: 'power3.out',
+      //     onUpdate: function () {
+      //       const value = this.targets()[0];
+      //       objectControlRef.current.setRotate(value.theta, value.phi);
+      //     }
+      //   });
     }
   };
 
@@ -1125,9 +1240,20 @@ const App = props => {
     }
   };
 
-  const onBackHome = () => {
+  const onBackHome = (zoomOut = false) => {
     if (aniLock.every(x => x === false)) {
-      gsap.to(`.section.active .bg`, 0.6, { force3D: true, y: '100%', overwrite: true, stagger: 0.04, ease: 'expo.out' });
+      gsap.to(`.section.active .bg`, 0.6, {
+        force3D: true,
+        y: '100%',
+        overwrite: true,
+        stagger: 0.04,
+        ease: 'expo.out',
+        onComplete: () => {
+          if (zoomOut === true) {
+            zoomOutFunc.current.zoomOut();
+          }
+        }
+      });
       gsap.set(`.section:not(.active) .bg`, { y: '100%' });
       gsap.set(`.section .bg span`, { y: '100%' });
       gsap.set('#detailPage', { className: '' });
@@ -1136,7 +1262,8 @@ const App = props => {
       resetPointsColorFunc.current.resetPointsColor();
       enableAutoRotateFunc.current.enableAutoRotate();
       setHideEarth(false);
-      console.log('enter');
+      zoomOutFunc.current.clearIdx();
+      //   console.log('enter');
     }
   };
 
@@ -1182,7 +1309,13 @@ const App = props => {
                         selectLocation(idx);
                       }}
                     >
-                      <span>{value.name[language]}</span>
+                      <span
+                        onClick={() => {
+                          showDetailsRef.current.showDetails(idx);
+                        }}
+                      >
+                        {value.name[language]}
+                      </span>
                     </li>
                   ) : (
                     false
@@ -1240,8 +1373,22 @@ const App = props => {
           <Section5 data={data && data.section5} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()} />
         </div>
         <div id='nav'>
-          <div id='homeBtn' onClick={onBackHome}></div>
+          <div
+            id='homeBtn'
+            onClick={() => {
+              onBackHome();
+            }}
+          ></div>
           <ul>
+            <li>
+              <img
+                alt=''
+                src='./images/exG02a/earth_icon.png'
+                onClick={() => {
+                  onBackHome(true);
+                }}
+              ></img>
+            </li>
             {data &&
               data.menu.map((value, idx) => {
                 return (

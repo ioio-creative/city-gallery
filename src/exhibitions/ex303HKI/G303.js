@@ -23,7 +23,7 @@ const G303 = props => {
   const [gameMode, setGameMode] = useState('l');
   const [fakeZoom, setFakeZoom] = useState(0);
   const [isVideo, setIsVideo] = useState(false);
-  const [videoNumber, setVideoNumber] = useState(0);
+  const [videoNumber, setVideoNumber] = useState(null);
   const [zone, setZone] = useState([false, false, false, false]);
 
   const handleZoom = useRef(null);
@@ -222,7 +222,7 @@ const G303 = props => {
           {/* {videoNumber === 0 && <VideoPlayer controls={true} autoplay={false} preload={'auto'} bigPlayButton={true} hideControls={['play', 'volume', 'playbackrates', 'fullscreen']} src={videoSrc[videoNumber]} />} */}
           {/* <VideoPlayer ref={video1Ref} controls={true} autoplay={false} preload={'false'} bigPlayButton={true} hideControls={['play', 'volume', 'playbackrates', 'fullscreen']} src={videoSrc[videoNumber]} /> */}
           {/* {videoNumber === 1 && <VideoPlayer controls={true} autoplay={false} preload={'auto'} bigPlayButton={true} hideControls={['play', 'volume', 'playbackrates', 'fullscreen']} src='./images/ex303/video2.mp4' />} */}
-          {<video className={`${videoNumber === 0 ? '' : 'hide'}`} preload='auto' src={video1} autoPlay={false} muted controls></video>}
+          {<video className={`${videoNumber === 0 ? '' : 'hide'}`} preload='auto' src={isVideo ? video1 : null} autoPlay={false} muted controls></video>}
           {<video className={`${videoNumber === 1 ? '' : 'hide'}`} preload='auto' src={video2} autoPlay={false} muted controls></video>}
         </div>
         <div
@@ -308,7 +308,7 @@ const G303 = props => {
         </div> */}
       </div>
 
-      <Menu handleZoom={handleZoom} back={onBack} show={showNav} yearIdx={yearIdx} gameMode={setGameMode} mapIndicatorIdx={mapIndicatorIdx} toFakeZoom={toFakeZoom} leaveZoom={leaveFakeZoom} />
+      <Menu handleZoom={handleZoom} back={onBack} show={showNav} yearIdx={yearIdx} gameMode={setGameMode} mapIndicatorIdx={mapIndicatorIdx} toFakeZoom={toFakeZoom} leaveZoom={leaveFakeZoom} idx={videoNumber} isVideo={isVideo} />
     </div>
   );
 };

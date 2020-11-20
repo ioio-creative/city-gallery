@@ -24,9 +24,9 @@
         "gdp": "GDP per capita (nominal)",
         "usd": "USD"
       },
-      "menu": ["Urban Form", "Population Density", "Tallest Buildings", "Transportation", "GDP Per Capita"],
+      "menu": ["Urban Form", "Population Density", "Tallest Buildings", "Public Transport", "GDP Per Capita"],
       "section1": {
-        "populationArea": "Population Area",
+        "populationArea": "Built-up Area",
         "distance": "5km",
         "source": "(Source Holder)",
         "images": {
@@ -473,16 +473,16 @@
         "selectCity": "選擇城市",
         "scrollDown": "滾動以選取城市",
         "source": "參考 : ",
-        "populationDensity": "城市人口密度（/平方公里<sup>2</sup>）",
+        "populationDensity": "城市人口密度（/平方公里）",
         "population": "人口",
         "landArea": "陸地面積（平方公里<sup>2</sup>）",
-        "dailyTrips": "公共運輸每日乘搭比率",
+        "dailyTrips": "公共交通每日乘搭比率",
         "gdp": "人均本地生產總值（當時市價）",
         "usd": "美元"
       },
-      "menu": ["城市型態", "城市人口密度", "最高大樓", "交通", "人均本地生產總值"],
+      "menu": ["城市型態", "城市人口密度", "最高大樓", "公共交通", "人均本地生產總值"],
       "section1": {
-        "populationArea": "建設面積",
+        "populationArea": "已建設區",
         "distance": "5公里",
         "source": "(Source Holder)",
         "images": {
@@ -742,7 +742,7 @@
         "newyork": {
           "building": [
             {
-              "name": "世界貿易中心<br/>一號大樓",
+              "name": "世界貿易中心一號大樓",
               "height": "541米",
               "floor": "104 層"
             },

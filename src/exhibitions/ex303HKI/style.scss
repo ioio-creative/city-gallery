@@ -8,6 +8,15 @@ $brown:#59472A;
 
 $width:3840;
 
+@font-face {
+    font-family: 'SourceHanSerifTC-Bold';
+    src: url('../../fonts/SourceHanSerifTC-Bold.otf');
+}
+
+.streetFont {
+    font-family: 'SourceHanSerifTC-Bold';
+}
+
 body{
     overflow: hidden;
 }
