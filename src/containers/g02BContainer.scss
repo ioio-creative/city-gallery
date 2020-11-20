@@ -3,9 +3,7 @@
 
 @font-face {
   font-family: 'ITC Avant Garde Gothic Std';
-  src: url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bk.woff2') format('woff2'),
-    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bk.woff') format('woff'),
-    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bk.ttf') format('truetype'),
+  src: url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bk.woff2') format('woff2'), url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bk.woff') format('woff'), url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bk.ttf') format('truetype'),
     url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bk.svg#ITCAvantGardeStd-Bk') format('svg');
   font-weight: normal;
   font-style: normal;
@@ -13,9 +11,7 @@
 
 @font-face {
   font-family: 'ITC Avant Garde Gothic Std';
-  src: url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bold.woff2') format('woff2'),
-    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bold.woff') format('woff'),
-    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bold.ttf') format('truetype'),
+  src: url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bold.woff2') format('woff2'), url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bold.woff') format('woff'), url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bold.ttf') format('truetype'),
     url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Bold.svg#ITCAvantGardeStd-Bold') format('svg');
   font-weight: bold;
   font-style: normal;
@@ -23,9 +19,7 @@
 
 @font-face {
   font-family: 'ITC Avant Garde Gothic Std';
-  src: url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Demi.woff2') format('woff2'),
-    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Demi.woff') format('woff'),
-    url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Demi.ttf') format('truetype'),
+  src: url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Demi.woff2') format('woff2'), url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Demi.woff') format('woff'), url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Demi.ttf') format('truetype'),
     url('../exhibitions/exG02B2/fonts/ITCAvantGardeStd-Demi.svg#ITCAvantGardeStd-Demi') format('svg');
   font-weight: 500;
   font-style: normal;
@@ -534,7 +528,7 @@ body {
         }
         svg {
           width: 50vw;
-          height: vw-calc(90);
+          height: vw-calc(100);
           position: relative;
           top: vw-calc(-7);
           // margin-left: vw-calc(20);

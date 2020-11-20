@@ -19,8 +19,9 @@
       },
       "cities": [
         {
-          "name": "Harbour Regeneration ",
+          "name": "Harbour Regeneration",
           "location": "Hamburg",
+          "backgroundColor": "#FFFDF1",
           "icon": ["./images/exG02b/Icon/EN/hamburg_icon1.svg", "", ""],
           "image": {
             "src": "./images/exG02b/Hamburg/_hamburg.svg"
@@ -30,7 +31,7 @@
             {
               "image": {
                 "src": "./images/exG02b/Hamburg/photo1.jpg",
-                "caption": "Following the advent of the European Union, free-trade era, the edge of free ports no longer prevails. As the shipping and freight industry continues to shrink, this port city has gradually been left idle and forgotten. To transform Hamburg, the urban regeneration project known as “HafenCity” spanning for 25 year commenced in 1997."
+                "caption": "Following the advent of the European Union, free-trade era, the edge of free ports no longer prevails. As the shipping and freight industry continues to shrink, this port city has gradually been left idle and forgotten. To transform Hamburg, the urban regeneration project known as \"HafenCity\" spanning for 25 year commenced in 1997."
               }
             },
             {
@@ -50,11 +51,8 @@
         {
           "name": "Biodiversity beyond Concrete Jungles",
           "location": "Hong Kong",
-          "icon": [
-            "./images/exG02b/Icon/EN/hongkong_icon1.svg",
-            "./images/exG02b/Icon/EN/hongkong_icon2.svg",
-            "./images/exG02b/Icon/EN/hongkong_icon3.svg"
-          ],
+          "backgroundColor": "##E6F8F2",
+          "icon": ["./images/exG02b/Icon/EN/hongkong_icon1.svg", "./images/exG02b/Icon/EN/hongkong_icon2.svg", "./images/exG02b/Icon/EN/hongkong_icon3.svg"],
           "image": {
             "src": "./images/exG02b/HongKong/hongkong.png"
           },
@@ -83,11 +81,8 @@
         {
           "name": "From Nullah to Blue-green Hotspot",
           "location": "Seoul",
-          "icon": [
-            "./images/exG02b/Icon/EN/seoul_icon1.svg",
-            "./images/exG02b/Icon/EN/seoul_icon2.svg",
-            "./images/exG02b/Icon/EN/seoul_icon3.svg"
-          ],
+          "backgroundColor": "#FFF9F4",
+          "icon": ["./images/exG02b/Icon/EN/seoul_icon1.svg", "./images/exG02b/Icon/EN/seoul_icon2.svg", "./images/exG02b/Icon/EN/seoul_icon3.svg"],
           "image": {
             "src": "./images/exG02b/Seoul/seoul.png"
           },
@@ -116,15 +111,12 @@
         {
           "name": "Gallery Underground",
           "location": "Helsinki",
-          "icon": [
-            "./images/exG02b/Icon/EN/helsinki_icon1.svg",
-            "./images/exG02b/Icon/EN/helsinki_icon2.svg",
-            "./images/exG02b/Icon/EN/helsinki_icon3.svg"
-          ],
+          "backgroundColor": "#F1FAFA",
+          "icon": ["./images/exG02b/Icon/EN/helsinki_icon1.svg", "./images/exG02b/Icon/EN/helsinki_icon2.svg", "./images/exG02b/Icon/EN/helsinki_icon3.svg"],
           "image": {
             "src": "./images/exG02b/Helsinki/helsinki.png"
           },
-          "description": "Museum buildings are usually erected on land. Yet, Amos Rex in Helsinki, Finland is an exceptional case. The underground Amos Rex merges in harmony with the Lasipalatsi Square (“Glass Palace”) on the ground. It not only preserves the original plaza use, but also provides new art gallery spaces and studios. ",
+          "description": "Museum buildings are usually erected on land. Yet, Amos Rex in Helsinki, Finland is an exceptional case. The underground Amos Rex merges in harmony with the Lasipalatsi Square (\"Glass Palace\") on the ground. It not only preserves the original plaza use, but also provides new art gallery spaces and studios. ",
           "detailBlocks": [
             {
               "image": {
@@ -149,15 +141,12 @@
         {
           "name": "High Line",
           "location": "New York",
-          "icon": [
-            "./images/exG02b/Icon/EN/newyork_icon1.svg",
-            "./images/exG02b/Icon/EN/newyork_icon2.svg",
-            "./images/exG02b/Icon/EN/newyork_icon3.svg"
-          ],
+          "backgroundColor": "#F3FFF6",
+          "icon": ["./images/exG02b/Icon/EN/newyork_icon1.svg", "./images/exG02b/Icon/EN/newyork_icon2.svg", "./images/exG02b/Icon/EN/newyork_icon3.svg"],
           "image": {
             "src": "./images/exG02b/NewYork/newyork.png"
           },
-          "description": "Amidst the high-rise buildings in Manhattan of New York City, , a disused elevated rail viaduct was transformed into an elevated landscaped corridor named “High Line”, embodying vitality. Visitors can stroll around leisurely or sit down for a break, and enjoy the open landscape in the bustling city.",
+          "description": "Amidst the high-rise buildings in Manhattan of New York City, a disused elevated rail viaduct was transformed into an elevated landscaped corridor named \"High Line\", embodying vitality. Visitors can stroll around leisurely or sit down for a break, and enjoy the open landscape in the bustling city.",
           "detailBlocks": [
             {
               "image": {
@@ -174,7 +163,7 @@
             {
               "image": {
                 "src": "./images/exG02b/NewYork/photo3.jpeg",
-                "caption": "The High Line is now a landmark of New York City. It not only provides a green and resting public space for its visitors, but also add vibrancy to the old neighbourhood it traverses and presents an international revitalisation showcase. “Seoullo 7017” completed in 2017 was inspired by the High Line’s design. "
+                "caption": "The High Line is now a landmark of New York City. It not only provides a green and resting public space for its visitors, but also adds vibrancy to the old neighbourhood it traverses and presents an international revitalisation showcase. \"Seoullo 7017\" completed in 2017 was inspired by the High Line’s design. "
               }
             }
           ]
@@ -182,11 +171,8 @@
         {
           "name": "Floating Farm",
           "location": "Rotterdam",
-          "icon": [
-            "./images/exG02b/Icon/EN/rotterdam_icon1.svg",
-            "./images/exG02b/Icon/EN/rotterdam_icon2.svg",
-            "./images/exG02b/Icon/EN/rotterdam_icon3.svg"
-          ],
+          "backgroundColor": "#F1F9FF",
+          "icon": ["./images/exG02b/Icon/EN/rotterdam_icon1.svg", "./images/exG02b/Icon/EN/rotterdam_icon2.svg", "./images/exG02b/Icon/EN/rotterdam_icon3.svg"],
           "image": {
             "src": "./images/exG02b/Rotterdam/rotterdam.png"
           },
@@ -215,11 +201,8 @@
         {
           "name": "An Invisible Power Plant on a Lake",
           "location": "Huainan",
-          "icon": [
-            "./images/exG02b/Icon/EN/huainan_icon1.svg",
-            "./images/exG02b/Icon/EN/huainan_icon2.svg",
-            "./images/exG02b/Icon/EN/huainan_icon3.svg"
-          ],
+          "backgroundColor": "#FCFCEA",
+          "icon": ["./images/exG02b/Icon/EN/huainan_icon1.svg", "./images/exG02b/Icon/EN/huainan_icon2.svg", "./images/exG02b/Icon/EN/huainan_icon3.svg"],
           "image": {
             "src": "./images/exG02b/Huainan/huainan.png"
           },
@@ -248,11 +231,8 @@
         {
           "name": "Carbon Neutral Capital",
           "location": "Copenhagen",
-          "icon": [
-            "./images/exG02b/Icon/EN/copenhagen_icon1.svg",
-            "./images/exG02b/Icon/EN/copenhagen_icon2.svg",
-            "./images/exG02b/Icon/EN/copenhagen_icon3.svg"
-          ],
+          "backgroundColor": "#FFF6EE",
+          "icon": ["./images/exG02b/Icon/EN/copenhagen_icon1.svg", "./images/exG02b/Icon/EN/copenhagen_icon2.svg", "./images/exG02b/Icon/EN/copenhagen_icon3.svg"],
           "image": {
             "src": "./images/exG02b/Copenhagen/copenhagen.png"
           },
@@ -267,7 +247,7 @@
             {
               "image": {
                 "src": "./images/exG02b/Copenhagen/photo2.png",
-                "caption": "In 2009, Denmark established the world’s first Cycling Embassy. In addition to promoting cycling exercise, the Cycling Embassy is also responsible for compiling statistics and analysing the cycling characteristics of the resident in Copenhagen, and collecting data to enhance the future planning for cyclists. The Copenhagen City Council will further expand the public transport network and cycle tracks, advocate electric vehicles, refurbish and redevelop buildings with low energy efficiency, and deploy more resources to pursue low-polluting technological research and development."
+                "caption": "In 2009, Denmark established the world’s first Cycling Embassy. In addition to promoting cycling exercise, the Cycling Embassy is also responsible for compiling statistics and analysing the cycling characteristics of the residents in Copenhagen, and collecting data to enhance the future planning for cyclists. The Copenhagen City Council will further expand the public transport network and cycle tracks, advocate electric vehicles, refurbish and redevelop buildings with low energy efficiency, and deploy more resources to pursue low-polluting technological research and development."
               }
             },
             {
@@ -281,11 +261,12 @@
         {
           "name": "A SMART Tunnel",
           "location": "Kuala Lumpur",
+          "backgroundColor": "#FAF7F1",
           "icon": ["./images/exG02b/Icon/EN/malaysia_icon1.svg", "./images/exG02b/Icon/EN/malaysia_icon2.svg", ""],
           "image": {
             "src": "./images/exG02b/KualaLumpur/Malaysia.png"
           },
-          "description": "Have you ever thought of a tunnel which is not only a vehicular lane, but also a waterway? In the tropical and rainy Kuala Lumpur, Malaysia, the city centre is susceptible to flooding every time it rains, even its landmark Masjid Jamek Mosque becomes flooded. Hence, in 2007, Kuala Lumpur built the world's first “SMART” (Stormwater Management and Road Tunnel) tunnel stormwater. A passage for cars on sunny days, and transforms into a giant pipe in rainy days. This is a “smart way” to relieve traffic congestion and reduce the risk of flooding.",
+          "description": "Have you ever thought of a tunnel which is not only a vehicular lane, but also a waterway? In the tropical and rainy Kuala Lumpur, Malaysia, the city centre is susceptible to flooding every time it rains, even its landmark Masjid Jamek Mosque becomes flooded. Hence, in 2007, Kuala Lumpur built the world's first \"SMART\" (Stormwater Management and Road Tunnel) tunnel stormwater. A passage for cars on sunny days, and transforms into a giant pipe in rainy days. This is a \"smart way\" to relieve traffic congestion and reduce the risk of flooding.",
           "detailBlocks": [
             {
               "image": {
@@ -310,16 +291,17 @@
         {
           "name": "Street as Playground",
           "location": "Barcelona",
+          "backgroundColor": "#FFF3F3",
           "icon": ["./images/exG02b/Icon/EN/barcelona_icon1.svg", "./images/exG02b/Icon/EN/barcelona_icon2.svg", ""],
           "image": {
             "src": "./images/exG02b/Barcelona/barcelona.png"
           },
-          "description": "Streets are not only infrastructure for urban mobility, but also an-extended space for residents’ activities. Barcelona’s “Superblocks” strives to reduce car flow and improve air quality by reclaiming the streets to the people, promoting walkability, cycling, and community interaction for uplifting quality of life.",
+          "description": "Streets are not only infrastructure for urban mobility, but also an-extended space for residents’ activities. Barcelona’s \"Superblocks\" strives to reduce car flow and improve air quality by reclaiming the streets to the people, promoting walkability, cycling, and community interaction for uplifting quality of life.",
           "detailBlocks": [
             {
               "image": {
                 "src": "./images/exG02b/Barcelona/photo1.png",
-                "caption": "In Barcelona, vehicles occupy about 60% of the roads, causing serious air and noise pollution. To reduce car flow and encourage walking and cycling instead of driving, as well as promoting a healthier lifestyle, the City Council decided to integrate active design into town planning, re-organising the streets into \"Superblocks\", and reducing the original vehicular lanes by 60%.Vehicles are only allowed to drive around the periphery of \"Superblocks\", and the streets become exclusive pedestrian public spaces."
+                "caption": "In Barcelona, vehicles occupy about 60% of the roads, causing serious air and noise pollution. To reduce car flow and encourage walking and cycling instead of driving, as well as promoting a healthier lifestyle, the City Council decided to integrate active design into town planning, re-organising the streets into \"Superblocks\", and reducing the original vehicular lanes by 60%. Vehicles are only allowed to drive around the periphery of \"Superblocks\", and the streets become exclusive pedestrian public spaces."
               }
             },
             {
@@ -349,6 +331,7 @@
         {
           "name": "城市港口大改造",
           "location": "漢堡",
+          "backgroundColor": "#FFFDF1",
           "icon": ["./images/exG02b/Icon/CN/hamburg_icon1.svg", "", ""],
           "image": {
             "src": "./images/exG02b/Hamburg/_hamburg.svg"
@@ -378,11 +361,8 @@
         {
           "name": "石屎森林外的生物多樣性",
           "location": "香港",
-          "icon": [
-            "./images/exG02b/Icon/CN/hongkong_icon1.svg",
-            "./images/exG02b/Icon/CN/hongkong_icon2.svg",
-            "./images/exG02b/Icon/CN/hongkong_icon3.svg"
-          ],
+          "backgroundColor": "#E6F8F2",
+          "icon": ["./images/exG02b/Icon/CN/hongkong_icon1.svg", "./images/exG02b/Icon/CN/hongkong_icon2.svg", "./images/exG02b/Icon/CN/hongkong_icon3.svg"],
           "image": {
             "src": "./images/exG02b/HongKong/hongkong.png"
           },
@@ -411,11 +391,8 @@
         {
           "name": "由水渠化為藍綠景點",
           "location": "首爾",
-          "icon": [
-            "./images/exG02b/Icon/CN/seoul_icon1.svg",
-            "./images/exG02b/Icon/CN/seoul_icon2.svg",
-            "./images/exG02b/Icon/CN/seoul_icon3.svg"
-          ],
+          "backgroundColor": "#FFF9F4",
+          "icon": ["./images/exG02b/Icon/CN/seoul_icon1.svg", "./images/exG02b/Icon/CN/seoul_icon2.svg", "./images/exG02b/Icon/CN/seoul_icon3.svg"],
           "image": {
             "src": "./images/exG02b/Seoul/seoul.png"
           },
@@ -444,11 +421,8 @@
         {
           "name": "冰天遁地藝術館",
           "location": "赫爾辛基",
-          "icon": [
-            "./images/exG02b/Icon/CN/helsinki_icon1.svg",
-            "./images/exG02b/Icon/CN/helsinki_icon2.svg",
-            "./images/exG02b/Icon/CN/helsinki_icon3.svg"
-          ],
+          "backgroundColor": "#F1FAFA",
+          "icon": ["./images/exG02b/Icon/CN/helsinki_icon1.svg", "./images/exG02b/Icon/CN/helsinki_icon2.svg", "./images/exG02b/Icon/CN/helsinki_icon3.svg"],
           "image": {
             "src": "./images/exG02b/Helsinki/helsinki.png"
           },
@@ -477,11 +451,8 @@
         {
           "name": "高線公園",
           "location": "紐約",
-          "icon": [
-            "./images/exG02b/Icon/CN/newyork_icon1.svg",
-            "./images/exG02b/Icon/CN/newyork_icon2.svg",
-            "./images/exG02b/Icon/CN/newyork_icon3.svg"
-          ],
+          "backgroundColor": "#F3FFF6",
+          "icon": ["./images/exG02b/Icon/CN/newyork_icon1.svg", "./images/exG02b/Icon/CN/newyork_icon2.svg", "./images/exG02b/Icon/CN/newyork_icon3.svg"],
           "image": {
             "src": "./images/exG02b/NewYork/newyork.png"
           },
@@ -510,11 +481,8 @@
         {
           "name": "牧場水上飄",
           "location": "鹿特丹",
-          "icon": [
-            "./images/exG02b/Icon/CN/rotterdam_icon1.svg",
-            "./images/exG02b/Icon/CN/rotterdam_icon2.svg",
-            "./images/exG02b/Icon/CN/rotterdam_icon3.svg"
-          ],
+          "backgroundColor": "#F1F9FF",
+          "icon": ["./images/exG02b/Icon/CN/rotterdam_icon1.svg", "./images/exG02b/Icon/CN/rotterdam_icon2.svg", "./images/exG02b/Icon/CN/rotterdam_icon3.svg"],
           "image": {
             "src": "./images/exG02b/Rotterdam/rotterdam.png"
           },
@@ -543,11 +511,8 @@
         {
           "name": "湖泊上的隱形發電廠",
           "location": "淮南",
-          "icon": [
-            "./images/exG02b/Icon/CN/huainan_icon1.svg",
-            "./images/exG02b/Icon/CN/huainan_icon2.svg",
-            "./images/exG02b/Icon/CN/huainan_icon3.svg"
-          ],
+          "backgroundColor": "#FCFCEA",
+          "icon": ["./images/exG02b/Icon/CN/huainan_icon1.svg", "./images/exG02b/Icon/CN/huainan_icon2.svg", "./images/exG02b/Icon/CN/huainan_icon3.svg"],
           "image": {
             "src": "./images/exG02b/Huainan/huainan.png"
           },
@@ -576,6 +541,7 @@
         {
           "name": "零碳排放首都",
           "location": "哥本哈根",
+          "backgroundColor": "#FFF6EE",
           "icon": ["./images/exG02b/Icon/CN/copenhagen_icon1.svg", "./images/exG02b/Icon/CN/copenhagen_icon2.svg", ""],
           "image": {
             "src": "./images/exG02b/Copenhagen/copenhagen.png"
@@ -605,6 +571,7 @@
         {
           "name": "聰明隧道",
           "location": "吉隆坡",
+          "backgroundColor": "#FAF7F1",
           "icon": ["./images/exG02b/Icon/CN/malaysia_icon1.svg", "./images/exG02b/Icon/CN/malaysia_icon2.svg", ""],
           "image": {
             "src": "./images/exG02b/KualaLumpur/Malaysia.png"
@@ -634,6 +601,7 @@
         {
           "name": "馬路中心的活動天地",
           "location": "巴塞隆拿",
+          "backgroundColor": "#FFF3F3",
           "icon": ["./images/exG02b/Icon/CN/barcelona_icon1.svg", "./images/exG02b/Icon/CN/barcelona_icon2.svg", ""],
           "image": {
             "src": "./images/exG02b/Barcelona/barcelona.png"
@@ -643,7 +611,7 @@
             {
               "image": {
                 "src": "./images/exG02b/Barcelona/photo1.jpeg",
-                "caption": "在巴塞隆拿，汽車佔用約六成的道路，造成嚴重的空氣及噪音污染。為了減少汽車流量，並且鼓勵巿民以步行、騎單車代替駕車，建立更健康生活模式，巿政府決定把城巿規劃融合動態設計，將街道重新規劃為「超級街區」，將原有行車道減少百分之六十。汽車只可在「超級街區」外圍行駛，街道成為行人專用的公共空間。"
+                "caption": "在巴塞隆拿，汽車佔用約六成的道路，造成嚴重的空氣及噪音污染。為了減少汽車流量，並且鼓勵巿民以步行、騎單車代替駕車，建立更健康的生活模式，巿政府決定把城巿規劃融合動態設計，將街道重新規劃為「超級街區」，將原有行車道減少百分之六十。汽車只可在「超級街區」外圍行駛，街道成為行人專用的公共空間。"
               }
             },
             {
