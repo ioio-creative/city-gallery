@@ -34,6 +34,11 @@ import yearColor1900 from './images/yearColor.png';
 import yearColor1945 from './images/yearColor.png';
 import yearColor1985 from './images/yearColor.png';
 import yearColor2019 from './images/yearColor2019.png';
+
+import region1 from './images/region1.png';
+import region2 from './images/region2.png';
+import region3 from './images/region3.png';
+
 import gsap from 'gsap';
 
 const mapArray = [map1900, map1900ed, map1945, map1945ed, map1985, map1985ed, map2019, map2019ed];
@@ -42,11 +47,13 @@ const yearArray = [year1900, year1945, year1985, year2019];
 const blurLeft = [blurLeft1900, blurLeft1945, blurLeft1985, blurLeft2019];
 const blurRight = [blurRight1900, blurRight1945, blurRight1985, blurRight2019];
 const yearColor = [yearColor1900, yearColor1945, yearColor1985, yearColor2019];
+const region = [region1, region2, region3];
 
 const G303 = props => {
   const [yearIdx, setYearIdx] = useState(null);
   const [selectedYear, setSelectedYear] = useState(false);
   const [streetName, setStreetName] = useState(false);
+  const [regionNumber, setRegionNumber] = useState(0);
   const [gameMode, setGameMode] = useState('l');
   const [mapIndicatorIdx, setMapIndicatorIdx] = useState(0);
   const [fakeZoom, setFakeZoom] = useState(0);
@@ -144,6 +151,19 @@ const G303 = props => {
         <img alt='' className='blur' src={blurRight[yearIdx]}></img>
         <img alt='' className='yearColor' src={yearColor[yearIdx]}></img>
       </div>
+      {yearIdx === 3 && (
+        <>
+          <img style={{ position: 'absolute', width: 1920, height: 1080, opacity: 0.5 }} src={region[regionNumber]}></img>
+          <div
+            style={{ position: 'absolute', width: 100, height: 100, top: 50, left: 50, backgroundColor: '#ffffff', zIndex: 999 }}
+            onClick={() => {
+              setRegionNumber((regionNumber + 1) % 3);
+            }}
+          >
+            Next
+          </div>
+        </>
+      )}
       {selectedYear && (
         <Menu
           handleZoom={{
