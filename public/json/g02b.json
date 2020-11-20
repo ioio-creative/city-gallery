@@ -168,7 +168,7 @@
             },
             {
               "image": {
-                "src": "./images/exG02b/NewYork/photo3.jpeg",
+                "src": "./images/exG02b/NewYork/photo3.jpg",
                 "caption": "The High Line is now a landmark of New York City. It not only provides a green and resting public space for its visitors, but also adds vibrancy to the old neighbourhood it traverses and presents an international revitalisation showcase. \"Seoullo 7017\" completed in 2017 was inspired by the High Line’s design. "
               }
             }
@@ -424,7 +424,7 @@
             },
             {
               "image": {
-                "src": "./images/exG02b/Seoul/photo3.jp",
+                "src": "./images/exG02b/Seoul/photo3.jpg",
                 "caption": "源頭的清溪廣場是污水經處理後進入河道的起點。四米高的兩段式瀑布橫跨寬闊的河道，瀑布下是景點九石潭，由韓國各地運來的九塊基石組合而成。清溪廣場是2009年美國景觀設計師協會獎獲獎項目之一。"
               }
             }
@@ -588,24 +588,24 @@
           "image": {
             "src": "./images/exG02b/KualaLumpur/Malaysia.png"
           },
-          "description": "有沒有想過，隧道除了是車道，還可以是「水道」？在熱帶多雨的馬來西亞吉隆坡，每到下雨天，水患嚴重，甚至連巿中心地標 - 占美回教堂都成為澤國。因此，2007年，吉隆坡建成了全球首創的「聰明隧道」。晴天時行車，雨天時變身巨型排洪管道。這是紓緩交通擠塞，同時減少水浸風險的「聰明之道」。",
+          "description": "有沒有想過，隧道除了是車道，還可以是「水道」？",
           "detailBlocks": [
             {
               "image": {
                 "src": "./images/exG02b/KualaLumpur/photo1.jpeg",
-                "caption": "隧道長九點七公里，是亞洲第二長的防洪水道，分三層，上兩層共有四條車道，連接高速公路；底層管道連接蓄洪池、多條河流及湖泊。平日不開放，雨天時用作水道。"
+                "caption": "在熱帶多雨的馬來西亞吉隆坡，每到下雨天，水患嚴重，甚至連巿中心地標 - 占美回教堂都成為澤國。因此，2007年，吉隆坡建成了全球首創的「聰明隧道」。晴天時行車，雨天時變身巨型排洪管道。這是紓緩交通擠塞，同時減少水浸風險的「聰明之道」。"
               }
             },
             {
               "image": {
                 "src": "./images/exG02b/KualaLumpur/photo2.jpeg",
-                "caption": "隧道有三種模式，晴天或雨量少時只開放兩層車道，底層水道並不使用（模式一）；若遇上中度雨量，底層水道會同時打開排洪（模式二）；若遇上暴雨，便連行車道都以自動水密門關閉，整條隧道都變成排洪水道，可容納高達三百萬立方公尺水量，約等於三十四個標準泳池（模式三）。隧道落成後，成功應付多次暴雨。其創新設計致使它於2011年獲聯合國最佳人居環境榮譽獎章。"
+                "caption": "隧道長九點七公里，是亞洲第二長的防洪水道，分三層，上兩層共有四條車道，連接高速公路；底層管道連接蓄洪池、多條河流及湖泊。平日不開放，雨天時用作水道。"
               }
             },
             {
               "image": {
-                "src": "",
-                "caption": ""
+                "src": "./images/exG02b/KualaLumpur/photo3.jpeg",
+                "caption": "隧道有三種模式，晴天或雨量少時只開放兩層車道，底層水道並不使用（模式一）；若遇上中度雨量，底層水道會同時打開排洪（模式二）；若遇上暴雨，便連行車道都以自動水密門關閉，整條隧道都變成排洪水道，可容納高達三百萬立方公尺水量，約等於三十四個標準泳池（模式三）。隧道落成後，成功應付多次暴雨。其創新設計致使它於2011年獲聯合國最佳人居環境榮譽獎章。"
               }
             }
           ]
