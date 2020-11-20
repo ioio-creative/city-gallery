@@ -85,11 +85,11 @@
           "populationDensity": { "value": "1,312.33" },
           "population": { "value": "21,536,000" },
           "landArea": { "value": "16,410.54" },
-          "source": "北京市统计局K<br/>北京市2019年国民经济和社会发展统计公报"
+          "source": "北京市统计局<br/>北京市2019年国民经济和社会发展统计公报"
         },
         "cairo": {
           "populationDensity": { "value": "3,189.69" },
-          "population": { "value": "9,840,,591" },
+          "population": { "value": "9,840,591" },
           "landArea": { "value": "3085.12" },
           "source": "Official Portal of Cairo Governorate & <br/>State Information Service 2019"
         },
@@ -108,7 +108,7 @@
         "mexicocity": {
           "populationDensity": { "value": "6,016.67" },
           "population": { "value": "8,985,339" },
-          "landArea": { "value": "627.57" },
+          "landArea": { "value": "1493.41" },
           "source": "officia Wikiciudad by Gobierno de la Ciudad de México & <br/>INEIG - Ciudad de México (09) - Población 2015"
         },
         "mumbai": {
@@ -127,19 +127,19 @@
           "populationDensity": { "value": "7,866.00" },
           "population": { "value": "5,703,600" },
           "landArea": { "value": "725.70" },
-          "source": "TOKYO STATISTICAL YEARBOOK 2017 - Population By District (xls)"
+          "source": "Singapore Department of Statistics 2019"
         },
         "sydney": {
           "populationDensity": { "value": "429.50" },
           "population": { "value": "5,312,163" },
           "landArea": { "value": "12,368.20" },
-          "source": "TOKYO STATISTICAL YEARBOOK 2017 - Population By District (xls)"
+          "source": "City of Sydney (The city at a glance) 2019"
         },
         "tokyo": {
           "populationDensity": { "value": "6,305.91" },
           "population": { "value": "13,834,925" },
           "landArea": { "value": "2194.00" },
-          "source": "TOKYO STATISTICAL YEARBOOK 2017 - Population By District (xls)"
+          "source": "Statistics Division, Bureau of General Affairs,Tokyo Metropolitan Government 2020"
         }
       },
       "section3": {
@@ -166,7 +166,7 @@
         "beijing": {
           "building": [
             {
-              "name": "Zhongguo Zun/ CITIC Tower",
+              "name": "CITIC Tower",
               "height": "528m",
               "floor": "108 Floors"
             },
@@ -216,7 +216,7 @@
               "floor": "63 Floors"
             },
             {
-              "name": "110 Bishopsgate (previously named Heron Tower)",
+              "name": "110 Bishopsgate",
               "height": "242m",
               "floor": "46 Floors"
             }
@@ -251,7 +251,7 @@
               "floor": "57 Floors"
             },
             {
-              "name": "Chapultepec Uno/Punto Chapultepec",
+              "name": "Chapultepec Uno",
               "height": "240.5m",
               "floor": "59 Floors"
             },
@@ -271,7 +271,7 @@
               "floor": "76 Floors"
             },
             {
-              "name": "Omkar 1973 Tower A",
+              "name": "Lodha The Park 3",
               "height": "268m",
               "floor": "76 Floors"
             },
@@ -356,7 +356,7 @@
               "floor": "54 Floors"
             },
             {
-              "name": "Tokyo Metropolitan Government Building",
+              "name": "Tokyo Metropolitan Government Building 1",
               "height": "243m",
               "floor": "48 Floors"
             }
@@ -367,11 +367,7 @@
       "section4": {
         "hongkong": {
           "percentage": "88",
-          "carimages": [
-            "./images/exG02a/section4/hongkongcar1.svg",
-            "./images/exG02a/section4/hongkongcar2.svg",
-            "./images/exG02a/section4/hongkongcar3.svg"
-          ],
+          "carimages": ["./images/exG02a/section4/hongkongcar1.svg", "./images/exG02a/section4/hongkongcar2.svg", "./images/exG02a/section4/hongkongcar3.svg"],
           "source": "Deloitte 2018"
         },
         "beijing": {
@@ -451,19 +447,19 @@
           "source": "Regions and Cities at a Glance 2018 - Mexico,<br/>OECD"
         },
         "mumbai": {
-          "money": "34,821.95",
+          "money": "34,821.93",
           "source": "Economic Survey of Maharashtra 2019-20,<br/>Directorate Of Economics And Statisitcs,<br/>Planning Department,<br/>Government of Maharashtra, Mumbai"
         },
         "newyork": {
-          "money": "693,481.48",
+          "money": "693,481.46",
           "source": "GDP and Personal Income,<br/>Bureau of Economic Analysis,<br/>U.S. Department of Commerce 2020<br/> *This data belongs to New York State"
         },
         "singapore": {
-          "money": "510,389.56",
+          "money": "510,389.57",
           "source": "Singapore Department of Statistics 2019"
         },
         "sydney": {
-          "money": "492,481.75",
+          "money": "492,481.78",
           "source": " Economic performance of Australia’s cities and regions,<br/>SGS Economics and Planning"
         },
         "tokyo": {
@@ -539,17 +535,17 @@
       "section2": {
         "distance": "500/公里<sup>2</sup>",
         "hongkong": {
-          "source": "香港政府統計處人口2018<br/>香港地理數據2019"
+          "source": "GovHK, <br/>Hong Kong Special Administrative Region 2019"
         },
         "beijing": {
           "populationDensity": { "value": "1,312.33" },
           "population": { "value": "21,536,000" },
           "landArea": { "value": "16,410.54" },
-          "source": "北京市统计局K<br/>北京市2019年国民经济和社会发展统计公报"
+          "source": "北京市统计局<br/>北京市2019年国民经济和社会发展统计公报"
         },
         "cairo": {
           "populationDensity": { "value": "3,189.69" },
-          "population": { "value": "9,840,,591" },
+          "population": { "value": "9,840,591" },
           "landArea": { "value": "3085.12" },
           "source": "Official Portal of Cairo Governorate & <br/>State Information Service 2019"
         },
@@ -568,7 +564,7 @@
         "mexicocity": {
           "populationDensity": { "value": "6,016.67" },
           "population": { "value": "8,985,339" },
-          "landArea": { "value": "627.57" },
+          "landArea": { "value": "1493.41" },
           "source": "officia Wikiciudad by Gobierno de la Ciudad de México & <br/>INEIG - Ciudad de México (09) - Población 2015"
         },
         "mumbai": {
@@ -587,19 +583,19 @@
           "populationDensity": { "value": "7,866.00" },
           "population": { "value": "5,703,600" },
           "landArea": { "value": "725.70" },
-          "source": "TOKYO STATISTICAL YEARBOOK 2017 - Population By District (xls)"
+          "source": "Singapore Department of Statistics 2019"
         },
         "sydney": {
           "populationDensity": { "value": "429.50" },
           "population": { "value": "5,312,163" },
           "landArea": { "value": "12,368.20" },
-          "source": "TOKYO STATISTICAL YEARBOOK 2017 - Population By District (xls)"
+          "source": "City of Sydney (The city at a glance) 2019"
         },
         "tokyo": {
           "populationDensity": { "value": "6,305.91" },
           "population": { "value": "13,834,925" },
           "landArea": { "value": "2194.00" },
-          "source": "東京都の統計 2017 - 地區人口"
+          "source": "Statistics Division, Bureau of General Affairs,Tokyo Metropolitan Government 2020"
         }
       },
       "section3": {
@@ -631,7 +627,7 @@
               "floor": "108 層"
             },
             {
-              "name": "中國國際貿易中心第三期",
+              "name": "中國國際貿易中心三期",
               "height": "330米",
               "floor": "74 層"
             },
@@ -646,7 +642,7 @@
         "cairo": {
           "building": [
             {
-              "name": "外交部",
+              "name": "外交部大樓",
               "height": "143米",
               "floor": "45 層"
             },
@@ -671,12 +667,12 @@
               "floor": "73 層"
             },
             {
-              "name": "主教門22號",
+              "name": "主教門大街22號大樓",
               "height": "278米",
               "floor": "63 層"
             },
             {
-              "name": "主教門110號",
+              "name": "主教門大街110號大樓",
               "height": "242米",
               "floor": "46 層"
             }
@@ -711,7 +707,7 @@
               "floor": "57 層"
             },
             {
-              "name": "Chapultepec Uno/Punto Chapultepec",
+              "name": "Chapultepec Uno",
               "height": "240.5米",
               "floor": "59 層"
             },
@@ -731,7 +727,7 @@
               "floor": "76 層"
             },
             {
-              "name": "Omkar 1973 Tower A",
+              "name": "Lodha The Park 3",
               "height": "268米",
               "floor": "76 層"
             },
@@ -746,7 +742,7 @@
         "newyork": {
           "building": [
             {
-              "name": "世界貿易中心一號大樓",
+              "name": "世界貿易中心<br/>一號大樓",
               "height": "541米",
               "floor": "104 層"
             },
@@ -827,11 +823,7 @@
       "section4": {
         "hongkong": {
           "percentage": "88",
-          "carimages": [
-            "./images/exG02a/section4/hongkongcar1.svg",
-            "./images/exG02a/section4/hongkongcar2.svg",
-            "./images/exG02a/section4/hongkongcar3.svg"
-          ],
+          "carimages": ["./images/exG02a/section4/hongkongcar1.svg", "./images/exG02a/section4/hongkongcar2.svg", "./images/exG02a/section4/hongkongcar3.svg"],
           "source": "Deloitte 2018"
         },
         "beijing": {
@@ -911,19 +903,19 @@
           "source": "Regions and Cities at a Glance 2018 - Mexico,<br/>OECD"
         },
         "mumbai": {
-          "money": "34,821.95",
+          "money": "34,821.93",
           "source": "Economic Survey of Maharashtra 2019-20,<br/>Directorate Of Economics And Statisitcs,<br/>Planning Department,<br/>Government of Maharashtra, Mumbai"
         },
         "newyork": {
-          "money": "693,481.48",
+          "money": "693,481.46",
           "source": "GDP and Personal Income,<br/>Bureau of Economic Analysis,<br/>U.S. Department of Commerce 2020<br/> *This data belongs to New York State"
         },
         "singapore": {
-          "money": "510,389.56",
+          "money": "510,389.57",
           "source": "Singapore Department of Statistics 2019"
         },
         "sydney": {
-          "money": "492,481.75",
+          "money": "492,481.78",
           "source": " Economic performance of Australia’s cities and regions,<br/>SGS Economics and Planning"
         },
         "tokyo": {

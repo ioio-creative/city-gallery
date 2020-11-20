@@ -1,261 +1,387 @@
 @import '../../setting.scss';
 
-$white:#fff;
-$black:#000;
-$lightblue:#70CCB8;
-$drakgreenblue:#074A45;
-$brown:#59472A;
+$white: #fff;
+$black: #000;
+$lightblue: #70ccb8;
+$drakgreenblue: #074a45;
+$brown: #59472a;
 
-$width:3840;
+$width: 1920;
 
-*{
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    padding:0;
-    margin:0;
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  padding: 0;
+  margin: 0;
 }
 ul,
-li{
-    list-style: none;
+li {
+  list-style: none;
 }
-span{
-    display: inline-block;
+span {
+  display: inline-block;
 }
 
-#main{
-    width:100%;
-    height:100%;
-    background:#103042;
-    font-family: 'Helvetica';
-    &.started{
-        #yearSelector{
-            opacity: 0;
-            visibility: hidden;
-        }
+#main {
+  width: 100%;
+  height: 100%;
+  background: #103042;
+  font-family: 'Helvetica';
+  &.started {
+    #yearSelector {
+      opacity: 0;
+      visibility: hidden;
     }
-    &.zoomed{
-        #yearSelector{
-            opacity: 0;
-            visibility: hidden;
-        }
-        #mapIndicator{
-            opacity: 1;
-            visibility: visible;
-        }
-        #streetInfo{
-            opacity: 1;
-            visibility: visible;
-            &:after{
-                visibility: visible;
-            }
-        }
+  }
+  &.zoomed {
+    #yearSelector {
+      opacity: 0;
+      visibility: hidden;
     }
-    #mapIndicator{
-        position: fixed;
-        top:vw-calc(66, $width);
-        left:vw-calc(472, $width);
-        z-index: 10;
-        opacity: 0;
-        visibility: hidden;
-        transition: all .3s cubic-bezier(0.87, 0, 0.13, 1);
-        span{
-            margin-bottom:vw-calc(20, $width);
-            font-size:vw-calc(30, $width);
-        }
-        ul{
-            width:vw-calc(403, $width);
-            height:vw-calc(180, $width);
-            display: flex;
-            li{
-                width:25%;
-                height:100%;
-                border-left:vw-calc(3, $width) dashed $lightblue;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                position: relative;
-                background:$white;
-                &:before{
-                    content:'';
-                    width:100%;
-                    height:100%;
-                    border:vw-calc(3, $width) solid $drakgreenblue;
-                    position: absolute;
-                    top:0;
-                    left:0;
-                    transform: translate3d(vw-calc(-3, $width), vw-calc(-3, $width), 0);
-                }
-                &:after{
-                    content:'';
-                    width:100%;
-                    height:100%;
-                    background:$black;
-                    position: absolute;
-                    top:0;
-                    left:0;
-                    opacity: .7;
-                    visibility: visible;
-                }
-                &:first-child{
-                    border:0;
-                }
-                &.active{
-                    &:after{
-                        opacity: 0;
-                        visibility: hidden;
-                    }
-                }
-            }
-        }
+    #mapIndicator {
+      opacity: 1;
+      visibility: visible;
     }
-    #yearSelector{
-        width:vw-calc(264, $width);
-        position: absolute;
-        top:50%;
-        left:vw-calc(175, $width);
-        font-family: 'Times New Roman';
-        font-weight: bold;
-        font-style: italic;
-        color:$lightblue;
+    #streetInfo {
+      opacity: 1;
+      visibility: visible;
+      &:after {
+        visibility: visible;
+      }
+    }
+  }
+  #mapIndicator {
+    position: fixed;
+    top: vw-calc(66, $width);
+    left: vw-calc(472, $width);
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+    span {
+      margin-bottom: vw-calc(20, $width);
+      font-size: vw-calc(30, $width);
+    }
+    ul {
+      width: vw-calc(403, $width);
+      height: vw-calc(180, $width);
+      display: flex;
+      li {
+        width: 25%;
+        height: 100%;
+        border-left: vw-calc(3, $width) dashed $lightblue;
         display: flex;
-        flex-direction: column;
-        transform: translate3d(0,-50%,0);
-        transition: all .3s cubic-bezier(0.87, 0, 0.13, 1);
-        &.disabled{
-            ul{
-                transform: translate3d(0,0,0);
-            }
-            #startBtn{
-                opacity: 1;
-                visibility: visible;
-                // transform: translate3d(-50%,0,0) scale(1);
-            }
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background: $white;
+        &:before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          border: vw-calc(3, $width) solid $drakgreenblue;
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translate3d(vw-calc(-3, $width), vw-calc(-3, $width), 0);
         }
-        &:not(.disabled){
-            #startBtn{
-                transform: translate3d(-50%,vw-calc(50,$width),0) scale(1);
-                &:active{
-                    transform: translate3d(-50%,vw-calc(50,$width),0) scale(.9);
-                }
-            }
+        &:after {
+          content: '';
+          width: 100%;
+          height: 100%;
+          background: $black;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0.7;
+          visibility: visible;
         }
-        ul{
-            position: relative;
-            transform: translate3d(0,calc(#{vw-calc(-50, $width)}),0);
-            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-            &:before,
-            &:after{
-                content:'';
-                width:vw-calc(3, $width);
-                height:vw-calc(27, $width);
-                background:$white;
-                position: absolute;
-                left:50%;
-            }
-            &:before{
-                bottom:calc(100% + #{vw-calc(20, $width)});
-            }
-            &:after{
-                top:calc(100% + #{vw-calc(20, $width)});
-            }
-            li{
-                height:vw-calc(120, $width);
-                font-size:vw-calc(132, $width);
-                display: flex;
-                transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-                &.active{
-                    height:vw-calc(150, $width);
-                    color:$white;
-                    span{
-                        transform: translate3d(0,0,0) scale(1);
-                    }
-                }
-                span{
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    transform-origin: center;
-                    transform: translate3d(0,0,0) scale(.35);
-                    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-                }
-            }
+        &:first-child {
+          border: 0;
         }
-        #startBtn{
-            width:100%;
-            height:vw-calc(80, $width);
-            background:$white;
-            border-radius: vw-calc(100, $width);
-            font-size:vw-calc(30, $width);
-            font-weight: bold;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            top:100%;
-            left:50%;
-            transform: translate3d(-50%,vw-calc(50,$width),0) scale(0);
-            transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
+        &.active {
+          &:after {
+            opacity: 0;
+            visibility: hidden;
+          }
         }
+      }
     }
-    #streetInfo{
-        // width:100%;
-        // height:100%;
-        position: fixed;
-        z-index: 2;
-        opacity:0;
-        visibility: hidden;
-        // &:after{
-        //     content:'';
-        //     width:100%;
-        //     height:100%;
-        //     position: absolute;
-        //     top:0;
-        //     left:0;
-        //     z-index: 1;
-        //     background:$white;
-        //     opacity: .5;
-        //     visibility: hidden;
-        // }
-        h1{
-            font-size:vw-calc(100, $width);
-            color:$drakgreenblue;
-            transform: translate3d(17vw, 81vh, 0);
-        }
-        // #markerOuterWrap{
-        //     width:100%;
-        //     height:100%;
-        //     position: absolute;
-        //     top: 0;
-        //     left:0;
-        //     z-index: 2;
-        //     transform-origin: left top;
-        //     #markerWrap{
-        //         width:84.42708vw;
-        //         height:84.42708 * 0.573vw;
-        //         position: absolute;
-        //         bottom:-93.2%;
-        //         left: 9.5%;
-        //         // transform: translate3d(-50%,-50%,0);
-        //         // transform-origin: left;
-        //         span{
-        //             width:0;
-        //             height:0;
-        //             display: block;
-        //             &:before{
-        //                 content:'';
-        //                 width:vw-calc(45, $width);
-        //                 height:vw-calc(55, $width);
-        //                 background:url('./images/marker.svg') center no-repeat;
-        //                 background-size:100%;
-        //                 transform: translate3d(-50%,-100%,0);
-        //                 display: block;
-        //             }
-        //         }
-        //     }
-        // }
+  }
+  #yearSelector {
+    width: vw-calc(264, $width);
+    position: absolute;
+    top: 50%;
+    left: vw-calc(175, $width);
+    font-family: 'Times New Roman';
+    font-weight: bold;
+    font-style: italic;
+    color: $lightblue;
+    display: flex;
+    flex-direction: column;
+    transform: translate3d(0, -50%, 0);
+    transition: all 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+    &.disabled {
+      ul {
+        transform: translate3d(0, 0, 0);
+      }
+      #startBtn {
+        opacity: 1;
+        visibility: visible;
+        // transform: translate3d(-50%,0,0) scale(1);
+      }
     }
+    &:not(.disabled) {
+      #startBtn {
+        transform: translate3d(-50%, vw-calc(50, $width), 0) scale(1);
+        &:active {
+          transform: translate3d(-50%, vw-calc(50, $width), 0) scale(0.9);
+        }
+      }
+    }
+    ul {
+      position: relative;
+      transform: translate3d(0, calc(#{vw-calc(-50, $width)}), 0);
+      transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+      &:before,
+      &:after {
+        content: '';
+        width: vw-calc(3, $width);
+        height: vw-calc(27, $width);
+        background: $white;
+        position: absolute;
+        left: 50%;
+      }
+      &:before {
+        bottom: calc(100% + #{vw-calc(20, $width)});
+      }
+      &:after {
+        top: calc(100% + #{vw-calc(20, $width)});
+      }
+      li {
+        height: vw-calc(120, $width);
+        font-size: vw-calc(132, $width);
+        display: flex;
+        transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        &.active {
+          height: vw-calc(150, $width);
+          color: $white;
+          span {
+            transform: translate3d(0, 0, 0) scale(1);
+          }
+        }
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transform-origin: center;
+          transform: translate3d(0, 0, 0) scale(0.35);
+          transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+      }
+    }
+    #startBtn {
+      width: 100%;
+      height: vw-calc(80, $width);
+      background: $white;
+      border-radius: vw-calc(100, $width);
+      font-size: vw-calc(30, $width);
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate3d(-50%, vw-calc(50, $width), 0) scale(0);
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  }
+  #streetInfo {
+    position: fixed;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    h1 {
+      font-size: vw-calc(100, $width);
+      color: $drakgreenblue;
+      transform: translate3d(17vw, 81vh, 0);
+    }
+  }
+}
+
+#g303Dummy {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: $drakgreenblue;
+}
+#yearSelector {
+  position: absolute;
+  z-index: 9;
+  top: 50%;
+  left: 10%;
+  width: 150px;
+  text-align: center;
+  font-size: 50px;
+  transform: translateY(-50%);
+  transition: all 0.4s;
+  color: #70ccb8;
+  font-family: 'Times New Roman';
+  font-weight: bold;
+  font-style: italic;
+  #startBtn {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.6s;
+    font-size: 20px;
+    background-color: #ffffff;
+    color: #70ccb8;
+    padding: 15px;
+    border-radius: 30px;
+    font-weight: normal;
+  }
+  &.disabled {
+    #startBtn {
+      visibility: hidden;
+      opacity: 0;
+    }
+    ul {
+      margin-bottom: 0px;
+    }
+    li {
+      // font-size: 50px;
+    }
+  }
+  &.hide {
+    visibility: hidden;
+    opacity: 0;
+  }
+  ul {
+    position: relative;
+    margin-bottom: 120px;
+    transition: all 0.4s;
+    text-align: center;
+    &:before,
+    &:after {
+      content: '';
+      width: 1px;
+      height: 20px;
+      background: #fff;
+      position: absolute;
+      left: 50%;
+    }
+    &:before {
+      bottom: 100%;
+      margin-bottom: 20px;
+    }
+    &:after {
+      top: 100%;
+      margin-top: 20px;
+    }
+    li {
+      font-size: 30px;
+      transition: all 0.4s;
+      margin: 20px 0;
+      &.active {
+        font-size: 60px;
+        margin: 0;
+        color: #fff;
+      }
+    }
+  }
+}
+#mapWrapper,
+#mapCover {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#mapCover {
+  z-index: 1;
+  background-color: $drakgreenblue;
+  mix-blend-mode: normal;
+  transition: all 2s;
+  &.show {
+    mix-blend-mode: multiply;
+  }
+  &.hide {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+#mapWrapper img,
+#mapCover img {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 4s;
+  &.active {
+    opacity: 1;
+    &.cover {
+      transition-delay: 0.5s;
+    }
+  }
+}
+#mapCover img.active {
+  animation: flash 0.8s infinite alternate;
+  // opacity: 0;
+}
+
+#leftInfo {
+  img {
+    position: absolute;
+  }
+  .year {
+    width: auto;
+    height: 189px;
+    top: 666px;
+    left: 137px;
+  }
+}
+
+#rightInfo {
+  img {
+    position: absolute;
+    width: auto;
+    height: auto;
+  }
+  .blur {
+    width: 647px;
+    height: 766px;
+    top: 540px;
+    left: 1530px;
+  }
+  .scale {
+    width: 212.21px;
+    height: 36px;
+    top: 979px;
+    left: 1655px;
+  }
+  .yearColor {
+    width: 142px;
+    height: 258px;
+    top: 702px;
+    left: 1691px;
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.4;
+  }
 }

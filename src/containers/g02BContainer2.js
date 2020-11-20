@@ -154,12 +154,7 @@ const CitiesList = props => {
                 key={yIdx * 5 + xIdx}
                 active={props.blockElemIdx === yIdx * 5 + xIdx}
                 blockIdx={id}
-                activeCenterClass={
-                  xIdx === ((currentColIdx % colLth) + colLth) % colLth &&
-                  yIdx === ((currentRowIdx % rowLth) + rowLth) % rowLth
-                    ? true
-                    : false
-                }
+                activeCenterClass={xIdx === ((currentColIdx % colLth) + colLth) % colLth && yIdx === ((currentRowIdx % rowLth) + rowLth) % rowLth ? true : false}
                 offsetX={col[xIdx] * blockWidth}
                 offsetY={row[yIdx] * blockHeight}
                 data={props.data}
@@ -224,8 +219,9 @@ const G02BContainer = props => {
     let isIdle = true;
 
     const onMouseDown = event => {
+      if (!idle) idle();
       if (!isDragDisabled) {
-        idle();
+        // idle();
         setDragging(false);
         let e = event.touches ? event.touches[0] : event;
         const mx = e.clientX;
@@ -242,6 +238,7 @@ const G02BContainer = props => {
     };
 
     const onMouseMove = event => {
+      if (!idle) idle();
       setDragging(true);
       let e = event.touches ? event.touches[0] : event;
       const mx = e.clientX;
@@ -297,7 +294,7 @@ const G02BContainer = props => {
       timer = setTimeout(() => {
         setIdle(true);
         isIdle = true;
-      }, 1000 * 60);
+      }, 2000 * 60);
     };
 
     const setIsIdle = bool => {
@@ -379,19 +376,11 @@ const G02BContainer = props => {
 
   const openDetailPage = domIdx => {
     const elem = document.querySelector(`.cityBlock:nth-child(${domIdx + 1})`);
-    const delay =
-      Math.abs(
-        (elem.getBoundingClientRect().left + blockWidth / 2 - window.innerWidth / 2) / (window.innerWidth / 1.1)
-      ) + Math.abs((elem.getBoundingClientRect().top + blockWidth / 2 - window.innerHeight / 2) / window.innerWidth);
+    const delay = Math.abs((elem.getBoundingClientRect().left + blockWidth / 2 - window.innerWidth / 2) / (window.innerWidth / 1.1)) + Math.abs((elem.getBoundingClientRect().top + blockWidth / 2 - window.innerHeight / 2) / window.innerWidth);
 
     gsap.to(['#drag'], 0.3, { autoAlpha: 0, ease: 'power1.inOut' });
     gsap.fromTo('#detailsPage #bg', 0.3, { autoAlpha: 0 }, { delay: delay, autoAlpha: 1, ease: 'power1.inOut' });
-    gsap.fromTo(
-      '#detailsPage #bg',
-      1.3,
-      { scale: 0.9 },
-      { force3D: true, delay: delay, scale: 3.6, ease: 'power4.inOut' }
-    );
+    gsap.fromTo('#detailsPage #bg', 1.3, { scale: 0.9 }, { force3D: true, delay: delay, scale: 3.6, ease: 'power4.inOut' });
     gsap.to('#detailsContent', 0.3, {
       delay: delay + 1,
       autoAlpha: 1,
@@ -443,10 +432,7 @@ const G02BContainer = props => {
       <svg width='0' height='0'>
         <defs>
           <clipPath id='smask' clipPathUnits='objectBoundingBox' transform='translate(.1,0) scale(0.00204, 0.00284)'>
-            <path
-              d='M132.4 76.9c93.3 0 82-84.9 244.6-76.3 92.1 13 184.2 151.1 33.1 319.4-65.3 65.5-195 7.2-246.1 7.2C61.9 324.4 0 299.1 0 213.6S39.1 76.9 132.4 76.9z'
-              fill='none'
-            />
+            <path d='M132.4 76.9c93.3 0 82-84.9 244.6-76.3 92.1 13 184.2 151.1 33.1 319.4-65.3 65.5-195 7.2-246.1 7.2C61.9 324.4 0 299.1 0 213.6S39.1 76.9 132.4 76.9z' fill='none' />
           </clipPath>
         </defs>
       </svg>
@@ -485,7 +471,7 @@ const G02BContainer = props => {
       />
 
       <div ref={detailsPageElem} id='detailsPage' className={activeDetailPage ? 'active' : ''}>
-        <div id='detailsContent'>
+        <div id='detailsContent' style={{ background: `${contentData && contentData.cities[domId].backgroundColor}` }}>
           <div id='imageWrap'>
             <div
               className='img'
@@ -501,12 +487,7 @@ const G02BContainer = props => {
                 <feComposite in='SourceGraphic' in2='matrix' operator='atop' />
               </filter>
               <filter id='colormatrix'>
-                <feColorMatrix
-                  in='blur'
-                  mode='matrix'
-                  values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9'
-                  result='matrix'
-                />
+                <feColorMatrix in='blur' mode='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9' result='matrix' />
                 <feComposite in='SourceGraphic' in2='matrix' operator='atop' />
               </filter>
             </defs>
