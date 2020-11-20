@@ -1242,9 +1242,17 @@
         align-items: center;
         text-align: center;
         padding: 0 vw-calc(70);
+        // padding-left: 14.64583vw;
         margin: 0;
         position: relative;
         z-index: 2;
+        li:nth-child(1){
+            flex: 0.5;
+            img{
+                width: 3.35417vw;
+                height: auto;
+            }
+        }
         li {
           height: 100%;
           font-size: vw-calc(28);
