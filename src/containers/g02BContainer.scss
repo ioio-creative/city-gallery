@@ -128,7 +128,7 @@ body {
             }
           }
           #description {
-            width: vw-calc(820);
+            width: vw-calc(1008);
             font-size: vw-calc(23);
             line-height: vw-calc(40);
           }
@@ -334,6 +334,7 @@ body {
         .location {
           font-weight: bold;
           padding-bottom: vw-calc(5);
+          padding-right: 4vw;
         }
       }
       .otherLangName {
@@ -540,7 +541,8 @@ body {
         }
       }
       #description {
-        width: vw-calc(610);
+        // width: vw-calc(610);
+        width: vw-calc(1008);
         // text-align: justify;
         font-size: vw-calc(22);
         line-height: vw-calc(36);

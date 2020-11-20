@@ -60,19 +60,19 @@
           "detailBlocks": [
             {
               "image": {
-                "src": "./images/exG02b/HongKong/photo1.png",
+                "src": "./images/exG02b/HongKong/photo1.jpg",
                 "caption": "In view of the magnitude of urbanisation and population density, the  biodiversity here is so bountiful. Hong Kong has subtropical climate, a hilly and rugged landscape, beautiful coastline, and embracing blue-green environment, all contributing to provide a good habitat for various fauna and flora. "
               }
             },
             {
               "image": {
-                "src": "./images/exG02b/HongKong/photo2.png",
+                "src": "./images/exG02b/HongKong/photo2.jpg",
                 "caption": "Apart from the above species, Hong Kong also has about 180 species of freshwater fish, 128 species of dragonflies, 90 species of reptiles, 84 species of stony corals, 26 species of gorgonians, 8 species of black corals, etc. Birds found in Hong Kong account for more than one-third of the species in China, and the number of species of gorgonians, are greater than that in the Caribbean Sea."
               }
             },
             {
               "image": {
-                "src": "./images/exG02b/HongKong/photo3.png",
+                "src": "./images/exG02b/HongKong/photo3.jpg",
                 "caption": "To conserve  nature and maintain biodiversity, the Government has designated land and marine waters with important ecological value as protected areas, including 24 country parks and 22 special areas, which account for nearly 40% of the total land area in ​​Hong Kong. Hong Kong also has six marine parks and one marine reserve, occupying a total water area of  4,050 hectares.."
               }
             }
@@ -102,14 +102,14 @@
             },
             {
               "image": {
-                "src": "./images/exG02b/Seoul/photo3.jpeg",
+                "src": "./images/exG02b/Seoul/photo3.jpg",
                 "caption": "ChonGae Canal Source Point Park is the point where the treated sewage re-enters into the river. The 4m high dual sections of the waterfall straddle the wide river channel, and below the waterfall is the tourist spot, Sunken Stone Garden, which was built with 9 integrated cornerstones transported from different places of the country. ChonGae Canal Source Point Park was one of the awardees of the 2009 American Society of Landscape Architects (ASLA) Honor Award."
               }
             }
           ]
         },
         {
-          "name": "Gallery Underground",
+          "name": "Icy Underground Gallery ",
           "location": "Helsinki",
           "backgroundColor": "#F1FAFA",
           "icon": ["./images/exG02b/Icon/EN/helsinki_icon1.svg", "./images/exG02b/Icon/EN/helsinki_icon2.svg", "./images/exG02b/Icon/EN/helsinki_icon3.svg"],
@@ -206,7 +206,7 @@
           "image": {
             "src": "./images/exG02b/Huainan/huainan.png"
           },
-          "description": "In 2017, the world’s largest floating solar power station was built in Huainan City, Anhui Province, China. This station occupies ​​more than 86 hectares (about 107 football fields) with 160,000 solar panels. It can generate up to 40 megawatts of electricity for 15,000 households.",
+          "description": "In 2017, the world’s largest floating solar power station was built in Huainan City, Anhui Province, China. This station occupies ​​more than 86 hectares (about 107 football fields) with 160,000 solar panels. It can generate up to 40 megawatts of electricity, and the electricity generated is enough for use of 15,000 households.",
           "detailBlocks": [
             {
               "image": {
@@ -240,20 +240,20 @@
           "detailBlocks": [
             {
               "image": {
-                "src": "./images/exG02b/Copenhagen/photo1.png",
+                "src": "./images/exG02b/Copenhagen/photo1.jpg",
                 "caption": "The Copenhagen City Council’s Climate Plan integrates various initiatives covering energy, transportation, housing, construction, health, education, and culture, etc. Copenhagen is a renowned city for cyclists, and the city has five times more bicycles than vehicles. The total length of the cycle tracks in the city is 350 km, and nearly half of the residents commute to work or school by bicycles every day."
               }
             },
             {
               "image": {
-                "src": "./images/exG02b/Copenhagen/photo2.png",
+                "src": "./images/exG02b/Copenhagen/photo2.jpg",
                 "caption": "In 2009, Denmark established the world’s first Cycling Embassy. In addition to promoting cycling exercise, the Cycling Embassy is also responsible for compiling statistics and analysing the cycling characteristics of the residents in Copenhagen, and collecting data to enhance the future planning for cyclists. The Copenhagen City Council will further expand the public transport network and cycle tracks, advocate electric vehicles, refurbish and redevelop buildings with low energy efficiency, and deploy more resources to pursue low-polluting technological research and development."
               }
             },
             {
               "image": {
-                "src": "./images/exG02b/Copenhagen/photo3.png",
-                "caption": "Another iconic project is named Copenhill, which is a waste-to-energy facility and also an innovative design which has transformed the exterior of the building into recreational area integrating ski tracks, hiking trails and climbing wall. The roof garden is covered with trees, scrubs and rockscapes, etc, to create natural scenery."
+                "src": "./images/exG02b/Copenhagen/photo3.jpg",
+                "caption": "Another iconic project is named Copenhill, which is a waste-to-energy facility and also an innovative design which has transformed the exterior of the building into recreational area integrating ski tracks, hiking trails and climbing wall. The roof garden is covered with trees, scrubs and rockscapes, etc. to create natural scenery."
               }
             }
           ]
@@ -270,19 +270,19 @@
           "detailBlocks": [
             {
               "image": {
-                "src": "./images/exG02b/KualaLumpur/photo1.jpg",
+                "src": "./images/exG02b/KualaLumpur/photo1.jpeg",
                 "caption": "The 3-storey tunnel is 9.7 km long and is the second longest stormwater tunnel in Asia.  The upper two storeys provide a total of four lanes, connecting to expressways; and the lower storey pipeline is linked to a stormwater tank, several rivers and lakes.  It is not open during normal days, but turns into waterways on rainy day."
               }
             },
             {
               "image": {
-                "src": "./images/exG02b/KualaLumpur/photo2.png",
+                "src": "./images/exG02b/KualaLumpur/photo2.jpeg",
                 "caption": "The tunnel has three modes.  On sunny or drizzling days, only two storeys of vehicular lanes are open and the bottom waterway is not used (Model 1).  In the event of moderate rain, the bottom waterway will be open simultaneously (Mode 2).  In case of heavy rain, the vehicular lane will automatically be closed with watertight gates and the entire tunnel will turn into a floodway which can discharge up to 3 million cubic feet of water, or equivalent to 34 standard swimming pools (Model 3). Upon the completion of the tunnel; it has successfully tackled several rainstorm. Its innovative design has earned the UN-Habitat Scroll of Honour Award 2011."
               }
             },
             {
               "image": {
-                "src": "",
+                "src": "./images/exG02b/KualaLumpur/photo3.jpeg",
                 "caption": ""
               }
             }
@@ -300,7 +300,7 @@
           "detailBlocks": [
             {
               "image": {
-                "src": "./images/exG02b/Barcelona/photo1.png",
+                "src": "./images/exG02b/Barcelona/photo1.jpg",
                 "caption": "In Barcelona, vehicles occupy about 60% of the roads, causing serious air and noise pollution. To reduce car flow and encourage walking and cycling instead of driving, as well as promoting a healthier lifestyle, the City Council decided to integrate active design into town planning, re-organising the streets into \"Superblocks\", and reducing the original vehicular lanes by 60%. Vehicles are only allowed to drive around the periphery of \"Superblocks\", and the streets become exclusive pedestrian public spaces."
               }
             },
@@ -370,19 +370,19 @@
           "detailBlocks": [
             {
               "image": {
-                "src": "./images/exG02b/HongKong/photo1.png",
+                "src": "./images/exG02b/HongKong/photo1.jpg",
                 "caption": "對比起香港的城市化程度及人口密度，這裡的生物品種卻如此豐富，實屬難得。香港屬亞熱帶氣候，地形多山而崎嶇，美麗的海岸線，環山繞水的環境為各種生物的提供了良好的生境。"
               }
             },
             {
               "image": {
-                "src": "./images/exG02b/HongKong/photo2.png",
+                "src": "./images/exG02b/HongKong/photo2.jpg",
                 "caption": "除了以上的物種外，香港還有一百八十八種淡水魚、一百二十八種蜻蜓、九十種爬行動物和八十四種石珊瑚、二十六種柳珊瑚和八種黑珊湖等等。香港的的鳥類佔全中國超過三分之一，而石珊瑚的品種數量更在加勒比海之上。"
               }
             },
             {
               "image": {
-                "src": "./images/exG02b/HongKong/photo3.png",
+                "src": "./images/exG02b/HongKong/photo3.jpg",
                 "caption": "為保育自然及維護生物多樣性*，政府將具重要生態價值的陸地及海洋水域劃為保護區，包括二十四個郊野公園和二十二個特別地區，佔香港土地總面積近百分之四十。香港亦有六個海岸公園和一個海岸保護區，佔水域面積共達四千零五十公頃。"
               }
             }
@@ -412,7 +412,7 @@
             },
             {
               "image": {
-                "src": "./images/exG02b/Seoul/photo3.jpeg",
+                "src": "./images/exG02b/Seoul/photo3.jp",
                 "caption": "源頭的清溪廣場是污水經處理後進入河道的起點。四米高的兩段式瀑布橫跨寬闊的河道，瀑布下是景點九石潭，由韓國各地運來的九塊基石組合而成。清溪廣場是2009年美國景觀設計師協會獎獲獎項目之一。"
               }
             }
@@ -426,7 +426,7 @@
           "image": {
             "src": "./images/exG02b/Helsinki/helsinki.png"
           },
-          "description": "一般的博物館都是一幢一幢站立在土地上的建築物，但芬蘭赫爾辛基的阿莫斯瑞克斯 藝術博物館則是一個例外。地下的 藝術博物館與地面的玻璃宮廣場融合，既保留原有廣場用途，又提供新的藝術展覽空間和工作室。",
+          "description": "一般的博物館都是一幢一幢站立在土地上的建築物，但芬蘭赫爾辛基的阿莫斯瑞克斯藝術博物館則是一個例外。地下的藝術博物館與地面的玻璃宮廣場融合，既保留原有廣場用途，又提供新的藝術展覽空間和工作室。",
           "detailBlocks": [
             {
               "image": {
@@ -550,20 +550,20 @@
           "detailBlocks": [
             {
               "image": {
-                "src": "./images/exG02b/Copenhagen/photo1.png",
+                "src": "./images/exG02b/Copenhagen/photo1.jpg",
                 "caption": "哥本哈根市政府的氣候計劃結合了能源、交通、房屋、建造、健康、教育、文化等多方面的措施而實行。哥本哈根是世界聞名的單車之城，全城單車數量比汽車多五倍。市內單車徑全長三百五十公里，近一半的居民每天選擇以單車代步上班上學。"
               }
             },
             {
               "image": {
-                "src": "./images/exG02b/Copenhagen/photo2.png",
+                "src": "./images/exG02b/Copenhagen/photo2.jpg",
                 "caption": "2009年，丹麥更成立了世界上第一個單車大使館。在推廣單車運動之餘，單車大使館亦負責統計並分析哥本哈根居民騎單車的特色，收集數據為騎單車人士改善未來的規劃。哥本哈根市政府將會進一步擴展公共交通網絡和單車徑、提倡電動車、翻新改建低能源效益大廈，並投入更多資源推動低污染的科技研發。"
               }
             },
             {
               "image": {
-                "src": "./images/exG02b/Copenhagen/photo3.png",
-                "caption": "另一頂標誌性項目名為Copenhill。Copenhill既是一座轉廢為能設施，將都市固體廢物高效能地轉化為能源，亦是以創新的設計將建築物外部結合滑雪道、行山徑、攀石牆的，成為康樂活動區。天台公園更以樹木、灌木、石景等，營造自然生態環境。"
+                "src": "./images/exG02b/Copenhagen/photo3.jpg",
+                "caption": "另一頂標誌性項目名為Copenhill，它既是一座轉廢為能的設施，亦是以創新的設計將建築物外部結合滑雪道、行山徑、攀石牆，成為康樂活動區。天台公園更以樹木、灌木、石景等，營造自然景致。"
               }
             }
           ]
@@ -580,13 +580,13 @@
           "detailBlocks": [
             {
               "image": {
-                "src": "./images/exG02b/KualaLumpur/photo1.jpg",
+                "src": "./images/exG02b/KualaLumpur/photo1.jpeg",
                 "caption": "隧道長九點七公里，是亞洲第二長的防洪水道，分三層，上兩層共有四條車道，連接高速公路；底層管道連接蓄洪池、多條河流及湖泊。平日不開放，雨天時用作水道。"
               }
             },
             {
               "image": {
-                "src": "./images/exG02b/KualaLumpur/photo2.png",
+                "src": "./images/exG02b/KualaLumpur/photo2.jpeg",
                 "caption": "隧道有三種模式，晴天或雨量少時只開放兩層車道，底層水道並不使用（模式一）；若遇上中度雨量，底層水道會同時打開排洪（模式二）；若遇上暴雨，便連行車道都以自動水密門關閉，整條隧道都變成排洪水道，可容納高達三百萬立方公尺水量，約等於三十四個標準泳池（模式三）。隧道落成後，成功應付多次暴雨。其創新設計致使它於2011年獲聯合國最佳人居環境榮譽獎章。"
               }
             },
@@ -610,7 +610,7 @@
           "detailBlocks": [
             {
               "image": {
-                "src": "./images/exG02b/Barcelona/photo1.jpeg",
+                "src": "./images/exG02b/Barcelona/photo1.jpg",
                 "caption": "在巴塞隆拿，汽車佔用約六成的道路，造成嚴重的空氣及噪音污染。為了減少汽車流量，並且鼓勵巿民以步行、騎單車代替駕車，建立更健康的生活模式，巿政府決定把城巿規劃融合動態設計，將街道重新規劃為「超級街區」，將原有行車道減少百分之六十。汽車只可在「超級街區」外圍行駛，街道成為行人專用的公共空間。"
               }
             },

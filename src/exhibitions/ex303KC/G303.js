@@ -34,12 +34,67 @@ const G303 = props => {
   const [yearIdx, setYearIdx] = useState(null);
   const [selectedYear, setSelectedYear] = useState(false);
   const [streetName, setStreetName] = useState(false);
+  const [gameMode, setGameMode] = useState('l');
+  const [mapIndicatorIdx, setMapIndicatorIdx] = useState(0);
+  const [fakeZoom, setFakeZoom] = useState(0);
+  const [zone, setZone] = useState([false, false, false, false]);
 
   const onClickYear = e => {
     setYearIdx(e);
+    // if (e === 3) setStreetName(true);
+    // else setStreetName(false);
   };
   const onClickStart = () => {
     setSelectedYear(true);
+  };
+
+  const toFakeZoom = () => {
+    if (gameMode !== 'r') {
+      setGameMode('r');
+      gsap.to(
+        {},
+        {
+          duration: 1,
+          onComplete: () => {
+            setFakeZoom(1);
+          }
+        }
+      );
+      zoneControl(0);
+    }
+  };
+
+  const leaveFakeZoom = () => {
+    if (gameMode !== 'l') {
+      setZone([false, false, false, false]);
+      setFakeZoom(0);
+      gsap.to(
+        {},
+        {
+          duration: 1.5,
+          onComplete: () => {
+            setGameMode('l');
+          }
+        }
+      );
+    }
+  };
+
+  const zoneControl = i => {
+    setZone([false, false, false, false]);
+    gsap.to(
+      {},
+      {
+        duration: 2,
+        onComplete: () => {
+          setZone(() => {
+            let temp = [false, false, false, false];
+            temp[i] = true;
+            return temp;
+          });
+        }
+      }
+    );
   };
 
   return (
@@ -69,35 +124,32 @@ const G303 = props => {
         })}
       </div>
       <div id='leftInfo'>
-        <img
-          alt=''
-          className='year'
-          src={yearArray[yearIdx]}
-          onClick={() => {
-            setSelectedYear(false);
-            console.log(selectedYear);
-          }}
-        ></img>
+        <img alt='' className='year' src={yearArray[yearIdx]}></img>
       </div>
       <div id='rightInfo'>
         <img alt='' className='blur' src={blur}></img>
         <img alt='' className='scale' src={scale}></img>
         <img alt='' className='yearColor' src={yearColor}></img>
       </div>
-      <Menu
-        handleZoom={{
-          current: {
-            zoomInOut: console.log
-          }
-        }}
-        homeBtn={() => {
-          setSelectedYear(false);
-          {
-            /* setYearIdx(0); */
-          }
-        }}
-        streetName={streetName}
-      />
+      {selectedYear && (
+        <Menu
+          handleZoom={{
+            current: {
+              zoomInOut: console.log
+            }
+          }}
+          homeBtn={() => {
+            setSelectedYear(false);
+            {
+              /* setYearIdx(0); */
+            }
+          }}
+          streetName={streetName}
+          setGameMode={setGameMode}
+          toFakeZoom={toFakeZoom}
+          leaveZoom={leaveFakeZoom}
+        />
+      )}
     </div>
   );
 };
