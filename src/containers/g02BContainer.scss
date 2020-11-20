@@ -128,7 +128,7 @@ body {
             }
           }
           #description {
-            width: vw-calc(820);
+            width: vw-calc(1008);
             font-size: vw-calc(23);
             line-height: vw-calc(40);
           }
@@ -334,6 +334,7 @@ body {
         .location {
           font-weight: bold;
           padding-bottom: vw-calc(5);
+          padding-right: 4vw;
         }
       }
       .otherLangName {
@@ -540,7 +541,8 @@ body {
         }
       }
       #description {
-        width: vw-calc(610);
+        // width: vw-calc(610);
+        width: vw-calc(1008);
         // text-align: justify;
         font-size: vw-calc(22);
         line-height: vw-calc(36);
@@ -643,7 +645,8 @@ body {
           p {
             font-size: vw-calc(18);
             color: #707070;
-            font-family: 'Noto Sans TC';
+            // font-family: 'Noto Sans TC';
+            font-family: 'Microsoft JhengHei';
             padding: 0 vw-calc(10);
             margin-top: vw-calc(16);
           }
