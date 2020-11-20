@@ -73,7 +73,13 @@
             {
               "image": {
                 "src": "./images/exG02b/HongKong/photo3.jpg",
-                "caption": "To conserve  nature and maintain biodiversity, the Government has designated land and marine waters with important ecological value as protected areas, including 24 country parks and 22 special areas, which account for nearly 40% of the total land area in ​​Hong Kong. Hong Kong also has six marine parks and one marine reserve, occupying a total water area of  4,050 hectares.."
+                "caption": "To conserve  nature and maintain biodiversity, the Government has designated land and marine waters with important ecological value as protected areas, including 24 country parks and 22 special areas, which account for nearly 40% of the total land area in ​​Hong Kong. Hong Kong also has six marine parks and one marine reserve, occupying a total water area of  4,050 hectares."
+              }
+            },
+            {
+              "image": {
+                "src": "",
+                "caption": "*Biodiversity is the variability among living organisms. This variability is not only important for organisms to adapt to changes in their physical environment and perform different roles and functions in their living milieu; humans also derive a wide range of benefits from biodiversity."
               }
             }
           ]
@@ -266,24 +272,24 @@
           "image": {
             "src": "./images/exG02b/KualaLumpur/Malaysia.png"
           },
-          "description": "Have you ever thought of a tunnel which is not only a vehicular lane, but also a waterway? In the tropical and rainy Kuala Lumpur, Malaysia, the city centre is susceptible to flooding every time it rains, even its landmark Masjid Jamek Mosque becomes flooded. Hence, in 2007, Kuala Lumpur built the world's first \"SMART\" (Stormwater Management and Road Tunnel) tunnel stormwater. A passage for cars on sunny days, and transforms into a giant pipe in rainy days. This is a \"smart way\" to relieve traffic congestion and reduce the risk of flooding.",
+          "description": "Have you ever thought of a tunnel which is not only a vehicular lane, but also a waterway?",
           "detailBlocks": [
             {
               "image": {
                 "src": "./images/exG02b/KualaLumpur/photo1.jpeg",
-                "caption": "The 3-storey tunnel is 9.7 km long and is the second longest stormwater tunnel in Asia.  The upper two storeys provide a total of four lanes, connecting to expressways; and the lower storey pipeline is linked to a stormwater tank, several rivers and lakes.  It is not open during normal days, but turns into waterways on rainy day."
+                "caption": "In the tropical and rainy Kuala Lumpur, Malaysia, the city centre is susceptible to flooding every time it rains, even its landmark Masjid Jamek Mosque becomes flooded. Hence, in 2007, Kuala Lumpur built the world's first \"SMART\" (Stormwater Management and Road Tunnel) tunnel stormwater. A passage for cars on sunny days, and transforms into a giant pipe in rainy days. This is a \"smart way\" to relieve traffic congestion and reduce the risk of flooding."
               }
             },
             {
               "image": {
                 "src": "./images/exG02b/KualaLumpur/photo2.jpeg",
-                "caption": "The tunnel has three modes.  On sunny or drizzling days, only two storeys of vehicular lanes are open and the bottom waterway is not used (Model 1).  In the event of moderate rain, the bottom waterway will be open simultaneously (Mode 2).  In case of heavy rain, the vehicular lane will automatically be closed with watertight gates and the entire tunnel will turn into a floodway which can discharge up to 3 million cubic feet of water, or equivalent to 34 standard swimming pools (Model 3). Upon the completion of the tunnel; it has successfully tackled several rainstorm. Its innovative design has earned the UN-Habitat Scroll of Honour Award 2011."
+                "caption": "The 3-storey tunnel is 9.7 km long and is the second longest stormwater tunnel in Asia.  The upper two storeys provide a total of four lanes, connecting to expressways; and the lower storey pipeline is linked to a stormwater tank, several rivers and lakes.  It is not open during normal days, but turns into waterways on rainy day."
               }
             },
             {
               "image": {
                 "src": "./images/exG02b/KualaLumpur/photo3.jpeg",
-                "caption": ""
+                "caption": "The tunnel has three modes.  On sunny or drizzling days, only two storeys of vehicular lanes are open and the bottom waterway is not used (Model 1).  In the event of moderate rain, the bottom waterway will be open simultaneously (Mode 2).  In case of heavy rain, the vehicular lane will automatically be closed with watertight gates and the entire tunnel will turn into a floodway which can discharge up to 3 million cubic feet of water, or equivalent to 34 standard swimming pools (Model 3). Upon the completion of the tunnel; it has successfully tackled several rainstorm. Its innovative design has earned the UN-Habitat Scroll of Honour Award 2011."
               }
             }
           ]
@@ -384,6 +390,12 @@
               "image": {
                 "src": "./images/exG02b/HongKong/photo3.jpg",
                 "caption": "為保育自然及維護生物多樣性*，政府將具重要生態價值的陸地及海洋水域劃為保護區，包括二十四個郊野公園和二十二個特別地區，佔香港土地總面積近百分之四十。香港亦有六個海岸公園和一個海岸保護區，佔水域面積共達四千零五十公頃。"
+              }
+            },
+            {
+              "image": {
+                "src": "",
+                "caption": "*生物多樣性是指形形色色的生物間的差異，這些差異是生物適應自然環境變化的關鍵，讓生物在各自的生活環境中發揮不同的角色和功能，而人類亦受惠於生物多樣性帶來的多種益處。"
               }
             }
           ]
