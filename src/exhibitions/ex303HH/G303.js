@@ -22,14 +22,27 @@ import year1900 from './images/year1900.png';
 import year1945 from './images/year1945.png';
 import year1985 from './images/year1985.png';
 import year2019 from './images/year2019.png';
-import blur from './images/blur.png';
-import scale from './images/scale.png';
-import yearColor from './images/yearColor.png';
+import blurLeft1900 from './images/blurLeft.png';
+import blurLeft1945 from './images/blurLeft.png';
+import blurLeft1985 from './images/blurLeft.png';
+import blurLeft2019 from './images/blurLeft2019.png';
+import blurRight1900 from './images/blurRight.png';
+import blurRight1945 from './images/blurRight.png';
+import blurRight1985 from './images/blurRight.png';
+import blurRight2019 from './images/blurRight2019.png';
+import yearColor1900 from './images/yearColor.png';
+import yearColor1945 from './images/yearColor.png';
+import yearColor1985 from './images/yearColor.png';
+import yearColor2019 from './images/yearColor2019.png';
 import gsap from 'gsap';
 
 const mapArray = [map1900, map1900ed, map1945, map1945ed, map1985, map1985ed, map2019, map2019ed];
 const mapArrayPre = [map1900pre, map1945pre, map1985pre, map2019pre];
 const yearArray = [year1900, year1945, year1985, year2019];
+const blurLeft = [blurLeft1900, blurLeft1945, blurLeft1985, blurLeft2019];
+const blurRight = [blurRight1900, blurRight1945, blurRight1985, blurRight2019];
+const yearColor = [yearColor1900, yearColor1945, yearColor1985, yearColor2019];
+
 const G303 = props => {
   const [yearIdx, setYearIdx] = useState(null);
   const [selectedYear, setSelectedYear] = useState(false);
@@ -124,12 +137,12 @@ const G303 = props => {
         })}
       </div>
       <div id='leftInfo'>
+        <img alt='' className='blur' src={blurLeft[yearIdx]}></img>
         <img alt='' className='year' src={yearArray[yearIdx]}></img>
       </div>
       <div id='rightInfo'>
-        <img alt='' className='blur' src={blur}></img>
-        <img alt='' className='scale' src={scale}></img>
-        <img alt='' className='yearColor' src={yearColor}></img>
+        <img alt='' className='blur' src={blurRight[yearIdx]}></img>
+        <img alt='' className='yearColor' src={yearColor[yearIdx]}></img>
       </div>
       {selectedYear && (
         <Menu
