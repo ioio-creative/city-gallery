@@ -86,7 +86,7 @@ span{
         width: 67px;
         height: 67px;
         top: 507px;
-        left: 1808px;
+        left: 1785px;
     }
     .toRight{
         position: absolute;
@@ -95,7 +95,7 @@ span{
         top: 507px;
         left: 1976px;
     }
-    .video-js{
+    video{
         top: 261px;
         left: 2335px;
         position: absolute;
@@ -114,8 +114,8 @@ span{
         display: flex;
         justify-content: center;
         align-items: center;
-        top: 261px;
-        left: 3224px;
+        top: 264px;
+        left: 3239px;
         z-index: 3;
     }
     .correction{
@@ -140,7 +140,7 @@ span{
         &::after{
             content: '';
             position: absolute;
-            left: 1915px;
+            left: 1917.5px;
             height: 1080px;
             border-right: solid 5px black;
         }
@@ -173,7 +173,7 @@ span{
         width: auto;
         height: auto;
         top: 898px;
-        left: 2023px;
+        left: 2082px;
         z-index: 11;
     }
     .smallMap{

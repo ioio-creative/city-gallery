@@ -7,8 +7,8 @@ import { Player } from 'video-react';
 import Menu from './Menu';
 import Map from './Map';
 
-// import video1 from '../../../src/media/ex303/video1.mpg'
-// import video2 from '../../../src/media/ex303/video2.mpg'
+import video1 from '../../../src/media/ex303/video1.mp4';
+import video2 from '../../../src/media/ex303/video2.mp4';
 
 const G303 = props => {
   const [started, setStarted] = useState(false);
@@ -31,6 +31,7 @@ const G303 = props => {
   const handleShowCoastline = useRef(null);
   const handleSelectCoastline = useRef(null);
   const handleStart = useRef(null);
+  const video1Ref = useRef(null);
 
   const videoSrc = ['./images/ex303/video1.mp4', './images/ex303/video2.mp4'];
 
@@ -218,23 +219,11 @@ const G303 = props => {
         <div className={`videoWrap ${isVideo ? 'active' : 'hide'}`}></div>
 
         <div className={`${isVideo ? '' : 'hide'}`}>
-          {/* {videoNumber === 0 && <VideoPlayer
-            controls={true}
-            autoplay={false}
-            preload={'auto'}
-            bigPlayButton={true}
-            hideControls={['play', 'volume', 'playbackrates', 'fullscreen']}
-            src="./images/ex303/video1.mp4"
-          />}
-          {videoNumber === 1 && <VideoPlayer
-            controls={true}
-            autoplay={false}
-            preload={'auto'}
-            bigPlayButton={true}
-            hideControls={['play', 'volume', 'playbackrates', 'fullscreen']}
-            src="./images/ex303/video2.mp4"
-          />} */}
-          {videoNumber === 0 && <video className='' src='../images/ex303/video1.mp4' autoPlay={true} muted loop></video>}
+          {/* {videoNumber === 0 && <VideoPlayer controls={true} autoplay={false} preload={'auto'} bigPlayButton={true} hideControls={['play', 'volume', 'playbackrates', 'fullscreen']} src={videoSrc[videoNumber]} />} */}
+          {/* <VideoPlayer ref={video1Ref} controls={true} autoplay={false} preload={'false'} bigPlayButton={true} hideControls={['play', 'volume', 'playbackrates', 'fullscreen']} src={videoSrc[videoNumber]} /> */}
+          {/* {videoNumber === 1 && <VideoPlayer controls={true} autoplay={false} preload={'auto'} bigPlayButton={true} hideControls={['play', 'volume', 'playbackrates', 'fullscreen']} src='./images/ex303/video2.mp4' />} */}
+          {<video className={`${videoNumber === 0 ? '' : 'hide'}`} preload='auto' src={video1} autoPlay={false} muted controls></video>}
+          {<video className={`${videoNumber === 1 ? '' : 'hide'}`} preload='auto' src={video2} autoPlay={false} muted controls></video>}
         </div>
         <div
           className={`cross ${isVideo ? '' : 'hide'}`}
@@ -244,8 +233,28 @@ const G303 = props => {
         >
           X
         </div>
-        <img className={`toRight ${isVideo ? 'active' : 'hide'}`} src='./images/ex303/right_button.png'></img>
-        <img className={`toLeft ${isVideo && !zone[0] ? 'active' : 'hide'}`} src='./images/ex303/left_button.png'></img>
+        {(zone[0] || zone[1]) && (
+          <>
+            <img
+              className={`toRight`}
+              src='./images/ex303/right_button.png'
+              onClick={() => {
+                onClickMapIndicator(1);
+                setFakeZoom(1 + 1);
+                zoneControl(1);
+              }}
+            ></img>
+            <img
+              className={`toLeft ${!zone[0] ? 'active' : 'hide'}`}
+              src='./images/ex303/left_button.png'
+              onClick={() => {
+                onClickMapIndicator(0);
+                setFakeZoom(0 + 1);
+                zoneControl(0);
+              }}
+            ></img>
+          </>
+        )}
       </div>
       {/* fake dog */}
 
