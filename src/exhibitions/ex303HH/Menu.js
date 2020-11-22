@@ -10,18 +10,34 @@ import langEN from './images/langEN.png';
 import langInfo from './images/langInfo.png';
 
 const Menu = props => {
-  const [mode, setMode] = useState();
+  const [mode, setMode] = useState('l');
 
   const switchMode = m => {
     setMode(m);
-    props.handleZoom.current.zoomInOut(m);
+    // props.handleZoom.current.zoomInOut(m);
   };
 
   return (
     <div id='main'>
       <div id='menu'>
         <img alt='' className='meunBar' src={meunBar}></img>
-        <img alt='' className='yearSelect' src={yearSelect} onClick={props.homeBtn}></img>
+        <img alt='' className={`yearSelect ${mode === 'l' ? '' : 'hide'}`} src={yearSelect} onClick={props.homeBtn}></img>
+        <div className='textBox'>
+          {['旺角及大角咀1區', '油麻地區'].map((v, i) => {
+            return (
+              <div key={i} className={`streetName streetFont ${mode === 'r' && i === props.mapIndicatorIdx && !props.isVideo ? 'active' : 'hide'}`}>
+                {v}
+              </div>
+            );
+          })}
+          {['西洋菜街', '船渡街'].map((v, i) => {
+            return (
+              <div key={i} className={`streetName streetFont ${mode === 'r' && i === props.idx && props.isVideo ? 'active' : 'hide'}`}>
+                {v}
+              </div>
+            );
+          })}
+        </div>
         <div id='lang'>
           {/* <span>語言</span>
         <ul>

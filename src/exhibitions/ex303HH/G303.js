@@ -39,6 +39,12 @@ import region1 from './images/region1.png';
 import region2 from './images/region2.png';
 import region3 from './images/region3.png';
 
+import up_button from './images/up_button.png';
+import down_button from './images/down_button.png';
+
+import video1 from './images/video1.mp4';
+import video2 from './images/video2.mp4';
+
 import gsap from 'gsap';
 
 const mapArray = [map1900, map1900ed, map1945, map1945ed, map1985, map1985ed, map2019, map2019ed];
@@ -55,9 +61,15 @@ const G303 = props => {
   const [streetName, setStreetName] = useState(false);
   const [regionNumber, setRegionNumber] = useState(0);
   const [gameMode, setGameMode] = useState('l');
-  const [mapIndicatorIdx, setMapIndicatorIdx] = useState(0);
   const [fakeZoom, setFakeZoom] = useState(0);
-  const [zone, setZone] = useState([false, false, false, false]);
+  const [mapIndicatorIdx, setMapIndicatorIdx] = useState(0);
+  const [isVideo, setIsVideo] = useState(false);
+  const [videoNumber, setVideoNumber] = useState(null);
+  const [zone, setZone] = useState([false, false, false]);
+
+  const onClickMapIndicator = i => {
+    setMapIndicatorIdx(i);
+  };
 
   const onClickYear = e => {
     setYearIdx(e);
@@ -66,6 +78,7 @@ const G303 = props => {
   };
   const onClickStart = () => {
     setSelectedYear(true);
+    console.log(selectedYear);
   };
 
   const toFakeZoom = () => {
@@ -86,7 +99,7 @@ const G303 = props => {
 
   const leaveFakeZoom = () => {
     if (gameMode !== 'l') {
-      setZone([false, false, false, false]);
+      setZone([false, false, false]);
       setFakeZoom(0);
       gsap.to(
         {},
@@ -101,14 +114,14 @@ const G303 = props => {
   };
 
   const zoneControl = i => {
-    setZone([false, false, false, false]);
+    setZone([false, false, false]);
     gsap.to(
       {},
       {
         duration: 2,
         onComplete: () => {
           setZone(() => {
-            let temp = [false, false, false, false];
+            let temp = [false, false, false];
             temp[i] = true;
             return temp;
           });
@@ -118,52 +131,42 @@ const G303 = props => {
   };
 
   return (
-    <div id='g303Dummy'>
-      <div id='yearSelector' className={yearIdx === null ? 'disabled' : selectedYear ? 'hide' : ''}>
-        <ul>
-          {['1900', '1945', '1985', '2019'].map((v, i) => {
-            return (
-              <li key={i} className={i === yearIdx ? 'active' : ''} onClick={() => onClickYear(i)}>
-                <span>{v}</span>
-              </li>
-            );
+    <div id='g303Dummy' className={`${gameMode === 'l' ? '' : 'hide'}`}>
+      <div id='coast' className={`${gameMode === 'l' ? '' : 'hide'}`}>
+        <div id='yearSelector' className={yearIdx === null ? 'disabled' : selectedYear ? 'hide' : ''}>
+          <ul>
+            {['1900', '1945', '1985', '2019'].map((v, i) => {
+              return (
+                <li key={i} className={i === yearIdx ? 'active' : ''} onClick={() => onClickYear(i)}>
+                  <span>{v}</span>
+                </li>
+              );
+            })}
+          </ul>
+          <div id='startBtn' onClick={onClickStart}>
+            確定
+          </div>
+        </div>
+        <div id='mapCover' className={selectedYear ? 'hide' : yearIdx === null ? 'show' : ''}>
+          {mapArrayPre.map((imgsrc, idx) => {
+            return <img className={`${yearIdx === idx ? 'active' : ''}`} src={imgsrc} />;
           })}
-        </ul>
-        <div id='startBtn' onClick={onClickStart}>
-          確定
+        </div>
+        <div id='mapWrapper' className={selectedYear}>
+          {mapArray.map((imgsrc, idx) => {
+            return <img className={`${idx % 2 === 0 ? 'base' : 'cover'} ${yearIdx * 2 === idx || (selectedYear && yearIdx * 2 + 1 === idx) ? 'active' : ''}`} src={imgsrc} />;
+          })}
+        </div>
+        <div id='leftInfo'>
+          <img alt='' className='blur' src={blurLeft[yearIdx]}></img>
+          <img alt='' className='year' src={yearArray[yearIdx]}></img>
         </div>
       </div>
-      <div id='mapCover' className={selectedYear ? 'hide' : yearIdx === null ? 'show' : ''}>
-        {mapArrayPre.map((imgsrc, idx) => {
-          return <img className={`${yearIdx === idx ? 'active' : ''}`} src={imgsrc} />;
-        })}
-      </div>
-      <div id='mapWrapper' className={selectedYear}>
-        {mapArray.map((imgsrc, idx) => {
-          return <img className={`${idx % 2 === 0 ? 'base' : 'cover'} ${yearIdx * 2 === idx || (selectedYear && yearIdx * 2 + 1 === idx) ? 'active' : ''}`} src={imgsrc} />;
-        })}
-      </div>
-      <div id='leftInfo'>
-        <img alt='' className='blur' src={blurLeft[yearIdx]}></img>
-        <img alt='' className='year' src={yearArray[yearIdx]}></img>
-      </div>
+
       <div id='rightInfo'>
         <img alt='' className='blur' src={blurRight[yearIdx]}></img>
         <img alt='' className='yearColor' src={yearColor[yearIdx]}></img>
       </div>
-      {yearIdx === 3 && (
-        <>
-          <img style={{ position: 'absolute', width: 1920, height: 1080, opacity: 0.5 }} src={region[regionNumber]}></img>
-          <div
-            style={{ position: 'absolute', width: 100, height: 100, top: 50, left: 50, backgroundColor: '#ffffff', zIndex: 999 }}
-            onClick={() => {
-              setRegionNumber((regionNumber + 1) % 3);
-            }}
-          >
-            Next
-          </div>
-        </>
-      )}
       {selectedYear && (
         <Menu
           handleZoom={{
@@ -181,8 +184,114 @@ const G303 = props => {
           setGameMode={setGameMode}
           toFakeZoom={toFakeZoom}
           leaveZoom={leaveFakeZoom}
+          mapIndicatorIdx={mapIndicatorIdx}
+          idx={videoNumber}
+          isVideo={isVideo}
         />
       )}
+
+      <div id='street' className={`${gameMode === 'r' ? '' : 'hide'}`}>
+        {/* <img className={`smallMap ${gameMode === 'r' ? '' : 'hide'}`} src={`./images/ex303/small_map.png`}></img> */}
+        <div className={`wrap`}>
+          <img className={`zoomMap ${gameMode === 'r' ? '' : 'hide'} ${fakeZoom !== 0 ? `zoom${fakeZoom}` : ''}`} alt='' src={map2019ed}></img>
+        </div>
+        <svg
+          className={`dot d1 ${zone[0] ? '' : 'hide'} ${isVideo ? 'active' : ''}`}
+          xmlns='http://www.w3.org/2000/svg'
+          width='55.3'
+          height='64'
+          viewBox='0 0 44.258 53.348'
+          onClick={() => {
+            setIsVideo(true);
+            setVideoNumber(0);
+          }}
+        >
+          <path
+            id='dot1'
+            data-name='Path 203'
+            d='M136.5,244.418a22.122,22.122,0,0,0-16.655,36.691l-.008.008.105.1a22.217,22.217,0,0,0,1.882,1.882l14.662,14.662,14.494-14.494a22.123,22.123,0,0,0-14.48-38.854Zm0,27.855a5.726,5.726,0,1,1,5.725-5.726A5.726,5.726,0,0,1,136.5,272.273Z'
+            transform='translate(-114.371 -244.418)'
+            fill='#FFF'
+          />
+        </svg>
+        <svg
+          className={`dot d2 ${zone[1] ? '' : 'hide'} ${isVideo ? 'active' : ''}`}
+          xmlns='http://www.w3.org/2000/svg'
+          width='55.3'
+          height='64'
+          viewBox='0 0 44.258 53.348'
+          onClick={() => {
+            setIsVideo(true);
+            setVideoNumber(1);
+          }}
+        >
+          <path
+            id='dot2'
+            data-name='Path 203'
+            d='M136.5,244.418a22.122,22.122,0,0,0-16.655,36.691l-.008.008.105.1a22.217,22.217,0,0,0,1.882,1.882l14.662,14.662,14.494-14.494a22.123,22.123,0,0,0-14.48-38.854Zm0,27.855a5.726,5.726,0,1,1,5.725-5.726A5.726,5.726,0,0,1,136.5,272.273Z'
+            transform='translate(-114.371 -244.418)'
+            fill='#FFF'
+          />
+        </svg>
+        <img className={`road r2 ${zone[1] ? '' : 'hide'}`} alt='' src='./images/ex303/cannon_path.png'></img>
+        <div className={`videoWrap ${isVideo ? 'active' : 'hide'}`}></div>
+
+        <div className={`${isVideo ? '' : 'hide'}`}>
+          {<video className={`${videoNumber === 0 ? '' : 'hide'}`} preload='auto' src={isVideo ? video1 : null} autoPlay={false} muted controls></video>}
+          {<video className={`${videoNumber === 1 ? '' : 'hide'}`} preload='auto' src={isVideo ? video2 : null} autoPlay={false} muted controls></video>}
+        </div>
+        <div
+          className={`cross ${isVideo ? '' : 'hide'}`}
+          onClick={() => {
+            setIsVideo(false);
+          }}
+        >
+          X
+        </div>
+        <div id='mapIndicator'>
+          <span>分區</span>
+          <ul>
+            {[...Array(3)].map((v, i) => {
+              return (
+                // <li key={i} className={i === mapIndicatorIdx ? 'active' : ''} onClick={() => onClickMapIndicator(i)}>
+                <li
+                  key={i}
+                  className={i === mapIndicatorIdx ? 'active' : ''}
+                  // onClick={() => {
+                  //   onClickMapIndicator(i);
+                  //   setFakeZoom(i + 1);
+                  //   zoneControl(i);
+                  // }}
+                >
+                  {i + 1}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        {(zone[0] || zone[1]) && (
+          <>
+            <img
+              className={`toUp`}
+              src={up_button}
+              onClick={() => {
+                onClickMapIndicator(1);
+                setFakeZoom(1 + 1);
+                zoneControl(1);
+              }}
+            ></img>
+            <img
+              className={`toDown ${!zone[0] ? 'active' : 'hide'}`}
+              src={down_button}
+              onClick={() => {
+                onClickMapIndicator(0);
+                setFakeZoom(0 + 1);
+                zoneControl(0);
+              }}
+            ></img>
+          </>
+        )}
+      </div>
     </div>
   );
 };
