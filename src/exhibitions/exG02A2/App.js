@@ -33,7 +33,7 @@ const App = props => {
   const locationsWrapElem = useRef(null);
   const locationsElem = useRef(null);
   const timeLineRef = useRef(null);
-  const canvasTextureRef = useRef(null);
+  // const canvasTextureRef = useRef(null);
   const showDetailsRef = useRef(null);
   const objectControlRef = useState(null);
   const locations = [
@@ -304,7 +304,7 @@ const App = props => {
 
     const createPointsBg = () => {
       canvasTexture = new createCanvasTexture();
-      canvasTextureRef.current = canvasTexture;
+      // canvasTextureRef.current = canvasTexture;
       animCanvasTexture = new createAnimCanvasTexture();
       const geometry = new THREE.BufferGeometry();
       const vertices = [];
@@ -382,8 +382,8 @@ const App = props => {
       const _this = this;
       this.canvas = document.createElement('canvas');
       this.ctx = this.canvas.getContext('2d');
-      this.canvas.width = 1024;
-      this.canvas.height = 1024;
+      this.canvas.width = 200;
+      this.canvas.height = 200;
       this.animValue = { a: 0 };
 
       const clearCanvas = () => {
@@ -395,7 +395,7 @@ const App = props => {
       const draw = (opacity = 0.3) => {
         clearCanvas();
         _this.ctx.beginPath();
-        _this.ctx.arc(1024 / 2, 1024 / 2, 1024 / 2, 0, 2 * Math.PI);
+        _this.ctx.arc(200 / 2, 200 / 2, 200 / 2, 0, 2 * Math.PI);
         _this.ctx.fillStyle = `rgba(255,255,255,${opacity})`;
         _this.ctx.fill();
       };
@@ -429,14 +429,14 @@ const App = props => {
       const _this = this;
       this.canvas = document.createElement('canvas');
       this.ctx = this.canvas.getContext('2d');
-      this.radius = 1024 / 2 - 10;
+      this.radius = 100 / 2 - 10;
       this.circles = [];
       this.counter = 0;
       this.player = null;
 
       const init = () => {
-        _this.canvas.width = 1024;
-        _this.canvas.height = 1024;
+        _this.canvas.width = 100;
+        _this.canvas.height = 100;
       };
 
       this.start = () => {
@@ -446,7 +446,7 @@ const App = props => {
 
       this.destroy = () => {
         cancelAnimationFrame(_this.player);
-        clearCanvas();
+        // clearCanvas();
         _this.circles = [];
       };
 
@@ -458,9 +458,9 @@ const App = props => {
 
       const draw = r => {
         _this.ctx.strokeStyle = `rgba(255,225,255,${1 - r * r})`;
-        _this.ctx.lineWidth = 20;
+        _this.ctx.lineWidth = 2;
         _this.ctx.beginPath();
-        _this.ctx.arc(1024 / 2, 1024 / 2, r * _this.radius, 0, 2 * Math.PI);
+        _this.ctx.arc(100 / 2, 100 / 2, r * _this.radius, 0, 2 * Math.PI);
         _this.ctx.stroke();
       };
 
@@ -623,15 +623,15 @@ const App = props => {
         pointsMesh.getMatrixAt(i, instanceMatrix);
         linesMesh.getMatrixAt(i, instanceMatrix2);
 
-        const scaleValue = { s: 0 };
-        const positionValue = { x: pointOffsets[i * 3] / 2, y: pointOffsets[i * 3 + 1] / 2, z: pointOffsets[i * 3 + 2] / 2 };
+        const startScaleValue = { s: 0 };
+        const startPositionValue = { x: pointOffsets[i * 3] / 2, y: pointOffsets[i * 3 + 1] / 2, z: pointOffsets[i * 3 + 2] / 2 };
         const pointTransform = new THREE.Object3D();
         const lineTransform = new THREE.Object3D();
         pointTransform.applyMatrix4(instanceMatrix);
         lineTransform.applyMatrix4(instanceMatrix2);
 
         const tl = gsap.timeline({ delay: i * 0.15 });
-        tl.to(positionValue, 0.4, {
+        tl.to(startPositionValue, 0.4, {
           x: pointOffsets[i * 3],
           y: pointOffsets[i * 3 + 1],
           z: pointOffsets[i * 3 + 2],
@@ -644,23 +644,15 @@ const App = props => {
             linesMesh.instanceMatrix.needsUpdate = true;
           }
         });
-        tl.fromTo(
-          scaleValue,
-          2,
-          { s: 0 },
-          {
-            s: 1,
-            ease: 'elastic.out(1.3, 0.3)',
-            onUpdate: function () {
-              const value = this.targets()[0];
-              pointTransform.scale.set(value.s, value.s, value.s);
-              pointTransform.updateMatrix();
-              pointsMesh.setMatrixAt(i, pointTransform.matrix);
-              pointsMesh.instanceMatrix.needsUpdate = true;
-            }
-          },
-          '-=.2'
-        );
+        tl.fromTo(startScaleValue, 2, { s: 0 }, { s: 1, ease: 'elastic.out(1.3, 0.3)',
+          onUpdate: function () {
+            const value = this.targets()[0];
+            pointTransform.scale.set(value.s, value.s, value.s);
+            pointTransform.updateMatrix();
+            pointsMesh.setMatrixAt(i, pointTransform.matrix);
+            pointsMesh.instanceMatrix.needsUpdate = true;
+          }
+        },'-=.2');
       }
 
       setTimeout(() => {
@@ -712,7 +704,7 @@ const App = props => {
           '-=.2'
         );
       }
-      canvasTextureRef.current.hide();
+      canvasTexture.hide();
     };
 
     // const getRotation = (vec) =>{
@@ -762,8 +754,9 @@ const App = props => {
 
     const selectLocation = id => {
       if (id) currentHoveredInstanceId = id;
-      // if(currentHoveredInstanceId !== oldHoveredInstanceId){
+      if(currentHoveredInstanceId !== oldHoveredInstanceId){
       objectControl.disableAutoRotate();
+
 
       // find short rotation distance
       const { targetTheta, targetPhi } = calcThetaPhiFromLatLon(locations[currentHoveredInstanceId].lat, locations[currentHoveredInstanceId].lon);
@@ -795,22 +788,22 @@ const App = props => {
       });
 
       // point bg
-      //   resetPointsColor();
-      //   toWhiteColor();
-      //   animCanvasTexture.start();
+        resetPointsColor();
+        toWhiteColor();
+        animCanvasTexture.start();
       //   setTimeout(() => {
       //     animCanvasTexture.destroy();
       //     setHideEarth(true);
       //   }, 1600);
-      //   pointsBgMaterial.uniforms.activeInstanceId.value = currentHoveredInstanceId;
-      //   oldHoveredInstanceId = currentHoveredInstanceId;
+        pointsBgMaterial.uniforms.activeInstanceId.value = currentHoveredInstanceId;
+        oldHoveredInstanceId = currentHoveredInstanceId;
 
       //
       gsap.to('#selectCity', 0.3, { autoAlpha: 0, ease: 'power1.inOut' });
       gsap.to('#locationsOuterWrap', 0.3, { autoAlpha: 1, ease: 'power1.inOut' });
 
       //   showDetails();
-      // }
+      }
     };
     selectLocationFunc.current = { selectLocation };
 
@@ -867,22 +860,22 @@ const App = props => {
     const showDetails = idx => {
       currentHoveredInstanceId = idx;
       objectControl.disable();
-      resetPointsColor();
-      toWhiteColor();
-      animCanvasTexture.start();
+      // resetPointsColor();
+      // toWhiteColor();
+      // animCanvasTexture.start();
       setTimeout(() => {
         animCanvasTexture.destroy();
         setHideEarth(true);
-      }, 1600);
-      pointsBgMaterial.uniforms.activeInstanceId.value = currentHoveredInstanceId;
-      oldHoveredInstanceId = currentHoveredInstanceId;
-      gsap.set('#detailPage', { delay: 1, className: 'active' });
-      gsap.fromTo('#opening .bg', 0.8, { y: '100%' }, { force3D: true, delay: 1, y: '0%', stagger: 0.08, ease: 'expo.inOut' });
+      }, 600);
+      // pointsBgMaterial.uniforms.activeInstanceId.value = currentHoveredInstanceId;
+      // oldHoveredInstanceId = currentHoveredInstanceId;
+      gsap.set('#detailPage', { className: 'active' });
+      gsap.fromTo('#opening .bg', 0.8, { y: '100%' }, { force3D: true, y: '0%', stagger: 0.08, ease: 'expo.inOut' });
 
-      setTimeout(() => {
+      // setTimeout(() => {
         setDetailIdx(0);
         console.log('what happened');
-      }, 1000);
+      // }, 1000);
       // gsap.set('#opening',{delay:2, className:'section active'});
     };
     showDetailsRef.current = { showDetails };
@@ -898,7 +891,7 @@ const App = props => {
     zoomInFunc.current = { zoomIn };
 
     const zoomOut = () => {
-      timeLineRef.current.reverse();
+      // timeLineRef.current.reverse();
       setSelectedId(null);
     };
     zoomOutFunc.current = { zoomOut, clearIdx };
@@ -1215,8 +1208,8 @@ const App = props => {
         }
       });
       temp.set(`#section${idx}`, { zIndex: zindex });
-      temp.fromTo(`#section${idx} .bg span`, 1, { y: '100%' }, { force3D: true, y: '-100%', stagger: 0.08, ease: 'expo.out' });
-      temp.fromTo(`#section${idx} .bg`, 0.6, { y: '100%' }, { force3D: true, y: '0%', stagger: 0.08, ease: 'expo.inOut' });
+      temp.fromTo(`#section${idx} .bg span`, 1, { y: '100%' }, { force3D: true, y: '-100%', ease: 'expo.out' });
+      temp.fromTo(`#section${idx} .bg`, 0.6, { y: '100%' }, { force3D: true, y: '0%', ease: 'expo.inOut' },'-=.95');
       // temp.to({}, {duration:4});
       // gsap.set(`#section${idx}`, {zIndex:zindex});
       // gsap.fromTo(`#section${idx} .bg span`, 1, {y:'100%'},{force3D:true, y:'-100%', stagger:.08, ease:'expo.out'});

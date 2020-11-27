@@ -34,7 +34,7 @@ const Section2 = props => {
         if(locationName){
             if(props.detailIdx === 2){
                 // startFunc.current.start(6761/1000, data[locationName].populationDensity.value.replace(',','')/1000);
-                startFunc.current.start(6761/234, data[locationName].populationDensity.value.replace(',','')/234);
+                startFunc.current.start(6761/600, data[locationName].populationDensity.value.replace(',','')/600);
             }
             else{
                 stopFunc.current.stop();
