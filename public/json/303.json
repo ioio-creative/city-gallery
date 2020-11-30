@@ -7,15 +7,31 @@
       },
       {
         "name": "hkIsland_mask",
-        "src": "./images/ex303/1900_fill_land1.png"
+        "src": "./images/ex303/hkIsland_mask.png"
       },
       {
         "name": "hkIsland_start_diffuse",
-        "src": "./images/ex303/1900_fill_land1.png"
+        "src": "./images/ex303/2019_HKI.png"
       },
       {
         "name": "hkIsland_old_diffuse",
         "src": "./images/ex303/1900_mask_12.png"
+      },
+      {
+        "name": "hkIsland_coastline1900_diffuse",
+        "src": "./images/ex303/2019_fill_land_1.png"
+      },
+      {
+        "name": "hkIsland_coastline1945_diffuse",
+        "src": "./images/ex303/2019_fill_land_2.png"
+      },
+      {
+        "name": "hkIsland_coastline1985_diffuse",
+        "src": "./images/ex303/2019_fill_land_3.png"
+      },
+      {
+        "name": "hkIsland_coastline2019_diffuse",
+        "src": "./images/ex303/2019_fill_land_4.png"
       },
       {
         "name": "hkIsland_coastline1900_mask",
@@ -51,14 +67,10 @@
       },
       {
         "name": "sand",
-        "src": "./images/ex303/sand.png"
+        "src": "./images/ex303/sand2.png"
       },
       {
         "name": "noise",
-        "src": "./images/ex303/noise.png"
-      },
-      {
-        "name": "noise2",
         "src": "./images/ex303/noise2.png"
       },
       {

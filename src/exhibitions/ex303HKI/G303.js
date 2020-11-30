@@ -12,7 +12,7 @@ import video2 from '../../../src/media/ex303/video2.mp4';
 
 const G303 = props => {
   const [started, setStarted] = useState(false);
-  const [yearIdx, setYearIdx] = useState(0);
+  const [yearIdx, setYearIdx] = useState(-1);
   const [zoomed, setZoomed] = useState(false);
   const [mapIndicatorIdx, setMapIndicatorIdx] = useState(0);
   const [streetData, setStreetData] = useState(null);
@@ -127,7 +127,7 @@ const G303 = props => {
     <div id='main' className={`${started ? 'started' : ''}${gameMode === 'r' ? ' zoomed' : ''}`}>
       {/* fake dog */}
       <div id='coast' className={`${gameMode === 'l' ? '' : 'hide'}`}>
-        <div className={`hmWrap ${hm ? '' : 'hide'}`}>
+        {/* <div className={`hmWrap ${hm ? '' : 'hide'}`}>
           <img className='baseMap' alt='' src={`./images/ex303/303_YearSelection_${yearIdx}.png`}></img>
         </div>
 
@@ -149,7 +149,7 @@ const G303 = props => {
         <div className={`wrap ${yearIdx === 3 && !hm ? 'active' : 'hide'}`}>
           <img className={`island`} alt='' src='./images/ex303/2019_HKI.png'></img>
           <img className={`full ${fill ? 'true' : ''}`} alt='' src='./images/ex303/2019_BaseMap.png'></img>
-        </div>
+        </div> */}
 
         <Map
           appData={props.appData}
