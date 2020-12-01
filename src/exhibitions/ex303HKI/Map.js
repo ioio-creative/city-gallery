@@ -537,24 +537,23 @@ const Map = props => {
     const showCoastline = idx => {
       const targetYears = [];
       for (let i = 0; i < years.length; i++) {
-        const v = { p: options.year[`y${years[i]}`] };
+        const v = { p: options.year[`y${years[i]}`], p2: options.year[`hideY${years[i]}`] };
         targetYears[i] = v;
       }
+
       if (hasShownCoastline && idx === -1) {
         gsap.to(options, 5, {progress: 0, ease: 'power2.inOut'});
-        gsap.to(targetYears, 4, {
-          p: 0,
-          stagger:0.25,
-          ease: 'power2.out',
+        gsap.to(targetYears, 4, { p: 0, p2: 0, stagger:0.25, ease: 'power2.out',
           onUpdate: function () {
             this.targets().forEach((target, i) => {
-              if(i <= selectedCoastlineIdx){
+              if(i <= selectedCoastlineIdx)
                 options.year[`y${years[selectedCoastlineIdx-i]}`] = target.p;
-              }
+              
+              if(i > selectedCoastlineIdx)
+                options.year[`hideY${years[i]}`] = target.p2;
             });
           },
           onComplete:function(){
-            // const highlight = map['hkIsland'].highlight[selectedCoastlineIdx];
             highlightTl.restart();
           }
         })
