@@ -66,6 +66,10 @@
         "src": "./images/ex303/hkIsland_coastline2019_highlight.svg"
       },
       {
+        "name": "hkIsland_coastline2019_dottedline",
+        "src": "./images/ex303/hkIsland_coastline2019_dottedline.svg"
+      },
+      {
         "name": "sand",
         "src": "./images/ex303/sand2.png"
       },

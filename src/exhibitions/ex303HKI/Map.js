@@ -153,7 +153,16 @@ const Map = props => {
           this.highlight[i].y = startPos.y;
           this.highlight[i].alpha = 0;
           mapContainer.addChild(this.highlight[i]);
+
         }
+
+        this.dottedline = new PIXI.Sprite.from(`hkIsland_coastline2019_dottedline`);
+        this.dottedline.anchor.set(0.5);
+        this.dottedline.x = startPos.x;
+        this.dottedline.y = startPos.y;
+        this.dottedline.alpha = 0;
+        mapContainer.addChild(this.dottedline);
+
       }
 
       createShader() {
@@ -542,6 +551,7 @@ const Map = props => {
       }
 
       if (hasShownCoastline && idx === -1) {
+        showDottedline(false);
         gsap.to(options, 5, {progress: 0, ease: 'power2.inOut'});
         gsap.to(targetYears, 4, { p: 0, p2: 0, stagger:0.25, ease: 'power2.out',
           onUpdate: function () {
@@ -559,10 +569,8 @@ const Map = props => {
         })
       }
       else {
-        gsap.to(targetYears, 8, {
-          p: 1,
-          stagger:0.5,
-          ease: 'power2.out',
+        const tl = gsap.timeline();
+        tl.to(targetYears, 8, { p: 1, stagger:0.5, ease: 'power2.out',
           onUpdate: function () {
             this.targets().forEach((target, i) => {
               if (i <= idx)
@@ -572,10 +580,16 @@ const Map = props => {
             });
           }
         });
+        tl.call(()=>showDottedline(), null, '-=4');
         hasShownCoastline = true;
       }
     };
     props.handleShowCoastline.current = { showCoastline };
+
+    const showDottedline = (bool = true) => {
+      const dottedline = map['hkIsland'].dottedline;
+      gsap.to(dottedline, .6, { alpha: bool ? 1 : 0, ease: 'power1.inOut' });
+    }
 
     const start = i => {
       // gsap.to(options, 4, { progress: 1, ease: 'power2.inOut' });
