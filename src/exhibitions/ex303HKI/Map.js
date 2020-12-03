@@ -63,6 +63,7 @@ const Map = props => {
     let hasShownCoastline = false;
     let selectedHighlight = null;
     let highlightTl = null;
+    let showCoastlineTl = null;
     let whiteBG = null;
     let selectedCoastlineIdx = 0;
 
@@ -584,10 +585,11 @@ const Map = props => {
 
       if (hasShownCoastline && idx === -1) {
         showDottedline(false);
+        showCoastlineTl.kill();
         gsap.to(options, 5, {islandProgress: 0, ease: 'power3.inOut'});
         gsap.killTweensOf(options, "oceanProgress");
         gsap.to(options, 8, {oceanProgress: 0, ease: 'power3.out'});
-        gsap.to(targetYears, 4, { p: 0, p2: 0, stagger:0.25, ease: 'power2.out',
+        gsap.to(targetYears, 8, { p: 0, p2: 0, stagger:0.4, ease: 'power2.out',
           onUpdate: function () {
             this.targets().forEach((target, i) => {
               if(i <= selectedCoastlineIdx)
@@ -603,8 +605,8 @@ const Map = props => {
         })
       }
       else {
-        const tl = gsap.timeline();
-        tl.to(targetYears, 10, { p: 1, stagger:0.5, ease: 'power3.out',
+        showCoastlineTl = gsap.timeline();
+        showCoastlineTl.to(targetYears, 10, { p: 1, stagger:0.5, ease: 'power3.out',
           onUpdate: function () {
             this.targets().forEach((target, i) => {
               if (i <= idx)
@@ -614,7 +616,7 @@ const Map = props => {
             });
           }
         });
-        tl.call(()=>showDottedline(), null, '-=5');
+        showCoastlineTl.call(()=>showDottedline(), null, '-=8');
         hasShownCoastline = true;
       }
     };
@@ -622,14 +624,14 @@ const Map = props => {
 
     const showDottedline = (bool = true) => {
       const dottedline = map['hkIsland'].dottedline;
-      gsap.to(dottedline, .6, { alpha: bool ? 1 : 0, ease: 'power1.inOut' });
+      gsap.to(dottedline, .6, { alpha: bool ? 1 : 0, overwrite:true, ease: 'power1.inOut' });
     }
 
     const start = i => {
       // gsap.to(options, 4, { progress: 1, ease: 'power2.inOut' });
       gsap.to(options, 5, {islandProgress: 1, ease: 'power3.inOut'});
       gsap.killTweensOf(options, "oceanProgress");
-      gsap.to(options, 15, {oceanProgress: 1, ease: 'power3.out'});
+      gsap.to(options, 10, {oceanProgress: 1, ease: 'power3.out'});
       gsap.to({}, i + 2.5, {
         onComplete: () => {
           props.setOpacity(true);
