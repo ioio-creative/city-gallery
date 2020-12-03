@@ -23,7 +23,8 @@ const Map = props => {
     const gui = new dat.GUI({ width: 300 });
     const mapAssets = data.hki.mapAssets;
     const options = {
-      progress: 0,
+      islandProgress: 0,
+      oceanProgress: 0,
       year: {
         y1900: 0,
         y1945: 0,
@@ -91,7 +92,8 @@ const Map = props => {
     };
 
     const initGUI = () => {
-      gui.add(options, 'progress', 0, 1, 0.01).name('Island').listen();
+      gui.add(options, 'islandProgress', 0, 1, 0.01).name('Island').listen();
+      gui.add(options, 'oceanProgress', 0, 1, 0.01).name('Ocean').listen();
       gui.add(options.year, 'y1900', 0, 1, 0.01).name('Coastline 1900').listen();
       gui.add(options.year, 'y1945', 0, 1, 0.01).name('Coastline 1945').listen();
       gui.add(options.year, 'y1985', 0, 1, 0.01).name('Coastline 1985').listen();
@@ -200,7 +202,8 @@ const Map = props => {
               uniform sampler2D coastline2019Mask;
               uniform sampler2D sandTexture;
               uniform sampler2D noiseTexture;
-              uniform float progress;
+              uniform float islandProgress;
+              uniform float oceanProgress;
               uniform float progress1900;
               uniform float progress1945;
               uniform float progress1985;
@@ -242,7 +245,7 @@ const Map = props => {
                 
                 // ocean
                 if(oceanMaskTextureColor.a >= .01){
-                  float value = progress * (1. + _threshold);
+                  float value = oceanProgress * (1. + _threshold);
                   float v = clamp( (noiseTextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
                   gl_FragColor = mix(startOceanDiffuseColor, oceanDiffuseColor, v);
                 }
@@ -303,14 +306,15 @@ const Map = props => {
                 
                 // island
                 if(islandMaskTextureColor.a >= .01){
-                  float value = progress * (1. + _threshold);
+                  float value = islandProgress * (1. + _threshold);
                   float v = clamp( (sandTextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
                   gl_FragColor = mix(startIslandDiffuseColor, islandDiffuseColor, v);
                 }
               }
             `,
           {
-            progress: options.progress,
+            islandProgress: options.islandProgress,
+            oceanProgress: options.oceanProgress,
             progress1900: options.year.y1900,
             progress1945: options.year.y1945,
             progress1985: options.year.y1985,
@@ -487,7 +491,8 @@ const Map = props => {
     const startAnim = () => {
       app.ticker.add(delta => {
         if (map['hkIsland']) {
-          map['hkIsland'].image.shader.uniforms.progress = options.progress;
+          map['hkIsland'].image.shader.uniforms.islandProgress = options.islandProgress;
+          map['hkIsland'].image.shader.uniforms.oceanProgress = options.oceanProgress;
           map['hkIsland'].image.shader.uniforms.progress1900 = options.year.y1900;
           map['hkIsland'].image.shader.uniforms.progress1945 = options.year.y1945;
           map['hkIsland'].image.shader.uniforms.progress1985 = options.year.y1985;
@@ -579,7 +584,9 @@ const Map = props => {
 
       if (hasShownCoastline && idx === -1) {
         showDottedline(false);
-        gsap.to(options, 5, {progress: 0, ease: 'power3.inOut'});
+        gsap.to(options, 5, {islandProgress: 0, ease: 'power3.inOut'});
+        gsap.killTweensOf(options, "oceanProgress");
+        gsap.to(options, 8, {oceanProgress: 0, ease: 'power3.out'});
         gsap.to(targetYears, 4, { p: 0, p2: 0, stagger:0.25, ease: 'power2.out',
           onUpdate: function () {
             this.targets().forEach((target, i) => {
@@ -597,7 +604,7 @@ const Map = props => {
       }
       else {
         const tl = gsap.timeline();
-        tl.to(targetYears, 8, { p: 1, stagger:0.5, ease: 'power2.out',
+        tl.to(targetYears, 10, { p: 1, stagger:0.5, ease: 'power3.out',
           onUpdate: function () {
             this.targets().forEach((target, i) => {
               if (i <= idx)
@@ -607,7 +614,7 @@ const Map = props => {
             });
           }
         });
-        tl.call(()=>showDottedline(), null, '-=4');
+        tl.call(()=>showDottedline(), null, '-=5');
         hasShownCoastline = true;
       }
     };
@@ -620,7 +627,9 @@ const Map = props => {
 
     const start = i => {
       // gsap.to(options, 4, { progress: 1, ease: 'power2.inOut' });
-      gsap.to(options, 5, {progress: 1, ease: 'power3.inOut'});
+      gsap.to(options, 5, {islandProgress: 1, ease: 'power3.inOut'});
+      gsap.killTweensOf(options, "oceanProgress");
+      gsap.to(options, 15, {oceanProgress: 1, ease: 'power3.out'});
       gsap.to({}, i + 2.5, {
         onComplete: () => {
           props.setOpacity(true);

@@ -10,6 +10,10 @@
         "src": "./images/ex303/1945_BaseMap.png"
       },
       {
+        "name": "hkIsland_1985_diffuse",
+        "src": "./images/ex303/1985_BaseMap.png"
+      },
+      {
         "name": "hkIsland_2019_diffuse",
         "src": "./images/ex303/2019_BaseMap.png"
       },
@@ -22,6 +26,10 @@
         "src": "./images/ex303/hkIsland_1945_mask.png"
       },
       {
+        "name": "hkIsland_1985_mask",
+        "src": "./images/ex303/hkIsland_1985_mask.png"
+      },
+      {
         "name": "hkIsland_2019_mask",
         "src": "./images/ex303/hkIsland_2019_mask.png"
       },
@@ -32,6 +40,10 @@
       {
         "name": "hkIsland_ocean1945_mask",
         "src": "./images/ex303/hkIsland_ocean1945_mask.png"
+      },
+      {
+        "name": "hkIsland_ocean1985_mask",
+        "src": "./images/ex303/hkIsland_ocean1985_mask.png"
       },
       {
         "name": "hkIsland_ocean2019_mask",
@@ -62,6 +74,18 @@
         "src": "./images/ex303/hkIsland_coastline1945of1945.png"
       },
       {
+        "name": "hkIsland_coastline1900of1985_diffuse",
+        "src": "./images/ex303/hkIsland_coastline1900of1985.png"
+      },
+      {
+        "name": "hkIsland_coastline1945of1985_diffuse",
+        "src": "./images/ex303/hkIsland_coastline1945of1985.png"
+      },
+      {
+        "name": "hkIsland_coastline1985of1985_diffuse",
+        "src": "./images/ex303/hkIsland_coastline1985of1985.png"
+      },
+      {
         "name": "hkIsland_coastline1900of2019_diffuse",
         "src": "./images/ex303/hkIsland_coastline1900of2019.png"
       },
@@ -88,6 +112,18 @@
       {
         "name": "hkIsland_coastline1945of1945_mask",
         "src": "./images/ex303/hkIsland_coastline1945of1945.png"
+      },
+      {
+        "name": "hkIsland_coastline1900of1985_mask",
+        "src": "./images/ex303/hkIsland_coastline1900of1985.png"
+      },
+      {
+        "name": "hkIsland_coastline1945of1985_mask",
+        "src": "./images/ex303/hkIsland_coastline1945of1985.png"
+      },
+      {
+        "name": "hkIsland_coastline1985of1985_mask",
+        "src": "./images/ex303/hkIsland_coastline1985of1985.png"
       },
       {
         "name": "hkIsland_coastline1900of2019_mask",
@@ -130,6 +166,10 @@
         "src": "./images/ex303/hkIsland_coastline1945_dottedline.svg"
       },
       {
+        "name": "hkIsland_coastline1985_dottedline",
+        "src": "./images/ex303/hkIsland_coastline1985_dottedline.svg"
+      },
+      {
         "name": "hkIsland_coastline2019_dottedline",
         "src": "./images/ex303/hkIsland_coastline2019_dottedline.svg"
       },
@@ -139,7 +179,7 @@
       },
       {
         "name": "noise",
-        "src": "./images/ex303/noise2.png"
+        "src": "./images/ex303/noise_island.png"
       },
       {
         "name": "marker",
