@@ -487,6 +487,10 @@ const Map = props => {
       map['hkIsland'].image.shader.uniforms.coastline1900Mask = new PIXI.Sprite.from(`hkIsland_coastline1900of${years[selectedCoastlineIdx]}_mask`).texture.baseTexture;
       map['hkIsland'].image.shader.uniforms.coastline1945Diffuse = new PIXI.Sprite.from(`hkIsland_coastline1945of${years[selectedCoastlineIdx]}_diffuse`).texture.baseTexture;
       map['hkIsland'].image.shader.uniforms.coastline1945Mask = new PIXI.Sprite.from(`hkIsland_coastline1945of${years[selectedCoastlineIdx]}_mask`).texture.baseTexture;
+      map['hkIsland'].image.shader.uniforms.coastline1985Diffuse = new PIXI.Sprite.from(`hkIsland_coastline1985of${years[selectedCoastlineIdx]}_diffuse`).texture.baseTexture;
+      map['hkIsland'].image.shader.uniforms.coastline1985Mask = new PIXI.Sprite.from(`hkIsland_coastline1985of${years[selectedCoastlineIdx]}_mask`).texture.baseTexture;
+      map['hkIsland'].image.shader.uniforms.coastline2019Diffuse = new PIXI.Sprite.from(`hkIsland_coastline2019of${years[selectedCoastlineIdx]}_diffuse`).texture.baseTexture;
+      map['hkIsland'].image.shader.uniforms.coastline2019Mask = new PIXI.Sprite.from(`hkIsland_coastline2019of${years[selectedCoastlineIdx]}_mask`).texture.baseTexture;
     }
 
     const startAnim = () => {
@@ -560,7 +564,7 @@ const Map = props => {
       selectedCoastlineIdx = idx;
       const highlights = map['hkIsland'].highlight;
       selectedHighlight = map['hkIsland'].highlight[idx];
-      if(highlightTl) highlightTl.pause();
+      if(highlightTl) highlightTl.kill();
 
       for (let i = 0; i < highlights.length; i++) {
         if (i !== idx) {
@@ -585,11 +589,13 @@ const Map = props => {
 
       if (hasShownCoastline && idx === -1) {
         showDottedline(false);
-        showCoastlineTl.kill();
         gsap.to(options, 5, {islandProgress: 0, ease: 'power3.inOut'});
         gsap.killTweensOf(options, "oceanProgress");
         gsap.to(options, 8, {oceanProgress: 0, ease: 'power3.out'});
-        gsap.to(targetYears, 8, { p: 0, p2: 0, stagger:0.4, ease: 'power2.out',
+        
+        if(showCoastlineTl) showCoastlineTl.kill();
+        showCoastlineTl = gsap.timeline();
+        showCoastlineTl.to(targetYears, 8, { p: 0, p2: 0, stagger:0.4, ease: 'power2.out',
           onUpdate: function () {
             this.targets().forEach((target, i) => {
               if(i <= selectedCoastlineIdx)
@@ -598,13 +604,12 @@ const Map = props => {
               if(i > selectedCoastlineIdx)
                 options.year[`hideY${years[i]}`] = target.p2;
             });
-          },
-          onComplete:function(){
-            highlightTl.restart();
           }
         })
+        showCoastlineTl.call(()=>highlightTl.restart(), null, '-=6');
       }
       else {
+        if(showCoastlineTl) showCoastlineTl.kill();
         showCoastlineTl = gsap.timeline();
         showCoastlineTl.to(targetYears, 10, { p: 1, stagger:0.5, ease: 'power3.out',
           onUpdate: function () {

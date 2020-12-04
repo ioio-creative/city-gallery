@@ -165,8 +165,8 @@ const G303 = props => {
           show={setShowNav}
         />
         <img className={`yearMark ${!hm ? '' : 'hide'}`} src={`./images/ex303/${yearIdx}_mark.png`}></img>
-        <img className={`nav_2019_sea ${yearIdx === 3 && showNav ? '' : 'hide'}`} src={`./images/ex303/2019_nav_right.png`}></img>
-        <img className={`nav_2019_sea ${(yearIdx === 0 || yearIdx === 1 || yearIdx === 2) && showNav ? '' : 'hide'}`} src={`./images/ex303/non_2019_nav_right.png`}></img>
+        {/* <img className={`nav_2019_sea ${yearIdx === 3 && showNav ? '' : 'hide'}`} src={`./images/ex303/2019_nav_right.png`}></img>
+        <img className={`nav_2019_sea ${(yearIdx === 0 || yearIdx === 1 || yearIdx === 2) && showNav ? '' : 'hide'}`} src={`./images/ex303/non_2019_nav_right.png`}></img> */}
       </div>
 
       <div id='street' className={`${gameMode === 'r' ? '' : 'hide'}`}>

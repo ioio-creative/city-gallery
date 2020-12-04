@@ -27,52 +27,48 @@ const Menu = props => {
     // </div>
     // </div>
     <div id='navWrap' className={`${props.show ? '' : 'hide'}`}>
-      <div className='left'>
-        <div
-          className={`yearButton ${mode === 'l' ? '' : 'hide'}`}
-          onClick={() => {
-            props.back();
-          }}
-        >
-          選擇年份
-        </div>
-        {['上環區', '中環及灣仔區', '銅鑼灣區', '鰂魚涌區'].map((v, i) => {
-          return (
-            <div key={i} className={`streetName streetFont ${mode === 'r' && i === props.mapIndicatorIdx && !props.isVideo ? 'active' : 'hide'}`}>
-              {v}
-            </div>
-          );
-        })}
-        {['荷李活道', '炮台里'].map((v, i) => {
-          return (
-            <div key={i} className={`streetName streetFont ${mode === 'r' && i === props.idx && props.isVideo ? 'active' : 'hide'}`}>
-              {v}
-            </div>
-          );
-        })}
-        <div id='switch' className={`${mode} ${props.yearIdx === 3 ? '' : 'hide'}`}>
-          <span
-            onClick={() => {
-              switchMode('l');
-              props.leaveZoom();
-            }}
-          >
-            海岸線
-          </span>
-          <span
-            onClick={() => {
-              switchMode('r');
-              props.toFakeZoom();
-            }}
-          >
-            街道
-          </span>
-        </div>
-        <div className={`descriptionBox ${props.yearIdx === 0 || props.yearIdx === 1 || props.yearIdx === 2 ? '' : 'hide'}`}>
-          海岸綫 <span>———</span> 香港島
+      <div id='left'>
+        <div id="wrap">
+          <div className={`yearButton ${mode === 'l' ? '' : 'hide'}`} onClick={() => { props.back(); }}>
+            選擇年份
+          </div>
+          {['上環區', '中環及灣仔區', '銅鑼灣區', '鰂魚涌區'].map((v, i) => {
+            return (
+              <div key={i} className={`streetName streetFont ${mode === 'r' && i === props.mapIndicatorIdx && !props.isVideo ? 'active' : 'hide'}`}>
+                {v}
+              </div>
+            );
+          })}
+          {['荷李活道', '炮台里'].map((v, i) => {
+            return (
+              <div key={i} className={`streetName streetFont ${mode === 'r' && i === props.idx && props.isVideo ? 'active' : 'hide'}`}>
+                {v}
+              </div>
+            );
+          })}
+          <div id='switch' className={`${mode} ${props.yearIdx === 3 ? '' : 'hide'}`}>
+            <span onClick={() => {switchMode('l');props.leaveZoom();}}> 海岸線 </span>
+            <span onClick={() => {switchMode('r');props.toFakeZoom();}}> 街道 </span>
+          </div>
+          <div className={`descriptionBox ${props.yearIdx === 0 || props.yearIdx === 1 || props.yearIdx === 2 ? '' : 'hide'}`}>
+            海岸綫 <span>———</span> 香港島
+          </div>
         </div>
       </div>
-      <div className='right'></div>
+      <div id="right">
+        <div id="wrap">
+          <div id="lang">
+            <div id="tc" className="active">繁</div>
+            <div id="en">ENG</div>
+          </div>
+          <div id="questionBtnWrap">
+            <div id="questionBtn">?</div>
+          </div>
+          <div id="indicator">
+            請按下不同的浮標以<br/>探索不同填海區的資訊
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

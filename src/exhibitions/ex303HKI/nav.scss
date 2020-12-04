@@ -10,133 +10,205 @@ $width:3840;
 #navWrap{
   z-index: 10;
   position: absolute;
-  top: 898px;
-  left: 898px;
-  width: 1620px;
-  height: 112px;
+  bottom: vw-calc(61, $width);
+  width: 100%;
+  height: vw-calc(122, $width);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   transition: opacity linear 0.3s, visibility linear 0.3s;
-  .left{
-    width: 828px;
-    height: 122px;
-    background-color: #fff;
-    border-radius: 26px;
+  &>div{
+    width:50%;
+    margin:0 vw-calc(88, $width);
+    #wrap{
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: vw-calc(35, $width);
+    }
+  }
+  #left{
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    .streetName{
-      width: 264px;
-      height: 122px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 40px;
-      color: #074A45;
-      &.hide{
-        position: absolute;
-      }
-      &::after{
-        content: '';
-        position: absolute;
-        border-right: solid 1px $drakgreenblue;
-        height: 60px;
-        left: 326px;
-      }
-    }
-    .yearButton{
-      width: 154px;
-      height: 57px;
-      border-radius: 57px;
-      border-style: solid;
-      border-width: 1px;
-      border-color: #074A45;
-      justify-content: center;
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      &::after{
-        content: '';
-        position: absolute;
-        border-right: solid 1px $drakgreenblue;
-        height: 60px;
-        left: 281px;
-      }
-      &.hide{
-        position: absolute;
-      }
-    }
-    .descriptionBox{
-      width: 414px;
-      height: 57px;
-      justify-content: center;
-      display: flex;
-      align-items: center;
-      font-size: 30px;
-      &.hide{
-        position: absolute;
-      }
-    }
-    #switch{
-    width:vw-calc(415, $width);
-    height:vw-calc(54, $width);
-    border-radius: vw-calc(54/2, $width);
-    font-size:vw-calc(20, $width);
-    color:$white;
-    background:$lightblue;
-    display: flex;
-    align-items: center;
-    // position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate3d(0,0,0);
-    overflow: hidden;
-    &.hide{
-      position: absolute;
-    }
-    &:before{
-        content:'';
-        width:vw-calc(227, $width);
-        height:100%;
-        border-radius: vw-calc(54/2, $width);
-        position: absolute;
-        top:0;
-        left:0;
-        z-index: -1;
-        background:$drakgreenblue;
-        transform: translate3d(0,0,0);
-        transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    &.r{
-        &:before{
-            transform: translate3d(82%,0,0);
+    justify-content: flex-end;
+    #wrap{
+      width: vw-calc(828, $width);
+      height: vw-calc(122, $width);
+      .streetName{
+        width: 264px;
+        height: 122px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        color: #074A45;
+        &.hide{
+          position: absolute;
         }
-    }
-    span{
-        width:vw-calc(227 - 18, $width);
-        padding-left:vw-calc(18, $width);
-        text-align: center;
-        position: absolute;
+        &::after{
+          content: '';
+          position: absolute;
+          border-right: solid 1px $drakgreenblue;
+          height: 60px;
+          left: 326px;
+        }
+      }
+      .yearButton{
+        width: vw-calc(227, $width);
+        height: vw-calc(54, $width);
+        border-radius: vw-calc(36, $width);
+        border: vw-calc(3, $width) solid #074A45;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size:vw-calc(20, $width);
+        position: relative;
+        margin-right: vw-calc(60, $width);
+        &:after{
+          content: '';
+          position: absolute;
+          width:vw-calc(1, $width);
+          height: vw-calc(39, $width);
+          right: vw-calc(-30, $width);
+          background:#CCCCCC;
+        }
+        &.hide{
+          position: absolute;
+        }
+      }
+      .descriptionBox{
+        width: 414px;
+        height: 57px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        font-size: 30px;
+        &.hide{
+          position: absolute;
+        }
+      }
+      #switch{
+        width:vw-calc(415, $width);
+        height:vw-calc(54, $width);
+        border-radius: vw-calc(54/2, $width);
+        font-size:vw-calc(20, $width);
+        color:$white;
+        background:$lightblue;
+        display: flex;
+        align-items: center;
+        // position: absolute;
         top:50%;
-        transform: translate3d(0,-50%,0);
-        display: inline-block;
-        cursor: pointer;
-        &:nth-child(2){
-            right:0;
-            padding-left:0;
-            padding-right:vw-calc(18, $width);
+        left:50%;
+        transform: translate3d(0,0,0);
+        overflow: hidden;
+        &.hide{
+          position: absolute;
+        }
+        &:before{
+          content:'';
+          width:vw-calc(227, $width);
+          height:100%;
+          border-radius: vw-calc(54/2, $width);
+          position: absolute;
+          top:0;
+          left:0;
+          z-index: -1;
+          background:$drakgreenblue;
+          transform: translate3d(0,0,0);
+          transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        &.r{
+          &:before{
+              transform: translate3d(82%,0,0);
+          }
+        }
+        span{
+          width:vw-calc(227 - 18, $width);
+          padding-left:vw-calc(18, $width);
+          text-align: center;
+          position: absolute;
+          top:50%;
+          transform: translate3d(0,-50%,0);
+          display: inline-block;
+          cursor: pointer;
+          &:nth-child(2){
+              right:0;
+              padding-left:0;
+              padding-right:vw-calc(18, $width);
+          }
         }
       }
     }
   }
-  .right{
-    width: 660px;
-    height: 112px;
-    background-color: #fff;
-    background-color: transparent;
-    border-radius: 26px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  #right{
+    #wrap{
+      width: vw-calc(628, $width);
+      height: vw-calc(122, $width);
+      #lang{
+        display: flex;
+        margin-right:vw-calc(27 - 13 / 2, $width);
+        &>div{
+          width:vw-calc(57, $width);
+          height:vw-calc(57, $width);
+          border-radius: 50%;
+          border:vw-calc(2, $width) solid #70CCB8;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background:transparent;
+          color:#70CCB8;
+          font-size:vw-calc(23, $width);
+          margin:vw-calc(13/2, $width);
+          &.active{
+            border-color: #074A45;
+            background:#074A45;
+            color:#fff;
+          }
+          &#en{
+            font-size:vw-calc(17, $width);
+          }
+        }
+      }
+      #questionBtnWrap{
+        position: relative;
+        &:before, &:after{
+          content:'';
+          width: vw-calc(2, $width);
+          height: vw-calc(39, $width);
+          background:#CCCCCC;
+          position: absolute;
+          top:50%;
+          transform: translate3d(0, -50%,0);
+        }
+        &:before{
+          left:0;
+        }
+        &:after{
+          right:0;
+        }
+        #questionBtn{
+          width:vw-calc(57, $width);
+          height:vw-calc(57, $width);
+          border-radius: 50%;
+          border:vw-calc(3, $width) solid #074A45;
+          margin:vw-calc(27, $width);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size:vw-calc(27, $width);
+        }
+      }
+      #indicator{
+        height:vw-calc(57, $width);
+        margin-left:vw-calc(27, $width);
+        padding-left:vw-calc(46, $width);
+        background:url('./images/indicator.svg') left center no-repeat;
+        color:#074A45;
+        font-size:vw-calc(16, $width);
+        line-height: vw-calc(22, $width);
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+      }
+    }
   }
 }
