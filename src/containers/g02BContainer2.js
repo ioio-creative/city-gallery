@@ -506,32 +506,32 @@ const G02BContainer = props => {
           <div id='contentWrap'>
             <div id='title'>
               <span>{contentData && contentData.cities[domId].name}</span>
-              <svg>
-                {language === 'zh' && (
-                  <text x='0' y='75%' fill='none' stroke='#2F2D7C'>
-                    {contentData && contentData.cities[domId].location}
-                  </text>
-                )}
-                {language === 'en' && (
-                  <text x='0' y='85%' fill='none' stroke='#2F2D7C'>
-                    {contentData && contentData.cities[domId].location}
-                  </text>
-                )}
-              </svg>
+              <div id='cityIcon' className={`${contentData && contentData.cities[domId].id ? `${contentData.cities[domId].id} ${language}` : ''}`}>
+                {contentData &&
+                  contentData.cities[domId].icon &&
+                  contentData.cities[domId].icon.map((v, i) => {
+                    return (
+                      <div className={`icon${i + 1}`}>
+                        <img src={v} />
+                      </div>
+                    );
+                  })}
+              </div>
             </div>
+            <svg className={`${contentData && contentData.cities[domId].id ? `${contentData.cities[domId].id} ${language}` : ''}`}>
+              {language === 'zh' && (
+                <text x='0' y='75%' fill='none' stroke='#2F2D7C'>
+                  {contentData && contentData.cities[domId].location}
+                </text>
+              )}
+              {language === 'en' && (
+                <text x='0' y='85%' fill='none' stroke='#2F2D7C'>
+                  {contentData && contentData.cities[domId].location}
+                </text>
+              )}
+            </svg>
             <div id='description'>{contentData && contentData.cities[domId].description}</div>
           </div>
-          {/* <div id='cityIcon'>
-            {contentData &&
-              contentData.cities[domId].icon &&
-              contentData.cities[domId].icon.map((v, i) => {
-                return (
-                  <div className={`icon${i + 1}`}>
-                    <img src={v} />
-                  </div>
-                );
-              })}
-          </div> */}
           <div id='galleryListWrap'>
             <div id='dragForMore'>{contentData && contentData.global.dragMore}</div>
             <ul ref={galleryListElem} id='galleryList'>

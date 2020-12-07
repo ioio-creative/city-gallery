@@ -19,6 +19,7 @@
       },
       "cities": [
         {
+          "id": "hamburg",
           "name": "Harbour Regeneration",
           "location": "Hamburg",
           "backgroundColor": "#FFFDF1",
@@ -49,6 +50,7 @@
           ]
         },
         {
+          "id": "hongkong",
           "name": "Biodiversity beyond Concrete Jungles",
           "location": "Hong Kong",
           "backgroundColor": "##E6F8F2",
@@ -85,6 +87,7 @@
           ]
         },
         {
+          "id": "seoul",
           "name": "From Nullah to Blue-green Hotspot",
           "location": "Seoul",
           "backgroundColor": "#FFF9F4",
@@ -115,6 +118,7 @@
           ]
         },
         {
+          "id": "helsinki",
           "name": "Icy Underground Gallery ",
           "location": "Helsinki",
           "backgroundColor": "#F1FAFA",
@@ -145,6 +149,7 @@
           ]
         },
         {
+          "id": "newyork",
           "name": "High Line",
           "location": "New York",
           "backgroundColor": "#F3FFF6",
@@ -175,6 +180,7 @@
           ]
         },
         {
+          "id": "rotterdam",
           "name": "Floating Farm",
           "location": "Rotterdam",
           "backgroundColor": "#F1F9FF",
@@ -205,6 +211,7 @@
           ]
         },
         {
+          "id": "huainan",
           "name": "An Invisible Power Plant on a Lake",
           "location": "Huainan",
           "backgroundColor": "#FCFCEA",
@@ -235,10 +242,11 @@
           ]
         },
         {
+          "id": "copenhagen",
           "name": "Carbon Neutral Capital",
           "location": "Copenhagen",
           "backgroundColor": "#FFF6EE",
-          "icon": ["./images/exG02b/Icon/EN/copenhagen_icon1.svg", "./images/exG02b/Icon/EN/copenhagen_icon2.svg", "./images/exG02b/Icon/EN/copenhagen_icon3.svg"],
+          "icon": ["./images/exG02b/Icon/EN/copenhagen_icon1.svg", "./images/exG02b/Icon/EN/copenhagen_icon2.svg", ""],
           "image": {
             "src": "./images/exG02b/Copenhagen/copenhagen.png"
           },
@@ -265,6 +273,7 @@
           ]
         },
         {
+          "id": "kualalumpur",
           "name": "A SMART Tunnel",
           "location": "Kuala Lumpur",
           "backgroundColor": "#FAF7F1",
@@ -295,6 +304,7 @@
           ]
         },
         {
+          "id": "barcelona",
           "name": "Street as Playground",
           "location": "Barcelona",
           "backgroundColor": "#FFF3F3",
@@ -335,6 +345,7 @@
       },
       "cities": [
         {
+          "id": "hamburg",
           "name": "城市港口大改造",
           "location": "漢堡",
           "backgroundColor": "#FFFDF1",
@@ -365,6 +376,7 @@
           ]
         },
         {
+          "id": "hongkong",
           "name": "石屎森林外的生物多樣性",
           "location": "香港",
           "backgroundColor": "#E6F8F2",
@@ -401,6 +413,7 @@
           ]
         },
         {
+          "id": "seoul",
           "name": "由水渠化為藍綠景點",
           "location": "首爾",
           "backgroundColor": "#FFF9F4",
@@ -431,6 +444,7 @@
           ]
         },
         {
+          "id": "helsinki",
           "name": "冰天遁地藝術館",
           "location": "赫爾辛基",
           "backgroundColor": "#F1FAFA",
@@ -461,6 +475,7 @@
           ]
         },
         {
+          "id": "newyork",
           "name": "高線公園",
           "location": "紐約",
           "backgroundColor": "#F3FFF6",
@@ -491,6 +506,7 @@
           ]
         },
         {
+          "id": "rotterdam",
           "name": "牧場水上飄",
           "location": "鹿特丹",
           "backgroundColor": "#F1F9FF",
@@ -521,6 +537,7 @@
           ]
         },
         {
+          "id": "huainan",
           "name": "湖泊上的隱形發電廠",
           "location": "淮南",
           "backgroundColor": "#FCFCEA",
@@ -551,6 +568,7 @@
           ]
         },
         {
+          "id": "copenhagen",
           "name": "零碳排放首都",
           "location": "哥本哈根",
           "backgroundColor": "#FFF6EE",
@@ -581,6 +599,7 @@
           ]
         },
         {
+          "id": "kualalumpur",
           "name": "聰明隧道",
           "location": "吉隆坡",
           "backgroundColor": "#FAF7F1",
@@ -611,6 +630,7 @@
           ]
         },
         {
+          "id": "barcelona",
           "name": "馬路中心的活動天地",
           "location": "巴塞隆拿",
           "backgroundColor": "#FFF3F3",
