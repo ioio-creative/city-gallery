@@ -15,7 +15,7 @@ $width:3840;
   height: vw-calc(122, $width);
   display: flex;
   justify-content: center;
-  transition: opacity linear 0.3s, visibility linear 0.3s;
+  transition: all 1s cubic-bezier(0.87, 0, 0.13, 1);
   &>div{
     width:50%;
     margin:0 vw-calc(88, $width);
@@ -25,6 +25,10 @@ $width:3840;
       align-items: center;
       justify-content: center;
       border-radius: vw-calc(35, $width);
+      &.noBtn{
+        justify-content: space-evenly;
+        padding: 0 vw-calc(40, $width);
+      }
     }
   }
   #left{
@@ -34,15 +38,14 @@ $width:3840;
       width: vw-calc(828, $width);
       height: vw-calc(122, $width);
       .streetName{
-        width: 264px;
-        height: 122px;
+        width: vw-calc(227, $width);
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 40px;
         color: #074A45;
         &.hide{
-          position: absolute;
+          display: none;
         }
         &::after{
           content: '';
@@ -57,33 +60,39 @@ $width:3840;
         height: vw-calc(54, $width);
         border-radius: vw-calc(36, $width);
         border: vw-calc(3, $width) solid #074A45;
+        color:#074A45;
         display: flex;
         justify-content: center;
         align-items: center;
         font-size:vw-calc(20, $width);
+        font-weight: bold;
         position: relative;
-        margin-right: vw-calc(60, $width);
-        &:after{
-          content: '';
-          position: absolute;
-          width:vw-calc(1, $width);
-          height: vw-calc(39, $width);
-          right: vw-calc(-30, $width);
-          background:#CCCCCC;
-        }
+        
         &.hide{
-          position: absolute;
+          display: none;
         }
       }
+      #space{
+        width:vw-calc(1, $width);
+        height: vw-calc(39, $width);
+        margin: vw-calc(0 30, $width);
+        background:#CCCCCC;
+      }
       .descriptionBox{
-        width: 414px;
-        height: 57px;
-        justify-content: center;
+        height: vw-calc(57, $width);
         display: flex;
         align-items: center;
-        font-size: 30px;
+        font-size: vw-calc(30, $width);
+        font-weight: bold;
+        color:#074A45;
         &.hide{
-          position: absolute;
+          display: none;
+        }
+        span{
+          width:vw-calc(98, $width);
+          height:vw-calc(3, $width);
+          background:#074A45;
+          margin: vw-calc(0 12);
         }
       }
       #switch{
@@ -101,7 +110,7 @@ $width:3840;
         transform: translate3d(0,0,0);
         overflow: hidden;
         &.hide{
-          position: absolute;
+          display: none;
         }
         &:before{
           content:'';
@@ -116,7 +125,7 @@ $width:3840;
           transform: translate3d(0,0,0);
           transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        &.r{
+        &.street{
           &:before{
               transform: translate3d(82%,0,0);
           }
@@ -158,6 +167,7 @@ $width:3840;
           color:#70CCB8;
           font-size:vw-calc(23, $width);
           margin:vw-calc(13/2, $width);
+          transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
           &.active{
             border-color: #074A45;
             background:#074A45;
@@ -208,6 +218,12 @@ $width:3840;
         font-weight: bold;
         display: flex;
         align-items: center;
+        &.hideImg{
+          background:none;
+          margin-left:vw-calc(50, $width);
+          padding-left:0;
+          font-size:vw-calc(20, $width);
+        }
       }
     }
   }

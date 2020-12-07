@@ -11,16 +11,17 @@ import video1 from '../../../src/media/ex303/video1.mp4';
 import video2 from '../../../src/media/ex303/video2.mp4';
 
 const G303 = props => {
+  const [language, setLanguage] = useState('tc');
   const [started, setStarted] = useState(false);
   const [yearIdx, setYearIdx] = useState(-1);
   const [zoomed, setZoomed] = useState(false);
   const [mapIndicatorIdx, setMapIndicatorIdx] = useState(0);
   const [streetData, setStreetData] = useState(null);
-  const [hm, setHm] = useState(true);
+  const [home, setHome] = useState(true);
   const [fill, setFill] = useState(false);
   const [showNav, setShowNav] = useState(false);
   const [showYear, setShowYear] = useState(true);
-  const [gameMode, setGameMode] = useState('l');
+  const [gameMode, setGameMode] = useState('coast');
   const [fakeZoom, setFakeZoom] = useState(0);
   const [isVideo, setIsVideo] = useState(false);
   const [videoNumber, setVideoNumber] = useState(null);
@@ -34,15 +35,16 @@ const G303 = props => {
   const video1Ref = useRef(null);
 
   const videoSrc = ['./images/ex303/video1.mp4', './images/ex303/video2.mp4'];
+  const years = ['1900', '1945', '1985', '2019'];
 
   const onClickMapIndicator = i => {
     setMapIndicatorIdx(i);
     handleMove.current.updateMapIndicatorIdx(i, zoomed);
   };
 
-  const fullOpacity = tf => {
-    setFill(tf);
-  };
+  // const fullOpacity = tf => {
+  //   setFill(tf);
+  // };
 
   const onClickYear = i => {
     if (!started)
@@ -53,10 +55,10 @@ const G303 = props => {
   };
 
   const onClickStart = () => {
-    if (yearIdx !== null) {
-      setHm(false);
+    if (yearIdx >= 0) {
+      setHome(false);
       // setStarted(true);
-      setShowNav(false);
+      //setShowNav(false);
       setShowYear(false);
       handleStart.current.start(yearIdx);
       handleShowCoastline.current.showCoastline(yearIdx);
@@ -65,7 +67,7 @@ const G303 = props => {
 
   const onBack = () => {
     setFill(false);
-    setHm(true);
+    setHome(true);
     // setYearIdx(0);
     setShowNav(false);
     setShowYear(true);
@@ -74,8 +76,8 @@ const G303 = props => {
   };
 
   const toFakeZoom = () => {
-    if (gameMode !== 'r') {
-      setGameMode('r');
+    if (gameMode !== 'street') {
+      setGameMode('street');
       gsap.to(
         {},
         {
@@ -90,7 +92,7 @@ const G303 = props => {
   };
 
   const leaveFakeZoom = () => {
-    if (gameMode !== 'l') {
+    if (gameMode !== 'coast') {
       setZone([false, false, false, false]);
       setFakeZoom(0);
       gsap.to(
@@ -98,7 +100,7 @@ const G303 = props => {
         {
           duration: 1.5,
           onComplete: () => {
-            setGameMode('l');
+            setGameMode('coast');
           }
         }
       );
@@ -122,38 +124,15 @@ const G303 = props => {
     );
   };
 
+  const globalData = props.appData.hki.contents[language].global;
+
   return (
     // <div id='main' className={`${started ? 'started' : ''}${zoomed ? ' zoomed' : ''}`}>
-    <div id='main' className={`${started ? 'started' : ''}${gameMode === 'r' ? ' zoomed' : ''}`}>
-      {/* fake dog */}
-      <div id='coast' className={`${gameMode === 'l' ? '' : 'hide'}`}>
-        {/* <div className={`hmWrap ${hm ? '' : 'hide'}`}>
-          <img className='baseMap' alt='' src={`./images/ex303/303_YearSelection_${yearIdx}.png`}></img>
-        </div>
-
-        <div className={`wrap ${yearIdx === 0 && !hm ? 'active' : 'hide'}`}>
-          <img className={`island`} alt='' src='./images/ex303/1900_HKI.png'></img>
-          <img className={`full ${fill ? 'true' : ''}`} alt='' src='./images/ex303/1900_BaseMap.png'></img>
-        </div>
-
-        <div className={`wrap ${yearIdx === 1 && !hm ? 'active' : 'hide'}`}>
-          <img className={`island`} alt='' src='./images/ex303/1945_HKI.png'></img>
-          <img className={`full ${fill ? 'true' : ''}`} alt='' src='./images/ex303/1945_BaseMap.png'></img>
-        </div>
-
-        <div className={`wrap ${yearIdx === 2 && !hm ? 'active' : 'hide'}`}>
-          <img className={`island`} alt='' src='./images/ex303/1985_HKI.png'></img>
-          <img className={`full ${fill ? 'true' : ''}`} alt='' src='./images/ex303/1985_BaseMap.png'></img>
-        </div>
-
-        <div className={`wrap ${yearIdx === 3 && !hm ? 'active' : 'hide'}`}>
-          <img className={`island`} alt='' src='./images/ex303/2019_HKI.png'></img>
-          <img className={`full ${fill ? 'true' : ''}`} alt='' src='./images/ex303/2019_BaseMap.png'></img>
-        </div> */}
-
+    <div id='main' className={`${started ? 'started' : ''}${gameMode === 'street' ? ' zoomed' : ''}`}>
+      <div id='coast'>
         <Map
           appData={props.appData}
-          setOpacity={fullOpacity}
+          // setOpacity={fullOpacity}
           setStreetData={setStreetData}
           setMapIndicatorIdx={setMapIndicatorIdx}
           setZoomed={setZoomed}
@@ -162,19 +141,28 @@ const G303 = props => {
           handleShowCoastline={handleShowCoastline}
           handleSelectCoastline={handleSelectCoastline}
           handleStart={handleStart}
-          show={setShowNav}
+          showNav={setShowNav}
         />
-        <img className={`yearMark ${!hm ? '' : 'hide'}`} src={`./images/ex303/${yearIdx}_mark.png`}></img>
-        {/* <img className={`nav_2019_sea ${yearIdx === 3 && showNav ? '' : 'hide'}`} src={`./images/ex303/2019_nav_right.png`}></img>
-        <img className={`nav_2019_sea ${(yearIdx === 0 || yearIdx === 1 || yearIdx === 2) && showNav ? '' : 'hide'}`} src={`./images/ex303/non_2019_nav_right.png`}></img> */}
+        <div id="locationsWrap" className={ yearIdx != 3 || home ? 'hide' : ''}>
+          <div id="locations" className="streetFont">
+            <div>堅尼地城</div>
+            <div>上環 </div>
+            <div>中環</div>
+            <div>灣仔</div>
+            <div>銅鑼灣</div>
+            <div>北角</div>
+            <div>鰂魚涌</div>
+            <div>筲箕灣</div>
+          </div>
+        </div>
       </div>
 
-      <div id='street' className={`${gameMode === 'r' ? '' : 'hide'}`}>
-        <img className={`nav_2019_sea ${gameMode === 'r' ? '' : 'hide'}`} src={`./images/ex303/SNM_nav_right.png`}></img>
-        <img className={`disclaimer ${gameMode === 'r' ? '' : 'hide'}`} src={`./images/ex303/disclaimer.png`}></img>
-        <img className={`smallMap ${gameMode === 'r' ? '' : 'hide'}`} src={`./images/ex303/small_map.png`}></img>
+      <div id='street' className={`${gameMode === 'street' ? '' : 'hide'}`}>
+        <img className={`nav_2019_sea ${gameMode === 'street' ? '' : 'hide'}`} src={`./images/ex303/SNM_nav_right.png`}></img>
+        <img className={`disclaimer ${gameMode === 'street' ? '' : 'hide'}`} src={`./images/ex303/disclaimer.png`}></img>
+        <img className={`smallMap ${gameMode === 'street' ? '' : 'hide'}`} src={`./images/ex303/small_map.png`}></img>
         <div className={`wrap`}>
-          <img className={`zoomMap ${gameMode === 'r' ? '' : 'hide'} ${fakeZoom !== 0 ? `zoom${fakeZoom}` : ''}`} alt='' src='./images/ex303/2019_Zoom_BaseMap.png'></img>
+          <img className={`zoomMap ${gameMode === 'street' ? '' : 'hide'} ${fakeZoom !== 0 ? `zoom${fakeZoom}` : ''}`} alt='' src='./images/ex303/2019_Zoom_BaseMap.png'></img>
         </div>
         <svg
           className={`dot d1 ${zone[0] ? '' : 'hide'} ${isVideo ? 'active' : ''}`}
@@ -258,12 +246,13 @@ const G303 = props => {
       </div>
       {/* fake dog */}
 
-      <img className={`legend ${fill && (yearIdx === 0 || yearIdx === 1 || yearIdx === 2) ? '' : 'hide'}`} alt='' src='./images/ex303/HKI_legend.png'></img>
-      <img className={`legend ${fill && yearIdx === 3 ? '' : 'hide'}`} alt='' src='./images/ex303/HKI_legend_white.png'></img>
+      {/* <img className={`legend ${fill && (yearIdx === 0 || yearIdx === 1 || yearIdx === 2) ? '' : 'hide'}`} alt='' src='./images/ex303/HKI_legend.png'></img>
+      <img className={`legend ${fill && yearIdx === 3 ? '' : 'hide'}`} alt='' src='./images/ex303/HKI_legend_white.png'></img> */}
       {/* <img className={`correction ${gameMode === "r" ? '' : 'hide'}`} alt='' src='./images/ex303/hkislandstnamegame_quarrybay.png'></img> */}
 
-      <div id='yearSelector' className={`${yearIdx === null ? 'disabled' : ''} ${showYear ? '' : 'hide'}`}>
-        <ul>
+      <div id="currentYear" className={`${home ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''} eb`}>{years[yearIdx]}</div>
+      <div id='yearSelector' className={`${yearIdx < 0 ? 'disabled' : ''} ${showYear ? '' : 'hide'}`}>
+        <ul className="eb">
           {['1900', '1945', '1985', '2019'].map((v, i) => {
             return (
               <li key={i} className={i === yearIdx ? 'active' : ''} onClick={() => onClickYear(i)}>
@@ -272,10 +261,9 @@ const G303 = props => {
             );
           })}
         </ul>
-        <div id='startBtn' onClick={onClickStart}>
-          確定
-        </div>
+        <div id='startBtn' onClick={onClickStart}>{globalData && globalData.confirm}</div>
       </div>
+      <div id="yearOfCoastline" className={`${home ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}></div>
       <div id='mapIndicator'>
         <span>分區</span>
         <ul>
@@ -308,7 +296,19 @@ const G303 = props => {
         </div> */}
       </div>
 
-      <Menu handleZoom={handleZoom} back={onBack} show={showNav} yearIdx={yearIdx} gameMode={setGameMode} mapIndicatorIdx={mapIndicatorIdx} toFakeZoom={toFakeZoom} leaveZoom={leaveFakeZoom} idx={videoNumber} isVideo={isVideo} />
+      <Menu 
+        globalData={globalData}
+        language={language}
+        setLanguage={setLanguage}
+        handleZoom={handleZoom} 
+        back={onBack}
+        showNav={showNav} 
+        yearIdx={yearIdx} 
+        gameMode={gameMode}
+        setGameMode={setGameMode} 
+        mapIndicatorIdx={mapIndicatorIdx}
+        toFakeZoom={toFakeZoom} 
+        leaveZoom={leaveFakeZoom} idx={videoNumber} isVideo={isVideo} />
     </div>
   );
 };

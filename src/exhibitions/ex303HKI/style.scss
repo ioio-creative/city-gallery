@@ -12,13 +12,38 @@ $width:3840;
     font-family: 'SourceHanSerifTC-Bold';
     src: url('../../fonts/SourceHanSerifTC-Bold.otf');
 }
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('../../fonts/EBGaramond-MediumItalic.woff2') format('woff2'),
+        url('../../fonts/EBGaramond-MediumItalic.woff') format('woff'),
+        url('../../fonts/EBGaramond-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Neue LT Std';
+    src: url('../../fonts/HelveticaNeueLTStd-Bd.woff2') format('woff2'),
+        url('../../fonts/HelveticaNeueLTStd-Bd.woff') format('woff'),
+        url('../../fonts/HelveticaNeueLTStd-Bd.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
 
+.eb{
+    font-family: 'EB Garamond';
+}
+.dg.ac{
+    z-index: 999 !important;
+}
 .streetFont {
     font-family: 'SourceHanSerifTC-Bold';
 }
 
 body{
     overflow: hidden;
+    font-family: 'Helvetica Neue LT Std';
     // background:#0d3c59;
 }
 
@@ -50,7 +75,93 @@ span{
     height:100%;
     // background:#103042;
     font-family: 'Helvetica';
-    #coast, #street{
+    #coast{
+        width:100%;
+        height:100%;
+        position: relative;
+        #locationsWrap{
+            width:100%;
+            height:100%;
+            position: absolute;
+            top:0;
+            left:0;
+            z-index: 2;
+            opacity:1;
+            visibility: visible;
+            transition: all .6s cubic-bezier(0.87, 0, 0.13, 1) 2s;
+            &.hide{
+                opacity: 0;
+                visibility: hidden;
+                transition-delay: 0s;
+                #locations{
+                    div{
+                        opacity: 0;
+                        visibility: hidden;
+                        transition-delay: 0s;
+                    }
+                }
+            }
+            #locations{
+                width:100%;
+                height:100%;
+                font-size: vw-calc(22, $width);
+                position: relative;
+                div{
+                    width:vw-calc(183, $width);
+                    height:vw-calc(48, $width);
+                    padding-bottom:vw-calc(2, $width);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background:#A5A48E;
+                    border-radius: vw-calc(24, $width);
+                    color:#fff;
+                    position: absolute;
+                    opacity: 1;
+                    visibility: visible;
+                    transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
+                    @for $i from 1 through 8 {
+                        &:nth-child(#{$i}) {
+                            transition-delay: #{2 + $i*.1}s;
+                        }
+                    }
+                    &:nth-child(1){
+                        top:vw-calc(540, $width);
+                        left:vw-calc(703, $width);
+                    }
+                    &:nth-child(2){
+                        top:vw-calc(458, $width);
+                        left:vw-calc(1000, $width);
+                    }
+                    &:nth-child(3){
+                        top:vw-calc(641, $width);
+                        left:vw-calc(1231, $width);
+                    }
+                    &:nth-child(4){
+                        top:vw-calc(720, $width);
+                        left:vw-calc(1599, $width);
+                    }
+                    &:nth-child(5){
+                        top:vw-calc(642, $width);
+                        right:vw-calc(1662, $width);
+                    }
+                    &:nth-child(6){
+                        top:vw-calc(353, $width);
+                        right:vw-calc(1468, $width);
+                    }
+                    &:nth-child(7){
+                        top:vw-calc(540, $width);
+                        right:vw-calc(1151, $width);
+                    }
+                    &:nth-child(8){
+                        top:vw-calc(697, $width);
+                        right:vw-calc(892, $width);
+                    }
+                }
+            }
+        }
+    }
+    #street{
         // transition: all 0.3s cubic-bezier(0.87, 0, 0.13, 1);
         position: absolute;
     }
@@ -348,28 +459,65 @@ span{
             }
         }
     }
+    #currentYear{
+        position: absolute;
+        bottom:vw-calc(37, $width);
+        left:vw-calc(80, $width);
+        z-index: 1;
+        font-size: vw-calc(187, $width);
+        text-shadow: 0 vw-calc(3, $width) vw-calc(6, $width) rgba(0,0,0,.2);
+        color:#074A45;
+        opacity: 1;
+        visibility: visible;
+        transition: all 1s cubic-bezier(0.87, 0, 0.13, 1) 1s;
+        &.w{
+            color:#fff;
+        }
+        &.disabled{
+            transition-duration: .3s;
+            transition-delay: 0s;
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    #yearOfCoastline{
+        width:vw-calc(224, $width);
+        height:vw-calc(360, $width);
+        position: absolute;
+        bottom:vw-calc(65, $width);
+        right:vw-calc(50, $width);
+        z-index: 1;
+        background:url('./images/yearOfCoastline_b.svg') center no-repeat;
+        opacity: 1;
+        visibility: visible;
+        transition: all 1s cubic-bezier(0.87, 0, 0.13, 1) 1s;
+        &.w{
+            background:url('./images/yearOfCoastline_w.svg') center no-repeat;
+        }
+        &.disabled{
+            transition-duration: .3s;
+            transition-delay: 0s;
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
     #yearSelector{
         z-index: 10;
         width:vw-calc(264, $width);
         position: absolute;
         top:50%;
         left:vw-calc(175, $width);
-        font-family: 'Times New Roman';
-        font-weight: bold;
-        font-style: italic;
         color:$lightblue;
         display: flex;
         flex-direction: column;
         transform: translate3d(0,-50%,0);
-        transition: all .3s cubic-bezier(0.87, 0, 0.13, 1);
+        transition: all .6s cubic-bezier(0.87, 0, 0.13, 1) 2s;
+        &.hide{
+            transition-delay: 0s;
+        }
         &.disabled{
-            ul{
-                transform: translate3d(0,0,0);
-            }
             #startBtn{
-                opacity: 1;
-                visibility: visible;
-                // transform: translate3d(-50%,0,0) scale(1);
+                opacity: .2;
             }
         }
         &:not(.disabled){
@@ -434,7 +582,7 @@ span{
             position: absolute;
             top:100%;
             left:50%;
-            transform: translate3d(-50%,vw-calc(50,$width),0) scale(0);
+            transform: translate3d(-50%,vw-calc(50,$width),0) scale(.9);
             transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
         }
     }

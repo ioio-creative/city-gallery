@@ -34,24 +34,8 @@
         "src": "./images/ex303/hkIsland_2019_mask.png"
       },
       {
-        "name": "hkIsland_ocean1900_mask",
-        "src": "./images/ex303/hkIsland_ocean1900_mask.png"
-      },
-      {
-        "name": "hkIsland_ocean1945_mask",
-        "src": "./images/ex303/hkIsland_ocean1945_mask.png"
-      },
-      {
-        "name": "hkIsland_ocean1985_mask",
-        "src": "./images/ex303/hkIsland_ocean1985_mask.png"
-      },
-      {
-        "name": "hkIsland_ocean2019_mask",
-        "src": "./images/ex303/hkIsland_ocean2019_mask.png"
-      },
-      {
         "name": "hkIsland_start_diffuse",
-        "src": "./images/ex303/2019_HKI.png"
+        "src": "./images/ex303/2019_BaseMap_start.png"
       },
       {
         "name": "hkIsland_start_ocean_diffuse",
@@ -192,10 +176,18 @@
     ],
     "contents": {
       "en": {
-        
+        "global":{
+          "confirm":"Confirm",
+          "coastline":"Coastline",
+          "street":"Street"
+        }
       },
       "tc": {
-
+        "global":{
+          "confirm":"確定",
+          "coastline":"海岸線",
+          "street":"街道"
+        }
       }
     },
     "coastlineParts": [
