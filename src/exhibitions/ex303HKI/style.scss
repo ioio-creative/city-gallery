@@ -78,7 +78,7 @@ span{
 }
 
 .zone1{
-    transform: translate3d(-15.4%,-44%,0) scale(1.88);
+    transform: translate3d(-15.4%,-43.6%,0) scale(1.88);
 }
 .zone2{
     transform: translate3d(-44.4%,-55%,0) scale(1.885);
@@ -89,6 +89,19 @@ span{
 .zone4{
     transform: translate3d(-86.45%,-36%,0) scale(1.885);
 }
+
+// .zone1_street{
+//     transform: translate3d(-15.4%,-44%,0);
+// }
+// .zone2_street{
+//     transform: translate3d(-44.4%,-55%,0);
+// }
+// .zone3_street{
+//     transform: translate3d(-76.8%,-36%,0);
+// }
+// .zone4_street{
+//     transform: translate3d(-86.45%,-36%,0);
+// }
 
 #main{
     width:100%;
@@ -391,8 +404,180 @@ span{
         }
     }
     #street{
+        width: 100%;
+        height: 100%;
         position: absolute;
         top:0;
+        z-index: 1;
+        &:after{
+            content:'';
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,.5);
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            position: relative;
+            z-index: 2;
+            transition: all .3s cubic-bezier(0.87, 0, 0.13, 1);
+        }
+        &.showVideo{
+            &:after{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        &>div{
+            height: 100%;
+            transform-origin: left top;
+            transition: transform .8s cubic-bezier(0.65, 0, 0.35, 1);
+            &>div{
+                transform-origin: left top;
+                transform: translate3d(0, 0, 0) scale(0.531915);
+            }
+        }
+        #locationsWrap{
+            width:100%;
+            position: absolute;
+            top:0;
+            left:0;
+            z-index: 1;
+            #locations{
+                width:100%;
+                // height:100%;
+                font-size: vw-calc(22, $width);
+                position: relative;
+                &>div{
+                    &#zone1{
+                        .name{
+                            &:nth-child(1){
+                                top:vw-calc(751, $width);
+                                left:vw-calc(2000, $width);
+                            }
+                        }
+                    }
+                    &#zone2{
+                        .name{
+                            &:nth-child(1){
+                                top:vw-calc(938, $width);
+                                left:vw-calc(2470, $width);
+                            }
+                            &:nth-child(2){
+                                top:vw-calc(1110, $width);
+                                left:vw-calc(3054, $width);
+                            }
+                        }
+                    }
+                    &#zone3{
+                        .name{
+                            &:nth-child(1){
+                                top:vw-calc(1221, $width);
+                                left:vw-calc(3615, $width);
+                            }
+                            &:nth-child(2){
+                                top:vw-calc(677, $width);
+                                left:vw-calc(4102, $width);
+                            }
+                        }
+                    }
+                    &#zone4{
+                        .name{
+                            &:nth-child(1){
+                                top:vw-calc(1031, $width);
+                                left:vw-calc(4915, $width);
+                            }
+                        }
+                    }
+                    .name{
+                        width:vw-calc(183, $width);
+                        height:vw-calc(48, $width);
+                        padding-bottom:vw-calc(2, $width);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background:#fff;
+                        border-radius: vw-calc(24, $width);
+                        color:#074A45;
+                        position: absolute;
+                        opacity: 1;
+                        visibility: visible;
+                        // transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
+                        // @for $i from 1 through 8 {
+                        //     &:nth-child(#{$i}) {
+                        //         transition-delay: #{$i*.1}s;
+                        //     }
+                        // }
+                        // &:nth-child(1){
+                        //     top:vw-calc(540, $width);
+                        //     left:vw-calc(703, $width);
+                        // }
+                        // &:nth-child(7){
+                        //     top:vw-calc(697, $width);
+                        //     right:vw-calc(892, $width);
+                        // }
+                    }
+                }
+            }
+        }
+        #contentWrap{
+            width:100%;
+            height:100%;
+            position: absolute;
+            top:0;
+            left:0;
+            z-index: 5;
+            .item{
+                &.inactive{
+                    #markerWrap{
+                        #marker{
+                            background: url('./images/marker_w.svg') center center no-repeat;
+                        }
+                    }
+                }
+                #markerWrap{
+                    width:0;
+                    height:0;
+                    position: absolute;
+                    #marker{
+                        width:vw-calc(61, $width);
+                        height:vw-calc(69, $width);
+                        background: url('./images/marker.svg') center center no-repeat;
+                        transform: translate3d(-50%,-100%,0) scale(1);
+                        transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+                        #location{
+                            position: absolute;
+                            font-size:vw-calc(20, $width);
+                            line-height: vw-calc(21, $width);
+                            font-weight: bold;
+                            color:#fff;
+                            white-space: nowrap;
+                            text-shadow: vw-calc(0 3 6, $width) #000;
+                            &.top{
+                                bottom:110%;
+                                left:50%;
+                                transform: translate3d(-50%,0,0);
+                            }
+                            &.left{
+                                right:110%;
+                                top:45%;
+                                transform: translate3d(0,-50%,0);
+                            }
+                            &.right{
+                                left:110%;
+                                top:45%;
+                                transform: translate3d(0,-50%,0);
+                            }
+                        }
+                    }
+                }
+                #roadWrap{
+                    width:0;
+                    height:0;
+                    position: absolute;
+                    pointer-events: none;
+                }
+            }
+        }
     }
     .dot{
         position: absolute;

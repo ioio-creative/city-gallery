@@ -17,7 +17,7 @@ const G303 = props => {
   const [yearIdx, setYearIdx] = useState(-1);
   // const [zoomed, setZoomed] = useState(false);
   const [mapIndicatorIdx, setMapIndicatorIdx] = useState(0);
-  const [streetData, setStreetData] = useState(null);
+  // const [streetData, setStreetData] = useState(null);
   // const [home, setHome] = useState(true);
   const [fill, setFill] = useState(false);
   const [showNav, setShowNav] = useState(false);
@@ -28,6 +28,7 @@ const G303 = props => {
   const [videoNumber, setVideoNumber] = useState(null);
   const [zone, setZone] = useState(0);
   const [coastlineIdx, setCoastlineIdx] = useState(null);
+  const [streetIdx, setStreetIdx] = useState(null);
 
   // const handleZoom = useRef(null);
   const handleMove = useRef(null);
@@ -127,15 +128,22 @@ const G303 = props => {
   //   );
   // };
 
-  const pxToVw = (px) => {
-    return (px + 61/2) / 3840 * 100+'vw';
+  const pxToVw = (px, isMarker = true) => {
+    if(isMarker)
+      return (px + 61/2 - 10) / 3840 * 100+'vw';
+    else
+      return (px - 15) / 3840 * 100+'vw';
   }
-  const pxToVh = (px) => {
-    return (px + 69) / 1080 * 100+'vh';
+  const pxToVh = (px, isMarker = true) => {
+    if(isMarker)
+      return (px + 69 - 5) / 1080 * 100+'vh';
+    else
+      return (px - 10) / 1080 * 100+'vh';
   }
 
   const globalData = props.appData.hki.contents[language].global;
   const coastlineData = props.appData.hki.contents[language].coastline;
+  const streetData = props.appData.hki.contents[language].street;
 
   return (
     // <div id='main' className={`${started ? 'started' : ''}${zoomed ? ' zoomed' : ''}`}>
@@ -146,7 +154,7 @@ const G303 = props => {
           setGameMode={setGameMode}
           zone={zone}
           // setOpacity={fullOpacity}
-          setStreetData={setStreetData}
+          // setStreetData={setStreetData}
           // setMapIndicatorIdx={setMapIndicatorIdx}
           // setZoomed={setZoomed}
           // handleZoom={handleZoom}
@@ -169,7 +177,7 @@ const G303 = props => {
             <div>筲箕灣</div>
           </div>
         </div>
-        <div id="contentWrap" className={coastlineIdx != null ? 'showCard' : ''}>
+        <div id="contentWrap" className={coastlineIdx !== null ? 'showCard' : ''}>
           {
             coastlineData &&
             coastlineData.map((v, i)=>{
@@ -202,7 +210,44 @@ const G303 = props => {
         </div>
       </div>
 
-      <div id='street' className={`${ yearIdx === 3 && gameMode === 'street' ? '' : 'hide'}`}>
+      <div id="street" className={`${gameMode === 'street' ? '' : 'hide'} ${streetIdx !== null ? 'showVideo' : ''}`}>
+        <div id="locationsWrap" className={`${gameMode === 'street' ? `zone${zone+1}` : ''}`}>
+          <div id="locations" className="streetFont">
+            <div id="zone1" className={zone === 0 ? '' : 'hide'}>
+              <div className="name">上環</div>
+            </div>
+            <div id="zone2" className={zone === 1 ? '' : 'hide'}>
+              <div className="name">中環</div>
+              <div className="name">灣仔</div>
+            </div>
+            <div id="zone3" className={zone === 2 ? '' : 'hide'}>
+              <div className="name">銅鑼灣</div>
+              <div className="name">北角</div>
+            </div>
+            <div id="zone4" className={zone === 3 ? '' : 'hide'}>
+              <div className="name">鰂魚涌</div>
+            </div>
+          </div>
+        </div>
+        <div id="contentWrap" className={`${gameMode === 'street' ? `zone${zone+1}` : ''}`}>
+          <div id="contents">
+            {
+              streetData &&
+              streetData.map((v, i)=>{
+                return <div key={i} className={`item ${streetIdx !== i && streetIdx !== null ? 'inactive' : ''} ${zone+1 === v.zone ? '' : 'hide'}`}>
+                  <div id="markerWrap" style={{left:pxToVw(v.marker.pos.x),top:pxToVh(v.marker.pos.y)}}>
+                    <span id="marker" onClick={()=> setStreetIdx(i)}>
+                      <span id="location" className={v.marker.namePos} dangerouslySetInnerHTML={{__html:v.marker.name}}></span>
+                    </span>
+                  </div>
+                  <div id="roadWrap" style={{left:pxToVw(v.road.pos.x, false),top:pxToVh(v.road.pos.y, false)}}>
+                    <img src={streetIdx !== i && streetIdx !== null ? v.road.inactiveImage.src : v.road.image.src} />
+                  </div>
+                </div>
+              })
+            }
+          </div>
+        </div>
          {/* <img className={`nav_2019_sea ${gameMode === 'street' ? '' : 'hide'}`} src={`./images/ex303/SNM_nav_right.png`}></img>
         <img className={`disclaimer ${gameMode === 'street' ? '' : 'hide'}`} src={`./images/ex303/disclaimer.png`}></img>
         <img className={`smallMap ${gameMode === 'street' ? '' : 'hide'}`} src={`./images/ex303/small_map.png`}></img>
@@ -324,8 +369,8 @@ const G303 = props => {
           })}
         </ul>
       </div>
-      <div id='streetInfo'>
-        {streetData && <h1>{streetData.name}</h1>}
+      {/* <div id='streetInfo'> */}
+        {/* {streetData && <h1>{streetData.name}</h1>} */}
         {/* <div id='markerOuterWrap'>
           <div id='markerWrap'>
             {props.appData.streets[mapIndicatorIdx].map((v, i) => {
@@ -333,7 +378,7 @@ const G303 = props => {
             })}
           </div>
         </div> */}
-      </div>
+      {/* </div> */}
 
       <Menu 
         globalData={globalData}

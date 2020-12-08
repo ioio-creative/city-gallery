@@ -263,66 +263,57 @@
               ]
             }
           }
+        ],
+        "street":[
+          {
+            "zone":1,
+            "marker":{
+              "name":"干德道",
+              "namePos":"top",
+              "pos":{
+                "x":1846,
+                "y":972
+              }
+            },
+            "road":{
+              "pos":{
+                "x":1711,
+                "y":998
+              },
+              "image":{
+                "src":"./images/ex303/street/conduitRoad.svg"
+              },
+              "inactiveImage":{
+                "src":"./images/ex303/street/conduitRoad_w.svg"
+              }
+            }
+          },
+          {
+            "zone":1,
+            "marker":{
+              "name":"樓梯街",
+              "namePos":"left",
+              "pos":{
+                "x":2121,
+                "y":847
+              }
+            },
+            "road":{
+              "pos":{
+                "x":2101,
+                "y":921
+              },
+              "image":{
+                "src":"./images/ex303/street/ladderStreet.svg"
+              },
+              "inactiveImage":{
+                "src":"./images/ex303/street/ladderStreet_w.svg"
+              }
+            }
+          }
         ]
       }
-    },
-    "coastlineParts": [
-      {
-        "id": "",
-        "name": "第一期",
-        "image": {
-          "name": "area"
-        },
-        "pos": {
-          "x": 1198,
-          "y": 373
-        }
-      }
-    ],
-    "streets": [
-      [
-        {
-          "id": "_1",
-          "name": "中環",
-          "marker": {
-            "x": 995,
-            "y": 540
-          },
-          "image": {
-            "src": "",
-            "x": 971,
-            "y": 483
-          },
-          "video": {
-            "src": "",
-            "thumbnail": {
-              "src": ""
-            }
-          }
-        }
-      ],
-      [
-        {
-          "id": "_2",
-          "name": "金鐘",
-          "marker": {
-            "x": 1251,
-            "y": 603
-          },
-          "image": {
-            "src": "",
-            "x": 1471,
-            "y": 653
-          },
-          "video": {
-            "src": "",
-            "thumbnail": {
-              "src": ""
-            }
-          }
-        }
-      ]
-    ]
+    }
   },
   "hh": {
     "mapAssets": [

@@ -8,7 +8,7 @@
       <feComposite in="SourceGraphic"/>
     </filter>
   </defs>
-  <g id="Group_571" data-name="Group 571" transform="translate(9 6)">
+  <g id="Group_585" data-name="Group 585" transform="translate(9 6)">
     <g id="Group_572" data-name="Group 572">
       <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Path_386)">
         <path id="Path_386-2" data-name="Path 386" d="M43,21.5c0,15.1-21.5,30.207-21.5,30.207S0,36.6,0,21.5a21.5,21.5,0,0,1,43,0" transform="translate(9 6)" fill="#ff7f00"/>

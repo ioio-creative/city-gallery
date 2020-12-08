@@ -460,14 +460,14 @@ const Map = props => {
         selectedHighlight = map['hkIsland'].highlight[0];
         // console.log(map['hkIsland'])
 
-        for (let s = 0, lth = data.hki.streets.length; s < lth; s++) {
-          streets[s] = [];
-          for (let i = 0; i < data.hki.streets[s].length; i++) {
-            const street = data.hki.streets[s][i];
-            streets[s][i] = new Marker(street);
-            streets[s][i].create();
-          }
-        }
+        // for (let s = 0, lth = data.hki.streets.length; s < lth; s++) {
+        //   streets[s] = [];
+        //   for (let i = 0; i < data.hki.streets[s].length; i++) {
+        //     const street = data.hki.streets[s][i];
+        //     streets[s][i] = new Marker(street);
+        //     streets[s][i].create();
+        //   }
+        // }
 
         // for (let i = 0, lth = data.hki.coastlineParts.length; i < lth; i++) {
         //   const parts = data.hki.coastlineParts[i];
