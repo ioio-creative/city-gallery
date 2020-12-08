@@ -48,7 +48,7 @@ const Map = props => {
     const maxWidth = 1920 * 2;
     const map = {};
     const streets = [];
-    const coastlineParts = [];
+    // const coastlineParts = [];
     const mapContainer = new PIXI.Container();
     const markerContainer = new PIXI.Container();
     const coastlinePartsContainer = new PIXI.Container();
@@ -89,7 +89,7 @@ const Map = props => {
       app.stage.addChild(mapContainer);
       app.stage.addChild(whiteBG);
       app.stage.addChild(markerContainer);
-      app.stage.addChild(coastlinePartsContainer);
+      // app.stage.addChild(coastlinePartsContainer);
     };
 
     const initGUI = () => {
@@ -469,11 +469,11 @@ const Map = props => {
           }
         }
 
-        for (let i = 0, lth = data.hki.coastlineParts.length; i < lth; i++) {
-          const parts = data.hki.coastlineParts[i];
-          coastlineParts[i] = new CoastlineParts(parts.pos, parts.image.name);
-          coastlineParts[i].create();
-        }
+        // for (let i = 0, lth = data.hki.coastlineParts.length; i < lth; i++) {
+        //   const parts = data.hki.coastlineParts[i];
+        //   coastlineParts[i] = new CoastlineParts(parts.pos, parts.image.name);
+        //   coastlineParts[i].create();
+        // }
       });
     };
 
@@ -534,54 +534,54 @@ const Map = props => {
       });
     };
 
-    const moveMap = (idx = 0) => {
-      gsap.to([mapContainer, markerContainer, coastlinePartsContainer], 1, {
-        x: zoomedPos.x - idx * (map['hkIsland'].image.width / (4 - 1)),
-        y: zoomedPos.y,
-        ease: 'power3.inOut'
-      });
+    // const moveMap = (idx = 0) => {
+    //   gsap.to([mapContainer, markerContainer], 1, {
+    //     x: zoomedPos.x - idx * (map['hkIsland'].image.width / (4 - 1)),
+    //     y: zoomedPos.y,
+    //     ease: 'power3.inOut'
+    //   });
       // gsap.to('#markerOuterWrap', 1, {x:zoomedPos.x - (idx * (map['hkIsland'].image.width/(4-1))), y:zoomedPos.y, ease:'power3.inOut'});
-    };
+    // };
 
-    const zoomInOut = mode => {
-      if (mode === 'l') {
-        props.setZoomed(false);
-        hideMarkers();
-        gsap.to(whiteBG, 0.6, { alpha: 0, ease: 'power1.inOut' });
-        gsap.to([mapContainer, markerContainer, coastlinePartsContainer], 1, {
-          x: 0,
-          y: 0,
-          ease: 'power4.inOut'
-        });
-        gsap.to([mapContainer.scale, markerContainer.scale, coastlinePartsContainer.scale], 1, {
-          x: 1,
-          y: 1,
-          ease: 'power4.inOut'
-        });
-        // gsap.to('#markerOuterWrap', 1.05, {force3D:true, x:0, y:0, scale:1, ease:'power4.inOut'});
-      } else {
-        props.setZoomed(true);
-        props.setMapIndicatorIdx(0);
-        moveMap();
-        showMarkers();
-        gsap.to(whiteBG, 0.6, { alpha: 0.5, ease: 'power1.inOut' });
-        gsap.to([mapContainer.scale, markerContainer.scale, coastlinePartsContainer.scale], 1, {
-          x: 1.8,
-          y: 1.8,
-          ease: 'power3.inOut'
-        });
-        // gsap.to('#markerOuterWrap', 1.01, {force3D:true, scale:1.8, ease:'power3.inOut'});
-      }
-    };
-    props.handleZoom.current = { zoomInOut };
+    // const zoomInOut = mode => {
+    //   if (mode === 'l') {
+    //     props.setZoomed(false);
+    //     hideMarkers();
+    //     gsap.to(whiteBG, 0.6, { alpha: 0, ease: 'power1.inOut' });
+    //     gsap.to([mapContainer, markerContainer], 1, {
+    //       x: 0,
+    //       y: 0,
+    //       ease: 'power4.inOut'
+    //     });
+    //     gsap.to([mapContainer.scale, markerContainer.scale], 1, {
+    //       x: 1,
+    //       y: 1,
+    //       ease: 'power4.inOut'
+    //     });
+    //     // gsap.to('#markerOuterWrap', 1.05, {force3D:true, x:0, y:0, scale:1, ease:'power4.inOut'});
+    //   } else {
+    //     props.setZoomed(true);
+    //     // props.setMapIndicatorIdx(0);
+    //     moveMap();
+    //     showMarkers();
+    //     gsap.to(whiteBG, 0.6, { alpha: 0.5, ease: 'power1.inOut' });
+    //     gsap.to([mapContainer.scale, markerContainer.scale], 1, {
+    //       x: 1.8,
+    //       y: 1.8,
+    //       ease: 'power3.inOut'
+    //     });
+    //     // gsap.to('#markerOuterWrap', 1.01, {force3D:true, scale:1.8, ease:'power3.inOut'});
+    //   }
+    // };
+    // props.handleZoom.current = { zoomInOut };
 
-    const updateMapIndicatorIdx = (idx, zoomed) => {
-      if (zoomed) {
-        moveMap(idx);
-        showMarkers(idx);
-      }
-    };
-    props.handleMove.current = { updateMapIndicatorIdx };
+    // const updateMapIndicatorIdx = (idx, zoomed) => {
+    //   if (zoomed) {
+    //     moveMap(idx);
+    //     showMarkers(idx);
+    //   }
+    // };
+    // props.handleMove.current = { updateMapIndicatorIdx };
 
     const selectCoastline = idx => {
       selectedCoastlineIdx = idx;
@@ -674,6 +674,7 @@ const Map = props => {
         });
         showCoastlineTl.call(()=>{
           props.showNav(true);
+          props.setGameMode('coast');
         }, null, '-=9');
         showCoastlineTl.call(()=>{
           showDottedline();
@@ -713,7 +714,7 @@ const Map = props => {
     startAnim();
   }, []);
 
-  return <div ref={wrapElem} className='shader'></div>;
+  return <div ref={wrapElem} className={`shader ${props.gameMode === 'street' ? `zone${props.zone+1}` : ''}`}></div>;
 };
 
 export default Map;

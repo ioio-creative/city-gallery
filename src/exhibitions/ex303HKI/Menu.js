@@ -23,15 +23,18 @@ const Menu = props => {
     <div id='navWrap' className={`${props.showNav ? '' : 'hide'}`}>
       <div id='left'>
         <div id="wrap" className={props.yearIdx != 3 ? 'noBtn' : ''}>
-          <div className={`yearButton ${props.gameMode === 'coast' ? '' : 'hide'}`} onClick={() => { props.back(); }}>
+          <div className={`yearButton ${props.gameMode === 'street' ? 'hide' : ''}`} onClick={() => { props.back(); }}>
             選擇年份
           </div>
           {['上環區', '中環及灣仔區', '銅鑼灣區', '鰂魚涌區'].map((v, i) => {
-            return (
-              <div key={i} className={`streetName streetFont ${props.gameMode === 'street' && i === props.mapIndicatorIdx && !props.isVideo ? 'active' : 'hide'}`}>
-                {v}
-              </div>
-            );
+            if(i === props.zone)
+              return (
+                <div key={i} className={`streetName streetFont ${props.gameMode === 'street' && !props.isVideo ? 'active' : 'hide'} ${i === 1 ? 's' : ''}`}>
+                  {v}
+                </div>
+              );
+            else
+              return;
           })}
           {['荷李活道', '炮台里'].map((v, i) => {
             return (
@@ -42,8 +45,8 @@ const Menu = props => {
           })}
           <span id="space"></span>
           <div id='switch' className={`${props.gameMode} ${props.yearIdx === 3 ? '' : 'hide'}`}>
-            <span onClick={() => {props.setGameMode('coast');}}> {globalData.coastline} </span>
-            <span onClick={() => {props.setGameMode('street');}}> {globalData.street} </span>
+            <span onClick={() => {props.setGameMode('coast'); }}> {globalData.coastline} </span>
+            <span onClick={() => {props.setGameMode('street'); props.setZone(0);}}> {globalData.street} </span>
           </div>
           <div className={`descriptionBox ${props.yearIdx === 0 || props.yearIdx === 1 || props.yearIdx === 2 ? '' : 'hide'}`}>
             海岸綫 <span></span> 香港島

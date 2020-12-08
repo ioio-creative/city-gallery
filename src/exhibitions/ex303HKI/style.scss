@@ -70,6 +70,26 @@ span{
     visibility: hidden;
 }
 
+.shader{
+    position: relative;
+    z-index: 1;
+    transform-origin: top left;
+    transition: transform .8s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.zone1{
+    transform: translate3d(-15.4%,-44%,0) scale(1.88);
+}
+.zone2{
+    transform: translate3d(-44.4%,-55%,0) scale(1.885);
+}
+.zone3{
+    transform: translate3d(-76.8%,-36%,0) scale(1.885);
+}
+.zone4{
+    transform: translate3d(-86.45%,-36%,0) scale(1.885);
+}
+
 #main{
     width:100%;
     height:100%;
@@ -78,21 +98,18 @@ span{
     #coast{
         width:100%;
         height:100%;
-        position: relative;
-        #locationsWrap{
-            width:100%;
-            height:100%;
-            position: absolute;
-            top:0;
-            left:0;
-            z-index: 2;
-            opacity:1;
-            visibility: visible;
-            transition: all .6s cubic-bezier(0.87, 0, 0.13, 1) 2s;
-            &.hide{
-                opacity: 0;
-                visibility: hidden;
-                transition-delay: 0s;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        opacity:1;
+        visibility: visible;
+        transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
+        &.hide{
+            opacity: 0;
+            visibility: hidden;
+            transition-delay: 0s;
+            transition-duration: .3s;
+            #locationsWrap{
                 #locations{
                     div{
                         opacity: 0;
@@ -101,9 +118,23 @@ span{
                     }
                 }
             }
+            #contentWrap{
+                .item{
+                    opacity: 0;
+                    visibility: hidden;
+                    transition-delay: 0s;
+                }
+            }
+        }
+        #locationsWrap{
+            width:100%;
+            position: absolute;
+            top:0;
+            left:0;
+            z-index: 1;
             #locations{
                 width:100%;
-                height:100%;
+                // height:100%;
                 font-size: vw-calc(22, $width);
                 position: relative;
                 div{
@@ -113,16 +144,16 @@ span{
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    background:#A5A48E;
+                    background:#fff;
                     border-radius: vw-calc(24, $width);
-                    color:#fff;
+                    color:#074A45;
                     position: absolute;
                     opacity: 1;
                     visibility: visible;
                     transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
                     @for $i from 1 through 8 {
                         &:nth-child(#{$i}) {
-                            transition-delay: #{2 + $i*.1}s;
+                            transition-delay: #{$i*.1}s;
                         }
                     }
                     &:nth-child(1){
@@ -160,10 +191,208 @@ span{
                 }
             }
         }
+        #contentWrap{
+            width:100%;
+            height:100%;
+            position: absolute;
+            top:0;
+            left:0;
+            z-index: 5;
+            &:after{
+                content:'';
+                width:100%;
+                height:100%;
+                background:rgba(255,255,255,.45);
+                display: block;
+                opacity: 0;
+                visibility: hidden;
+                transition: all .3s cubic-bezier(0.87, 0, 0.13, 1);
+            }
+            &.showCard{
+                &:after{
+                    opacity: 1;
+                    visibility: visible;
+                }
+                .item{
+                   #markerWrap{
+                        #marker{
+                            transform: translate3d(-50%,-100%,0) scale(0);
+                        }
+                    }
+                }
+            }
+            .item{
+                width:100%;
+                position: relative;
+                opacity: 1;
+                visibility: visible;
+                transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
+                @for $i from 1 through 3 {
+                    &:nth-child(#{$i}) {
+                        transition-delay: #{$i*.1}s;
+                    }
+                }
+                &.show{
+                    #markerWrap{
+                        #location{
+                            transform: translate3d(-50%,-124%,0) scale(1);
+                        }
+                    }
+                    #card{
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+                #markerWrap{
+                    width:0;
+                    height:0;
+                    position: absolute;
+                    #marker{
+                        width:vw-calc(61, $width);
+                        height:vw-calc(69, $width);
+                        background: url('./images/marker.svg') center no-repeat;
+                        transform: translate3d(-50%,-100%,0) scale(1);
+                        transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+                    }
+                    #location{
+                        width:vw-calc(155, $width);
+                        height:vw-calc(155, $width);
+                        font-size:vw-calc(18, $width);
+                        line-height: vw-calc(21, $width);
+                        font-weight: bold;
+                        border-radius: 50%;
+                        padding-top:vw-calc(10, $width);
+                        background:#fff;
+                        box-shadow: vw-calc(6 6 6, $width) rgba(0,0,0,.2);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        transform: translate3d(-50%,-124%,0) scale(0);
+                        transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+                    }
+                }
+                #card{
+                    width:vw-calc(511, $width);
+                    height:vw-calc(698, $width);
+                    background: url('./images/card.svg') top / 100% repeat-y;
+                    position: absolute;
+                    top:vw-calc(93, $width);
+                    left:calc(50% + #{vw-calc(342, $width)});
+                    padding:vw-calc(100 50 87, $width);
+                    color:#074A45;
+                    display: flex;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
+                    // &:before, &:after{
+                    //     content:'';
+                    //     width:100%;
+                    //     position: absolute;
+                    //     left:0;
+                    //     background: url('./images/card.svg') top / 100% no-repeat;
+                    // }
+                    // &:before{
+                    //     height:vw-calc(59, $width);
+                    //     bottom:100%;
+                    // }
+                    // &:after{
+                    //     height:vw-calc(87, $width);
+                    //     top:100%;
+                    //     background-position: bottom;
+                    // }
+                    #closeBtn{
+                        width:vw-calc(22, $width);
+                        height:vw-calc(22, $width);
+                        position: absolute;
+                        top:vw-calc(40, $width);
+                        right:vw-calc(63, $width);
+                        span{
+                            width:100%;
+                            height:vw-calc(2, $width);
+                            background:#074A45;
+                            display: block;
+                            position: absolute;
+                            top:50%;
+                            left:50%;
+                            &:nth-child(1){
+                                transform: translate3d(-50%,-50%,0) rotate(45deg);
+                            }
+                            &:nth-child(2){
+                                transform: translate3d(-50%,-50%,0) rotate(-45deg);
+                            }
+                        }
+                    }
+                    #wrap{
+                        position: relative;
+                        #title{
+                            display: flex;
+                            justify-content: space-between;
+                            font-size:vw-calc(22, $width);
+                            margin-bottom:vw-calc(24, $width);
+                        }
+                        #info{
+                            padding:vw-calc(25 88 0 22, $width);
+                            li{
+                                display: flex;
+                                margin-top:vw-calc(32, $width);
+                                &:first-child{
+                                    margin:0;
+                                }
+                                span{
+                                    font-size: vw-calc(12, $width);
+                                    line-height: vw-calc(14, $width);
+                                    &:first-child{
+                                        flex:none;
+                                        width:vw-calc(77, $width);
+                                        font-size: vw-calc(15, $width);
+                                    }
+                                }
+                            }
+                        }
+                        #btnOuterWrap{
+                            width:100%;
+                            display: flex;
+                            justify-content: space-between;
+                            position: absolute;
+                            bottom:0;
+                            .btnWrap{
+                                &>div{
+                                display: flex;
+                                align-items: center;
+                                    &:before{
+                                        content:'';
+                                        width:vw-calc(42, $width);
+                                        height:vw-calc(42, $width);
+                                        display: block;
+                                    }
+                                    span{
+                                        margin:vw-calc(0 12, $width);
+                                        font-size:vw-calc(10, $width);
+                                        line-height: vw-calc(12, $width);
+                                    }
+                                }
+                                #prevBtn{
+                                    &:before{
+                                        background:url('./images/prev.svg') center / 100% no-repeat;
+                                    }
+                                }
+                                #nextBtn{
+                                    flex-direction: row-reverse;
+                                    &:before{
+                                        background:url('./images/next.svg') center / 100% no-repeat;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     #street{
-        // transition: all 0.3s cubic-bezier(0.87, 0, 0.13, 1);
         position: absolute;
+        top:0;
     }
     .dot{
         position: absolute;
@@ -306,10 +535,6 @@ span{
         left: 473px;
         transition: all 0.3s cubic-bezier(0.87, 0, 0.13, 1);
     }
-    .shader{
-        position: relative;
-        z-index: 1;
-    }
     .hmWrap{
         position: absolute;
         transition: opacity linear 0.3s, visibility linear 0.3s;
@@ -402,40 +627,37 @@ span{
     }
     #mapIndicator{
         position: fixed;
-        top:vw-calc(66, $width);
-        left:vw-calc(472, $width);
+        top:vw-calc(57, $width);
+        left:vw-calc(74, $width);
         z-index: 10;
-        opacity: 0;
-        visibility: hidden;
+        opacity: 1;
+        visibility: visible;
         transition: all .3s cubic-bezier(0.87, 0, 0.13, 1);
-        span{
+        &.hide{
+            opacity: 0;
+            visibility: hidden;
+        }
+        &>span{
             margin-bottom:vw-calc(20, $width);
             font-size:vw-calc(30, $width);
+            font-weight: 900;
+            color:#fff;
+            text-shadow: vw-calc(0 3 6) #000;
         }
         ul{
-            opacity: 0.7;
             width:vw-calc(403, $width);
             height:vw-calc(180, $width);
             display: flex;
+            background:url('./images/minimap.svg') center / 100% no-repeat;
             li{
                 width:25%;
                 height:100%;
                 border-left:vw-calc(3, $width) dashed $lightblue;
                 display: flex;
                 justify-content: center;
-                align-items: center;
+                align-items: flex-end;
                 position: relative;
-                background:$white;
-                &:before{
-                    content:'';
-                    width:100%;
-                    height:100%;
-                    border:vw-calc(3, $width) solid $drakgreenblue;
-                    position: absolute;
-                    top:0;
-                    left:0;
-                    transform: translate3d(vw-calc(-3, $width), vw-calc(-3, $width), 0);
-                }
+                padding-bottom:vw-calc(20, $width);
                 &:after{
                     content:'';
                     width:100%;
@@ -444,17 +666,34 @@ span{
                     position: absolute;
                     top:0;
                     left:0;
-                    opacity: .7;
+                    opacity: .5;
                     visibility: visible;
+                    transition: all .3s cubic-bezier(0.16, 1, 0.3, 1);
                 }
                 &:first-child{
                     border:0;
                 }
                 &.active{
+                    border:vw-calc(3, $width) solid $drakgreenblue;
                     &:after{
                         opacity: 0;
                         visibility: hidden;
                     }
+                    span{
+                        background:#fff;
+                        color:#074A45;
+                    }
+                }
+                span{
+                    width:vw-calc(32, $width);
+                    height:vw-calc(32, $width);
+                    border-radius: 50%;
+                    background:#074A45;
+                    color:#97FFE2;
+                    font-size:vw-calc(20, $width);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
             }
         }
@@ -469,7 +708,7 @@ span{
         color:#074A45;
         opacity: 1;
         visibility: visible;
-        transition: all 1s cubic-bezier(0.87, 0, 0.13, 1) 1s;
+        transition: all 1s cubic-bezier(0.87, 0, 0.13, 1);
         &.w{
             color:#fff;
         }
