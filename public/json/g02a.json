@@ -475,7 +475,7 @@
         "source": "參考 : ",
         "populationDensity": "城市人口密度（/平方公里）",
         "population": "人口",
-        "landArea": "陸地面積（平方公里<sup>2</sup>）",
+        "landArea": "陸地面積（平方公里）",
         "dailyTrips": "公共交通每日乘搭比率",
         "gdp": "人均本地生產總值（當時市價）",
         "usd": "美元"

@@ -140,7 +140,7 @@
         position: absolute;
         top: 50%;
         right: vw-calc(-130);
-        right: -2.67083vw;
+        right: -1.27083vw;
         transform: translate3d(100%, -50%, 0);
         font-size: vw-calc(20);
         color: #003557;
@@ -205,6 +205,7 @@
           position: absolute;
           top: 50%;
           left: 101.1%;
+          left: 97%;
         }
         // &:after{
         //     content:'';
@@ -238,6 +239,9 @@
               span {
                 transform: translate3d(0, -6%, 0) scale(1);
                 width: 800px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
               }
             }
             &:not(.active):active {
