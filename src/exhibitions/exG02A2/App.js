@@ -891,7 +891,7 @@ const App = props => {
     zoomInFunc.current = { zoomIn };
 
     const zoomOut = () => {
-      // timeLineRef.current.reverse();
+      timeLineRef.current.reverse();
       setSelectedId(null);
     };
     zoomOutFunc.current = { zoomOut, clearIdx };
