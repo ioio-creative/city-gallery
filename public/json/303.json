@@ -34,24 +34,8 @@
         "src": "./images/ex303/hkIsland_2019_mask.png"
       },
       {
-        "name": "hkIsland_ocean1900_mask",
-        "src": "./images/ex303/hkIsland_ocean1900_mask.png"
-      },
-      {
-        "name": "hkIsland_ocean1945_mask",
-        "src": "./images/ex303/hkIsland_ocean1945_mask.png"
-      },
-      {
-        "name": "hkIsland_ocean1985_mask",
-        "src": "./images/ex303/hkIsland_ocean1985_mask.png"
-      },
-      {
-        "name": "hkIsland_ocean2019_mask",
-        "src": "./images/ex303/hkIsland_ocean2019_mask.png"
-      },
-      {
         "name": "hkIsland_start_diffuse",
-        "src": "./images/ex303/2019_HKI.png"
+        "src": "./images/ex303/2019_BaseMap_start.png"
       },
       {
         "name": "hkIsland_start_ocean_diffuse",
@@ -192,10 +176,94 @@
     ],
     "contents": {
       "en": {
-        
+        "global":{
+          "confirm":"Confirm",
+          "coastline":"Coastline",
+          "street":"Street"
+        },
+        "coastline":[
+          {
+            "marker":{
+              "name":"中環填海計劃<br/>第一期",
+              "pos":{
+                "x":1212,
+                "y":378
+              }
+            },
+            "cardConetnt":{
+              "title":"中環填海計劃第一期",
+              "completedYear":"1988 完成",
+              "image":{"src":"./images/ex303/image.png"},
+              "info":[
+                ["範圍","民光街／民耀街／民祥街之間"],
+                ["重要性","用作興建機場鐵路香港站、中環灣仔繞道及重置碼頭。"]
+              ]
+            }
+          }
+        ]
       },
       "tc": {
-
+        "global":{
+          "confirm":"確定",
+          "coastline":"海岸線",
+          "street":"街道"
+        },
+        "coastline":[
+          {
+            "marker":{
+              "name":"中環填海計劃<br/>第一期",
+              "pos":{
+                "x":1212,
+                "y":378
+              }
+            },
+            "cardConetnt":{
+              "title":"中環填海計劃第一期",
+              "completedYear":"1988 完成",
+              "image":{"src":"./images/ex303/image.png"},
+              "info":[
+                ["範圍","民光街／民耀街／民祥街之間"],
+                ["重要性","用作興建機場鐵路香港站、中環灣仔繞道及重置碼頭。"]
+              ]
+            }
+          },
+          {
+            "marker":{
+              "name":"中環填海計劃<br/>第二期",
+              "pos":{
+                "x":1295,
+                "y":439
+              }
+            },
+            "cardConetnt":{
+              "title":"中環填海計劃第二期",
+              "completedYear":"1988 完成",
+              "image":{"src":"./images/ex303/image.png"},
+              "info":[
+                ["範圍","民光街／民耀街／民祥街之間"],
+                ["重要性","用作興建機場鐵路香港站、中環灣仔繞道及重置碼頭。"]
+              ]
+            }
+          },
+          {
+            "marker":{
+              "name":"中環填海計劃<br/>第三期",
+              "pos":{
+                "x":1382,
+                "y":408
+              }
+            },
+            "cardConetnt":{
+              "title":"中環填海計劃第三期",
+              "completedYear":"1988 完成",
+              "image":{"src":"./images/ex303/image.png"},
+              "info":[
+                ["範圍","民光街／民耀街／民祥街之間"],
+                ["重要性","用作興建機場鐵路香港站、中環灣仔繞道及重置碼頭。"]
+              ]
+            }
+          }
+        ]
       }
     },
     "coastlineParts": [
