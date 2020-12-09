@@ -1,14 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './style.scss';
-import gsap from 'gsap';
-import VideoPlayer from 'react-video-js-player';
-import { Player } from 'video-react';
+// import gsap from 'gsap';
+// import VideoPlayer from 'react-video-js-player';
+// import { Player } from 'video-react';
+import VideoPlayer from '../../components/VideoPlayer';
 
 import Menu from './Menu';
 import Map from './Map';
 
-import video1 from '../../../src/media/ex303/video1.mp4';
-import video2 from '../../../src/media/ex303/video2.mp4';
+// import video1 from '../../../src/media/ex303/video1.mp4';
+// import video2 from '../../../src/media/ex303/video2.mp4';
 // import img from './images/image.png';
 
 const G303 = props => {
@@ -211,6 +212,21 @@ const G303 = props => {
       </div>
 
       <div id="street" className={`${gameMode === 'street' ? '' : 'hide'} ${streetIdx !== null ? 'showVideo' : ''}`}>
+        <div id="prevZoneBtn" className={`zoneBtn ${zone > 0 ? '' : 'hide'}`} onClick={()=> {if(zone > 0) setZone(zone-1)}}></div>
+        <div id="nextZoneBtn" className={`zoneBtn ${zone < 3 ? '' : 'hide'}`} onClick={()=> {if(zone < 3) setZone(zone+1)}}></div>
+        <div id="mapIndicator">
+          <span className="streetFont">分區</span>
+          <ul>
+            {[...Array(4)].map((v, i) => {
+              return (
+                // <li key={i} className={i === mapIndicatorIdx ? 'active' : ''} onClick={() => onClickMapIndicator(i)}>
+                <li key={i} className={i === zone ? 'active' : ''} onClick={() => { setZone(i);}}>
+                  <span>{i + 1}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
         <div id="locationsWrap" className={`${gameMode === 'street' ? `zone${zone+1}` : ''}`}>
           <div id="locations" className="streetFont">
             <div id="zone1" className={zone === 0 ? '' : 'hide'}>
@@ -248,6 +264,20 @@ const G303 = props => {
             }
           </div>
         </div>
+        {
+          streetData &&
+          streetIdx !== null &&
+          <div id="videoWrap">
+            <div id="closeBtn" onClick={()=>setStreetIdx(null)}></div>
+            <VideoPlayer
+              poster={streetData[streetIdx].road.video.poster.src}
+              controls={true}
+              autoplay={false}
+              hideControls={['volume','playbackrates','fullscreen']}
+              src={streetData[streetIdx].road.video.src}
+            />
+          </div>
+        }
          {/* <img className={`nav_2019_sea ${gameMode === 'street' ? '' : 'hide'}`} src={`./images/ex303/SNM_nav_right.png`}></img>
         <img className={`disclaimer ${gameMode === 'street' ? '' : 'hide'}`} src={`./images/ex303/disclaimer.png`}></img>
         <img className={`smallMap ${gameMode === 'street' ? '' : 'hide'}`} src={`./images/ex303/small_map.png`}></img>
@@ -336,7 +366,7 @@ const G303 = props => {
       <img className={`legend ${fill && yearIdx === 3 ? '' : 'hide'}`} alt='' src='./images/ex303/HKI_legend_white.png'></img> */}
       {/* <img className={`correction ${gameMode === "r" ? '' : 'hide'}`} alt='' src='./images/ex303/hkislandstnamegame_quarrybay.png'></img> */}
 
-      <div id="currentYear" className={`${gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''} eb`}>{years[yearIdx]}</div>
+      <div id="currentYear" className={`${gameMode !== 'coast' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''} eb`}>{years[yearIdx]}</div>
       <div id='yearSelector' className={`${yearIdx < 0 ? 'disabled' : ''} ${showYear ? '' : 'hide'}`}>
         <ul className="eb">
           {['1900', '1945', '1985', '2019'].map((v, i) => {
@@ -350,25 +380,7 @@ const G303 = props => {
         <div id='startBtn' onClick={onClickStart}>{globalData && globalData.confirm}</div>
       </div>
       <div id="yearOfCoastline" className={`${gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}></div>
-      <div id='mapIndicator' className={gameMode === 'street' ? '' : 'hide'}>
-        <span className="streetFont">分區</span>
-        <ul>
-          {[...Array(4)].map((v, i) => {
-            return (
-              // <li key={i} className={i === mapIndicatorIdx ? 'active' : ''} onClick={() => onClickMapIndicator(i)}>
-              <li
-                key={i}
-                className={i === zone ? 'active' : ''}
-                onClick={() => {
-                  setZone(i);
-                }}
-              >
-                <span>{i + 1}</span>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      
       {/* <div id='streetInfo'> */}
         {/* {streetData && <h1>{streetData.name}</h1>} */}
         {/* <div id='markerOuterWrap'>
@@ -390,6 +402,7 @@ const G303 = props => {
         yearIdx={yearIdx} 
         gameMode={gameMode}
         setGameMode={setGameMode} 
+        setStreetIdx={setStreetIdx}
         zone={zone}
         setZone={setZone}
         idx={videoNumber}

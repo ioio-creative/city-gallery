@@ -199,6 +199,131 @@
                 ["重要性","用作興建機場鐵路香港站、中環灣仔繞道及重置碼頭。"]
               ]
             }
+          },
+          {
+            "marker":{
+              "name":"中環填海計劃<br/>第二期",
+              "pos":{
+                "x":1295,
+                "y":439
+              }
+            },
+            "cardConetnt":{
+              "title":"中環填海計劃第二期",
+              "completedYear":"1988 完成",
+              "image":{"src":"./images/ex303/image.png"},
+              "info":[
+                ["範圍","民光街／民耀街／民祥街之間"],
+                ["重要性","用作興建機場鐵路香港站、中環灣仔繞道及重置碼頭。"]
+              ]
+            }
+          },
+          {
+            "marker":{
+              "name":"中環填海計劃<br/>第三期",
+              "pos":{
+                "x":1382,
+                "y":408
+              }
+            },
+            "cardConetnt":{
+              "title":"中環填海計劃第三期",
+              "completedYear":"1988 完成",
+              "image":{"src":"./images/ex303/image.png"},
+              "info":[
+                ["範圍","民光街／民耀街／民祥街之間"],
+                ["重要性","用作興建機場鐵路香港站、中環灣仔繞道及重置碼頭。"]
+              ]
+            }
+          }
+        ],
+        "street":[
+          {
+            "zone":1,
+            "marker":{
+              "name":"干德道",
+              "namePos":"top",
+              "pos":{
+                "x":1846,
+                "y":972
+              }
+            },
+            "road":{
+              "pos":{
+                "x":1711,
+                "y":998
+              },
+              "image":{
+                "src":"./images/ex303/street/conduitRoad.svg"
+              },
+              "inactiveImage":{
+                "src":"./images/ex303/street/conduitRoad_w.svg"
+              },
+              "video":{
+                "src":"./images/ex303/video/video1.mp4",
+                "poster":{
+                  "src":"./images/ex303/video/video1_poster.jpg"
+                }
+              }
+            }
+          },
+          {
+            "zone":1,
+            "marker":{
+              "name":"樓梯街",
+              "namePos":"left",
+              "pos":{
+                "x":2121,
+                "y":847
+              }
+            },
+            "road":{
+              "pos":{
+                "x":2101,
+                "y":921
+              },
+              "image":{
+                "src":"./images/ex303/street/ladderStreet.svg"
+              },
+              "inactiveImage":{
+                "src":"./images/ex303/street/ladderStreet_w.svg"
+              },
+              "video":{
+                "src":"./images/ex303/video/13 - X3 摩星嶺炮台-cut4_HD.mp4",
+                "poster":{
+                  "src":"./images/ex303/video/video1.jpg"
+                }
+              }
+            }
+          },
+          {
+            "zone":1,
+            "marker":{
+              "name":"荷李活道",
+              "namePos":"top",
+              "pos":{
+                "x":2207,
+                "y":874
+              }
+            },
+            "road":{
+              "pos":{
+                "x":2073,
+                "y":859
+              },
+              "image":{
+                "src":"./images/ex303/street/hollywoodRoad.svg"
+              },
+              "inactiveImage":{
+                "src":"./images/ex303/street/hollywoodRoad_w.svg"
+              },
+              "video":{
+                "src":"./images/ex303/video/video1.mp4",
+                "poster":{
+                  "src":"./images/ex303/video/video1.jpg"
+                }
+              }
+            }
           }
         ]
       },
@@ -285,6 +410,12 @@
               },
               "inactiveImage":{
                 "src":"./images/ex303/street/conduitRoad_w.svg"
+              },
+              "video":{
+                "src":"./images/ex303/video/video1.mp4",
+                "poster":{
+                  "src":"./images/ex303/video/video1_poster.jpg"
+                }
               }
             }
           },
@@ -308,6 +439,41 @@
               },
               "inactiveImage":{
                 "src":"./images/ex303/street/ladderStreet_w.svg"
+              },
+              "video":{
+                "src":"./images/ex303/video/13 - X3 摩星嶺炮台-cut4_HD.mp4",
+                "poster":{
+                  "src":"./images/ex303/video/video1.jpg"
+                }
+              }
+            }
+          },
+          {
+            "zone":1,
+            "marker":{
+              "name":"荷李活道",
+              "namePos":"top",
+              "pos":{
+                "x":2207,
+                "y":874
+              }
+            },
+            "road":{
+              "pos":{
+                "x":2073,
+                "y":859
+              },
+              "image":{
+                "src":"./images/ex303/street/hollywoodRoad.svg"
+              },
+              "inactiveImage":{
+                "src":"./images/ex303/street/hollywoodRoad_w.svg"
+              },
+              "video":{
+                "src":"./images/ex303/video/video1.mp4",
+                "poster":{
+                  "src":"./images/ex303/video/video1.jpg"
+                }
               }
             }
           }

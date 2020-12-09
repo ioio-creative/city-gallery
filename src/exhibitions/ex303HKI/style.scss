@@ -237,6 +237,7 @@ span{
             .item{
                 width:100%;
                 position: relative;
+                z-index: 1;
                 opacity: 1;
                 visibility: visible;
                 transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
@@ -409,6 +410,9 @@ span{
         position: absolute;
         top:0;
         z-index: 1;
+        opacity:1;
+        visibility: visible;
+        transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
         &:after{
             content:'';
             width:100%;
@@ -418,13 +422,20 @@ span{
             opacity: 0;
             visibility: hidden;
             position: relative;
-            z-index: 2;
-            transition: all .3s cubic-bezier(0.87, 0, 0.13, 1);
+            z-index: 4;
+            transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        &.hide{
+            opacity: 0;
+            visibility: hidden;
         }
         &.showVideo{
             &:after{
                 opacity: 1;
                 visibility: visible;
+            }
+            .zoneBtn,#mapIndicator{
+                z-index: 3;
             }
         }
         &>div{
@@ -434,6 +445,103 @@ span{
             &>div{
                 transform-origin: left top;
                 transform: translate3d(0, 0, 0) scale(0.531915);
+            }
+        }
+        .zoneBtn{
+            width:vw-calc(67, $width);
+            height:vw-calc(67, $width);
+            background:url('./images/prevnext.svg');
+            position: absolute;
+            top:50%;
+            z-index: 6;
+            opacity: 1;
+            visibility: visible;
+            transform-origin: center;
+            transform: translate3d(0, -50%,0);
+            transition: all .3s cubic-bezier(0.87, 0, 0.13, 1);
+            &.hide{
+                opacity: 0;
+                visibility: hidden;
+            }
+            &#prevZoneBtn{
+                right:calc(50% + #{vw-calc(53, $width)});
+                transform: translate3d(0,-50%,0) rotate(180deg);
+            }
+            &#nextZoneBtn{
+                left:calc(50% + #{vw-calc(53, $width)});
+            }
+        }
+        #mapIndicator{
+            position: fixed;
+            top:vw-calc(57, $width);
+            left:vw-calc(74, $width);
+            z-index: 6;
+            opacity: 1;
+            visibility: visible;
+            transition: all .3s cubic-bezier(0.87, 0, 0.13, 1);
+            &.hide{
+                opacity: 0;
+                visibility: hidden;
+            }
+            &>span{
+                margin-bottom:vw-calc(20, $width);
+                font-size:vw-calc(30, $width);
+                font-weight: 900;
+                color:#fff;
+                text-shadow: vw-calc(0 3 6) #000;
+            }
+            ul{
+                width:vw-calc(403, $width);
+                height:vw-calc(180, $width);
+                display: flex;
+                background:url('./images/minimap.svg') center / 100% no-repeat;
+                li{
+                    width:25%;
+                    height:100%;
+                    border-left:vw-calc(3, $width) dashed $lightblue;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
+                    position: relative;
+                    padding-bottom:vw-calc(20, $width);
+                    &:after{
+                        content:'';
+                        width:100%;
+                        height:100%;
+                        background:$black;
+                        position: absolute;
+                        top:0;
+                        left:0;
+                        opacity: .5;
+                        visibility: visible;
+                        transition: all .3s cubic-bezier(0.16, 1, 0.3, 1);
+                    }
+                    &:first-child{
+                        border:0;
+                    }
+                    &.active{
+                        border:vw-calc(3, $width) solid $drakgreenblue;
+                        &:after{
+                            opacity: 0;
+                            visibility: hidden;
+                        }
+                        span{
+                            background:#fff;
+                            color:#074A45;
+                        }
+                    }
+                    span{
+                        width:vw-calc(32, $width);
+                        height:vw-calc(32, $width);
+                        border-radius: 50%;
+                        background:#074A45;
+                        color:#97FFE2;
+                        font-size:vw-calc(20, $width);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
             }
         }
         #locationsWrap{
@@ -538,6 +646,7 @@ span{
                     width:0;
                     height:0;
                     position: absolute;
+                    z-index: 2;
                     #marker{
                         width:vw-calc(61, $width);
                         height:vw-calc(69, $width);
@@ -574,315 +683,311 @@ span{
                     width:0;
                     height:0;
                     position: absolute;
+                    z-index: 1;
                     pointer-events: none;
                 }
             }
         }
-    }
-    .dot{
-        position: absolute;
-        &.d1{
-            top: 364px;
-            left: 1259px;
-        }
-        &.d2{
-            top: 544px;
-            left: 913px;
-        }
-        &.active{
-            path{
-                fill: red;
-            }
-        }
-    }
-    .road{
-        position: absolute;
-        width: auto;
-        height: auto;
-        &.r1{
-            top: 392px;
-            left: 1185px;
-        }
-        &.r2{
-            top: 596px;
-            left: 887px;
-        }
-    }
-    .disclaimer{
-        position: absolute;
-        width: auto;
-        height: auto;
-        left: 3353px;
-        top: 78px;
-        z-index: 1;
-    }
-    .toLeft{
-        position: absolute;
-        width: 67px;
-        height: 67px;
-        top: 507px;
-        left: 1785px;
-    }
-    .toRight{
-        position: absolute;
-        width: 67px;
-        height: 67px;
-        top: 507px;
-        left: 1976px;
-    }
-    video{
-        top: 261px;
-        left: 2335px;
-        position: absolute;
-        width: 925px;
-        height: 558px;
-    }
-    .cross{
-        position: absolute;
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        border: solid 1px black;
-        color: #074A45;
-        background-color: white;
-        font-size: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        top: 264px;
-        left: 3239px;
-        z-index: 3;
-    }
-    .correction{
-        position: absolute;
-        width: auto;
-        height: auto;
-        opacity: 0.2;
-        z-index: 2;
-    }
-    .videoWrap{
-        position: absolute;
-        width: 3840px;
-        height: 1080px;
-        background-color: #fff;
-        opacity: 0;
-        transition: opacity 0.5s linear;
-        display: flex;
-        align-items: center;
-        &.active{
-            opacity: 0.6;
-        }
-        &::after{
-            content: '';
+        #videoWrap{
+            width:vw-calc(912, $width);
+            height:auto;
             position: absolute;
-            left: 1917.5px;
-            height: 1080px;
-            border-right: solid 5px black;
-        }
-    }
-    .yearMark{
-        position: absolute;
-        transition: opacity linear 0.3s, visibility linear 0.3s;
-        width: 377px;
-        height: 244px;
-        left: 80px;
-        top: 800px;
-    }
-    .legend{
-        position: absolute;
-        transition: opacity linear 0.3s, visibility linear 0.3s;
-        width: 212px;
-        height: 313px;
-        left: 3531px;
-        top: 707px;
-    }
-    .coastLine{
-        position: absolute;
-        transition: opacity linear 0.3s, visibility linear 0.3s;
-        width: auto;
-        height: auto;
-    }
-    .nav_2019_sea{
-        position: absolute;
-        transition: opacity linear 0.3s, visibility linear 0.3s;
-        width: auto;
-        height: auto;
-        top: 898px;
-        left: 2082px;
-        z-index: 11;
-    }
-    .smallMap{
-        position: absolute;
-        z-index: 1;
-        width: auto;
-        height: auto;
-        top: 141px;
-        left: 473px;
-        transition: all 0.3s cubic-bezier(0.87, 0, 0.13, 1);
-    }
-    .hmWrap{
-        position: absolute;
-        transition: opacity linear 0.3s, visibility linear 0.3s;
-        img{
-            vertical-align: top;
-        }
-        &::after{
-        content: '';
-        background-color: #134e71b0;
-        display: block;
-        position: absolute;
-        width: 3840px;
-        height: 1080px;
-        top: 0;
-        }
-    }
-    .wrap{
-        width: 3840px;
-        height: 1080px;
-        overflow: hidden;
-        position: absolute;
-        transition: opacity linear 0.3s, visibility linear 0.3s;
-        .island{
-            position: absolute;
-            top: 0px;
-            z-index: 10;
-            transition: opacity linear 0.3s, visibility linear 0.3s;
-        }
-        .full{
-            position: absolute;
-            top: 0px;
-            opacity: 0.5;
-            transition: opacity linear 0.3s, visibility linear 0.3s;
-        }
-        .filled{
-            position: absolute;
-            top: 0px;
-            opacity: 0;
-            transition: opacity linear 0.3s, visibility linear 0.3s;
-        }
-        .zoomMap{
-            transform: scale(1) translate3d(0px, 0px, 0px);
-            transition: all 1s linear;
-            &.zoom1{
-                transform: scale(1.89) translate3d(583px, 53px, 0px);
+            top:50vh;
+            left:calc(50% + #{vw-calc(412, $width)});
+            z-index: 5;
+            transform: translate3d(0,-50%,0);
+            animation: fadeIn .6s cubic-bezier(0.87, 0, 0.13, 1);
+            &:before{
+                content:'';
+                display: block;
+                padding-top:56.25%;
             }
-            &.zoom2{
-                transform: scale(1.89) translate3d(99px, -20px, 0px);
-            }
-            &.zoom3{
-                transform: scale(1.19) translate3d(-262px, -86px, 0px);
-            }
-            &.zoom4{
-                transform: scale(1.19) translate3d(-1188.3px, 86px, 0px);
-            }
-        }
-        &.active{
-            opacity: 1;
-            visibility: visible;
-            .full.true{
-                opacity: 1;
-            }
-            // .filled1900.true{
-            //     opacity: 1;
-            // }
-        }
-    }
-    &.started{
-        #yearSelector{
-            opacity: 0;
-            visibility: hidden;
-        }
-    }
-    &.zoomed{
-        #yearSelector{
-            opacity: 0;
-            visibility: hidden;
-        }
-        #mapIndicator{
-            opacity: 1;
-            visibility: visible;
-        }
-        #streetInfo{
-            opacity: 1;
-            visibility: visible;
-            &:after{
-                visibility: visible;
-            }
-        }
-    }
-    #mapIndicator{
-        position: fixed;
-        top:vw-calc(57, $width);
-        left:vw-calc(74, $width);
-        z-index: 10;
-        opacity: 1;
-        visibility: visible;
-        transition: all .3s cubic-bezier(0.87, 0, 0.13, 1);
-        &.hide{
-            opacity: 0;
-            visibility: hidden;
-        }
-        &>span{
-            margin-bottom:vw-calc(20, $width);
-            font-size:vw-calc(30, $width);
-            font-weight: 900;
-            color:#fff;
-            text-shadow: vw-calc(0 3 6) #000;
-        }
-        ul{
-            width:vw-calc(403, $width);
-            height:vw-calc(180, $width);
-            display: flex;
-            background:url('./images/minimap.svg') center / 100% no-repeat;
-            li{
-                width:25%;
+            &>div, video{
+                width:100%;
                 height:100%;
-                border-left:vw-calc(3, $width) dashed $lightblue;
-                display: flex;
-                justify-content: center;
-                align-items: flex-end;
-                position: relative;
-                padding-bottom:vw-calc(20, $width);
-                &:after{
-                    content:'';
-                    width:100%;
-                    height:100%;
-                    background:$black;
-                    position: absolute;
-                    top:0;
-                    left:0;
-                    opacity: .5;
-                    visibility: visible;
-                    transition: all .3s cubic-bezier(0.16, 1, 0.3, 1);
-                }
-                &:first-child{
+                position: absolute;
+                top:0;
+                left:0;
+                transform: none;
+                outline: none;
+                .vjs-big-play-button{
+                    width:vw-calc(155, $width);
+                    height:vw-calc(155, $width);
+                    background:url('./images/playBtn.svg') no-repeat;
+                    transform: translate3d(-50%,-50%,0);
                     border:0;
-                }
-                &.active{
-                    border:vw-calc(3, $width) solid $drakgreenblue;
-                    &:after{
-                        opacity: 0;
-                        visibility: hidden;
-                    }
-                    span{
-                        background:#fff;
-                        color:#074A45;
+                    margin:0;
+                    *{
+                        display: none;
                     }
                 }
-                span{
-                    width:vw-calc(32, $width);
-                    height:vw-calc(32, $width);
-                    border-radius: 50%;
+                .vjs-control-bar{
+                    height:vw-calc(6, $width);
+                    opacity: 1 !important;
+                    background:none;
+                }
+                .vjs-progress-control .vjs-progress-holder{
+                    height:100%;
+                    margin:0;
+                }
+                .vjs-play-control, .vjs-picture-in-picture-control, .vjs-remaining-time{
+                    display: none;
+                }
+                .vjs-load-progress{
                     background:#074A45;
-                    color:#97FFE2;
-                    font-size:vw-calc(20, $width);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
                 }
+                .vjs-play-progress{
+                    background:#70CCB8;
+                    &:before{
+                        display: none;
+                    }
+                }
+            }
+            #closeBtn{
+                width:vw-calc(50, $width);
+                height:vw-calc(50, $width);
+                background:url('./images/closeBtn.svg') no-repeat;
+                position: absolute;
+                top:0;
+                right:0;
+                left:auto;
+                z-index: 1;
+                transform: translate3d(50%,-50%,0);
             }
         }
     }
+    // .dot{
+    //     position: absolute;
+    //     &.d1{
+    //         top: 364px;
+    //         left: 1259px;
+    //     }
+    //     &.d2{
+    //         top: 544px;
+    //         left: 913px;
+    //     }
+    //     &.active{
+    //         path{
+    //             fill: red;
+    //         }
+    //     }
+    // }
+    // .road{
+    //     position: absolute;
+    //     width: auto;
+    //     height: auto;
+    //     &.r1{
+    //         top: 392px;
+    //         left: 1185px;
+    //     }
+    //     &.r2{
+    //         top: 596px;
+    //         left: 887px;
+    //     }
+    // }
+    // .disclaimer{
+    //     position: absolute;
+    //     width: auto;
+    //     height: auto;
+    //     left: 3353px;
+    //     top: 78px;
+    //     z-index: 1;
+    // }
+    // .toLeft{
+    //     position: absolute;
+    //     width: 67px;
+    //     height: 67px;
+    //     top: 507px;
+    //     left: 1785px;
+    // }
+    // .toRight{
+    //     position: absolute;
+    //     width: 67px;
+    //     height: 67px;
+    //     top: 507px;
+    //     left: 1976px;
+    // }
+    // video{
+    //     top: 261px;
+    //     left: 2335px;
+    //     position: absolute;
+    //     width: 925px;
+    //     height: 558px;
+    // }
+    // .cross{
+    //     position: absolute;
+    //     width: 36px;
+    //     height: 36px;
+    //     border-radius: 50%;
+    //     border: solid 1px black;
+    //     color: #074A45;
+    //     background-color: white;
+    //     font-size: 20px;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     top: 264px;
+    //     left: 3239px;
+    //     z-index: 3;
+    // }
+    // .correction{
+    //     position: absolute;
+    //     width: auto;
+    //     height: auto;
+    //     opacity: 0.2;
+    //     z-index: 2;
+    // }
+    // .videoWrap{
+    //     position: absolute;
+    //     width: 3840px;
+    //     height: 1080px;
+    //     background-color: #fff;
+    //     opacity: 0;
+    //     transition: opacity 0.5s linear;
+    //     display: flex;
+    //     align-items: center;
+    //     &.active{
+    //         opacity: 0.6;
+    //     }
+    //     &::after{
+    //         content: '';
+    //         position: absolute;
+    //         left: 1917.5px;
+    //         height: 1080px;
+    //         border-right: solid 5px black;
+    //     }
+    // }
+    // .yearMark{
+    //     position: absolute;
+    //     transition: opacity linear 0.3s, visibility linear 0.3s;
+    //     width: 377px;
+    //     height: 244px;
+    //     left: 80px;
+    //     top: 800px;
+    // }
+    // .legend{
+    //     position: absolute;
+    //     transition: opacity linear 0.3s, visibility linear 0.3s;
+    //     width: 212px;
+    //     height: 313px;
+    //     left: 3531px;
+    //     top: 707px;
+    // }
+    // .coastLine{
+    //     position: absolute;
+    //     transition: opacity linear 0.3s, visibility linear 0.3s;
+    //     width: auto;
+    //     height: auto;
+    // }
+    // .nav_2019_sea{
+    //     position: absolute;
+    //     transition: opacity linear 0.3s, visibility linear 0.3s;
+    //     width: auto;
+    //     height: auto;
+    //     top: 898px;
+    //     left: 2082px;
+    //     z-index: 11;
+    // }
+    // .smallMap{
+    //     position: absolute;
+    //     z-index: 1;
+    //     width: auto;
+    //     height: auto;
+    //     top: 141px;
+    //     left: 473px;
+    //     transition: all 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+    // }
+    // .hmWrap{
+    //     position: absolute;
+    //     transition: opacity linear 0.3s, visibility linear 0.3s;
+    //     img{
+    //         vertical-align: top;
+    //     }
+    //     &::after{
+    //     content: '';
+    //     background-color: #134e71b0;
+    //     display: block;
+    //     position: absolute;
+    //     width: 3840px;
+    //     height: 1080px;
+    //     top: 0;
+    //     }
+    // }
+    // .wrap{
+    //     width: 3840px;
+    //     height: 1080px;
+    //     overflow: hidden;
+    //     position: absolute;
+    //     transition: opacity linear 0.3s, visibility linear 0.3s;
+    //     .island{
+    //         position: absolute;
+    //         top: 0px;
+    //         z-index: 10;
+    //         transition: opacity linear 0.3s, visibility linear 0.3s;
+    //     }
+    //     .full{
+    //         position: absolute;
+    //         top: 0px;
+    //         opacity: 0.5;
+    //         transition: opacity linear 0.3s, visibility linear 0.3s;
+    //     }
+    //     .filled{
+    //         position: absolute;
+    //         top: 0px;
+    //         opacity: 0;
+    //         transition: opacity linear 0.3s, visibility linear 0.3s;
+    //     }
+    //     .zoomMap{
+    //         transform: scale(1) translate3d(0px, 0px, 0px);
+    //         transition: all 1s linear;
+    //         &.zoom1{
+    //             transform: scale(1.89) translate3d(583px, 53px, 0px);
+    //         }
+    //         &.zoom2{
+    //             transform: scale(1.89) translate3d(99px, -20px, 0px);
+    //         }
+    //         &.zoom3{
+    //             transform: scale(1.19) translate3d(-262px, -86px, 0px);
+    //         }
+    //         &.zoom4{
+    //             transform: scale(1.19) translate3d(-1188.3px, 86px, 0px);
+    //         }
+    //     }
+    //     &.active{
+    //         opacity: 1;
+    //         visibility: visible;
+    //         .full.true{
+    //             opacity: 1;
+    //         }
+    //         // .filled1900.true{
+    //         //     opacity: 1;
+    //         // }
+    //     }
+    // }
+    // &.started{
+    //     #yearSelector{
+    //         opacity: 0;
+    //         visibility: hidden;
+    //     }
+    // }
+    // &.zoomed{
+    //     #yearSelector{
+    //         opacity: 0;
+    //         visibility: hidden;
+    //     }
+    //     #mapIndicator{
+    //         opacity: 1;
+    //         visibility: visible;
+    //     }
+    //     #streetInfo{
+    //         opacity: 1;
+    //         visibility: visible;
+    //         &:after{
+    //             visibility: visible;
+    //         }
+    //     }
+    // }
+    
     #currentYear{
         position: absolute;
         bottom:vw-calc(37, $width);
@@ -914,7 +1019,7 @@ span{
         background:url('./images/yearOfCoastline_b.svg') center no-repeat;
         opacity: 1;
         visibility: visible;
-        transition: all 1s cubic-bezier(0.87, 0, 0.13, 1) 1s;
+        transition: all 1s cubic-bezier(0.87, 0, 0.13, 1);
         &.w{
             background:url('./images/yearOfCoastline_w.svg') center no-repeat;
         }
@@ -1066,5 +1171,14 @@ span{
         //         }
         //     }
         // }
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
     }
 }

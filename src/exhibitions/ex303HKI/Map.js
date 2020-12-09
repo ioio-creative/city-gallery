@@ -20,7 +20,7 @@ const Map = props => {
   const data = props.appData;
 
   useEffect(() => {
-    const gui = new dat.GUI({ width: 300 });
+    // const gui = new dat.GUI({ width: 300 });
     const mapAssets = data.hki.mapAssets;
     const options = {
       islandProgress: 0,
@@ -78,7 +78,7 @@ const Map = props => {
       wrapElem.current.appendChild(app.view);
 
       initStage();
-      initGUI();
+      // initGUI();
     };
 
     const initStage = () => {
@@ -92,21 +92,21 @@ const Map = props => {
       // app.stage.addChild(coastlinePartsContainer);
     };
 
-    const initGUI = () => {
-      gui.add(options, 'islandProgress', 0, 1, 0.01).name('Island').listen();
-      gui.add(options, 'oceanProgress', 0, 1, 0.01).name('Ocean').listen();
-      gui.add(options.year, 'y1900', 0, 1, 0.01).name('Coastline 1900').listen();
-      gui.add(options.year, 'y1945', 0, 1, 0.01).name('Coastline 1945').listen();
-      gui.add(options.year, 'y1985', 0, 1, 0.01).name('Coastline 1985').listen();
-      gui.add(options.year, 'y2019', 0, 1, 0.01).name('Coastline 2019').listen();
-      gui.add(options.year, 'hideY1900', 0, 1, 0.01).name('Coastline Hide 1900').listen();
-      gui.add(options.year, 'hideY1945', 0, 1, 0.01).name('Coastline Hide 1945').listen();
-      gui.add(options.year, 'hideY1985', 0, 1, 0.01).name('Coastline Hide 1985').listen();
-      gui.add(options.year, 'hideY2019', 0, 1, 0.01).name('Coastline Hide 2019').listen();
-      gui.add(options, 'threshold', 0.001, 1, 0.01).name('threshold').listen();
-      gui.add(options, 'useNoiseTxt').name('Noise Texture');
-      gui.add(options, 'useSandTxt').name('Sand Texture');
-    };
+    // const initGUI = () => {
+      // gui.add(options, 'islandProgress', 0, 1, 0.01).name('Island').listen();
+      // gui.add(options, 'oceanProgress', 0, 1, 0.01).name('Ocean').listen();
+      // gui.add(options.year, 'y1900', 0, 1, 0.01).name('Coastline 1900').listen();
+      // gui.add(options.year, 'y1945', 0, 1, 0.01).name('Coastline 1945').listen();
+      // gui.add(options.year, 'y1985', 0, 1, 0.01).name('Coastline 1985').listen();
+      // gui.add(options.year, 'y2019', 0, 1, 0.01).name('Coastline 2019').listen();
+      // gui.add(options.year, 'hideY1900', 0, 1, 0.01).name('Coastline Hide 1900').listen();
+      // gui.add(options.year, 'hideY1945', 0, 1, 0.01).name('Coastline Hide 1945').listen();
+      // gui.add(options.year, 'hideY1985', 0, 1, 0.01).name('Coastline Hide 1985').listen();
+      // gui.add(options.year, 'hideY2019', 0, 1, 0.01).name('Coastline Hide 2019').listen();
+      // gui.add(options, 'threshold', 0.001, 1, 0.01).name('threshold').listen();
+      // gui.add(options, 'useNoiseTxt').name('Noise Texture');
+      // gui.add(options, 'useSandTxt').name('Sand Texture');
+    // };
 
     const initWhiteBG = () => {
       whiteBG = new PIXI.Graphics();

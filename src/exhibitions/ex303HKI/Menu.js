@@ -45,8 +45,8 @@ const Menu = props => {
           })}
           <span id="space"></span>
           <div id='switch' className={`${props.gameMode} ${props.yearIdx === 3 ? '' : 'hide'}`}>
-            <span onClick={() => {props.setGameMode('coast'); }}> {globalData.coastline} </span>
-            <span onClick={() => {props.setGameMode('street'); props.setZone(0);}}> {globalData.street} </span>
+            <span onClick={() => {props.setGameMode('coast'); props.setStreetIdx(null); }}> {globalData.coastline} </span>
+            <span onClick={() => {props.setGameMode('street'); props.setZone(0); }}> {globalData.street} </span>
           </div>
           <div className={`descriptionBox ${props.yearIdx === 0 || props.yearIdx === 1 || props.yearIdx === 2 ? '' : 'hide'}`}>
             海岸綫 <span></span> 香港島
