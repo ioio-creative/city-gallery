@@ -4,6 +4,7 @@ import './nav.scss';
 
 const Menu = props => {
   const globalData = props.globalData;
+  const streetData = props.streetData;
 
   return (
     // <div id='menu'>
@@ -26,23 +27,23 @@ const Menu = props => {
           <div className={`yearButton ${props.gameMode === 'street' ? 'hide' : ''}`} onClick={() => { props.back(); }}>
             選擇年份
           </div>
-          {['上環區', '中環及灣仔區', '銅鑼灣區', '鰂魚涌區'].map((v, i) => {
-            if(i === props.zone)
-              return (
-                <div key={i} className={`streetName streetFont ${props.gameMode === 'street' && !props.isVideo ? 'active' : 'hide'} ${i === 1 ? 's' : ''}`}>
-                  {v}
-                </div>
-              );
-            else
-              return;
-          })}
-          {['荷李活道', '炮台里'].map((v, i) => {
-            return (
-              <div key={i} className={`streetName streetFont ${props.gameMode === 'street' && i === props.idx && props.isVideo ? 'active' : 'hide'}`}>
-                {v}
-              </div>
-            );
-          })}
+          <div id="streetNameWrap" className={`streetFont ${props.gameMode === 'street' ? '' : 'hide'}`}>
+            {
+              props.streetIdx === null ?
+                ['上環區', '中環及灣仔區', '銅鑼灣區', '鰂魚涌區'].map((v, i) => {
+                  if(i === props.zone)
+                    return (
+                      <div key={i} className={`streetName ${i === 1 ? 's' : ''}`}>
+                        {v}
+                      </div>
+                    );
+                  else
+                    return;
+                })
+              :
+                <div className="streetName">{streetData && streetData[props.streetIdx].marker.name}</div>
+            }
+          </div>
           <span id="space"></span>
           <div id='switch' className={`${props.gameMode} ${props.yearIdx === 3 ? '' : 'hide'}`}>
             <span onClick={() => {props.setGameMode('coast'); props.setStreetIdx(null); }}> {globalData.coastline} </span>

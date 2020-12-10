@@ -37,25 +37,27 @@ $width:3840;
     #wrap{
       width: vw-calc(828, $width);
       height: vw-calc(122, $width);
-      .streetName{
-        width: vw-calc(227, $width);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: vw-calc(50, $width);
-        color: #074A45;
+      #streetNameWrap{
         &.hide{
           display: none;
         }
-        &::after{
-          content: '';
-          position: absolute;
-          border-right: solid 1px $drakgreenblue;
-          height: 60px;
-          left: 326px;
-        }
-        &.s{
-          font-size:vw-calc(32, $width);
+        .streetName{
+          width: vw-calc(227, $width);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: vw-calc(50, $width);
+          color: #074A45;
+          &::after{
+            content: '';
+            position: absolute;
+            border-right: solid 1px $drakgreenblue;
+            height: 60px;
+            left: 326px;
+          }
+          &.s{
+            font-size:vw-calc(32, $width);
+          }
         }
       }
       .yearButton{

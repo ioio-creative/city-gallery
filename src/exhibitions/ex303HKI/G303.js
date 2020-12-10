@@ -394,19 +394,18 @@ const G303 = props => {
 
       <Menu 
         globalData={globalData}
+        streetData={streetData}
         language={language}
         setLanguage={setLanguage}
-        // handleZoom={handleZoom} 
         back={onBack}
         showNav={showNav} 
         yearIdx={yearIdx} 
         gameMode={gameMode}
         setGameMode={setGameMode} 
+        streetIdx={streetIdx}
         setStreetIdx={setStreetIdx}
         zone={zone}
-        setZone={setZone}
-        idx={videoNumber}
-        isVideo={isVideo} />
+        setZone={setZone} />
     </div>
   );
 };
