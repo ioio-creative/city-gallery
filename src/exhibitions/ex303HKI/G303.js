@@ -150,6 +150,8 @@ const G303 = props => {
     // <div id='main' className={`${started ? 'started' : ''}${zoomed ? ' zoomed' : ''}`}>
     <div id='main' className={`${started ? 'started' : ''}`}>
       <Map
+          locationName="hki"
+          doubleScreen={true}
           appData={props.appData}
           gameMode={gameMode}
           setGameMode={setGameMode}

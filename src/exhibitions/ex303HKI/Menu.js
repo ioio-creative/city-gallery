@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './menu.scss';
+// import './menu.scss';
 import './nav.scss';
 
 const Menu = props => {
@@ -7,20 +7,6 @@ const Menu = props => {
   const streetData = props.streetData;
 
   return (
-    // <div id='menu'>
-    //   <div id='lang'>
-    //     <span>語言</span>
-    //     <ul>
-    //       <li>繁</li>
-    //       <li>簡</li>
-    //       <li id='en'>ENG</li>
-    //     </ul>
-    //   </div>
-    // <div id='switch' className={mode}>
-    //   <span onClick={() => switchMode('coast')}>海岸線</span>
-    //   <span onClick={() => switchMode('street')}>街道</span>
-    // </div>
-    // </div>
     <div id='navWrap' className={`${props.showNav ? '' : 'hide'}`}>
       <div id='left'>
         <div id="wrap" className={props.yearIdx != 3 ? 'noBtn' : ''}>

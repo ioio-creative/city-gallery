@@ -159,6 +159,7 @@ span{
                     align-items: center;
                     background:#fff;
                     border-radius: vw-calc(24, $width);
+                    box-shadow: 0 vw-calc(3 6) rgba(0,0,0,.6);
                     color:#074A45;
                     position: absolute;
                     opacity: 1;
@@ -556,6 +557,13 @@ span{
                 font-size: vw-calc(22, $width);
                 position: relative;
                 &>div{
+                    opacity: 1;
+                    visibility: visible;
+                    transition: all .3s cubic-bezier(0.16, 1, 0.3, 1);
+                    &.hide{
+                        opacity: 0;
+                        visibility: hidden;
+                    }
                     &#zone1{
                         .name{
                             &:nth-child(1){
@@ -635,6 +643,13 @@ span{
             left:0;
             z-index: 5;
             .item{
+                opacity: 1;
+                visibility: visible;
+                transition: all .3s cubic-bezier(0.16, 1, 0.3, 1);
+                &.hide{
+                    opacity: 0;
+                    visibility: hidden;
+                }
                 &.inactive{
                     #markerWrap{
                         #marker{

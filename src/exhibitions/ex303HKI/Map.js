@@ -1,19 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import dat from 'dat.gui';
+// import dat from 'dat.gui';
 import * as PIXI from 'pixi.js';
 import gsap from 'gsap';
-
-// import diff from './images/hkIsland_diffuse.svg'
-// import start_diff from './images/hkIsland_start_diffuse.svg'
-// import old_diff from './images/hkIsland_old_diffuse.svg'
-// import mask from './images/hkIsland_mask.svg'
-// import coastline1900_mask from './images/hkIsland_coastline1900_mask.svg'
-// import coastline1945_mask from './images/hkIsland_coastline1945_mask.svg'
-// import coastline1985_mask from './images/hkIsland_coastline1985_mask.svg'
-// import coastline2019_mask from './images/hkIsland_coastline2019_mask.svg'
-// import sand from './images/sand.png'
-// import noise from './images/noise.png'
-// import noise2 from './images/noise2.png'
 
 const Map = props => {
   const wrapElem = useRef(null);
@@ -21,7 +9,7 @@ const Map = props => {
 
   useEffect(() => {
     // const gui = new dat.GUI({ width: 300 });
-    const mapAssets = data.hki.mapAssets;
+    const mapAssets = data[props.locationName].mapAssets;
     const options = {
       islandProgress: 0,
       oceanProgress: 0,
@@ -37,15 +25,15 @@ const Map = props => {
       },
       threshold: 0.001,
       useNoiseTxt: function () {
-        map['hkIsland'].image.shader.uniforms.noiseTexture = new PIXI.Sprite.from('noise').texture.baseTexture;
+        map[props.locationName].image.shader.uniforms.noiseTexture = new PIXI.Sprite.from('noise').texture.baseTexture;
       },
       useSandTxt: function () {
-        map['hkIsland'].image.shader.uniforms.noiseTexture = new PIXI.Sprite.from('sand').texture.baseTexture;
+        map[props.locationName].image.shader.uniforms.noiseTexture = new PIXI.Sprite.from('sand').texture.baseTexture;
       }
     };
 
     let app;
-    const maxWidth = 1920 * 2;
+    const maxWidth = props.doubleScreen ? 1920 * 2 : 1920;
     const map = {};
     const streets = [];
     // const coastlineParts = [];
@@ -150,7 +138,7 @@ const Map = props => {
         this.highlight = [];
         for (let i = 0; i < years.length; i++) {
           const year = years[i];
-          this.highlight[i] = new PIXI.Sprite.from(`hkIsland_coastline${year}_highlight`);
+          this.highlight[i] = new PIXI.Sprite.from(`${props.locationName}_coastline${year}_highlight`);
           this.highlight[i].anchor.set(0.5);
           this.highlight[i].x = startPos.x;
           this.highlight[i].y = startPos.y;
@@ -159,7 +147,7 @@ const Map = props => {
 
         }
 
-        this.dottedline = new PIXI.Sprite.from(`hkIsland_coastline2019_dottedline`);
+        this.dottedline = new PIXI.Sprite.from(`${props.locationName}_coastline2019_dottedline`);
         this.dottedline.anchor.set(0.5);
         this.dottedline.x = startPos.x;
         this.dottedline.y = startPos.y;
@@ -327,11 +315,11 @@ const Map = props => {
             selectedCoastlineIdx: selectedCoastlineIdx,
             threshold: options.threshold,
             islandDiffuse: this.texture, //map with all shader
-            oceanDiffuse: new PIXI.Sprite.from('hkIsland_1900_diffuse').texture.baseTexture,
-            startIslandDiffuse: new PIXI.Sprite.from('hkIsland_start_diffuse').texture.baseTexture,
-            startOceanDiffuse: new PIXI.Sprite.from('hkIsland_start_ocean_diffuse').texture.baseTexture,
+            oceanDiffuse: new PIXI.Sprite.from(`${props.locationName}_1900_diffuse`).texture.baseTexture,
+            startIslandDiffuse: new PIXI.Sprite.from(`${props.locationName}_start_diffuse`).texture.baseTexture,
+            startOceanDiffuse: new PIXI.Sprite.from(`${props.locationName}_start_ocean_diffuse`).texture.baseTexture,
             // oldDiffuse: new PIXI.Sprite.from('hkIsland_old_diffuse').texture.baseTexture,
-            islandMaskTexture: new PIXI.Sprite.from('hkIsland_2019_mask').texture.baseTexture,
+            islandMaskTexture: new PIXI.Sprite.from(`${props.locationName}_2019_mask`).texture.baseTexture,
             //oceanMaskTexture: new PIXI.Sprite.from('hkIsland_ocean2019_mask').texture.baseTexture,
             coastline1900Diffuse: null,//new PIXI.Sprite.from('hkIsland_coastline1900of2019_diffuse').texture.baseTexture,
             coastline1945Diffuse: null,//new PIXI.Sprite.from('hkIsland_coastline1945of2019_diffuse').texture.baseTexture,
@@ -452,13 +440,10 @@ const Map = props => {
       }
       loader.load((loader, resources) => {
         // create map
-        // console.log(resources['hkIsland_diffuse'].texture);
-        // console.log(resources['hkIsland_start_diffuse'].texture);
-        // console.log(resources['hkIsland_mask'].texture);
-        map['hkIsland'] = new Map(resources['hkIsland_2019_diffuse'].texture);
-        map['hkIsland'].create();
-        selectedHighlight = map['hkIsland'].highlight[0];
-        // console.log(map['hkIsland'])
+        map[props.locationName] = new Map(resources[`${props.locationName}_2019_diffuse`].texture);
+        map[props.locationName].create();
+        selectedHighlight = map[props.locationName].highlight[0];
+        // console.log(map[props.locationName])
 
         // for (let s = 0, lth = data.hki.streets.length; s < lth; s++) {
         //   streets[s] = [];
@@ -478,39 +463,39 @@ const Map = props => {
     };
 
     const updateMapImage = () => {
-      map['hkIsland'].dottedline.texture = new PIXI.Sprite.from(`hkIsland_coastline${years[selectedCoastlineIdx]}_dottedline`).texture;
-      map['hkIsland'].image.shader.uniforms.islandDiffuse = new PIXI.Sprite.from(`hkIsland_${years[selectedCoastlineIdx]}_diffuse`).texture.baseTexture;
-      map['hkIsland'].image.shader.uniforms.islandMaskTexture = new PIXI.Sprite.from(`hkIsland_${years[selectedCoastlineIdx]}_mask`).texture.baseTexture;
-      map['hkIsland'].image.shader.uniforms.oceanDiffuse = new PIXI.Sprite.from(`hkIsland_${years[selectedCoastlineIdx]}_diffuse`).texture.baseTexture;
-      // map['hkIsland'].image.shader.uniforms.oceanMaskTexture = new PIXI.Sprite.from(`hkIsland_ocean${years[selectedCoastlineIdx]}_mask`).texture.baseTexture;
+      map[props.locationName].dottedline.texture = new PIXI.Sprite.from(`${props.locationName}_coastline${years[selectedCoastlineIdx]}_dottedline`).texture;
+      map[props.locationName].image.shader.uniforms.islandDiffuse = new PIXI.Sprite.from(`${props.locationName}_${years[selectedCoastlineIdx]}_diffuse`).texture.baseTexture;
+      map[props.locationName].image.shader.uniforms.islandMaskTexture = new PIXI.Sprite.from(`${props.locationName}_${years[selectedCoastlineIdx]}_mask`).texture.baseTexture;
+      map[props.locationName].image.shader.uniforms.oceanDiffuse = new PIXI.Sprite.from(`${props.locationName}_${years[selectedCoastlineIdx]}_diffuse`).texture.baseTexture;
+      // map[props.locationName].image.shader.uniforms.oceanMaskTexture = new PIXI.Sprite.from(`${props.locationName}_ocean${years[selectedCoastlineIdx]}_mask`).texture.baseTexture;
 
       if(selectedCoastlineIdx === 0 || selectedCoastlineIdx === 1 || selectedCoastlineIdx === 2 || selectedCoastlineIdx === 3){
-        // map['hkIsland'].image.shader.uniforms.coastline2019Diffuse = null;
-        // map['hkIsland'].image.shader.uniforms.coastline2019Mask = null;
-        // map['hkIsland'].image.shader.uniforms.coastline1985Diffuse = null;
-        // map['hkIsland'].image.shader.uniforms.coastline1985Mask = null;
-        // map['hkIsland'].image.shader.uniforms.coastline1945Diffuse = null;
-        // map['hkIsland'].image.shader.uniforms.coastline1945Mask = null;
-        map['hkIsland'].image.shader.uniforms.coastline1900Diffuse = new PIXI.Sprite.from(`hkIsland_coastline1900of${years[selectedCoastlineIdx]}_diffuse`).texture.baseTexture;
-        map['hkIsland'].image.shader.uniforms.coastline1900Mask = new PIXI.Sprite.from(`hkIsland_coastline1900of${years[selectedCoastlineIdx]}_mask`).texture.baseTexture;
+        // map[props.locationName].image.shader.uniforms.coastline2019Diffuse = null;
+        // map[props.locationName].image.shader.uniforms.coastline2019Mask = null;
+        // map[props.locationName].image.shader.uniforms.coastline1985Diffuse = null;
+        // map[props.locationName].image.shader.uniforms.coastline1985Mask = null;
+        // map[props.locationName].image.shader.uniforms.coastline1945Diffuse = null;
+        // map[props.locationName].image.shader.uniforms.coastline1945Mask = null;
+        map[props.locationName].image.shader.uniforms.coastline1900Diffuse = new PIXI.Sprite.from(`${props.locationName}_coastline1900of${years[selectedCoastlineIdx]}_diffuse`).texture.baseTexture;
+        map[props.locationName].image.shader.uniforms.coastline1900Mask = new PIXI.Sprite.from(`${props.locationName}_coastline1900of${years[selectedCoastlineIdx]}_mask`).texture.baseTexture;
       }
       if(selectedCoastlineIdx === 1 || selectedCoastlineIdx === 2 || selectedCoastlineIdx === 3){
-        // map['hkIsland'].image.shader.uniforms.coastline2019Diffuse = null;
-        // map['hkIsland'].image.shader.uniforms.coastline2019Mask = null;
-        // map['hkIsland'].image.shader.uniforms.coastline1985Diffuse = null;
-        // map['hkIsland'].image.shader.uniforms.coastline1985Mask = null;
-        map['hkIsland'].image.shader.uniforms.coastline1945Diffuse = new PIXI.Sprite.from(`hkIsland_coastline1945of${years[selectedCoastlineIdx]}_diffuse`).texture.baseTexture;
-        map['hkIsland'].image.shader.uniforms.coastline1945Mask = new PIXI.Sprite.from(`hkIsland_coastline1945of${years[selectedCoastlineIdx]}_mask`).texture.baseTexture;
+        // map[props.locationName].image.shader.uniforms.coastline2019Diffuse = null;
+        // map[props.locationName].image.shader.uniforms.coastline2019Mask = null;
+        // map[props.locationName].image.shader.uniforms.coastline1985Diffuse = null;
+        // map[props.locationName].image.shader.uniforms.coastline1985Mask = null;
+        map[props.locationName].image.shader.uniforms.coastline1945Diffuse = new PIXI.Sprite.from(`${props.locationName}_coastline1945of${years[selectedCoastlineIdx]}_diffuse`).texture.baseTexture;
+        map[props.locationName].image.shader.uniforms.coastline1945Mask = new PIXI.Sprite.from(`${props.locationName}_coastline1945of${years[selectedCoastlineIdx]}_mask`).texture.baseTexture;
       }
       if(selectedCoastlineIdx === 2 || selectedCoastlineIdx === 3){
-        // map['hkIsland'].image.shader.uniforms.coastline2019Diffuse = null;
-        // map['hkIsland'].image.shader.uniforms.coastline2019Mask = null;
-        map['hkIsland'].image.shader.uniforms.coastline1985Diffuse = new PIXI.Sprite.from(`hkIsland_coastline1985of${years[selectedCoastlineIdx]}_diffuse`).texture.baseTexture;
-        map['hkIsland'].image.shader.uniforms.coastline1985Mask = new PIXI.Sprite.from(`hkIsland_coastline1985of${years[selectedCoastlineIdx]}_mask`).texture.baseTexture;
+        // map[props.locationName].image.shader.uniforms.coastline2019Diffuse = null;
+        // map[props.locationName].image.shader.uniforms.coastline2019Mask = null;
+        map[props.locationName].image.shader.uniforms.coastline1985Diffuse = new PIXI.Sprite.from(`${props.locationName}_coastline1985of${years[selectedCoastlineIdx]}_diffuse`).texture.baseTexture;
+        map[props.locationName].image.shader.uniforms.coastline1985Mask = new PIXI.Sprite.from(`${props.locationName}_coastline1985of${years[selectedCoastlineIdx]}_mask`).texture.baseTexture;
       }
       if(selectedCoastlineIdx === 3){
-        map['hkIsland'].image.shader.uniforms.coastline2019Diffuse = new PIXI.Sprite.from(`hkIsland_coastline2019of${years[selectedCoastlineIdx]}_diffuse`).texture.baseTexture;
-        map['hkIsland'].image.shader.uniforms.coastline2019Mask = new PIXI.Sprite.from(`hkIsland_coastline2019of${years[selectedCoastlineIdx]}_mask`).texture.baseTexture;
+        map[props.locationName].image.shader.uniforms.coastline2019Diffuse = new PIXI.Sprite.from(`${props.locationName}_coastline2019of${years[selectedCoastlineIdx]}_diffuse`).texture.baseTexture;
+        map[props.locationName].image.shader.uniforms.coastline2019Mask = new PIXI.Sprite.from(`${props.locationName}_coastline2019of${years[selectedCoastlineIdx]}_mask`).texture.baseTexture;
       }
       
       
@@ -518,29 +503,29 @@ const Map = props => {
 
     const startAnim = () => {
       app.ticker.add(delta => {
-        if (map['hkIsland']) {
-          map['hkIsland'].image.shader.uniforms.islandProgress = options.islandProgress;
-          map['hkIsland'].image.shader.uniforms.oceanProgress = options.oceanProgress;
-          map['hkIsland'].image.shader.uniforms.progress1900 = options.year.y1900;
-          map['hkIsland'].image.shader.uniforms.progress1945 = options.year.y1945;
-          map['hkIsland'].image.shader.uniforms.progress1985 = options.year.y1985;
-          map['hkIsland'].image.shader.uniforms.progress2019 = options.year.y2019;
-          map['hkIsland'].image.shader.uniforms.progressHide1900 = options.year.hideY1900;
-          map['hkIsland'].image.shader.uniforms.progressHide1945 = options.year.hideY1945;
-          map['hkIsland'].image.shader.uniforms.progressHide1985 = options.year.hideY1985;
-          map['hkIsland'].image.shader.uniforms.progressHide2019 = options.year.hideY2019;
-          map['hkIsland'].image.shader.uniforms.threshold = options.threshold;
+        if (map[props.locationName]) {
+          map[props.locationName].image.shader.uniforms.islandProgress = options.islandProgress;
+          map[props.locationName].image.shader.uniforms.oceanProgress = options.oceanProgress;
+          map[props.locationName].image.shader.uniforms.progress1900 = options.year.y1900;
+          map[props.locationName].image.shader.uniforms.progress1945 = options.year.y1945;
+          map[props.locationName].image.shader.uniforms.progress1985 = options.year.y1985;
+          map[props.locationName].image.shader.uniforms.progress2019 = options.year.y2019;
+          map[props.locationName].image.shader.uniforms.progressHide1900 = options.year.hideY1900;
+          map[props.locationName].image.shader.uniforms.progressHide1945 = options.year.hideY1945;
+          map[props.locationName].image.shader.uniforms.progressHide1985 = options.year.hideY1985;
+          map[props.locationName].image.shader.uniforms.progressHide2019 = options.year.hideY2019;
+          map[props.locationName].image.shader.uniforms.threshold = options.threshold;
         }
       });
     };
 
     // const moveMap = (idx = 0) => {
     //   gsap.to([mapContainer, markerContainer], 1, {
-    //     x: zoomedPos.x - idx * (map['hkIsland'].image.width / (4 - 1)),
+    //     x: zoomedPos.x - idx * (map[props.locationName].image.width / (4 - 1)),
     //     y: zoomedPos.y,
     //     ease: 'power3.inOut'
     //   });
-      // gsap.to('#markerOuterWrap', 1, {x:zoomedPos.x - (idx * (map['hkIsland'].image.width/(4-1))), y:zoomedPos.y, ease:'power3.inOut'});
+      // gsap.to('#markerOuterWrap', 1, {x:zoomedPos.x - (idx * (map[props.locationName].image.width/(4-1))), y:zoomedPos.y, ease:'power3.inOut'});
     // };
 
     // const zoomInOut = mode => {
@@ -587,8 +572,8 @@ const Map = props => {
       selectedCoastlineIdx = idx;
       const showYears = [];
       const hideYears = [];
-      const highlights = map['hkIsland'].highlight;
-      selectedHighlight = map['hkIsland'].highlight[idx];
+      const highlights = map[props.locationName].highlight;
+      selectedHighlight = map[props.locationName].highlight[idx];
       if(highlightTl) highlightTl.kill();
 
       for (let i = 0; i < highlights.length; i++) {
@@ -685,7 +670,7 @@ const Map = props => {
     props.handleShowCoastline.current = { showCoastline };
 
     const showDottedline = (bool = true) => {
-      const dottedline = map['hkIsland'].dottedline;
+      const dottedline = map[props.locationName].dottedline;
       gsap.to(dottedline, .6, { alpha: bool ? 1 : 0, overwrite:true, ease: 'power1.inOut' });
     }
 

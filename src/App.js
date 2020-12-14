@@ -35,7 +35,7 @@ const App = props => {
           <Route exact path={routes.ex302A} render={getRenderPropForRoute('ex302A')} />
           <Route exact path={routes.ex303HKI} render={getRenderPropForRoute('ex303HKI')} />
           <Route exact path={routes.ex303KC} render={getRenderPropForRoute('ex303KC')} />
-          <Route exact path={routes.ex303HH} render={getRenderPropForRoute('ex303HH')} />
+          <Route exact path={routes.ex303TST} render={getRenderPropForRoute('ex303TST')} />
           <Route exact path={routes.ex303YT} render={getRenderPropForRoute('ex303YT')} />
           {/* <Route exact path={routes.ex302B} render={getRenderPropForRoute('ex302B')} /> */}
           <Redirect to={routes.ex303HKI} />
