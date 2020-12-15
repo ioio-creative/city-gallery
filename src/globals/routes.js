@@ -6,10 +6,9 @@ const routes = {
   ex302: '/ex302',
   ex302A: '/ex302A',
   ex303HKI: '/ex303HKI',
-  ex303HH: '/ex303HH',
-  ex303KC: '/ex303KC',
-  //ex303WK: '/ex303WK',
-  ex303YT: '/ex303YT',
+  ex303TST: '/ex303TST',
+  ex303KB: '/ex303KB',
+  ex303WK: '/ex303WK',
   ex402: '/ex402'
 };
 export default routes;

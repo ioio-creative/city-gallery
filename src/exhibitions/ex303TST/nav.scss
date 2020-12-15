@@ -106,8 +106,10 @@ $drakgreenblue:#074A45;
         background:#CCCCCC;
       }
       .descriptionBox{
+        min-width: vw-calc(414);
         height: vw-calc(57);
         display: flex;
+        justify-content: center;
         align-items: center;
         font-size: vw-calc(30);
         font-weight: bold;

@@ -103,6 +103,7 @@ span{
     }
     &.w{
         color:#fff;
+        text-shadow: 0 vw-calc(3 6) #074A45;
     }
 }
 
@@ -175,7 +176,7 @@ span{
                     align-items: center;
                     background:#fff;
                     border-radius: vw-calc(24);
-                    box-shadow: 0 vw-calc(3 6) rgba(0,0,0,.6);
+                    box-shadow: 0 vw-calc(3 6) rgba(0,0,0,.4);
                     color:#074A45;
                     position: absolute;
                     opacity: 1;
@@ -569,8 +570,8 @@ span{
                     &#zone1{
                         .name{
                             &:nth-child(1){
-                                top:vw-calc(751);
-                                left:vw-calc(2000);
+                                top:vw-calc(1320);
+                                left:vw-calc(1515);
                             }
                         }
                     }
@@ -578,7 +579,7 @@ span{
                         .name{
                             &:nth-child(1){
                                 top:vw-calc(938);
-                                left:vw-calc(2470);
+                                left:vw-calc(1515);
                             }
                             &:nth-child(2){
                                 top:vw-calc(1110);
@@ -615,6 +616,7 @@ span{
                         align-items: center;
                         background:#fff;
                         border-radius: vw-calc(24);
+                        box-shadow: 0 vw-calc(3 6) rgba(0,0,0,.4);
                         color:#074A45;
                         position: absolute;
                         opacity: 1;

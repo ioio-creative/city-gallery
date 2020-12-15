@@ -34,11 +34,11 @@ const App = props => {
           <Route exact path={routes.ex302} render={getRenderPropForRoute('ex302')} />
           <Route exact path={routes.ex302A} render={getRenderPropForRoute('ex302A')} />
           <Route exact path={routes.ex303HKI} render={getRenderPropForRoute('ex303HKI')} />
-          <Route exact path={routes.ex303KC} render={getRenderPropForRoute('ex303KC')} />
+          <Route exact path={routes.ex303WK} render={getRenderPropForRoute('ex303WK')} />
+          <Route exact path={routes.ex303KB} render={getRenderPropForRoute('ex303KB')} />
           <Route exact path={routes.ex303TST} render={getRenderPropForRoute('ex303TST')} />
-          <Route exact path={routes.ex303YT} render={getRenderPropForRoute('ex303YT')} />
           {/* <Route exact path={routes.ex302B} render={getRenderPropForRoute('ex302B')} /> */}
-          <Redirect to={routes.ex303HKI} />
+          <Redirect to={routes.ex303TST} />
         </Switch>
       </InfoContextProvider>
     </div>

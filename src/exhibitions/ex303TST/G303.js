@@ -228,18 +228,12 @@ const G303 = props => {
         <div id="locationsWrap" className={`${gameMode === 'street' ? `zone${zone+1}` : ''}`}>
           <div id="locations" className="streetFont">
             <div id="zone1" className={zone === 0 ? '' : 'hide'}>
-              <div className="name">上環</div>
+              <div className="name">尖沙咀</div>
             </div>
             <div id="zone2" className={zone === 1 ? '' : 'hide'}>
-              <div className="name">中環</div>
-              <div className="name">灣仔</div>
+              <div className="name">油麻地</div>
             </div>
             <div id="zone3" className={zone === 2 ? '' : 'hide'}>
-              <div className="name">銅鑼灣</div>
-              <div className="name">北角</div>
-            </div>
-            <div id="zone4" className={zone === 3 ? '' : 'hide'}>
-              <div className="name">鰂魚涌</div>
             </div>
           </div>
         </div>

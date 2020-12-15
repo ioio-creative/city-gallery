@@ -159,7 +159,7 @@ span{
                     align-items: center;
                     background:#fff;
                     border-radius: vw-calc(24, $width);
-                    box-shadow: 0 vw-calc(3 6) rgba(0,0,0,.6);
+                    box-shadow: 0 vw-calc(3 6) rgba(0,0,0,.4);
                     color:#074A45;
                     position: absolute;
                     opacity: 1;
@@ -613,6 +613,7 @@ span{
                         align-items: center;
                         background:#fff;
                         border-radius: vw-calc(24, $width);
+                        box-shadow: 0 vw-calc(3 6) rgba(0,0,0,.4);
                         color:#074A45;
                         position: absolute;
                         opacity: 1;

@@ -676,7 +676,7 @@ const Map = props => {
 
     const start = i => {
       // gsap.to(options, 4, { progress: 1, ease: 'power2.inOut' });
-      gsap.to(options, 5, {islandProgress: 1, ease: 'power3.inOut'});
+      gsap.to(options, 3, {islandProgress: 1, ease: 'power2.inOut'});
       gsap.killTweensOf(options, "oceanProgress");
       gsap.to(options, 10, {oceanProgress: 1, ease: 'power3.out'});
       // gsap.to({}, i + 2.5, {
