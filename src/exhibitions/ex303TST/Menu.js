@@ -11,7 +11,7 @@ const Menu = props => {
       <div id='left'>
         {
           props.yearIdx === 3 &&
-          <div id="indicator" className={props.yearIdx != 3 ? 'hideImg' : ''}>
+          <div id="indicator" className={`${props.yearIdx != 3 ? 'hideImg' : ''} ${props.zone > 0 ? 'moveup' : ''}`}>
             <>請按下不同的浮標以<br/>探索不同填海區的資訊</>
           </div>
         }

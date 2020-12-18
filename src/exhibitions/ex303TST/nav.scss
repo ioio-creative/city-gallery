@@ -33,7 +33,6 @@ $drakgreenblue:#074A45;
     position: relative;
     #indicator{
       height:vw-calc(57);
-      margin-left:vw-calc(27);
       padding-left:vw-calc(46);
       background:url('./images/indicator.svg') left center no-repeat;
       color:#fff;
@@ -47,11 +46,16 @@ $drakgreenblue:#074A45;
       bottom:calc(100% + #{vw-calc(40)});
       left:50%;
       transform: translate3d(-50%,0,0);
+      transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
       &.hideImg{
         background:none;
         margin-left:vw-calc(50);
         padding-left:0;
         font-size:vw-calc(20);
+      }
+      &.moveup{
+        transition-duration: .6s;
+        transform: translate3d(-50%,-150%,0);
       }
     }
     #wrap{

@@ -661,50 +661,132 @@
         }
       }
     ],
-    "streets": [
-      [
-        {
-          "id": "_1",
-          "name": "中環",
-          "marker": {
-            "x": 995,
-            "y": 540
+    "contents": {
+      "en": {
+        "street": [
+          {
+            "zone":1,
+            "marker":{
+              "name":"諾士佛臺",
+              "namePos":"top",
+              "pos":{
+                "x":2050,
+                "y":1422
+              }
+            },
+            "road":{
+              "pos":{
+                "x":2071,
+                "y":1471
+              },
+              "image":{
+                "src":"./images/ex303/street/tst/knutsfordTerrace.svg"
+              },
+              "inactiveImage":{
+                "src":"./images/ex303/street/tst/knutsfordTerrace_w.svg"
+              },
+              "video":{
+                "src":"./images/ex303/video/video1.mp4",
+                "poster":{
+                  "src":"./images/ex303/video/video1_poster.jpg"
+                }
+              }
+            }
           },
-          "image": {
-            "src": "",
-            "x": 971,
-            "y": 483
-          },
-          "video": {
-            "src": "",
-            "thumbnail": {
-              "src": ""
+          {
+            "zone":1,
+            "marker":{
+              "name":"天文臺道",
+              "namePos":"top",
+              "pos":{
+                "x":2156,
+                "y":1416
+              }
+            },
+            "road":{
+              "pos":{
+                "x":2128,
+                "y":1456
+              },
+              "image":{
+                "src":"./images/ex303/street/tst/observatoryRoad.svg"
+              },
+              "inactiveImage":{
+                "src":"./images/ex303/street/tst/observatoryRoad_w.svg"
+              },
+              "video":{
+                "src":"./images/ex303/video/video1.mp4",
+                "poster":{
+                  "src":"./images/ex303/video/video1_poster.jpg"
+                }
+              }
             }
           }
-        }
-      ],
-      [
-        {
-          "id": "_2",
-          "name": "金鐘",
-          "marker": {
-            "x": 1251,
-            "y": 603
+        ]
+      },
+      "tc":{
+        "street": [
+          {
+            "zone":1,
+            "marker":{
+              "name":"諾士佛臺",
+              "namePos":"top",
+              "pos":{
+                "x":2050,
+                "y":1422
+              }
+            },
+            "road":{
+              "pos":{
+                "x":2071,
+                "y":1471
+              },
+              "image":{
+                "src":"./images/ex303/street/tst/knutsfordTerrace.svg"
+              },
+              "inactiveImage":{
+                "src":"./images/ex303/street/tst/knutsfordTerrace_w.svg"
+              },
+              "video":{
+                "src":"./images/ex303/video/video1.mp4",
+                "poster":{
+                  "src":"./images/ex303/video/video1_poster.jpg"
+                }
+              }
+            }
           },
-          "image": {
-            "src": "",
-            "x": 1471,
-            "y": 653
-          },
-          "video": {
-            "src": "",
-            "thumbnail": {
-              "src": ""
+          {
+            "zone":1,
+            "marker":{
+              "name":"天文臺道",
+              "namePos":"top",
+              "pos":{
+                "x":2156,
+                "y":1416
+              }
+            },
+            "road":{
+              "pos":{
+                "x":2128,
+                "y":1456
+              },
+              "image":{
+                "src":"./images/ex303/street/tst/observatoryRoad.svg"
+              },
+              "inactiveImage":{
+                "src":"./images/ex303/street/tst/observatoryRoad_w.svg"
+              },
+              "video":{
+                "src":"./images/ex303/video/video1.mp4",
+                "poster":{
+                  "src":"./images/ex303/video/video1_poster.jpg"
+                }
+              }
             }
           }
-        }
-      ]
-    ]
+        ]
+      }
+    }
   },
   "kb": {
     "mapAssets": [

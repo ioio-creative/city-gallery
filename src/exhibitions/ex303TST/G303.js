@@ -131,20 +131,20 @@ const G303 = props => {
 
   const pxToVw = (px, isMarker = true) => {
     if(isMarker)
-      return (px + 61/2 - 10) / 3840 * 100+'vw';
+      return (px + 61/2 - 7) / 1920 * 100+'vw';
     else
-      return (px - 15) / 3840 * 100+'vw';
+      return (px - 12) / 1920 * 100+'vw';
   }
   const pxToVh = (px, isMarker = true) => {
     if(isMarker)
-      return (px + 69 - 5) / 1080 * 100+'vh';
+      return (px + 69 - 8) / 1080 * 100+'vh';
     else
-      return (px - 10) / 1080 * 100+'vh';
+      return (px - 13) / 1080 * 100+'vh';
   }
 
   const globalData = props.appData.hki.contents[language].global;
-  const coastlineData = props.appData.hki.contents[language].coastline;
-  const streetData = props.appData.hki.contents[language].street;
+  const coastlineData = props.appData.tst.contents[language].coastline;
+  const streetData = props.appData.tst.contents[language].street;
 
   return (
     // <div id='main' className={`${started ? 'started' : ''}${zoomed ? ' zoomed' : ''}`}>
@@ -211,7 +211,7 @@ const G303 = props => {
 
       <div id="street" className={`${gameMode === 'street' ? '' : 'hide'} ${streetIdx !== null ? 'showVideo' : ''}`}>
         <div id="prevZoneBtn" className={`zoneBtn ${zone > 0 ? '' : 'hide'}`} onClick={()=> {if(zone > 0) setZone(zone-1)}}></div>
-        <div id="nextZoneBtn" className={`zoneBtn ${zone < 3 ? '' : 'hide'}`} onClick={()=> {if(zone < 3) setZone(zone+1)}}></div>
+        <div id="nextZoneBtn" className={`zoneBtn ${zone < 2 ? '' : 'hide'}`} onClick={()=> {if(zone < 3) setZone(zone+1)}}></div>
         <div id="mapIndicator">
           <span className="streetFont">分區</span>
           <ul>
@@ -234,6 +234,7 @@ const G303 = props => {
               <div className="name">油麻地</div>
             </div>
             <div id="zone3" className={zone === 2 ? '' : 'hide'}>
+              <div className="name">旺角</div>
             </div>
           </div>
         </div>
@@ -285,7 +286,7 @@ const G303 = props => {
         </ul>
         <div id='startBtn' onClick={onClickStart}>{globalData && globalData.confirm}</div>
       </div>
-      <div id="yearOfCoastline" className={`${gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}></div>
+      <div id="yearOfCoastline" className={`${gameMode === 'home' || streetIdx !== null ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}></div>
       
       <div id="ref" className={`${gameMode === 'home' ? 'hide' : ''} ${yearIdx === 3 ? 'w' : ''}`}>本圖的海岸線只供參考。</div>
 

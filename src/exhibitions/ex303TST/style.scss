@@ -76,13 +76,13 @@ span{
 }
 
 .zone1{
-    transform: translate3d(-53%,-70%,0) scale(1.88);
+    transform: translate3d(-75.2%, -92.1%, 0) scale(2.255);
 }
 .zone2{
-    transform: translate3d(-48.5%,-10%,0) scale(1.885);
+    transform: translate3d(-66.3%, -33.5%, 0) scale(2.255);
 }
 .zone3{
-    transform: translate3d(-52.8%,0%,0) scale(1.885);
+    transform: translate3d(-69%, -7%, 0) scale(2.255);
 }
 
 #ref{
@@ -188,20 +188,20 @@ span{
                         }
                     }
                     &:nth-child(1){
-                        top:vw-calc(272);
-                        left:vw-calc(869);
+                        top:vw-calc(172);
+                        left:vw-calc(849);
                     }
                     &:nth-child(2){
-                        top:vw-calc(482);
-                        left:vw-calc(812);
+                        top:vw-calc(432);
+                        left:vw-calc(782);
                     }
                     &:nth-child(3){
-                        top:vw-calc(548);
-                        left:vw-calc(1106);
+                        top:vw-calc(518);
+                        left:vw-calc(1146);
                     }
                     &:nth-child(4){
                         top:vw-calc(655);
-                        left:vw-calc(836);
+                        left:vw-calc(810);
                     }
                 }
             }
@@ -446,7 +446,7 @@ span{
             transition: transform .8s cubic-bezier(0.65, 0, 0.35, 1);
             &>div{
                 transform-origin: left top;
-                transform: translate3d(0, 0, 0) scale(0.531915);
+                transform: translate3d(0, 0, 0) scale(0.44346);
             }
         }
         .zoneBtn{
@@ -474,8 +474,9 @@ span{
             }
         }
         #mapIndicator{
+            height:auto;
             position: fixed;
-            top:vw-calc(57);
+            top:vw-calc(50);
             left:vw-calc(74);
             z-index: 6;
             opacity: 1;
@@ -570,40 +571,24 @@ span{
                     &#zone1{
                         .name{
                             &:nth-child(1){
-                                top:vw-calc(1320);
-                                left:vw-calc(1515);
+                                top:vw-calc(1562);
+                                left:vw-calc(1933);
                             }
                         }
                     }
                     &#zone2{
                         .name{
                             &:nth-child(1){
-                                top:vw-calc(938);
-                                left:vw-calc(1515);
-                            }
-                            &:nth-child(2){
-                                top:vw-calc(1110);
-                                left:vw-calc(3054);
+                                top:vw-calc(956);
+                                left:vw-calc(2048);
                             }
                         }
                     }
                     &#zone3{
                         .name{
                             &:nth-child(1){
-                                top:vw-calc(1221);
-                                left:vw-calc(3615);
-                            }
-                            &:nth-child(2){
-                                top:vw-calc(677);
-                                left:vw-calc(4102);
-                            }
-                        }
-                    }
-                    &#zone4{
-                        .name{
-                            &:nth-child(1){
-                                top:vw-calc(1031);
-                                left:vw-calc(4915);
+                                top:vw-calc(577);
+                                left:vw-calc(2012);
                             }
                         }
                     }
@@ -711,8 +696,8 @@ span{
             width:vw-calc(912);
             height:auto;
             position: absolute;
-            top:50vh;
-            left:calc(50% + #{vw-calc(412)});
+            top:45vh;
+            right:vw-calc(68);
             z-index: 5;
             transform: translate3d(0,-50%,0);
             animation: fadeIn .6s cubic-bezier(0.87, 0, 0.13, 1);
