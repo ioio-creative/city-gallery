@@ -22,10 +22,10 @@ const Menu = props => {
           <div id="streetNameWrap" className={`streetFont ${props.gameMode === 'street' ? '' : 'hide'}`}>
             {
               props.streetIdx === null ?
-                ['上環區', '中環及灣仔區', '銅鑼灣區', '鰂魚涌區'].map((v, i) => {
+                ['尖沙咀區', '油麻地區', '旺角及大角咀區'].map((v, i) => {
                   if(i === props.zone)
                     return (
-                      <div key={i} className={`streetName ${i === 1 ? 's' : ''}`}>
+                      <div key={i} className={`streetName ${i === 2 ? 's' : ''}`}>
                         {v}
                       </div>
                     );

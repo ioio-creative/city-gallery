@@ -430,6 +430,8 @@ span{
         &.hide{
             opacity: 0;
             visibility: hidden;
+            pointer-events: none;
+            touch-action: none;
         }
         &.showVideo{
             &:after{
@@ -671,12 +673,12 @@ span{
                                 transform: translate3d(-50%,0,0);
                             }
                             &.left{
-                                right:110%;
+                                right:100%;
                                 top:45%;
                                 transform: translate3d(0,-50%,0);
                             }
                             &.right{
-                                left:110%;
+                                left:100%;
                                 top:45%;
                                 transform: translate3d(0,-50%,0);
                             }
