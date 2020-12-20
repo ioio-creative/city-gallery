@@ -550,14 +550,17 @@ body {
           &.zh {
             .icon1 {
               background-size: 100%;
+              display: flex;
             }
             .icon2 {
               background-size: 100%;
               margin-left: vw-calc(50);
+              display: flex;
             }
             .icon3 {
               background-size: 100%;
               margin-left: vw-calc(50);
+              display: flex;
             }
           }
           &.en {
