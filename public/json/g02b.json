@@ -20,29 +20,33 @@
       "cities": [
         {
           "id": "hamburg",
-          "name": "Harbour Regeneration",
+          "name": "Port City Regeneration",
           "location": "Hamburg",
           "backgroundColor": "#FFFDF1",
           "icon": ["./images/exG02b/Icon/EN/hamburg_icon1.svg", "", ""],
           "image": {
+            "credit": "",
             "src": "./images/exG02b/Hamburg/_hamburg.svg"
           },
           "description": "Do you know how many bridges are there in Hamburg, the second largest city in Germany? Some say that Hamburg has around 2,500 bridges in total, the greatest number in the world. In fact, since the 14th century, Hamburg has been a key port in Europe with bridges in all sizes straddling over canals, accommodating railways and linking up godowns. The port district has developed into a city within city, overlooking the town centre across the river.",
           "detailBlocks": [
             {
               "image": {
+                "credit": "Photo by Andreas Vallbracht prachtvoll.de",
                 "src": "./images/exG02b/Hamburg/photo1.jpg",
                 "caption": "Following the advent of the European Union, free-trade era, the edge of free ports no longer prevails. As the shipping and freight industry continues to shrink, this port city has gradually been left idle and forgotten. To transform Hamburg, the urban regeneration project known as \"HafenCity\" spanning for 25 year commenced in 1997."
               }
             },
             {
               "image": {
+                "credit": "© www.mediaserver.hamburg.de/ Jörg Modrow",
                 "src": "./images/exG02b/Hamburg/photo2.jpg",
                 "caption": "The old industrial area has been transformed into modern living spaces. Apart from residential, commercial buildings, there are also cultural and historical architecture, as well as various public spaces, such as a 26-hectare park, plazas, pedestrian corridors, etc., giving a rebirth of the old city."
               }
             },
             {
               "image": {
+                "credit": "Photo: ELBE & FLUT, Source: HafenCity Hamburg GmbH",
                 "src": "./images/exG02b/Hamburg/photo3.jpg",
                 "caption": "It is estimated that the whole development area will provide homes for 15,000 people and create 45,000 jobs. The Elbphilharmonie completed in 2017 was revitalised by architects from old godowns, complemented by modern design into the latest landmark in Hamburg."
               }
@@ -56,30 +60,35 @@
           "backgroundColor": "##E6F8F2",
           "icon": ["./images/exG02b/Icon/EN/hongkong_icon1.svg", "./images/exG02b/Icon/EN/hongkong_icon2.svg", "./images/exG02b/Icon/EN/hongkong_icon3.svg"],
           "image": {
+            "credit": "",
             "src": "./images/exG02b/HongKong/hongkong.png"
           },
           "description": "Hong Kong is an international financial centre, best known for its dense skyscrapers. Yet, amidst this concrete jungle it is the home of about  245 species of butterflies, 550 species of birds, and over 1 000 species of fish and 3 000 species of plants! An extremely rich biodiversity is at its doorstep. ",
           "detailBlocks": [
             {
               "image": {
+                "credit": "Photo by AFCD",
                 "src": "./images/exG02b/HongKong/photo1.jpg",
                 "caption": "In view of the magnitude of urbanisation and population density, the  biodiversity here is so bountiful. Hong Kong has subtropical climate, a hilly and rugged landscape, beautiful coastline, and embracing blue-green environment, all contributing to provide a good habitat for various fauna and flora. "
               }
             },
             {
               "image": {
+                "credit": "Photo by AFCD",
                 "src": "./images/exG02b/HongKong/photo2.jpg",
                 "caption": "Apart from the above species, Hong Kong also has about 180 species of freshwater fish, 128 species of dragonflies, 90 species of reptiles, 84 species of stony corals, 26 species of gorgonians, 8 species of black corals, etc. Birds found in Hong Kong account for more than one-third of the species in China, and the number of species of gorgonians, are greater than that in the Caribbean Sea."
               }
             },
             {
               "image": {
+                "credit": "Photo by AFCD",
                 "src": "./images/exG02b/HongKong/photo3.jpg",
                 "caption": "To conserve  nature and maintain biodiversity, the Government has designated land and marine waters with important ecological value as protected areas, including 24 country parks and 22 special areas, which account for nearly 40% of the total land area in ​​Hong Kong. Hong Kong also has six marine parks and one marine reserve, occupying a total water area of  4,050 hectares."
               }
             },
             {
               "image": {
+                "credit": "",
                 "src": "",
                 "caption": "*Biodiversity is the variability among living organisms. This variability is not only important for organisms to adapt to changes in their physical environment and perform different roles and functions in their living milieu; humans also derive a wide range of benefits from biodiversity."
               }
@@ -93,24 +102,28 @@
           "backgroundColor": "#FFF9F4",
           "icon": ["./images/exG02b/Icon/EN/seoul_icon1.svg", "./images/exG02b/Icon/EN/seoul_icon2.svg", "./images/exG02b/Icon/EN/seoul_icon3.svg"],
           "image": {
+            "credit": "",
             "src": "./images/exG02b/Seoul/seoul.png"
           },
           "description": "In the 1970s, Cheonggyecheon was once an infamous nullah decked over by an elevated highway. However, upon a comprehensive revamp, it is now one of the most famous tourist hotspots for photo taking in Seoul.",
           "detailBlocks": [
             {
               "image": {
+                "credit": "©Photographer (John Doe)-Korea Tourism Organization",
                 "src": "./images/exG02b/Seoul/photo1.jpg",
                 "caption": "The Cheonggyecheon refurbishment project started in 2003. Its works included demolition of an elevated highway of about 6km, induction of water sources, greening of the stream, sewage treatment, and heritage preservation. The whole refurbishment project cost more than US$300 million. The restored Cheonggyecheon has been transformed from a concealed channel into an open wide river channel, straddling Seoul from east to west. Apart from preventing flooding, it is also a ventilation corridor to effectively relieve the hot island effect and improve air quality. "
               }
             },
             {
               "image": {
+                "credit": "©Photographer (John Doe)-Korea Tourism Organization",
                 "src": "./images/exG02b/Seoul/photo2.jpg",
                 "caption": "An additional 16 hectares of green public space has been created along the river. The levelled embankment is flanked by trees canopies, and together with small rock platforms on riverside and atop the river, turning Cheonggyecheon into a water-friendly leisure spot for both visitors and locals."
               }
             },
             {
               "image": {
+                "credit": "©Photographer (John Doe)-Korea Tourism Organization",
                 "src": "./images/exG02b/Seoul/photo3.jpg",
                 "caption": "ChonGae Canal Source Point Park is the point where the treated sewage re-enters into the river. The 4m high dual sections of the waterfall straddle the wide river channel, and below the waterfall is the tourist spot, Sunken Stone Garden, which was built with 9 integrated cornerstones transported from different places of the country. ChonGae Canal Source Point Park was one of the awardees of the 2009 American Society of Landscape Architects (ASLA) Honor Award."
               }
@@ -124,24 +137,28 @@
           "backgroundColor": "#F1FAFA",
           "icon": ["./images/exG02b/Icon/EN/helsinki_icon1.svg", "./images/exG02b/Icon/EN/helsinki_icon2.svg", "./images/exG02b/Icon/EN/helsinki_icon3.svg"],
           "image": {
+            "credit": "",
             "src": "./images/exG02b/Helsinki/helsinki.png"
           },
           "description": "Museum buildings are usually erected on land. Yet, Amos Rex in Helsinki, Finland is an exceptional case. The underground Amos Rex merges in harmony with the Lasipalatsi Square (\"Glass Palace\") on the ground. It not only preserves the original plaza use, but also provides new art gallery spaces and studios. ",
           "detailBlocks": [
             {
               "image": {
+                "credit": "© Mika Huiman",
                 "src": "./images/exG02b/Helsinki/photo1.jpg",
                 "caption": "The roof of Amos Rex is designed with curved domes featured with several big round windows to bring in natural light to the plaza floor, and becomes an exceptionally creative playground."
               }
             },
             {
               "image": {
+                "credit": "© Tuomas Uusheimo",
                 "src": "./images/exG02b/Helsinki/photo2.jpg",
                 "caption": "Amos Rex is only one of the projects of Helsinki’s underground master plan. Helsinki has been developing into an underground space since the 1960s. In 2011, the underground master plan was formulated with statutory effect. The city began its new underground master planning in 2017 to meet the demand of underground spaces. "
               }
             },
             {
               "image": {
+                "credit": "Photo by CEDD",
                 "src": "./images/exG02b/Helsinki/photo3.jpg",
                 "caption": "Nowadays, Helsinki has about 400 different genres of underground structures, including shopping centres, gymnasiums, garbage collection facilities, metro stations, data centers, saunas, churches, sports grounds, ice skating rinks, and an ice sports centre fortraining the first-class ice hockey teams."
               }
@@ -155,24 +172,28 @@
           "backgroundColor": "#F3FFF6",
           "icon": ["./images/exG02b/Icon/EN/newyork_icon1.svg", "./images/exG02b/Icon/EN/newyork_icon2.svg", "./images/exG02b/Icon/EN/newyork_icon3.svg"],
           "image": {
+            "credit": "",
             "src": "./images/exG02b/NewYork/newyork.png"
           },
           "description": "Amidst the high-rise buildings in Manhattan of New York City, a disused elevated rail viaduct was transformed into an elevated landscaped corridor named \"High Line\", embodying vitality. Visitors can stroll around leisurely or sit down for a break, and enjoy the open landscape in the bustling city.",
           "detailBlocks": [
             {
               "image": {
+                "credit": "Photo by Kalmbach Publishing Company",
                 "src": "./images/exG02b/NewYork/photo1.jpg",
                 "caption": "In the 1930s, the West Side of New York City was packed with godowns. Elevated railways were built across different districts for transporting goods. However, in the 1950s, rail freight shrank following the rapid development of highways and trucks. This elevated railway has accomplished its historical mission, and ceased all operations in the 1980s."
               }
             },
             {
               "image": {
+                "credit": "Photo by Joel Sternfeld",
                 "src": "./images/exG02b/NewYork/photo2.jpg",
                 "caption": "After ceasing operation, the elevated railway has become dilapidated with overgrown weeds,  arousing demolition vs preservation controversy. A local NGO, Friends of High Line, proposed to convert the railway into a sky garden in 1999.  Upon persevering for many years, the project finally commenced in 2006. In 2009, the works were completed and open to the public free of charge."
               }
             },
             {
               "image": {
+                "credit": "Photo by Rick Darke",
                 "src": "./images/exG02b/NewYork/photo3.jpg",
                 "caption": "The High Line is now a landmark of New York City. It not only provides a green and resting public space for its visitors, but also adds vibrancy to the old neighbourhood it traverses and presents an international revitalisation showcase. \"Seoullo 7017\" completed in 2017 was inspired by the High Line’s design. "
               }
@@ -186,26 +207,30 @@
           "backgroundColor": "#F1F9FF",
           "icon": ["./images/exG02b/Icon/EN/rotterdam_icon1.svg", "./images/exG02b/Icon/EN/rotterdam_icon2.svg", "./images/exG02b/Icon/EN/rotterdam_icon3.svg"],
           "image": {
+            "credit": "",
             "src": "./images/exG02b/Rotterdam/rotterdam.png"
           },
           "description": "Aquafarming is not uncommon nowadays. Yet, have you heard of a floating dairy farm in Rotterdam, the port city in the Netherlands?",
           "detailBlocks": [
             {
               "image": {
+                "credit": "Photo by Floating Farm",
                 "src": "./images/exG02b/Rotterdam/photo1.jpg",
                 "caption": "By the end of 2018, the world's first sustainable floating farm officially started operation in Rotterdam. The farm raises about 40 cows, which provide the neighbourhood with nearly 800 litres of fresh milk and dairy products every day."
               }
             },
             {
               "image": {
+                "credit": "Photo by Floating Farm",
                 "src": "./images/exG02b/Rotterdam/photo2.jpg",
                 "caption": "90% of land in Rotterdam is below sea level. For years, the imminent risk has urged the city government and professional organisations to examine strategies for flood control, climate adaptation, and resilient city planning. The floating farms of the nearby residents is the latest attempt in the area. It is not only fearless of flooding, occupies no land, and bringing food production areas closer to their nearby consumers, greatly reduces carbon emissions incurred by transportation."
               }
             },
             {
               "image": {
+                "credit": "Photo by Floating Farm",
                 "src": "./images/exG02b/Rotterdam/photo3.jpg",
-                "caption": "The floating farm is not only resistant to extreme weather, but also a low polluting andsustainable farm.  The  top level of the farm is specially installed with a stormwater tank to collect rainwater, and solar panels are installed in the sea to help generate electricity. Cow dung pies are turned into fertilizer after treatment to grow their cow feed, and supplemented by the discarded grains from the local brewery or weeds from the football field."
+                "caption": "The floating farm is not only resistant to extreme weather, but also a low polluting and sustainable farm. The  top level of the farm is specially installed with a stormwater tank to collect rainwater, and solar panels are installed in the sea to help generate electricity. Cow dung pies are turned into fertilizer after treatment to grow their cow feed, and supplemented by the discarded grains from the local brewery or weeds from the football field."
               }
             }
           ]
@@ -217,24 +242,28 @@
           "backgroundColor": "#FCFCEA",
           "icon": ["./images/exG02b/Icon/EN/huainan_icon1.svg", "./images/exG02b/Icon/EN/huainan_icon2.svg", "./images/exG02b/Icon/EN/huainan_icon3.svg"],
           "image": {
+            "credit": "",
             "src": "./images/exG02b/Huainan/huainan.png"
           },
           "description": "In 2017, the world’s largest floating solar power station was built in Huainan City, Anhui Province, China. This station occupies ​​more than 86 hectares (about 107 football fields) with 160,000 solar panels. It can generate up to 40 megawatts of electricity, and the electricity generated is enough for use of 15,000 households.",
           "detailBlocks": [
             {
               "image": {
+                "credit": "Imaginechina Limited / Alamy Stock Photo",
                 "src": "./images/exG02b/Huainan/photo1.jpg",
                 "caption": "Since Japan established its first floating solar power station in 2007, floating solar has become a new trend of renewable energy. Such a massive electricity generating facility occupies no land. Solar panels floating on the lake can block sunlight to reduce water evaporation, inhibit algae growth. Lake water also serves as a natural cooling medium, complementing one another a perfect complement to solar panels. "
               }
             },
             {
               "image": {
+                "credit": "Imaginechina Limited / Alamy Stock Photo",
                 "src": "./images/exG02b/Huainan/photo2.jpg",
                 "caption": "Compared with traditional coal-burning power plants the power station in Huainan,       could save up to 16,000 tons of coal every year, and reduce about 50,000 tons of carbon  emission every year."
               }
             },
             {
               "image": {
+                "credit": "",
                 "src": "./images/exG02b/Huainan/photo3.jpg",
                 "caption": "The lake atop the floating power station floats on was actually an abandoned coal mine. Years after years, water filled in and formed the lake. From underground  to a lake, from coal mine to solar energy, from pollution source  to renewable energy, this lake testified the changes in the energy trajectory of China."
               }
@@ -248,24 +277,28 @@
           "backgroundColor": "#FFF6EE",
           "icon": ["./images/exG02b/Icon/EN/copenhagen_icon1.svg", "./images/exG02b/Icon/EN/copenhagen_icon2.svg", ""],
           "image": {
+            "credit": "",
             "src": "./images/exG02b/Copenhagen/copenhagen.png"
           },
           "description": "Copenhagen, the capital of Denmark, endeavours to reduce its carbon emissions to become the world’s first carbon neutral capital in 2025. Carbon neutral does not mean an absolute zero carbon emission, but that an equivalent amount of carbon emissions would be offset by undertaking carbon saving initiatives.",
           "detailBlocks": [
             {
               "image": {
+                "credit": "Photo by Troels Heien",
                 "src": "./images/exG02b/Copenhagen/photo1.jpg",
                 "caption": "The Copenhagen City Council’s Climate Plan integrates various initiatives covering energy, transportation, housing, construction, health, education, and culture, etc. Copenhagen is a renowned city for cyclists, and the city has five times more bicycles than vehicles. The total length of the cycle tracks in the city is 350 km, and nearly half of the residents commute to work or school by bicycles every day."
               }
             },
             {
               "image": {
+                "credit": "Photo by Troels Heien",
                 "src": "./images/exG02b/Copenhagen/photo2.jpg",
                 "caption": "In 2009, Denmark established the world’s first Cycling Embassy. In addition to promoting cycling exercise, the Cycling Embassy is also responsible for compiling statistics and analysing the cycling characteristics of the residents in Copenhagen, and collecting data to enhance the future planning for cyclists. The Copenhagen City Council will further expand the public transport network and cycle tracks, advocate electric vehicles, refurbish and redevelop buildings with low energy efficiency, and deploy more resources to pursue low-polluting technological research and development."
               }
             },
             {
               "image": {
+                "credit": "Press/CopenHill",
                 "src": "./images/exG02b/Copenhagen/photo3.jpg",
                 "caption": "Another iconic project is named Copenhill, which is a waste-to-energy facility and also an innovative design which has transformed the exterior of the building into recreational area integrating ski tracks, hiking trails and climbing wall. The roof garden is covered with trees, scrubs and rockscapes, etc. to create natural scenery."
               }
@@ -279,24 +312,28 @@
           "backgroundColor": "#FAF7F1",
           "icon": ["./images/exG02b/Icon/EN/malaysia_icon1.svg", "./images/exG02b/Icon/EN/malaysia_icon2.svg", ""],
           "image": {
+            "credit": "",
             "src": "./images/exG02b/KualaLumpur/Malaysia.png"
           },
           "description": "Have you ever thought of a tunnel which is not only a vehicular lane, but also a waterway?",
           "detailBlocks": [
             {
               "image": {
+                "credit": "Picture courtesy of SMART Tunnel",
                 "src": "./images/exG02b/KualaLumpur/photo1.jpg",
-                "caption": "In the tropical and rainy Kuala Lumpur, Malaysia, the city centre is susceptible to flooding every time it rains, even its landmark Masjid Jamek Mosque becomes flooded. Hence, in 2007, Kuala Lumpur built the world's first \"SMART\" (Stormwater Management and Road Tunnel) tunnel stormwater. A passage for cars on sunny days, and transforms into a giant pipe in rainy days. This is a \"smart way\" to relieve traffic congestion and reduce the risk of flooding."
+                "caption": "In the tropical and rainy Kuala Lumpur, Malaysia, the city centre is susceptible to flooding every time it rains, even its landmark Masjid Jamek Mosque becomes flooded. Hence, in 2007, Kuala Lumpur built the world's first \"SMART\" (Stormwater Management and Road Tunnel) tunnel stormwater. A passage for cars on sunny days, and transforms into a giant pipe on rainy days. This is a \"smart way\" to relieve traffic congestion and reduce the risk of flooding."
               }
             },
             {
               "image": {
+                "credit": "Picture courtesy of SMART Tunnel",
                 "src": "./images/exG02b/KualaLumpur/photo2.jpg",
                 "caption": "The 3-storey tunnel is 9.7 km long and is the second longest stormwater tunnel in Asia.  The upper two storeys provide a total of four lanes, connecting to expressways; and the lower storey pipeline is linked to a stormwater tank, several rivers and lakes.  It is not open during normal days, but turns into waterways on rainy day."
               }
             },
             {
               "image": {
+                "credit": "Picture courtesy of SMART Tunnel",
                 "src": "./images/exG02b/KualaLumpur/photo3.jpg",
                 "caption": "The tunnel has three modes.  On sunny or drizzling days, only two storeys of vehicular lanes are open and the bottom waterway is not used (Model 1).  In the event of moderate rain, the bottom waterway will be open simultaneously (Mode 2).  In case of heavy rain, the vehicular lane will automatically be closed with watertight gates and the entire tunnel will turn into a floodway which can discharge up to 3 million cubic feet of water, or equivalent to 34 standard swimming pools (Model 3). Upon the completion of the tunnel; it has successfully tackled several rainstorm. Its innovative design has earned the UN-Habitat Scroll of Honour Award 2011."
               }
@@ -310,24 +347,28 @@
           "backgroundColor": "#FFF3F3",
           "icon": ["./images/exG02b/Icon/EN/barcelona_icon1.svg", "./images/exG02b/Icon/EN/barcelona_icon2.svg", ""],
           "image": {
+            "credit": "",
             "src": "./images/exG02b/Barcelona/barcelona.png"
           },
           "description": "Streets are not only infrastructure for urban mobility, but also an-extended space for residents’ activities. Barcelona’s \"Superblocks\" strives to reduce car flow and improve air quality by reclaiming the streets to the people, promoting walkability, cycling, and community interaction for uplifting quality of life.",
           "detailBlocks": [
             {
               "image": {
+                "credit": "Photo by Logan Armstrong",
                 "src": "./images/exG02b/Barcelona/photo1.jpg",
                 "caption": "In Barcelona, vehicles occupy about 60% of the roads, causing serious air and noise pollution. To reduce car flow and encourage walking and cycling instead of driving, as well as promoting a healthier lifestyle, the City Council decided to integrate active design into town planning, re-organising the streets into \"Superblocks\", and reducing the original vehicular lanes by 60%. Vehicles are only allowed to drive around the periphery of \"Superblocks\", and the streets become exclusive pedestrian public spaces."
               }
             },
             {
               "image": {
+                "credit": "Photo by Associació Col·lectiu Superilla Poblenou",
                 "src": "./images/exG02b/Barcelona/photo2.jpg",
                 "caption": "The Barcelona City Council is planning for 500 \"Superblocks\" in the city with a view to reducing the overall traffic flow by 21%. \"Superblocks\" provides the public with substantial leisure and recreation spaces. Apart from reducing air pollution, it also provides a pleasant walking and cycling environment, which helps promote exercises and public health."
               }
             },
             {
               "image": {
+                "credit": "Photo by Associació Col·lectiu Superilla Poblenou",
                 "src": "./images/exG02b/Barcelona/photo3.jpg",
                 "caption": "\"Superblocks\" brings vitality to different corners of the city and was awarded the sustainable best practice by UN-Habitat in 2010."
               }
@@ -346,29 +387,33 @@
       "cities": [
         {
           "id": "hamburg",
-          "name": "城市港口大改造",
+          "name": "港口城巿大改造",
           "location": "漢堡",
           "backgroundColor": "#FFFDF1",
           "icon": ["./images/exG02b/Icon/CN/hamburg_icon1.svg", "", ""],
           "image": {
+            "credit": "",
             "src": "./images/exG02b/Hamburg/_hamburg.svg"
           },
           "description": "你知道德國第二大城市漢堡有多少條橋嗎？有人說漢堡擁有全世界最多的橋，共約二千五百條！原來漢堡從十四世紀開始便是歐洲的重要港口，有大大小小的橋橫跨運河、承載鐵路，連接倉庫，港口區發展為與市中心隔河相望的城中城。",
           "detailBlocks": [
             {
               "image": {
+                "credit": "Photo by Andreas Vallbracht prachtvoll.de",
                 "src": "./images/exG02b/Hamburg/photo1.jpg",
                 "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再。在航運業持續萎縮的情況下，這座港口城市逐漸被閒置遺忘。為了改造漢堡，長達二十五年名為「漢堡港城」的市區重建計劃於1997年展開。"
               }
             },
             {
               "image": {
+                "credit": "© www.mediaserver.hamburg.de/ Jörg Modrow",
                 "src": "./images/exG02b/Hamburg/photo2.jpg",
                 "caption": "老舊的工業區搖身一變，成為現代化生活空間，除了住宅及商廈外，還有文化和歷史建築，同時也包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
               }
             },
             {
               "image": {
+                "credit": "Photo: ELBE & FLUT, Source: HafenCity Hamburg GmbH",
                 "src": "./images/exG02b/Hamburg/photo3.jpg",
                 "caption": "預計整個發展區將為一萬五千人提供住所，並創造四萬五千份工作。2017年落成的易北音樂廳，建築師活化舊倉庫建築，融合現代設計，成為新一代的漢堡地標。"
               }
@@ -382,30 +427,35 @@
           "backgroundColor": "#E6F8F2",
           "icon": ["./images/exG02b/Icon/CN/hongkong_icon1.svg", "./images/exG02b/Icon/CN/hongkong_icon2.svg", "./images/exG02b/Icon/CN/hongkong_icon3.svg"],
           "image": {
+            "credit": "",
             "src": "./images/exG02b/HongKong/hongkong.png"
           },
           "description": "香港是國際金融中心，以高樓密集而聞名。原來這個石屎森林正為約二百四十五種蝴蝶、五百五十種雀鳥、還有上千種海魚和三千幾種植物提供棲所！極其多元的生物多樣性，近在咫尺。",
           "detailBlocks": [
             {
               "image": {
+                "credit": "Photo by AFCD",
                 "src": "./images/exG02b/HongKong/photo1.jpg",
                 "caption": "對比起香港的城市化程度及人口密度，這裡的生物品種卻如此豐富，實屬難得。香港屬亞熱帶氣候，地形多山而崎嶇，美麗的海岸線，環山繞水的環境為各種生物的提供了良好的生境。"
               }
             },
             {
               "image": {
+                "credit": "Photo by AFCD",
                 "src": "./images/exG02b/HongKong/photo2.jpg",
-                "caption": "除了以上的物種外，香港還有一百八十八種淡水魚、一百二十八種蜻蜓、九十種爬行動物和八十四種石珊瑚、二十六種柳珊瑚和八種黑珊湖等等。香港的的鳥類佔全中國超過三分之一，而石珊瑚的品種數量更在加勒比海之上。"
+                "caption": "除了以上的物種外，香港還有一百八十八種淡水魚、一百二十八種蜻蜓、九十種爬行動物和八十四種石珊瑚、二十六種柳珊瑚和八種黑珊湖等等。香港的鳥類佔全中國超過三分之一，而石珊瑚的品種數量更在加勒比海之上。"
               }
             },
             {
               "image": {
+                "credit": "Photo by AFCD",
                 "src": "./images/exG02b/HongKong/photo3.jpg",
                 "caption": "為保育自然及維護生物多樣性*，政府將具重要生態價值的陸地及海洋水域劃為保護區，包括二十四個郊野公園和二十二個特別地區，佔香港土地總面積近百分之四十。香港亦有六個海岸公園和一個海岸保護區，佔水域面積共達四千零五十公頃。"
               }
             },
             {
               "image": {
+                "credit": "",
                 "src": "",
                 "caption": "*生物多樣性是指形形色色的生物間的差異，這些差異是生物適應自然環境變化的關鍵，讓生物在各自的生活環境中發揮不同的角色和功能，而人類亦受惠於生物多樣性帶來的多種益處。"
               }
@@ -419,24 +469,28 @@
           "backgroundColor": "#FFF9F4",
           "icon": ["./images/exG02b/Icon/CN/seoul_icon1.svg", "./images/exG02b/Icon/CN/seoul_icon2.svg", "./images/exG02b/Icon/CN/seoul_icon3.svg"],
           "image": {
+            "credit": "",
             "src": "./images/exG02b/Seoul/seoul.png"
           },
           "description": "1970年代，清溪川是一條被高架公路覆蓋的排水渠，曾經「臭名遠播」。但是經過全面改造後，現在已是首爾必到景點之一，是旅客的「打卡」集中地。",
           "detailBlocks": [
             {
               "image": {
+                "credit": "©Photographer (John Doe)-Korea Tourism Organization",
                 "src": "./images/exG02b/Seoul/photo1.jpg",
                 "caption": "清溪川復修項目自2003年啟動。其工程包括拆除約六公里的高架公路；引進水源；綠化河道；污水處理及古蹟保育等，整個復修項目耗資超過三億美元。復修後的清溪川，從密封的水道變成開闊的河道，橫跨首爾東西，除了防澇功能，它亦是一條通風走廊，有效舒緩熱島效應並改善空氣質素。"
               }
             },
             {
               "image": {
+                "credit": "©Photographer (John Doe)-Korea Tourism Organization",
                 "src": "./images/exG02b/Seoul/photo2.jpg",
                 "caption": "沿河流域新增了超過十六公頃綠化公共空間，平緩的堤岸兩旁綠樹成蔭，加上河邊和河上的小石台，清溪川成為了遊人和市民的親水休憩場所。"
               }
             },
             {
               "image": {
+                "credit": "©Photographer (John Doe)-Korea Tourism Organization",
                 "src": "./images/exG02b/Seoul/photo3.jpg",
                 "caption": "源頭的清溪廣場是污水經處理後進入河道的起點。四米高的兩段式瀑布橫跨寬闊的河道，瀑布下是景點九石潭，由韓國各地運來的九塊基石組合而成。清溪廣場是2009年美國景觀設計師協會獎獲獎項目之一。"
               }
@@ -450,24 +504,28 @@
           "backgroundColor": "#F1FAFA",
           "icon": ["./images/exG02b/Icon/CN/helsinki_icon1.svg", "./images/exG02b/Icon/CN/helsinki_icon2.svg", "./images/exG02b/Icon/CN/helsinki_icon3.svg"],
           "image": {
+            "credit": "",
             "src": "./images/exG02b/Helsinki/helsinki.png"
           },
           "description": "一般的博物館都是一幢一幢站立在土地上的建築物，但芬蘭赫爾辛基的阿莫斯瑞克斯藝術博物館則是一個例外。地下的藝術博物館與地面的玻璃宮廣場融合，既保留原有廣場用途，又提供新的藝術展覽空間和工作室。",
           "detailBlocks": [
             {
               "image": {
+                "credit": "© Mika Huiman",
                 "src": "./images/exG02b/Helsinki/photo1.jpg",
                 "caption": "藝術博物館的屋頂設計為數個大圓窗的穹頂建築，露出廣場地面採光，並成為一個極具創意的遊玩場地。"
               }
             },
             {
               "image": {
+                "credit": "© Tuomas Uusheimo",
                 "src": "./images/exG02b/Helsinki/photo2.jpg",
                 "caption": "藝術博物館只是赫爾辛基地下空間運用的其中一個項目。赫爾辛基自1960年代已發展成地下空間，於2011年製定具法律效力的地下總體規劃，並於2017年開展新一輪的地下總體規劃，以配合持繼增加的地下空間需求。 "
               }
             },
             {
               "image": {
+                "credit": "Photo by CEDD",
                 "src": "./images/exG02b/Helsinki/photo3.jpg",
                 "caption": "現在赫爾辛基擁有約四百座各類地下建築物，包括購物中心、健身房、垃圾收集設施、地下公交站、數據中心、桑拿房、教堂、田徑場、溜冰場和一個供各甲級冰球隊訓練的冰上運動館。"
               }
@@ -481,24 +539,28 @@
           "backgroundColor": "#F3FFF6",
           "icon": ["./images/exG02b/Icon/CN/newyork_icon1.svg", "./images/exG02b/Icon/CN/newyork_icon2.svg", "./images/exG02b/Icon/CN/newyork_icon3.svg"],
           "image": {
+            "credit": "",
             "src": "./images/exG02b/NewYork/newyork.png"
           },
           "description": "高樓林立的紐約市曼哈頓，一列荒廢的架空鐵路軌搖身一變，化身成空中綠化走廊，名為「高線公園」洋溢着生命力。遊人可隨意漫步或坐下作息，在鬧巿中享受開揚的悠閒景致。",
           "detailBlocks": [
             {
               "image": {
+                "credit": "Photo by Kalmbach Publishing Company",
                 "src": "./images/exG02b/NewYork/photo1.jpg",
                 "caption": "1930年代的紐約市西城區貨倉林立，當時為了運送貨物，便興建了穿梭於城中各區的高架鐵路。然而，到了1950年代，由於公路和貨車的快速發展，鐵路貨運亦隨之萎縮，這條高架鐵路也完成了歷史任務，到了1980年代全面停止運作。"
               }
             },
             {
               "image": {
+                "credit": "Photo by Joel Sternfeld",
                 "src": "./images/exG02b/NewYork/photo2.jpg",
                 "caption": "停駛後，高架鐵路日久失修，雜草叢生，引起了清拆與保留的爭議。當地非牟利團體「高架鐵路之友」於1999年提出將鐵路轉型為空中公園，爭取多年後，項目最終於2006年動工，2009年竣工正式免費開放。"
               }
             },
             {
               "image": {
+                "credit": "Photo by Rick Darke",
                 "src": "./images/exG02b/NewYork/photo3.jpg",
                 "caption": "現在空中鐵路公園已是紐約的地標性景點，它不但為遊人提供了綠化及休憩公共空間，為鐵路沿線的舊社區帶來新動力，更是國際活化模範，2017年完工的「首爾路7017」亦參照了它的設計。"
               }
@@ -512,24 +574,28 @@
           "backgroundColor": "#F1F9FF",
           "icon": ["./images/exG02b/Icon/CN/rotterdam_icon1.svg", "./images/exG02b/Icon/CN/rotterdam_icon2.svg", "./images/exG02b/Icon/CN/rotterdam_icon3.svg"],
           "image": {
+            "credit": "",
             "src": "./images/exG02b/Rotterdam/rotterdam.png"
           },
           "description": "現在水耕已相當普遍。但你有聽過荷蘭港口城市鹿特丹的飄浮養牛場嗎?",
           "detailBlocks": [
             {
               "image": {
+                "credit": "Photo by Floating Farm",
                 "src": "./images/exG02b/Rotterdam/photo1.jpg",
                 "caption": "2018年末，全球第一個飄浮的可持續牧場在鹿特丹正式運作。牧場內飼養約四十頭乳牛，每天為鄰近居民提供近八百公升的新鮮牛奶及奶類製品。"
               }
             },
             {
               "image": {
+                "credit": "Photo by Floating Farm",
                 "src": "./images/exG02b/Rotterdam/photo2.jpg",
                 "caption": "鹿特丹有九成土地低於海平面，迫在眉睫的壓力令市政府和專業團體多年來一直致力研究防洪、氣候調適和具抗禦力的城市規劃的策略。鄰近民居的水上牧場是當地的最新嘗試，它不但無懼洪水暴漲，不佔土地，而且能拉近食物生產地和消費者的距離，大大減低運送時的碳排放。"
               }
             },
             {
               "image": {
+                "credit": "Photo by Floating Farm",
                 "src": "./images/exG02b/Rotterdam/photo3.jpg",
                 "caption": "水上牧場除了能抵抗惡劣天氣，更是低污染及可持續牧場。牧場頂層特設蓄水池收集雨水，海上裝設太陽能板輔助發電，牛隻的排泄物經處理後變成肥料，種植餵養牛隻的作物，額外的飼料則來自釀酒廠棄置的剩餘穀物或足球場清除的雜草。"
               }
@@ -543,24 +609,28 @@
           "backgroundColor": "#FCFCEA",
           "icon": ["./images/exG02b/Icon/CN/huainan_icon1.svg", "./images/exG02b/Icon/CN/huainan_icon2.svg", "./images/exG02b/Icon/CN/huainan_icon3.svg"],
           "image": {
+            "credit": "",
             "src": "./images/exG02b/Huainan/huainan.png"
           },
           "description": "2017年，全球最大型的水上太陽能發電站在中國安徽省淮南市落成。這座發電站面積超過八十六公頃（約一百零七個足球場），由十六萬塊太陽能板組成。它的發電容可量達四十兆瓦，所產生的電能足夠一萬五千戶家庭使用。",
           "detailBlocks": [
             {
               "image": {
+                "credit": "Imaginechina Limited / Alamy Stock Photo",
                 "src": "./images/exG02b/Huainan/photo1.jpg",
                 "caption": "自從2007年日本第一座水上太陽能發電站開始，水上太陽能成為再生能源的新趨勢。如此龐大的發電設施不佔用任何土地。太陽能板飄浮在湖泊上，既可以遮擋太陽減少水份蒸發，抑制藻類生長，湖水又同時是天然的冷卻設備，相得益彰。"
               }
             },
             {
               "image": {
+                "credit": "Imaginechina Limited / Alamy Stock Photo",
                 "src": "./images/exG02b/Huainan/photo2.jpg",
                 "caption": "淮南市這座水上太陽能發電站與傳統燃煤電廠相比，估計每年可節省一萬六千噸煤碳，並減少排放近五萬噸二氧化碳。"
               }
             },
             {
               "image": {
+                "credit": "Imaginechina Limited / Alamy Stock Photo",
                 "src": "./images/exG02b/Huainan/photo3.jpg",
                 "caption": "這座水上太陽能發電站身處的湖泊，正正曾是廢棄的煤礦坑，後來積水成湖。從地底到湖泊，從煤礦到太陽能，從高污染到可再生能源，這個湖泊見證著中國能源的變遷。"
               }
@@ -574,24 +644,28 @@
           "backgroundColor": "#FFF6EE",
           "icon": ["./images/exG02b/Icon/CN/copenhagen_icon1.svg", "./images/exG02b/Icon/CN/copenhagen_icon2.svg", ""],
           "image": {
+            "credit": "",
             "src": "./images/exG02b/Copenhagen/copenhagen.png"
           },
           "description": "丹麥首都哥本哈根銳意減少碳排放，目標是於2025年成為全球第一個零碳排放的首都大城市。零碳排放並不是指完全不排放二氧化碳，而是指排放多少碳，便實行碳吸收措施來抵銷同等數量的碳，以達至碳平衡，又稱為碳中和。",
           "detailBlocks": [
             {
               "image": {
+                "credit": "Photo by Troels Heien",
                 "src": "./images/exG02b/Copenhagen/photo1.jpg",
                 "caption": "哥本哈根市政府的氣候計劃結合了能源、交通、房屋、建造、健康、教育、文化等多方面的措施而實行。哥本哈根是世界聞名的單車之城，全城單車數量比汽車多五倍。市內單車徑全長三百五十公里，近一半的居民每天選擇以單車代步上班上學。"
               }
             },
             {
               "image": {
+                "credit": "Photo by Troels Heien",
                 "src": "./images/exG02b/Copenhagen/photo2.jpg",
                 "caption": "2009年，丹麥更成立了世界上第一個單車大使館。在推廣單車運動之餘，單車大使館亦負責統計並分析哥本哈根居民騎單車的特色，收集數據為騎單車人士改善未來的規劃。哥本哈根市政府將會進一步擴展公共交通網絡和單車徑、提倡電動車、翻新改建低能源效益大廈，並投入更多資源推動低污染的科技研發。"
               }
             },
             {
               "image": {
+                "credit": "Press/CopenHill",
                 "src": "./images/exG02b/Copenhagen/photo3.jpg",
                 "caption": "另一頂標誌性項目名為Copenhill，它既是一座轉廢為能的設施，亦是以創新的設計將建築物外部結合滑雪道、行山徑、攀石牆，成為康樂活動區。天台公園更以樹木、灌木、石景等，營造自然景致。"
               }
@@ -605,24 +679,28 @@
           "backgroundColor": "#FAF7F1",
           "icon": ["./images/exG02b/Icon/CN/malaysia_icon1.svg", "./images/exG02b/Icon/CN/malaysia_icon2.svg", ""],
           "image": {
+            "credit": "",
             "src": "./images/exG02b/KualaLumpur/Malaysia.png"
           },
           "description": "有沒有想過，隧道除了是車道，還可以是「水道」？",
           "detailBlocks": [
             {
               "image": {
+                "credit": "Picture courtesy of SMART Tunnel",
                 "src": "./images/exG02b/KualaLumpur/photo1.jpg",
                 "caption": "在熱帶多雨的馬來西亞吉隆坡，每到下雨天，水患嚴重，甚至連巿中心地標 - 占美回教堂都成為澤國。因此，2007年，吉隆坡建成了全球首創的「聰明隧道」。晴天時行車，雨天時變身巨型排洪管道。這是紓緩交通擠塞，同時減少水浸風險的「聰明之道」。"
               }
             },
             {
               "image": {
+                "credit": "Picture courtesy of SMART Tunnel",
                 "src": "./images/exG02b/KualaLumpur/photo2.jpg",
                 "caption": "隧道長九點七公里，是亞洲第二長的防洪水道，分三層，上兩層共有四條車道，連接高速公路；底層管道連接蓄洪池、多條河流及湖泊。平日不開放，雨天時用作水道。"
               }
             },
             {
               "image": {
+                "credit": "Picture courtesy of SMART Tunnel",
                 "src": "./images/exG02b/KualaLumpur/photo3.jpg",
                 "caption": "隧道有三種模式，晴天或雨量少時只開放兩層車道，底層水道並不使用（模式一）；若遇上中度雨量，底層水道會同時打開排洪（模式二）；若遇上暴雨，便連行車道都以自動水密門關閉，整條隧道都變成排洪水道，可容納高達三百萬立方公尺水量，約等於三十四個標準泳池（模式三）。隧道落成後，成功應付多次暴雨。其創新設計致使它於2011年獲聯合國最佳人居環境榮譽獎章。"
               }
@@ -636,24 +714,28 @@
           "backgroundColor": "#FFF3F3",
           "icon": ["./images/exG02b/Icon/CN/barcelona_icon1.svg", "./images/exG02b/Icon/CN/barcelona_icon2.svg", ""],
           "image": {
+            "credit": "",
             "src": "./images/exG02b/Barcelona/barcelona.png"
           },
           "description": "街道不僅是市區流動的基礎設施，更是居民活動的延伸空間。巴塞隆拿的「超級街區」銳意減少汽車流量和改善空氣質素，將街道歸還予居民，提倡步行、單車騎行，同時鼓勵更多社區之間的互動，提升生活質素。",
           "detailBlocks": [
             {
               "image": {
+                "credit": "Photo by Logan Armstrong",
                 "src": "./images/exG02b/Barcelona/photo1.jpg",
                 "caption": "在巴塞隆拿，汽車佔用約六成的道路，造成嚴重的空氣及噪音污染。為了減少汽車流量，並且鼓勵巿民以步行、騎單車代替駕車，建立更健康的生活模式，巿政府決定把城巿規劃融合動態設計，將街道重新規劃為「超級街區」，將原有行車道減少百分之六十。汽車只可在「超級街區」外圍行駛，街道成為行人專用的公共空間。"
               }
             },
             {
               "image": {
+                "credit": "Photo by Associació Col·lectiu Superilla Poblenou",
                 "src": "./images/exG02b/Barcelona/photo2.jpg",
                 "caption": "巴塞隆拿市政府計劃全巿將有五百個「公眾級街區」，整體車輛流量將減少百分之二十一。「超級街區」的公共空間為公眾提供了大量休憩、康樂用地。除了減少空氣污染，亦提供舒適的步行和騎單車環境，有助推廣運動及促進巿民健康。"
               }
             },
             {
               "image": {
+                "credit": "Photo by Associació Col·lectiu Superilla Poblenou",
                 "src": "./images/exG02b/Barcelona/photo3.jpg",
                 "caption": "「超級街區」將生活氣息帶進城巿不同角落，於2010年獲聯合國人類住區規劃署頒發最佳可持續發展實踐獎。"
               }

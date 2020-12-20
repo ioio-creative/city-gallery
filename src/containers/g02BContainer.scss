@@ -529,55 +529,63 @@ body {
         // overflow: hidden;
         white-space: nowrap;
         span {
-          width: 75%;
+          width: 63%;
           margin-right: vw-calc(30);
         }
         #cityIcon {
           position: relative;
           display: flex;
           align-items: center;
-          justify-content: center;
+          justify-content: flex-end;
           height: 100%;
-          width: 30%;
+          width: 37%;
           div {
-            height: 58px;
+            height: vw-calc(58);
             width: auto;
           }
           img {
-            height: 58px;
+            height: vw-calc(58);
             width: auto;
           }
           &.zh {
             .icon1 {
               background-size: 100%;
+              margin-right: vw-calc(40);
             }
             .icon2 {
               background-size: 100%;
-              margin-left: vw-calc(50);
+              margin-right: vw-calc(40);
             }
             .icon3 {
               background-size: 100%;
-              margin-left: vw-calc(50);
+              margin-right: vw-calc(50);
             }
           }
           &.en {
-            &.hongkong {
-              width: 25%;
-            }
+            // &.hongkong {
+            //   width: 25%;
+            // }
             .icon1 {
               background-size: 100%;
-              margin-left: vw-calc(0);
-              margin-right: vw-calc(10);
+              margin-right: vw-calc(15);
             }
             .icon2 {
               background-size: 100%;
-              margin-left: vw-calc(10);
-              margin-right: vw-calc(10);
+              margin-right: vw-calc(15);
             }
             .icon3 {
               background-size: 100%;
-              margin-left: vw-calc(10);
-              margin-right: vw-calc(10);
+              margin-right: vw-calc(25);
+            }
+            &.hongkong {
+              .icon3 {
+                margin-right: vw-calc(-60);
+              }
+            }
+            &.seoul {
+              .icon3 {
+                margin-right: vw-calc(-10);
+              }
             }
           }
         }
@@ -621,14 +629,15 @@ body {
       width: vw-calc(520);
       height: calc(100vh - #{vw-calc(200)});
       position: absolute;
-      top: vw-calc(200);
+      // top: vw-calc(200);
+      top: 11.5% + vw-calc(200);
       right: vw-calc(146);
       z-index: 2;
       &:before {
         content: '';
         width: 100%;
         height: 41%;
-        background: linear-gradient(0deg, rgba(255, 247, 237, 1) 55%, rgba(255, 247, 237, 0) 100%);
+        background: linear-gradient(0deg, rgba(255, 255, 255, 1) 55%, rgba(255, 247, 237, 0) 100%);
         position: absolute;
         bottom: vw-calc(-70);
         left: 0;
@@ -677,7 +686,7 @@ body {
               content: '';
               width: 100%;
               height: 10%;
-              background: linear-gradient(0deg, rgba(255, 247, 237, 1) 20%, rgba(255, 247, 237, 0) 100%);
+              background: linear-gradient(0deg, rgba(255, 255, 255, 0.7) 20%, rgba(255, 247, 237, 0) 100%);
               position: absolute;
               bottom: 0;
               left: 0;

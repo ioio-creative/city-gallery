@@ -505,7 +505,7 @@ const G02BContainer = props => {
           <div id='circle3' className='circle' style={{ backgroundImage: `url(${circle3})` }}></div>
           <div id='contentWrap'>
             <div id='title'>
-              <span>{contentData && contentData.cities[domId].name}</span>
+              <span className={`${language}`}>{contentData && contentData.cities[domId].name}</span>
               <div id='cityIcon' className={`${contentData && contentData.cities[domId].id ? `${contentData.cities[domId].id} ${language}` : ''}`}>
                 {contentData &&
                   contentData.cities[domId].icon &&
@@ -543,6 +543,7 @@ const G02BContainer = props => {
                       <div className='img'>
                         <img src={v.image.src} />
                       </div>
+                      <p>{v.image.credit}</p>
                       <p>{v.image.caption}</p>
                     </li>
                   );
