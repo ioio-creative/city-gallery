@@ -551,14 +551,17 @@ body {
             .icon1 {
               background-size: 100%;
               margin-right: vw-calc(40);
+              display: flex;
             }
             .icon2 {
               background-size: 100%;
               margin-right: vw-calc(40);
+              display: flex;
             }
             .icon3 {
               background-size: 100%;
               margin-right: vw-calc(50);
+              display: flex;
             }
           }
           &.en {
@@ -568,14 +571,17 @@ body {
             .icon1 {
               background-size: 100%;
               margin-right: vw-calc(15);
+              display: flex;
             }
             .icon2 {
               background-size: 100%;
               margin-right: vw-calc(15);
+              display: flex;
             }
             .icon3 {
               background-size: 100%;
               margin-right: vw-calc(25);
+              display: flex;
             }
             &.hongkong {
               .icon3 {
