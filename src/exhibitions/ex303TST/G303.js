@@ -14,19 +14,19 @@ import Map from '../ex303HKI/Map';
 
 const G303 = props => {
   const [language, setLanguage] = useState('tc');
-  const [started, setStarted] = useState(false);
+  // const [started, setStarted] = useState(false);
   const [yearIdx, setYearIdx] = useState(-1);
   // const [zoomed, setZoomed] = useState(false);
-  const [mapIndicatorIdx, setMapIndicatorIdx] = useState(0);
+  // const [mapIndicatorIdx, setMapIndicatorIdx] = useState(0);
   // const [streetData, setStreetData] = useState(null);
   // const [home, setHome] = useState(true);
-  const [fill, setFill] = useState(false);
+  // const [fill, setFill] = useState(false);
   const [showNav, setShowNav] = useState(false);
   const [showYear, setShowYear] = useState(true);
   const [gameMode, setGameMode] = useState('home');
   // const [fakeZoom, setFakeZoom] = useState(0);
-  const [isVideo, setIsVideo] = useState(false);
-  const [videoNumber, setVideoNumber] = useState(null);
+  // const [isVideo, setIsVideo] = useState(false);
+  // const [videoNumber, setVideoNumber] = useState(null);
   const [zone, setZone] = useState(0);
   const [coastlineIdx, setCoastlineIdx] = useState(null);
   const [streetIdx, setStreetIdx] = useState(null);
@@ -36,9 +36,9 @@ const G303 = props => {
   const handleShowCoastline = useRef(null);
   const handleSelectCoastline = useRef(null);
   const handleStart = useRef(null);
-  const video1Ref = useRef(null);
+  // const video1Ref = useRef(null);
 
-  const videoSrc = ['./images/ex303/video1.mp4', './images/ex303/video2.mp4'];
+  // const videoSrc = ['./images/ex303/video1.mp4', './images/ex303/video2.mp4'];
   const years = ['1900', '1945', '1985', '2019'];
 
   // const onClickMapIndicator = i => {
@@ -51,7 +51,7 @@ const G303 = props => {
   // };
 
   const onClickYear = i => {
-    if (!started)
+    // if (!started)
       if (i !== yearIdx) {
         setYearIdx(i);
         handleSelectCoastline.current.selectCoastline(i);
@@ -70,7 +70,7 @@ const G303 = props => {
   };
 
   const onBack = () => {
-    setFill(false);
+    // setFill(false);
     // setHome(true);
     setGameMode('home');
     // setYearIdx(0);
@@ -148,7 +148,7 @@ const G303 = props => {
 
   return (
     // <div id='main' className={`${started ? 'started' : ''}${zoomed ? ' zoomed' : ''}`}>
-    <div id='main' className={`${started ? 'started' : ''}`}>
+    <div id='main'>
       <Map
           locationName="tst"
           doubleScreen={false}
