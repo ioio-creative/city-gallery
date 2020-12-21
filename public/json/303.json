@@ -2539,63 +2539,6 @@
         "name": "area",
         "src": "./images/ex303/area.svg"
       }
-    ],
-    "coastlineParts": [
-      {
-        "id": "",
-        "name": "第一期",
-        "image": {
-          "name": "area"
-        },
-        "pos": {
-          "x": 1198,
-          "y": 373
-        }
-      }
-    ],
-    "streets": [
-      [
-        {
-          "id": "_1",
-          "name": "中環",
-          "marker": {
-            "x": 995,
-            "y": 540
-          },
-          "image": {
-            "src": "",
-            "x": 971,
-            "y": 483
-          },
-          "video": {
-            "src": "",
-            "thumbnail": {
-              "src": ""
-            }
-          }
-        }
-      ],
-      [
-        {
-          "id": "_2",
-          "name": "金鐘",
-          "marker": {
-            "x": 1251,
-            "y": 603
-          },
-          "image": {
-            "src": "",
-            "x": 1471,
-            "y": 653
-          },
-          "video": {
-            "src": "",
-            "thumbnail": {
-              "src": ""
-            }
-          }
-        }
-      ]
     ]
   },
   "wk": {
@@ -2768,63 +2711,6 @@
         "name": "area",
         "src": "./images/ex303/area.svg"
       }
-    ],
-    "coastlineParts": [
-      {
-        "id": "",
-        "name": "第一期",
-        "image": {
-          "name": "area"
-        },
-        "pos": {
-          "x": 1198,
-          "y": 373
-        }
-      }
-    ],
-    "streets": [
-      [
-        {
-          "id": "_1",
-          "name": "中環",
-          "marker": {
-            "x": 995,
-            "y": 540
-          },
-          "image": {
-            "src": "",
-            "x": 971,
-            "y": 483
-          },
-          "video": {
-            "src": "",
-            "thumbnail": {
-              "src": ""
-            }
-          }
-        }
-      ],
-      [
-        {
-          "id": "_2",
-          "name": "金鐘",
-          "marker": {
-            "x": 1251,
-            "y": 603
-          },
-          "image": {
-            "src": "",
-            "x": 1471,
-            "y": 653
-          },
-          "video": {
-            "src": "",
-            "thumbnail": {
-              "src": ""
-            }
-          }
-        }
-      ]
     ]
   }
 }
