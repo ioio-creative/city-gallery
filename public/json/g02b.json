@@ -23,7 +23,7 @@
           "name": "Port City Regeneration",
           "location": "Hamburg",
           "backgroundColor": "#FFFDF1",
-          "icon": ["./images/exG02b/Icon/EN/hamburg_icon1.svg", "", ""],
+          "icon": ["", "", "./images/exG02b/Icon/EN/hamburg_icon1.svg"],
           "image": {
             "credit": "",
             "src": "./images/exG02b/Hamburg/hamburg.svg"
@@ -275,7 +275,7 @@
           "name": "Carbon Neutral Capital",
           "location": "Copenhagen",
           "backgroundColor": "#FFF6EE",
-          "icon": ["./images/exG02b/Icon/EN/copenhagen_icon1.svg", "./images/exG02b/Icon/EN/copenhagen_icon2.svg", ""],
+          "icon": ["", "./images/exG02b/Icon/EN/copenhagen_icon1.svg", "./images/exG02b/Icon/EN/copenhagen_icon2.svg"],
           "image": {
             "credit": "",
             "src": "./images/exG02b/Copenhagen/Copenhagen.svg"
@@ -310,7 +310,7 @@
           "name": "A SMART Tunnel",
           "location": "Kuala Lumpur",
           "backgroundColor": "#FAF7F1",
-          "icon": ["./images/exG02b/Icon/EN/malaysia_icon1.svg", "./images/exG02b/Icon/EN/malaysia_icon2.svg", ""],
+          "icon": ["", "./images/exG02b/Icon/EN/malaysia_icon1.svg", "./images/exG02b/Icon/EN/malaysia_icon2.svg"],
           "image": {
             "credit": "",
             "src": "./images/exG02b/KualaLumpur/Malaysia.svg"
@@ -345,7 +345,7 @@
           "name": "Street as Playground",
           "location": "Barcelona",
           "backgroundColor": "#FFF3F3",
-          "icon": ["./images/exG02b/Icon/EN/barcelona_icon1.svg", "./images/exG02b/Icon/EN/barcelona_icon2.svg", ""],
+          "icon": ["./images/exG02b/Icon/EN/barcelona_icon1.svg", "./images/exG02b/Icon/EN/barcelona_icon2.svg"],
           "image": {
             "credit": "",
             "src": "./images/exG02b/Barcelona/Barcelona.svg"
@@ -390,7 +390,7 @@
           "name": "港口城巿大改造",
           "location": "漢堡",
           "backgroundColor": "#FFFDF1",
-          "icon": ["./images/exG02b/Icon/CN/hamburg_icon1.svg", "", ""],
+          "icon": ["", "", "./images/exG02b/Icon/CN/hamburg_icon1.svg"],
           "image": {
             "credit": "",
             "src": "./images/exG02b/Hamburg/hamburg.svg"
@@ -642,7 +642,7 @@
           "name": "零碳排放首都",
           "location": "哥本哈根",
           "backgroundColor": "#FFF6EE",
-          "icon": ["./images/exG02b/Icon/CN/copenhagen_icon1.svg", "./images/exG02b/Icon/CN/copenhagen_icon2.svg", ""],
+          "icon": ["", "./images/exG02b/Icon/CN/copenhagen_icon1.svg", "./images/exG02b/Icon/CN/copenhagen_icon2.svg"],
           "image": {
             "credit": "",
             "src": "./images/exG02b/Copenhagen/Copenhagen.svg"
@@ -677,7 +677,7 @@
           "name": "聰明隧道",
           "location": "吉隆坡",
           "backgroundColor": "#FAF7F1",
-          "icon": ["./images/exG02b/Icon/CN/malaysia_icon1.svg", "./images/exG02b/Icon/CN/malaysia_icon2.svg", ""],
+          "icon": ["", "./images/exG02b/Icon/CN/malaysia_icon1.svg", "./images/exG02b/Icon/CN/malaysia_icon2.svg"],
           "image": {
             "credit": "",
             "src": "./images/exG02b/KualaLumpur/Malaysia.svg"
@@ -712,7 +712,7 @@
           "name": "馬路中心的活動天地",
           "location": "巴塞隆拿",
           "backgroundColor": "#FFF3F3",
-          "icon": ["./images/exG02b/Icon/CN/barcelona_icon1.svg", "./images/exG02b/Icon/CN/barcelona_icon2.svg", ""],
+          "icon": ["./images/exG02b/Icon/CN/barcelona_icon1.svg", "./images/exG02b/Icon/CN/barcelona_icon2.svg"],
           "image": {
             "credit": "",
             "src": "./images/exG02b/Barcelona/Barcelona.svg"
