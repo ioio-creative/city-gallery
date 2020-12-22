@@ -26,7 +26,7 @@
           "icon": ["./images/exG02b/Icon/EN/hamburg_icon1.svg", "", ""],
           "image": {
             "credit": "",
-            "src": "./images/exG02b/Hamburg/_hamburg.svg"
+            "src": "./images/exG02b/Hamburg/hamburg.svg"
           },
           "description": "Do you know how many bridges are there in Hamburg, the second largest city in Germany? Some say that Hamburg has around 2,500 bridges in total, the greatest number in the world. In fact, since the 14th century, Hamburg has been a key port in Europe with bridges in all sizes straddling over canals, accommodating railways and linking up godowns. The port district has developed into a city within city, overlooking the town centre across the river.",
           "detailBlocks": [
@@ -61,7 +61,7 @@
           "icon": ["./images/exG02b/Icon/EN/hongkong_icon1.svg", "./images/exG02b/Icon/EN/hongkong_icon2.svg", "./images/exG02b/Icon/EN/hongkong_icon3.svg"],
           "image": {
             "credit": "",
-            "src": "./images/exG02b/HongKong/hongkong.png"
+            "src": "./images/exG02b/HongKong/HongKong.svg"
           },
           "description": "Hong Kong is an international financial centre, best known for its dense skyscrapers. Yet, amidst this concrete jungle it is the home of about  245 species of butterflies, 550 species of birds, and over 1 000 species of fish and 3 000 species of plants! An extremely rich biodiversity is at its doorstep. ",
           "detailBlocks": [
@@ -103,7 +103,7 @@
           "icon": ["./images/exG02b/Icon/EN/seoul_icon1.svg", "./images/exG02b/Icon/EN/seoul_icon2.svg", "./images/exG02b/Icon/EN/seoul_icon3.svg"],
           "image": {
             "credit": "",
-            "src": "./images/exG02b/Seoul/seoul.png"
+            "src": "./images/exG02b/Seoul/Seoul.svg"
           },
           "description": "In the 1970s, Cheonggyecheon was once an infamous nullah decked over by an elevated highway. However, upon a comprehensive revamp, it is now one of the most famous tourist hotspots for photo taking in Seoul.",
           "detailBlocks": [
@@ -138,7 +138,7 @@
           "icon": ["./images/exG02b/Icon/EN/helsinki_icon1.svg", "./images/exG02b/Icon/EN/helsinki_icon2.svg", "./images/exG02b/Icon/EN/helsinki_icon3.svg"],
           "image": {
             "credit": "",
-            "src": "./images/exG02b/Helsinki/helsinki.png"
+            "src": "./images/exG02b/Helsinki/Helsinki.svg"
           },
           "description": "Museum buildings are usually erected on land. Yet, Amos Rex in Helsinki, Finland is an exceptional case. The underground Amos Rex merges in harmony with the Lasipalatsi Square (\"Glass Palace\") on the ground. It not only preserves the original plaza use, but also provides new art gallery spaces and studios. ",
           "detailBlocks": [
@@ -173,7 +173,7 @@
           "icon": ["./images/exG02b/Icon/EN/newyork_icon1.svg", "./images/exG02b/Icon/EN/newyork_icon2.svg", "./images/exG02b/Icon/EN/newyork_icon3.svg"],
           "image": {
             "credit": "",
-            "src": "./images/exG02b/NewYork/newyork.png"
+            "src": "./images/exG02b/NewYork/NewYork.svg"
           },
           "description": "Amidst the high-rise buildings in Manhattan of New York City, a disused elevated rail viaduct was transformed into an elevated landscaped corridor named \"High Line\", embodying vitality. Visitors can stroll around leisurely or sit down for a break, and enjoy the open landscape in the bustling city.",
           "detailBlocks": [
@@ -208,7 +208,7 @@
           "icon": ["./images/exG02b/Icon/EN/rotterdam_icon1.svg", "./images/exG02b/Icon/EN/rotterdam_icon2.svg", "./images/exG02b/Icon/EN/rotterdam_icon3.svg"],
           "image": {
             "credit": "",
-            "src": "./images/exG02b/Rotterdam/rotterdam.png"
+            "src": "./images/exG02b/Rotterdam/Rotterdam.svg"
           },
           "description": "Aquafarming is not uncommon nowadays. Yet, have you heard of a floating dairy farm in Rotterdam, the port city in the Netherlands?",
           "detailBlocks": [
@@ -243,7 +243,7 @@
           "icon": ["./images/exG02b/Icon/EN/huainan_icon1.svg", "./images/exG02b/Icon/EN/huainan_icon2.svg", "./images/exG02b/Icon/EN/huainan_icon3.svg"],
           "image": {
             "credit": "",
-            "src": "./images/exG02b/Huainan/huainan.png"
+            "src": "./images/exG02b/Huainan/Huainan.svg"
           },
           "description": "In 2017, the world’s largest floating solar power station was built in Huainan City, Anhui Province, China. This station occupies ​​more than 86 hectares (about 107 football fields) with 160,000 solar panels. It can generate up to 40 megawatts of electricity, and the electricity generated is enough for use of 15,000 households.",
           "detailBlocks": [
@@ -278,7 +278,7 @@
           "icon": ["./images/exG02b/Icon/EN/copenhagen_icon1.svg", "./images/exG02b/Icon/EN/copenhagen_icon2.svg", ""],
           "image": {
             "credit": "",
-            "src": "./images/exG02b/Copenhagen/copenhagen.png"
+            "src": "./images/exG02b/Copenhagen/Copenhagen.svg"
           },
           "description": "Copenhagen, the capital of Denmark, endeavours to reduce its carbon emissions to become the world’s first carbon neutral capital in 2025. Carbon neutral does not mean an absolute zero carbon emission, but that an equivalent amount of carbon emissions would be offset by undertaking carbon saving initiatives.",
           "detailBlocks": [
@@ -313,7 +313,7 @@
           "icon": ["./images/exG02b/Icon/EN/malaysia_icon1.svg", "./images/exG02b/Icon/EN/malaysia_icon2.svg", ""],
           "image": {
             "credit": "",
-            "src": "./images/exG02b/KualaLumpur/Malaysia.png"
+            "src": "./images/exG02b/KualaLumpur/Malaysia.svg"
           },
           "description": "Have you ever thought of a tunnel which is not only a vehicular lane, but also a waterway?",
           "detailBlocks": [
@@ -348,7 +348,7 @@
           "icon": ["./images/exG02b/Icon/EN/barcelona_icon1.svg", "./images/exG02b/Icon/EN/barcelona_icon2.svg", ""],
           "image": {
             "credit": "",
-            "src": "./images/exG02b/Barcelona/barcelona.png"
+            "src": "./images/exG02b/Barcelona/Barcelona.svg"
           },
           "description": "Streets are not only infrastructure for urban mobility, but also an-extended space for residents’ activities. Barcelona’s \"Superblocks\" strives to reduce car flow and improve air quality by reclaiming the streets to the people, promoting walkability, cycling, and community interaction for uplifting quality of life.",
           "detailBlocks": [
@@ -393,7 +393,7 @@
           "icon": ["./images/exG02b/Icon/CN/hamburg_icon1.svg", "", ""],
           "image": {
             "credit": "",
-            "src": "./images/exG02b/Hamburg/_hamburg.svg"
+            "src": "./images/exG02b/Hamburg/hamburg.svg"
           },
           "description": "你知道德國第二大城市漢堡有多少條橋嗎？有人說漢堡擁有全世界最多的橋，共約二千五百條！原來漢堡從十四世紀開始便是歐洲的重要港口，有大大小小的橋橫跨運河、承載鐵路，連接倉庫，港口區發展為與市中心隔河相望的城中城。",
           "detailBlocks": [
@@ -428,7 +428,7 @@
           "icon": ["./images/exG02b/Icon/CN/hongkong_icon1.svg", "./images/exG02b/Icon/CN/hongkong_icon2.svg", "./images/exG02b/Icon/CN/hongkong_icon3.svg"],
           "image": {
             "credit": "",
-            "src": "./images/exG02b/HongKong/hongkong.png"
+            "src": "./images/exG02b/HongKong/HongKong.svg"
           },
           "description": "香港是國際金融中心，以高樓密集而聞名。原來這個石屎森林正為約二百四十五種蝴蝶、五百五十種雀鳥、還有上千種海魚和三千幾種植物提供棲所！極其多元的生物多樣性，近在咫尺。",
           "detailBlocks": [
@@ -470,7 +470,7 @@
           "icon": ["./images/exG02b/Icon/CN/seoul_icon1.svg", "./images/exG02b/Icon/CN/seoul_icon2.svg", "./images/exG02b/Icon/CN/seoul_icon3.svg"],
           "image": {
             "credit": "",
-            "src": "./images/exG02b/Seoul/seoul.png"
+            "src": "./images/exG02b/Seoul/Seoul.svg"
           },
           "description": "1970年代，清溪川是一條被高架公路覆蓋的排水渠，曾經「臭名遠播」。但是經過全面改造後，現在已是首爾必到景點之一，是旅客的「打卡」集中地。",
           "detailBlocks": [
@@ -505,7 +505,7 @@
           "icon": ["./images/exG02b/Icon/CN/helsinki_icon1.svg", "./images/exG02b/Icon/CN/helsinki_icon2.svg", "./images/exG02b/Icon/CN/helsinki_icon3.svg"],
           "image": {
             "credit": "",
-            "src": "./images/exG02b/Helsinki/helsinki.png"
+            "src": "./images/exG02b/Helsinki/Helsinki.svg"
           },
           "description": "一般的博物館都是一幢一幢站立在土地上的建築物，但芬蘭赫爾辛基的阿莫斯瑞克斯藝術博物館則是一個例外。地下的藝術博物館與地面的玻璃宮廣場融合，既保留原有廣場用途，又提供新的藝術展覽空間和工作室。",
           "detailBlocks": [
@@ -540,7 +540,7 @@
           "icon": ["./images/exG02b/Icon/CN/newyork_icon1.svg", "./images/exG02b/Icon/CN/newyork_icon2.svg", "./images/exG02b/Icon/CN/newyork_icon3.svg"],
           "image": {
             "credit": "",
-            "src": "./images/exG02b/NewYork/newyork.png"
+            "src": "./images/exG02b/NewYork/NewYork.svg"
           },
           "description": "高樓林立的紐約市曼哈頓，一列荒廢的架空鐵路軌搖身一變，化身成空中綠化走廊，名為「高線公園」洋溢着生命力。遊人可隨意漫步或坐下作息，在鬧巿中享受開揚的悠閒景致。",
           "detailBlocks": [
@@ -575,7 +575,7 @@
           "icon": ["./images/exG02b/Icon/CN/rotterdam_icon1.svg", "./images/exG02b/Icon/CN/rotterdam_icon2.svg", "./images/exG02b/Icon/CN/rotterdam_icon3.svg"],
           "image": {
             "credit": "",
-            "src": "./images/exG02b/Rotterdam/rotterdam.png"
+            "src": "./images/exG02b/Rotterdam/Rotterdam.svg"
           },
           "description": "現在水耕已相當普遍。但你有聽過荷蘭港口城市鹿特丹的飄浮養牛場嗎?",
           "detailBlocks": [
@@ -610,7 +610,7 @@
           "icon": ["./images/exG02b/Icon/CN/huainan_icon1.svg", "./images/exG02b/Icon/CN/huainan_icon2.svg", "./images/exG02b/Icon/CN/huainan_icon3.svg"],
           "image": {
             "credit": "",
-            "src": "./images/exG02b/Huainan/huainan.png"
+            "src": "./images/exG02b/Huainan/Huainan.svg"
           },
           "description": "2017年，全球最大型的水上太陽能發電站在中國安徽省淮南市落成。這座發電站面積超過八十六公頃（約一百零七個足球場），由十六萬塊太陽能板組成。它的發電容可量達四十兆瓦，所產生的電能足夠一萬五千戶家庭使用。",
           "detailBlocks": [
@@ -645,7 +645,7 @@
           "icon": ["./images/exG02b/Icon/CN/copenhagen_icon1.svg", "./images/exG02b/Icon/CN/copenhagen_icon2.svg", ""],
           "image": {
             "credit": "",
-            "src": "./images/exG02b/Copenhagen/copenhagen.png"
+            "src": "./images/exG02b/Copenhagen/Copenhagen.svg"
           },
           "description": "丹麥首都哥本哈根銳意減少碳排放，目標是於2025年成為全球第一個零碳排放的首都大城市。零碳排放並不是指完全不排放二氧化碳，而是指排放多少碳，便實行碳吸收措施來抵銷同等數量的碳，以達至碳平衡，又稱為碳中和。",
           "detailBlocks": [
@@ -680,7 +680,7 @@
           "icon": ["./images/exG02b/Icon/CN/malaysia_icon1.svg", "./images/exG02b/Icon/CN/malaysia_icon2.svg", ""],
           "image": {
             "credit": "",
-            "src": "./images/exG02b/KualaLumpur/Malaysia.png"
+            "src": "./images/exG02b/KualaLumpur/Malaysia.svg"
           },
           "description": "有沒有想過，隧道除了是車道，還可以是「水道」？",
           "detailBlocks": [
@@ -715,7 +715,7 @@
           "icon": ["./images/exG02b/Icon/CN/barcelona_icon1.svg", "./images/exG02b/Icon/CN/barcelona_icon2.svg", ""],
           "image": {
             "credit": "",
-            "src": "./images/exG02b/Barcelona/barcelona.png"
+            "src": "./images/exG02b/Barcelona/Barcelona.svg"
           },
           "description": "街道不僅是市區流動的基礎設施，更是居民活動的延伸空間。巴塞隆拿的「超級街區」銳意減少汽車流量和改善空氣質素，將街道歸還予居民，提倡步行、單車騎行，同時鼓勵更多社區之間的互動，提升生活質素。",
           "detailBlocks": [
