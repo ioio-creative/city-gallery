@@ -530,7 +530,9 @@ const G02BContainer = props => {
                 </text>
               )}
             </svg>
-            <div id='description'>{contentData && contentData.cities[domId].description}</div>
+            <div id='description' className={`${contentData && contentData.cities[domId].id ? `${contentData.cities[domId].id} ${language}` : ''}`}>
+              {contentData && contentData.cities[domId].description}
+            </div>
           </div>
           <div id='galleryListWrap'>
             <div id='dragForMore'>{contentData && contentData.global.dragMore}</div>

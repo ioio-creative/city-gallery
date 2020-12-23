@@ -526,13 +526,25 @@ body {
         color: #2f2d7c;
         display: flex;
         align-items: flex-end;
-        // overflow: hidden;
         white-space: nowrap;
+        line-height: vw-calc(100);
         span {
-          width: 63%;
-          display: inline-block;
+          width: 65%;
           margin-right: vw-calc(30);
+          display: flex;
           white-space: normal;
+          &.hongkong {
+            height: 100%;
+            vertical-align: top;
+          }
+          &.seoul {
+            height: 100%;
+            vertical-align: top;
+          }
+          &.huainan {
+            height: 100%;
+            vertical-align: top;
+          }
         }
         #cityIcon {
           position: relative;
@@ -605,8 +617,19 @@ body {
             font-family: 'ITC Avant Garde Gothic Std', 'Microsoft JhengHei';
           }
           &.hongkong {
-            top: -76px;
-            left: 265px;
+            position: absolute;
+            top: vw-calc(107);
+            left: vw-calc(255);
+          }
+          &.seoul {
+            position: absolute;
+            top: vw-calc(107);
+            left: vw-calc(260);
+          }
+          &.huainan {
+            position: absolute;
+            top: vw-calc(107);
+            left: vw-calc(170);
           }
         }
         &.zh {
@@ -627,6 +650,17 @@ body {
         margin-top: vw-calc(10);
         margin-left: vw-calc(3);
         color: #555555;
+        &.en {
+          &.hongkong {
+            margin-top: vw-calc(75);
+          }
+          &.seoul {
+            margin-top: vw-calc(75);
+          }
+          &.huainan {
+            margin-top: vw-calc(75);
+          }
+        }
       }
     }
     #galleryListWrap {
