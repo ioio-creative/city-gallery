@@ -9663,58 +9663,56 @@
 
 <set xlink:href="#duck3" attributeName="opacity" to="0" />
 
-<animate xlink:href="#ship" 
-	id="ani_ship"
+<animate xlink:href="#duck1" 
+	id="ani_duck1"
 	begin="ani_start.end" dur="2s"
 	attributeName="opacity" 
 	from="0" to="1" 
 	fill="freeze" />
-	<animateTransform xlink:href="#ship" dur="2s" from="0 -5" to="0 0" type="translate" attributeName="transform" begin="ani_ship.begin"/>
-
-<animate xlink:href="#duck1" 
-	id="ani_duck1"
-	begin="ani_ship.end" dur="2s"
-	attributeName="opacity" 
-	from="0" to="1" 
-	fill="freeze" />
 <animateTransform xlink:href="#duck1"
-	begin="ani_ship.end" dur="5s"
+	begin="ani_start.end" dur="14s"
 	attributeName="transform"
 	type="translate" 
 	from="100 0" to="-130 0" 
-	fill="freeze" 
-	repeatCount="indefinite" />
+	fill="freeze" />
 <animate xlink:href="#duck2" 
 	id="ani_duck2"
-	begin="ani_ship.end" dur="2s"
+	begin="ani_duck1.end" dur="2s"
 	attributeName="opacity" 
 	from="0" to="1" 
 	fill="freeze" />
 <animateTransform xlink:href="#duck2"
-	begin="ani_ship.end" dur="5s"
+	begin="ani_duck2.begin" dur="12s"
 	attributeName="transform"
 	type="translate" 
-	from="200 0" to="-100 0" 
-	fill="freeze" 
-	repeatCount="indefinite" />
+	from="200 0" to="-400 0" 
+	fill="freeze" />
 <animate xlink:href="#duck3" 
 	id="ani_duck3"
-	begin="ani_ship.end" dur="2s"
+	begin="ani_duck2.end" dur="2s"
 	attributeName="opacity" 
 	from="0" to="1" 
 	fill="freeze" />
 <animateTransform xlink:href="#duck3"
-	begin="ani_ship.end" dur="5s"
+	begin="ani_duck3.begin" dur="10s"
 	attributeName="transform"
 	type="translate" 
 	from="-100 0" to="0 0" 
-	fill="freeze" 
-	repeatCount="indefinite" />
+	fill="freeze" />
+
+	<animate xlink:href="#ship" 
+	id="ani_ship_app"
+	begin="ani_duck3.end" dur="2s"
+	attributeName="opacity" 
+	from="0" to="1" 
+	fill="freeze" />
+	<animateTransform xlink:href="#ship" id="ani_ship" dur="10s" attributeName="transform"
+	type="translate" from="-300 0" to="500 0" fill="freeze" begin="ani_ship_app.begin"/>
 
 <!-- dur = delay + fade out-->
 <animate 
 	id="ani_end"
-	begin="ani_duck3.end"
+	begin="ani_ship.end-3s"
 	dur="3s"
 />
 <!-- fade out (1s) -->

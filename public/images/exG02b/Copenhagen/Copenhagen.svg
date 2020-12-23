@@ -31968,7 +31968,7 @@
 <animate xlink:href="#bicycle2" id="ani_bicycle2"
 	begin="ani_bicycle1.end" dur="1s"
 	attributeName="opacity" from="0" to="1" fill="freeze" />
-<animateTransform xlink:href="#bicycle2" dur="10s" from="1000 0" to="0 0" type="translate" attributeName="transform" begin="ani_bicycle1.begin"/>
+<animateTransform xlink:href="#bicycle2" dur="10s" from="800 0" to="0 0" type="translate" attributeName="transform" begin="ani_bicycle1.begin"/>
 
 <animate xlink:href="#bicycle3" id="ani_bicycle3"
 	begin="ani_bicycle1.end" dur="1s"

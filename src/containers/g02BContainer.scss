@@ -532,6 +532,7 @@ body {
           width: 63%;
           display: inline-block;
           margin-right: vw-calc(30);
+          white-space: normal;
         }
         #cityIcon {
           position: relative;
@@ -566,9 +567,6 @@ body {
             }
           }
           &.en {
-            // &.hongkong {
-            //   width: 25%;
-            // }
             .icon1 {
               background-size: 100%;
               margin-right: vw-calc(15);
@@ -583,11 +581,6 @@ body {
               background-size: 100%;
               margin-right: vw-calc(25);
               display: flex;
-            }
-            &.hongkong {
-              .icon3 {
-                margin-right: vw-calc(-60);
-              }
             }
             &.seoul {
               .icon3 {
@@ -610,6 +603,10 @@ body {
             stroke-width: vw-calc(3);
             height: vw-calc(100);
             font-family: 'ITC Avant Garde Gothic Std', 'Microsoft JhengHei';
+          }
+          &.hongkong {
+            top: -76px;
+            left: 265px;
           }
         }
         &.zh {
