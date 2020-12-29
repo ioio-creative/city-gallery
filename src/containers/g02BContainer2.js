@@ -505,7 +505,7 @@ const G02BContainer = props => {
           <div id='circle3' className='circle' style={{ backgroundImage: `url(${circle3})` }}></div>
           <div id='contentWrap'>
             <div id='title'>
-              <span className={`${language}`}>{contentData && contentData.cities[domId].name}</span>
+              <span className={`${contentData && contentData.cities[domId].id ? `${contentData.cities[domId].id} ${language}` : ''}`}>{contentData && contentData.cities[domId].name}</span>
               <div id='cityIcon' className={`${contentData && contentData.cities[domId].id ? `${contentData.cities[domId].id} ${language}` : ''}`}>
                 {contentData &&
                   contentData.cities[domId].icon &&
@@ -530,7 +530,9 @@ const G02BContainer = props => {
                 </text>
               )}
             </svg>
-            <div id='description'>{contentData && contentData.cities[domId].description}</div>
+            <div id='description' className={`${contentData && contentData.cities[domId].id ? `${contentData.cities[domId].id} ${language}` : ''}`}>
+              {contentData && contentData.cities[domId].description}
+            </div>
           </div>
           <div id='galleryListWrap'>
             <div id='dragForMore'>{contentData && contentData.global.dragMore}</div>

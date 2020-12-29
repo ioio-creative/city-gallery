@@ -526,11 +526,25 @@ body {
         color: #2f2d7c;
         display: flex;
         align-items: flex-end;
-        // overflow: hidden;
         white-space: nowrap;
+        line-height: vw-calc(100);
         span {
-          width: 63%;
+          width: 65%;
           margin-right: vw-calc(30);
+          display: flex;
+          white-space: normal;
+          &.hongkong {
+            height: 100%;
+            vertical-align: top;
+          }
+          &.seoul {
+            height: 100%;
+            vertical-align: top;
+          }
+          &.huainan {
+            height: 100%;
+            vertical-align: top;
+          }
         }
         #cityIcon {
           position: relative;
@@ -550,24 +564,21 @@ body {
           &.zh {
             .icon1 {
               background-size: 100%;
-              margin-right: vw-calc(40);
               display: flex;
             }
             .icon2 {
               background-size: 100%;
-              margin-right: vw-calc(40);
+              margin-left: vw-calc(40);
               display: flex;
             }
             .icon3 {
               background-size: 100%;
+              margin-left: vw-calc(40);
               margin-right: vw-calc(50);
               display: flex;
             }
           }
           &.en {
-            // &.hongkong {
-            //   width: 25%;
-            // }
             .icon1 {
               background-size: 100%;
               margin-right: vw-calc(15);
@@ -582,11 +593,6 @@ body {
               background-size: 100%;
               margin-right: vw-calc(25);
               display: flex;
-            }
-            &.hongkong {
-              .icon3 {
-                margin-right: vw-calc(-60);
-              }
             }
             &.seoul {
               .icon3 {
@@ -610,6 +616,21 @@ body {
             height: vw-calc(100);
             font-family: 'ITC Avant Garde Gothic Std', 'Microsoft JhengHei';
           }
+          &.hongkong {
+            position: absolute;
+            top: vw-calc(107);
+            left: vw-calc(255);
+          }
+          &.seoul {
+            position: absolute;
+            top: vw-calc(107);
+            left: vw-calc(260);
+          }
+          &.huainan {
+            position: absolute;
+            top: vw-calc(107);
+            left: vw-calc(170);
+          }
         }
         &.zh {
           text {
@@ -625,10 +646,21 @@ body {
         width: vw-calc(1008);
         // text-align: justify;
         font-size: vw-calc(22);
-        line-height: vw-calc(36);
+        line-height: vw-calc(30);
         margin-top: vw-calc(10);
         margin-left: vw-calc(3);
         color: #555555;
+        &.en {
+          &.hongkong {
+            margin-top: vw-calc(75);
+          }
+          &.seoul {
+            margin-top: vw-calc(75);
+          }
+          &.huainan {
+            margin-top: vw-calc(75);
+          }
+        }
       }
     }
     #galleryListWrap {
@@ -699,12 +731,13 @@ body {
             }
           }
           p {
-            font-size: vw-calc(18);
+            font-size: vw-calc(20);
+            line-height: vw-calc(30);
             color: #707070;
             // font-family: 'Noto Sans TC';
             font-family: 'Microsoft JhengHei';
             padding: 0 vw-calc(10);
-            margin-top: vw-calc(16);
+            margin-top: vw-calc(10);
           }
         }
       }
