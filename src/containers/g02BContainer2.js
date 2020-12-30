@@ -525,7 +525,7 @@ const G02BContainer = props => {
                 </text>
               )}
               {language === 'en' && (
-                <text x='0' y='85%' fill='none' stroke='#2F2D7C'>
+                <text x='0' y='75%' fill='none' stroke='#2F2D7C'>
                   {contentData && contentData.cities[domId].location}
                 </text>
               )}
@@ -534,7 +534,7 @@ const G02BContainer = props => {
               {contentData && contentData.cities[domId].description}
             </div>
           </div>
-          <div id='galleryListWrap'>
+          <div id='galleryListWrap' className={`${contentData && contentData.cities[domId].id}`}>
             <div id='dragForMore'>{contentData && contentData.global.dragMore}</div>
             <ul ref={galleryListElem} id='galleryList'>
               {contentData &&
@@ -542,10 +542,10 @@ const G02BContainer = props => {
                 contentData.cities[domId].detailBlocks.map((v, i) => {
                   return (
                     <li key={i}>
-                      <div className='img'>
+                      <div className={`img ${contentData && contentData.cities[domId].id}`}>
                         <img src={v.image.src} />
                       </div>
-                      <p>{v.image.credit}</p>
+                      <p className='credit'>{v.image.credit}</p>
                       <p>{v.image.caption}</p>
                     </li>
                   );

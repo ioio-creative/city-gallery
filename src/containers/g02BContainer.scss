@@ -521,27 +521,28 @@ body {
       #title {
         width: 100%;
         height: 100%;
-        font-size: vw-calc(80);
+        font-size: vw-calc(63);
         font-weight: bold;
         color: #2f2d7c;
         display: flex;
         align-items: flex-end;
         white-space: nowrap;
-        line-height: vw-calc(100);
+        line-height: vw-calc(80);
         span {
           width: 65%;
           margin-right: vw-calc(30);
           display: flex;
           white-space: normal;
-          &.hongkong {
+
+          &.hongkong.en {
             height: 100%;
             vertical-align: top;
           }
-          &.seoul {
+          &.seoul.en {
             height: 100%;
             vertical-align: top;
           }
-          &.huainan {
+          &.huainan.en {
             height: 100%;
             vertical-align: top;
           }
@@ -606,29 +607,28 @@ body {
         position: relative;
         top: 0;
         left: 0;
-        width: 50vw;
-        overflow: visible;
-        height: vw-calc(63);
+        width: 30vw;
+        height: vw-calc(70);
         &.en {
           text {
-            font-size: vw-calc(63);
+            font-size: vw-calc(60);
             stroke-width: vw-calc(3);
             height: vw-calc(100);
             font-family: 'ITC Avant Garde Gothic Std', 'Microsoft JhengHei';
           }
           &.hongkong {
             position: absolute;
-            top: vw-calc(107);
+            top: vw-calc(80);
             left: vw-calc(255);
           }
           &.seoul {
             position: absolute;
-            top: vw-calc(107);
+            top: vw-calc(80);
             left: vw-calc(260);
           }
           &.huainan {
             position: absolute;
-            top: vw-calc(107);
+            top: vw-calc(80);
             left: vw-calc(170);
           }
         }
@@ -652,13 +652,13 @@ body {
         color: #555555;
         &.en {
           &.hongkong {
-            margin-top: vw-calc(75);
+            margin-top: vw-calc(80);
           }
           &.seoul {
-            margin-top: vw-calc(75);
+            margin-top: vw-calc(80);
           }
           &.huainan {
-            margin-top: vw-calc(75);
+            margin-top: vw-calc(80);
           }
         }
       }
@@ -671,16 +671,136 @@ body {
       top: 11.5% + vw-calc(200);
       right: vw-calc(146);
       z-index: 2;
-      &:before {
-        content: '';
-        width: 100%;
-        height: 41%;
-        background: linear-gradient(0deg, rgba(255, 255, 255, 1) 55%, rgba(255, 247, 237, 0) 100%);
-        position: absolute;
-        bottom: vw-calc(-70);
-        left: 0;
-        z-index: 2;
-        pointer-events: none;
+      &.hamburg {
+        &:before {
+          content: '';
+          width: 100%;
+          height: 41%;
+          background: linear-gradient(0deg, rgba(255, 253, 241, 1) 55%, rgba(255, 247, 237, 0) 100%);
+          position: absolute;
+          bottom: vw-calc(-70);
+          left: 0;
+          z-index: 2;
+          pointer-events: none;
+        }
+      }
+      &.hongkong {
+        &:before {
+          content: '';
+          width: 100%;
+          height: 41%;
+          background: linear-gradient(0deg, rgba(230, 248, 242, 1) 55%, rgba(255, 247, 237, 0) 100%);
+          position: absolute;
+          bottom: vw-calc(-70);
+          left: 0;
+          z-index: 2;
+          pointer-events: none;
+        }
+      }
+      &.seoul {
+        &:before {
+          content: '';
+          width: 100%;
+          height: 41%;
+          background: linear-gradient(0deg, rgba(255, 249, 244, 1) 55%, rgba(255, 247, 237, 0) 100%);
+          position: absolute;
+          bottom: vw-calc(-70);
+          left: 0;
+          z-index: 2;
+          pointer-events: none;
+        }
+      }
+      &.helsinki {
+        &:before {
+          content: '';
+          width: 100%;
+          height: 41%;
+          background: linear-gradient(0deg, rgba(241, 250, 250, 1) 55%, rgba(255, 247, 237, 0) 100%);
+          position: absolute;
+          bottom: vw-calc(-70);
+          left: 0;
+          z-index: 2;
+          pointer-events: none;
+        }
+      }
+      &.newyork {
+        &:before {
+          content: '';
+          width: 100%;
+          height: 41%;
+          background: linear-gradient(0deg, rgba(243, 255, 246, 1) 55%, rgba(255, 247, 237, 0) 100%);
+          position: absolute;
+          bottom: vw-calc(-70);
+          left: 0;
+          z-index: 2;
+          pointer-events: none;
+        }
+      }
+      &.rotterdam {
+        &:before {
+          content: '';
+          width: 100%;
+          height: 41%;
+          background: linear-gradient(0deg, rgba(241, 249, 255, 1) 55%, rgba(255, 247, 237, 0) 100%);
+          position: absolute;
+          bottom: vw-calc(-70);
+          left: 0;
+          z-index: 2;
+          pointer-events: none;
+        }
+      }
+      &.huainan {
+        &:before {
+          content: '';
+          width: 100%;
+          height: 41%;
+          background: linear-gradient(0deg, rgba(252, 252, 234, 1) 55%, rgba(255, 247, 237, 0) 100%);
+          position: absolute;
+          bottom: vw-calc(-70);
+          left: 0;
+          z-index: 2;
+          pointer-events: none;
+        }
+      }
+      &.copenhagen {
+        &:before {
+          content: '';
+          width: 100%;
+          height: 41%;
+          background: linear-gradient(0deg, rgba(255, 246, 238, 1) 55%, rgba(255, 247, 237, 0) 100%);
+          position: absolute;
+          bottom: vw-calc(-70);
+          left: 0;
+          z-index: 2;
+          pointer-events: none;
+        }
+      }
+      &.kualalumpur {
+        &:before {
+          content: '';
+          width: 100%;
+          height: 41%;
+          background: linear-gradient(0deg, rgba(250, 247, 241, 1) 55%, rgba(255, 247, 237, 0) 100%);
+          position: absolute;
+          bottom: vw-calc(-70);
+          left: 0;
+          z-index: 2;
+          pointer-events: none;
+        }
+      }
+      &.barcelona {
+        &:before {
+          content: '';
+          width: 100%;
+          height: 41%;
+          background: linear-gradient(0deg, rgba(255, 243, 243, 1) 55%, rgba(255, 247, 237, 0) 100%);
+          // background: linear-gradient(0deg, rgba(255, 255, 255, 1) 55%, rgba(255, 247, 237, 0) 100%);
+          position: absolute;
+          bottom: vw-calc(-70);
+          left: 0;
+          z-index: 2;
+          pointer-events: none;
+        }
       }
       // &:after {
       //   content: '';
@@ -720,14 +840,115 @@ body {
           }
           .img {
             position: relative;
-            &:before {
-              content: '';
-              width: 100%;
-              height: 10%;
-              background: linear-gradient(0deg, rgba(255, 255, 255, 0.7) 20%, rgba(255, 247, 237, 0) 100%);
-              position: absolute;
-              bottom: 0;
-              left: 0;
+            &.hamburg {
+              &:before {
+                content: '';
+                width: 100%;
+                height: 10%;
+                background: linear-gradient(0deg, rgba(255, 253, 241, 1) 20%, rgba(255, 247, 237, 0) 100%);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+              }
+            }
+            &.hongkong {
+              &:before {
+                content: '';
+                width: 100%;
+                height: 10%;
+                background: linear-gradient(0deg, rgba(230, 248, 242, 1) 20%, rgba(255, 247, 237, 0) 100%);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+              }
+            }
+            &.seoul {
+              &:before {
+                content: '';
+                width: 100%;
+                height: 10%;
+                background: linear-gradient(0deg, rgba(255, 249, 244, 1) 20%, rgba(255, 247, 237, 0) 100%);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+              }
+            }
+            &.helsinki {
+              &:before {
+                content: '';
+                width: 100%;
+                height: 10%;
+                background: linear-gradient(0deg, rgba(241, 250, 250, 1) 20%, rgba(255, 247, 237, 0) 100%);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+              }
+            }
+            &.newyork {
+              &:before {
+                content: '';
+                width: 100%;
+                height: 10%;
+                background: linear-gradient(0deg, rgba(243, 255, 246, 1) 20%, rgba(255, 247, 237, 0) 100%);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+              }
+            }
+            &.rotterdam {
+              &:before {
+                content: '';
+                width: 100%;
+                height: 10%;
+                background: linear-gradient(0deg, rgba(241, 249, 255, 1) 20%, rgba(255, 247, 237, 0) 100%);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+              }
+            }
+            &.huainan {
+              &:before {
+                content: '';
+                width: 100%;
+                height: 10%;
+                background: linear-gradient(0deg, rgba(252, 252, 234, 1) 20%, rgba(255, 247, 237, 0) 100%);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+              }
+            }
+            &.copenhagen {
+              &:before {
+                content: '';
+                width: 100%;
+                height: 10%;
+                background: linear-gradient(0deg, rgba(255, 246, 238, 1) 20%, rgba(255, 247, 237, 0) 100%);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+              }
+            }
+            &.kualalumpur {
+              &:before {
+                content: '';
+                width: 100%;
+                height: 10%;
+                background: linear-gradient(0deg, rgba(250, 247, 241, 1) 20%, rgba(255, 247, 237, 0) 100%);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+              }
+            }
+            &.barcelona {
+              &:before {
+                content: '';
+                width: 100%;
+                height: 10%;
+                background: linear-gradient(0deg, rgba(255, 243, 243, 1) 20%, rgba(255, 247, 237, 0) 100%);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+              }
             }
           }
           p {
@@ -738,6 +959,11 @@ body {
             font-family: 'Microsoft JhengHei';
             padding: 0 vw-calc(10);
             margin-top: vw-calc(10);
+            &.credit {
+              font-size: vw-calc(16);
+              line-height: vw-calc(20);
+              font-style: italic;
+            }
           }
         }
       }

@@ -23,6 +23,7 @@
           "name": "Port City Regeneration",
           "location": "Hamburg",
           "backgroundColor": "#FFFDF1",
+          "backgroundRGBA": "rgba(255, 253, 241, 0.7)",
           "icon": ["", "", "./images/exG02b/Icon/EN/hamburg_icon1.svg"],
           "image": {
             "credit": "",
@@ -57,7 +58,8 @@
           "id": "hongkong",
           "name": "Biodiversity beyond Concrete Jungles",
           "location": "Hong Kong",
-          "backgroundColor": "##E6F8F2",
+          "backgroundColor": "#E6F8F2",
+          "backgroundRGBA": "rgba(230, 248, 242, 0.7)",
           "icon": ["./images/exG02b/Icon/EN/hongkong_icon1.svg", "./images/exG02b/Icon/EN/hongkong_icon2.svg", "./images/exG02b/Icon/EN/hongkong_icon3.svg"],
           "image": {
             "credit": "",
@@ -100,6 +102,7 @@
           "name": "From Nullah to Blue-green Hotspot",
           "location": "Seoul",
           "backgroundColor": "#FFF9F4",
+          "backgroundRGBA": "rgba(255, 249, 244, 0.7)",
           "icon": ["./images/exG02b/Icon/EN/seoul_icon1.svg", "./images/exG02b/Icon/EN/seoul_icon2.svg", "./images/exG02b/Icon/EN/seoul_icon3.svg"],
           "image": {
             "credit": "",
@@ -135,6 +138,7 @@
           "name": "Icy Underground Gallery ",
           "location": "Helsinki",
           "backgroundColor": "#F1FAFA",
+          "backgroundRGBA": "rgba(241, 250, 250, 0.7)",
           "icon": ["./images/exG02b/Icon/EN/helsinki_icon1.svg", "./images/exG02b/Icon/EN/helsinki_icon2.svg", "./images/exG02b/Icon/EN/helsinki_icon3.svg"],
           "image": {
             "credit": "",
@@ -170,6 +174,7 @@
           "name": "High Line",
           "location": "New York",
           "backgroundColor": "#F3FFF6",
+          "backgroundRGBA": "rgba(243, 255, 246, 0.7)",
           "icon": ["./images/exG02b/Icon/EN/newyork_icon1.svg", "./images/exG02b/Icon/EN/newyork_icon2.svg", "./images/exG02b/Icon/EN/newyork_icon3.svg"],
           "image": {
             "credit": "",
@@ -205,6 +210,7 @@
           "name": "Floating Farm",
           "location": "Rotterdam",
           "backgroundColor": "#F1F9FF",
+          "backgroundRGBA": "rgba(241, 249, 255, 0.7)",
           "icon": ["./images/exG02b/Icon/EN/rotterdam_icon1.svg", "./images/exG02b/Icon/EN/rotterdam_icon2.svg", "./images/exG02b/Icon/EN/rotterdam_icon3.svg"],
           "image": {
             "credit": "",
@@ -240,6 +246,7 @@
           "name": "An Invisible Power Plant on a Lake",
           "location": "Huainan",
           "backgroundColor": "#FCFCEA",
+          "backgroundRGBA": "rgba(252, 252, 234, 0.7)",
           "icon": ["./images/exG02b/Icon/EN/huainan_icon1.svg", "./images/exG02b/Icon/EN/huainan_icon2.svg", "./images/exG02b/Icon/EN/huainan_icon3.svg"],
           "image": {
             "credit": "",
@@ -275,6 +282,7 @@
           "name": "Carbon Neutral Capital",
           "location": "Copenhagen",
           "backgroundColor": "#FFF6EE",
+          "backgroundRGBA": "rgba(255, 246, 238, 0.7)",
           "icon": ["", "./images/exG02b/Icon/EN/copenhagen_icon1.svg", "./images/exG02b/Icon/EN/copenhagen_icon2.svg"],
           "image": {
             "credit": "",
@@ -310,6 +318,7 @@
           "name": "A SMART Tunnel",
           "location": "Kuala Lumpur",
           "backgroundColor": "#FAF7F1",
+          "backgroundRGBA": "rgba(250, 247, 241, 0.7)",
           "icon": ["", "./images/exG02b/Icon/EN/malaysia_icon1.svg", "./images/exG02b/Icon/EN/malaysia_icon2.svg"],
           "image": {
             "credit": "",
@@ -345,6 +354,7 @@
           "name": "Street as Playground",
           "location": "Barcelona",
           "backgroundColor": "#FFF3F3",
+          "backgroundRGBA": "rgba(255, 243, 243, 0.7)",
           "icon": ["./images/exG02b/Icon/EN/barcelona_icon1.svg", "./images/exG02b/Icon/EN/barcelona_icon2.svg"],
           "image": {
             "credit": "",
@@ -390,6 +400,7 @@
           "name": "港口城巿大改造",
           "location": "漢堡",
           "backgroundColor": "#FFFDF1",
+          "backgroundRGBA": "rgba(255, 253, 241, 0.7)",
           "icon": ["", "", "./images/exG02b/Icon/CN/hamburg_icon1.svg"],
           "image": {
             "credit": "",
@@ -425,6 +436,7 @@
           "name": "石屎森林外的生物多樣性",
           "location": "香港",
           "backgroundColor": "#E6F8F2",
+          "backgroundRGBA": "rgba(230, 248, 242, 0.7)",
           "icon": ["./images/exG02b/Icon/CN/hongkong_icon1.svg", "./images/exG02b/Icon/CN/hongkong_icon2.svg", "./images/exG02b/Icon/CN/hongkong_icon3.svg"],
           "image": {
             "credit": "",
@@ -467,6 +479,7 @@
           "name": "由水渠化為藍綠景點",
           "location": "首爾",
           "backgroundColor": "#FFF9F4",
+          "backgroundRGBA": "rgba(255, 249, 244, 0.7)",
           "icon": ["./images/exG02b/Icon/CN/seoul_icon1.svg", "./images/exG02b/Icon/CN/seoul_icon2.svg", "./images/exG02b/Icon/CN/seoul_icon3.svg"],
           "image": {
             "credit": "",
@@ -502,6 +515,7 @@
           "name": "冰天遁地藝術館",
           "location": "赫爾辛基",
           "backgroundColor": "#F1FAFA",
+          "backgroundRGBA": "rgba(241, 250, 250, 0.7)",
           "icon": ["./images/exG02b/Icon/CN/helsinki_icon1.svg", "./images/exG02b/Icon/CN/helsinki_icon2.svg", "./images/exG02b/Icon/CN/helsinki_icon3.svg"],
           "image": {
             "credit": "",
@@ -537,6 +551,7 @@
           "name": "高線公園",
           "location": "紐約",
           "backgroundColor": "#F3FFF6",
+          "backgroundRGBA": "rgba(243, 255, 246, 0.7)",
           "icon": ["./images/exG02b/Icon/CN/newyork_icon1.svg", "./images/exG02b/Icon/CN/newyork_icon2.svg", "./images/exG02b/Icon/CN/newyork_icon3.svg"],
           "image": {
             "credit": "",
@@ -572,6 +587,7 @@
           "name": "牧場水上飄",
           "location": "鹿特丹",
           "backgroundColor": "#F1F9FF",
+          "backgroundRGBA": "rgba(241, 249, 255, 0.7)",
           "icon": ["./images/exG02b/Icon/CN/rotterdam_icon1.svg", "./images/exG02b/Icon/CN/rotterdam_icon2.svg", "./images/exG02b/Icon/CN/rotterdam_icon3.svg"],
           "image": {
             "credit": "",
@@ -607,6 +623,7 @@
           "name": "湖泊上的隱形發電廠",
           "location": "淮南",
           "backgroundColor": "#FCFCEA",
+          "backgroundRGBA": "rgba(252, 252, 234, 0.7)",
           "icon": ["./images/exG02b/Icon/CN/huainan_icon1.svg", "./images/exG02b/Icon/CN/huainan_icon2.svg", "./images/exG02b/Icon/CN/huainan_icon3.svg"],
           "image": {
             "credit": "",
@@ -642,6 +659,7 @@
           "name": "零碳排放首都",
           "location": "哥本哈根",
           "backgroundColor": "#FFF6EE",
+          "backgroundRGBA": "rgba(255, 246, 238, 0.7)",
           "icon": ["", "./images/exG02b/Icon/CN/copenhagen_icon1.svg", "./images/exG02b/Icon/CN/copenhagen_icon2.svg"],
           "image": {
             "credit": "",
@@ -677,6 +695,7 @@
           "name": "聰明隧道",
           "location": "吉隆坡",
           "backgroundColor": "#FAF7F1",
+          "backgroundRGBA": "rgba(250, 247, 241, 0.7)",
           "icon": ["", "./images/exG02b/Icon/CN/malaysia_icon1.svg", "./images/exG02b/Icon/CN/malaysia_icon2.svg"],
           "image": {
             "credit": "",
@@ -712,6 +731,7 @@
           "name": "馬路中心的活動天地",
           "location": "巴塞隆拿",
           "backgroundColor": "#FFF3F3",
+          "backgroundRGBA": "rgba(255, 243, 243, 0.7)",
           "icon": ["./images/exG02b/Icon/CN/barcelona_icon1.svg", "./images/exG02b/Icon/CN/barcelona_icon2.svg"],
           "image": {
             "credit": "",
