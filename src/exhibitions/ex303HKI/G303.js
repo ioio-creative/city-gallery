@@ -3,6 +3,7 @@ import './style.scss';
 // import gsap from 'gsap';
 // import VideoPlayer from 'react-video-js-player';
 // import { Player } from 'video-react';
+import webSocket from 'socket.io-client';
 import VideoPlayer from '../../components/VideoPlayer';
 
 import Menu from './Menu';
@@ -30,6 +31,7 @@ const G303 = props => {
   const [zone, setZone] = useState(0);
   const [coastlineIdx, setCoastlineIdx] = useState(null);
   const [streetIdx, setStreetIdx] = useState(null);
+  const [socket, setSocket] = useState(null);
 
   // const handleZoom = useRef(null);
   const handleMove = useRef(null);
@@ -49,6 +51,21 @@ const G303 = props => {
   // const fullOpacity = tf => {
   //   setFill(tf);
   // };
+
+  
+  // useEffect(() => {
+  //   if (socket) {
+  //     socket.on('userEnter', start);
+  //   } else {
+  //     setSocket(webSocket('http://localhost:80/'));
+  //   }
+
+  //   return () => {
+  //     if (socket) {
+  //       socket.off('userEnter', start);
+  //     }
+  //   };
+  // }, [socket]);
 
   const onClickYear = i => {
     // if (!started)
@@ -379,8 +396,8 @@ const G303 = props => {
             );
           })}
         </ul>
-        <div id='startBtn' onClick={onClickStart}>{globalData && globalData.confirm}</div>
       </div>
+      <div id='startBtn' className={`${yearIdx < 0 ? 'disabled' : ''} ${showYear ? '' : 'hide'}`} onClick={onClickStart}>{globalData && globalData.confirm}</div>
       <div id="yearOfCoastline" className={`${gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}></div>
       
       {/* <div id='streetInfo'> */}

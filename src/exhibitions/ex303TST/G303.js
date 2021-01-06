@@ -284,8 +284,8 @@ const G303 = props => {
             );
           })}
         </ul>
-        <div id='startBtn' onClick={onClickStart}>{globalData && globalData.confirm}</div>
       </div>
+      <div id='startBtn' className={`${yearIdx < 0 ? 'disabled' : ''} ${showYear ? '' : 'hide'}`} onClick={onClickStart}>{globalData && globalData.confirm}</div>
       <div id="yearOfCoastline" className={`${gameMode === 'home' || streetIdx !== null ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}></div>
       
       <div id="ref" className={`${gameMode === 'home' ? 'hide' : ''} ${yearIdx === 3 ? 'w' : ''}`}>本圖的海岸線只供參考。</div>

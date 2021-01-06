@@ -328,9 +328,9 @@
                 "src":"./images/ex303/street/conduitRoad_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video1.mp4",
+                "src":"./images/ex303/video/conduitRoad.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video1_poster.jpg"
+                  "src":"./images/ex303/video/conduitRoad_poster.jpg"
                 }
               }
             }
@@ -357,9 +357,9 @@
                 "src":"./images/ex303/street/ladderStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video2.mp4",
+                "src":"./images/ex303/video/ladderStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video2_poster.jpg"
+                  "src":"./images/ex303/video/ladderStreet_poster.jpg"
                 }
               }
             }
@@ -386,9 +386,9 @@
                 "src":"./images/ex303/street/hollywoodRoad_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/hollywoodRoad.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/hollywoodRoad_poster.jpg"
                 }
               }
             }
@@ -415,9 +415,9 @@
                 "src":"./images/ex303/street/oldBaileyStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/oldBaileyStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/oldBaileyStreet_poster.jpg"
                 }
               }
             }
@@ -444,9 +444,9 @@
                 "src":"./images/ex303/street/batteryPath_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/batteryPath.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/batteryPath_poster.jpg"
                 }
               }
             }
@@ -473,9 +473,9 @@
                 "src":"./images/ex303/street/starStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/sunMoonStar.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/sunMoonStar_poster.jpg"
                 }
               }
             }
@@ -502,9 +502,9 @@
                 "src":"./images/ex303/street/sunStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/sunMoonStar.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/sunMoonStar_poster.jpg"
                 }
               }
             }
@@ -531,9 +531,9 @@
                 "src":"./images/ex303/street/moonStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/sunMoonStar.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/sunMoonStar_poster.jpg"
                 }
               }
             }
@@ -560,9 +560,9 @@
                 "src":"./images/ex303/street/arsenalStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/arsenalStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/arsenalStreet_poster.jpg"
                 }
               }
             }
@@ -589,9 +589,9 @@
                 "src":"./images/ex303/street/shipStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/shipStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/shipStreet_poster.jpg"
                 }
               }
             }
@@ -618,9 +618,9 @@
                 "src":"./images/ex303/street/canalRoad_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/canalRoad.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/canalRoad_poster.jpg"
                 }
               }
             }
@@ -647,9 +647,9 @@
                 "src":"./images/ex303/street/sugarStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/sugarStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/sugarStreet_poster.jpg"
                 }
               }
             }
@@ -676,9 +676,9 @@
                 "src":"./images/ex303/street/causewayRoad_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/causewayRoad.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/causewayRoad_poster.jpg"
                 }
               }
             }
@@ -705,9 +705,9 @@
                 "src":"./images/ex303/street/taiHangRoad_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/taiHangRoad.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/taiHangRoad_poster.jpg"
                 }
               }
             }
@@ -734,9 +734,9 @@
                 "src":"./images/ex303/street/electricRoad_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/electricRoad.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/electricRoad_poster.jpg"
                 }
               }
             }
@@ -763,9 +763,9 @@
                 "src":"./images/ex303/street/nganMokStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/nganMokStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/nganMokStreet_poster.jpg"
                 }
               }
             }
@@ -792,9 +792,9 @@
                 "src":"./images/ex303/street/yuetYuenStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/yuetYuenStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/yuetYuenStreet_poster.jpg"
                 }
               }
             }
@@ -821,9 +821,9 @@
                 "src":"./images/ex303/street/wharfRoad_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/wharfRoad.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/wharfRoad_poster.jpg"
                 }
               }
             }
@@ -850,9 +850,9 @@
                 "src":"./images/ex303/street/tsatTszMuiRoad_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/tsatTszMuiRoad.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/tsatTszMuiRoad_poster.jpg"
                 }
               }
             }
@@ -879,9 +879,9 @@
                 "src":"./images/ex303/street/tongChongStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/tongChongStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/tongChongStreet_poster.jpg"
                 }
               }
             }
@@ -908,9 +908,9 @@
                 "src":"./images/ex303/street/quarryBayStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/quarryBayStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/quarryBayStreet_poster.jpg"
                 }
               }
             }
@@ -1074,9 +1074,9 @@
                 "src":"./images/ex303/street/conduitRoad_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video1.mp4",
+                "src":"./images/ex303/video/conduitRoad.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video1_poster.jpg"
+                  "src":"./images/ex303/video/conduitRoad_poster.jpg"
                 }
               }
             }
@@ -1103,9 +1103,9 @@
                 "src":"./images/ex303/street/ladderStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video2.mp4",
+                "src":"./images/ex303/video/ladderStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video2_poster.jpg"
+                  "src":"./images/ex303/video/ladderStreet_poster.jpg"
                 }
               }
             }
@@ -1132,9 +1132,9 @@
                 "src":"./images/ex303/street/hollywoodRoad_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/hollywoodRoad.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/hollywoodRoad_poster.jpg"
                 }
               }
             }
@@ -1161,9 +1161,9 @@
                 "src":"./images/ex303/street/oldBaileyStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/oldBaileyStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/oldBaileyStreet_poster.jpg"
                 }
               }
             }
@@ -1190,9 +1190,9 @@
                 "src":"./images/ex303/street/batteryPath_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/batteryPath.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/batteryPath_poster.jpg"
                 }
               }
             }
@@ -1219,9 +1219,9 @@
                 "src":"./images/ex303/street/starStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/sunMoonStar.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/sunMoonStar_poster.jpg"
                 }
               }
             }
@@ -1248,9 +1248,9 @@
                 "src":"./images/ex303/street/sunStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/sunMoonStar.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/sunMoonStar_poster.jpg"
                 }
               }
             }
@@ -1277,9 +1277,9 @@
                 "src":"./images/ex303/street/moonStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/sunMoonStar.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/sunMoonStar_poster.jpg"
                 }
               }
             }
@@ -1306,9 +1306,9 @@
                 "src":"./images/ex303/street/arsenalStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/arsenalStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/arsenalStreet_poster.jpg"
                 }
               }
             }
@@ -1335,9 +1335,9 @@
                 "src":"./images/ex303/street/shipStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/shipStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/shipStreet_poster.jpg"
                 }
               }
             }
@@ -1364,9 +1364,9 @@
                 "src":"./images/ex303/street/canalRoad_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/canalRoad.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/canalRoad_poster.jpg"
                 }
               }
             }
@@ -1393,9 +1393,9 @@
                 "src":"./images/ex303/street/sugarStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/sugarStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/sugarStreet_poster.jpg"
                 }
               }
             }
@@ -1422,9 +1422,9 @@
                 "src":"./images/ex303/street/causewayRoad_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/causewayRoad.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/causewayRoad_poster.jpg"
                 }
               }
             }
@@ -1451,9 +1451,9 @@
                 "src":"./images/ex303/street/taiHangRoad_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/taiHangRoad.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/taiHangRoad_poster.jpg"
                 }
               }
             }
@@ -1480,9 +1480,9 @@
                 "src":"./images/ex303/street/electricRoad_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/electricRoad.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/electricRoad_poster.jpg"
                 }
               }
             }
@@ -1509,9 +1509,9 @@
                 "src":"./images/ex303/street/nganMokStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/nganMokStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/nganMokStreet_poster.jpg"
                 }
               }
             }
@@ -1538,9 +1538,9 @@
                 "src":"./images/ex303/street/yuetYuenStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/yuetYuenStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/yuetYuenStreet_poster.jpg"
                 }
               }
             }
@@ -1567,9 +1567,9 @@
                 "src":"./images/ex303/street/wharfRoad_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/wharfRoad.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/wharfRoad_poster.jpg"
                 }
               }
             }
@@ -1596,9 +1596,9 @@
                 "src":"./images/ex303/street/tsatTszMuiRoad_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/tsatTszMuiRoad.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/tsatTszMuiRoad_poster.jpg"
                 }
               }
             }
@@ -1625,9 +1625,9 @@
                 "src":"./images/ex303/street/tongChongStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/tongChongStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/tongChongStreet_poster.jpg"
                 }
               }
             }
@@ -1654,9 +1654,9 @@
                 "src":"./images/ex303/street/quarryBayStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video3.mp4",
+                "src":"./images/ex303/video/quarryBayStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video3_poster.jpg"
+                  "src":"./images/ex303/video/quarryBayStreet_poster.jpg"
                 }
               }
             }
@@ -1838,6 +1838,11 @@
     ],
     "contents": {
       "en": {
+        "global":{
+          "confirm":"Confirm",
+          "coastline":"Coastline",
+          "street":"Street"
+        },
         "street": [
           {
             "zone":1,
@@ -1861,9 +1866,9 @@
                 "src":"./images/ex303/street/tst/knutsfordTerrace_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video1.mp4",
+                "src":"./images/ex303/video/kln/knutsfordTerrace.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video1_poster.jpg"
+                  "src":"./images/ex303/video/kln/knutsfordTerrace_poster.jpg"
                 }
               }
             }
@@ -1890,9 +1895,9 @@
                 "src":"./images/ex303/street/tst/observatoryRoad_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video1.mp4",
+                "src":"./images/ex303/video/kln/observatoryRoad.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video1_poster.jpg"
+                  "src":"./images/ex303/video/kln/observatoryRoad_poster.jpg"
                 }
               }
             }
@@ -1919,9 +1924,9 @@
                 "src":"./images/ex303/street/tst/reclamationStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video1.mp4",
+                "src":"./images/ex303/video/kln/reclamationStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video1_poster.jpg"
+                  "src":"./images/ex303/video/kln/reclamationStreet_poster.jpg"
                 }
               }
             }
@@ -1948,9 +1953,9 @@
                 "src":"./images/ex303/street/tst/ferryStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video1.mp4",
+                "src":"./images/ex303/video/kln/ferryStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video1_poster.jpg"
+                  "src":"./images/ex303/video/kln/ferryStreet_poster.jpg"
                 }
               }
             }
@@ -1977,9 +1982,9 @@
                 "src":"./images/ex303/street/tst/publicSquareStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video1.mp4",
+                "src":"./images/ex303/video/kln/publicSquareStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video1_poster.jpg"
+                  "src":"./images/ex303/video/kln/publicSquareStreet_poster.jpg"
                 }
               }
             }
@@ -2006,9 +2011,9 @@
                 "src":"./images/ex303/street/tst/templeStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video1.mp4",
+                "src":"./images/ex303/video/kln/templeStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video1_poster.jpg"
+                  "src":"./images/ex303/video/kln/templeStreet_poster.jpg"
                 }
               }
             }
@@ -2035,9 +2040,9 @@
                 "src":"./images/ex303/street/tst/saiYeungChoiStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video1.mp4",
+                "src":"./images/ex303/video/kln/saiYeungChoiStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video1_poster.jpg"
+                  "src":"./images/ex303/video/kln/saiYeungChoiStreet_poster.jpg"
                 }
               }
             }
@@ -2064,9 +2069,9 @@
                 "src":"./images/ex303/street/tst/tungChoiStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video1.mp4",
+                "src":"./images/ex303/video/kln/tungChoiStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video1_poster.jpg"
+                  "src":"./images/ex303/video/kln/tungChoiStreet_poster.jpg"
                 }
               }
             }
@@ -2093,9 +2098,9 @@
                 "src":"./images/ex303/street/tst/boundaryStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video1.mp4",
+                "src":"./images/ex303/video/kln/boundaryStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video1_poster.jpg"
+                  "src":"./images/ex303/video/kln/boundaryStreet_poster.jpg"
                 }
               }
             }
@@ -2103,6 +2108,11 @@
         ]
       },
       "tc":{
+        "global":{
+          "confirm":"確定",
+          "coastline":"海岸線",
+          "street":"街道"
+        },
         "street": [
           {
             "zone":1,
@@ -2126,9 +2136,9 @@
                 "src":"./images/ex303/street/tst/knutsfordTerrace_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video1.mp4",
+                "src":"./images/ex303/video/kln/knutsfordTerrace.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video1_poster.jpg"
+                  "src":"./images/ex303/video/kln/knutsfordTerrace_poster.jpg"
                 }
               }
             }
@@ -2155,9 +2165,9 @@
                 "src":"./images/ex303/street/tst/observatoryRoad_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video1.mp4",
+                "src":"./images/ex303/video/kln/observatoryRoad.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video1_poster.jpg"
+                  "src":"./images/ex303/video/kln/observatoryRoad_poster.jpg"
                 }
               }
             }
@@ -2184,9 +2194,9 @@
                 "src":"./images/ex303/street/tst/reclamationStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video1.mp4",
+                "src":"./images/ex303/video/kln/reclamationStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video1_poster.jpg"
+                  "src":"./images/ex303/video/kln/reclamationStreet_poster.jpg"
                 }
               }
             }
@@ -2213,9 +2223,9 @@
                 "src":"./images/ex303/street/tst/ferryStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video1.mp4",
+                "src":"./images/ex303/video/kln/ferryStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video1_poster.jpg"
+                  "src":"./images/ex303/video/kln/ferryStreet_poster.jpg"
                 }
               }
             }
@@ -2242,9 +2252,9 @@
                 "src":"./images/ex303/street/tst/publicSquareStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video1.mp4",
+                "src":"./images/ex303/video/kln/publicSquareStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video1_poster.jpg"
+                  "src":"./images/ex303/video/kln/publicSquareStreet_poster.jpg"
                 }
               }
             }
@@ -2271,9 +2281,9 @@
                 "src":"./images/ex303/street/tst/templeStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video1.mp4",
+                "src":"./images/ex303/video/kln/templeStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video1_poster.jpg"
+                  "src":"./images/ex303/video/kln/templeStreet_poster.jpg"
                 }
               }
             }
@@ -2300,9 +2310,9 @@
                 "src":"./images/ex303/street/tst/saiYeungChoiStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video1.mp4",
+                "src":"./images/ex303/video/kln/saiYeungChoiStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video1_poster.jpg"
+                  "src":"./images/ex303/video/kln/saiYeungChoiStreet_poster.jpg"
                 }
               }
             }
@@ -2329,9 +2339,9 @@
                 "src":"./images/ex303/street/tst/tungChoiStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video1.mp4",
+                "src":"./images/ex303/video/kln/tungChoiStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video1_poster.jpg"
+                  "src":"./images/ex303/video/kln/tungChoiStreet_poster.jpg"
                 }
               }
             }
@@ -2358,9 +2368,9 @@
                 "src":"./images/ex303/street/tst/boundaryStreet_w.svg"
               },
               "video":{
-                "src":"./images/ex303/video/video1.mp4",
+                "src":"./images/ex303/video/kln/boundaryStreet.mp4",
                 "poster":{
-                  "src":"./images/ex303/video/video1_poster.jpg"
+                  "src":"./images/ex303/video/kln/boundaryStreet_poster.jpg"
                 }
               }
             }

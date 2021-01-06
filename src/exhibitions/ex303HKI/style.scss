@@ -1062,22 +1062,8 @@ span{
         &.hide{
             transition-delay: 0s;
         }
-        &.disabled{
-            #startBtn{
-                opacity: .2;
-            }
-        }
-        &:not(.disabled){
-            #startBtn{
-                transform: translate3d(-50%,vw-calc(50,$width),0) scale(1);
-                &:active{
-                    transform: translate3d(-50%,vw-calc(50,$width),0) scale(.9);
-                }
-            }
-        }
         ul{
             position: relative;
-            transform: translate3d(0,calc(#{vw-calc(-50, $width)}),0);
             transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
             &:before,
             &:after{
@@ -1116,21 +1102,49 @@ span{
                 }
             }
         }
-        #startBtn{
-            width:100%;
-            height:vw-calc(80, $width);
-            background:$white;
+    }
+    #startBtn{
+        width:vw-calc(300, $width);
+        height:vw-calc(300*0.303, $width);
+        background:$white;
+        border-radius: vw-calc(100, $width);
+        font-size:vw-calc(30, $width);
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top:50%;
+        left:50%;
+        z-index: 10;
+        transform: translate3d(-50%,-50%,0) scale(1);
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        &.disabled{
+            opacity: 0;
+        }
+        &:not(.disabled){
+            transform: translate3d(-50%,-50%,0) scale(1);
+            &:before{
+                animation: radar 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+            }
+            &:after{
+                animation: radar 3s cubic-bezier(0.16, 1, 0.3, 1) infinite .4s;
+            }
+            &:active{
+                transform: translate3d(-50%,-50%,0) scale(.9);
+            }
+        }
+        &:before, &:after{
+            content:'';
+            width:calc(100% - #{vw-calc(2)});
+            height:calc(100% - #{vw-calc(2)});
             border-radius: vw-calc(100, $width);
-            font-size:vw-calc(30, $width);
-            font-weight: bold;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            border:vw-calc(2, $width) solid #fff;
             position: absolute;
-            top:100%;
-            left:50%;
-            transform: translate3d(-50%,vw-calc(50,$width),0) scale(.9);
-            transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
+            top:0;
+            left:0;
+            opacity: 1;
+            transform: translate3d(0,0,0) scale(0);
         }
     }
     #streetInfo{
@@ -1198,5 +1212,13 @@ span{
     }
     to{
         opacity: 1;
+    }
+}
+
+
+@keyframes radar{
+    100%{
+        transform: translate3d(0,0,0) scale(2,2.15);
+        opacity: 0;
     }
 }
