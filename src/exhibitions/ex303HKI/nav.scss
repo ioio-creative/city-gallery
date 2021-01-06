@@ -27,7 +27,7 @@ $width:3840;
       border-radius: vw-calc(35, $width);
       &.noBtn{
         justify-content: space-evenly;
-        padding: 0 vw-calc(40, $width);
+        padding: 0 vw-calc(50, $width) 0 vw-calc(28, $width);
       }
     }
   }
@@ -37,6 +37,10 @@ $width:3840;
     #wrap{
       width: vw-calc(828, $width);
       height: vw-calc(122, $width);
+      &.disable{
+        pointer-events: none;
+        touch-action: none;
+      }
       #streetNameWrap{
         &.hide{
           display: none;
@@ -65,6 +69,7 @@ $width:3840;
         height: vw-calc(54, $width);
         border-radius: vw-calc(36, $width);
         border: vw-calc(3, $width) solid #074A45;
+        background:#fff;
         color:#074A45;
         display: flex;
         justify-content: center;
@@ -72,9 +77,40 @@ $width:3840;
         font-size:vw-calc(20, $width);
         font-weight: bold;
         position: relative;
-        
+        opacity: .3;
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
         &.hide{
           display: none;
+        }
+        &.active{
+          opacity: 1;
+          &:active{
+            transform: translate3d(0,0,0) scale(.9);
+          }
+        }
+        &.radar{
+          &.active{
+            &:before{
+              animation: radar 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+            }
+            &:after{
+              animation: radar 3s cubic-bezier(0.16, 1, 0.3, 1) infinite .4s;
+            }
+          }
+        }
+        &:before, &:after{
+          content:'';
+          width:calc(100% - #{vw-calc(2)});
+          height:calc(100% - #{vw-calc(2)});
+          border-radius: vw-calc(100, $width);
+          border:vw-calc(2, $width) solid #074A45;
+          position: absolute;
+          top:0;
+          left:0;
+          opacity: 1;
+          transform: translate3d(0,0,0) scale(0);
+          pointer-events: none;
+          touch-action: none;
         }
       }
       #space{
@@ -157,6 +193,7 @@ $width:3840;
     #wrap{
       width: vw-calc(628, $width);
       height: vw-calc(122, $width);
+      padding:0 vw-calc(40, $width);
       #lang{
         display: flex;
         margin-right:vw-calc(27 - 13 / 2, $width);
@@ -218,18 +255,34 @@ $width:3840;
         padding-left:vw-calc(46, $width);
         background:url('./images/indicator.svg') left center no-repeat;
         color:#074A45;
-        font-size:vw-calc(16, $width);
+        font-size:vw-calc(18, $width);
         line-height: vw-calc(22, $width);
-        font-weight: bold;
         display: flex;
         align-items: center;
         &.hideImg{
           background:none;
-          margin-left:vw-calc(50, $width);
+          margin-left:vw-calc(30, $width);
           padding-left:0;
-          font-size:vw-calc(20, $width);
+          letter-spacing: vw-calc(-1.6, $width);
         }
       }
     }
+  }
+}
+
+
+@keyframes radar{
+  0%{
+    opacity: 0;
+  }
+  13%{
+    opacity: 0;
+  }
+  23%{
+    opacity: 1;
+  }
+  100%{
+    transform: translate3d(0,0,0) scale(1.6,1.8);
+    opacity: 0;
   }
 }

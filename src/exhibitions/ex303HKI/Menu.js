@@ -7,11 +7,17 @@ const Menu = props => {
   const streetData = props.streetData;
 
   return (
-    <div id='navWrap' className={`${props.showNav ? '' : 'hide'}`}>
+    <div id='navWrap'>
       <div id='left'>
-        <div id="wrap" className={props.yearIdx != 3 ? 'noBtn' : ''}>
-          <div className={`yearButton ${props.gameMode === 'street' ? 'hide' : ''}`} onClick={() => { props.back(); }}>
-            選擇年份
+        <div id="wrap" className={`${!props.showNav ? 'noBtn' : props.yearIdx < 3  ? 'noBtn' : ''} ${props.runTransition ? 'disable' : ''}`}>
+          <div className={`yearButton ${props.gameMode === 'street' ? 'hide' : ''} ${props.yearIdx > -1 ? 'active' : ''} ${!props.showNav ? 'radar' : ''}`} onClick={() => { !props.showNav ? props.start() : props.back(); }}>
+            {
+              globalData && 
+              !props.showNav ?
+                globalData.confirm
+              :
+                '選擇年份'
+            }
           </div>
           <div id="streetNameWrap" className={`streetFont ${props.gameMode === 'street' ? '' : 'hide'}`}>
             {
@@ -31,11 +37,11 @@ const Menu = props => {
             }
           </div>
           <span id="space"></span>
-          <div id='switch' className={`${props.gameMode} ${props.yearIdx === 3 ? '' : 'hide'}`}>
+          <div id='switch' className={`${props.gameMode} ${props.yearIdx === 3 && props.gameMode !== 'home' ? '' : 'hide'}`}>
             <span onClick={() => {props.setGameMode('coast'); props.setStreetIdx(null); }}> {globalData.coastline} </span>
             <span onClick={() => {props.setGameMode('street'); props.setZone(0); }}> {globalData.street} </span>
           </div>
-          <div className={`descriptionBox ${props.yearIdx === 0 || props.yearIdx === 1 || props.yearIdx === 2 ? '' : 'hide'}`}>
+          <div className={`descriptionBox ${!props.showNav ? '' : props.yearIdx < 3 ? '' : 'hide'}`}>
             海岸綫 <span></span> 香港島
           </div>
         </div>
@@ -49,14 +55,15 @@ const Menu = props => {
           <div id="questionBtnWrap">
             <div id="questionBtn">?</div>
           </div>
-          <div id="indicator" className={props.yearIdx != 3 ? 'hideImg' : ''}>
+          <div id="indicator" className={!props.showNav ? 'hideImg' : props.yearIdx < 3 ? 'hideImg' : ''}>
             {
-              props.yearIdx === 3 &&
-              <>請按下不同的浮標以<br/>探索不同填海區的資訊</>
-            }
-            {
-              props.yearIdx != 3 &&
-              <>本圖的海岸線只供參考。</>
+              !props.showNav ? 
+                <>本圖的海岸線只供參考。填海資料僅顯示維港範圍以內部分區域。</>
+                :
+                props.yearIdx === 3 ? 
+                  <>請按下不同的浮標以<br/>探索不同填海區的資訊</>
+                : 
+                  <>本圖的海岸線只供參考。填海資料僅顯示維港範圍以內部分區域。</>
             }
           </div>
         </div>

@@ -31,6 +31,7 @@ const G303 = props => {
   const [zone, setZone] = useState(0);
   const [coastlineIdx, setCoastlineIdx] = useState(null);
   const [streetIdx, setStreetIdx] = useState(null);
+  const [runTransition, setRunTransition] = useState(false);
   const [socket, setSocket] = useState(null);
 
   // const handleZoom = useRef(null);
@@ -75,11 +76,12 @@ const G303 = props => {
       }
   };
 
-  const onClickStart = () => {
+  const onStart = () => {
     if (yearIdx >= 0) {
       // setHome(false);
       // setStarted(true);
       //setShowNav(false);
+      setRunTransition(true);
       setShowYear(false);
       handleStart.current.start(yearIdx);
       handleShowCoastline.current.showCoastline(yearIdx);
@@ -89,9 +91,10 @@ const G303 = props => {
   const onBack = () => {
     // setFill(false);
     // setHome(true);
-    setGameMode('home');
+    // setGameMode('home');
     // setYearIdx(0);
-    setShowNav(false);
+    // setShowNav(false);
+    setRunTransition(true);
     setShowYear(true);
     handleShowCoastline.current.showCoastline(-1);
     // handleSelectCoastline.current.selectCoastline(null);
@@ -183,8 +186,9 @@ const G303 = props => {
           handleSelectCoastline={handleSelectCoastline}
           handleStart={handleStart}
           showNav={setShowNav}
+          setRunTransition={setRunTransition}
         />
-      <div id="coast" className={yearIdx === 3 && gameMode === 'coast' ? '' : 'hide'}>
+      <div id="coast" className={showYear ? 'hide' : yearIdx === 3 && gameMode === 'coast' ? '' : 'hide'}>
         <div id="locationsWrap">
           <div id="locations" className="streetFont">
             <div>堅尼地城</div>
@@ -297,95 +301,9 @@ const G303 = props => {
             />
           </div>
         }
-         {/* <img className={`nav_2019_sea ${gameMode === 'street' ? '' : 'hide'}`} src={`./images/ex303/SNM_nav_right.png`}></img>
-        <img className={`disclaimer ${gameMode === 'street' ? '' : 'hide'}`} src={`./images/ex303/disclaimer.png`}></img>
-        <img className={`smallMap ${gameMode === 'street' ? '' : 'hide'}`} src={`./images/ex303/small_map.png`}></img>
-        <div className={`wrap`}>
-          <img className={`zoomMap ${gameMode === 'street' ? '' : 'hide'} ${fakeZoom !== 0 ? `zoom${fakeZoom}` : ''}`} alt='' src='./images/ex303/2019_Zoom_BaseMap.png'></img>
-        </div>
-        <svg
-          className={`dot d1 ${zone[0] ? '' : 'hide'} ${isVideo ? 'active' : ''}`}
-          xmlns='http://www.w3.org/2000/svg'
-          width='55.3'
-          height='64'
-          viewBox='0 0 44.258 53.348'
-          onClick={() => {
-            setIsVideo(true);
-            setVideoNumber(0);
-          }}
-        >
-          <path
-            id='dot1'
-            data-name='Path 203'
-            d='M136.5,244.418a22.122,22.122,0,0,0-16.655,36.691l-.008.008.105.1a22.217,22.217,0,0,0,1.882,1.882l14.662,14.662,14.494-14.494a22.123,22.123,0,0,0-14.48-38.854Zm0,27.855a5.726,5.726,0,1,1,5.725-5.726A5.726,5.726,0,0,1,136.5,272.273Z'
-            transform='translate(-114.371 -244.418)'
-            fill='#FFF'
-          />
-        </svg>
-        <img className={`road r1 ${zone[0] ? '' : 'hide'}`} alt='' src='./images/ex303/hollywood_path.png'></img>
-        <svg
-          className={`dot d2 ${zone[1] ? '' : 'hide'} ${isVideo ? 'active' : ''}`}
-          xmlns='http://www.w3.org/2000/svg'
-          width='55.3'
-          height='64'
-          viewBox='0 0 44.258 53.348'
-          onClick={() => {
-            setIsVideo(true);
-            setVideoNumber(1);
-          }}
-        >
-          <path
-            id='dot2'
-            data-name='Path 203'
-            d='M136.5,244.418a22.122,22.122,0,0,0-16.655,36.691l-.008.008.105.1a22.217,22.217,0,0,0,1.882,1.882l14.662,14.662,14.494-14.494a22.123,22.123,0,0,0-14.48-38.854Zm0,27.855a5.726,5.726,0,1,1,5.725-5.726A5.726,5.726,0,0,1,136.5,272.273Z'
-            transform='translate(-114.371 -244.418)'
-            fill='#FFF'
-          />
-        </svg>
-        <img className={`road r2 ${zone[1] ? '' : 'hide'}`} alt='' src='./images/ex303/cannon_path.png'></img>
-        <div className={`videoWrap ${isVideo ? 'active' : 'hide'}`}></div>
-
-        <div className={`${isVideo ? '' : 'hide'}`}>
-          {<video className={`${videoNumber === 0 ? '' : 'hide'}`} preload='auto' src={isVideo ? video1 : null} autoPlay={false} muted controls></video>}
-          {<video className={`${videoNumber === 1 ? '' : 'hide'}`} preload='auto' src={video2} autoPlay={false} muted controls></video>}
-        </div> */}
-        {/*<div
-          className={`cross ${isVideo ? '' : 'hide'}`}
-          onClick={() => {
-            setIsVideo(false);
-          }}
-        >
-          X
-        </div>
-        {(zone[0] || zone[1]) && (
-          <>
-            <img
-              className={`toRight`}
-              src='./images/ex303/right_button.png'
-              onClick={() => {
-                onClickMapIndicator(1);
-                setFakeZoom(1 + 1);
-                zoneControl(1);
-              }}
-            ></img>
-            <img
-              className={`toLeft ${!zone[0] ? 'active' : 'hide'}`}
-              src='./images/ex303/left_button.png'
-              onClick={() => {
-                onClickMapIndicator(0);
-                setFakeZoom(0 + 1);
-                zoneControl(0);
-              }}
-            ></img>
-          </>
-        )} */}
       </div>
 
-      {/* <img className={`legend ${fill && (yearIdx === 0 || yearIdx === 1 || yearIdx === 2) ? '' : 'hide'}`} alt='' src='./images/ex303/HKI_legend.png'></img>
-      <img className={`legend ${fill && yearIdx === 3 ? '' : 'hide'}`} alt='' src='./images/ex303/HKI_legend_white.png'></img> */}
-      {/* <img className={`correction ${gameMode === "r" ? '' : 'hide'}`} alt='' src='./images/ex303/hkislandstnamegame_quarrybay.png'></img> */}
-
-      <div id="currentYear" className={`${gameMode !== 'coast' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''} eb`}>{years[yearIdx]}</div>
+      <div id="currentYear" className={`${showYear ? 'disabled' : gameMode !== 'coast' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''} eb`}>{years[yearIdx]}</div>
       <div id='yearSelector' className={`${yearIdx < 0 ? 'disabled' : ''} ${showYear ? '' : 'hide'}`}>
         <ul className="eb">
           {['1900', '1945', '1985', '2019'].map((v, i) => {
@@ -396,9 +314,10 @@ const G303 = props => {
             );
           })}
         </ul>
+        <span id="arrow" className={yearIdx >= 0 ? `idx_${yearIdx} active` : ''}></span>
       </div>
-      <div id='startBtn' className={`${yearIdx < 0 ? 'disabled' : ''} ${showYear ? '' : 'hide'}`} onClick={onClickStart}>{globalData && globalData.confirm}</div>
-      <div id="yearOfCoastline" className={`${gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}></div>
+      {/* <div id='startBtn' className={`${yearIdx < 0 ? 'disabled' : ''} ${showYear ? '' : 'hide'}`} onClick={onStart}>{globalData && globalData.confirm}</div> */}
+      <div id="yearOfCoastline" className={`${showYear ? 'disabled' : gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}></div>
       
       {/* <div id='streetInfo'> */}
         {/* {streetData && <h1>{streetData.name}</h1>} */}
@@ -416,6 +335,8 @@ const G303 = props => {
         streetData={streetData}
         language={language}
         setLanguage={setLanguage}
+        runTransition={runTransition}
+        start={onStart}
         back={onBack}
         showNav={showNav} 
         yearIdx={yearIdx} 

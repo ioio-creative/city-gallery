@@ -643,6 +643,11 @@ const Map = props => {
           }
         })
         showCoastlineTl.call(()=>highlightTl.restart(), null, '-=6');
+        showCoastlineTl.call(()=>{
+          props.showNav(false);
+          props.setGameMode('home');
+          props.setRunTransition(false);
+        }, null, '-=3');
       }
       else {
         if(showCoastlineTl) showCoastlineTl.kill();
@@ -660,7 +665,8 @@ const Map = props => {
         showCoastlineTl.call(()=>{
           props.showNav(true);
           props.setGameMode('coast');
-        }, null, '-=9');
+          props.setRunTransition(false);
+        }, null, '-=6');
         showCoastlineTl.call(()=>{
           showDottedline();
         }, null, '-=6');
