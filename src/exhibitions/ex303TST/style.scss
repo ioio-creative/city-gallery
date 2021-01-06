@@ -810,14 +810,42 @@ span{
         width:vw-calc(264);
         position: absolute;
         top:50%;
-        left:vw-calc(175);
+        left:vw-calc(170);
         color:$lightblue;
         display: flex;
         flex-direction: column;
         transform: translate3d(0,-50%,0);
-        transition: all .6s cubic-bezier(0.87, 0, 0.13, 1) 2s;
+        transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
         &.hide{
             transition-delay: 0s;
+        }
+        #arrow{
+            width:vw-calc(36);
+            height:vw-calc(32);
+            background:url('./images/arrow_r.svg') center no-repeat;
+            position: absolute;
+            top:0;
+            right:calc(100% + #{vw-calc(45)});
+            opacity: 0;
+            visibility: hidden;
+            transform: translate3d(-100%,vw-calc(58),0);
+            transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
+            &.active{
+                opacity: 1;
+                visibility: visible;
+            }
+            &.idx_0{
+                transform: translate3d(0,vw-calc(58),0);
+            }
+            &.idx_1{
+                transform: translate3d(0,vw-calc(58 + 150),0);
+            }
+            &.idx_2{
+                transform: translate3d(0,vw-calc(58 + 150 * 2),0);
+            }
+            &.idx_3{
+                transform: translate3d(0,vw-calc(58 + 150 * 3),0);
+            }
         }
         ul{
             position: relative;
@@ -838,7 +866,7 @@ span{
                 top:calc(100% + #{vw-calc(20)});
             }
             li{
-                height:vw-calc(120);
+                height:vw-calc(150);
                 font-size:vw-calc(132);
                 display: flex;
                 transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.5s cubic-bezier(0.16, 1, 0.3, 1);

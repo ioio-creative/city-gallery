@@ -7,17 +7,23 @@ const Menu = props => {
   const streetData = props.streetData;
 
   return (
-    <div id='navWrap' className={`${props.showNav ? '' : 'hide'}`}>
+    <div id='navWrap'>
       <div id='left'>
         {
-          props.yearIdx === 3 &&
+          !props.showYear && props.gameMode !== 'home' &&
           <div id="indicator" className={props.yearIdx != 3 ? 'hideImg' : ''}>
             <>請按下不同的浮標以<br/>探索不同填海區的資訊</>
           </div>
         }
-        <div id="wrap" className={props.yearIdx != 3 ? 'noBtn' : ''}>
-          <div className={`yearButton ${props.gameMode === 'street' ? 'hide' : ''}`} onClick={() => { props.back(); }}>
-            選擇年份
+        <div id="wrap" className={`${!props.showNav ? 'noBtn' : props.yearIdx < 3  ? 'noBtn' : ''} ${props.runTransition ? 'disable' : ''}`}>
+          <div className={`yearButton ${props.gameMode === 'street' ? 'hide' : ''} ${props.yearIdx > -1 ? 'active' : ''} ${!props.showNav ? 'radar' : ''}`} onClick={() => { !props.showNav ? props.start() : props.back(); }}>
+            {
+              globalData && 
+              !props.showNav ?
+                globalData.confirm
+              :
+                '選擇年份'
+            }
           </div>
           <div id="streetNameWrap" className={`streetFont ${props.gameMode === 'street' ? '' : 'hide'}`}>
             {

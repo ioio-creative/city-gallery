@@ -829,7 +829,7 @@ span{
         display: flex;
         flex-direction: column;
         transform: translate3d(0,-50%,0);
-        transition: all .6s cubic-bezier(0.87, 0, 0.13, 1) 2s;
+        transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
         &.hide{
             transition-delay: 0s;
         }

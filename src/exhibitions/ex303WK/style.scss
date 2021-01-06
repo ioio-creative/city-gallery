@@ -76,13 +76,13 @@ span{
 }
 
 .zone1{
-    transform: translate3d(-53%,-70%,0) scale(1.88);
+    transform: translate3d(-75.2%, -92.1%, 0) scale(2.255);
 }
 .zone2{
-    transform: translate3d(-48.5%,-10%,0) scale(1.885);
+    transform: translate3d(-66.3%, -33.5%, 0) scale(2.255);
 }
 .zone3{
-    transform: translate3d(-52.8%,0%,0) scale(1.885);
+    transform: translate3d(-69%, -7%, 0) scale(2.255);
 }
 
 #ref{
@@ -434,6 +434,8 @@ span{
         &.hide{
             opacity: 0;
             visibility: hidden;
+            pointer-events: none;
+            touch-action: none;
         }
         &.showVideo{
             &:after{
@@ -450,7 +452,7 @@ span{
             transition: transform .8s cubic-bezier(0.65, 0, 0.35, 1);
             &>div{
                 transform-origin: left top;
-                transform: translate3d(0, 0, 0) scale(0.531915);
+                transform: translate3d(0, 0, 0) scale(0.44346);
             }
         }
         .zoneBtn{
@@ -478,8 +480,9 @@ span{
             }
         }
         #mapIndicator{
+            height:auto;
             position: fixed;
-            top:vw-calc(57);
+            top:vw-calc(50);
             left:vw-calc(74);
             z-index: 6;
             opacity: 1;
@@ -574,40 +577,24 @@ span{
                     &#zone1{
                         .name{
                             &:nth-child(1){
-                                top:vw-calc(751);
-                                left:vw-calc(2000);
+                                top:vw-calc(1562);
+                                left:vw-calc(1933);
                             }
                         }
                     }
                     &#zone2{
                         .name{
                             &:nth-child(1){
-                                top:vw-calc(938);
-                                left:vw-calc(2470);
-                            }
-                            &:nth-child(2){
-                                top:vw-calc(1110);
-                                left:vw-calc(3054);
+                                top:vw-calc(956);
+                                left:vw-calc(2048);
                             }
                         }
                     }
                     &#zone3{
                         .name{
                             &:nth-child(1){
-                                top:vw-calc(1221);
-                                left:vw-calc(3615);
-                            }
-                            &:nth-child(2){
-                                top:vw-calc(677);
-                                left:vw-calc(4102);
-                            }
-                        }
-                    }
-                    &#zone4{
-                        .name{
-                            &:nth-child(1){
-                                top:vw-calc(1031);
-                                left:vw-calc(4915);
+                                top:vw-calc(577);
+                                left:vw-calc(2012);
                             }
                         }
                     }
@@ -620,6 +607,7 @@ span{
                         align-items: center;
                         background:#fff;
                         border-radius: vw-calc(24);
+                        box-shadow: 0 vw-calc(3 6) rgba(0,0,0,.4);
                         color:#074A45;
                         position: absolute;
                         opacity: 1;
@@ -689,12 +677,12 @@ span{
                                 transform: translate3d(-50%,0,0);
                             }
                             &.left{
-                                right:110%;
+                                right:100%;
                                 top:45%;
                                 transform: translate3d(0,-50%,0);
                             }
                             &.right{
-                                left:110%;
+                                left:100%;
                                 top:45%;
                                 transform: translate3d(0,-50%,0);
                             }
@@ -714,8 +702,8 @@ span{
             width:vw-calc(912);
             height:auto;
             position: absolute;
-            top:50vh;
-            left:calc(50% + #{vw-calc(412)});
+            top:45vh;
+            right:vw-calc(68);
             z-index: 5;
             transform: translate3d(0,-50%,0);
             animation: fadeIn .6s cubic-bezier(0.87, 0, 0.13, 1);
@@ -826,14 +814,42 @@ span{
         width:vw-calc(264);
         position: absolute;
         top:50%;
-        left:vw-calc(175);
+        left:vw-calc(170);
         color:$lightblue;
         display: flex;
         flex-direction: column;
         transform: translate3d(0,-50%,0);
-        transition: all .6s cubic-bezier(0.87, 0, 0.13, 1) 2s;
+        transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
         &.hide{
             transition-delay: 0s;
+        }
+        #arrow{
+            width:vw-calc(36);
+            height:vw-calc(32);
+            background:url('./images/arrow_r.svg') center no-repeat;
+            position: absolute;
+            top:0;
+            right:calc(100% + #{vw-calc(45)});
+            opacity: 0;
+            visibility: hidden;
+            transform: translate3d(-100%,vw-calc(58),0);
+            transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
+            &.active{
+                opacity: 1;
+                visibility: visible;
+            }
+            &.idx_0{
+                transform: translate3d(0,vw-calc(58),0);
+            }
+            &.idx_1{
+                transform: translate3d(0,vw-calc(58 + 150),0);
+            }
+            &.idx_2{
+                transform: translate3d(0,vw-calc(58 + 150 * 2),0);
+            }
+            &.idx_3{
+                transform: translate3d(0,vw-calc(58 + 150 * 3),0);
+            }
         }
         ul{
             position: relative;
@@ -854,7 +870,7 @@ span{
                 top:calc(100% + #{vw-calc(20)});
             }
             li{
-                height:vw-calc(120);
+                height:vw-calc(150);
                 font-size:vw-calc(132);
                 display: flex;
                 transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -987,7 +1003,6 @@ span{
         opacity: 1;
     }
 }
-
 @keyframes radar{
     100%{
         transform: translate3d(0,0,0) scale(2,2.15);

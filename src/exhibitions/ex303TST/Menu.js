@@ -7,17 +7,23 @@ const Menu = props => {
   const streetData = props.streetData;
 
   return (
-    <div id='navWrap' className={`${props.showNav ? '' : 'hide'}`}>
+    <div id='navWrap'>
       <div id='left'>
         {
-          props.yearIdx === 3 &&
+          !props.showYear && props.gameMode !== 'home' &&
           <div id="indicator" className={`${props.yearIdx != 3 ? 'hideImg' : ''} ${props.zone > 0 ? 'moveup' : ''}`}>
-            <>請按下不同的浮標以<br/>探索不同填海區的資訊</>
+            請按下不同的浮標以<br/>探索不同填海區的資訊
           </div>
         }
-        <div id="wrap" className={props.yearIdx != 3 ? 'noBtn' : ''}>
-          <div className={`yearButton ${props.gameMode === 'street' ? 'hide' : ''}`} onClick={() => { props.back(); }}>
-            選擇年份
+        <div id="wrap" className={`${!props.showNav ? 'noBtn' : props.yearIdx < 3  ? 'noBtn' : ''} ${props.runTransition ? 'disable' : ''}`}>
+          <div className={`yearButton ${props.gameMode === 'street' ? 'hide' : ''} ${props.yearIdx > -1 ? 'active' : ''} ${!props.showNav ? 'radar' : ''}`} onClick={() => { !props.showNav ? props.start() : props.back(); }}>
+            {
+              globalData && 
+              !props.showNav ?
+                globalData.confirm
+              :
+                '選擇年份'
+            }
           </div>
           <div id="streetNameWrap" className={`streetFont ${props.gameMode === 'street' ? '' : 'hide'}`}>
             {
@@ -37,12 +43,12 @@ const Menu = props => {
             }
           </div>
           <span id="space"></span>
-          <div id='switch' className={`${props.gameMode} ${props.yearIdx === 3 ? '' : 'hide'}`}>
-            <span onClick={() => {props.setGameMode('coast'); props.setStreetIdx(null); }}> {globalData.coastline} </span>
-            <span onClick={() => {props.setGameMode('street'); props.setZone(0); }}> {globalData.street} </span>
+          <div id='switch' className={`${props.gameMode} ${props.yearIdx === 3 && props.gameMode !== 'home' ? '' : 'hide'}`}>
+            <span onClick={() => {props.setGameMode('coast'); props.setStreetIdx(null); props.setZone(0); }}> {globalData.coastline} </span>
+            <span onClick={() => {props.setGameMode('street'); }}> {globalData.street} </span>
           </div>
-          <div className={`descriptionBox ${props.yearIdx === 0 || props.yearIdx === 1 || props.yearIdx === 2 ? '' : 'hide'}`}>
-            海岸綫 <span></span> 香港島
+          <div className={`descriptionBox ${!props.showNav ? '' : props.yearIdx < 3 ? '' : 'hide'}`}>
+            西九龍 <span></span> 紅磡
           </div>
           <span id="space"></span>
           <div id="lang">

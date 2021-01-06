@@ -30,6 +30,7 @@ const G303 = props => {
   const [zone, setZone] = useState(0);
   const [coastlineIdx, setCoastlineIdx] = useState(null);
   const [streetIdx, setStreetIdx] = useState(null);
+  const [runTransition, setRunTransition] = useState(false);
 
   // const handleZoom = useRef(null);
   const handleMove = useRef(null);
@@ -63,6 +64,7 @@ const G303 = props => {
       // setHome(false);
       // setStarted(true);
       //setShowNav(false);
+      setRunTransition(true);
       setShowYear(false);
       handleStart.current.start(yearIdx);
       handleShowCoastline.current.showCoastline(yearIdx);
@@ -72,9 +74,10 @@ const G303 = props => {
   const onBack = () => {
     setFill(false);
     // setHome(true);
-    setGameMode('home');
+    // setGameMode('home');
     // setYearIdx(0);
-    setShowNav(false);
+    // setShowNav(false);
+    setRunTransition(true);
     setShowYear(true);
     handleShowCoastline.current.showCoastline(-1);
     // handleSelectCoastline.current.selectCoastline(null);
@@ -166,8 +169,9 @@ const G303 = props => {
           handleSelectCoastline={handleSelectCoastline}
           handleStart={handleStart}
           showNav={setShowNav}
+          setRunTransition={setRunTransition}
         />
-      <div id="coast" className={yearIdx === 3 && gameMode === 'coast' ? '' : 'hide'}>
+      <div id="coast" className={showYear ? 'hide' : yearIdx === 3 && gameMode === 'coast' ? '' : 'hide'}>
         <div id="locationsWrap">
           <div id="locations" className="streetFont">
             <div>葵涌</div>
@@ -279,8 +283,8 @@ const G303 = props => {
         }
       </div>
 
-      <div id="currentYear" className={`${gameMode !== 'coast' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''} eb`}>{years[yearIdx]}</div>
-      <div id='yearSelector' className={`${yearIdx < 0 ? 'disabled' : ''} ${showYear ? '' : 'hide'}`}>
+      <div id="currentYear" className={`${showYear ? 'disabled' : gameMode !== 'coast' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''} eb`}>{years[yearIdx]}</div>
+      <div id='yearSelector' className={`${yearIdx < 0 ? 'disabled' : ''} ${showYear && gameMode === 'home' ? '' : 'hide'}`}>
         <ul className="eb">
           {['1900', '1945', '1985', '2019'].map((v, i) => {
             return (
@@ -290,9 +294,10 @@ const G303 = props => {
             );
           })}
         </ul>
+        <span id="arrow" className={yearIdx >= 0 ? `idx_${yearIdx} active` : ''}></span>
       </div>
-      <div id='startBtn' className={`${yearIdx < 0 ? 'disabled' : ''} ${showYear ? '' : 'hide'}`} onClick={onClickStart}>{globalData && globalData.confirm}</div>
-      <div id="yearOfCoastline" className={`${gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}></div>
+      {/* <div id='startBtn' className={`${yearIdx < 0 ? 'disabled' : ''} ${showYear ? '' : 'hide'}`} onClick={onClickStart}>{globalData && globalData.confirm}</div> */}
+      <div id="yearOfCoastline" className={`${showYear ? 'disabled' : gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}></div>
       
       <div id="ref" className={`${gameMode === 'home' ? 'hide' : ''} ${yearIdx === 3 ? 'w' : ''}`}>本圖的海岸線只供參考。</div>
 
@@ -301,8 +306,11 @@ const G303 = props => {
         streetData={streetData}
         language={language}
         setLanguage={setLanguage}
+        runTransition={runTransition}
+        start={onClickStart}
         back={onBack}
         showNav={showNav} 
+        showYear={showYear} 
         yearIdx={yearIdx} 
         gameMode={gameMode}
         setGameMode={setGameMode} 

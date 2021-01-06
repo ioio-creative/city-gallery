@@ -33,7 +33,6 @@ $drakgreenblue:#074A45;
     position: relative;
     #indicator{
       height:vw-calc(57);
-      margin-left:vw-calc(27);
       padding-left:vw-calc(46);
       background:url('./images/indicator.svg') left center no-repeat;
       color:#fff;
@@ -47,11 +46,17 @@ $drakgreenblue:#074A45;
       bottom:calc(100% + #{vw-calc(40)});
       left:50%;
       transform: translate3d(-50%,0,0);
+      transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+      animation: fadeIn .6s cubic-bezier(0.87, 0, 0.13, 1);
       &.hideImg{
         background:none;
         margin-left:vw-calc(50);
         padding-left:0;
         font-size:vw-calc(20);
+      }
+      &.moveup{
+        transition-duration: .6s;
+        transform: translate3d(-50%,-150%,0);
       }
     }
     #wrap{
@@ -59,6 +64,10 @@ $drakgreenblue:#074A45;
       height: vw-calc(122);
       padding:vw-calc(0 62);
       margin-left :vw-calc(120);
+      &.disable{
+        pointer-events: none;
+        touch-action: none;
+      }
       #streetNameWrap{
         &.hide{
           display: none;
@@ -94,9 +103,40 @@ $drakgreenblue:#074A45;
         font-size:vw-calc(20);
         font-weight: bold;
         position: relative;
-        
+        opacity: .3;
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
         &.hide{
           display: none;
+        }
+        &.active{
+          opacity: 1;
+          &:active{
+            transform: translate3d(0,0,0) scale(.9);
+          }
+        }
+        &.radar{
+          &.active{
+            &:before{
+              animation: radar 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+            }
+            &:after{
+              animation: radar 3s cubic-bezier(0.16, 1, 0.3, 1) infinite .4s;
+            }
+          }
+        }
+        &:before, &:after{
+          content:'';
+          width:calc(100% - #{vw-calc(2)});
+          height:calc(100% - #{vw-calc(2)});
+          border-radius: vw-calc(100);
+          border:vw-calc(1) solid #074A45;
+          position: absolute;
+          top:0;
+          left:0;
+          opacity: 1;
+          transform: translate3d(0,0,0) scale(0);
+          pointer-events: none;
+          touch-action: none;
         }
       }
       #space{
@@ -121,7 +161,7 @@ $drakgreenblue:#074A45;
           width:vw-calc(98);
           height:vw-calc(3);
           background:#074A45;
-          margin: vw-calc(0 20);
+          margin: vw-calc(0 12);
         }
       }
       #switch{
@@ -156,7 +196,7 @@ $drakgreenblue:#074A45;
         }
         &.street{
           &:before{
-              transform: translate3d(82%,0,0);
+              transform: translate3d(79%,0,0);
           }
         }
         span{
@@ -233,5 +273,30 @@ $drakgreenblue:#074A45;
         }
       }
     }
+  }
+}
+
+@keyframes fadeIn{
+  from{
+      opacity: 0;
+  }
+  to{
+      opacity: 1;
+  }
+}
+
+@keyframes radar{
+  0%{
+    opacity: 0;
+  }
+  13%{
+    opacity: 0;
+  }
+  23%{
+    opacity: 1;
+  }
+  100%{
+    transform: translate3d(0,0,0) scale(1.6,1.8);
+    opacity: 0;
   }
 }

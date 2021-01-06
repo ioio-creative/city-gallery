@@ -647,7 +647,7 @@ const Map = props => {
           props.showNav(false);
           props.setGameMode('home');
           props.setRunTransition(false);
-        }, null, '-=3');
+        }, null, '-=6');
       }
       else {
         if(showCoastlineTl) showCoastlineTl.kill();
