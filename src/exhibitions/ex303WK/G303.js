@@ -5,7 +5,7 @@ import './style.scss';
 // import { Player } from 'video-react';
 import VideoPlayer from '../../components/VideoPlayer';
 
-import Menu from './Menu';
+import Menu from '../ex303HKI/MenuSmall';
 import Map from '../ex303HKI/Map';
 
 // import video1 from '../../../src/media/ex303/video1.mp4';
@@ -302,6 +302,7 @@ const G303 = props => {
       <div id="ref" className={`${gameMode === 'home' ? 'hide' : ''} ${yearIdx === 3 ? 'w' : ''}`}>本圖的海岸線只供參考。</div>
 
       <Menu 
+        locationName='wk'
         globalData={globalData}
         streetData={streetData}
         language={language}

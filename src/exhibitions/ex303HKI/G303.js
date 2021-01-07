@@ -6,7 +6,7 @@ import './style.scss';
 import webSocket from 'socket.io-client';
 import VideoPlayer from '../../components/VideoPlayer';
 
-import Menu from './Menu';
+import Menu from './MenuBig';
 import Map from './Map';
 
 // import video1 from '../../../src/media/ex303/video1.mp4';
@@ -305,7 +305,7 @@ const G303 = props => {
 
       <div id="currentYear" className={`${showYear ? 'disabled' : gameMode !== 'coast' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''} eb`}>{years[yearIdx]}</div>
       <div id='yearSelector' className={`${yearIdx < 0 ? 'disabled' : ''} ${showYear ? '' : 'hide'}`}>
-        <ul className="eb">
+        <ul>
           {['1900', '1945', '1985', '2019'].map((v, i) => {
             return (
               <li key={i} className={i === yearIdx ? 'active' : ''} onClick={() => onClickYear(i)}>
@@ -314,9 +314,12 @@ const G303 = props => {
             );
           })}
         </ul>
-        <span id="arrow" className={yearIdx >= 0 ? `idx_${yearIdx} active` : ''}></span>
+        <div id="btnWrap" className={yearIdx >= 0 ? `idx_${yearIdx} active` : ''}>
+          <span id="arrow"></span>
+          <div id='startBtn' className={`${yearIdx < 0 ? 'disabled' : ''} ${showYear ? '' : 'hide'}`} onClick={onStart}>{globalData && globalData.confirm}</div>
+        </div>
       </div>
-      {/* <div id='startBtn' className={`${yearIdx < 0 ? 'disabled' : ''} ${showYear ? '' : 'hide'}`} onClick={onStart}>{globalData && globalData.confirm}</div> */}
+      
       <div id="yearOfCoastline" className={`${showYear ? 'disabled' : gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}></div>
       
       {/* <div id='streetInfo'> */}

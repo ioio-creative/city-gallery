@@ -1,34 +1,28 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './style.scss';
-// import gsap from 'gsap';
-// import VideoPlayer from 'react-video-js-player';
-// import { Player } from 'video-react';
 import VideoPlayer from '../../components/VideoPlayer';
 
-import Menu from './Menu';
+import Menu from '../ex303HKI/MenuSmall';
 import Map from '../ex303HKI/Map';
 
-// import video1 from '../../../src/media/ex303/video1.mp4';
-// import video2 from '../../../src/media/ex303/video2.mp4';
-// import img from './images/image.png';
 
 const G303 = props => {
   const [language, setLanguage] = useState('tc');
   const [started, setStarted] = useState(false);
   const [yearIdx, setYearIdx] = useState(-1);
   // const [zoomed, setZoomed] = useState(false);
-  const [mapIndicatorIdx, setMapIndicatorIdx] = useState(0);
+  // const [mapIndicatorIdx, setMapIndicatorIdx] = useState(0);
   // const [streetData, setStreetData] = useState(null);
   // const [home, setHome] = useState(true);
-  const [fill, setFill] = useState(false);
+  // const [fill, setFill] = useState(false);
   const [showNav, setShowNav] = useState(false);
   const [showYear, setShowYear] = useState(true);
   const [gameMode, setGameMode] = useState('home');
   // const [fakeZoom, setFakeZoom] = useState(0);
-  const [isVideo, setIsVideo] = useState(false);
-  const [videoNumber, setVideoNumber] = useState(null);
+  // const [isVideo, setIsVideo] = useState(false);
+  // const [videoNumber, setVideoNumber] = useState(null);
   const [zone, setZone] = useState(0);
-  const [coastlineIdx, setCoastlineIdx] = useState(null);
+  // const [coastlineIdx, setCoastlineIdx] = useState(null);
   const [streetIdx, setStreetIdx] = useState(null);
   const [runTransition, setRunTransition] = useState(false);
 
@@ -37,9 +31,9 @@ const G303 = props => {
   const handleShowCoastline = useRef(null);
   const handleSelectCoastline = useRef(null);
   const handleStart = useRef(null);
-  const video1Ref = useRef(null);
+  // const video1Ref = useRef(null);
 
-  const videoSrc = ['./images/ex303/video1.mp4', './images/ex303/video2.mp4'];
+  // const videoSrc = ['./images/ex303/video1.mp4', './images/ex303/video2.mp4'];
   const years = ['1900', '1945', '1985', '2019'];
 
   // const onClickMapIndicator = i => {
@@ -72,7 +66,7 @@ const G303 = props => {
   };
 
   const onBack = () => {
-    setFill(false);
+    // setFill(false);
     // setHome(true);
     // setGameMode('home');
     // setYearIdx(0);
@@ -268,6 +262,7 @@ const G303 = props => {
       <div id="ref" className={`${gameMode === 'home' ? 'hide' : ''} ${yearIdx === 3 ? 'w' : ''}`}>本圖的海岸線只供參考。</div>
 
       <Menu 
+        locationName='kb'
         globalData={globalData}
         streetData={streetData}
         language={language}

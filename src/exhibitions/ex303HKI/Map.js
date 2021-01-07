@@ -116,7 +116,7 @@ const Map = props => {
         const w = window.innerWidth * (this.width / maxWidth);
         const ratio = this.height / this.width;
         const h = w * ratio;
-        console.log('ori w:', this.width, 'ori h:', this.height, 'ori w:', w, 'ori h:', h);
+        // console.log('ori w:', this.width, 'ori h:', this.height, 'ori w:', w, 'ori h:', h);
         return { w, h };
       }
 

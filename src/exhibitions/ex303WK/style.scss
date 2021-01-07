@@ -270,7 +270,7 @@ span{
                     #marker{
                         width:vw-calc(61);
                         height:vw-calc(69);
-                        background: url('./images/marker.svg') center no-repeat;
+                        background: url('../ex303HKI/images/marker.svg') center no-repeat;
                         transform: translate3d(-50%,-100%,0) scale(1);
                         transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
                     }
@@ -295,7 +295,7 @@ span{
                 #card{
                     width:vw-calc(511);
                     height:vw-calc(698);
-                    background: url('./images/card.svg') top / 100% repeat-y;
+                    background: url('../ex303HKI/images/card.svg') top / 100% repeat-y;
                     position: absolute;
                     top:vw-calc(93);
                     left:calc(50% + #{vw-calc(342)});
@@ -310,7 +310,7 @@ span{
                     //     width:100%;
                     //     position: absolute;
                     //     left:0;
-                    //     background: url('./images/card.svg') top / 100% no-repeat;
+                    //     background: url('../ex303HKI/images/card.svg') top / 100% no-repeat;
                     // }
                     // &:before{
                     //     height:vw-calc(59);
@@ -394,13 +394,13 @@ span{
                                 }
                                 #prevBtn{
                                     &:before{
-                                        background:url('./images/prev.svg') center / 100% no-repeat;
+                                        background:url('../ex303HKI/images/prev.svg') center / 100% no-repeat;
                                     }
                                 }
                                 #nextBtn{
                                     flex-direction: row-reverse;
                                     &:before{
-                                        background:url('./images/next.svg') center / 100% no-repeat;
+                                        background:url('../ex303HKI/images/next.svg') center / 100% no-repeat;
                                     }
                                 }
                             }
@@ -458,7 +458,7 @@ span{
         .zoneBtn{
             width:vw-calc(67);
             height:vw-calc(67);
-            background:url('./images/prevnext.svg');
+            background:url('../ex303HKI/images/prevnext.svg');
             position: absolute;
             left:50%;
             z-index: 6;
@@ -504,7 +504,7 @@ span{
                 height:vw-calc(199);
                 display: flex;
                 flex-direction: column-reverse;
-                background:#fff url('./images/minimap.svg') top center / 100% no-repeat;
+                background:#fff url('../ex303HKI/images/minimap.svg') top center / 100% no-repeat;
                 li{
                     width:100%;
                     height:33.333%;
@@ -648,7 +648,7 @@ span{
                 &.inactive{
                     #markerWrap{
                         #marker{
-                            background: url('./images/marker_w.svg') center center no-repeat;
+                            background: url('../ex303HKI/images/marker_w.svg') center center no-repeat;
                         }
                     }
                 }
@@ -660,7 +660,7 @@ span{
                     #marker{
                         width:vw-calc(61);
                         height:vw-calc(69);
-                        background: url('./images/marker.svg') center center no-repeat;
+                        background: url('../ex303HKI/images/marker.svg') center center no-repeat;
                         transform: translate3d(-50%,-100%,0) scale(1);
                         transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
                         #location{
@@ -723,7 +723,7 @@ span{
                 .vjs-big-play-button{
                     width:vw-calc(155);
                     height:vw-calc(155);
-                    background:url('./images/playBtn.svg') no-repeat;
+                    background:url('../ex303HKI/images/playBtn.svg') no-repeat;
                     transform: translate3d(-50%,-50%,0);
                     border:0;
                     margin:0;
@@ -756,7 +756,7 @@ span{
             #closeBtn{
                 width:vw-calc(50);
                 height:vw-calc(50);
-                background:url('./images/closeBtn.svg') no-repeat;
+                background:url('../ex303HKI/images/closeBtn.svg') no-repeat;
                 position: absolute;
                 top:0;
                 right:0;
@@ -795,12 +795,12 @@ span{
         bottom:vw-calc(65);
         right:vw-calc(10);
         z-index: 1;
-        background:url('./images/yearOfCoastline_b.svg') center no-repeat;
+        background:url('../ex303HKI/images/yearOfCoastline_b.svg') center no-repeat;
         opacity: 1;
         visibility: visible;
         transition: all 1s cubic-bezier(0.87, 0, 0.13, 1);
         &.w{
-            background:url('./images/yearOfCoastline_w.svg') center no-repeat;
+            background:url('../ex303HKI/images/yearOfCoastline_w.svg') center no-repeat;
         }
         &.disabled{
             transition-duration: .3s;
@@ -826,7 +826,7 @@ span{
         #arrow{
             width:vw-calc(36);
             height:vw-calc(32);
-            background:url('./images/arrow_r.svg') center no-repeat;
+            background:url('../ex303HKI/images/arrow_r.svg') center no-repeat;
             position: absolute;
             top:0;
             right:calc(100% + #{vw-calc(45)});
@@ -984,7 +984,7 @@ span{
         //                 content:'';
         //                 width:vw-calc(45);
         //                 height:vw-calc(55);
-        //                 background:url('./images/marker.svg') center no-repeat;
+        //                 background:url('../ex303HKI/images/marker.svg') center no-repeat;
         //                 background-size:100%;
         //                 transform: translate3d(-50%,-100%,0);
         //                 display: block;

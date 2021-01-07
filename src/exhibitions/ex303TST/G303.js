@@ -3,7 +3,7 @@ import './style.scss';
 import webSocket from 'socket.io-client';
 import VideoPlayer from '../../components/VideoPlayer';
 
-import Menu from './Menu';
+import Menu from '../ex303HKI/MenuSmall';
 import Map from '../ex303HKI/Map';
 
 const G303 = props => {
@@ -291,6 +291,7 @@ const G303 = props => {
       <div id="ref" className={`${gameMode === 'home' ? 'hide' : ''} ${yearIdx === 3 ? 'w' : ''}`}>本圖的海岸線只供參考。</div>
 
       <Menu 
+        locationName='tst'
         globalData={globalData}
         streetData={streetData}
         language={language}

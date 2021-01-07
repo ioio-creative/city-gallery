@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import './menu.scss';
-import './nav.scss';
+import './navBig.scss';
 
 const Menu = props => {
   const globalData = props.globalData;
@@ -10,14 +10,8 @@ const Menu = props => {
     <div id='navWrap'>
       <div id='left'>
         <div id="wrap" className={`${!props.showNav ? 'noBtn' : props.yearIdx < 3  ? 'noBtn' : ''} ${props.runTransition ? 'disable' : ''}`}>
-          <div className={`yearButton ${props.gameMode === 'street' ? 'hide' : ''} ${props.yearIdx > -1 ? 'active' : ''} ${!props.showNav ? 'radar' : ''}`} onClick={() => { !props.showNav ? props.start() : props.back(); }}>
-            {
-              globalData && 
-              !props.showNav ?
-                globalData.confirm
-              :
-                '選擇年份'
-            }
+          <div className={`yearButton ${props.gameMode === 'street' ? 'hide' : ''} ${props.showNav ? 'active' : ''}`} onClick={() => { props.showNav && props.back(); }}>
+            選擇年份
           </div>
           <div id="streetNameWrap" className={`streetFont ${props.gameMode === 'street' ? '' : 'hide'}`}>
             {
