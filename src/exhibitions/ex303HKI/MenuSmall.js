@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 // import './menu.scss';
 import './navSmall.scss';
 
@@ -11,25 +11,40 @@ const Menu = props => {
     'wk':['葵涌','西九龍']
   }
 
+  useEffect(() => {
+    const updateLang = (i) => {
+      props.setLanguage(i === 0 ? 'tc' : 'en');
+    }
+
+    if (props.socket) {
+      props.socket.on('selectLang', updateLang);
+    }
+
+    return () => {
+      if (props.socket) {
+        props.socket.off('selectLang', updateLang);
+      }
+    };
+  }, [props.socket]);
+
   return (
     <div id='navWrap'>
       <div id='left'>
         {
           !props.showYear && props.gameMode !== 'home' &&
-          <div id="indicator" className={`${props.yearIdx != 3 ? 'hideImg' : ''} ${props.zone > 0 ? 'moveup' : ''}`}>
-            請按下不同的浮標以<br/>探索不同填海區的資訊
-          </div>
+          <div id="indicator" className={`${props.yearIdx != 3 ? 'hideImg' : ''} ${props.zone > 0 ? 'moveup' : ''}`} dangerouslySetInnerHTML={{__html:globalData && globalData.hints}}></div>
         }
         <div id="wrap" className={`${!props.showNav ? 'noBtn' : props.yearIdx < 3  ? 'noBtn' : ''} ${props.runTransition ? 'disable' : ''}`}>
           <div className={`yearButton ${props.gameMode === 'street' ? 'hide' : ''} ${props.showNav ? 'active' : ''}`} onClick={() => { props.showNav && props.back(); }}>
-            選擇年份
+            { globalData && globalData.selectYear }
           </div>
           {
             props.locationName === 'tst' &&
             <div id="streetNameWrap" className={`streetFont ${props.gameMode === 'street' ? '' : 'hide'}`}>
               {
+                globalData.streetArea &&
                 props.streetIdx === null ?
-                  ['尖沙咀區', '油麻地區', '旺角及大角咀區'].map((v, i) => {
+                  globalData.streetArea.map((v, i) => {
                     if(i === props.zone)
                       return (
                         <div key={i} className={`streetName ${i === 2 ? 's' : ''}`}>
@@ -53,7 +68,10 @@ const Menu = props => {
             </div>
           }
           <div className={`descriptionBox ${props.locationName === 'tst' ? (!props.showNav ? '' : props.yearIdx < 3 ? '' : 'hide') : ''}`}>
-            {fromTo[props.locationName][0]} <span></span> {fromTo[props.locationName][1]}
+            { globalData && globalData.locations[0] } <span></span> 
+            { props.locationName === 'tst' && globalData && globalData.locations[3] }
+            { props.locationName === 'wk' && globalData && globalData.locations[4] }
+            { props.locationName === 'kb' && globalData && globalData.locations[2] }
           </div>
           <span id="space"></span>
           <div id="lang">

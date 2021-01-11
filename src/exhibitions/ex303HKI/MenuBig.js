@@ -1,22 +1,39 @@
-import React, { useState } from 'react';
-// import './menu.scss';
+import React, { useEffect } from 'react';
 import './navBig.scss';
 
 const Menu = props => {
   const globalData = props.globalData;
   const streetData = props.streetData;
 
+  
+  useEffect(() => {
+    const updateLang = (i) => {
+      props.setLanguage(i === 0 ? 'tc' : 'en');
+    }
+
+    if (props.socket) {
+      props.socket.on('selectLang', updateLang);
+    }
+
+    return () => {
+      if (props.socket) {
+        props.socket.off('selectLang', updateLang);
+      }
+    };
+  }, [props.socket]);
+
   return (
     <div id='navWrap'>
       <div id='left'>
         <div id="wrap" className={`${!props.showNav ? 'noBtn' : props.yearIdx < 3  ? 'noBtn' : ''} ${props.runTransition ? 'disable' : ''}`}>
           <div className={`yearButton ${props.gameMode === 'street' ? 'hide' : ''} ${props.showNav ? 'active' : ''}`} onClick={() => { props.showNav && props.back(); }}>
-            選擇年份
+            { globalData && globalData.selectYear }
           </div>
           <div id="streetNameWrap" className={`streetFont ${props.gameMode === 'street' ? '' : 'hide'}`}>
             {
               props.streetIdx === null ?
-                ['上環區', '中環及灣仔區', '銅鑼灣區', '鰂魚涌區'].map((v, i) => {
+                globalData &&
+                globalData.streetArea.map((v, i) => {
                   if(i === props.zone)
                     return (
                       <div key={i} className={`streetName ${i === 1 ? 's' : ''}`}>
@@ -36,7 +53,7 @@ const Menu = props => {
             <span onClick={() => {props.setGameMode('street'); props.setZone(0); }}> {globalData.street} </span>
           </div>
           <div className={`descriptionBox ${!props.showNav ? '' : props.yearIdx < 3 ? '' : 'hide'}`}>
-            海岸綫 <span></span> 香港島
+            { globalData && globalData.locations[0] } <span></span> { globalData && globalData.locations[7] }
           </div>
         </div>
       </div>
@@ -49,16 +66,19 @@ const Menu = props => {
           <div id="questionBtnWrap">
             <div id="questionBtn">?</div>
           </div>
-          <div id="indicator" className={!props.showNav ? 'hideImg' : props.yearIdx < 3 ? 'hideImg' : ''}>
-            {
+          <div id="indicator" className={!props.showNav ? 'hideImg' : props.yearIdx < 3 ? 'hideImg' : ''} 
+            dangerouslySetInnerHTML={{__html: 
+              globalData &&
               !props.showNav ? 
-                <>本圖的海岸線只供參考。填海資料僅顯示維港範圍以內部分區域。</>
+                globalData.reference
                 :
                 props.yearIdx === 3 ? 
-                  <>請按下不同的浮標以<br/>探索不同填海區的資訊</>
+                  globalData.hints
                 : 
-                  <>本圖的海岸線只供參考。填海資料僅顯示維港範圍以內部分區域。</>
-            }
+                  globalData.reference
+            }}
+          >
+            
           </div>
         </div>
       </div>

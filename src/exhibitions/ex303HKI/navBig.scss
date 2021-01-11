@@ -7,6 +7,21 @@ $drakgreenblue:#074A45;
 
 $width:3840;
 
+.en{
+  #navWrap #left #wrap{
+    .descriptionBox{
+      font-size: vw-calc(22, $width);
+    }
+    #streetNameWrap .streetName{
+      font-size: vw-calc(27, $width);
+      &.s{
+        font-size:vw-calc(24, $width);
+        line-height: vw-calc(34, $width);
+      }
+    }
+  }
+}
+
 #navWrap{
   z-index: 10;
   position: absolute;
@@ -18,13 +33,13 @@ $width:3840;
   transition: all 1s cubic-bezier(0.87, 0, 0.13, 1);
   &>div{
     width:50%;
-    margin:0 vw-calc(88, $width);
+    margin:0 vw-calc(28, $width);
     #wrap{
       background: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: vw-calc(35, $width);
+      border-radius: vw-calc(60, $width);
       &.noBtn{
         justify-content: space-evenly;
         padding: 0 vw-calc(50, $width) 0 vw-calc(28, $width);
@@ -191,12 +206,13 @@ $width:3840;
   }
   #right{
     #wrap{
-      width: vw-calc(628, $width);
+      width: vw-calc(828, $width);
       height: vw-calc(122, $width);
-      padding:0 vw-calc(40, $width);
+      padding:0 vw-calc(50, $width);
+      justify-content: space-around;
       #lang{
         display: flex;
-        margin-right:vw-calc(27 - 13 / 2, $width);
+        // margin-right:vw-calc(27 - 13 / 2, $width);
         &>div{
           width:vw-calc(57, $width);
           height:vw-calc(57, $width);
@@ -208,6 +224,7 @@ $width:3840;
           background:transparent;
           color:#70CCB8;
           font-size:vw-calc(23, $width);
+          line-height: vw-calc(57, $width);
           margin:vw-calc(13/2, $width);
           transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
           &.active{
@@ -242,16 +259,18 @@ $width:3840;
           height:vw-calc(57, $width);
           border-radius: 50%;
           border:vw-calc(3, $width) solid #074A45;
-          margin:vw-calc(27, $width);
+          margin:vw-calc(45, $width);
           display: flex;
           justify-content: center;
           align-items: center;
           font-size:vw-calc(27, $width);
+          line-height: vw-calc(57, $width);
         }
       }
       #indicator{
+        width:vw-calc(270, $width);
         height:vw-calc(57, $width);
-        margin-left:vw-calc(27, $width);
+        // margin-left:vw-calc(27, $width);
         padding-left:vw-calc(46, $width);
         background:url('./images/indicator.svg') left center no-repeat;
         color:#074A45;
@@ -259,11 +278,12 @@ $width:3840;
         line-height: vw-calc(22, $width);
         display: flex;
         align-items: center;
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
         &.hideImg{
-          background:none;
-          margin-left:vw-calc(30, $width);
+          background-position:-20% center;
+          // margin-left:vw-calc(30, $width);
           padding-left:0;
-          letter-spacing: vw-calc(-1.6, $width);
+          // letter-spacing: vw-calc(-1.6, $width);
         }
       }
     }

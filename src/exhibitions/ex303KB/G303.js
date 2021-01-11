@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './style.scss';
+import webSocket from 'socket.io-client';
 import VideoPlayer from '../../components/VideoPlayer';
 
 import Menu from '../ex303HKI/MenuSmall';
@@ -8,7 +9,7 @@ import Map from '../ex303HKI/Map';
 
 const G303 = props => {
   const [language, setLanguage] = useState('tc');
-  const [started, setStarted] = useState(false);
+  // const [started, setStarted] = useState(false);
   const [yearIdx, setYearIdx] = useState(-1);
   // const [zoomed, setZoomed] = useState(false);
   // const [mapIndicatorIdx, setMapIndicatorIdx] = useState(0);
@@ -22,42 +23,68 @@ const G303 = props => {
   // const [isVideo, setIsVideo] = useState(false);
   // const [videoNumber, setVideoNumber] = useState(null);
   const [zone, setZone] = useState(0);
-  // const [coastlineIdx, setCoastlineIdx] = useState(null);
+  const [coastlineIdx, setCoastlineIdx] = useState(null);
   const [streetIdx, setStreetIdx] = useState(null);
   const [runTransition, setRunTransition] = useState(false);
+  const [socket, setSocket] = useState(null);
+  const [showWholeScreen, setShowWholeScreen] = useState(true);
 
-  // const handleZoom = useRef(null);
   const handleMove = useRef(null);
   const handleShowCoastline = useRef(null);
   const handleSelectCoastline = useRef(null);
   const handleStart = useRef(null);
-  // const video1Ref = useRef(null);
-
-  // const videoSrc = ['./images/ex303/video1.mp4', './images/ex303/video2.mp4'];
   const years = ['1900', '1945', '1985', '2019'];
 
-  // const onClickMapIndicator = i => {
-  //   setMapIndicatorIdx(i);
-  //   handleMove.current.updateMapIndicatorIdx(i, zoomed);
-  // };
+  useEffect(() => {
+    let started = false;
 
-  // const fullOpacity = tf => {
-  //   setFill(tf);
-  // };
+    const enter = () => {
+      if (!started) {
+        started = true;
+        setShowWholeScreen(true);
+      }
+    }
+
+    const leave = () => {
+      if (started) {
+        started = false;
+        setShowWholeScreen(false);
+      }
+    }
+
+    const getNavigationIndex = (d) => {
+      setYearIdx(d.index);
+    }
+
+    if (socket) {
+      socket.on('userEnter', enter);
+      socket.on('userLeave', leave);
+      socket.on('navigationIndex', getNavigationIndex);
+    } else {
+      setSocket(webSocket('http://localhost:80/'));
+    }
+
+    return () => {
+      if (socket) {
+        socket.off('userEnter', enter);
+        socket.off('userLeave', leave);
+        socket.off('navigationLeft', getNavigationIndex);
+      }
+    };
+  }, [socket]);
 
   const onClickYear = i => {
-    if (!started)
-      if (i !== yearIdx) {
-        setYearIdx(i);
-        handleSelectCoastline.current.selectCoastline(i);
-      }
+    if (i !== yearIdx) {
+      setYearIdx(i);
+      socket.emit('navigationIndex', {data:{index:yearIdx}});
+      handleSelectCoastline.current.selectCoastline(i);
+    }
   };
 
-  const onClickStart = () => {
+  const onStart = () => {
     if (yearIdx >= 0) {
-      // setHome(false);
-      // setStarted(true);
-      //setShowNav(false);
+
+      socket.emit('selectIndex', {data:{index:yearIdx}});
       setRunTransition(true);
       setShowYear(false);
       handleStart.current.start(yearIdx);
@@ -66,71 +93,16 @@ const G303 = props => {
   };
 
   const onBack = () => {
-    // setFill(false);
-    // setHome(true);
-    // setGameMode('home');
-    // setYearIdx(0);
-    // setShowNav(false);
     setRunTransition(true);
     setShowYear(true);
     handleShowCoastline.current.showCoastline(-1);
-    // handleSelectCoastline.current.selectCoastline(null);
   };
-
-  // const toFakeZoom = () => {
-  //   if (gameMode !== 'street') {
-  //     setGameMode('street');
-  //     gsap.to(
-  //       {},
-  //       {
-  //         duration: 1,
-  //         onComplete: () => {
-  //           setFakeZoom(1);
-  //         }
-  //       }
-  //     );
-  //     zoneControl(0);
-  //   }
-  // };
-
-  // const leaveFakeZoom = () => {
-  //   if (gameMode !== 'coast') {
-  //     setZone([false, false, false, false]);
-  //     setFakeZoom(0);
-  //     gsap.to(
-  //       {},
-  //       {
-  //         duration: 1.5,
-  //         onComplete: () => {
-  //           setGameMode('coast');
-  //         }
-  //       }
-  //     );
-  //   }
-  // };
-
-  // const zoneControl = i => {
-  //   setZone([false, false, false, false]);
-  //   gsap.to(
-  //     {},
-  //     {
-  //       duration: 2,
-  //       onComplete: () => {
-  //         setZone(() => {
-  //           let temp = [false, false, false, false];
-  //           temp[i] = true;
-  //           return temp;
-  //         });
-  //       }
-  //     }
-  //   );
-  // };
 
   const pxToVw = (px, isMarker = true) => {
     if(isMarker)
-      return (px + 61/2 - 10) / 3840 * 100+'vw';
+      return (px + 61/2 - 10) / 1920 * 100+'vw';
     else
-      return (px - 15) / 3840 * 100+'vw';
+      return (px - 15) / 1920 * 100+'vw';
   }
   const pxToVh = (px, isMarker = true) => {
     if(isMarker)
@@ -139,13 +111,13 @@ const G303 = props => {
       return (px - 10) / 1080 * 100+'vh';
   }
 
-  const globalData = props.appData.hki.contents[language].global;
-  const coastlineData = props.appData.hki.contents[language].coastline;
-  const streetData = props.appData.hki.contents[language].street;
+  const globalData = props.appData.kb.contents[language].global;
+  const coastlineData = props.appData.kb.contents[language].coastline;
+  // const streetData = props.appData.hki.contents[language].street;
 
   return (
     // <div id='main' className={`${started ? 'started' : ''}${zoomed ? ' zoomed' : ''}`}>
-    <div id='main' className={`${started ? 'started' : ''}`}>
+    <div id='main' className={`${showWholeScreen ? '' : 'hide'} ${language}`}>
       <Map
           locationName="kb"
           doubleScreen={false}
@@ -168,13 +140,54 @@ const G303 = props => {
       <div id="coast" className={showYear ? 'hide' : yearIdx === 3 && gameMode === 'coast' ? '' : 'hide'}>
         <div id="locationsWrap">
           <div id="locations" className="streetFont">
-            <div>九龍灣</div>
-            <div>觀塘</div>
+            {
+              globalData &&
+              globalData.locations.map((v, i)=>{
+                if(i < 2)
+                  return <div key={i}>{v}</div>
+                else
+                  return
+              })
+            }
           </div>
+        </div>
+        <div id="contentWrap" className={coastlineIdx !== null ? 'showCard' : ''}>
+          {
+            coastlineData &&
+            coastlineData.map((v, i)=>{
+              return <div key={i} className={`item ${coastlineIdx === i ? 'show': ''}`}>
+                <div id="markerWrap" style={{left:pxToVw(v.marker.pos.x),top:pxToVh(v.marker.pos.y)}}>
+                  <span id="marker" onClick={()=> setCoastlineIdx(i)}></span>
+                  <span id="location" dangerouslySetInnerHTML={{__html:v.marker.name}}></span>
+                </div>
+                <div id="card">
+                  <div id="closeBtn" onClick={()=> setCoastlineIdx(null)}><span></span><span></span></div>
+                  <div id="wrap">
+                    <div id="title">
+                      <span>{v.cardConetnt.title}</span>
+                      {/* <span>{v.cardConetnt.completedYear}</span> */}
+                    </div>
+                    <div id="imgWrap"><img src={v.cardConetnt.image.src} alt="" /></div>
+                    <ul id="info">
+                    {
+                      v.cardConetnt.info.map((vi, j)=>{
+                        return <li key={j}><span>{vi[0]}</span><span>{vi[1]}</span></li>
+                      })
+                    }
+                    </ul>
+                    <div id="btnOuterWrap">
+                      <div className="btnWrap">{i-1 >= 0 && <div id="prevBtn" onClick={()=> setCoastlineIdx(i-1)}><span dangerouslySetInnerHTML={{__html:coastlineData[i-1].marker.name}}></span></div>}</div>
+                      <div className="btnWrap">{i+1 < coastlineData.length && <div id="nextBtn" onClick={()=> setCoastlineIdx(i+1)}><span dangerouslySetInnerHTML={{__html:coastlineData[i+1].marker.name}}></span></div>}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            })
+          }
         </div>
       </div>
 
-      <div id="street" className={`${gameMode === 'street' ? '' : 'hide'} ${streetIdx !== null ? 'showVideo' : ''}`}>
+      {/*<div id="street" className={`${gameMode === 'street' ? '' : 'hide'} ${streetIdx !== null ? 'showVideo' : ''}`}>
         <div id="prevZoneBtn" className={`zoneBtn ${zone > 0 ? '' : 'hide'}`} onClick={()=> {if(zone > 0) setZone(zone-1)}}></div>
         <div id="nextZoneBtn" className={`zoneBtn ${zone < 3 ? '' : 'hide'}`} onClick={()=> {if(zone < 3) setZone(zone+1)}}></div>
         <div id="mapIndicator">
@@ -208,7 +221,7 @@ const G303 = props => {
             </div>
           </div>
         </div>
-        <div id="contentWrap" className={`${gameMode === 'street' ? `zone${zone+1}` : ''}`}>
+         <div id="contentWrap" className={`${gameMode === 'street' ? `zone${zone+1}` : ''}`}>
           <div id="contents">
             {
               streetData &&
@@ -220,7 +233,7 @@ const G303 = props => {
                     </span>
                   </div>
                   <div id="roadWrap" style={{left:pxToVw(v.road.pos.x, false),top:pxToVh(v.road.pos.y, false)}}>
-                    <img src={streetIdx !== i && streetIdx !== null ? v.road.inactiveImage.src : v.road.image.src} />
+                    <img src={streetIdx !== i && streetIdx !== null ? v.road.inactiveImage.src : v.road.image.src} alt="" />
                   </div>
                 </div>
               })
@@ -241,7 +254,7 @@ const G303 = props => {
             />
           </div>
         }
-      </div>
+      </div> */}
 
       <div id="currentYear" className={`${showYear ? 'disabled' : gameMode !== 'coast' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''} eb`}>{years[yearIdx]}</div>
       <div id='yearSelector' className={`${yearIdx < 0 ? 'disabled' : ''} ${showYear && gameMode === 'home' ? '' : 'hide'}`}>
@@ -254,21 +267,23 @@ const G303 = props => {
             );
           })}
         </ul>
-        <span id="arrow" className={yearIdx >= 0 ? `idx_${yearIdx} active` : ''}></span>
+        <div id="btnWrap" className={yearIdx >= 0 ? `idx_${yearIdx} active` : ''}>
+          <span id="arrow"></span>
+          <div id='startBtn' className={`${yearIdx < 0 ? 'disabled' : ''} ${showYear ? '' : 'hide'}`} onClick={onStart}>{globalData && globalData.confirm}</div>
+        </div>
       </div>
-      {/* <div id='startBtn' className={`${yearIdx < 0 ? 'disabled' : ''} ${showYear ? '' : 'hide'}`} onClick={onClickStart}>{globalData && globalData.confirm}</div> */}
-      <div id="yearOfCoastline" className={`${showYear ? 'disabled' : gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}></div>
+      <div id="yearOfCoastline" className={`${showYear || coastlineIdx  !== null ? 'disabled' : gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}></div>
       
       <div id="ref" className={`${gameMode === 'home' ? 'hide' : ''} ${yearIdx === 3 ? 'w' : ''}`}>本圖的海岸線只供參考。</div>
 
       <Menu 
         locationName='kb'
         globalData={globalData}
-        streetData={streetData}
+        // streetData={streetData}
         language={language}
         setLanguage={setLanguage}
         runTransition={runTransition}
-        start={onClickStart}
+        start={onStart}
         back={onBack}
         showNav={showNav} 
         showYear={showYear} 
@@ -278,7 +293,8 @@ const G303 = props => {
         streetIdx={streetIdx}
         setStreetIdx={setStreetIdx}
         zone={zone}
-        setZone={setZone} />
+        setZone={setZone}
+        socket={socket} />
     </div>
   );
 };

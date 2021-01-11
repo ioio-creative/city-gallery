@@ -86,6 +86,7 @@ span{
 }
 
 #ref{
+    text-align: right;
     color:#074A45;
     font-size: vw-calc(20);
     font-weight: bold;
@@ -119,6 +120,13 @@ span{
 // .zone4_street{
 //     transform: translate3d(-86.45%,-36%,0);
 // }
+
+
+.en#main{
+    #coast #locationsWrap #locations{
+        font-size: vw-calc(16);
+    }
+}
 
 #main{
     width:100%;
@@ -181,7 +189,7 @@ span{
                     position: absolute;
                     opacity: 1;
                     visibility: visible;
-                    transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
+                    transition: opacity .6s cubic-bezier(0.87, 0, 0.13, 1),  visibility .6s cubic-bezier(0.87, 0, 0.13, 1);
                     @for $i from 1 through 8 {
                         &:nth-child(#{$i}) {
                             transition-delay: #{$i*.1}s;
@@ -261,6 +269,7 @@ span{
                     #card{
                         opacity: 1;
                         visibility: visible;
+                        transform: translate3d(0,0,0) scale(1);
                     }
                 }
                 #markerWrap{
@@ -278,10 +287,10 @@ span{
                         width:vw-calc(155);
                         height:vw-calc(155);
                         font-size:vw-calc(18);
-                        line-height: vw-calc(21);
+                        line-height: vw-calc(22);
                         font-weight: bold;
                         border-radius: 50%;
-                        padding-top:vw-calc(10);
+                        padding:vw-calc(10 10 0);
                         background:#fff;
                         box-shadow: vw-calc(6 6 6) rgba(0,0,0,.2);
                         display: flex;
@@ -304,6 +313,7 @@ span{
                     display: flex;
                     opacity: 0;
                     visibility: hidden;
+                    transform: translate3d(0,0,0) scale(.85);
                     transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
                     // &:before, &:after{
                     //     content:'';
@@ -344,6 +354,7 @@ span{
                         }
                     }
                     #wrap{
+                        width:100%;
                         position: relative;
                         #title{
                             display: flex;
@@ -351,9 +362,27 @@ span{
                             font-size:vw-calc(22);
                             margin-bottom:vw-calc(24);
                         }
+                        #imgWrap{
+                            width: 100%;
+                            position: relative;
+                            &:before{
+                                content:'';
+                                padding-top:62.65%;
+                                display: block;
+                            }
+                            img{
+                                width: 100%;
+                                height:100%;
+                                object-fit: cover;
+                                object-position: center;
+                                position: absolute;
+                                top:0;
+                                left:0;
+                            }
+                        }
                         #info{
-                            padding:vw-calc(25 88 0 22);
-                            li{
+                            padding:vw-calc(25 22 0 22);
+                            &>li{
                                 display: flex;
                                 margin-top:vw-calc(32);
                                 &:first-child{
@@ -366,6 +395,12 @@ span{
                                         flex:none;
                                         width:vw-calc(77);
                                         font-size: vw-calc(15);
+                                    }
+                                }
+                                ul{
+                                    li{
+                                        list-style: disc;
+                                        margin-left:vw-calc(15);
                                     }
                                 }
                             }
@@ -387,6 +422,7 @@ span{
                                         display: block;
                                     }
                                     span{
+                                        width:vw-calc(80);
                                         margin:vw-calc(0 12);
                                         font-size:vw-calc(10);
                                         line-height: vw-calc(12);
@@ -811,72 +847,81 @@ span{
     }
     #yearSelector{
         z-index: 10;
-        width:vw-calc(264);
         position: absolute;
         top:50%;
-        left:vw-calc(170);
-        color:$lightblue;
+        left:50%;
+        color:$white;
         display: flex;
         flex-direction: column;
-        transform: translate3d(0,-50%,0);
+        transform: translate3d(-50%,-50%,0);
         transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
         &.hide{
             transition-delay: 0s;
         }
-        #arrow{
-            width:vw-calc(36);
-            height:vw-calc(32);
-            background:url('../ex303HKI/images/arrow_r.svg') center no-repeat;
+        #btnWrap{
+            width: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             position: absolute;
-            top:0;
-            right:calc(100% + #{vw-calc(45)});
+            top:110%;
+            left:0;
             opacity: 0;
             visibility: hidden;
-            transform: translate3d(-100%,vw-calc(58),0);
+            transform: translate3d(vw-calc((339 + 60) / 2 ),50%,0);
             transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
             &.active{
                 opacity: 1;
                 visibility: visible;
             }
             &.idx_0{
-                transform: translate3d(0,vw-calc(58),0);
+                transform: translate3d(vw-calc((339 + 60) / 2 ),0,0);
             }
             &.idx_1{
-                transform: translate3d(0,vw-calc(58 + 150),0);
+                transform: translate3d(vw-calc((339 + 60) + (339 + 60) / 2),0,0);
             }
             &.idx_2{
-                transform: translate3d(0,vw-calc(58 + 150 * 2),0);
+                transform: translate3d(vw-calc((339 + 60) + (339 + 60) + (339 + 60) / 2),0,0);
             }
             &.idx_3{
-                transform: translate3d(0,vw-calc(58 + 150 * 3),0);
+                transform: translate3d(vw-calc((339 + 60) + (339 + 60) + (339 + 60) + (339 + 60) / 2),0,0);
+            }
+            #arrow{
+                width:vw-calc(28);
+                height:vw-calc(16);
+                background:url('../ex303HKI/images/arrow.svg') center no-repeat;
             }
         }
         ul{
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            font-weight: bold;
             position: relative;
+            display: flex;
             transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-            &:before,
-            &:after{
-                content:'';
-                width:vw-calc(3);
-                height:vw-calc(27);
-                background:$white;
-                position: absolute;
-                left:50%;
-            }
-            &:before{
-                bottom:calc(100% + #{vw-calc(20)});
-            }
-            &:after{
-                top:calc(100% + #{vw-calc(20)});
-            }
+            // &:before,
+            // &:after{
+            //     content:'';
+            //     width:vw-calc(3);
+            //     height:vw-calc(27);
+            //     background:$white;
+            //     position: absolute;
+            //     left:50%;
+            // }
+            // &:before{
+            //     bottom:calc(100% + #{vw-calc(20)});
+            // }
+            // &:after{
+            //     top:calc(100% + #{vw-calc(20)});
+            // }
             li{
                 height:vw-calc(150);
-                font-size:vw-calc(132);
+                font-size:vw-calc(170);
+                margin:0 vw-calc(30);
+                text-shadow: 0 vw-calc(3 6) rgba(0,0,0,.3);
                 display: flex;
                 transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
                 &.active{
-                    height:vw-calc(150);
-                    color:$white;
                     span{
                         transform: translate3d(0,0,0) scale(1);
                     }
@@ -893,26 +938,29 @@ span{
         }
     }
     #startBtn{
-        width:vw-calc(300);
-        height:vw-calc(300*0.303);
+        width:vw-calc(191);
+        height:vw-calc(191*0.303);
         background:$white;
+        color:$drakgreenblue;
         border-radius: vw-calc(100);
-        font-size:vw-calc(30);
+        margin-top:vw-calc(14);
+        font-size:vw-calc(23);
+        line-height:vw-calc(191*0.303);
         font-weight: bold;
         display: flex;
         justify-content: center;
         align-items: center;
-        position: absolute;
-        top:50%;
-        left:50%;
+        // position: absolute;
+        // top:50%;
+        // left:50%;
         z-index: 10;
-        transform: translate3d(-50%,-50%,0) scale(1);
+        transform: translate3d(0,0,0) scale(1);
         transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
         &.disabled{
             opacity: 0;
         }
         &:not(.disabled){
-            transform: translate3d(-50%,-50%,0) scale(1);
+            transform: translate3d(0,0,0) scale(1);
             &:before{
                 animation: radar 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
             }
@@ -920,7 +968,7 @@ span{
                 animation: radar 3s cubic-bezier(0.16, 1, 0.3, 1) infinite .4s;
             }
             &:active{
-                transform: translate3d(-50%,-50%,0) scale(.9);
+                transform: translate3d(0,0,0) scale(.9);
             }
         }
         &:before, &:after{
@@ -928,7 +976,7 @@ span{
             width:calc(100% - #{vw-calc(2)});
             height:calc(100% - #{vw-calc(2)});
             border-radius: vw-calc(100);
-            border:vw-calc(2) solid #fff;
+            border:vw-calc(1) solid #fff;
             position: absolute;
             top:0;
             left:0;

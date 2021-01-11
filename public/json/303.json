@@ -175,132 +175,216 @@
         "global":{
           "confirm":"Confirm",
           "coastline":"Coastline",
-          "street":"Street"
+          "street":"Street",
+          "selectYear":"Select Year",
+          "area":"Area",
+          "locations":["Kennedy Town", "Sheung Wan", "Central", "Wan Chai", "Causeway Bay", "North Point", "Quarry Bay", "Shau Kei Wan"],
+          "streetArea":["Sheung Wan Area", "Central and Wan Chai Area", "Causeway Bay Area", "Quarry Bay Area"],
+          "reference":"本圖的海岸線只供參考。填海資料僅顯示維港範圍以內部分區域。",
+          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊"
         },
         "coastline":[
           {
             "marker":{
-              "name":"中環填海計劃<br/>第一期",
+              "name":"Belcher Bay Promenade",
               "pos":{
-                "x":1212,
-                "y":378
+                "x":615,
+                "y":454
               }
             },
             "cardConetnt":{
-              "title":"中環填海計劃第一期",
-              "completedYear":"1988 完成",
-              "image":{"src":"./images/ex303/image.png"},
+              "title":"Belcher Bay Promenade",
+              "image":{"src":"./images/ex303/coastline/4.jpg"},
               "info":[
-                ["範圍","民光街／民耀街／民祥街之間"],
-                ["重要性","用作興建機場鐵路香港站、中環灣仔繞道及重置碼頭。"]
+                ["Area","1.25公頃"],
+                ["Info","The Belcher Bay Promenade on Shing Sai Road, Kennedy Town, was fully opened round-the-clock in October 2020, providing the public with a leisure space for enjoying the panoramic view of the west side Victoria Harbour and the sunset."]
               ]
             }
           },
           {
             "marker":{
-              "name":"中環填海計劃<br/>第二期",
+              "name":"Open Space  on Sai Ying Pun Eastern Street North",
               "pos":{
-                "x":1295,
-                "y":439
+                "x":813,
+                "y":327
               }
             },
             "cardConetnt":{
-              "title":"中環填海計劃第二期",
-              "completedYear":"1988 完成",
-              "image":{"src":"./images/ex303/image.png"},
+              "title":"Open Space on Sai Ying Pun Eastern Street North",
+              "image":{"src":"./images/ex303/coastline/5.png"},
               "info":[
-                ["範圍","民光街／民耀街／民祥街之間"],
-                ["重要性","用作興建機場鐵路香港站、中環灣仔繞道及重置碼頭。"]
+                ["Area","1.25公頃"],
+                ["Info","The Sai Ying Pun Eastern Street North open space  located on the 4.5km promenade apanning from Shek Tong Tsui to Wan Chai.  Its main design features include concept of “intergenerational inclusion”, providing state-of-the-art and diversified play facilities suitable for people of different cohorts and abilities. The project is scheduled for completion by phases in 2024."]
               ]
             }
           },
           {
             "marker":{
-              "name":"中環填海計劃<br/>第三期",
+              "name":"Central and Western District Promenade - Western Wholesale Food Market Section",
               "pos":{
-                "x":1382,
-                "y":408
+                "x":921,
+                "y":301
               }
             },
             "cardConetnt":{
-              "title":"中環填海計劃第三期",
-              "completedYear":"1988 完成",
-              "image":{"src":"./images/ex303/image.png"},
+              "title":"Central and Western District Promenade - Western Wholesale Food Market Section",
+              "image":{"src":"./images/ex303/coastline/6.jpg"},
               "info":[
-                ["範圍","民光街／民耀街／民祥街之間"],
-                ["重要性","用作興建機場鐵路香港站、中環灣仔繞道及重置碼頭。"]
+                ["Area","0.59公頃"],
+                ["Info","The four idle piers and a waterfront section of the Western Wholesale Food Market were revitalised through public participation into a public open space, which was opened in 2018. The project preserved the distinctive features and heritage elements of the Western Wholesale Food Market and piers, and also provides activity spaces via a shared community platform."]
               ]
             }
           },
           {
             "marker":{
-              "name":"中環填海計劃<br/>第4期",
+              "name":"Fung Mat Road Harbourfront Area",
+              "pos":{
+                "x":999,
+                "y":301
+              }
+            },
+            "cardConetnt":{
+              "title":"Fung Mat Road Harbourfront Area",
+              "image":{"src":"./images/ex303/coastline/7.jpg"},
+              "info":[
+                ["Area","0.65公頃"],
+                ["Info","Opened in 2019, WE Park is modelled on the popular pipe play facilities of the former Shek Lei Pui Playground. The park not only displays art installations with different themes, but also uses containers as mobile art gallery for various creative and art workshops for children and parents."]
+              ]
+            }
+          },
+          {
+            "marker":{
+              "name":"Central Harbourfront",
+              "pos":{
+                "x":1446,
+                "y":459
+              }
+            },
+            "cardConetnt":{
+              "title":"Central Harbourfront",
+              "image":{"src":"./images/ex303/coastline/8.jpg"},
+              "info":[
+                ["Info","Installed with the Hong Kong Observation Wheel, providing flexible functional spaces to accommodate pop up event and bringing surprises to visitors making the harbourfront more attractive."]
+              ]
+            }
+          },
+          {
+            "marker":{
+              "name":"Promenade from Central and Western District Promenade (Central Section) to the Hong Kong Convention and Exhibition Centre ",
+              "pos":{
+                "x":1566,
+                "y":492
+              }
+            },
+            "cardConetnt":{
+              "title":"Promenade from Central and Western District Promenade (Central Section) to the Hong Kong Convention and Exhibition Centre ",
+              "image":{"src":"./images/ex303/coastline/9.jpg"},
+              "info":[
+                ["Area","1.4公頃 / 新海濱長廊：560米"],
+                ["Info","The waterfront section of the promenade was opened in 2019. Members of the public can stroll or jog along the promenade from the Western Wholesale Food Market in Shek Tong Tsui to the HKCEC in Wan Chai. The open space contains such facilities as children’s play area, sheltered seatings, landscaped footpaths and viewing knolls."]
+              ]
+            }
+          },
+          {
+            "marker":{
+              "name":"Celebration Precinct in Wan Chai North",
               "pos":{
                 "x":1647,
                 "y":446
               }
             },
             "cardConetnt":{
-              "title":"中環填海計劃第三期",
-              "completedYear":"1988 完成",
-              "image":{"src":"./images/ex303/image.png"},
+              "title":"Celebration Precinct in Wan Chai North",
+              "image":{"src":"./images/ex303/coastline/10.jpg"},
               "info":[
-                ["範圍","民光街／民耀街／民祥街之間"],
-                ["重要性","用作興建機場鐵路香港站、中環灣仔繞道及重置碼頭。"]
+                ["Area","1.85公頃"],
+                ["Info","A design competition is planned to solicit creative design ideas from the community. The target is to commence construction works around 2024."]
               ]
             }
           },
           {
             "marker":{
-              "name":"中環填海計劃<br/>第5期",
+              "name":"Pierside Precinct in Wan Chai North",
+              "pos":{
+                "x":1737,
+                "y":498
+              }
+            },
+            "cardConetnt":{
+              "title":"Pierside Precinct in Wan Chai North",
+              "image":{"src":"./images/ex303/coastline/11.png"},
+              "info":[
+                ["Area","4.04公頃 / 新海濱長廊：412米"],
+                ["Info","Construction works of the promenade section from Expo Drive East to Marsh Road are underway, and targeted for opening by phases from 2021. A design competition is planned to solicit more creative design ideas from the community. The target is to commence construction works around 2024."]
+              ]
+            }
+          },
+          {
+            "marker":{
+              "name":"Water Sports and Recreation Precinct in Wan Chai North",
               "pos":{
                 "x":1850,
                 "y":472
               }
             },
             "cardConetnt":{
-              "title":"中環填海計劃第三期",
-              "completedYear":"1988 完成",
-              "image":{"src":"./images/ex303/image.png"},
+              "title":"Water Sports and Recreation Precinct in Wan Chai North",
+              "image":{"src":"./images/ex303/coastline/12.jpg"},
               "info":[
-                ["範圍","民光街／民耀街／民祥街之間"],
-                ["重要性","用作興建機場鐵路香港站、中環灣仔繞道及重置碼頭。"]
+                ["Area","1.39公頃 / 新海濱長廊：770米"],
+                ["Info","The western part of the waterfront section was opened in 2020, and the remaining parts would be opened by end 2021."]
               ]
             }
           },
           {
             "marker":{
-              "name":"中環填海計劃<br/>第6期",
+              "name":"Revitalised Typhoon Shelter Precinct in Causeway Bay",
               "pos":{
-                "x":2033,
-                "y":388
+                "x":1960,
+                "y":446
               }
             },
             "cardConetnt":{
-              "title":"中環填海計劃第三期",
-              "completedYear":"1988 完成",
-              "image":{"src":"./images/ex303/image.png"},
+              "title":"Revitalised Typhoon Shelter Precinct in Causeway Bay",
+              "image":{"src":"./images/ex303/coastline/13.jpg"},
               "info":[
-                ["範圍","民光街／民耀街／民祥街之間"],
-                ["重要性","用作興建機場鐵路香港站、中環灣仔繞道及重置碼頭。"]
+                ["Area","2.53公頃 / 新海濱長廊：317米"],
+                ["Info","The waterfront promenade near Victoria Park Road would be enhanced, and new landing steps would be introduced to bring people closer to the water. Construction works are expected to commence in 2020-21."]
               ]
             }
           },
           {
             "marker":{
-              "name":"中環填海計劃<br/>第7期",
+              "name":"East Coast Park Precinct in Fortress Hill",
               "pos":{
-                "x":2904,
-                "y":526
+                "x":2064,
+                "y":311
               }
             },
             "cardConetnt":{
-              "title":"中環填海計劃第三期",
-              "completedYear":"1988 完成",
-              "image":{"src":"./images/ex303/image.png"},
+              "title":"East Coast Park Precinct in Fortress Hill",
+
+              "image":{"src":"./images/ex303/coastline/14.jpg"},
               "info":[
-                ["範圍","民光街／民耀街／民祥街之間"],
-                ["重要性","用作興建機場鐵路香港站、中環灣仔繞道及重置碼頭。"]
+                ["Area","4.7公頃 / 新海濱長廊：772米"],
+                ["Info","Works commenced in 2020."]
+              ]
+            }
+          },
+          {
+            "marker":{
+              "name":"Boardwalk underneath the Island Eastern Corridor",
+              "pos":{
+                "x":2201,
+                "y":237
+              }
+            },
+            "cardConetnt":{
+              "title":"Boardwalk underneath the Island Eastern Corridor",
+              "image":{"src":"./images/ex303/coastline/15.jpg"},
+              "info":[
+                ["Area","新海濱長廊：1 700米"],
+                ["Info","The works for the Boardwalk underneath the Island Eastern Corridor connecting Causeway Bay and Quarry Bay, measuring two kilometres long and 10 metres wide will commence in 2021, with a design emphasising a water-friendly culture and accessibility. The project is scheduled for completion by phases in 2024."]
               ]
             }
           }
@@ -921,132 +1005,216 @@
         "global":{
           "confirm":"確定",
           "coastline":"海岸線",
-          "street":"街道"
+          "street":"街道",
+          "selectYear":"選擇年份",
+          "area":"分區",
+          "locations":["堅尼地城", "上環", "中環", "灣仔", "銅鑼灣", "北角", "鰂魚涌", "筲箕灣"],
+          "streetArea":["上環區", "中環及灣仔區", "銅鑼灣區", "鰂魚涌區"],
+          "reference":"本圖的海岸線只供參考。填海資料僅顯示維港範圍以內部分區域。",
+          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊"
         },
         "coastline":[
           {
             "marker":{
-              "name":"中環填海計劃<br/>第一期",
+              "name":"卑路乍灣海濱休憩用地",
               "pos":{
-                "x":1212,
-                "y":378
+                "x":615,
+                "y":454
               }
             },
             "cardConetnt":{
-              "title":"中環填海計劃第一期",
-              "completedYear":"1988 完成",
-              "image":{"src":"./images/ex303/image.png"},
+              "title":"卑路乍灣海濱休憩用地",
+              "image":{"src":"./images/ex303/coastline/4.jpg"},
               "info":[
-                ["範圍","民光街／民耀街／民祥街之間"],
-                ["重要性","用作興建機場鐵路香港站、中環灣仔繞道及重置碼頭。"]
+                ["面積","1.25公頃"],
+                ["資料","位於堅尼地城城西道的卑路乍灣海濱休憩用地於2020 年10月起全面24小時開放，為市民提供可飽覽維港西面和夕陽海景的消閒空間。"]
               ]
             }
           },
           {
             "marker":{
-              "name":"中環填海計劃<br/>第二期",
+              "name":"西營盤東邊街北的休憩用地",
               "pos":{
-                "x":1295,
-                "y":439
+                "x":813,
+                "y":327
               }
             },
             "cardConetnt":{
-              "title":"中環填海計劃第二期",
-              "completedYear":"1988 完成",
-              "image":{"src":"./images/ex303/image.png"},
+              "title":"西營盤東邊街北的休憩用地",
+              "image":{"src":"./images/ex303/coastline/5.png"},
               "info":[
-                ["範圍","民光街／民耀街／民祥街之間"],
-                ["重要性","用作興建機場鐵路香港站、中環灣仔繞道及重置碼頭。"]
+                ["面積","1.25公頃"],
+                ["資料","西營盤東邊街北休憩用地位於石塘咀至灣仔的4.5公里海濱長廊。設計的主要特點包括以跨代共融為概念，為休憩用地的不同部份提供嶄新、多元化和適合不同年齡及能力人士享用的遊樂設施。項目預計於2024年分階段完成。"]
               ]
             }
           },
           {
             "marker":{
-              "name":"中環填海計劃<br/>第三期",
+              "name":"中西區海濱長廊—西區副食品批發市場段",
               "pos":{
-                "x":1382,
-                "y":408
+                "x":921,
+                "y":301
               }
             },
             "cardConetnt":{
-              "title":"中環填海計劃第三期",
-              "completedYear":"1988 完成",
-              "image":{"src":"./images/ex303/image.png"},
+              "title":"中西區海濱長廊—西區副食品批發市場段",
+              "image":{"src":"./images/ex303/coastline/6.jpg"},
               "info":[
-                ["範圍","民光街／民耀街／民祥街之間"],
-                ["重要性","用作興建機場鐵路香港站、中環灣仔繞道及重置碼頭。"]
+                ["面積","0.59公頃"],
+                ["資料","西區副食品批發市場的四個閒置碼頭及臨海地段經過公眾參與後活化為公眾休憩用地，於2018年開放。項目保留西區副食品批發市場及碼頭的風貌和歷史元素，及更提供活動空間作共享社區平台。"]
               ]
             }
           },
           {
             "marker":{
-              "name":"中環填海計劃<br/>第4期",
+              "name":"西營盤豐物道海濱用地",
+              "pos":{
+                "x":999,
+                "y":301
+              }
+            },
+            "cardConetnt":{
+              "title":"西營盤豐物道海濱用地",
+              "image":{"src":"./images/ex303/coastline/7.jpg"},
+              "info":[
+                ["面積","0.65公頃"],
+                ["資料","2019年開放，那裡有一個「捐山窿公園」，重現昔日石梨貝的渠管遊樂設施。公園定期配合不同主題推出藝術裝置，並於貨櫃改裝的流動美術館舉行各類兒童及親子藝術創意工作坊。"]
+              ]
+            }
+          },
+          {
+            "marker":{
+              "name":"中環海濱",
+              "pos":{
+                "x":1446,
+                "y":459
+              }
+            },
+            "cardConetnt":{
+              "title":"中環海濱",
+              "image":{"src":"./images/ex303/coastline/8.jpg"},
+              "info":[
+                ["資料","設有摩天輪，提供靈活多變的活動空間，節目不時變更，為遊人帶來驚喜，亦令海濱更具吸引力。"]
+              ]
+            }
+          },
+          {
+            "marker":{
+              "name":"中西區海濱長廊 (中環段)至香港會議展覽中心海濱長廊",
+              "pos":{
+                "x":1566,
+                "y":492
+              }
+            },
+            "cardConetnt":{
+              "title":"中西區海濱長廊 (中環段)至香港會議展覽中心海濱長廊",
+              "image":{"src":"./images/ex303/coastline/9.jpg"},
+              "info":[
+                ["面積","1.4公頃 / 新海濱長廊：560米"],
+                ["資料","海濱長廊的臨海部分已於2019年開放，公眾可由石塘咀西區副食品批發市場，沿海濱漫步或緩跑至灣仔會展。休憩空間有兒童遊樂空間、遮蔭座椅、草地小徑及觀景小山丘等設施。"]
+              ]
+            }
+          },
+          {
+            "marker":{
+              "name":"灣仔北慶典主題區",
               "pos":{
                 "x":1647,
                 "y":446
               }
             },
             "cardConetnt":{
-              "title":"中環填海計劃第三期",
-              "completedYear":"1988 完成",
-              "image":{"src":"./images/ex303/image.png"},
+              "title":"灣仔北慶典主題區",
+              "image":{"src":"./images/ex303/coastline/10.jpg"},
               "info":[
-                ["範圍","民光街／民耀街／民祥街之間"],
-                ["重要性","用作興建機場鐵路香港站、中環灣仔繞道及重置碼頭。"]
+                ["面積","1.85公頃"],
+                ["資料","計劃舉辦設計比賽，以吸納民間嶄新的設計意念。目標是在 2024年左右展開建築工程。"]
               ]
             }
           },
           {
             "marker":{
-              "name":"中環填海計劃<br/>第5期",
+              "name":"灣仔北渡輪碼頭畔主題區",
+              "pos":{
+                "x":1737,
+                "y":498
+              }
+            },
+            "cardConetnt":{
+              "title":"灣仔北渡輪碼頭畔主題區",
+              "image":{"src":"./images/ex303/coastline/11.png"},
+              "info":[
+                ["面積","4.04公頃 / 新海濱長廊：412米"],
+                ["資料","博覽道東至馬師道一段海濱長廊的建築工程正在進行中，可望於2021年分段落成開放。計劃舉辦設計比賽，以吸納民間嶄新的設計意念。目標是在2024年左右展開建築工程。"]
+              ]
+            }
+          },
+          {
+            "marker":{
+              "name":"灣仔北水上運動及康樂主題區",
               "pos":{
                 "x":1850,
                 "y":472
               }
             },
             "cardConetnt":{
-              "title":"中環填海計劃第三期",
-              "completedYear":"1988 完成",
-              "image":{"src":"./images/ex303/image.png"},
+              "title":"灣仔北水上運動及康樂主題區",
+              "image":{"src":"./images/ex303/coastline/12.jpg"},
               "info":[
-                ["範圍","民光街／民耀街／民祥街之間"],
-                ["重要性","用作興建機場鐵路香港站、中環灣仔繞道及重置碼頭。"]
+                ["面積","1.39公頃 / 新海濱長廊：770米"],
+                ["資料","海濱西面的部分於2020年之內開放, 餘下部分將於2021年年底或之前開放。"]
               ]
             }
           },
           {
             "marker":{
-              "name":"中環填海計劃<br/>第6期",
+              "name":"銅鑼灣活力避風塘主題區",
               "pos":{
-                "x":2033,
-                "y":388
+                "x":1960,
+                "y":446
               }
             },
             "cardConetnt":{
-              "title":"中環填海計劃第三期",
-              "completedYear":"1988 完成",
-              "image":{"src":"./images/ex303/image.png"},
+              "title":"銅鑼灣活力避風塘主題區",
+              "image":{"src":"./images/ex303/coastline/13.jpg"},
               "info":[
-                ["範圍","民光街／民耀街／民祥街之間"],
-                ["重要性","用作興建機場鐵路香港站、中環灣仔繞道及重置碼頭。"]
+                ["面積","2.53公頃 / 新海濱長廊：317米"],
+                ["資料","將提升維園道附近的海濱長廊，並引入海岸堤階，將公眾和水體的距離拉近。預期於2020-21 年度展開有關建築工程。"]
               ]
             }
           },
           {
             "marker":{
-              "name":"中環填海計劃<br/>第7期",
+              "name":"炮台山東岸公園主題區",
               "pos":{
-                "x":2904,
-                "y":526
+                "x":2064,
+                "y":311
               }
             },
             "cardConetnt":{
-              "title":"中環填海計劃第三期",
-              "completedYear":"1988 完成",
-              "image":{"src":"./images/ex303/image.png"},
+              "title":"炮台山東岸公園主題區",
+              "image":{"src":"./images/ex303/coastline/14.jpg"},
               "info":[
-                ["範圍","民光街／民耀街／民祥街之間"],
-                ["重要性","用作興建機場鐵路香港站、中環灣仔繞道及重置碼頭。"]
+                ["面積","4.7公頃 / 新海濱長廊：772米"],
+                ["資料","工程已於2020年展開"]
+              ]
+            }
+          },
+          {
+            "marker":{
+              "name":"東區走廊下之行人板道",
+              "pos":{
+                "x":2201,
+                "y":237
+              }
+            },
+            "cardConetnt":{
+              "title":"東區走廊下之行人板道",
+
+              "image":{"src":"./images/ex303/coastline/15.jpg"},
+              "info":[
+                ["面積","新海濱長廊：1 700米"],
+                ["資料","全長兩公里、闊10米的東區走廊板道工程將於2021展開，連接銅鑼灣至鰂魚涌，板道設計着重親水文化和通達性；預計於2024年分階段完成。"]
               ]
             }
           }
@@ -1841,8 +2009,33 @@
         "global":{
           "confirm":"Confirm",
           "coastline":"Coastline",
-          "street":"Street"
+          "street":"Street",
+          "selectYear":"Select Year",
+          "area":"Area",
+          "locations":["West Kowloon", "Mong Kok", "Yau Ma Tei", "Hung Hom", "Tsim Sha Tsui"],
+          "streetArea":["Tsim Sha Tsui Area", "Yau Ma Tei Area", "Mong Kok and Tai Kok Tsui Area"],
+          "reference":"本圖的海岸線只供參考。<br/>填海資料僅顯示維港範圍以內部分區域。",
+          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊"
         },
+        "coastline":[
+          {
+            "marker":{
+              "name":"Hung Hom Urban Park",
+              "pos":{
+                "x":1151,
+                "y":607
+              }
+            },
+            "cardConetnt":{
+              "title":"Hung Hom Urban Park",
+              "image":{"src":"./images/ex303/coastline/18.jpg"},
+              "info":[
+                ["Area","2.2公頃"],
+                ["Info","After the relocation of the public transport interchange in January 2019, the site was opened fr public use. The Government commissioned a market sounding exercise in 2019.   The relevant authority is now considering the views obtained from the market survey and the experience gained since the commencement of operation in the past year,aand considered the long-term development and operation of the site."]
+              ]
+            }
+          }
+        ],
         "street": [
           {
             "zone":1,
@@ -2111,8 +2304,33 @@
         "global":{
           "confirm":"確定",
           "coastline":"海岸線",
-          "street":"街道"
+          "street":"街道",
+          "selectYear":"選擇年份",
+          "area":"分區",
+          "locations":["西九龍", "旺角", "油麻地", "紅磡", "尖沙咀"],
+          "streetArea":["尖沙咀區", "油麻地區", "旺角及大角咀區"],
+          "reference":"本圖的海岸線只供參考。<br/>填海資料僅顯示維港範圍以內部分區域。",
+          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊"
         },
+        "coastline":[
+          {
+            "marker":{
+              "name":"紅磡都市公園",
+              "pos":{
+                "x":1151,
+                "y":607
+              }
+            },
+            "cardConetnt":{
+              "title":"紅磡都市公園",
+              "image":{"src":"./images/ex303/coastline/18.jpg"},
+              "info":[
+                ["面積","2.2公頃"],
+                ["資料","公共運輸交匯處於2019 年1月遷離後，該處已開放給公眾使用。政府於2019年進行了市場意向調查, 當局現正因應市場意向調查中接獲的意見及過去一年開放使用後所獲得的經驗，考慮用地的長遠發展及運作模式。"]
+              ]
+            }
+          }
+        ],
         "street": [
           {
             "zone":1,
@@ -2549,7 +2767,217 @@
         "name": "area",
         "src": "./images/ex303/area.svg"
       }
-    ]
+    ],
+    "contents": {
+      "en": {
+        "global":{
+          "confirm":"Confirm",
+          "coastline":"Coastline",
+          "selectYear":"Select Year",
+          "locations":[
+            "Kwun Tong",
+            "Kowloon Bay",
+            "Yau Tong"
+          ],
+          "reference":"本圖的海岸線只供參考。<br/>填海資料僅顯示維港範圍以內部分區域。",
+          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊"
+        },
+        "coastline":[
+          {
+            "marker":{
+              "name":"Kai Tak Metro Park",
+              "pos":{
+                "x":911,
+                "y":374
+              }
+            },
+            "cardConetnt":{
+              "title":"Kai Tak Metro Park",
+
+              "image":{"src":"./images/ex303/coastline/19.jpg"},
+              "info":[
+                ["Area","12.8公頃 / 新海濱長廊：583米"],
+                ["Info","The Kai Tak Master Development Plan has adopted the planning theme of a heritage, green, sports and tourism hub to meet public aspirations for a distinguished, vibrant, attractive and people-oriented area fronting Victoria Harbour. Reconstruction and enhancement works of Kai Tak Nullah within the Kai Tak development have been completed with a view to meeting the prevailing flood protection standard and turning it into a landscaped river corridor.  The Phase 1 improvement works of Kai Tak Approach Channel and Kwun Tong Typhoon Shelter (including the dredging and bioremediation works) were also completed to mitigate odour.  Moreover, a number of open space projects have been completed for public enjoyment including Kai Tak Runway Park Phase 1, Kai Tak Cruise Terminal Park and Kwun Tong Promenade."]
+              ]
+            }
+          },
+          {
+            "marker":{
+              "name":"Kowloon Bay Action Area",
+              "pos":{
+                "x":1013,
+                "y":332
+              }
+            },
+            "cardConetnt":{
+              "title":"Kowloon Bay Action Area",
+
+              "image":{"src":"./images/ex303/coastline/20.jpg"},
+              "info":[
+                ["Info","Planning and Engineering Feasibility Study for the Development at Kowloon Bay Action Area proposes a multi-level pedestrian network to connect the Kowloon Bay MTR Station, Kai Tak Development and Kwun Tong waterfront. "]
+              ]
+            }
+          },
+          {
+            "marker":{
+              "name":"Kwun Tong Promenade",
+              "pos":{
+                "x":1153,
+                "y":458
+              }
+            },
+            "cardConetnt":{
+              "title":"Kwun Tong Promenade",
+
+              "image":{"src":"./images/ex303/coastline/21.jpg"},
+              "info":[
+                ["Area","4.13公頃 / 園內海濱步道全長約一公里。"],
+                ["Info","Kwun Tong Promenade has a total area of about 4.13 hectares.  It was formerly Kwun Tong Public Cargo Working Area, which forms an integral part ofKai Tak Development.  The waterfront boardwalk in the Promenade is about one kilometre long.   Not only that visitors can enjoy a close-up views of the icons in Kowloon East -  Kai Tak Cruise Terminal and the Runway Park, but also have a bird-eye view of the splendid night views of Hong Kong Island East and the panoramas of Victoria Harbour and Lei Yue Mun."]
+              ]
+            }
+          },
+          {
+            "marker":{
+              "name":"Kwun Tong Action Area",
+              "pos":{
+                "x":1205,
+                "y":524
+              }
+            },
+            "cardConetnt":{
+              "title":"Kwun Tong Action Area",
+
+              "image":{"src":"./images/ex303/coastline/22.jpg"},
+              "info":[
+                ["Info","The Planning and Engineering Feasibility Study on Kwun Tong Action Area proposes to restructure the Government, Institution and Community (GIC) uses near the Kwun Tong Ferry Pier, improve the road capacity and pedestrian facilities, and enhance the harbourfront area.  It proposes to integrate the waterfront promenade with the series of open spaces in the area to enhance the harbourfront connectivity, linking with Kwun Tong Waterfront Promenade, and with the future Tsui Ping River and Cha Kwo Ling waterfront."]
+              ]
+            }
+          },
+          {
+            "marker":{
+              "name":"Cha Kwo Ling Waterfront",
+              "pos":{
+                "x":1248,
+                "y":580
+              }
+            },
+            "cardConetnt":{
+              "title":"Cha Kwo Ling Waterfront",
+
+              "image":{"src":"./images/ex303/coastline/20.jpg"},
+              "info":[
+                ["Area","4.65公頃 / 新海濱長廊：1 043米"],
+                ["Info","Preparation is being made to formulate a design for the area, with a view to commencing the first phase of construction in 2024."]
+              ]
+            }
+          }
+        ]
+      },
+      "tc":{
+        "global":{
+          "confirm":"確定",
+          "coastline":"海岸線",
+          "selectYear":"選擇年份",
+          "locations":[
+            "九龍灣",
+            "觀塘",
+            "油塘"
+          ],
+          "reference":"本圖的海岸線只供參考。<br/>填海資料僅顯示維港範圍以內部分區域。",
+          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊"
+        },
+        "coastline":[
+          {
+            "marker":{
+              "name":"啟德都會公園",
+              "pos":{
+                "x":911,
+                "y":374
+              }
+            },
+            "cardConetnt":{
+              "title":"啟德都會公園",
+
+              "image":{"src":"./images/ex303/coastline/19.jpg"},
+              "info":[
+                ["面積","12.8公頃 / 新海濱長廊：583米"],
+                ["資料","啟德發展區總綱發展計劃，採用文化、綠茵、體育和旅遊樞紐的規劃主題，建造維港畔富有特色、朝氣蓬勃、優美動人及與民共享的社區，以滿足公眾期望。已完成啟德明渠重建及改善工程，以符合現行防範水浸的標準，並將之改建成綠化河道走廊。啟德明渠進口道及觀塘避風塘第一期改善工程（包括疏浚及生物除污工程）亦已竣工，以減輕臭味問題。此外，多個休憩用地項目亦已完成，包括啟德跑道公園第一期、啟德郵輪碼頭公園和觀塘海濱長廊，供公眾享用。"]
+              ]
+            }
+          },
+          {
+            "marker":{
+              "name":"九龍灣行動區",
+              "pos":{
+                "x":1013,
+                "y":332
+              }
+            },
+            "cardConetnt":{
+              "title":"九龍灣行動區",
+
+              "image":{"src":"./images/ex303/coastline/20.jpg"},
+              "info":[
+                ["資料","「九龍灣行動區發展規劃及工程可行性研究」建議將採用多層行人網絡，提供行人連接至港鐵九龍灣站及牛頭角站 、啟德發展區和觀塘海濱 。"]
+              ]
+            }
+          },
+          {
+            "marker":{
+              "name":"觀塘海濱花園",
+              "pos":{
+                "x":1153,
+                "y":458
+              }
+            },
+            "cardConetnt":{
+              "title":"觀塘海濱花園",
+
+              "image":{"src":"./images/ex303/coastline/21.jpg"},
+              "info":[
+                ["面積","4.13公頃 / 園內海濱步道全長約一公里。"],
+                ["資料","觀塘海濱花園整體面積4.13公頃，前身為觀塘公眾貨物裝卸區，屬啟德發展計劃一部分。園內海濱步道全長約一公里。遊人在步道上不但可以近距離欣賞東九龍新地標 ─ 啟德郵輪碼頭和跑道公園，更可遠眺港島東的璀璨夜景，飽覽維多利亞港和鯉魚門的風光。"]
+              ]
+            }
+          },
+          {
+            "marker":{
+              "name":"觀塘行動區",
+              "pos":{
+                "x":1205,
+                "y":524
+              }
+            },
+            "cardConetnt":{
+              "title":"觀塘行動區",
+
+              "image":{"src":"./images/ex303/coastline/22.jpg"},
+              "info":[
+                ["資料","「觀塘行動區發展規劃及工程可行性研究」」建議重整現時在觀塘碼頭一帶的政府、設施用地的土地用途，改善該區道路容量及行人設施和提升海濱環境。建議結合海濱長廊及區內一系列的休憩空間，加強海濱長廊連接性，連接觀塘海濱花園，並延伸至未來的翠屏河及茶果嶺海濱。"]
+              ]
+            }
+          },
+          {
+            "marker":{
+              "name":"茶果嶺海濱",
+              "pos":{
+                "x":1248,
+                "y":580
+              }
+            },
+            "cardConetnt":{
+              "title":"茶果嶺海濱",
+
+              "image":{"src":"./images/ex303/coastline/20.jpg"},
+              "info":[
+                ["面積","4.65公頃 / 新海濱長廊：1 043米"],
+                ["資料","政府正在準備擬訂海濱的設計，以期在2024年展開第一期建築工程。"]
+              ]
+            }
+          }
+        ]
+      }
+    }
   },
   "wk": {
     "mapAssets": [
@@ -2721,6 +3149,80 @@
         "name": "area",
         "src": "./images/ex303/area.svg"
       }
-    ]
+    ],
+    "contents": {
+      "en": {
+        "global":{
+          "confirm":"Confirm",
+          "coastline":"Coastline",
+          "selectYear":"Select Year",
+          "locations":[
+            "Kwai Chung",
+            "Cheung Sha Wan",
+            "Sham Shui Po",
+            "Tai Kok Tsui",
+            "West Kowloon"
+          ],
+          "reference":"本圖的海岸線只供參考。<br/>填海資料僅顯示維港範圍以內部分區域。",
+          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊"
+        },
+        "coastline":[
+          {
+            "marker":{
+              "name":"West Kowloon Cultural District (WKCD)",
+              "pos":{
+                "x":856,
+                "y":733
+              }
+            },
+            "cardConetnt":{
+              "title":"West Kowloon Cultural District (WKCD)",
+
+              "image":{"src":"./images/ex303/coastline/17.jpg"},
+              "info":[
+                ["Area","佔地23公頃的公共空間，以及長達2公里、充滿活力的海濱長廊"],
+                ["Info","Flanking Victoria Harbour,  WKCD is one of the largest cultural projects in the world, embracing art, education and open space. The vision of WKCD is to create a vibrant cultural quarter for Hong Kong where the local arts scene can interact, collaborate and develop. It includes a variety of arts and cultural facilities for producing and hosting world-class exhibitions, performances and arts and cultural events. <ul><li>Lyric Theatre Complex</li><li>M+ museum of visual culture</li><li>Xiqu Centre</li><li>Art park</li></ul>"]
+              ]
+            }
+          }
+        ]
+      },
+      "tc":{
+        "global":{
+          "confirm":"確定",
+          "coastline":"海岸線",
+          "selectYear":"選擇年份",
+          "locations":[
+            "葵涌",
+            "長沙灣",
+            "深水埗",
+            "大角咀",
+            "西九龍"
+          ],
+          "reference":"本圖的海岸線只供參考。<br/>填海資料僅顯示維港範圍以內部分區域。",
+          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊"
+        },
+        "coastline":[
+          {
+            "marker":{
+              "name":"西九文化區",
+              "pos":{
+                "x":856,
+                "y":733
+              }
+            },
+            "cardConetnt":{
+              "title":"西九文化區",
+
+              "image":{"src":"./images/ex303/coastline/17.jpg"},
+              "info":[
+                ["面積","佔地23公頃的公共空間，以及長達2公里、充滿活力的海濱長廊"],
+                ["資料","坐落維港海旁的西九文化區，是全球規模最大的文化項目之一，集藝術、教育及公共空間於一身。西九文化區的願景，是為香港創造一個多姿多彩的文化地帶，促進本地藝術界互動、合作與發展。區內將有並設有各種文化藝術設施，上演世界級展覽、表演節目和文化藝術活動。<ul><li>演藝綜合劇場</li><li>M+視覺文化博物館</li><li>戲曲中心</li><li>藝術公園</li></ul>"]
+              ]
+            }
+          }
+        ]
+      }
+    }
   }
 }

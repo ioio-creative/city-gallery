@@ -8,11 +8,11 @@ const App = (props) => {
   useEffect(() => {
     api.fetchExhibitionJsonFromUrl('./json/303.json', setAppData);
   }, [])
-  useEffect(() => {
-    if(appData){
-      console.log(appData)
-    }
-  }, [appData]);
+  // useEffect(() => {
+  //   if(appData){
+  //     console.log(appData)
+  //   }
+  // }, [appData]);
 
   return (
     <>

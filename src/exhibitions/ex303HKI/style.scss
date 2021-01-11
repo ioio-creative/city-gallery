@@ -103,11 +103,24 @@ span{
 //     transform: translate3d(-86.45%,-36%,0);
 // }
 
+.en#main{
+    #coast #locationsWrap #locations,
+    #street #locationsWrap #locations{
+        font-size: vw-calc(16, $width);
+    }
+}
+
 #main{
     width:100%;
     height:100%;
-    // background:#103042;
     font-family: 'Helvetica';
+    opacity: 1;
+    visibility: visible;
+    transition: all .6s cubic-bezier(0.65, 0, 0.35, 1);
+    &.hide{
+        opacity: 0;
+        visibility: hidden;
+    }
     #coast{
         width:100%;
         height:100%;
@@ -116,18 +129,17 @@ span{
         z-index: 1;
         opacity:1;
         visibility: visible;
-        transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
+        transform-origin: top left;
+        transition: opacity .6s cubic-bezier(0.87, 0, 0.13, 1), visibility .6s cubic-bezier(0.87, 0, 0.13, 1), transform .8s cubic-bezier(0.65, 0, 0.35, 1);
         &.hide{
             opacity: 0;
             visibility: hidden;
-            transition-delay: 0s;
-            transition-duration: .3s;
+            transition-duration: .3s, .3s, .8s;
             #locationsWrap{
                 #locations{
                     div{
                         opacity: 0;
                         visibility: hidden;
-                        transition-delay: 0s;
                     }
                 }
             }
@@ -135,7 +147,6 @@ span{
                 .item{
                     opacity: 0;
                     visibility: hidden;
-                    transition-delay: 0s;
                 }
             }
         }
@@ -164,7 +175,7 @@ span{
                     position: absolute;
                     opacity: 1;
                     visibility: visible;
-                    transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
+                    transition: opacity .6s cubic-bezier(0.87, 0, 0.13, 1),  visibility .6s cubic-bezier(0.87, 0, 0.13, 1);
                     @for $i from 1 through 8 {
                         &:nth-child(#{$i}) {
                             transition-delay: #{$i*.1}s;
@@ -256,6 +267,7 @@ span{
                     #card{
                         opacity: 1;
                         visibility: visible;
+                        transform: translate3d(0,0,0) scale(1);
                     }
                 }
                 #markerWrap{
@@ -273,10 +285,10 @@ span{
                         width:vw-calc(155, $width);
                         height:vw-calc(155, $width);
                         font-size:vw-calc(18, $width);
-                        line-height: vw-calc(21, $width);
+                        line-height: vw-calc(22, $width);
                         font-weight: bold;
                         border-radius: 50%;
-                        padding-top:vw-calc(10, $width);
+                        padding:vw-calc(10 10 0, $width);
                         background:#fff;
                         box-shadow: vw-calc(6 6 6, $width) rgba(0,0,0,.2);
                         display: flex;
@@ -299,6 +311,7 @@ span{
                     display: flex;
                     opacity: 0;
                     visibility: hidden;
+                    transform: translate3d(0,0,0) scale(.85);
                     transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
                     // &:before, &:after{
                     //     content:'';
@@ -339,6 +352,7 @@ span{
                         }
                     }
                     #wrap{
+                        width:100%;
                         position: relative;
                         #title{
                             display: flex;
@@ -346,8 +360,26 @@ span{
                             font-size:vw-calc(22, $width);
                             margin-bottom:vw-calc(24, $width);
                         }
+                        #imgWrap{
+                            width: 100%;
+                            position: relative;
+                            &:before{
+                                content:'';
+                                padding-top:62.65%;
+                                display: block;
+                            }
+                            img{
+                                width: 100%;
+                                height:100%;
+                                object-fit: cover;
+                                object-position: center;
+                                position: absolute;
+                                top:0;
+                                left:0;
+                            }
+                        }
                         #info{
-                            padding:vw-calc(25 88 0 22, $width);
+                            padding:vw-calc(25 22 0 22, $width);
                             li{
                                 display: flex;
                                 margin-top:vw-calc(32, $width);
@@ -382,9 +414,10 @@ span{
                                         display: block;
                                     }
                                     span{
+                                        width:vw-calc(80, $width);
                                         margin:vw-calc(0 12, $width);
                                         font-size:vw-calc(10, $width);
-                                        line-height: vw-calc(12, $width);
+                                        line-height: vw-calc(14, $width);
                                     }
                                 }
                                 #prevBtn{
@@ -396,6 +429,9 @@ span{
                                     flex-direction: row-reverse;
                                     &:before{
                                         background:url('./images/next.svg') center / 100% no-repeat;
+                                    }
+                                    span{
+                                        text-align: right;
                                     }
                                 }
                             }
@@ -561,7 +597,7 @@ span{
                 &>div{
                     opacity: 1;
                     visibility: visible;
-                    transition: all .3s cubic-bezier(0.16, 1, 0.3, 1);
+                    transition: opacity .3s cubic-bezier(0.87, 0, 0.13, 1),  visibility .3s cubic-bezier(0.87, 0, 0.13, 1);
                     &.hide{
                         opacity: 0;
                         visibility: hidden;
@@ -837,32 +873,32 @@ span{
             flex-direction: column;
             align-items: center;
             position: absolute;
-            top:100%;
+            top:110%;
             left:0;
             opacity: 0;
             visibility: hidden;
-            transform: translate3d(vw-calc(364 / 2 , $width),50%,0);
+            transform: translate3d(vw-calc((339 + 60) / 2 , $width),50%,0);
             transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
             &.active{
                 opacity: 1;
                 visibility: visible;
             }
             &.idx_0{
-                transform: translate3d(vw-calc(364 / 2 , $width),0,0);
+                transform: translate3d(vw-calc((339 + 60) / 2 , $width),0,0);
             }
             &.idx_1{
-                transform: translate3d(vw-calc(364 + 364 / 2, $width),0,0);
+                transform: translate3d(vw-calc((339 + 60) + (339 + 60) / 2, $width),0,0);
             }
             &.idx_2{
-                transform: translate3d(vw-calc(364 + 364 + 364 / 2, $width),0,0);
+                transform: translate3d(vw-calc((339 + 60) + (339 + 60) + (339 + 60) / 2, $width),0,0);
             }
             &.idx_3{
-                transform: translate3d(vw-calc(364 + 364 + 364 + 364 / 2, $width),0,0);
+                transform: translate3d(vw-calc((339 + 60) + (339 + 60) + (339 + 60) + (339 + 60) / 2, $width),0,0);
             }
             #arrow{
-                width:vw-calc(36, $width);
-                height:vw-calc(32, $width);
-                background:url('./images/arrow_r.svg') center no-repeat;
+                width:vw-calc(28, $width);
+                height:vw-calc(16, $width);
+                background:url('./images/arrow.svg') center no-repeat;
                 display: block;
             }
         }
@@ -890,8 +926,9 @@ span{
             // }
             li{
                 height:vw-calc(150, $width);
-                font-size:vw-calc(132, $width);
-                margin:0 vw-calc(50, $width);
+                font-size:vw-calc(170, $width);
+                margin:0 vw-calc(30, $width);
+                text-shadow: 0 vw-calc(3 6) rgba(0,0,0,.3);
                 display: flex;
                 transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
                 &.active{
@@ -904,19 +941,21 @@ span{
                     align-items: center;
                     justify-content: center;
                     transform-origin: center;
-                    transform: translate3d(0,0,0) scale(.35);
+                    transform: translate3d(0,0,0) scale(.5);
                     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
                 }
             }
         }
     }
     #startBtn{
-        width:vw-calc(300, $width);
-        height:vw-calc(300*0.303, $width);
+        width:vw-calc(191, $width);
+        height:vw-calc(191*0.303, $width);
         background:$white;
         color:$drakgreenblue;
         border-radius: vw-calc(100, $width);
-        font-size:vw-calc(30, $width);
+        margin-top:vw-calc(14, $width);
+        font-size:vw-calc(23, $width);
+        line-height:vw-calc(191*0.303, $width);
         font-weight: bold;
         display: flex;
         justify-content: center;
