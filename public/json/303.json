@@ -181,7 +181,9 @@
           "locations":["Kennedy Town", "Sheung Wan", "Central", "Wan Chai", "Causeway Bay", "North Point", "Quarry Bay", "Shau Kei Wan"],
           "streetArea":["Sheung Wan Area", "Central and Wan Chai Area", "Causeway Bay Area", "Quarry Bay Area"],
           "reference":"本圖的海岸線只供參考。填海資料僅顯示維港範圍以內部分區域。",
-          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊"
+          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊",
+          "coastAndStreet":"*此年份包括海岸線和街道資訊",
+          "onlyCoast":"*此年份只有海岸線資訊"
         },
         "coastline":[
           {
@@ -1011,7 +1013,9 @@
           "locations":["堅尼地城", "上環", "中環", "灣仔", "銅鑼灣", "北角", "鰂魚涌", "筲箕灣"],
           "streetArea":["上環區", "中環及灣仔區", "銅鑼灣區", "鰂魚涌區"],
           "reference":"本圖的海岸線只供參考。填海資料僅顯示維港範圍以內部分區域。",
-          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊"
+          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊",
+          "coastAndStreet":"*此年份包括海岸線和街道資訊",
+          "onlyCoast":"*此年份只有海岸線資訊"
         },
         "coastline":[
           {
@@ -2015,7 +2019,9 @@
           "locations":["West Kowloon", "Mong Kok", "Yau Ma Tei", "Hung Hom", "Tsim Sha Tsui"],
           "streetArea":["Tsim Sha Tsui Area", "Yau Ma Tei Area", "Mong Kok and Tai Kok Tsui Area"],
           "reference":"本圖的海岸線只供參考。<br/>填海資料僅顯示維港範圍以內部分區域。",
-          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊"
+          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊",
+          "coastAndStreet":"*此年份包括海岸線和街道資訊",
+          "onlyCoast":"*此年份只有海岸線資訊"
         },
         "coastline":[
           {
@@ -2310,7 +2316,9 @@
           "locations":["西九龍", "旺角", "油麻地", "紅磡", "尖沙咀"],
           "streetArea":["尖沙咀區", "油麻地區", "旺角及大角咀區"],
           "reference":"本圖的海岸線只供參考。<br/>填海資料僅顯示維港範圍以內部分區域。",
-          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊"
+          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊",
+          "coastAndStreet":"*此年份包括海岸線和街道資訊",
+          "onlyCoast":"*此年份只有海岸線資訊"
         },
         "coastline":[
           {

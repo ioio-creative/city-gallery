@@ -33,7 +33,8 @@ const Map = props => {
     };
 
     let app;
-    const maxWidth = props.doubleScreen ? 1920 * 2 : 1920;
+    const maxWidth = props.doubleScreen ? 1920 * 2 * 2 : 1920 * 2;
+    const maxHeight = window.innerHeight * 2;
     const map = {};
     const streets = [];
     // const coastlineParts = [];
@@ -41,12 +42,12 @@ const Map = props => {
     const markerContainer = new PIXI.Container();
     const coastlinePartsContainer = new PIXI.Container();
     // const startPos = { x: window.innerWidth / 1.932, y: window.innerHeight / 0.935 };
-    const startPos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-    const zoomedPos = {
-      x: -window.innerWidth * 0.13,
-      // y: -window.innerHeight * 0.325
-      y: -window.innerHeight * 0.4
-    };
+    const startPos = { x: maxWidth / 2, y: maxHeight / 2 };
+    // const zoomedPos = {
+    //   x: -window.innerWidth * 0.13,
+    //   // y: -window.innerHeight * 0.325
+    //   y: -window.innerHeight * 0.4
+    // };
     const years = ['1900', '1945', '1985', '2019'];
     let hasShownCoastline = false;
     let selectedHighlight = null;
@@ -57,8 +58,8 @@ const Map = props => {
 
     const initEngine = () => {
       app = new PIXI.Application({
-        width: window.innerWidth,
-        height: window.innerHeight,
+        width: maxWidth,//window.innerWidth,
+        height: maxHeight,//window.innerHeight,
         antialias: true,
         transparent: true,
         resolution: 1
@@ -113,7 +114,7 @@ const Map = props => {
       }
 
       getSize() {
-        const w = window.innerWidth * (this.width / maxWidth);
+        const w = window.innerWidth * 2 * (this.width / maxWidth);
         const ratio = this.height / this.width;
         const h = w * ratio;
         // console.log('ori w:', this.width, 'ori h:', this.height, 'ori w:', w, 'ori h:', h);

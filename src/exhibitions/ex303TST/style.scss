@@ -72,8 +72,19 @@ span{
     position: relative;
     z-index: 1;
     transform-origin: top left;
+    transform: translate3d(0,0,0) scale(.5);
     transition: transform .8s cubic-bezier(0.65, 0, 0.35, 1);
+    &.zone1{
+        transform: translate3d(-75.15%, -46.1%, 0) scale(1.127);
+    }
+    &.zone2{
+        transform: translate3d(-66.3%, -16.8%, 0) scale(1.127);
+    }
+    &.zone3{
+        transform: translate3d(-68.9%, -3.5%, 0) scale(1.127);
+    }
 }
+
 
 .zone1{
     transform: translate3d(-75.2%, -92.1%, 0) scale(2.255);
@@ -151,7 +162,7 @@ span{
         &.hide{
             opacity: 0;
             visibility: hidden;
-            transition-duration: .3s, .3s, .8s;
+            // transition-duration: .6s, .6s, .8s;
             #locationsWrap{
                 #locations{
                     div{
@@ -827,18 +838,41 @@ span{
         bottom:vw-calc(65);
         right:vw-calc(10);
         z-index: 1;
-        background:url('../ex303HKI/images/yearOfCoastline_b.svg') center no-repeat;
+        // background:url('./images/yearOfCoastline_b.svg') center no-repeat;
         opacity: 1;
         visibility: visible;
         transition: all 1s cubic-bezier(0.87, 0, 0.13, 1);
         &.w{
-            background:url('../ex303HKI/images/yearOfCoastline_w.svg') center no-repeat;
+            &:before{
+                background:url('../ex303HKI/images/yearOfCoastline_w.svg') center no-repeat;
+            }
         }
         &.disabled{
             transition-duration: .3s;
             transition-delay: 0s;
             opacity: 0;
             visibility: hidden;
+        }
+        &:before{
+            content:'';
+            width:100%;
+            height:100%;
+            background:url('../ex303HKI/images/yearOfCoastline_b.svg') center no-repeat;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+        &:after{
+            content:'';
+            width:100%;
+            height:100%;
+            background:rgba(7,74,69,.3);
+            box-shadow: 0 0 vw-calc(200 200) rgba(7,74,69,.3);
+            transform: translate3d(10%,0,0) scale(.4, .5);
+            position: absolute;
+            top:0;
+            left:0;
+            border-radius: vw-calc(50);
         }
     }
     #yearSelector{
@@ -871,21 +905,27 @@ span{
                 visibility: visible;
             }
             &.idx_0{
-                transform: translate3d(vw-calc((339 + 60) / 2 ),0,0);
+                transform: translate3d(vw-calc((339 + 20) / 2 ),0,0);
             }
             &.idx_1{
-                transform: translate3d(vw-calc((339 + 60) + (339 + 60) / 2),0,0);
+                transform: translate3d(vw-calc((339 + 20) + (339 + 20) / 2),0,0);
             }
             &.idx_2{
-                transform: translate3d(vw-calc((339 + 60) + (339 + 60) + (339 + 60) / 2),0,0);
+                transform: translate3d(vw-calc((339 + 20) + (339 + 20) + (339 + 20) / 2),0,0);
             }
             &.idx_3{
-                transform: translate3d(vw-calc((339 + 60) + (339 + 60) + (339 + 60) + (339 + 60) / 2),0,0);
+                transform: translate3d(vw-calc((339 + 20) + (339 + 20) + (339 + 20) + (339 + 20) / 2),0,0);
             }
             #arrow{
                 width:vw-calc(28);
                 height:vw-calc(16);
                 background:url('../ex303HKI/images/arrow.svg') center no-repeat;
+            }
+            p{
+                font-size: vw-calc(20);
+                color:#bbb;
+                white-space: nowrap;
+                margin-top:vw-calc(10);
             }
         }
         ul{
@@ -913,7 +953,7 @@ span{
             li{
                 height:vw-calc(150);
                 font-size:vw-calc(170);
-                margin:0 vw-calc(30);
+                margin:0 vw-calc(10);
                 text-shadow: 0 vw-calc(3 6) rgba(0,0,0,.3);
                 display: flex;
                 transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.5s cubic-bezier(0.16, 1, 0.3, 1);

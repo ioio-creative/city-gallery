@@ -42,7 +42,7 @@ $width:3840;
       border-radius: vw-calc(60, $width);
       &.noBtn{
         justify-content: space-evenly;
-        padding: 0 vw-calc(50, $width) 0 vw-calc(28, $width);
+        padding: 0 vw-calc(50, $width) 0 vw-calc(38, $width);
       }
     }
   }
@@ -99,6 +99,8 @@ $width:3840;
         }
         &.active{
           opacity: 1;
+          background:#074A45;
+          color:#fff;
           &:active{
             transform: translate3d(0,0,0) scale(.9);
           }

@@ -268,9 +268,10 @@ const G303 = props => {
         <div id="btnWrap" className={yearIdx >= 0 ? `idx_${yearIdx} active` : ''}>
           <span id="arrow"></span>
           <div id='startBtn' className={`${yearIdx < 0 ? 'disabled' : ''} ${showYear ? '' : 'hide'}`} onClick={onStart}>{globalData && globalData.confirm}</div>
+          <p>{ globalData && yearIdx < 3 ? globalData.onlyCoast : globalData.coastAndStreet}</p>
         </div>
       </div>
-      <div id="yearOfCoastline" className={`${showYear || coastlineIdx  !== null ? 'disabled' : gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}></div>
+      <div id="yearOfCoastline" className={`${showYear || coastlineIdx  !== null || streetIdx !== null ? 'disabled' : gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}></div>
       <div id="ref" className={`${gameMode === 'home' ? 'hide' : ''} ${yearIdx === 3 ? 'w' : ''}`} dangerouslySetInnerHTML={{__html:globalData && globalData.reference}}></div>
 
       <Menu 

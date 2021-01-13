@@ -74,7 +74,20 @@ span{
     position: relative;
     z-index: 1;
     transform-origin: top left;
+    transform: translate3d(0,0,0) scale(.5);
     transition: transform .8s cubic-bezier(0.65, 0, 0.35, 1);
+    &.zone1{
+        transform: translate3d(-15.4%, -21.85%, 0) scale(.94);
+    }
+    &.zone2{
+        transform: translate3d(-44.45%, -27.57%, 0) scale(0.943);
+    }
+    &.zone3{
+        transform: translate3d(-76.85%, -18.05%, 0) scale(0.943);
+    }
+    &.zone4{
+        transform: translate3d(-86.5%, -18.05%,0) scale(0.943);
+    }
 }
 
 .zone1{
@@ -134,7 +147,7 @@ span{
         &.hide{
             opacity: 0;
             visibility: hidden;
-            transition-duration: .3s, .3s, .8s;
+            // transition-duration: .3s, .3s, .8s;
             #locationsWrap{
                 #locations{
                     div{
@@ -839,18 +852,41 @@ span{
         bottom:vw-calc(65, $width);
         right:vw-calc(50, $width);
         z-index: 1;
-        background:url('./images/yearOfCoastline_b.svg') center no-repeat;
+        // background:url('./images/yearOfCoastline_b.svg') center no-repeat;
         opacity: 1;
         visibility: visible;
         transition: all 1s cubic-bezier(0.87, 0, 0.13, 1);
         &.w{
-            background:url('./images/yearOfCoastline_w.svg') center no-repeat;
+            &:before{
+                background:url('./images/yearOfCoastline_w.svg') center no-repeat;
+            }
         }
         &.disabled{
             transition-duration: .3s;
             transition-delay: 0s;
             opacity: 0;
             visibility: hidden;
+        }
+        &:before{
+            content:'';
+            width:100%;
+            height:100%;
+            background:url('./images/yearOfCoastline_b.svg') center no-repeat;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+        &:after{
+            content:'';
+            width:100%;
+            height:100%;
+            background:rgba(7,74,69,.3);
+            box-shadow: 0 0 vw-calc(200 200, $width) rgba(7,74,69,.3);
+            transform: translate3d(0,0,0) scale(.4, .5);
+            position: absolute;
+            top:0;
+            left:0;
+            border-radius: vw-calc(50, $width);
         }
     }
     #yearSelector{
@@ -877,29 +913,35 @@ span{
             left:0;
             opacity: 0;
             visibility: hidden;
-            transform: translate3d(vw-calc((339 + 60) / 2 , $width),50%,0);
+            transform: translate3d(vw-calc((339 + 20) / 2 , $width),50%,0);
             transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
             &.active{
                 opacity: 1;
                 visibility: visible;
             }
             &.idx_0{
-                transform: translate3d(vw-calc((339 + 60) / 2 , $width),0,0);
+                transform: translate3d(vw-calc((339 + 20) / 2 , $width),0,0);
             }
             &.idx_1{
-                transform: translate3d(vw-calc((339 + 60) + (339 + 60) / 2, $width),0,0);
+                transform: translate3d(vw-calc((339 + 20) + (339 + 20) / 2, $width),0,0);
             }
             &.idx_2{
-                transform: translate3d(vw-calc((339 + 60) + (339 + 60) + (339 + 60) / 2, $width),0,0);
+                transform: translate3d(vw-calc((339 + 20) + (339 + 20) + (339 + 20) / 2, $width),0,0);
             }
             &.idx_3{
-                transform: translate3d(vw-calc((339 + 60) + (339 + 60) + (339 + 60) + (339 + 60) / 2, $width),0,0);
+                transform: translate3d(vw-calc((339 + 20) + (339 + 20) + (339 + 20) + (339 + 20) / 2, $width),0,0);
             }
             #arrow{
                 width:vw-calc(28, $width);
                 height:vw-calc(16, $width);
                 background:url('./images/arrow.svg') center no-repeat;
                 display: block;
+            }
+            p{
+                font-size: vw-calc(20, $width);
+                color:#bbb;
+                white-space: nowrap;
+                margin-top:vw-calc(10, $width);
             }
         }
         ul{
@@ -927,7 +969,7 @@ span{
             li{
                 height:vw-calc(150, $width);
                 font-size:vw-calc(170, $width);
-                margin:0 vw-calc(30, $width);
+                margin:0 vw-calc(10, $width);
                 text-shadow: 0 vw-calc(3 6) rgba(0,0,0,.3);
                 display: flex;
                 transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -941,7 +983,7 @@ span{
                     align-items: center;
                     justify-content: center;
                     transform-origin: center;
-                    transform: translate3d(0,0,0) scale(.5);
+                    transform: translate3d(0,0,0) scale(.6);
                     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
                 }
             }
