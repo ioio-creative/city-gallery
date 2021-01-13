@@ -75,7 +75,8 @@ const Content = props => {
     let itemElems = null;
     let imgElems = null;
     let currentSectionIdx = 0;
-    // let oldCurrentSectionIdx = 0;
+    let oldCurrentSectionIdx = 0;
+    let oldPageOfNav = -1;
     let isStartedToMove = false;
     let data = null;
     let controlBarWidth = controlBarElem.current.offsetWidth;
@@ -300,11 +301,16 @@ const Content = props => {
                 offsetX <= window.innerWidth / 2 &&
                 offsetX + content.offsetWidth >= window.innerWidth / 2
               ) {
-                const pageOfNav = Math.floor(
-                  (s + 0.04) / (1 / (data.sections[i].items.length - 1))
-                );
-                setNavIdx(pageOfNav);
-                props.setCurrentSectionIdx(i);
+                const pageOfNav = Math.floor((s + 0.04) / (1 / (data.sections[i].items.length - 1)));
+                if(oldPageOfNav !== pageOfNav){
+                  setNavIdx(pageOfNav);
+                  oldPageOfNav = pageOfNav;
+                }
+
+                if(oldCurrentSectionIdx !== i){
+                  props.setCurrentSectionIdx(i);
+                  oldCurrentSectionIdx = i;
+                }
                 // console.log(i,pageOfNav)
               }
             // if(i === currentSectionIdx && data)

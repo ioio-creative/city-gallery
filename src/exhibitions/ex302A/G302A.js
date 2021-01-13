@@ -26,6 +26,8 @@ const G302A = props => {
   const getCurrentSectionFunc = useRef(null);
   const startFunc = useRef(null);
   const leaveFunc = useRef(null);
+  const socketRef = useRef(null);
+
 
   const [socket, setSocket] = useState(null);
 
@@ -69,11 +71,17 @@ const G302A = props => {
       }
     };
 
+    const getNavigationIndex = (d) => {
+      goToSection(d.index, true);
+    }
+
     if (socket) {
+      socketRef.current = socket;
       socket.on('userEnter', start);
       socket.on('userLeave', leave);
       socket.on('navigationLeft', moveLeft);
       socket.on('navigationRight', moveRight);
+      socket.on('navigationIndex', getNavigationIndex);
     } else {
       setSocket(webSocket('http://localhost:80/'));
     }
@@ -84,6 +92,7 @@ const G302A = props => {
         socket.off('userLeave', leave);
         socket.off('navigationLeft', moveLeft);
         socket.off('navigationRight', moveRight);
+        socket.off('navigationIndex', getNavigationIndex);
       }
     };
   }, [socket]);
@@ -206,6 +215,7 @@ const G302A = props => {
     const moveSection = () => {
       sectionWrapElemPos.x = -currentSection * (ww / 2);
       setCurrentSectionIdx(currentSection);
+      socketRef.current.emit('navigationIndex', {data:{index:currentSection}});
 
       if (oldSection !== currentSection) {
         const tl = gsap.timeline();
@@ -344,12 +354,17 @@ const G302A = props => {
     if (!dragging && !getIsClickedSectionFunc.current.getIsClickedSection() && i === getCurrentSectionFunc.current.getCurrentSection()) {
       setClickedSectionIdx(i);
       setIsClickedSectionFunc.current.setIsClickedSection(true);
+
+      socket.emit('selectIndex', {data:{index:i}});
     }
   };
 
-  const goToSection = i => {
+  const goToSection = (i, isSocket) => {
     setCurrentSectionFunc.current.setCurrentSection(i);
     setCurrentSectionIdx(i);
+
+    if(!isSocket)
+      socket.emit('navigationIndex', {data:{index:i}});
   };
 
   const onChangeLanguage = lang => {
