@@ -276,33 +276,19 @@ const Content = props => {
             // content nav
             const contentNav = contentNavElems.current[i].current;
             let cx = Math.max(0, offsetX);
-            if (
-              offsetX <=
-              -content.offsetWidth + contentNav.offsetWidth + sidebarW
-            )
-              cx = Math.max(
-                -contentNav.offsetWidth,
-                offsetX +
-                  content.offsetWidth -
-                  sidebarW -
-                  contentNav.offsetWidth
-              );
+            if (offsetX <= -content.offsetWidth + contentNav.offsetWidth + sidebarW)
+              cx = Math.max(-contentNav.offsetWidth, offsetX + content.offsetWidth - sidebarW - contentNav.offsetWidth);
             contentNav.style.transform = `translate3d(${cx}px,0,0)`;
 
             const contentNavLine = contentNavLineElems.current[i].current;
-            let s = Math.max(
-              0,
-              Math.min(1, -offsetX / (content.offsetWidth - window.innerWidth))
-            );
+            let s = Math.max(0, Math.min(1, -offsetX / (content.offsetWidth - window.innerWidth)));
             contentNavLine.style.transform = `translate3d(0,0,0) scaleX(${s})`;
 
             if (data)
-              if (
-                offsetX <= window.innerWidth / 2 &&
-                offsetX + content.offsetWidth >= window.innerWidth / 2
-              ) {
-                const pageOfNav = Math.floor((s + 0.04) / (1 / (data.sections[i].items.length - 1)));
+              if (offsetX <= window.innerWidth / 2 && offsetX + content.offsetWidth >= window.innerWidth / 2) {
+                const pageOfNav = Math.floor((s + 0.005) / (1 / (data.sections[i].items.length-1)));
                 if(oldPageOfNav !== pageOfNav){
+                  console.log(pageOfNav)
                   setNavIdx(pageOfNav);
                   oldPageOfNav = pageOfNav;
                 }
