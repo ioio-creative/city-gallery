@@ -84,13 +84,13 @@ const G303 = props => {
     };
   }, [socket]);
 
-  const onClickYear = (i, isSocket) => {
+  const onClickYear = (i, isSocket = false) => {
     if (i !== yearIdx) {
       setYearIdx(i);
       handleSelectCoastline.current.selectCoastline(i);
       
       if(!isSocket)
-        socket.emit('navigationIndex', {data:{index:yearIdx}});
+        socket.emit('navigationIndex', {data:{index:i}});
     }
   };
 

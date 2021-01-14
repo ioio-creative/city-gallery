@@ -56,7 +56,7 @@ const G303 = props => {
     }
 
     const getNavigationIndex = (d) => {
-      setYearIdx(d.index);
+      onClickYear(d.index, true);
     }
 
     if (socket) {
@@ -76,11 +76,13 @@ const G303 = props => {
     };
   }, [socket]);
 
-  const onClickYear = i => {
+  const onClickYear = (i, isSocket = false) => {
     if (i !== yearIdx) {
       setYearIdx(i);
-      socket.emit('navigationIndex', {data:{index:yearIdx}});
       handleSelectCoastline.current.selectCoastline(i);
+      
+      if(!isSocket)
+        socket.emit('navigationIndex', {data:{index:i}});
     }
   };
 

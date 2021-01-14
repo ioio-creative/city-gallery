@@ -53,7 +53,7 @@ const G303 = props => {
     }
 
     const getNavigationIndex = (d) => {
-      setYearIdx(d.index);
+      onClickYear(d.index, true);
     }
 
     if (socket) {
@@ -73,11 +73,13 @@ const G303 = props => {
     };
   }, [socket]);
 
-  const onClickYear = i => {
+  const onClickYear = (i, isSocket = false) => {
     if (i !== yearIdx) {
       setYearIdx(i);
-      socket.emit('navigationIndex', {data:{index:yearIdx}});
       handleSelectCoastline.current.selectCoastline(i);
+      
+      if(!isSocket)
+        socket.emit('navigationIndex', {data:{index:i}});
     }
   };
 
@@ -207,75 +209,6 @@ const G303 = props => {
           <div id="bg" onClick={()=> setCoastlineIdx(null)}></div>
         </div>
       </div>
-
-      {/*<div id="street" className={`${gameMode === 'street' ? '' : 'hide'} ${streetIdx !== null ? 'showVideo' : ''}`}>
-        <div id="prevZoneBtn" className={`zoneBtn ${zone > 0 ? '' : 'hide'}`} onClick={()=> {if(zone > 0) setZone(zone-1)}}></div>
-        <div id="nextZoneBtn" className={`zoneBtn ${zone < 3 ? '' : 'hide'}`} onClick={()=> {if(zone < 3) setZone(zone+1)}}></div>
-        <div id="mapIndicator">
-          <span className="streetFont">分區</span>
-          <ul>
-            {[...Array(3)].map((v, i) => {
-              return (
-                // <li key={i} className={i === mapIndicatorIdx ? 'active' : ''} onClick={() => onClickMapIndicator(i)}>
-                <li key={i} className={i === zone ? 'active' : ''} onClick={() => { setZone(i);}}>
-                  <span>{i + 1}</span>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-        <div id="locationsWrap" className={`${gameMode === 'street' ? `zone${zone+1}` : ''}`}>
-          <div id="locations" className="streetFont">
-            <div id="zone1" className={zone === 0 ? '' : 'hide'}>
-              <div className="name">上環</div>
-            </div>
-            <div id="zone2" className={zone === 1 ? '' : 'hide'}>
-              <div className="name">中環</div>
-              <div className="name">灣仔</div>
-            </div>
-            <div id="zone3" className={zone === 2 ? '' : 'hide'}>
-              <div className="name">銅鑼灣</div>
-              <div className="name">北角</div>
-            </div>
-            <div id="zone4" className={zone === 3 ? '' : 'hide'}>
-              <div className="name">鰂魚涌</div>
-            </div>
-          </div>
-        </div>
-         <div id="contentWrap" className={`${gameMode === 'street' ? `zone${zone+1}` : ''}`}>
-          <div id="contents">
-            {
-              streetData &&
-              streetData.map((v, i)=>{
-                return <div key={i} className={`item ${streetIdx !== i && streetIdx !== null ? 'inactive' : ''} ${zone+1 === v.zone ? '' : 'hide'}`}>
-                  <div id="markerWrap" style={{left:pxToVw(v.marker.pos.x),top:pxToVh(v.marker.pos.y)}}>
-                    <span id="marker" onClick={()=> setStreetIdx(i)}>
-                      <span id="location" className={v.marker.namePos} dangerouslySetInnerHTML={{__html:v.marker.name}}></span>
-                    </span>
-                  </div>
-                  <div id="roadWrap" style={{left:pxToVw(v.road.pos.x, false),top:pxToVh(v.road.pos.y, false)}}>
-                    <img src={streetIdx !== i && streetIdx !== null ? v.road.inactiveImage.src : v.road.image.src} alt="" />
-                  </div>
-                </div>
-              })
-            }
-          </div>
-        </div>
-        {
-          streetData &&
-          streetIdx !== null &&
-          <div id="videoWrap">
-            <div id="closeBtn" onClick={()=>setStreetIdx(null)}></div>
-            <VideoPlayer
-              poster={streetData[streetIdx].road.video.poster.src}
-              controls={true}
-              autoplay={false}
-              hideControls={['volume','playbackrates','fullscreen']}
-              src={streetData[streetIdx].road.video.src}
-            />
-          </div>
-        }
-      </div> */}
 
       <div id="currentYear" className={`${showYear ? 'disabled' : gameMode !== 'coast' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''} eb`}>{years[yearIdx]}</div>
       <div id='yearSelector' className={`${yearIdx < 0 ? 'disabled' : ''} ${showYear && gameMode === 'home' ? '' : 'hide'}`}>
