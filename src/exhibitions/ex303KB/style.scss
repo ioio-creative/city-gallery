@@ -881,7 +881,7 @@ span{
             left:0;
             opacity: 0;
             visibility: hidden;
-            transform: translate3d(vw-calc((339 + 20) / 2 ),50%,0);
+            transform: translate3d(vw-calc((339 + 20) / 2 ),0,0);
             transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
             &.active{
                 opacity: 1;

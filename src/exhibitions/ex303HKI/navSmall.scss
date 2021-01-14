@@ -111,20 +111,23 @@ $drakgreenblue:#074A45;
         height: vw-calc(54);
         border-radius: vw-calc(36);
         border: vw-calc(3) solid #074A45;
-        color:#074A45;
+        background:#074A45;
+        color:#fff;
         display: flex;
         justify-content: center;
         align-items: center;
         font-size:vw-calc(20);
         font-weight: bold;
         position: relative;
-        opacity: .3;
+        // opacity: .3;
         transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
         &.hide{
           display: none;
         }
         &.active{
-          opacity: 1;
+          background:#fff;
+          color:#074A45;
+          // opacity: 1;
           &:active{
             transform: translate3d(0,0,0) scale(.9);
           }
@@ -157,7 +160,7 @@ $drakgreenblue:#074A45;
       #space{
         width:vw-calc(2);
         height: vw-calc(39);
-        margin: vw-calc(0 30);
+        margin: vw-calc(0 28);
         background:#CCCCCC;
       }
       .descriptionBox{
