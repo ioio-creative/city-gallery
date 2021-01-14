@@ -923,6 +923,12 @@ span{
                 height:vw-calc(16);
                 background:url('../ex303HKI/images/arrow.svg') center no-repeat;
             }
+            p{
+                font-size: vw-calc(20);
+                color:#bbb;
+                white-space: nowrap;
+                margin-top:vw-calc(10);
+            }
         }
         ul{
             font-family: 'Times New Roman', Times, serif;

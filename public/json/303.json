@@ -2788,7 +2788,9 @@
             "Yau Tong"
           ],
           "reference":"本圖的海岸線只供參考。<br/>填海資料僅顯示維港範圍以內部分區域。",
-          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊"
+          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊",
+          "coastAndStreet":"*此年份包括海岸線和街道資訊",
+          "onlyCoast":"*此年份只有海岸線資訊"
         },
         "coastline":[
           {
@@ -2892,7 +2894,9 @@
             "油塘"
           ],
           "reference":"本圖的海岸線只供參考。<br/>填海資料僅顯示維港範圍以內部分區域。",
-          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊"
+          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊",
+          "coastAndStreet":"*此年份包括海岸線和街道資訊",
+          "onlyCoast":"*此年份只有海岸線資訊"
         },
         "coastline":[
           {
@@ -3164,15 +3168,11 @@
           "confirm":"Confirm",
           "coastline":"Coastline",
           "selectYear":"Select Year",
-          "locations":[
-            "Kwai Chung",
-            "Cheung Sha Wan",
-            "Sham Shui Po",
-            "Tai Kok Tsui",
-            "West Kowloon"
-          ],
+          "locations":["Kwai Chung", "Cheung Sha Wan", "Sham Shui Po",  "Tai Kok Tsui", "West Kowloon"],
           "reference":"本圖的海岸線只供參考。<br/>填海資料僅顯示維港範圍以內部分區域。",
-          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊"
+          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊",
+          "coastAndStreet":"*此年份包括海岸線和街道資訊",
+          "onlyCoast":"*此年份只有海岸線資訊"
         },
         "coastline":[
           {
@@ -3200,15 +3200,11 @@
           "confirm":"確定",
           "coastline":"海岸線",
           "selectYear":"選擇年份",
-          "locations":[
-            "葵涌",
-            "長沙灣",
-            "深水埗",
-            "大角咀",
-            "西九龍"
-          ],
+          "locations":["葵涌", "長沙灣", "深水埗", "大角咀", "西九龍"],
           "reference":"本圖的海岸線只供參考。<br/>填海資料僅顯示維港範圍以內部分區域。",
-          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊"
+          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊",
+          "coastAndStreet":"*此年份包括海岸線和街道資訊",
+          "onlyCoast":"*此年份只有海岸線資訊"
         },
         "coastline":[
           {
