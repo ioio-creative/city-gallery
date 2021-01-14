@@ -235,18 +235,17 @@ span{
             top:0;
             left:0;
             z-index: 5;
-            &:after{
-                content:'';
+            #bg{
                 width:100%;
                 height:100%;
-                background:rgba(255,255,255,.45);
+                background:#042220b0;
                 display: block;
                 opacity: 0;
                 visibility: hidden;
                 transition: all .3s cubic-bezier(0.87, 0, 0.13, 1);
             }
             &.showCard{
-                &:after{
+                #bg{
                     opacity: 1;
                     visibility: visible;
                 }
@@ -417,13 +416,27 @@ span{
                             bottom:0;
                             .btnWrap{
                                 &>div{
-                                display: flex;
-                                align-items: center;
-                                    &:before{
-                                        content:'';
-                                        width:vw-calc(42);
-                                        height:vw-calc(42);
-                                        display: block;
+                                    display: flex;
+                                    align-items: center;
+                                    &:active{
+                                        #icon{
+                                            background:$lightblue;
+                                            transform: translate3d(0,0,0) scale(.9);
+                                            g{
+                                                stroke:$white;
+                                            }
+                                        }
+                                    }
+                                    #icon{
+                                        width:vw-calc(42 + 2);
+                                        height:vw-calc(42 + 2);
+                                        border-radius: 50%;
+                                        border: vw-calc(2) solid $lightblue;
+                                        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+                                        g{
+                                            stroke:$lightblue;
+                                            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+                                        }
                                     }
                                     span{
                                         width:vw-calc(80);
@@ -432,16 +445,8 @@ span{
                                         line-height: vw-calc(14);
                                     }
                                 }
-                                #prevBtn{
-                                    &:before{
-                                        background:url('../ex303HKI/images/prev.svg') center / 100% no-repeat;
-                                    }
-                                }
                                 #nextBtn{
                                     flex-direction: row-reverse;
-                                    &:before{
-                                        background:url('../ex303HKI/images/next.svg') center / 100% no-repeat;
-                                    }
                                     span{
                                         text-align: right;
                                     }
@@ -898,7 +903,7 @@ span{
             left:0;
             opacity: 0;
             visibility: hidden;
-            transform: translate3d(vw-calc((339 + 60) / 2 ),50%,0);
+            transform: translate3d(vw-calc((339 + 20) / 2 ),50%,0);
             transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
             &.active{
                 opacity: 1;
@@ -967,7 +972,7 @@ span{
                     align-items: center;
                     justify-content: center;
                     transform-origin: center;
-                    transform: translate3d(0,0,0) scale(.35);
+                    transform: translate3d(0,0,0) scale(.6);
                     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
                 }
             }

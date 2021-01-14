@@ -236,18 +236,17 @@ span{
             top:0;
             left:0;
             z-index: 5;
-            &:after{
-                content:'';
+            #bg{
                 width:100%;
                 height:100%;
-                background:rgba(255,255,255,.45);
+                background:#042220b0;
                 display: block;
                 opacity: 0;
                 visibility: hidden;
                 transition: all .3s cubic-bezier(0.87, 0, 0.13, 1);
             }
             &.showCard{
-                &:after{
+                #bg{
                     opacity: 1;
                     visibility: visible;
                 }
@@ -342,6 +341,10 @@ span{
                     //     top:100%;
                     //     background-position: bottom;
                     // }
+                    &.left{
+                        left:auto;
+                        right:calc(50% + #{vw-calc(50, $width)});
+                    }
                     #closeBtn{
                         width:vw-calc(22, $width);
                         height:vw-calc(22, $width);
@@ -418,13 +421,27 @@ span{
                             bottom:0;
                             .btnWrap{
                                 &>div{
-                                display: flex;
-                                align-items: center;
-                                    &:before{
-                                        content:'';
-                                        width:vw-calc(42, $width);
-                                        height:vw-calc(42, $width);
-                                        display: block;
+                                    display: flex;
+                                    align-items: center;
+                                    &:active{
+                                        #icon{
+                                            background:$lightblue;
+                                            transform: translate3d(0,0,0) scale(.9);
+                                            g{
+                                                stroke:$white;
+                                            }
+                                        }
+                                    }
+                                    #icon{
+                                        width:vw-calc(42 + 2, $width);
+                                        height:vw-calc(42 + 2, $width);
+                                        border-radius: 50%;
+                                        border: vw-calc(2, $width) solid $lightblue;
+                                        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+                                        g{
+                                            stroke:$lightblue;
+                                            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+                                        }
                                     }
                                     span{
                                         width:vw-calc(80, $width);
@@ -433,16 +450,8 @@ span{
                                         line-height: vw-calc(14, $width);
                                     }
                                 }
-                                #prevBtn{
-                                    &:before{
-                                        background:url('./images/prev.svg') center / 100% no-repeat;
-                                    }
-                                }
                                 #nextBtn{
                                     flex-direction: row-reverse;
-                                    &:before{
-                                        background:url('./images/next.svg') center / 100% no-repeat;
-                                    }
                                     span{
                                         text-align: right;
                                     }
