@@ -47,7 +47,7 @@ $drakgreenblue:#074A45;
     justify-content: flex-end;
     position: relative;
     #indicator{
-      height:vw-calc(57);
+      height:vw-calc(58);
       padding-left:vw-calc(46);
       background:url('./images/indicator_w.svg') left center no-repeat;
       color:#fff;
@@ -214,7 +214,7 @@ $drakgreenblue:#074A45;
         }
         &.street{
           &:before{
-              transform: translate3d(79%,0,0);
+              transform: translate3d(82%,0,0);
           }
         }
         span{
