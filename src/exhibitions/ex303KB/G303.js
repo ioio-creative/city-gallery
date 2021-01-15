@@ -1,13 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import './style.scss';
 import webSocket from 'socket.io-client';
-import VideoPlayer from '../../components/VideoPlayer';
+// import VideoPlayer from '../../components/VideoPlayer';
 
 import Menu from '../ex303HKI/MenuSmall';
 import Map from '../ex303HKI/Map';
 
 
 const G303 = props => {
+  const params = useParams();
   const [language, setLanguage] = useState('tc');
   // const [started, setStarted] = useState(false);
   const [yearIdx, setYearIdx] = useState(-1);
@@ -27,7 +29,7 @@ const G303 = props => {
   const [streetIdx, setStreetIdx] = useState(null);
   const [runTransition, setRunTransition] = useState(false);
   const [socket, setSocket] = useState(null);
-  const [showWholeScreen, setShowWholeScreen] = useState(true);
+  const [showWholeScreen, setShowWholeScreen] = useState(params.fullscreen !== undefined ? true : false);
 
   const handleMove = useRef(null);
   const handleShowCoastline = useRef(null);
