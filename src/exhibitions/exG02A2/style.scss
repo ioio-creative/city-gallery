@@ -308,10 +308,10 @@
       position: relative;
       .locationName {
         position: absolute;
-        top: vw-calc(80);
+        top: vw-calc(75);
         text-transform: uppercase;
         font-weight: bold;
-        font-size: vw-calc(50);
+        font-size: vw-calc(70);
         z-index: 999999;
         opacity: 0;
         visibility: hidden;
@@ -945,6 +945,7 @@
                 height: 0;
                 position: absolute;
                 left: 0;
+                transform: translate3d(0,0,0);
                 will-change: transform;
                 &.line1 {
                   top: 10vw;
@@ -1259,7 +1260,7 @@
         }
         li {
           height: 100%;
-          font-size: vw-calc(28);
+          font-size: vw-calc(32);
           font-weight: bold;
           flex: 1;
           position: relative;

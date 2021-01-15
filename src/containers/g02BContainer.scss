@@ -609,10 +609,13 @@ body {
         left: 0;
         width: 30vw;
         height: vw-calc(70);
+        text {
+          fill:#4b48a5;
+        }
         &.en {
           text {
             font-size: vw-calc(60);
-            stroke-width: vw-calc(3);
+            // stroke-width: vw-calc(3);
             height: vw-calc(100);
             font-family: 'ITC Avant Garde Gothic Std', 'Microsoft JhengHei';
           }
@@ -635,7 +638,7 @@ body {
         &.zh {
           text {
             font-size: vw-calc(63);
-            stroke-width: vw-calc(2);
+            // stroke-width: vw-calc(2);
             height: vw-calc(100);
             font-family: 'ITC Avant Garde Gothic Std', 'Microsoft JhengHei';
           }
@@ -645,8 +648,8 @@ body {
         // width: vw-calc(610);
         width: vw-calc(1008);
         // text-align: justify;
-        font-size: vw-calc(22);
-        line-height: vw-calc(30);
+        font-size: vw-calc(28);
+        line-height: vw-calc(36);
         margin-top: vw-calc(10);
         margin-left: vw-calc(3);
         color: #555555;
@@ -952,8 +955,8 @@ body {
             }
           }
           p {
-            font-size: vw-calc(20);
-            line-height: vw-calc(30);
+            font-size: vw-calc(22);
+            line-height: vw-calc(32);
             color: #707070;
             // font-family: 'Noto Sans TC';
             font-family: 'Microsoft JhengHei';

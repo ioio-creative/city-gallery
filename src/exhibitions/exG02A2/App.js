@@ -109,6 +109,7 @@ const App = props => {
 
     let objectControl = null;
     let dragging = false;
+    let isHideEarth = false;
 
     // cameraControl system
     // let cameraControl = null;
@@ -142,7 +143,7 @@ const App = props => {
       renderer.shadowMap.type = THREE.PCFSoftShadowMap;
       canvasWrap.current.appendChild(renderer.domElement);
 
-      stats = initStats();
+      // stats = initStats();
       // initGUI(options);
       initLight();
       initMesh();
@@ -382,8 +383,8 @@ const App = props => {
       const _this = this;
       this.canvas = document.createElement('canvas');
       this.ctx = this.canvas.getContext('2d');
-      this.canvas.width = 200;
-      this.canvas.height = 200;
+      this.canvas.width = 128;
+      this.canvas.height = 128;
       this.animValue = { a: 0 };
 
       const clearCanvas = () => {
@@ -395,7 +396,7 @@ const App = props => {
       const draw = (opacity = 0.3) => {
         clearCanvas();
         _this.ctx.beginPath();
-        _this.ctx.arc(200 / 2, 200 / 2, 200 / 2, 0, 2 * Math.PI);
+        _this.ctx.arc(128 / 2, 128 / 2, 128 / 2, 0, 2 * Math.PI);
         _this.ctx.fillStyle = `rgba(255,255,255,${opacity})`;
         _this.ctx.fill();
       };
@@ -429,14 +430,14 @@ const App = props => {
       const _this = this;
       this.canvas = document.createElement('canvas');
       this.ctx = this.canvas.getContext('2d');
-      this.radius = 100 / 2 - 10;
+      this.radius = 64 / 2 - 10;
       this.circles = [];
       this.counter = 0;
       this.player = null;
 
       const init = () => {
-        _this.canvas.width = 100;
-        _this.canvas.height = 100;
+        _this.canvas.width = 64;
+        _this.canvas.height = 64;
       };
 
       this.start = () => {
@@ -460,7 +461,7 @@ const App = props => {
         _this.ctx.strokeStyle = `rgba(255,225,255,${1 - r * r})`;
         _this.ctx.lineWidth = 2;
         _this.ctx.beginPath();
-        _this.ctx.arc(100 / 2, 100 / 2, r * _this.radius, 0, 2 * Math.PI);
+        _this.ctx.arc(64 / 2, 64 / 2, r * _this.radius, 0, 2 * Math.PI);
         _this.ctx.stroke();
       };
 
@@ -722,11 +723,16 @@ const App = props => {
       return calcPosFromLatLonRad(lat, lon, earthRadius);
     };
 
-    const onMouseDown = () => {
+    const onMouseDown = event => {
       if (document.querySelector('#home').classList[0] === undefined) {
+        let e = event.touches ? event.touches[0] : event;
+        mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
         dragging = false;
         // console.log("first mousedown");
+        document.addEventListener('mousemove', onMouseMove, false);
         document.addEventListener('mouseup', onMouseUp, false);
+        document.addEventListener('touchmove', onMouseMove, false);
         document.addEventListener('touchend', onMouseUp, false);
       }
     };
@@ -735,6 +741,7 @@ const App = props => {
       if (!event.touches) event.preventDefault();
       let e = event.touches ? event.touches[0] : event;
       if (!dragging) dragging = true;
+
       mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
       mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
     };
@@ -748,7 +755,9 @@ const App = props => {
           currentHoveredInstanceId = null;
         }
       }
+      document.removeEventListener('mousemove', onMouseMove, false);
       document.removeEventListener('mouseup', onMouseUp, false);
+      document.removeEventListener('touchmove', onMouseMove, false);
       document.removeEventListener('touchend', onMouseUp, false);
     };
 
@@ -854,6 +863,8 @@ const App = props => {
         }
       }
       pointsBgMaterial.uniforms.activeInstanceId.value = -1;
+
+      isHideEarth = false;
     };
     resetPointsColorFunc.current = { resetPointsColor };
 
@@ -865,6 +876,7 @@ const App = props => {
       // animCanvasTexture.start();
       setTimeout(() => {
         animCanvasTexture.destroy();
+        isHideEarth = true;
         setHideEarth(true);
       }, 600);
       // pointsBgMaterial.uniforms.activeInstanceId.value = currentHoveredInstanceId;
@@ -912,26 +924,28 @@ const App = props => {
     enableAutoRotateFunc.current = { enableAutoRotate };
 
     const draw = () => {
-      objectControl.draw();
+      if(!isHideEarth){
+        objectControl.draw();
 
-      updateClouds();
-      updateCircleLineBg();
+        updateClouds();
+        updateCircleLineBg();
 
-      raycaster.setFromCamera(mouse, camera);
-      const intersection = raycaster.intersectObject(pointsMesh);
+        raycaster.setFromCamera(mouse, camera);
+        const intersection = raycaster.intersectObject(pointsMesh);
 
-      if (intersection.length > 0) {
-        currentHoveredInstanceId = intersection[0].instanceId;
-        // console.log("balls clicked");
-        if (currentHoveredInstanceId !== prevHoveredInstanceId) {
-          document.body.style.cursor = 'pointer';
-          prevHoveredInstanceId = currentHoveredInstanceId;
-        }
-      } else {
-        if (prevHoveredInstanceId !== null) {
-          document.body.style.cursor = '';
-          currentHoveredInstanceId = null;
-          prevHoveredInstanceId = null;
+        if (intersection.length > 0) {
+          currentHoveredInstanceId = intersection[0].instanceId;
+          console.log("balls clicked");
+          if (currentHoveredInstanceId !== prevHoveredInstanceId) {
+            document.body.style.cursor = 'pointer';
+            prevHoveredInstanceId = currentHoveredInstanceId;
+          }
+        } else {
+          if (prevHoveredInstanceId !== null) {
+            document.body.style.cursor = '';
+            currentHoveredInstanceId = null;
+            prevHoveredInstanceId = null;
+          }
         }
       }
     };
@@ -999,10 +1013,10 @@ const App = props => {
 
     const addEvent = () => {
       document.addEventListener('mousedown', onMouseDown, false);
-      document.addEventListener('mousemove', onMouseMove, false);
+      // document.addEventListener('mousemove', onMouseMove, false);
 
       document.addEventListener('touchstart', onMouseDown, false);
-      document.addEventListener('touchmove', onMouseMove, false);
+      // document.addEventListener('touchmove', onMouseMove, false);
       window.addEventListener('resize', onWindowResize, false);
       window.addEventListener('keydown', keyDown);
     };
@@ -1011,10 +1025,10 @@ const App = props => {
       // if(cameraControl) cameraControl.destroy();
       if (dev) dev.destroy();
       document.removeEventListener('mousedown', onMouseDown, false);
-      document.removeEventListener('mousemove', onMouseMove, false);
+      // document.removeEventListener('mousemove', onMouseMove, false);
 
       document.removeEventListener('touchstart', onMouseDown, false);
-      document.removeEventListener('touchmove', onMouseMove, false);
+      // document.removeEventListener('touchmove', onMouseMove, false);
       window.removeEventListener('resize', onWindowResize, false);
       window.removeEventListener('keydown', keyDown);
     };
@@ -1024,7 +1038,7 @@ const App = props => {
 
     return () => {
       removeStats();
-      removeGUI();
+      // removeGUI();
       removeEvent();
       removeObjectIn3dWorld();
       renderer.setAnimationLoop(null);
@@ -1045,6 +1059,7 @@ const App = props => {
     let y = 0;
     let easeY = 0;
     let activedId = 0;
+    let isHideEarth = false;
     // let clickedId = 0;
 
     const onMouseDown = event => {
@@ -1084,7 +1099,7 @@ const App = props => {
     const onMouseUp = () => {
       clicked = false;
       enableRotate();
-      document.removeEventListener('mousemove', onMouseMove, false);
+      document.addEventListener('touchmove', onMouseMove, false);
       document.removeEventListener('mouseup', onMouseUp, false);
       document.removeEventListener('touchmove', onMouseMove, false);
       document.removeEventListener('touchend', onMouseUp, false);
@@ -1107,18 +1122,20 @@ const App = props => {
     moveFromIdFunc.current = { moveFromId };
 
     const update = () => {
-      easeY += (y - easeY) * 0.1;
-      child.style.transform = `translate3d(-50%,${-easeY}px,0)`;
+      if(!isHideEarth){
+        easeY += (y - easeY) * 0.1;
+        child.style.transform = `translate3d(-50%,${-easeY}px,0)`;
 
-      for (let i = 0; i < items.length; i++) {
-        const item = items[i];
-        const offsetTop = item.getBoundingClientRect().top - parent.getBoundingClientRect().top;
-        const offsetBot = offsetTop + item.offsetHeight;
-        const half = parent.offsetHeight / 2;
+        for (let i = 0; i < items.length; i++) {
+          const item = items[i];
+          const offsetTop = item.getBoundingClientRect().top - parent.getBoundingClientRect().top;
+          const offsetBot = offsetTop + item.offsetHeight;
+          const half = parent.offsetHeight / 2;
 
-        if (half >= offsetTop && half <= offsetBot && i !== activedId) {
-          activedId = i;
-          setScrolledDetailIdx(i + 1);
+          if (half >= offsetTop && half <= offsetBot && i !== activedId) {
+            activedId = i;
+            setScrolledDetailIdx(i + 1);
+          }
         }
       }
     };

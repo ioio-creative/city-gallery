@@ -121,6 +121,9 @@ span{
     #street #locationsWrap #locations{
         font-size: vw-calc(16, $width);
     }
+    #coast #contentWrap .item #markerWrap #location{
+        padding-top:0;
+    }
 }
 
 #main{
@@ -300,7 +303,7 @@ span{
                         line-height: vw-calc(22, $width);
                         font-weight: bold;
                         border-radius: 50%;
-                        padding:vw-calc(10 10 0, $width);
+                        padding:vw-calc(5 10 0, $width);
                         background:#fff;
                         box-shadow: vw-calc(6 6 6, $width) rgba(0,0,0,.2);
                         display: flex;
