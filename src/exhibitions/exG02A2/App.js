@@ -31,7 +31,9 @@ const App = props => {
   const toWhiteColorFunc = useRef(null);
   const resetPointsColorFunc = useRef(null);
   const locationsWrapElem = useRef(null);
+  const locationsOuterWrapElem = useRef(null);
   const locationsElem = useRef(null);
+  const selectCityElem = useRef(null);
   const timeLineRef = useRef(null);
   // const canvasTextureRef = useRef(null);
   const showDetailsRef = useRef(null);
@@ -808,9 +810,10 @@ const App = props => {
         oldHoveredInstanceId = currentHoveredInstanceId;
 
       //
-      gsap.to('#selectCity', 0.3, { autoAlpha: 0, ease: 'power1.inOut' });
-      gsap.to('#locationsOuterWrap', 0.3, { autoAlpha: 1, ease: 'power1.inOut' });
-
+      // gsap.to('#selectCity', 0.3, { autoAlpha: 0, ease: 'power1.inOut' });
+      // gsap.to('#locationsOuterWrap', 0.3, { autoAlpha: 1, ease: 'power1.inOut' });
+      selectCityElem.current.classList.add('hide');
+      locationsOuterWrapElem.current.classList.add('show');
       //   showDetails();
       }
     };
@@ -886,7 +889,7 @@ const App = props => {
 
       // setTimeout(() => {
         setDetailIdx(0);
-        console.log('what happened');
+        // console.log('what happened');
       // }, 1000);
       // gsap.set('#opening',{delay:2, className:'section active'});
     };
@@ -896,7 +899,7 @@ const App = props => {
       const tl = gsap.timeline({ onComplete: pops, onReverseComplete: reversePops });
       timeLineRef.current = tl;
       tl.to('#lang', 0.3, { autoAlpha: 0, ease: 'power1.inOut' });
-      tl.to(camera.position, 1.6, { y: 20, z: 60, ease: 'power3.inOut' }, '-=.1');
+      tl.to(camera.position, 2, { y: 20, z: 60, ease: 'power4.inOut' }, '-=.1');
       tl.to('#locationSelector', 0.3, { autoAlpha: 1, ease: 'power1.inOut' }, 'end');
       //   tl.call(pops, null, 'end');
     };
@@ -935,7 +938,7 @@ const App = props => {
 
         if (intersection.length > 0) {
           currentHoveredInstanceId = intersection[0].instanceId;
-          console.log("balls clicked");
+          // console.log("balls clicked");
           if (currentHoveredInstanceId !== prevHoveredInstanceId) {
             document.body.style.cursor = 'pointer';
             prevHoveredInstanceId = currentHoveredInstanceId;
@@ -1070,7 +1073,7 @@ const App = props => {
       mouse.lastPos.y = 0;
       clicked = true;
       setScrolling(false);
-      console.log('second mousedown');
+      // console.log('second mousedown');
       disableRotate();
       document.addEventListener('mousemove', onMouseMove, false);
       document.addEventListener('mouseup', onMouseUp, false);
@@ -1221,7 +1224,7 @@ const App = props => {
             tempArray[idx - 1] = false;
             return tempArray;
           });
-          console.log('finish', aniLock);
+          // console.log('finish', aniLock);
         }
       });
       temp.set(`#section${idx}`, { zIndex: zindex });
@@ -1246,7 +1249,7 @@ const App = props => {
     if (!scrolling) {
       moveFromIdFunc.current.moveFromId(id);
       selectLocationFunc.current.selectLocation(id);
-      console.log('debug');
+      // console.log('debug');
     }
   };
 
@@ -1304,10 +1307,10 @@ const App = props => {
         </div>
         <div id='line'></div>
         <div id='selector' className='sameWidth'>
-          <div id='selectCity' className='big'>
+          <div ref={selectCityElem} id='selectCity' className='big'>
             {data && data.global.selectCity}
           </div>
-          <div id='locationsOuterWrap'>
+          <div ref={locationsOuterWrapElem} id='locationsOuterWrap'>
             <div ref={locationsWrapElem} id='locationsWrap'>
               <ul ref={locationsElem} id='locations'>
                 {locations.map((value, idx) => {

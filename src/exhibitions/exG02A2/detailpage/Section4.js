@@ -137,6 +137,7 @@ const Section4 = props => {
                 ];
                 this.player = null;
                 this.numOfCars = 3;
+                this.space = window.innerWidth* random(0.05, .1);
                 // this.density = 0;
 
                 this.update = function(){
@@ -181,8 +182,9 @@ const Section4 = props => {
 
                             car.move();
 
-                            if(drivingInCar.pos.x - drivingInCar.width >= window.innerWidth*.1){
-                                line.drivingInCarIdx+1 < _this.numOfCars ? line.drivingInCarIdx++ : line.drivingInCarIdx=0;
+                            if(drivingInCar.pos.x - drivingInCar.width >= _this.space){
+                                line.drivingInCarIdx+1 < _this.numOfCars ? line.drivingInCarIdx+=1 : line.drivingInCarIdx=0;
+                                _this.space = window.innerWidth* random(0.05, .1);
                                 line.cars[line.drivingInCarIdx].drive();
                             }
 

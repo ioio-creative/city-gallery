@@ -187,6 +187,14 @@
           }
         }
       }
+      #selectCity{
+        opacity: 1;
+        visibility: visible;
+        &.hide{
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
       #locationsOuterWrap {
         position: absolute;
         top: 50%;
@@ -195,6 +203,10 @@
         opacity: 0;
         visibility: hidden;
         width: 713px;
+        &.show{
+          opacity: 1;
+          visibility: visible;
+        }
         &:before {
           content: '';
           width: 0;
@@ -228,6 +240,7 @@
           transform: translate3d(-50%, 0, 0);
           margin: 0;
           padding: 0;
+          will-change: transform;
           li {
             height: vw-calc(105);
             line-height: vw-calc(100);
