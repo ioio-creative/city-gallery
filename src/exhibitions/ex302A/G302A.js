@@ -359,6 +359,13 @@ const G302A = props => {
     }
   };
 
+  const onBack = () => {
+    setMinimalSidebar(false);
+    setClickedSectionIdx(null);
+    // setCurrentSectionIdx();
+    setIsClickedSectionFunc.current.setIsClickedSection(false);
+  }
+
   const goToSection = (i, isSocket) => {
     setCurrentSectionFunc.current.setCurrentSection(i);
     setCurrentSectionIdx(i);
@@ -390,6 +397,7 @@ const G302A = props => {
           <span>EN</span>
         </div>
       </div>
+      <div id="hints">拖曳畫面探索更多</div>
       <div id='sectionNav' className={`${clickedSectionIdx !== null ? 'hide' : ''}`}>
         <ul>
           {contentData &&
@@ -408,16 +416,16 @@ const G302A = props => {
       <div ref={sectionWrapElem} id='sectionWrap'>
         {[...Array(sectionNum).fill(null)].map((v, i) => {
           return (
-            <div key={i} ref={sectionElems.current[i]} id={`section${i + 1}`} className={`section${clickedSectionIdx === i ? ' active' : ''} ${currentSectionIdx === i ? ' current' : ''}`} onClick={() => onClickSection(i)}>
+            <div key={i} ref={sectionElems.current[i]} id={`section${i + 1}`} className={`section${clickedSectionIdx === i ? ' active' : ''} ${currentSectionIdx === i ? ' current' : ''}`}>
               <div id='outerWrap'>
                 <div id='wrap'>
                   <p className='eb' ref={sectionTextElems.current[i]}>
-                    <span>{contentData && contentData.sections[i].year}</span>
+                    <span>{contentData && contentData.sections[i].text1}</span>
                   </p>
                   <div ref={sectionImgElems.current[i]} className='img' style={{ backgroundImage: `url(${contentData && contentData.sections[i].coverincircle.src})` }}></div>
                 </div>
               </div>
-              <div id='exploreBtn'>探索</div>
+              <div id='exploreBtn' onClick={() => onClickSection(i)}>{contentData && contentData.global.explore}</div>
             </div>
           );
         })}
@@ -431,6 +439,7 @@ const G302A = props => {
           setCurrentSectionIdx={setCurrentSectionIdx}
           minimalSidebar={minimalSidebar}
           setMinimalSidebar={setMinimalSidebar}
+          onBack={onBack}
           clickedSectionIdx={clickedSectionIdx}
           isClickedSection={getIsClickedSectionFunc.current && getIsClickedSectionFunc.current.getIsClickedSection()}
         ></Content>

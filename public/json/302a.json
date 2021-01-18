@@ -13,7 +13,9 @@
   ],
   "contents": {
     "en": {
-      "global": {},
+      "global": {
+        "explore":"Explore"
+      },
       "sections": [
         {
           "year": "1841 - 1939",
@@ -2605,7 +2607,9 @@
       ]
     },
     "tc": {
-      "global": {},
+      "global": {
+        "explore":"探索"
+      },
       "sections": [
         {
           "year": "1841 - 1939",

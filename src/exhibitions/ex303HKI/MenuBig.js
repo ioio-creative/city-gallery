@@ -58,7 +58,11 @@ const Menu = props => {
             <span onClick={() => {props.setGameMode('street'); props.setZone(0); }}> {globalData.street} </span>
           </div>
           <div className={`descriptionBox ${!props.showNav ? '' : props.yearIdx < 3 ? '' : 'hide'}`}>
-            { globalData && globalData.locations[0] } <span></span> { globalData && globalData.locations[7] }
+            { globalData && globalData.coastline } <span></span> 
+            {
+              globalData && 
+              <p>{globalData.locations[0]}<span dangerouslySetInnerHTML={{__html:globalData.to}}></span>{globalData.locations[7]}</p>
+            }
           </div>
         </div>
       </div>

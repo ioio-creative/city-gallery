@@ -42,7 +42,7 @@ $width:3840;
       border-radius: vw-calc(60, $width);
       &.noBtn{
         justify-content: space-evenly;
-        padding: 0 vw-calc(50, $width) 0 vw-calc(38, $width);
+        padding: 0 vw-calc(40, $width) 0 vw-calc(45, $width);
       }
     }
   }
@@ -146,11 +146,16 @@ $width:3840;
         &.hide{
           display: none;
         }
-        span{
+        &>span{
           width:vw-calc(98, $width);
           height:vw-calc(3, $width);
           background:#074A45;
           margin: vw-calc(0 12);
+        }
+        p{
+          span{
+            display: inline;
+          }
         }
       }
       #switch{

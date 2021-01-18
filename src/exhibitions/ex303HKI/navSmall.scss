@@ -175,11 +175,16 @@ $drakgreenblue:#074A45;
         &.hide{
           display: none;
         }
-        span{
+        &>span{
           width:vw-calc(98);
           height:vw-calc(3);
           background:#074A45;
           margin: vw-calc(0 12);
+        }
+        p{
+          span{
+            display: inline;
+          }
         }
       }
       #switch{

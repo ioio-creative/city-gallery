@@ -398,20 +398,46 @@ span{
                             }
                         }
                         #info{
-                            padding:vw-calc(25 22 0 22, $width);
-                            li{
+                            height:vw-calc(180, $width);
+                            padding:vw-calc(25 0 0 22, $width);
+                            &>li{
                                 display: flex;
                                 margin-top:vw-calc(32, $width);
                                 &:first-child{
                                     margin:0;
+                                    span{
+                                        &:nth-child(2){
+                                            height:auto;
+                                        }
+                                    }
                                 }
                                 span{
-                                    font-size: vw-calc(12, $width);
-                                    line-height: vw-calc(14, $width);
+                                    font-size: vw-calc(14, $width);
+                                    line-height: vw-calc(18, $width);
+                                    padding-right:vw-calc(10, $width);
                                     &:first-child{
                                         flex:none;
                                         width:vw-calc(77, $width);
                                         font-size: vw-calc(15, $width);
+                                    }
+                                    &:nth-child(2){
+                                        height:vw-calc(80, $width);
+                                        overflow-x: hidden;
+                                        overflow-y: scroll;
+                                        &::-webkit-scrollbar {
+                                            width: vw-calc(3, $width);
+                                        }
+                                        &::-webkit-scrollbar-thumb {
+                                            background: #074A45; 
+                                        }
+                                    }
+                                    ul{
+                                        margin-top:vw-calc(10, $width);
+                                        li{
+                                            list-style: disc;
+                                            margin-top:vw-calc(3, $width);
+                                            margin-left:vw-calc(15, $width);
+                                        }
                                     }
                                 }
                             }
@@ -421,7 +447,7 @@ span{
                             display: flex;
                             justify-content: space-between;
                             position: absolute;
-                            bottom:0;
+                            top: 97%;
                             .btnWrap{
                                 &>div{
                                     display: flex;
@@ -954,6 +980,13 @@ span{
                 color:#bbb;
                 white-space: nowrap;
                 margin-top:vw-calc(10, $width);
+                display: flex;
+                flex-direction: column;
+                span{
+                    margin-left: vw-calc(20, $width);
+                    list-style: disc;
+                    display: list-item;
+                }
             }
         }
         ul{

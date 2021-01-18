@@ -55,6 +55,7 @@ const G303 = props => {
       if (started) {
         started = false;
         setShowWholeScreen(false);
+        onBack();
       }
     }
 
@@ -101,6 +102,10 @@ const G303 = props => {
   };
 
   const onBack = () => {
+    setYearIdx(-1);
+    setCoastlineIdx(null);
+    setStreetIdx(null);
+    setZone(0);
     setRunTransition(true);
     setShowYear(true);
     handleShowCoastline.current.showCoastline(-1);
@@ -294,7 +299,13 @@ const G303 = props => {
         <div id="btnWrap" className={yearIdx >= 0 ? `idx_${yearIdx} active` : ''}>
           <span id="arrow"></span>
           <div id='startBtn' className={`${yearIdx < 0 ? 'disabled' : ''} ${showYear ? '' : 'hide'}`} onClick={onStart}>{globalData && globalData.confirm}</div>
-          <p>{ globalData && yearIdx < 3 ? globalData.onlyCoast : globalData.coastAndStreet}</p>
+          {
+            globalData &&
+            <p>
+              <span>{globalData.coastInfo}</span>
+              { yearIdx >= 3 && <span>{globalData.streetInfo}</span>}
+            </p>
+          }
         </div>
       </div>
       <div id="yearOfCoastline" className={`${showYear || coastlineIdx  !== null || streetIdx !== null ? 'disabled' : gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}></div>

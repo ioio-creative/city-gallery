@@ -72,10 +72,19 @@ const Menu = props => {
             </div>
           }
           <div className={`descriptionBox ${props.locationName === 'tst' ? (!props.showNav ? '' : props.yearIdx < 3 ? '' : 'hide') : ''}`}>
-            { globalData && globalData.locations[0] } <span></span> 
-            { props.locationName === 'tst' && globalData && globalData.locations[3] }
-            { props.locationName === 'wk' && globalData && globalData.locations[4] }
-            { props.locationName === 'kb' && globalData && globalData.locations[2] }
+            { globalData && globalData.coastline } <span></span> 
+            {
+              props.locationName === 'tst' && globalData && 
+              <p>{globalData.locations[0]}<span dangerouslySetInnerHTML={{__html:globalData.to}}></span>{globalData.locations[3]}</p>
+            }
+            {
+              props.locationName === 'wk' && globalData && 
+              <p>{globalData.locations[0]}<span dangerouslySetInnerHTML={{__html:globalData.to}}></span>{globalData.locations[4]}</p>
+            }
+            {
+              props.locationName === 'kb' && globalData && 
+              <p>{globalData.locations[0]}<span dangerouslySetInnerHTML={{__html:globalData.to}}></span>{globalData.locations[2]}</p>
+            }
           </div>
           <span id="space"></span>
           <div id="lang">

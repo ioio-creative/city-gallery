@@ -180,10 +180,11 @@
           "area":"Area",
           "locations":["Kennedy Town", "Sheung Wan", "Central", "Wan Chai", "Causeway Bay", "North Point", "Quarry Bay", "Shau Kei Wan"],
           "streetArea":["Sheung Wan Area", "Central and Wan Chai Area", "Causeway Bay Area", "Quarry Bay Area"],
-          "reference":"本圖的海岸線只供參考。填海資料僅顯示維港範圍以內部分區域。",
-          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊",
-          "coastAndStreet":"*此年份包括海岸線和街道資訊",
-          "onlyCoast":"*此年份只有海岸線資訊"
+          "reference":"The coastline in this map is for reference only. <br/>Reclamation data only shows part of the area within the Victoria Harbour",
+          "hints":"Please click on the different buoys to<br/>explore information about different reclamation areas",
+          "streetInfo":"Street information",
+          "coastInfo":"Coastline information",
+          "to":"&nbsp;to <br/>"
         },
         "coastline":[
           {
@@ -1014,8 +1015,9 @@
           "streetArea":["上環區", "中環及灣仔區", "銅鑼灣區", "鰂魚涌區"],
           "reference":"本圖的海岸線只供參考。填海資料僅顯示維港範圍以內部分區域。",
           "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊",
-          "coastAndStreet":"*此年份包括海岸線和街道資訊",
-          "onlyCoast":"*此年份只有海岸線資訊"
+          "streetInfo":"街道資訊",
+          "coastInfo":"填海資訊",
+          "to":"至<br/>"
         },
         "coastline":[
           {
@@ -2018,10 +2020,11 @@
           "area":"Area",
           "locations":["West Kowloon", "Mong Kok", "Yau Ma Tei", "Hung Hom", "Tsim Sha Tsui"],
           "streetArea":["Tsim Sha Tsui Area", "Yau Ma Tei Area", "Mong Kok and Tai Kok Tsui Area"],
-          "reference":"本圖的海岸線只供參考。<br/>填海資料僅顯示維港範圍以內部分區域。",
-          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊",
-          "coastAndStreet":"*此年份包括海岸線和街道資訊",
-          "onlyCoast":"*此年份只有海岸線資訊"
+          "reference":"The coastline in this map is for reference only. <br/>Reclamation data only shows part of the area within the Victoria Harbour",
+          "hints":"Please click on the different buoys to<br/>explore information about different reclamation areas",
+          "streetInfo":"Street information",
+          "coastInfo":"Coastline information",
+          "to":"&nbsp;to <br/>"
         },
         "coastline":[
           {
@@ -2317,8 +2320,9 @@
           "streetArea":["尖沙咀區", "油麻地區", "旺角及大角咀區"],
           "reference":"本圖的海岸線只供參考。<br/>填海資料僅顯示維港範圍以內部分區域。",
           "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊",
-          "coastAndStreet":"*此年份包括海岸線和街道資訊",
-          "onlyCoast":"*此年份只有海岸線資訊"
+          "streetInfo":"街道資訊",
+          "coastInfo":"填海資訊",
+          "to":"至"
         },
         "coastline":[
           {
@@ -2787,10 +2791,11 @@
             "Kowloon Bay",
             "Yau Tong"
           ],
-          "reference":"本圖的海岸線只供參考。<br/>填海資料僅顯示維港範圍以內部分區域。",
-          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊",
-          "coastAndStreet":"*此年份包括海岸線和街道資訊",
-          "onlyCoast":"*此年份只有海岸線資訊"
+          "reference":"The coastline in this map is for reference only. <br/>Reclamation data only shows part of the area within the Victoria Harbour",
+          "hints":"Please click on the different buoys to<br/>explore information about different reclamation areas",
+          "streetInfo":"Street information",
+          "coastInfo":"Coastline information",
+          "to":"&nbsp;to <br/>"
         },
         "coastline":[
           {
@@ -2895,8 +2900,9 @@
           ],
           "reference":"本圖的海岸線只供參考。<br/>填海資料僅顯示維港範圍以內部分區域。",
           "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊",
-          "coastAndStreet":"*此年份包括海岸線和街道資訊",
-          "onlyCoast":"*此年份只有海岸線資訊"
+          "streetInfo":"街道資訊",
+          "coastInfo":"填海資訊",
+          "to":"至"
         },
         "coastline":[
           {
@@ -3169,10 +3175,11 @@
           "coastline":"Coastline",
           "selectYear":"Select Year",
           "locations":["Kwai Chung", "Cheung Sha Wan", "Sham Shui Po",  "Tai Kok Tsui", "West Kowloon"],
-          "reference":"本圖的海岸線只供參考。<br/>填海資料僅顯示維港範圍以內部分區域。",
-          "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊",
-          "coastAndStreet":"*此年份包括海岸線和街道資訊",
-          "onlyCoast":"*此年份只有海岸線資訊"
+          "reference":"The coastline in this map is for reference only. <br/>Reclamation data only shows part of the area within the Victoria Harbour",
+          "hints":"Please click on the different buoys to<br/>explore information about different reclamation areas",
+          "streetInfo":"Street information",
+          "coastInfo":"Coastline information",
+          "to":"&nbsp;to <br/>"
         },
         "coastline":[
           {
@@ -3203,8 +3210,9 @@
           "locations":["葵涌", "長沙灣", "深水埗", "大角咀", "西九龍"],
           "reference":"本圖的海岸線只供參考。<br/>填海資料僅顯示維港範圍以內部分區域。",
           "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊",
-          "coastAndStreet":"*此年份包括海岸線和街道資訊",
-          "onlyCoast":"*此年份只有海岸線資訊"
+          "streetInfo":"街道資訊",
+          "coastInfo":"填海資訊",
+          "to":"至"
         },
         "coastline":[
           {

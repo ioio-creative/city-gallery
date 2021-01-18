@@ -9,7 +9,7 @@
 	.st3{font-size:16px;}
 	.st4{enable-background:new    ;}
 	.st5{fill:#004A47;}
-	.st6{fill:#007A6F;}
+	.st6{fill:#007A6F;stroke: #fff;stroke-width: .5px;}
 	.st7{fill:#09B9A7;}
 	.st8{fill:#97FFE2;}
 	.st9{fill:#666666;}
@@ -23,7 +23,7 @@
 			<line id="Line_28" class="st0" x1="0" y1="0" x2="0" y2="13.4"/>
 			<line id="Line_29" class="st0" x1="119" y1="0" x2="119" y2="13.4"/>
 		</g>
-		<text transform="matrix(1 0 0 1 853.117 700)" class="st1 st2 st3">??? </text>
+		<text transform="matrix(1 0 0 1 853.117 700)" class="st1 st2 st3">500 </text>
 		<g class="st4">
 			<path class="st1" d="M890.1,694l-2,0c-0.1,0-0.1,0-0.1,0s0-0.1,0-0.1v-1.2c0-0.1,0-0.1,0-0.1c0,0,0.1,0,0.1,0l2,0h3.8v-3.6
 				c0-0.8,0-1.4-0.1-1.9c0.7,0,1.3,0.1,1.8,0.1c0.2,0,0.3,0.1,0.3,0.2c0,0.1,0,0.2-0.1,0.4c-0.1,0.3-0.1,0.6-0.1,1.1v3.6h4.1l2,0

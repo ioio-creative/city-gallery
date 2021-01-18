@@ -30,6 +30,7 @@ const G303 = props => {
   // const [fakeZoom, setFakeZoom] = useState(0);
   // const [isVideo, setIsVideo] = useState(false);
   // const [videoNumber, setVideoNumber] = useState(null);
+  const [cardSide, setCardSide] = useState('left');
   const [zone, setZone] = useState(0);
   const [coastlineIdx, setCoastlineIdx] = useState(null);
   const [streetIdx, setStreetIdx] = useState(null);
@@ -61,6 +62,7 @@ const G303 = props => {
       if (started) {
         started = false;
         setShowWholeScreen(false);
+        onBack();
       }
     }
 
@@ -85,6 +87,14 @@ const G303 = props => {
     };
   }, [socket]);
 
+  useEffect(()=>{
+    if(coastlineIdx !== null)
+      if(coastlineIdx < 4)
+        setCardSide('left');
+      else
+        setCardSide('');
+  },[coastlineIdx])
+
   const onClickYear = (i, isSocket = false) => {
     if (i !== yearIdx) {
       setYearIdx(i);
@@ -107,6 +117,10 @@ const G303 = props => {
   };
 
   const onBack = () => {
+    setYearIdx(-1);
+    setCoastlineIdx(null);
+    setStreetIdx(null);
+    setZone(0);
     setRunTransition(true);
     setShowYear(true);
     handleShowCoastline.current.showCoastline(-1);
@@ -124,6 +138,7 @@ const G303 = props => {
     else
       return (px - 10) / 1080 * 100+'vh';
   }
+
 
   const globalData = props.appData.hki.contents[language].global;
   const coastlineData = props.appData.hki.contents[language].coastline;
@@ -170,7 +185,7 @@ const G303 = props => {
                   <span id="marker" onClick={()=> setCoastlineIdx(i)}></span>
                   <span id="location" dangerouslySetInnerHTML={{__html:v.marker.name}}></span>
                 </div>
-                <div id="card" className={coastlineIdx < 4 ? 'left' : ''}>
+                <div id="card" className={cardSide}>
                   <div id="closeBtn" onClick={()=> setCoastlineIdx(null)}><span></span><span></span></div>
                   <div id="wrap">
                     <div id="title">
@@ -301,7 +316,13 @@ const G303 = props => {
         <div id="btnWrap" className={yearIdx >= 0 ? `idx_${yearIdx} active` : ''}>
           <span id="arrow"></span>
           <div id='startBtn' className={`${yearIdx < 0 ? 'disabled' : ''} ${showYear ? '' : 'hide'}`} onClick={onStart}>{globalData && globalData.confirm}</div>
-          <p>{ globalData && yearIdx < 3 ? globalData.onlyCoast : globalData.coastAndStreet}</p>
+          {
+            globalData &&
+            <p>
+              <span>{globalData.coastInfo}</span>
+              { yearIdx >= 3 && <span>{globalData.streetInfo}</span>}
+            </p>
+          }
         </div>
       </div>
       

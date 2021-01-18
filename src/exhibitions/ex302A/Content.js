@@ -135,6 +135,7 @@ const Content = props => {
 
     const onMouseUp = () => {
       isClickedControlBarBtn = false;
+      isStartedToMove = false;
       document.removeEventListener('mousemove', onMouseMove, false);
       document.removeEventListener('touchmove', onMouseMove, false);
       document.removeEventListener('mouseup', onMouseUp, false);
@@ -250,9 +251,16 @@ const Content = props => {
             }
             sidebar.style.transform = `translate3d(${sx}px,0,0)`;
 
+            if (i < currentSectionIdx){
+              if (!sidebar.classList.contains('minimize')) {
+                sidebar.classList.remove('active');
+                sidebar.classList.add('minimize');
+              }
+            }
+
             if (currentSectionIdx === i) {
               if (sx === 0 && isStartedToMove) {
-                if (sidebar.classList.contains('active')) {
+                if (!sidebar.classList.contains('minimize')) {
                   sidebar.classList.remove('active');
                   sidebar.classList.add('minimize');
                 }
@@ -288,7 +296,7 @@ const Content = props => {
               if (offsetX <= window.innerWidth / 2 && offsetX + content.offsetWidth >= window.innerWidth / 2) {
                 const pageOfNav = Math.floor((s + 0.005) / (1 / (data.sections[i].items.length-1)));
                 if(oldPageOfNav !== pageOfNav){
-                  console.log(pageOfNav)
+                  // console.log(pageOfNav)
                   setNavIdx(pageOfNav);
                   oldPageOfNav = pageOfNav;
                 }
@@ -305,6 +313,14 @@ const Content = props => {
             sx = null;
             cx = null;
             s = null;
+          }
+        }
+        else{
+          for (let i = 0; i < sectionNum; i++) {
+            const sidebar = sidebarElems.current[i].current;
+            if (!sidebar.classList.contains('active')) {
+              gsap.set(sidebar, {delay:1, className: 'sidebar active' });
+            }
           }
         }
 
@@ -423,83 +439,32 @@ const Content = props => {
       const elem = sidebarElems.current[props.clickedSectionIdx].current;
       const tl = gsap.timeline({ delay: 1 });
 
-      tl.set('#sidebarWrap', {
-        className: 'active',
-        clearProps: 'opacity,visibility'
-      });
-      tl.set('#sectionWrap', {
-        className: 'hide',
-        clearProps: 'opacity,visibility'
-      });
-      tl.set(contentWrapElem.current, {
-        className: 'active',
-        clearProps: 'opacity,visibility'
-      });
-      tl.fromTo(
-        elem.querySelectorAll('#des span span'),
-        1,
-        { force3D: true, y: '100%' },
-        { y: '0%', stagger: 0.01, ease: 'power4.out' },
-        's'
-      );
-      tl.fromTo(
-        elem.querySelectorAll('#date span'),
-        1,
-        { force3D: true, y: '100%' },
-        { y: '0%', stagger: 0.1, ease: 'power4.out' },
-        'b-=.6'
-      );
-      tl.fromTo(
-        elem.querySelectorAll('#line'),
-        1,
-        { force3D: true, scaleX: 0 },
-        { scaleX: 1, ease: 'power3.inOut' },
-        's+=.6'
-      );
+      tl.set('#sidebarWrap', {className: 'active'});
+      tl.set('#sectionWrap', {className: 'hide',clearProps: 'opacity,visibility'});
+      tl.set(contentWrapElem.current, {className: 'active',clearProps: 'opacity,visibility'});
+      tl.fromTo(elem.querySelectorAll('#des span span'),1,{ force3D: true, y: '100%' },{ y: '0%', stagger: 0.01, ease: 'power4.out' },'s');
+      tl.fromTo(elem.querySelectorAll('#date span'),1,{ force3D: true, y: '100%' },{ y: '0%', stagger: 0.1, ease: 'power4.out' },'b-=.6');
+      tl.fromTo(elem.querySelectorAll('#line'),1,{ force3D: true, scaleX: 0 },{ scaleX: 1, ease: 'power3.inOut' },'s+=.6');
 
       moveContentFunc.current.moveContent(props.clickedSectionIdx);
     } else {
       if (prevIdx !== null && prevIdx !== undefined) {
         const tl = gsap.timeline();
-        tl.to(
-          contentWrapElem.current,
-          0.3,
-          { autoAlpha: 0, ease: 'power1.inOut' },
-          's'
-        );
-        tl.set(
-          contentWrapElem.current,
-          { className: '', clearProps: 'opacity,visibility' },
-          's+=.3'
-        );
-        tl.to('#sidebarWrap', 0.3, { autoAlpha: 0, ease: 'power1.inOut' }, 's');
-        tl.set(
-          '#sidebarWrap',
-          { className: '', clearProps: 'opacity,visibility' },
-          's+=.3'
-        );
-        tl.set('#sectionWrap', { className: '' });
-        tl.fromTo(
-          '#sectionWrap',
-          0.6,
-          { autoAlpha: 0 },
-          { autoAlpha: 1, ease: 'power1.inOut' }
-        );
+        tl.set(contentWrapElem.current,{ className: '', autoAlpha: 0 },'s');
+        tl.set('#sidebarWrap', { className: 'hide'}, 's');
+        tl.set('#sectionWrap', { className: '' },'s');
+        tl.fromTo('#sectionWrap',1,{ autoAlpha: 0 },{ autoAlpha: 1, ease: 'power1.inOut' },'s');
       }
     }
   }, [props.clickedSectionIdx]);
 
   useEffect(() => {
-    getCurrentSectionIdxFunc.current.getCurrentSectionIdx(
-      props.currentSectionIdx
-    );
+    getCurrentSectionIdxFunc.current.getCurrentSectionIdx(props.currentSectionIdx);
   }, [props.currentSectionIdx]);
 
   useEffect(() => {
     if (props.isClickedSection !== null) {
-      setIsClickedSectionFunc.current.setIsClickedSection(
-        props.isClickedSection
-      );
+      setIsClickedSectionFunc.current.setIsClickedSection(props.isClickedSection);
     }
   }, [props.isClickedSection]);
 
@@ -541,24 +506,11 @@ const Content = props => {
 
   return (
     <>
-      <div
-        id='contentNavWrap'
-        className={`contentNav${
-          props.clickedSectionIdx !== null && props.minimalSidebar
-            ? ' active'
-            : ''
-        }`}
-      >
+      <div id='contentNavWrap' className={`contentNav${props.clickedSectionIdx !== null && props.minimalSidebar ? ' active' : ''}`}>
         {props.contentData.sections.map((v, i) => {
           return (
-            <div
-              key={i}
-              ref={contentNavElems.current[i]}
-              id={`contentNav${i + 1}`}
-              className={`contentNav${minimalContentNav ? ' minimal' : ''}`}
-              onClick={() =>
-                minimalContentNav ? setMinimalContentNav(false) : null
-              }
+            <div key={i} ref={contentNavElems.current[i]} id={`contentNav${i + 1}`} className={`contentNav${minimalContentNav ? ' minimal' : ''}`}
+              onClick={() => minimalContentNav ? setMinimalContentNav(false) : null }
             >
               <div id='wrap'>
                 <ul>
@@ -594,23 +546,12 @@ const Content = props => {
           );
         })}
       </div>
-      <div id='sidebarWrap'>
+      <div id='sidebarWrap' className="hide">
         {props.contentData.sections.map((v, i) => {
           return (
-            <div
-              key={i}
-              ref={sidebarElems.current[i]}
-              id={`sidebar${i + 1}`}
-              className={`sidebar${
-                i >= props.clickedSectionIdx ? ' active' : ''
-              }`}
-            >
-              <div
-                id='bg'
-                style={{
-                  backgroundImage: `url('./images/ex302a/sidebarbg_${i}.png')`
-                }}
-              ></div>
+            <div key={i} ref={sidebarElems.current[i]} id={`sidebar${i + 1}`} className={`sidebar`}>
+              <div id="numOfItems"><p className="eb">{v.items.length}</p><span></span>個年代故事</div>
+              <div id='bg' style={{ backgroundImage: `url('./images/ex302a/sidebarbg_${i}.png')` }}></div>
               <div id='desWrap'>
                 <div id='des'>
                   {props.language === 'tc' &&
@@ -632,18 +573,13 @@ const Content = props => {
                 </div>
               </div>
               <div id='date' className='eb'>
-                {v.year
-                  .split(/(\d+)/g)
-                  .filter(x => x)
-                  .map((v, i) => {
-                    return <span key={i}>{v}</span>;
-                  })}
+                {v.year.split(/(\d+)/g).filter(x => x).map((v, i) => {
+                  return <span key={i}>{v}</span>;
+                })}
               </div>
+              <div id="selectYearBtn" onClick={()=>props.onBack()}>選擇年份</div>
               <div id='line'></div>
-              <div
-                id='img'
-                style={{ backgroundImage: `url(${v.coverinsidebar.src}` }}
-              ></div>
+              <div id='img' style={{ backgroundImage: `url(${v.coverinsidebar.src}` }}></div>
             </div>
           );
         })}
