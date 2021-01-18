@@ -445,6 +445,8 @@ const Content = props => {
       tl.fromTo(elem.querySelectorAll('#des span span'),1,{ force3D: true, y: '100%' },{ y: '0%', stagger: 0.01, ease: 'power4.out' },'s');
       tl.fromTo(elem.querySelectorAll('#date span'),1,{ force3D: true, y: '100%' },{ y: '0%', stagger: 0.1, ease: 'power4.out' },'b-=.6');
       tl.fromTo(elem.querySelectorAll('#line'),1,{ force3D: true, scaleX: 0 },{ scaleX: 1, ease: 'power3.inOut' },'s+=.6');
+      tl.set('#language #back', {className:'show'},'end-=.4');
+      tl.set('#language #back span', {className:'show'},'end');
 
       moveContentFunc.current.moveContent(props.clickedSectionIdx);
     } else {
@@ -453,6 +455,8 @@ const Content = props => {
         tl.set(contentWrapElem.current,{ className: '', autoAlpha: 0 },'s');
         tl.set('#sidebarWrap', { className: 'hide'}, 's');
         tl.set('#sectionWrap', { className: '' },'s');
+        tl.set('#language #back span', {className:''},'s');
+        tl.set('#language #back', {className:''},'s+=.4');
         tl.fromTo('#sectionWrap',1,{ autoAlpha: 0 },{ autoAlpha: 1, ease: 'power1.inOut' },'s');
       }
     }
@@ -577,7 +581,7 @@ const Content = props => {
                   return <span key={i}>{v}</span>;
                 })}
               </div>
-              <div id="selectYearBtn" onClick={()=>props.onBack()}>選擇年份</div>
+              <div id="selectYearBtn" onClick={props.onBack}>選擇年份</div>
               <div id='line'></div>
               <div id='img' style={{ backgroundImage: `url(${v.coverinsidebar.src}` }}></div>
             </div>

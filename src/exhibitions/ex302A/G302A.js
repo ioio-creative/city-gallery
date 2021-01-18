@@ -389,12 +389,15 @@ const G302A = props => {
                     </mask>
                 </defs>
             </svg> */}
-      <div id='language' className={`${clickedSectionIdx !== null && !minimalSidebar ? 'hide' : ''}`}>
-        <div className={language === 'tc' ? 'active' : ''} onClick={() => onChangeLanguage('tc')}>
+      <div id='language'>
+        <div className={`${language === 'tc' ? 'active' : ''} btn`} onClick={() => onChangeLanguage('tc')}>
           <span>繁</span>
         </div>
-        <div className={language === 'en' ? 'active' : ''} onClick={() => onChangeLanguage('en')}>
+        <div className={`${language === 'en' ? 'active' : ''} btn`} onClick={() => onChangeLanguage('en')}>
           <span>EN</span>
+        </div>
+        <div id="backBtn" className={minimalSidebar ? 'hide' : ''}>
+          <div id="back" className="hide" onClick={onBack}><span>回到選擇頁面</span></div>
         </div>
       </div>
       <div id="hints">拖曳畫面探索更多</div>
