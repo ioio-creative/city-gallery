@@ -510,6 +510,7 @@ const Content = props => {
 
   return (
     <>
+      {/* <div id="contentNavIndicator" className={`${props.clickedSectionIdx !== null && props.minimalSidebar ? ' active' : ''}`}>打開快速頁面</div> */}
       <div id='contentNavWrap' className={`contentNav${props.clickedSectionIdx !== null && props.minimalSidebar ? ' active' : ''}`}>
         {props.contentData.sections.map((v, i) => {
           return (
@@ -555,6 +556,7 @@ const Content = props => {
           return (
             <div key={i} ref={sidebarElems.current[i]} id={`sidebar${i + 1}`} className={`sidebar`}>
               <div id="numOfItems"><p className="eb">{v.items.length}</p><span></span>個年代故事</div>
+              <div id="numOfItemsSmall"><span className="eb">{v.items.length}</span>個年代故事</div>
               <div id='bg' style={{ backgroundImage: `url('./images/ex302a/sidebarbg_${i}.png')` }}></div>
               <div id='desWrap'>
                 <div id='des'>

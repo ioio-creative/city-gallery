@@ -36,7 +36,7 @@ const G303 = props => {
   const [streetIdx, setStreetIdx] = useState(null);
   const [runTransition, setRunTransition] = useState(false);
   const [socket, setSocket] = useState(null);
-  const [showWholeScreen, setShowWholeScreen] = useState(params.fullscreen !== undefined ? true : false);
+  // const [showWholeScreen, setShowWholeScreen] = useState(params.fullscreen !== undefined ? true : false);
 
   // const handleZoom = useRef(null);
   const handleMove = useRef(null);
@@ -54,14 +54,14 @@ const G303 = props => {
     const enter = () => {
       if (!started) {
         started = true;
-        setShowWholeScreen(true);
+        // setShowWholeScreen(true);
       }
     }
 
     const leave = () => {
       if (started) {
         started = false;
-        setShowWholeScreen(false);
+        // setShowWholeScreen(false);
         onBack();
       }
     }
@@ -145,7 +145,7 @@ const G303 = props => {
   const streetData = props.appData.hki.contents[language].street;
 
   return (
-    <div id='main' className={`${showWholeScreen ? '' : 'hide'} ${language}`}>
+    <div id='main' className={`${language}`}>
       <Map
           locationName="hki"
           doubleScreen={true}

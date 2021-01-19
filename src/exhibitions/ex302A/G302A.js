@@ -380,7 +380,7 @@ const G302A = props => {
   };
 
   return (
-    <div id='home'>
+    <div id='home' className={language}>
       {/* <svg width="100" height="100">
                 <defs>
                     <mask id="circle-mask">

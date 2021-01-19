@@ -29,7 +29,7 @@ const G303 = props => {
   const [streetIdx, setStreetIdx] = useState(null);
   const [runTransition, setRunTransition] = useState(false);
   const [socket, setSocket] = useState(null);
-  const [showWholeScreen, setShowWholeScreen] = useState(params.fullscreen !== undefined ? true : false);
+  // const [showWholeScreen, setShowWholeScreen] = useState(params.fullscreen !== undefined ? true : false);
 
   const handleMove = useRef(null);
   const handleShowCoastline = useRef(null);
@@ -43,14 +43,14 @@ const G303 = props => {
     const enter = () => {
       if (!started) {
         started = true;
-        setShowWholeScreen(true);
+        // setShowWholeScreen(true);
       }
     }
 
     const leave = () => {
       if (started) {
         started = false;
-        setShowWholeScreen(false);
+        // setShowWholeScreen(false);
         onBack();
       }
     }
@@ -124,7 +124,7 @@ const G303 = props => {
 
   return (
     // <div id='main' className={`${started ? 'started' : ''}${zoomed ? ' zoomed' : ''}`}>
-    <div id='main' className={`${showWholeScreen ? '' : 'hide'} ${language}`}>
+    <div id='main' className={`${language}`}>
       <Map
           locationName="kb"
           doubleScreen={false}
