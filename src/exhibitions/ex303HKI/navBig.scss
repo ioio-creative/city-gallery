@@ -292,6 +292,9 @@ $width:3840;
           padding-left:0;
           // letter-spacing: vw-calc(-1.6, $width);
         }
+        br{
+          display: none;
+        }
       }
     }
   }

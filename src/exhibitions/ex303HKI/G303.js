@@ -327,6 +327,7 @@ const G303 = props => {
       </div>
       
       <div id="yearOfCoastline" className={`${showYear || coastlineIdx  !== null || streetIdx !== null ? 'disabled' : gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}></div>
+      <div id="ref" className={`${gameMode === 'home' ? 'hide' : ''} ${yearIdx === 3 ? 'w' : ''}`} dangerouslySetInnerHTML={{__html:globalData && globalData.reference}}></div>
       
       {/* <div id='streetInfo'> */}
         {/* {streetData && <h1>{streetData.name}</h1>} */}

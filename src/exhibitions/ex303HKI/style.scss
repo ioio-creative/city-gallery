@@ -116,6 +116,29 @@ span{
 //     transform: translate3d(-86.45%,-36%,0);
 // }
 
+#ref{
+    text-align: right;
+    color:#074A45;
+    font-size: vw-calc(20, $width);
+    font-weight: bold;
+    position: absolute;
+    top:vw-calc(41, $width);
+    right:vw-calc(63, $width);
+    z-index: 1;
+    text-shadow: 0 vw-calc(3 6, $width) #fff;
+    opacity: 1;
+    visibility: visible;
+    transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
+    &.hide{
+        opacity: 0;
+        visibility: hidden;
+    }
+    &.w{
+        color:#fff;
+        text-shadow: 0 vw-calc(3 6, $width) #074A45;
+    }
+}
+
 .en#main{
     #coast #locationsWrap #locations,
     #street #locationsWrap #locations{
