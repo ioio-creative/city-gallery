@@ -111,23 +111,23 @@ $drakgreenblue:#074A45;
         height: vw-calc(54);
         border-radius: vw-calc(36);
         border: vw-calc(3) solid #074A45;
-        background:#074A45;
-        color:#fff;
+        background:#fff;
+        color:#074A45;
         display: flex;
         justify-content: center;
         align-items: center;
         font-size:vw-calc(20);
         font-weight: bold;
         position: relative;
-        // opacity: .3;
+        opacity: .3;
         transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
         &.hide{
           display: none;
         }
         &.active{
-          background:#fff;
-          color:#074A45;
-          // opacity: 1;
+          background:#074A45;
+          color:#fff;
+          opacity: 1;
           &:active{
             transform: translate3d(0,0,0) scale(.9);
           }

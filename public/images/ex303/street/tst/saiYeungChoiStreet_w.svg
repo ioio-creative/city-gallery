@@ -17,10 +17,10 @@
   </defs>
   <g id="Group_487" data-name="Group 487" transform="translate(-504.843 -154.879)">
     <g transform="matrix(1, 0, 0, 1, 504.84, 154.88)" filter="url(#Path_371)">
-      <path id="Path_371-2" data-name="Path 371" d="M204.494-14020.933l-76.46-394.12" transform="translate(-58.84 14612.12)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="7" stroke-dasharray="10 10"/>
+      <path id="Path_371-2" data-name="Path 371" d="M204.494-14020.933l-76.46-394.12" transform="translate(-58.84 14612.12)" fill="none" stroke="#FF7F00" stroke-linecap="round" stroke-width="5" stroke-dasharray="10 10"/>
     </g>
     <g transform="matrix(1, 0, 0, 1, 504.84, 154.88)" filter="url(#Path_267)">
-      <path id="Path_267-2" data-name="Path 267" d="M-3390,10302s31.683,63.1,33.4,72.6a43.066,43.066,0,0,1,0,16.423l8.563,38.9" transform="translate(3408.2 -10286.8)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="7" stroke-dasharray="10 10"/>
+      <path id="Path_267-2" data-name="Path 267" d="M-3390,10302s31.683,63.1,33.4,72.6a43.066,43.066,0,0,1,0,16.423l8.563,38.9" transform="translate(3408.2 -10286.8)" fill="none" stroke="#FF7F00" stroke-linecap="round" stroke-width="5" stroke-dasharray="10 10"/>
     </g>
   </g>
 </svg>

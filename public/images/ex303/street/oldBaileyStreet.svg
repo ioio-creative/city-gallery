@@ -9,6 +9,6 @@
     </filter>
   </defs>
   <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Line_53)">
-    <line id="Line_53-2" data-name="Line 53" y1="56" x2="27" transform="translate(15.17 15.17)" fill="none" stroke="#00f5ff" stroke-linecap="round" stroke-width="7"/>
+    <line id="Line_53-2" data-name="Line 53" y1="56" x2="27" transform="translate(15.17 15.17)" fill="none" stroke="#00f5ff" stroke-linecap="round" stroke-width="5"/>
   </g>
 </svg>

@@ -272,7 +272,7 @@ const G303 = props => {
             {
               streetData &&
               streetData.map((v, i)=>{
-                return <div key={i} className={`item ${streetIdx !== i && streetIdx !== null ? 'inactive' : ''} ${zone+1 === v.zone ? '' : 'hide'}`}>
+                return <div key={i} className={`item ${streetIdx === i ? 'active' : ''} ${zone+1 === v.zone ? '' : 'hide'}`}>
                   <div id="markerWrap" style={{left:pxToVw(v.marker.pos.x),top:pxToVh(v.marker.pos.y)}}>
                     <span id="marker" onClick={()=> setStreetIdx(i)}>
                       <span id="location" className={v.marker.namePos} dangerouslySetInnerHTML={{__html:v.marker.name}}></span>

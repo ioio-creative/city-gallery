@@ -9,6 +9,6 @@
     </filter>
   </defs>
   <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Path_390)">
-    <path id="Path_390-2" data-name="Path 390" d="M757.381,3249.909s-7.881-6.82-10.014-4.588-14.02,16.285-14.02,16.285" transform="translate(-719.41 -3235.32)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="7" stroke-dasharray="10 10"/>
+    <path id="Path_390-2" data-name="Path 390" d="M757.381,3249.909s-7.881-6.82-10.014-4.588-14.02,16.285-14.02,16.285" transform="translate(-719.41 -3235.32)" fill="none" stroke="#FF7F00" stroke-linecap="round" stroke-width="5" stroke-dasharray="10 10"/>
   </g>
 </svg>

@@ -217,10 +217,10 @@ span{
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    background:#fff;
+                    background:#243838cc;
                     border-radius: vw-calc(24, $width);
                     box-shadow: 0 vw-calc(3 6) rgba(0,0,0,.4);
-                    color:#074A45;
+                    color:#fff;
                     position: absolute;
                     opacity: 1;
                     visibility: visible;
@@ -737,10 +737,10 @@ span{
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        background:#fff;
+                        background:#243838cc;
                         border-radius: vw-calc(24, $width);
                         box-shadow: 0 vw-calc(3 6) rgba(0,0,0,.4);
-                        color:#074A45;
+                        color:#fff;
                         position: absolute;
                         opacity: 1;
                         visibility: visible;
@@ -777,7 +777,7 @@ span{
                     opacity: 0;
                     visibility: hidden;
                 }
-                &.inactive{
+                &.active{
                     #markerWrap{
                         #marker{
                             background: url('./images/marker_w.svg') center center no-repeat;
