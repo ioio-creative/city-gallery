@@ -366,11 +366,11 @@ const G302A = props => {
     setIsClickedSectionFunc.current.setIsClickedSection(false);
   }
 
-  const goToSection = (i, isSocket) => {
+  const goToSection = (i, isSocket = false) => {
     setCurrentSectionFunc.current.setCurrentSection(i);
     setCurrentSectionIdx(i);
 
-    if(!isSocket)
+    if(!isSocket && socket)
       socket.emit('navigationIndex', {data:{index:i}});
   };
 
@@ -440,6 +440,8 @@ const G302A = props => {
           sectionNum={sectionNum}
           currentSectionIdx={currentSectionIdx}
           setCurrentSectionIdx={setCurrentSectionIdx}
+          setClickedSectionIdx={setClickedSectionIdx}
+          goToSection={goToSection}
           minimalSidebar={minimalSidebar}
           setMinimalSidebar={setMinimalSidebar}
           onBack={onBack}

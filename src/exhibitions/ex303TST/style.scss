@@ -281,7 +281,7 @@ span{
                     #card{
                         opacity: 1;
                         visibility: visible;
-                        transform: translate3d(0,0,0) scale(1);
+                        transform: translate3d(0,-50%,0) scale(1);
                     }
                 }
                 #markerWrap{
@@ -315,39 +315,39 @@ span{
                 }
                 #card{
                     width:vw-calc(511);
-                    height:vw-calc(698);
-                    background: url('../ex303HKI/images/card.svg') top / 100% repeat-y;
+                    height:vw-calc(698 - 59 - 87 + 20);
+                    background: url('../ex303HKI/images/card_bg.svg') top / 99.95% repeat-y;
                     position: absolute;
-                    top:vw-calc(93);
+                    top:45vh;
                     left:calc(50% + #{vw-calc(342)});
-                    padding:vw-calc(100 50 87);
+                    padding:vw-calc(30 50 87);
                     color:#074A45;
                     display: flex;
                     opacity: 0;
                     visibility: hidden;
-                    transform: translate3d(0,0,0) scale(.85);
+                    transform: translate3d(0,-50%,0) scale(.85);
                     transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
-                    // &:before, &:after{
-                    //     content:'';
-                    //     width:100%;
-                    //     position: absolute;
-                    //     left:0;
-                    //     background: url('../ex303HKI/images/card.svg') top / 100% no-repeat;
-                    // }
-                    // &:before{
-                    //     height:vw-calc(59);
-                    //     bottom:100%;
-                    // }
-                    // &:after{
-                    //     height:vw-calc(87);
-                    //     top:100%;
-                    //     background-position: bottom;
-                    // }
-                    #closeBtn{
-                        width:vw-calc(22);
-                        height:vw-calc(22);
+                    &:before, &:after{
+                        content:'';
+                        width:100%;
                         position: absolute;
-                        top:vw-calc(40);
+                        left:0;
+                        background: url('../ex303HKI/images/card.svg') top / 100% no-repeat;
+                    }
+                    &:before{
+                        height:vw-calc(59);
+                        bottom:100%;
+                    }
+                    &:after{
+                        height:vw-calc(87);
+                        top:100%;
+                        background-position: bottom;
+                    }
+                    #closeBtn{
+                        width:vw-calc(32);
+                        height:vw-calc(32);
+                        position: absolute;
+                        top:vw-calc(-20);
                         right:vw-calc(63);
                         span{
                             width:100%;
@@ -368,6 +368,7 @@ span{
                     #wrap{
                         width:100%;
                         position: relative;
+                        z-index:2;
                         #title{
                             display: flex;
                             justify-content: space-between;
@@ -437,48 +438,51 @@ span{
                                 }
                             }
                         }
-                        #btnOuterWrap{
-                            width:100%;
-                            display: flex;
-                            justify-content: space-between;
-                            position: absolute;
-                            top: 97%;
-                            .btnWrap{
-                                &>div{
-                                    display: flex;
-                                    align-items: center;
-                                    &:active{
-                                        #icon{
-                                            background:$lightblue;
-                                            transform: translate3d(0,0,0) scale(.9);
-                                            g{
-                                                stroke:$white;
-                                            }
-                                        }
-                                    }
+                    }
+                    #btnOuterWrap{
+                        width:100%;
+                        display: flex;
+                        justify-content: space-between;
+                        position: absolute;
+                        top: 90%;
+                        left:0;
+                        padding:vw-calc(30 50 87);
+                        z-index: 2;
+                        .btnWrap{
+                            &>div{
+                                display: flex;
+                                align-items: center;
+                                &:active{
                                     #icon{
-                                        width:vw-calc(42 + 2);
-                                        height:vw-calc(42 + 2);
-                                        border-radius: 50%;
-                                        border: vw-calc(2) solid $lightblue;
-                                        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+                                        background:$lightblue;
+                                        transform: translate3d(0,0,0) scale(.9);
                                         g{
-                                            stroke:$lightblue;
-                                            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+                                            stroke:$white;
                                         }
-                                    }
-                                    span{
-                                        width:vw-calc(80);
-                                        margin:vw-calc(0 12);
-                                        font-size:vw-calc(10);
-                                        line-height: vw-calc(14);
                                     }
                                 }
-                                #nextBtn{
-                                    flex-direction: row-reverse;
-                                    span{
-                                        text-align: right;
+                                #icon{
+                                    width:vw-calc(42 + 2);
+                                    height:vw-calc(42 + 2);
+                                    border-radius: 50%;
+                                    border: vw-calc(2) solid $lightblue;
+                                    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+                                    g{
+                                        stroke:$lightblue;
+                                        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
                                     }
+                                }
+                                span{
+                                    width:vw-calc(120);
+                                    margin:vw-calc(0 12);
+                                    font-size:vw-calc(10);
+                                    line-height: vw-calc(14);
+                                }
+                            }
+                            #nextBtn{
+                                flex-direction: row-reverse;
+                                span{
+                                    text-align: right;
                                 }
                             }
                         }

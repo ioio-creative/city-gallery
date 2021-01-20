@@ -263,6 +263,7 @@ const Content = props => {
                 if (!sidebar.classList.contains('minimize')) {
                   sidebar.classList.remove('active');
                   sidebar.classList.add('minimize');
+                  props.setClickedSectionIdx(i);
                 }
               }
             } else if (i > currentSectionIdx) {
@@ -302,7 +303,9 @@ const Content = props => {
                 }
 
                 if(oldCurrentSectionIdx !== i){
-                  props.setCurrentSectionIdx(i);
+                  console.log(i);
+                  // props.setCurrentSectionIdx(i);
+                  props.goToSection(i);
                   oldCurrentSectionIdx = i;
                 }
                 // console.log(i,pageOfNav)

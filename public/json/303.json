@@ -180,8 +180,8 @@
           "area":"Area",
           "locations":["Kennedy Town", "Sheung Wan", "Central", "Wan Chai", "Causeway Bay", "North Point", "Quarry Bay", "Shau Kei Wan"],
           "streetArea":["Sheung Wan Area", "Central and Wan Chai Area", "Causeway Bay Area", "Quarry Bay Area"],
-          "reference":"The coastline in this map is for reference only. <br/>Reclamation data only shows part of the area within the Victoria Harbour",
-          "hints":"Please click on the different buoys to<br/>explore information about different reclamation areas",
+          "reference":"The coastline in this map is for reference only. Reclamation data only shows part of the area within the Victoria Harbour",
+          "hints":"Please click on the different buoys to explore information about different reclamation areas",
           "streetInfo":"Street information",
           "coastInfo":"Coastline information",
           "to":"&nbsp;to <br/>"
@@ -396,7 +396,7 @@
           {
             "zone":1,
             "marker":{
-              "name":"干德道",
+              "name":"Conduit Road",
               "namePos":"top",
               "pos":{
                 "x":1846,
@@ -425,7 +425,7 @@
           {
             "zone":1,
             "marker":{
-              "name":"樓梯街",
+              "name":"Ladder Street",
               "namePos":"left",
               "pos":{
                 "x":2121,
@@ -454,7 +454,7 @@
           {
             "zone":1,
             "marker":{
-              "name":"荷李活道",
+              "name":"Hollywood Road",
               "namePos":"top",
               "pos":{
                 "x":2207,
@@ -483,7 +483,7 @@
           {
             "zone":1,
             "marker":{
-              "name":"奧卑利街",
+              "name":"Old Bailey Street",
               "namePos":"top",
               "pos":{
                 "x":2282,
@@ -512,7 +512,7 @@
           {
             "zone":2,
             "marker":{
-              "name":"炮台里",
+              "name":"Battery Path",
               "namePos":"top",
               "pos":{
                 "x":2511,
@@ -541,7 +541,7 @@
           {
             "zone":2,
             "marker":{
-              "name":"星街",
+              "name":"Star Street",
               "namePos":"top",
               "pos":{
                 "x":2864,
@@ -570,7 +570,7 @@
           {
             "zone":2,
             "marker":{
-              "name":"日街",
+              "name":"Sun Street",
               "namePos":"top",
               "pos":{
                 "x":2916,
@@ -599,7 +599,7 @@
           {
             "zone":2,
             "marker":{
-              "name":"月街",
+              "name":"Moon Street",
               "namePos":"top",
               "pos":{
                 "x":2970,
@@ -628,7 +628,7 @@
           {
             "zone":2,
             "marker":{
-              "name":"軍器廠街",
+              "name":"Arsenal Street",
               "namePos":"top",
               "pos":{
                 "x":2933,
@@ -657,7 +657,7 @@
           {
             "zone":2,
             "marker":{
-              "name":"船街",
+              "name":"Ship Street",
               "namePos":"right",
               "pos":{
                 "x":3001,
@@ -686,7 +686,7 @@
           {
             "zone":3,
             "marker":{
-              "name":"堅拿道東",
+              "name":"Canal Road",
               "namePos":"top",
               "pos":{
                 "x":3433,
@@ -715,7 +715,7 @@
           {
             "zone":3,
             "marker":{
-              "name":"糖街",
+              "name":"Sugar Street",
               "namePos":"top",
               "pos":{
                 "x":3679,
@@ -744,7 +744,7 @@
           {
             "zone":3,
             "marker":{
-              "name":"高士威道",
+              "name":"Causeway Road",
               "namePos":"top",
               "pos":{
                 "x":3795,
@@ -773,7 +773,7 @@
           {
             "zone":3,
             "marker":{
-              "name":"大坑道",
+              "name":"Tai Hang Road",
               "namePos":"top",
               "pos":{
                 "x":3976,
@@ -802,7 +802,7 @@
           {
             "zone":3,
             "marker":{
-              "name":"電氣道",
+              "name":"Electric Road",
               "namePos":"top",
               "pos":{
                 "x":3893,
@@ -831,7 +831,7 @@
           {
             "zone":3,
             "marker":{
-              "name":"銀幕街",
+              "name":"Ngan Mok Street",
               "namePos":"top",
               "pos":{
                 "x":3929,
@@ -860,7 +860,7 @@
           {
             "zone":3,
             "marker":{
-              "name":"月園街",
+              "name":"Yuet Yuen Street",
               "namePos":"top",
               "pos":{
                 "x":4087,
@@ -889,7 +889,7 @@
           {
             "zone":3,
             "marker":{
-              "name":"和富道",
+              "name":"Wharf Road",
               "namePos":"top",
               "pos":{
                 "x":4159,
@@ -918,7 +918,7 @@
           {
             "zone":4,
             "marker":{
-              "name":"七姊妹道",
+              "name":"Tsat Tsz Mui Road",
               "namePos":"top",
               "pos":{
                 "x":4371,
@@ -947,7 +947,7 @@
           {
             "zone":4,
             "marker":{
-              "name":"糖廠街",
+              "name":"Tong Chong Street",
               "namePos":"top",
               "pos":{
                 "x":4748,
@@ -976,7 +976,7 @@
           {
             "zone":4,
             "marker":{
-              "name":"鰂魚涌街",
+              "name":"Quarry Bay Street",
               "namePos":"top",
               "pos":{
                 "x":4759,
@@ -2049,7 +2049,7 @@
           {
             "zone":1,
             "marker":{
-              "name":"諾士佛臺",
+              "name":"Knutsford Terrace",
               "namePos":"top",
               "pos":{
                 "x":2050,
@@ -2078,7 +2078,7 @@
           {
             "zone":1,
             "marker":{
-              "name":"天文臺道",
+              "name":"Observatory Road",
               "namePos":"top",
               "pos":{
                 "x":2156,
@@ -2107,7 +2107,7 @@
           {
             "zone":2,
             "marker":{
-              "name":"新填地街",
+              "name":"Reclamation Street",
               "namePos":"left",
               "pos":{
                 "x":1773,
@@ -2136,7 +2136,7 @@
           {
             "zone":2,
             "marker":{
-              "name":"渡船街",
+              "name":"Ferry Street",
               "namePos":"top",
               "pos":{
                 "x":1751,
@@ -2165,7 +2165,7 @@
           {
             "zone":2,
             "marker":{
-              "name":"眾坊街",
+              "name":"Public Square Street",
               "namePos":"top",
               "pos":{
                 "x":1962,
@@ -2194,7 +2194,7 @@
           {
             "zone":2,
             "marker":{
-              "name":"廟街",
+              "name":"Temple Street",
               "namePos":"right",
               "pos":{
                 "x":1939,
@@ -2223,7 +2223,7 @@
           {
             "zone":3,
             "marker":{
-              "name":"西洋菜街",
+              "name":"Sai Yeung Choi Street",
               "namePos":"top",
               "pos":{
                 "x":1823,
@@ -2252,7 +2252,7 @@
           {
             "zone":3,
             "marker":{
-              "name":"通菜街",
+              "name":"Tung Choi Street",
               "namePos":"top",
               "pos":{
                 "x":1880,
@@ -2281,7 +2281,7 @@
           {
             "zone":3,
             "marker":{
-              "name":"界限街",
+              "name":"Boundary Street",
               "namePos":"top",
               "pos":{
                 "x":2112,

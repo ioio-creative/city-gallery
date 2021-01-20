@@ -182,29 +182,29 @@ const G303 = props => {
                       })
                     }
                     </ul>
-                    <div id="btnOuterWrap">
-                      <div className="btnWrap">
-                        {
-                          i-1 >= 0 && 
-                          <div id="prevBtn" onClick={()=> setCoastlineIdx(i-1)}>
-                            <div id="icon">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><g><g fill="none" stroke="#70ccb8" strokeLinecap="round" strokeWidth="2"><path d="M26.339 33.179L14.037 20.877"/><path d="M26.339 8.575L14.037 20.877"/></g></g></svg>
-                            </div>
-                            <span dangerouslySetInnerHTML={{__html:coastlineData[i-1].marker.name}}></span>
+                  </div>
+                  <div id="btnOuterWrap">
+                    <div className="btnWrap">
+                      {
+                        i-1 >= 0 && 
+                        <div id="prevBtn" onClick={()=> setCoastlineIdx(i-1)}>
+                          <div id="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><g><g fill="none" stroke="#70ccb8" strokeLinecap="round" strokeWidth="2"><path d="M26.339 33.179L14.037 20.877"/><path d="M26.339 8.575L14.037 20.877"/></g></g></svg>
                           </div>
-                        }
+                          <span dangerouslySetInnerHTML={{__html:coastlineData[i-1].marker.name}}></span>
                         </div>
-                      <div className="btnWrap">
-                        {
-                          i+1 < coastlineData.length && 
-                          <div id="nextBtn" onClick={()=> setCoastlineIdx(i+1)}>
-                            <div id="icon">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><g><g fill="none" stroke="#70ccb8" strokeLinecap="round" strokeWidth="2"><path d="M15.618 8.437L27.92 20.739"/><path d="M15.618 33.041L27.92 20.739"/></g></g></svg>
-                            </div>
-                            <span dangerouslySetInnerHTML={{__html:coastlineData[i+1].marker.name}}></span>
-                          </div>
-                        }
+                      }
                       </div>
+                    <div className="btnWrap">
+                      {
+                        i+1 < coastlineData.length && 
+                        <div id="nextBtn" onClick={()=> setCoastlineIdx(i+1)}>
+                          <div id="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><g><g fill="none" stroke="#70ccb8" strokeLinecap="round" strokeWidth="2"><path d="M15.618 8.437L27.92 20.739"/><path d="M15.618 33.041L27.92 20.739"/></g></g></svg>
+                          </div>
+                          <span dangerouslySetInnerHTML={{__html:coastlineData[i+1].marker.name}}></span>
+                        </div>
+                      }
                     </div>
                   </div>
                 </div>

@@ -67,8 +67,8 @@ const Menu = props => {
           {
             props.locationName === 'tst' &&
             <div id='switch' className={`${props.gameMode} ${props.yearIdx === 3 && props.gameMode !== 'home' ? '' : 'hide'}`}>
-              <span onClick={() => {props.setGameMode('coast'); props.setStreetIdx(null); props.setZone(0); }}> {globalData.coastline} </span>
-              <span onClick={() => {props.setGameMode('street'); }}> {globalData.street} </span>
+              <span onClick={() => {props.setGameMode('coast'); props.setStreetIdx(null); }}> {globalData.coastline} </span>
+              <span onClick={() => {props.setGameMode('street'); props.setCoastlineIdx(null); props.setZone(0); }}> {globalData.street} </span>
             </div>
           }
           <div className={`descriptionBox ${props.locationName === 'tst' ? (!props.showNav ? '' : props.yearIdx < 3 ? '' : 'hide') : ''}`}>
