@@ -635,7 +635,7 @@ const Map = props => {
 
         if(showCoastlineTl) showCoastlineTl.kill();
         showCoastlineTl = gsap.timeline();
-        showCoastlineTl.to(targetYears, 8, { p: 0, stagger:0.4, ease: 'power2.out',
+        showCoastlineTl.to(targetYears, 10, { p: 0, stagger:0.4, ease: 'power2.out',
           onUpdate: function () {
             this.targets().forEach((target, i) => {
               if(i <= selectedCoastlineIdx)
