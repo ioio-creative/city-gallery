@@ -1,6 +1,13 @@
 @import '../../setting.scss';
 
 @font-face {
+  font-family: 'NotoSansTC';
+  src: url('../../exhibitions/exG02B2/fonts/NotoSansTC-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'FuturaLT';
   src: url('../../fonts/FuturaLT-Bold.eot');
   src: url('../../fonts/FuturaLT-Bold.woff2') format('woff2'), url('../../fonts/FuturaLT-Bold.woff') format('woff'), url('../../fonts/FuturaLT-Bold.ttf') format('truetype'), url('../../fonts/FuturaLT-Bold.svg#FuturaLT-Bold') format('svg'),
@@ -32,7 +39,7 @@
   height: 100%;
   background: linear-gradient(130deg, rgba(150, 228, 251, 1) 0%, rgba(174, 210, 242, 1) 100%);
   overflow: hidden;
-  font-family: 'FuturaLT', 'Microsoft JhengHei', sans-serif;
+  font-family: 'FuturaLT', 'NotoSansTC', sans-serif;
   &.hideEarth {
     #canvasWrap {
       display: none;
