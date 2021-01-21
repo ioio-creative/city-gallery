@@ -181,8 +181,8 @@ const G02BContainer = props => {
   const setIsIdleFunc = useRef(null); // local function
 
   const [domId, setDomId] = useState(0);
-  const blockWidth = window.innerWidth / 3.1;
-  const blockHeight = blockWidth;
+  let blockWidth = window.innerWidth / 3.1;
+  let blockHeight = blockWidth;
   // const [status, setStatus] = useState(G02BStatus.IDLE);
   const [language, setLanguage] = useState('zh');
   const [contentData, setContentData] = useState(null);
@@ -319,13 +319,20 @@ const G02BContainer = props => {
       setCurrentRowIdx(-Math.floor((easeElemPos.y + blockHeight / 8) / blockHeight));
     };
 
+    const onResize = () => {
+      blockWidth = window.innerWidth / 3.1;
+      blockHeight = blockWidth;
+    }
+
     loop();
     document.addEventListener('mousedown', onMouseDown, false);
     document.addEventListener('touchstart', onMouseDown, false);
+    window.addEventListener('resize', onResize, false);
     return () => {
       cancelAnimationFrame(player);
       document.removeEventListener('mousedown', onMouseDown, false);
       document.removeEventListener('touchstart', onMouseDown, false);
+      window.removeEventListener('resize', onResize, false);
     };
   }, []);
 
@@ -511,7 +518,7 @@ const G02BContainer = props => {
                   contentData.cities[domId].icon &&
                   contentData.cities[domId].icon.map((v, i) => {
                     return (
-                      <div className={`icon${i + 1}`}>
+                      <div key={i} className={`icon${i + 1}`}>
                         <img src={v} />
                       </div>
                     );
