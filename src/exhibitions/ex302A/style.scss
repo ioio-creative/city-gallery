@@ -1,29 +1,12 @@
 @import '../../setting.scss';
-@import url('http://fonts.googleapis.com/earlyaccess/notosanstc.css');
+// @import url('http://fonts.googleapis.com/earlyaccess/notosanstc.css');
 
-// @font-face {
-//     font-family: 'FuturaLT';
-//     src: url('../../fonts/FuturaLT-Bold.eot');
-//     src: url('../../fonts/FuturaLT-Bold.woff2') format('woff2'),
-//          url('../../fonts/FuturaLT-Bold.woff') format('woff'),
-//          url('../../fonts/FuturaLT-Bold.ttf') format('truetype'),
-//          url('../../fonts/FuturaLT-Bold.svg#FuturaLT-Bold') format('svg'),
-//          url('../../fonts/FuturaLT-Bold.eot?#iefix') format('embedded-opentype');
-//     font-weight: bold;
-//     font-style: normal;
-// }
-
-// @font-face {
-//     font-family: 'FuturaLT';
-//     src: url('../../fonts/FuturaLT.eot');
-//     src: url('../../fonts/FuturaLT.woff2') format('woff2'),
-//             url('../../fonts/FuturaLT.woff') format('woff'),
-//             url('../../fonts/FuturaLT.ttf') format('truetype'),
-//             url('../../fonts/FuturaLT.svg#FuturaLT') format('svg'),
-//             url('../../fonts/FuturaLT.eot?#iefix') format('embedded-opentype');
-//     font-weight: normal;
-//     font-style: normal;
-// }
+@font-face {
+  font-family: 'NotoSansTC';
+  src: url('./fonts/NotoSansTC-Regular.otf') format('openType');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
   font-family: 'Helvetica Neue LT Std';
@@ -109,7 +92,7 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  font-family: 'Helvetica Neue LT Std', 'Noto Sans TC', sans-serif;
+  font-family: 'Helvetica Neue LT Std', 'NotoSansTC', sans-serif;
   background: url('./images/bg@2x.png') no-repeat;
   background-size: cover;
   overflow: hidden;
