@@ -240,7 +240,7 @@ const Map = props => {
                   gl_FragColor = mix(startOceanDiffuseColor, oceanDiffuseColor, v);
                 //}
 
-                if(coastline1900MaskColor.a >= .01){
+                if(coastline1900MaskColor.a >= 0.6){
                     float value = progress1900 * (1. + _threshold);
                     float v = clamp( (noiseTextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
 
@@ -252,7 +252,7 @@ const Map = props => {
                     // hide effect
                     coastline1900Color = mix(coastline1900Color, vec4(0., 0., 0., 0.), v2);
                 }
-                if(coastline1945MaskColor.a >= .01){
+                if(coastline1945MaskColor.a >= 0.6){
                     float value = progress1945 * (1. + _threshold);
                     float v = clamp( (noiseTextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
 
@@ -264,7 +264,7 @@ const Map = props => {
                     // hide effect
                     coastline1945Color = mix(coastline1945Color, vec4(0., 0., 0., 0.), v2);
                 }
-                if(coastline1985MaskColor.a >= .01){
+                if(coastline1985MaskColor.a >= 0.6){
                     float value = progress1985 * (1. + _threshold);
                     float v = clamp( (noiseTextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
                     
@@ -276,7 +276,7 @@ const Map = props => {
                     // hide effect
                     coastline1985Color = mix(coastline1985Color, vec4(0., 0., 0., 0.), v2); 
                 }
-                if(coastline2019MaskColor.a >= .01){
+                if(coastline2019MaskColor.a >= 0.6){
                     float value = progress2019 * (1. + _threshold);
                     float v = clamp( (noiseTextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
 
@@ -295,7 +295,7 @@ const Map = props => {
                 gl_FragColor = mix(gl_FragColor, coastline1900Color, coastline1900Color.a);
                 
                 // island
-                if(islandMaskTextureColor.a >= .01){
+                if(islandMaskTextureColor.a >= 0.6){
                   float value = islandProgress * (1. + _threshold);
                   float v = clamp( (sandTextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
                   gl_FragColor = mix(startIslandDiffuseColor, islandDiffuseColor, v);
