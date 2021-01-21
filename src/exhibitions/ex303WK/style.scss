@@ -108,7 +108,136 @@ span{
         text-shadow: 0 vw-calc(3 6) #074A45;
     }
 }
-
+#popupTutor{
+    width:100%;
+    height:100%;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s cubic-bezier(0.87, 0, 0.13, 1);
+    &.active{
+        opacity: 1;
+        visibility: visible;
+    }
+    #content{
+        width:vw-calc(653);
+        height:vw-calc(653);
+        border-radius: 50%;
+        border: vw-calc(5) solid #fff;
+        background:#000;
+        color:#fff;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate3d(-50%,-50%,0);
+        #title{
+            display: flex;
+            margin-top:vw-calc(141);
+            padding:0 vw-calc(100);
+            &>*{
+                padding:0 vw-calc(30);
+            }
+            p{
+                font-size:vw-calc(35);
+                font-weight: bold;
+                flex: 0;
+                white-space: nowrap;
+            }
+            span{
+                font-size:vw-calc(18);
+                line-height:vw-calc(27);
+            }
+        }
+        &.slide2{
+            #man{
+                left:45%;
+                background:url('../ex303HKI/images/man_right.svg') no-repeat;
+                span{
+                    top: 16%;
+                    left: 83%;
+                }
+            }
+        }
+        #man{
+            width:vw-calc(224);
+            height:vw-calc(284);
+            background:url('../ex303HKI/images/man_left.svg') no-repeat;
+            position: absolute;
+            left:55%;
+            bottom:vw-calc(78);
+            transform: translate3d(-50%,0,0);
+            span{
+                width:vw-calc(54);
+                height: vw-calc(54);
+                background:#26FAFA;
+                opacity: .44;
+                border-radius: 50%;
+                position: absolute;
+                top: 16%;
+                left: -7%;
+                &:before, &:after{
+                    content:'';
+                    width:calc(100% - #{vw-calc(3)});
+                    height:calc(100% - #{vw-calc(3)});
+                    border-radius: vw-calc(100);
+                    border:vw-calc(3) solid #26FAFA;
+                    position: absolute;
+                    top:0;
+                    left:0;
+                    opacity: 1;
+                    transform: translate3d(0,0,0) scale(0);
+                    pointer-events: none;
+                    touch-action: none;
+                }
+                &:before{
+                    animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+                }
+                &:after{
+                    animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite 1s;
+                }
+            }
+        }
+        .btn{
+            width:vw-calc(76);
+            height:vw-calc(76);
+            border-radius: 50%;
+            border:vw-calc(3) solid #fff;
+            position: absolute;
+            top:50%;
+            transform: translate3d(0,-50%,0);
+            background:#000;
+            &:before{
+                content:'';
+                width:vw-calc(30);
+                height:vw-calc(20);
+                background:url('../ex303HKI/images/arrow_stroke.svg') no-repeat;
+                position: absolute;
+                top:50%;
+                left:50%;
+            }
+            &#leftBtn{
+                right:calc(100% + #{vw-calc(37)});
+                &:before{
+                    transform: translate3d(-50%,-50%,0) rotate(-90deg);
+                }
+            }
+            &#rightBtn{
+                left:calc(100% + #{vw-calc(37)});
+                &:before{
+                    transform: translate3d(-50%,-50%,0) rotate(90deg);
+                }
+            }
+        }
+    }
+    #bg{
+        width:100%;
+        height:100%;
+        background: rgba(0,0,0,.65);
+    }
+}
 // .zone1_street{
 //     transform: translate3d(-15.4%,-44%,0);
 // }
@@ -124,6 +253,9 @@ span{
 
 
 .en#main{
+    #popupTutor #content #title p{
+        white-space: normal;
+    }
     #coast #locationsWrap #locations{
         font-size: vw-calc(16);
     }

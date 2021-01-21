@@ -19,6 +19,7 @@ const G303 = props => {
   const [language, setLanguage] = useState('tc');
   // const [started, setStarted] = useState(false);
   const [yearIdx, setYearIdx] = useState(-1);
+  const [tutorIdx, setTutorIdx] = useState(0);
   // const [zoomed, setZoomed] = useState(false);
   // const [mapIndicatorIdx, setMapIndicatorIdx] = useState(0);
   // const [streetData, setStreetData] = useState(null);
@@ -35,6 +36,7 @@ const G303 = props => {
   const [coastlineIdx, setCoastlineIdx] = useState(null);
   const [streetIdx, setStreetIdx] = useState(null);
   const [runTransition, setRunTransition] = useState(false);
+  const [showTutor, setShowTutor] = useState(false);
   const [socket, setSocket] = useState(null);
   // const [showWholeScreen, setShowWholeScreen] = useState(params.fullscreen !== undefined ? true : false);
 
@@ -125,6 +127,11 @@ const G303 = props => {
     setShowYear(true);
     handleShowCoastline.current.showCoastline(-1);
   };
+
+  const onShowTutor = (bool) => {
+    setShowTutor(bool);
+    setTutorIdx(0);
+  }
 
   const pxToVw = (px, isMarker = true) => {
     if(isMarker)
@@ -328,17 +335,22 @@ const G303 = props => {
       
       <div id="yearOfCoastline" className={`${showYear || coastlineIdx  !== null || streetIdx !== null ? 'disabled' : gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}></div>
       <div id="ref" className={`${gameMode === 'home' ? 'hide' : ''} ${yearIdx === 3 ? 'w' : ''}`} dangerouslySetInnerHTML={{__html:globalData && globalData.reference}}></div>
-      
-      {/* <div id='streetInfo'> */}
-        {/* {streetData && <h1>{streetData.name}</h1>} */}
-        {/* <div id='markerOuterWrap'>
-          <div id='markerWrap'>
-            {props.appData.streets[mapIndicatorIdx].map((v, i) => {
-              return <span key={i} style={{ transform: `translate3d(${v.marker.x}px, ${v.marker.y}px, 0` }}></span>;
-            })}
+
+      <div id="popupTutor" className={showTutor ? 'active' : ''}>
+        <div id="content" className={`slide${tutorIdx+1}`}>
+          <div id="title">
+            <p>{globalData && globalData.tutor[tutorIdx][0]}</p>
+            <span>{globalData && globalData.tutor[tutorIdx][1]}</span>
           </div>
-        </div> */}
-      {/* </div> */}
+          <div id="man">
+            <span></span>
+          </div>
+          {tutorIdx > 0 && <div id="leftBtn" className="btn" onClick={()=>setTutorIdx(0)}></div>}
+          {tutorIdx < 1 && <div id="rightBtn" className="btn" onClick={()=>setTutorIdx(1)}></div>}
+        </div>
+        <div id="bg" onClick={()=>onShowTutor(false)}></div>
+      </div>
+
 
       <Menu 
         globalData={globalData}
@@ -346,6 +358,7 @@ const G303 = props => {
         language={language}
         setLanguage={setLanguage}
         runTransition={runTransition}
+        onShowTutor={onShowTutor}
         back={onBack}
         showNav={showNav} 
         yearIdx={yearIdx} 

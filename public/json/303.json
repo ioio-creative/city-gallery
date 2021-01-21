@@ -184,7 +184,11 @@
           "hints":"Please click on the different buoys to explore information about different reclamation areas",
           "streetInfo":"Street information",
           "coastInfo":"Coastline information",
-          "to":"&nbsp;to <br/>"
+          "to":"&nbsp;to <br/>",
+          "tutor":[
+            ["Raise left hand","Now please raise your left hand and pay attention to the screen above. Try to swipe left and right to select the dot on the left."],
+            ["Raise right hand","Now please raise your right hand and pay attention to the screen above. Try to swipe left and right to select the dot on the right."]
+          ]
         },
         "coastline":[
           {
@@ -1017,7 +1021,11 @@
           "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊",
           "streetInfo":"街道資訊",
           "coastInfo":"填海資訊",
-          "to":"至<br/>"
+          "to":"至<br/>",
+          "tutor":[
+            ["舉起左手","現在請舉起你的左手，留意上面的屏幕。嘗試左右揮動，以選取左邊的圓點。"],
+            ["舉起右手","現在請舉起你的右手，留意上面的屏幕。嘗試左右揮動，以選取右邊的圓點。"]
+          ]
         },
         "coastline":[
           {
@@ -2024,7 +2032,11 @@
           "hints":"Please click on the different buoys to<br/>explore information about different reclamation areas",
           "streetInfo":"Street information",
           "coastInfo":"Coastline information",
-          "to":"&nbsp;to <br/>"
+          "to":"&nbsp;to <br/>",
+          "tutor":[
+            ["Raise left hand","Now please raise your left hand and pay attention to the screen above. Try to swipe left and right to select the dot on the left."],
+            ["Raise right hand","Now please raise your right hand and pay attention to the screen above. Try to swipe left and right to select the dot on the right."]
+          ]
         },
         "coastline":[
           {
@@ -2322,7 +2334,11 @@
           "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊",
           "streetInfo":"街道資訊",
           "coastInfo":"填海資訊",
-          "to":"至"
+          "to":"至",
+          "tutor":[
+            ["舉起左手","現在請舉起你的左手，留意上面的屏幕。嘗試左右揮動，以選取左邊的圓點。"],
+            ["舉起右手","現在請舉起你的右手，留意上面的屏幕。嘗試左右揮動，以選取右邊的圓點。"]
+          ]
         },
         "coastline":[
           {
@@ -2795,7 +2811,11 @@
           "hints":"Please click on the different buoys to<br/>explore information about different reclamation areas",
           "streetInfo":"Street information",
           "coastInfo":"Coastline information",
-          "to":"&nbsp;to <br/>"
+          "to":"&nbsp;to <br/>",
+          "tutor":[
+            ["Raise left hand","Now please raise your left hand and pay attention to the screen above. Try to swipe left and right to select the dot on the left."],
+            ["Raise right hand","Now please raise your right hand and pay attention to the screen above. Try to swipe left and right to select the dot on the right."]
+          ]
         },
         "coastline":[
           {
@@ -2902,7 +2922,11 @@
           "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊",
           "streetInfo":"街道資訊",
           "coastInfo":"填海資訊",
-          "to":"至"
+          "to":"至",
+          "tutor":[
+            ["舉起左手","現在請舉起你的左手，留意上面的屏幕。嘗試左右揮動，以選取左邊的圓點。"],
+            ["舉起右手","現在請舉起你的右手，留意上面的屏幕。嘗試左右揮動，以選取右邊的圓點。"]
+          ]
         },
         "coastline":[
           {
@@ -3179,7 +3203,11 @@
           "hints":"Please click on the different buoys to<br/>explore information about different reclamation areas",
           "streetInfo":"Street information",
           "coastInfo":"Coastline information",
-          "to":"&nbsp;to <br/>"
+          "to":"&nbsp;to <br/>",
+          "tutor":[
+            ["Raise left hand","Now please raise your left hand and pay attention to the screen above. Try to swipe left and right to select the dot on the left."],
+            ["Raise right hand","Now please raise your right hand and pay attention to the screen above. Try to swipe left and right to select the dot on the right."]
+          ]
         },
         "coastline":[
           {
@@ -3212,7 +3240,11 @@
           "hints":"請按下不同的浮標以<br/>探索不同填海區的資訊",
           "streetInfo":"街道資訊",
           "coastInfo":"填海資訊",
-          "to":"至"
+          "to":"至",
+          "tutor":[
+            ["舉起左手","現在請舉起你的左手，留意上面的屏幕。嘗試左右揮動，以選取左邊的圓點。"],
+            ["舉起右手","現在請舉起你的右手，留意上面的屏幕。嘗試左右揮動，以選取右邊的圓點。"]
+          ]
         },
         "coastline":[
           {

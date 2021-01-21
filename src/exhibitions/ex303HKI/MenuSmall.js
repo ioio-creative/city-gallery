@@ -92,7 +92,7 @@ const Menu = props => {
             <div id="en" className={props.language === 'en' ? 'active' : ''} onClick={()=>props.setLanguage('en')}>ENG</div>
           </div>
           <div id="questionBtnWrap">
-            <div id="questionBtn">?</div>
+            <div id="questionBtn" onClick={()=>props.onShowTutor(true)}>?</div>
           </div>
         </div>
       </div>

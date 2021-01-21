@@ -139,7 +139,141 @@ span{
     }
 }
 
+#popupTutor{
+    width:100%;
+    height:100%;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s cubic-bezier(0.87, 0, 0.13, 1);
+    &.active{
+        opacity: 1;
+        visibility: visible;
+    }
+    #content{
+        width:vw-calc(653, $width);
+        height:vw-calc(653, $width);
+        border-radius: 50%;
+        border: vw-calc(5, $width) solid #fff;
+        background:#000;
+        color:#fff;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate3d(-50%,-50%,0);
+        #title{
+            display: flex;
+            margin-top:vw-calc(141, $width);
+            padding:0 vw-calc(100, $width);
+            &>*{
+                padding:0 vw-calc(30, $width);
+            }
+            p{
+                font-size:vw-calc(35, $width);
+                font-weight: bold;
+                flex: 0;
+                white-space: nowrap;
+            }
+            span{
+                font-size:vw-calc(18, $width);
+                line-height:vw-calc(27, $width);
+            }
+        }
+        &.slide2{
+            #man{
+                left:45%;
+                background:url('./images/man_right.svg') no-repeat;
+                span{
+                    top: 16%;
+                    left: 83%;
+                }
+            }
+        }
+        #man{
+            width:vw-calc(224, $width);
+            height:vw-calc(284, $width);
+            background:url('./images/man_left.svg') no-repeat;
+            position: absolute;
+            left:55%;
+            bottom:vw-calc(78, $width);
+            transform: translate3d(-50%,0,0);
+            span{
+                width:vw-calc(54, $width);
+                height: vw-calc(54, $width);
+                background:#26FAFA;
+                opacity: .44;
+                border-radius: 50%;
+                position: absolute;
+                top: 16%;
+                left: -7%;
+                &:before, &:after{
+                    content:'';
+                    width:calc(100% - #{vw-calc(3)});
+                    height:calc(100% - #{vw-calc(3)});
+                    border-radius: vw-calc(100, $width);
+                    border:vw-calc(3, $width) solid #26FAFA;
+                    position: absolute;
+                    top:0;
+                    left:0;
+                    opacity: 1;
+                    transform: translate3d(0,0,0) scale(0);
+                    pointer-events: none;
+                    touch-action: none;
+                }
+                &:before{
+                    animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+                }
+                &:after{
+                    animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite 1s;
+                }
+            }
+        }
+        .btn{
+            width:vw-calc(76, $width);
+            height:vw-calc(76, $width);
+            border-radius: 50%;
+            border:vw-calc(3, $width) solid #fff;
+            position: absolute;
+            top:50%;
+            transform: translate3d(0,-50%,0);
+            background:#000;
+            &:before{
+                content:'';
+                width:vw-calc(30, $width);
+                height:vw-calc(20, $width);
+                background:url('./images/arrow_stroke.svg') no-repeat;
+                position: absolute;
+                top:50%;
+                left:50%;
+            }
+            &#leftBtn{
+                right:calc(100% + #{vw-calc(37, $width)});
+                &:before{
+                    transform: translate3d(-50%,-50%,0) rotate(-90deg);
+                }
+            }
+            &#rightBtn{
+                left:calc(100% + #{vw-calc(37, $width)});
+                &:before{
+                    transform: translate3d(-50%,-50%,0) rotate(90deg);
+                }
+            }
+        }
+    }
+    #bg{
+        width:100%;
+        height:100%;
+        background: rgba(0,0,0,.65);
+    }
+}
+
 .en#main{
+    #popupTutor #content #title p{
+        white-space: normal;
+    }
     #coast #locationsWrap #locations,
     #street #locationsWrap #locations{
         font-size: vw-calc(16, $width);
@@ -1208,3 +1342,16 @@ span{
         opacity: 1;
     }
 }
+
+@keyframes radar2{
+    0%{
+      opacity: 0;
+    }
+    13%{
+      opacity: 1;
+    }
+    100%{
+      transform: translate3d(0,0,0) scale(3);
+      opacity: 0;
+    }
+  }
