@@ -246,8 +246,8 @@ const Map = props => {
 
                     float value2 = progressHide1900 * (1. + _threshold);
                     float v2 = clamp( (noiseTextureColor.r - 1. + value2) * (1./_threshold), 0., 1.);
-                    coastline1900Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., .8), 1.-v);
-                    coastline1900Color = mix(coastline1900Color, vec4(7. / 255., 74. / 255., 69. / 255., .8), v);
+                    coastline1900Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., .6), 1.-v);
+                    coastline1900Color = mix(coastline1900Color, vec4(7. / 255., 74. / 255., 69. / 255., .6), v);
                     coastline1900Color = vec4(mix(coastline1900DiffuseColor.rgb, coastline1900Color.rgb, coastline1900Color.a), 1.);
                     // hide effect
                     coastline1900Color = mix(coastline1900Color, vec4(0., 0., 0., 0.), v2);
@@ -258,8 +258,8 @@ const Map = props => {
 
                     float value2 = progressHide1945 * (1. + _threshold);
                     float v2 = clamp( (noiseTextureColor.r - 1. + value2) * (1./_threshold), 0., 1.);
-                    coastline1945Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., .8), 1.-v);
-                    coastline1945Color = mix(coastline1945Color, vec4(0. / 255., 122. / 255., 111. / 255., .8), v);
+                    coastline1945Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., .6), 1.-v);
+                    coastline1945Color = mix(coastline1945Color, vec4(0. / 255., 122. / 255., 111. / 255., .6), v);
                     coastline1945Color = vec4(mix(coastline1945DiffuseColor.rgb, coastline1945Color.rgb, coastline1945Color.a), 1.);
                     // hide effect
                     coastline1945Color = mix(coastline1945Color, vec4(0., 0., 0., 0.), v2);
@@ -270,8 +270,8 @@ const Map = props => {
                     
                     float value2 = progressHide1985 * (1. + _threshold);
                     float v2 = clamp( (noiseTextureColor.r - 1. + value2) * (1./_threshold), 0., 1.);
-                    coastline1985Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., .8), 1.-v);
-                    coastline1985Color = mix(coastline1985Color, vec4(40. / 255., 176. / 255., 155. / 255., .8), v);
+                    coastline1985Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., .6), 1.-v);
+                    coastline1985Color = mix(coastline1985Color, vec4(40. / 255., 176. / 255., 155. / 255., .6), v);
                     coastline1985Color = vec4(mix(coastline1985DiffuseColor.rgb, coastline1985Color.rgb, coastline1985Color.a), 1.);
                     // hide effect
                     coastline1985Color = mix(coastline1985Color, vec4(0., 0., 0., 0.), v2); 
@@ -282,8 +282,8 @@ const Map = props => {
 
                     float value2 = progressHide2019 * (1. + _threshold);
                     float v2 = clamp( (noiseTextureColor.r - 1. + value2) * (1./_threshold), 0., 1.);
-                    coastline2019Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., .8), 1.-v);
-                    coastline2019Color = mix(coastline2019Color, vec4(112. / 255., 204. / 255., 184. / 255., .8), v);
+                    coastline2019Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., .6), 1.-v);
+                    coastline2019Color = mix(coastline2019Color, vec4(112. / 255., 204. / 255., 184. / 255., .6), v);
                     coastline2019Color = vec4(mix(coastline2019DiffuseColor.rgb, coastline2019Color.rgb, coastline2019Color.a), 1.);
                     // hide effect
                     coastline2019Color = mix(coastline2019Color, vec4(0., 0., 0., 0.), v2);
