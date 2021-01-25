@@ -32,47 +32,58 @@
         "images": {
           "hongkong": {
             "src": "./images/exG02a/section1/hongkongmap.svg",
-            "source": "Lands Department,<br/>Hong Kong Special Administrative Region"
+            "source": "Lands Department,<br/>Hong Kong Special Administrative Region",
+            "distance": "5km"
           },
           "beijing": {
             "src": "./images/exG02a/section1/beijingmap.svg",
-            "source": "地理国情监测云平台"
+            "source": "地理国情监测云平台",
+            "distance": "20km"
           },
           "cairo": {
             "src": "./images/exG02a/section1/cairomap.svg",
-            "source": "Official Portal of Cairo Governorate"
+            "source": "Official Portal of Cairo Governorate",
+            "distance": "10km"
           },
           "london": {
             "src": "./images/exG02a/section1/londonmap.svg",
-            "source": "Greater London Authority"
+            "source": "Greater London Authority",
+            "distance": "5km"
           },
           "paris": {
             "src": "./images/exG02a/section1/parismap.svg",
-            "source": "Greater Paris Metropolis In Action,<br/>Métropole du Grand Paris"
+            "source": "Greater Paris Metropolis In Action,<br/>Métropole du Grand Paris",
+            "distance": "5km"
           },
           "mexicocity": {
             "src": "./images/exG02a/section1/mexicomap.svg",
-            "source": "Atlas de Riesgos de la Ciudad de México"
+            "source": "Atlas de Riesgos de la Ciudad de México",
+            "distance": "5km"
           },
           "mumbai": {
             "src": "./images/exG02a/section1/mumbaimap.svg",
-            "source": "Municipal Corporation of Greater Mumbai"
+            "source": "Municipal Corporation of Greater Mumbai",
+            "distance": "5km"
           },
           "newyork": {
             "src": "./images/exG02a/section1/newyorkmap.svg",
-            "source": "NYC Department of City Planning"
+            "source": "NYC Department of City Planning",
+            "distance": "5km"
           },
           "singapore": {
             "src": "./images/exG02a/section1/singaporemap.svg",
-            "source": "Meteorological Service Singapore"
+            "source": "Meteorological Service Singapore",
+            "distance": "5km"
           },
           "sydney": {
             "src": "./images/exG02a/section1/sydneymap.svg",
-            "source": "Australian Bureau of Statistics"
+            "source": "Australian Bureau of Statistics",
+            "distance": "5km"
           },
           "tokyo": {
             "src": "./images/exG02a/section1/tokyomap.svg",
-            "source": "Tokyo Metropolitan Government"
+            "source": "Tokyo Metropolitan Government",
+            "distance": "5km"
           }
         }
       },
@@ -492,43 +503,53 @@
           },
           "beijing": {
             "src": "./images/exG02a/section1/beijingmap.svg",
-            "source": "地理国情监测云平台"
+            "source": "地理国情监测云平台",
+            "distance": "20公里"
           },
           "cairo": {
             "src": "./images/exG02a/section1/cairomap.svg",
-            "source": "Official Portal of Cairo Governorate"
+            "source": "Official Portal of Cairo Governorate",
+            "distance": "10公里"
           },
           "london": {
             "src": "./images/exG02a/section1/londonmap.svg",
-            "source": "Greater London Authority"
+            "source": "Greater London Authority",
+            "distance": "5公里"
           },
           "paris": {
             "src": "./images/exG02a/section1/parismap.svg",
-            "source": "Greater Paris Metropolis In Action,<br/>Métropole du Grand Paris"
+            "source": "Greater Paris Metropolis In Action,<br/>Métropole du Grand Paris",
+            "distance": "5公里"
           },
           "mexicocity": {
             "src": "./images/exG02a/section1/mexicomap.svg",
-            "source": "Atlas de Riesgos de la Ciudad de México"
+            "source": "Atlas de Riesgos de la Ciudad de México",
+            "distance": "5公里"
           },
           "mumbai": {
             "src": "./images/exG02a/section1/mumbaimap.svg",
-            "source": "Municipal Corporation of Greater Mumbai"
+            "source": "Municipal Corporation of Greater Mumbai",
+            "distance": "5公里"
           },
           "newyork": {
             "src": "./images/exG02a/section1/newyorkmap.svg",
-            "source": "NYC Department of City Planning"
+            "source": "NYC Department of City Planning",
+            "distance": "5公里"
           },
           "singapore": {
             "src": "./images/exG02a/section1/singaporemap.svg",
-            "source": "Meteorological Service Singapore"
+            "source": "Meteorological Service Singapore",
+            "distance": "5公里"
           },
           "sydney": {
             "src": "./images/exG02a/section1/sydneymap.svg",
-            "source": "Australian Bureau of Statistics"
+            "source": "Australian Bureau of Statistics",
+            "distance": "5公里"
           },
           "tokyo": {
             "src": "./images/exG02a/section1/tokyomap.svg",
-            "source": "Tokyo Metropolitan Government"
+            "source": "Tokyo Metropolitan Government",
+            "distance": "5公里"
           }
         }
       },

@@ -27,7 +27,7 @@ const Section1 = props => {
                     <div className="imageWrap">
                         <div className="map" style={{backgroundImage:`url(${data && locationName && data.images[locationName].src})`}}></div>
                     </div>
-                    <div className="dist">{data && data.distance}<span style={{width:`${60 / 1920 * 100}vw`}}></span></div>
+                    <div className="dist">{data && locationName && data.images[locationName].distance}<span style={{width:`${60 / 1920 * 100}vw`}}></span></div>
                     <div className="source">
                         {globalData && globalData.source}<br/><span dangerouslySetInnerHTML={{__html:data && locationName && data.images[locationName].source}}></span>
                     </div>
