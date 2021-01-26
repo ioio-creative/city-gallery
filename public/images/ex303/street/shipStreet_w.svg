@@ -17,10 +17,10 @@
   </defs>
   <g id="Group_614" data-name="Group 614" transform="translate(-1286.915 -708.47)">
     <g transform="matrix(1, 0, 0, 1, 1286.92, 708.47)" filter="url(#Path_392)">
-      <path id="Path_392-2" data-name="Path 392" d="M798.146,3297.67l18.389-18.25" transform="translate(-779.34 -3268.47)" fill="none" stroke="#FF7F00" stroke-linecap="round" stroke-width="5" stroke-dasharray="10 10"/>
+      <path id="Path_392-2" data-name="Path 392" d="M798.146,3297.67l18.389-18.25" transform="translate(-779.34 -3268.47)" fill="none" stroke="#FF7F00"  stroke-width="5" stroke-dasharray="10 10"/>
     </g>
     <g transform="matrix(1, 0, 0, 1, 1286.92, 708.47)" filter="url(#Path_393)">
-      <path id="Path_393-2" data-name="Path 393" d="M799.724,3305.479l-4.859,5" transform="translate(-780.92 -3268.47)" fill="none" stroke="#FF7F00" stroke-linecap="round" stroke-width="5" stroke-dasharray="10 10"/>
+      <path id="Path_393-2" data-name="Path 393" d="M799.724,3305.479l-4.859,5" transform="translate(-780.92 -3268.47)" fill="none" stroke="#FF7F00"  stroke-width="5" stroke-dasharray="10 10"/>
     </g>
   </g>
 </svg>

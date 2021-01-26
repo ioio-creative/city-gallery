@@ -178,13 +178,13 @@ const G303 = props => {
                   <div id="closeBtn" onClick={()=> setCoastlineIdx(null)}><span></span><span></span></div>
                   <div id="wrap">
                     <div id="title">
-                      <span>{v.cardConetnt.title}</span>
-                      {/* <span>{v.cardConetnt.completedYear}</span> */}
+                      <span dangerouslySetInnerHTML={{__html:v.cardContent.title}}></span>
+                      {/* <span>{v.cardContent.completedYear}</span> */}
                     </div>
-                    <div id="imgWrap"><img src={v.cardConetnt.image.src} alt="" /></div>
+                    <div id="imgWrap"><img src={v.cardContent.image.src} alt="" /></div>
                     <ul id="info">
                     {
-                      v.cardConetnt.info.map((vi, j)=>{
+                      v.cardContent.info.map((vi, j)=>{
                         return <li key={j}><span>{vi[0]}</span><span>{vi[1]}</span></li>
                       })
                     }
@@ -198,7 +198,7 @@ const G303 = props => {
                           <div id="icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><g><g fill="none" stroke="#70ccb8" strokeLinecap="round" strokeWidth="2"><path d="M26.339 33.179L14.037 20.877"/><path d="M26.339 8.575L14.037 20.877"/></g></g></svg>
                           </div>
-                          <span dangerouslySetInnerHTML={{__html:coastlineData[i-1].marker.name}}></span>
+                          <span dangerouslySetInnerHTML={{__html:coastlineData[i-1].cardContent.title}}></span>
                         </div>
                       }
                       </div>
@@ -209,7 +209,7 @@ const G303 = props => {
                           <div id="icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><g><g fill="none" stroke="#70ccb8" strokeLinecap="round" strokeWidth="2"><path d="M15.618 8.437L27.92 20.739"/><path d="M15.618 33.041L27.92 20.739"/></g></g></svg>
                           </div>
-                          <span dangerouslySetInnerHTML={{__html:coastlineData[i+1].marker.name}}></span>
+                          <span dangerouslySetInnerHTML={{__html:coastlineData[i+1].cardContent.title}}></span>
                         </div>
                       }
                     </div>
@@ -239,9 +239,11 @@ const G303 = props => {
           <p><span>{ globalData && globalData.coastInfo}</span></p>
         </div>
       </div>
-      <div id="yearOfCoastline" className={`${showYear || coastlineIdx  !== null ? 'disabled' : gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}></div>
+      <div id="yearOfCoastline" className={`${showYear || coastlineIdx  !== null ? 'disabled' : gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}>
+        <p>{`500 ${language === 'en' ? 'meter' : '米'}`}</p><span></span>
+      </div>
       
-      <div id="ref" className={`${showYear ? 'hide' : gameMode === 'home' ? 'hide' : ''} ${yearIdx === 3 ? 'w' : ''}`}>本圖的海岸線只供參考。</div>
+      <div id="ref" className={`${showYear ? 'hide' : gameMode === 'home' ? 'hide' : ''} ${yearIdx === 3 ? 'w' : ''}`} dangerouslySetInnerHTML={{__html:globalData && globalData.reference}}></div>
       <div id="popupTutor" className={showTutor ? 'active' : ''}>
         <div id="content" className={`slide${tutorIdx+1}`}>
           <div id="title">
@@ -251,8 +253,8 @@ const G303 = props => {
           <div id="man">
             <span></span>
           </div>
-          {tutorIdx > 0 && <div id="leftBtn" className="btn" onClick={()=>setTutorIdx(0)}></div>}
-          {tutorIdx < 1 && <div id="rightBtn" className="btn" onClick={()=>setTutorIdx(1)}></div>}
+          <div id="leftBtn" className={`btn ${tutorIdx === 0 ? 'hide' : ''}`} onClick={()=>setTutorIdx(0)}></div>
+          <div id="rightBtn" className={`btn ${tutorIdx === 1 ? 'hide' : ''}`} onClick={()=>setTutorIdx(1)}></div>
         </div>
         <div id="bg" onClick={()=>onShowTutor(false)}></div>
       </div>

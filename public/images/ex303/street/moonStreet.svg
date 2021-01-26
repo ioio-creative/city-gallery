@@ -10,8 +10,8 @@
   </defs>
   <g id="Group_611" data-name="Group 611" transform="translate(-1241.621 -667.606)">
     <g transform="matrix(1, 0, 0, 1, 1241.62, 667.61)" filter="url(#Path_391)">
-      <path id="Path_391-2" data-name="Path 391" d="M745.411,3252.517l6.915,4.058" transform="translate(-731.62 -3224.61)" fill="none" stroke="#00f5ff" stroke-linecap="round" stroke-width="5"/>
+      <path id="Path_391-2" data-name="Path 391" d="M745.411,3252.517l6.915,4.058" transform="translate(-731.62 -3224.61)" fill="none" stroke="#00f5ff"  stroke-width="5"/>
     </g>
-    <path id="Path_394" data-name="Path 394" d="M762.072,3257.546l32.206-21.1" transform="translate(-205.471 -2304.728) rotate(-13)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+    <path id="Path_394" data-name="Path 394" d="M762.072,3257.546l32.206-21.1" transform="translate(-205.471 -2304.728) rotate(-13)" fill="none" stroke="#fff"  stroke-width="3"/>
   </g>
 </svg>
