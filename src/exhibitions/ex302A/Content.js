@@ -83,6 +83,7 @@ const Content = props => {
     let controlBarBtnWidth = controlBarBtnElem.current.offsetWidth;
     let maxControlWidth = controlBarWidth - controlBarBtnWidth;
     const sectionNum = props.sectionNum;
+    let disableDrag = false;
 
     const init = () => {
       // imgYearElems = document.querySelectorAll('#imgYear');
@@ -152,11 +153,13 @@ const Content = props => {
     setIsClickedSectionFunc.current = { setIsClickedSection };
 
     const moveContentWrap = () => {
-      contentWrapElemPos.x += mouse.delta.x * 2;
-      contentWrapElemPos.x = Math.min(
-        0,
-        Math.max(-maxWidth, contentWrapElemPos.x)
-      );
+      if(!disableDrag){
+        contentWrapElemPos.x += mouse.delta.x * 2;
+        contentWrapElemPos.x = Math.min(
+          0,
+          Math.max(-maxWidth, contentWrapElemPos.x)
+        );
+      }
     };
 
     const moveContent = i => {
@@ -264,6 +267,13 @@ const Content = props => {
                   sidebar.classList.remove('active');
                   sidebar.classList.add('minimize');
                   props.setClickedSectionIdx(i);
+
+                  moveContent(i);
+                  disableDrag = true;
+                  setTimeout(()=>{
+                    disableDrag = false;
+                    moveContent(i);
+                  },1000);
                 }
               }
             } else if (i > currentSectionIdx) {
@@ -303,7 +313,7 @@ const Content = props => {
                 }
 
                 if(oldCurrentSectionIdx !== i){
-                  console.log(i);
+                  // console.log(i);
                   // props.setCurrentSectionIdx(i);
                   props.goToSection(i);
                   oldCurrentSectionIdx = i;
@@ -363,11 +373,11 @@ const Content = props => {
               );
             }
           }
-      } else {
-        galleryEasePos.x += (galleryPos.x - galleryEasePos.x) * 0.08;
-        galleryListElem.current.style.transform = `translate3d(${galleryEasePos.x}px,0,0)`;
-        moveControlBarBtn(galleryEasePos.x / -maxGalleryWidth);
-      }
+        } else {
+          galleryEasePos.x += (galleryPos.x - galleryEasePos.x) * 0.08;
+          galleryListElem.current.style.transform = `translate3d(${galleryEasePos.x}px,0,0)`;
+          moveControlBarBtn(galleryEasePos.x / -maxGalleryWidth);
+        }
     };
 
     const onKeyDown = e => {
@@ -683,7 +693,7 @@ const Content = props => {
                   );
                 })}
             </ul>
-            <div id='controlWrap'>
+            <div id='controlWrap' className={galleryItems && galleryItems.length < 3 ? 'hide' : ''}>
               <div ref={controlBarElem} id='controlBar'>
                 <div ref={controlBarBtnElem} id='controlBarBtn'></div>
               </div>

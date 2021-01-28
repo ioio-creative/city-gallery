@@ -1401,6 +1401,9 @@ body {
     #controlWrap {
       width: 100vw;
       margin-top: vw-calc(133);
+      &.hide{
+        opacity: .2;
+      }
       #controlBar {
         width: vw-calc(717);
         height: vw-calc(31);

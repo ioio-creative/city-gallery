@@ -527,8 +527,8 @@ span{
                         }
                         #info{
                             height:vw-calc(180);
-                            padding:vw-calc(25 0 0 22);
-                            li{
+                            padding:vw-calc(25 0 0 10);
+                            &>li{
                                 display: flex;
                                 margin-top:vw-calc(32);
                                 &:first-child{
@@ -1042,8 +1042,8 @@ span{
             content:'';
             width:100%;
             height:100%;
-            background:rgba(7,74,69,.3);
-            box-shadow: 0 0 vw-calc(200 200) rgba(7,74,69,.3);
+            background:rgba(7,74,69,.2);
+            box-shadow: 0 0 vw-calc(200 200) rgba(7,74,69,.2);
             transform: translate3d(10%,0,0) scale(.4, .5);
             position: absolute;
             top:0;
