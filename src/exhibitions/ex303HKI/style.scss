@@ -970,6 +970,9 @@ span{
                             background: url('./images/marker_w.svg') center center no-repeat;
                         }
                     }
+                    #roadWrap{
+                        animation: fadeInOut 2s ease infinite;
+                    }
                 }
                 #markerWrap{
                     width:0;
@@ -1426,6 +1429,18 @@ span{
     }
     to{
         opacity: 1;
+    }
+}
+
+@keyframes fadeInOut{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: .8;
+    }
+    100%{
+        opacity: 0;
     }
 }
 

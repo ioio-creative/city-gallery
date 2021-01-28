@@ -397,10 +397,10 @@ const G302A = props => {
           <span>EN</span>
         </div>
         <div id="backBtn" className={clickedSectionIdx === null ? 'hide' : ''}>
-          <div id="back" className="hide" onClick={onBack}><span>回到選擇頁面</span></div>
+          <div id="back" className="hide" onClick={onBack}><span>{contentData && contentData.global.backToYear}</span></div>
         </div>
       </div>
-      <div id="hints">拖曳畫面探索更多</div>
+      <div id="hints">{contentData && contentData.global.hints}</div>
       <div id='sectionNav' className={`${clickedSectionIdx !== null ? 'hide' : ''}`}>
         <ul>
           {contentData &&

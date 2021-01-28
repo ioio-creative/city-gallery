@@ -14,7 +14,11 @@
   "contents": {
     "en": {
       "global": {
-        "explore":"Explore"
+        "explore":"Explore",
+        "backToYear":"Select Year",
+        "hints":"Drag to explore more",
+        "back":"back",
+        "stories":"Stories"
       },
       "sections": [
         {
@@ -1922,7 +1926,11 @@
     },
     "tc": {
       "global": {
-        "explore":"探索"
+        "explore":"探索",
+        "backToYear":"選擇年份",
+        "hints":"拖曳畫面探索更多",
+        "back":"返回",
+        "stories":"個年代故事"
       },
       "sections": [
         {
@@ -2190,7 +2198,7 @@
               "image": {
                 "src": "./images/ex302a/1948_img1.png",
                 "translationType": "scale",
-                "description": "長遠的規劃藍圖《亞柏康比報告》",
+                "description": "長遠的規劃藍圖<br/>《亞柏康比報告》",
                 "gallery": [
                   {
                     "src": "./images/ex302a/1948_img1.png",
@@ -2343,7 +2351,7 @@
               "image": {
                 "src": "./images/ex302a/1967_img1.png",
                 "translationType": "scale",
-                "description": "首個自給自足的公共屋邨",
+                "description": "首個自給自足的<br/>公共屋邨",
                 "gallery": [
                   {
                     "src": "./images/ex302a/1967_img1.png",
@@ -2720,7 +2728,7 @@
               "image": {
                 "src": "./images/ex302a/1989_img1.png",
                 "translationType": "scale",
-                "description": "《港口及機場發展策略》",
+                "description": "《港口及機場<br/>發展策略》",
                 "gallery": [
                   {
                     "src": "./images/ex302a/1989_img1.png",
@@ -3225,7 +3233,7 @@
               "image": {
                 "src": "./images/ex302a/2007_img1a.png",
                 "translationType": "scale",
-                "description": "《香港2030：規劃遠景與策略》",
+                "description": "《香港2030：<br/>規劃遠景與策略》",
                 "gallery": [
                   {
                     "src": "./images/ex302a/2007_img1a.png",
@@ -3250,7 +3258,7 @@
               "image": {
                 "src": "./images/ex302a/2007_img1b.jpg",
                 "translationType": "scale",
-                "description": "「活化歷史建築伙伴計劃」",
+                "description": "「活化歷史建築<br/>伙伴計劃」",
                 "gallery": [
                   {
                     "src": "./images/ex302a/2007_img1b.jpg",
@@ -3433,7 +3441,7 @@
               "image": {
                 "src": "./images/ex302a/2012_img1.png",
                 "translationType": "scale",
-                "description": "推動發展第二個核心商業區",
+                "description": "推動發展第二個<br/>核心商業區",
                 "gallery": [
                   {
                     "src": "./images/ex302a/2012_img1.png",
@@ -3561,7 +3569,7 @@
               "image": {
                 "src": "./images/ex302a/2014_img1c.jpg",
                 "translationType": "scale",
-                "description": "新發展區和擴展新市鎮",
+                "description": "新發展區和<br/>擴展新市鎮",
                 "gallery": [
                   {
                     "src": "./images/ex302a/2014_img1c.jpg",
@@ -3623,7 +3631,7 @@
               "image": {
                 "src": "./images/ex302a/2017_img1a.png",
                 "translationType": "scale",
-                "description": "《香港氣候行動藍圖2030＋》",
+                "description": "《香港氣候行動<br/>藍圖2030＋》",
                 "gallery": [
                   {
                     "src": "./images/ex302a/2017_img1a.png",
@@ -3652,7 +3660,7 @@
               "image": {
                 "src": "./images/ex302a/2017_img1b.jpg",
                 "translationType": "scale",
-                "description": "河套地區創新及科技園發展",
+                "description": "河套地區創新及<br/>科技園發展",
                 "gallery": [
                   {
                     "src": "./images/ex302a/2017_img1b.jpg",
@@ -3706,7 +3714,7 @@
               "image": {
                 "src": "./images/ex302a/2018_img1a.png",
                 "translationType": "scale",
-                "description": "第一所有機資源回收中心",
+                "description": "第一所有機<br/>資源回收中心",
                 "gallery": [
                   {
                     "src": "./images/ex302a/2018_img1a.png",
@@ -3785,7 +3793,7 @@
               "image": {
                 "src": "./images/ex302a/2018_img1d.jpg",
                 "translationType": "scale",
-                "description": "跨越2030年的規劃遠景與策略",
+                "description": "跨越2030年的規劃<br/>遠景與策略",
                 "gallery": [
                   {
                     "src": "./images/ex302a/2018_img1d.jpg",

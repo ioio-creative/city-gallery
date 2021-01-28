@@ -231,9 +231,8 @@ const Content = props => {
       requestAnimationFrame(animLoop);
 
       if (!isOpenedGallery) {
-        contentWrapElemEasePos.x +=
-          (contentWrapElemPos.x - contentWrapElemEasePos.x) * 0.08;
-        const x = contentWrapElemEasePos.x;
+        contentWrapElemEasePos.x += (contentWrapElemPos.x - contentWrapElemEasePos.x) * 0.08;
+        let x = contentWrapElemEasePos.x;
         contentWrapElem.current.style.transform = `translate3d(${x}px,0,0)`;
 
         if (isClickedSection) {
@@ -264,15 +263,16 @@ const Content = props => {
             if (currentSectionIdx === i) {
               if (sx === 0 && isStartedToMove) {
                 if (!sidebar.classList.contains('minimize')) {
-                  sidebar.classList.remove('active');
-                  sidebar.classList.add('minimize');
-                  props.setClickedSectionIdx(i);
+                  setTimeout(()=>{
+                    sidebar.classList.remove('active');
+                    sidebar.classList.add('minimize');
+                    props.setClickedSectionIdx(i);
+                  },0);
 
                   moveContent(i);
                   disableDrag = true;
                   setTimeout(()=>{
                     disableDrag = false;
-                    moveContent(i);
                   },1000);
                 }
               }
@@ -568,8 +568,8 @@ const Content = props => {
         {props.contentData.sections.map((v, i) => {
           return (
             <div key={i} ref={sidebarElems.current[i]} id={`sidebar${i + 1}`} className={`sidebar`}>
-              <div id="numOfItems"><p className="eb">{v.items.length}</p><span></span>個年代故事</div>
-              <div id="numOfItemsSmall"><span className="eb">{v.items.length}</span>個年代故事</div>
+              <div id="numOfItems"><p className="eb">{v.items.length}</p><span></span>{props.contentData.global.stories}</div>
+              <div id="numOfItemsSmall"><span className="eb">{v.items.length}</span>{props.contentData.global.stories}</div>
               <div id='bg' style={{ backgroundImage: `url('./images/ex302a/sidebarbg_${i}.png')` }}></div>
               <div id='desWrap'>
                 <div id='des'>
@@ -651,7 +651,7 @@ const Content = props => {
                               return (
                                 <div key={l}>
                                   <span>
-                                    <span>{t}</span>
+                                    <span dangerouslySetInnerHTML={{__html:t}}></span>
                                   </span>
                                 </div>
                               );
@@ -703,7 +703,7 @@ const Content = props => {
             <span>{galleryItems && galleryItems.length}</span>
           </div>
           <div id='backBtn' onClick={() => setOpenedGallery(false)}>
-            返回
+            {props.contentData.global.back}
           </div>
           <div id='bg'></div>
         </div>
