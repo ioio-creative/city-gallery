@@ -396,7 +396,7 @@ const G302A = props => {
         <div className={`${language === 'en' ? 'active' : ''} btn`} onClick={() => onChangeLanguage('en')}>
           <span>EN</span>
         </div>
-        <div id="backBtn" className={minimalSidebar ? 'hide' : ''}>
+        <div id="backBtn" className={clickedSectionIdx === null ? 'hide' : ''}>
           <div id="back" className="hide" onClick={onBack}><span>回到選擇頁面</span></div>
         </div>
       </div>

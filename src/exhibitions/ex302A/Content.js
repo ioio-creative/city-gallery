@@ -596,7 +596,7 @@ const Content = props => {
                   return <span key={i}>{v}</span>;
                 })}
               </div>
-              <div id="selectYearBtn" onClick={props.onBack}>選擇年份</div>
+              {/* <div id="selectYearBtn" onClick={props.onBack}>選擇年份</div> */}
               <div id='line'></div>
               <div id='img' style={{ backgroundImage: `url(${v.coverinsidebar.src}` }}></div>
             </div>
