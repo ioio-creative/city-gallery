@@ -544,14 +544,9 @@ const Content = props => {
                         }
                         onClick={() => onClickNav(i, j)}
                       >
-                        {/* <p> */}
-                        {/* </p> */}
+                        <div id="point"></div>
                         <span className='category'>{c.category.name}</span>
-                        <span
-                          id='year'
-                          className='eb'
-                          dangerouslySetInnerHTML={{ __html: c.text.year }}
-                        ></span>
+                        <span id='year' className='eb' dangerouslySetInnerHTML={{ __html: c.text.year }}></span>
                       </li>
                     );
                   })}

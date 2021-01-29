@@ -556,6 +556,9 @@ body {
                   }
                 }
               }
+              #point:before{
+                background: #444;
+              }
               span {
                 &.category {
                   bottom: vw-calc(25);
@@ -588,18 +591,26 @@ body {
             width: 0;//vw-calc(60);
             height: 0;//vw-calc(60);
             position: relative;
-            &:before {
-              content: '';
-              width: vw-calc(11);
-              height: vw-calc(11);
-              border-radius: 50%;
-              background: #444;
+            #point{
+              width: vw-calc(50);
+              height: vw-calc(50);
               position: absolute;
-              top: 50%;
-              left: 0%;
+              top: 0;
+              left:0;
               z-index: 1;
-              transform: translate3d(-50%, -50%, 0) scale(1);
-              transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+              transform: translate3d(-50%,-50%,0);
+              &:before {
+                content: '';
+                width: vw-calc(11);
+                height: vw-calc(11);
+                border-radius: 50%;
+                background: #ccc;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate3d(-50%, -50%, 0) scale(1);
+                transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+              }
             }
             &:after {
               content: '';
@@ -614,41 +625,36 @@ body {
               transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
             }
             &.active {
-              & ~ li {
-                &:before {
-                  // opacity: 0.4;
-                }
-              }
               &:after {
                 transform: translate3d(-50%, -50%, 0) scale(0.7);
               }
               &#infrastructure {
-                &:before {
+                #point:before {
                   background: #f5a731;
                 }
               }
               &#transport {
-                &:before {
+                #point:before {
                   background: #f5318b;
                 }
               }
               &#legislations {
-                &:before {
+                #point:before {
                   background: #F57531;
                 }
               }
               &#housing {
-                &:before {
+                #point:before {
                   background: #1ce6f7;
                 }
               }
               &#strategic {
-                &:before {
+                #point:before {
                   background: #b931f5;
                 }
               }
               &#economic {
-                &:before {
+                #point:before {
                   background:#359e64;
                 }
               }
@@ -1056,6 +1062,7 @@ body {
             // transform: translate3d(calc(100vw - #{vw-calc(455 - 1)}), 1px, 0);
             transition-duration: 1s, 0.6s, 0.6s;
             transition-delay: 0.1s;
+            transition-property: width;
           }
           #bg {
             clip-path: polygon(0 0, 200% 0, 0 200%);
