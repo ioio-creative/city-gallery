@@ -65,7 +65,8 @@ const Map = props => {
         height: maxHeight,//window.innerHeight,
         antialias: true,
         transparent: true,
-        resolution: 1
+        resolution: 1,
+        powerPreference:'low-power'
       });
       wrapElem.current.appendChild(app.view);
 
@@ -731,7 +732,7 @@ const Map = props => {
       showHighlightFunc.current.showHighlight(bool);
     }
   }
-  
+
   return <>
       <div ref={wrapElem} className={`shader ${props.gameMode === 'street' ? `zone${props.zone+1}` : ''}`}></div>
       { !props.showYear && props.gameMode !== 'home' && <div style={{position:'fixed',top:'100px',right:'70px',zIndex:'999',fontSize:'60px',color:'#fff'}}><span style={{opacity: on ? '1' : '.4'}} onClick={()=>onShowHighlight(true)}>on</span> / <span style={{opacity: on ? '.4' : '1'}} onClick={()=>onShowHighlight(false)}>off</span></div>}
