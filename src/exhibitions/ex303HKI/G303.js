@@ -160,6 +160,7 @@ const G303 = props => {
           gameMode={gameMode}
           setGameMode={setGameMode}
           zone={zone}
+          showYear={showYear}
           // setOpacity={fullOpacity}
           // setStreetData={setStreetData}
           // setMapIndicatorIdx={setMapIndicatorIdx}

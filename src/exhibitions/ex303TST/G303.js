@@ -135,6 +135,7 @@ const G303 = props => {
   const coastlineData = props.appData.tst.contents[language].coastline;
   const streetData = props.appData.tst.contents[language].street;
 
+
   return (
     // <div id='main' className={`${started ? 'started' : ''}${zoomed ? ' zoomed' : ''}`}>
     <div id='main' className={`${language}`}>
@@ -145,6 +146,7 @@ const G303 = props => {
           gameMode={gameMode}
           setGameMode={setGameMode}
           zone={zone}
+          showYear={showYear}
           // setOpacity={fullOpacity}
           // setStreetData={setStreetData}
           // setMapIndicatorIdx={setMapIndicatorIdx}

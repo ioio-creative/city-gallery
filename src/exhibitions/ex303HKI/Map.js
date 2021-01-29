@@ -250,7 +250,7 @@ const Map = props => {
 
                     float value2 = progressHide1900 * (1. + _threshold);
                     float v2 = clamp( (noiseTextureColor.r - 1. + value2) * (1./_threshold), 0., 1.);
-                    coastline1900Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., highlightOpacity), 1.-v);
+                    coastline1900Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., .8), 1.-v);
                     coastline1900Color = mix(coastline1900Color, vec4(7. / 255., 74. / 255., 69. / 255., highlightOpacity), v);
                     coastline1900Color = vec4(mix(coastline1900DiffuseColor.rgb, coastline1900Color.rgb, coastline1900Color.a), 1.);
                     // hide effect
@@ -262,7 +262,7 @@ const Map = props => {
 
                     float value2 = progressHide1945 * (1. + _threshold);
                     float v2 = clamp( (noiseTextureColor.r - 1. + value2) * (1./_threshold), 0., 1.);
-                    coastline1945Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., highlightOpacity), 1.-v);
+                    coastline1945Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., .8), 1.-v);
                     coastline1945Color = mix(coastline1945Color, vec4(0. / 255., 122. / 255., 111. / 255., highlightOpacity), v);
                     coastline1945Color = vec4(mix(coastline1945DiffuseColor.rgb, coastline1945Color.rgb, coastline1945Color.a), 1.);
                     // hide effect
@@ -274,7 +274,7 @@ const Map = props => {
                     
                     float value2 = progressHide1985 * (1. + _threshold);
                     float v2 = clamp( (noiseTextureColor.r - 1. + value2) * (1./_threshold), 0., 1.);
-                    coastline1985Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., highlightOpacity), 1.-v);
+                    coastline1985Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., .8), 1.-v);
                     coastline1985Color = mix(coastline1985Color, vec4(40. / 255., 176. / 255., 155. / 255., highlightOpacity), v);
                     coastline1985Color = vec4(mix(coastline1985DiffuseColor.rgb, coastline1985Color.rgb, coastline1985Color.a), 1.);
                     // hide effect
@@ -286,7 +286,7 @@ const Map = props => {
 
                     float value2 = progressHide2019 * (1. + _threshold);
                     float v2 = clamp( (noiseTextureColor.r - 1. + value2) * (1./_threshold), 0., 1.);
-                    coastline2019Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., highlightOpacity), 1.-v);
+                    coastline2019Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., .8), 1.-v);
                     coastline2019Color = mix(coastline2019Color, vec4(112. / 255., 204. / 255., 184. / 255., highlightOpacity), v);
                     coastline2019Color = vec4(mix(coastline2019DiffuseColor.rgb, coastline2019Color.rgb, coastline2019Color.a), 1.);
                     // hide effect
@@ -718,21 +718,23 @@ const Map = props => {
 
   useEffect(()=>{
     if(props.gameMode === 'coast'){
-      showHighlightFunc.current.showHighlight(true);
+      onShowHighlight(true);
     }
     else if(props.gameMode === 'street'){
-      showHighlightFunc.current.showHighlight(false);
+      onShowHighlight(false);
     }
   },[props.gameMode])
 
   const onShowHighlight = (bool) => {
-    setOn(bool);
-    showHighlightFunc.current.showHighlight(bool);
+    if(props.gameMode !== 'home'){
+      setOn(bool);
+      showHighlightFunc.current.showHighlight(bool);
+    }
   }
-
+  
   return <>
       <div ref={wrapElem} className={`shader ${props.gameMode === 'street' ? `zone${props.zone+1}` : ''}`}></div>
-      <div style={{position:'fixed',top:'100px',right:'70px',zIndex:'999',fontSize:'60px',color:'#fff'}}><span style={{opacity: on ? '1' : '.4'}} onClick={()=>onShowHighlight(true)}>on</span> / <span style={{opacity: on ? '.4' : '1'}} onClick={()=>onShowHighlight(false)}>off</span></div>
+      { !props.showYear && props.gameMode !== 'home' && <div style={{position:'fixed',top:'100px',right:'70px',zIndex:'999',fontSize:'60px',color:'#fff'}}><span style={{opacity: on ? '1' : '.4'}} onClick={()=>onShowHighlight(true)}>on</span> / <span style={{opacity: on ? '.4' : '1'}} onClick={()=>onShowHighlight(false)}>off</span></div>}
     </>
 };
 
