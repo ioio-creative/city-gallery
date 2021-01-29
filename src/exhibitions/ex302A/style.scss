@@ -1215,15 +1215,18 @@ body {
         p{
           font-size:vw-calc(120);
           font-weight: bold;
+          margin-right:vw-calc(10);
+          position: relative;
+          top:vw-calc(2);
         }
-        span{
-          width:vw-calc(100);
-          height:vw-calc(3);
-          background:#fff;
-          display: block;
-          margin:0 vw-calc(20);
-          transform: translate3d(0,vw-calc(-6),0);
-        }
+        // span{
+        //   width:vw-calc(100);
+        //   height:vw-calc(3);
+        //   background:#fff;
+        //   display: block;
+        //   margin:0 vw-calc(20);
+        //   transform: translate3d(0,vw-calc(-6),0);
+        // }
       }
       #numOfItemsSmall{
         position: absolute;
@@ -1410,7 +1413,7 @@ body {
         opacity: .2;
       }
       #controlBar {
-        width: vw-calc(717);
+        width: vw-calc(717 / 2);
         height: vw-calc(31);
         margin: auto;
         position: relative;

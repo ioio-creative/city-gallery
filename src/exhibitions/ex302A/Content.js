@@ -568,7 +568,7 @@ const Content = props => {
         {props.contentData.sections.map((v, i) => {
           return (
             <div key={i} ref={sidebarElems.current[i]} id={`sidebar${i + 1}`} className={`sidebar`}>
-              <div id="numOfItems"><p className="eb">{v.items.length}</p><span></span>{props.contentData.global.stories}</div>
+              <div id="numOfItems"><p className="eb">{v.items.length}</p>{props.contentData.global.stories}</div>
               <div id="numOfItemsSmall"><span className="eb">{v.items.length}</span>{props.contentData.global.stories}</div>
               <div id='bg' style={{ backgroundImage: `url('./images/ex302a/sidebarbg_${i}.png')` }}></div>
               <div id='desWrap'>

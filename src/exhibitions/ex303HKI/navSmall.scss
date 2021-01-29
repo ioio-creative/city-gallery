@@ -60,9 +60,15 @@ $drakgreenblue:#074A45;
       position: absolute;
       bottom:calc(100% + #{vw-calc(40)});
       left:50%;
+      opacity: 1;
+      visibility: visible;
       transform: translate3d(-50%,0,0);
-      transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
-      animation: fadeIn .6s cubic-bezier(0.87, 0, 0.13, 1);
+      transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1), opacity .3s cubic-bezier(0.87, 0, 0.13, 1),  visibility .3s cubic-bezier(0.87, 0, 0.13, 1);
+      animation: fadeIn .3s cubic-bezier(0.87, 0, 0.13, 1);
+      &.hide{
+        opacity: 0;
+        visibility: hidden;
+      }
       &.hideImg{
         background:none;
         margin-left:vw-calc(50);

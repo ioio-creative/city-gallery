@@ -31,8 +31,8 @@ const Menu = props => {
     <div id='navWrap'>
       <div id='left'>
         {
-          !props.showYear && props.gameMode !== 'home' &&
-          <div id="indicator" className={`${props.yearIdx != 3 ? 'hideImg' : ''} ${props.zone > 0 ? 'moveup' : ''}`} dangerouslySetInnerHTML={{__html:globalData && globalData.hints}}></div>
+          !props.showYear && props.gameMode !== 'home' && 
+          <div id="indicator" className={`${props.streetIdx !== null ? 'hide' : ''} ${props.yearIdx != 3 ? 'hideImg' : ''} ${props.zone > 0 ? 'moveup' : ''}`} dangerouslySetInnerHTML={{__html:globalData && globalData.hints}}></div>
         }
         <div id="wrap" className={`${!props.showNav ? 'noBtn' : props.yearIdx < 3  ? 'noBtn' : ''} ${props.runTransition ? 'disable' : ''}`}>
           <div className={`yearButton ${props.gameMode === 'street' ? 'hide' : ''} ${props.showNav ? 'active' : ''}`} 
