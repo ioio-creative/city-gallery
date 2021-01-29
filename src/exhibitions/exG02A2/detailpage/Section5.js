@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import {random} from '../globalFuncFor3d';
 import Zdog from 'zdog';
-import gsap from 'gsap';
+// import gsap from 'gsap';
 
 const Section5 = (props) => {
     const canvasLeft = useRef(null);
@@ -222,7 +222,7 @@ const Section5 = (props) => {
             </div>
             <div id="right" className="half">
                 <div className="wrap">
-                    <div className='gdpbg' style={{backgroundImage:`url(./images/exG02a/section5/${locationName}gdp.png)`}}></div>
+                    <div className='gdpbg' style={{backgroundImage:`url(./images/exG02a/section5/${locationName ? locationName : 'hongkong'}gdp.png)`}}></div>
                     <img src="./images/exG02a/section5/other1.png" style={{bottom: -43, right: 643}}></img>
                     <img src="./images/exG02a/section5/other1.png" style={{bottom: 288, right: 16}}></img>
                     <img src="./images/exG02a/section5/other2.png" style={{bottom: 419, right: 308}}></img>

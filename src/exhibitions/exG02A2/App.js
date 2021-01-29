@@ -137,18 +137,16 @@ const App = props => {
       camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.1, 1000);
       camera.position.set(0, 0, 170);
 
-      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, precision:'lowp', powerPreference:'low-power' });
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.setClearColor(0xffffff, 0);
+      // renderer.setClearColor(0xffffff, 0);
       renderer.shadowMap.enabled = true;
       renderer.shadowMap.type = THREE.PCFSoftShadowMap;
       canvasWrap.current.appendChild(renderer.domElement);
 
       // stats = initStats();
       // initGUI(options);
-      initLight();
-      initMesh();
 
       // cameraControl = new CameraControlsSystem(camera, meshEarth);
       objectControl = new ObjectControl(groupedMesh);
@@ -165,6 +163,9 @@ const App = props => {
         update();
         render();
       });
+      
+      initLight();
+      initMesh();
     };
 
     const clearIdx = () => {
@@ -344,8 +345,8 @@ const App = props => {
           'vColor = instanceColor;',
           'vId = instanceId;',
           'vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );',
-          'gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );',
-          `gl_PointSize = 2.5 * ${(window.innerHeight < window.innerWidth ? window.innerHeight : window.innerWidth * 4) * Math.PI} / -mvPosition.z;`,
+            'gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );',
+            `gl_PointSize = 2.5 * ${(window.innerHeight < window.innerWidth ? window.innerHeight : window.innerWidth * 4) * Math.PI} / -mvPosition.z;`,
           '}'
         ].join('\n'),
         fragmentShader: [
@@ -355,19 +356,19 @@ const App = props => {
           'varying float vId;',
 
           'void main() {',
-          'vec4 texture;',
-          'vec3 color;',
+            'vec4 texture;',
+            'vec3 color;',
 
-          'if(activeInstanceId == vId){',
-          'color = vec3(1.,1.,1.);',
-          'texture = texture2D( textures[1], gl_PointCoord );',
-          '}',
-          'else{',
-          'color = vColor;',
-          'texture = texture2D( textures[0], gl_PointCoord );',
-          '}',
-          'gl_FragColor = vec4( color, 1.0 );',
-          'gl_FragColor = gl_FragColor * texture;',
+            // 'if(activeInstanceId == vId){',
+            //   'color = vec3(1.,1.,1.);',
+            //   'texture = texture2D( textures[1], gl_PointCoord );',
+            // '}',
+            // 'else{',
+              'color = vColor;',
+              'texture = texture2D( textures[0], gl_PointCoord );',
+            // '}',
+            'gl_FragColor = vec4( color, 1.0 );',
+            'gl_FragColor = gl_FragColor * texture;',
           '}'
         ].join('\n'),
         transparent: true,
@@ -404,24 +405,20 @@ const App = props => {
       };
 
       this.show = () => {
-        gsap.to(_this.animValue, 1, {
-          a: 0.3,
+        gsap.to(_this.animValue, 1, {a: 0.3,
           onUpdate: function () {
             const value = this.targets()[0];
             draw(value.a);
-
             if (pointsBgMaterial) pointsBgMaterial.uniforms.textures.value[0].needsUpdate = true;
           }
         });
       };
 
       this.hide = () => {
-        gsap.to(_this.animValue, 1, {
-          a: 0,
+        gsap.to(_this.animValue, 1, {a: 0,
           onUpdate: function () {
             const value = this.targets()[0];
             draw(value.a);
-
             if (pointsBgMaterial) pointsBgMaterial.uniforms.textures.value[0].needsUpdate = true;
           }
         });
@@ -556,10 +553,7 @@ const App = props => {
     const initCircleLineBg = (size, angle, lineWidth, lineHeight, color) => {
       const map = new THREE.CanvasTexture(circleLineBgTexture(angle, lineWidth, lineHeight, color));
       const geometry = new THREE.PlaneBufferGeometry(size, size, 1, 1);
-      const material = new THREE.MeshBasicMaterial({
-        map: map,
-        transparent: true
-      });
+      const material = new THREE.MeshBasicMaterial({map: map,transparent: true});
       map.premultiplyAlpha = true;
       material.blending = THREE.CustomBlending;
       const mesh = new THREE.Mesh(geometry, material);
@@ -607,16 +601,12 @@ const App = props => {
     const updateColor = (geometry, mesh) => {
       geometry.setAttribute('instanceColor', new THREE.InstancedBufferAttribute(new Float32Array(pointInstanceColors), 3));
       var colorParsChunk = ['attribute vec3 instanceColor;', 'varying vec3 vInstanceColor;'].join('\n') + '\n';
-
       var instanceColorChunk = ['vInstanceColor = instanceColor;'].join('\n') + '\n';
-
       var fragmentParsChunk = ['varying vec3 vInstanceColor;'].join('\n') + '\n';
-
       var colorChunk = ['vec4 diffuseColor = vec4( diffuse * vInstanceColor, opacity );'].join('\n') + '\n';
 
       mesh.material.onBeforeCompile = function (shader) {
         shader.vertexShader = shader.vertexShader.replace('#include <common>\n', '#include <common>\n' + colorParsChunk).replace('#include <begin_vertex>\n', '#include <begin_vertex>\n' + instanceColorChunk);
-
         shader.fragmentShader = shader.fragmentShader.replace('#include <common>\n', '#include <common>' + fragmentParsChunk).replace('vec4 diffuseColor = vec4( diffuse, opacity );\n', colorChunk);
       };
     };
@@ -634,11 +624,7 @@ const App = props => {
         lineTransform.applyMatrix4(instanceMatrix2);
 
         const tl = gsap.timeline({ delay: i * 0.15 });
-        tl.to(startPositionValue, 0.4, {
-          x: pointOffsets[i * 3],
-          y: pointOffsets[i * 3 + 1],
-          z: pointOffsets[i * 3 + 2],
-          ease: 'power4.out', //z:1+1/52
+        tl.to(startPositionValue, 0.4, {x: pointOffsets[i * 3],y: pointOffsets[i * 3 + 1],z: pointOffsets[i * 3 + 2],ease: 'power4.out', //z:1+1/52
           onUpdate: function () {
             const value = this.targets()[0];
             lineTransform.position.set(value.x, value.y, value.z);
@@ -676,11 +662,7 @@ const App = props => {
         lineTransform.applyMatrix4(instanceMatrix2);
 
         const tl = gsap.timeline({ delay: i * 0.15 });
-        tl.to(positionValue, 0.4, {
-          x: 0,
-          y: 0,
-          z: 0,
-          ease: 'power4.out', //z:1+1/52
+        tl.to(positionValue, 0.4, {x: 0,y: 0,z: 0,ease: 'power4.out', //z:1+1/52
           onUpdate: function () {
             const value = this.targets()[0];
             lineTransform.position.set(value.x, value.y, value.z);
@@ -689,13 +671,7 @@ const App = props => {
             linesMesh.instanceMatrix.needsUpdate = true;
           }
         });
-        tl.fromTo(
-          scaleValue,
-          2,
-          { s: 1 },
-          {
-            s: 0.0001,
-            ease: 'elastic.out(1.3, 0.3)',
+        tl.fromTo(scaleValue, 2, { s: 1 }, {s: 0.0001, ease: 'elastic.out(1.3, 0.3)',
             onUpdate: function () {
               const value = this.targets()[0];
               pointTransform.scale.set(value.s, value.s, value.s);
@@ -703,9 +679,7 @@ const App = props => {
               pointsMesh.setMatrixAt(i, pointTransform.matrix);
               pointsMesh.instanceMatrix.needsUpdate = true;
             }
-          },
-          '-=.2'
-        );
+          },'-=.2');
       }
       canvasTexture.hide();
     };
@@ -727,10 +701,9 @@ const App = props => {
 
     const onMouseDown = event => {
       if (document.querySelector('#home').classList[0] === undefined) {
-        let e = event.touches ? event.touches[0] : event;
-        mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
-        mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
         dragging = false;
+
+
         // console.log("first mousedown");
         document.addEventListener('mousemove', onMouseMove, false);
         document.addEventListener('mouseup', onMouseUp, false);
@@ -740,22 +713,51 @@ const App = props => {
     };
 
     const onMouseMove = event => {
-      if (!event.touches) event.preventDefault();
-      let e = event.touches ? event.touches[0] : event;
+      // if (!event.touches) event.preventDefault();
+      // let e = event.touches ? event.touches[0] : event;
       if (!dragging) dragging = true;
 
-      mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+      // mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+      // mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
     };
 
-    const onMouseUp = () => {
+    const onMouseUp = (event) => {
       if (!dragging) {
-        if (currentHoveredInstanceId !== null && currentHoveredInstanceId !== 0) {
-          // if(currentHoveredInstanceId !== null && currentHoveredInstanceId !== oldHoveredInstanceId && currentHoveredInstanceId !== 0){
-          selectLocation();
+        let e = event.touches ? event.touches[0] : event;
+        mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+        
+        raycaster.setFromCamera(mouse, camera);
+        const intersection = raycaster.intersectObject(pointsMesh);
+
+        if (intersection.length > 0) {
+          currentHoveredInstanceId = intersection[0].instanceId;
+          selectLocation(currentHoveredInstanceId);
           moveFromIdFunc.current.moveFromId(currentHoveredInstanceId);
-          currentHoveredInstanceId = null;
-        }
+          // currentHoveredInstanceId = null;
+
+          // currentHoveredInstanceId = intersection[0].instanceId;
+          // // console.log("balls clicked");
+          // if (currentHoveredInstanceId !== prevHoveredInstanceId) {
+          //   // document.body.style.cursor = 'pointer';
+          //   prevHoveredInstanceId = currentHoveredInstanceId;
+          // }
+        } 
+        // else {
+        //   if (prevHoveredInstanceId !== null) {
+        //     // document.body.style.cursor = '';
+        //     currentHoveredInstanceId = null;
+        //     prevHoveredInstanceId = null;
+        //   }
+        // }
+
+        
+        // if (currentHoveredInstanceId !== null && currentHoveredInstanceId !== 0) {
+          // if(currentHoveredInstanceId !== null && currentHoveredInstanceId !== oldHoveredInstanceId && currentHoveredInstanceId !== 0){
+          // selectLocation();
+          // moveFromIdFunc.current.moveFromId(currentHoveredInstanceId);
+          // currentHoveredInstanceId = null;
+        // }
       }
       document.removeEventListener('mousemove', onMouseMove, false);
       document.removeEventListener('mouseup', onMouseUp, false);
@@ -766,55 +768,53 @@ const App = props => {
     const selectLocation = id => {
       if (id) currentHoveredInstanceId = id;
       if(currentHoveredInstanceId !== oldHoveredInstanceId){
-      objectControl.disableAutoRotate();
+        objectControl.disableAutoRotate();
 
 
-      // find short rotation distance
-      const { targetTheta, targetPhi } = calcThetaPhiFromLatLon(locations[currentHoveredInstanceId].lat, locations[currentHoveredInstanceId].lon);
-      const { theta, phi } = objectControl.getCurrentThetaPhi();
-      const animValue = { theta: theta, phi: phi };
-      let shortTheta;
+        // find short rotation distance
+        const { targetTheta, targetPhi } = calcThetaPhiFromLatLon(locations[currentHoveredInstanceId].lat, locations[currentHoveredInstanceId].lon);
+        const { theta, phi } = objectControl.getCurrentThetaPhi();
+        const animValue = { theta: theta, phi: phi };
+        let shortTheta;
+        const currentTargetTheta = theta - targetTheta > 0 ? theta - targetTheta : Math.PI * 2 + (theta - targetTheta);
+        const fixedTargetTheta = theta - targetTheta > 0 ? currentTargetTheta % (Math.PI * 2) : currentTargetTheta < 0 ? Math.PI * 2 + (currentTargetTheta % (Math.PI * 2)) : currentTargetTheta % (Math.PI * 2); // 0 -> 6.28 -> 0 -> 6.28
 
-      const currentTargetTheta = theta - targetTheta > 0 ? theta - targetTheta : Math.PI * 2 + (theta - targetTheta);
-
-      const fixedTargetTheta = theta - targetTheta > 0 ? currentTargetTheta % (Math.PI * 2) : currentTargetTheta < 0 ? Math.PI * 2 + (currentTargetTheta % (Math.PI * 2)) : currentTargetTheta % (Math.PI * 2); // 0 -> 6.28 -> 0 -> 6.28
-
-      if (fixedTargetTheta > Math.PI && fixedTargetTheta < Math.PI * 2) {
-        // left side
-        shortTheta = Math.PI * 2 + (theta - fixedTargetTheta);
-      } else {
-        // right side
-        shortTheta = theta - fixedTargetTheta;
-      }
-
-      gsap.to(camera.position, 1.3, { y: 0, z: 100, ease: 'power3.out' });
-      gsap.to(animValue, 1.3, {
-        theta: shortTheta,
-        phi: targetPhi,
-        ease: 'power3.out',
-        onUpdate: function () {
-          const value = this.targets()[0];
-          objectControl.setRotate(value.theta, value.phi);
+        if (fixedTargetTheta > Math.PI && fixedTargetTheta < Math.PI * 2) {
+          // left side
+          shortTheta = Math.PI * 2 + (theta - fixedTargetTheta);
+        } else {
+          // right side
+          shortTheta = theta - fixedTargetTheta;
         }
-      });
 
-      // point bg
-        resetPointsColor();
-        toWhiteColor();
-        animCanvasTexture.start();
-      //   setTimeout(() => {
-      //     animCanvasTexture.destroy();
-      //     setHideEarth(true);
-      //   }, 1600);
-        pointsBgMaterial.uniforms.activeInstanceId.value = currentHoveredInstanceId;
-        oldHoveredInstanceId = currentHoveredInstanceId;
+        gsap.to(camera.position, 1.3, { y: 0, z: 100, ease: 'power3.out' });
+        gsap.to(animValue, 1.3, {
+          theta: shortTheta,
+          phi: targetPhi,
+          ease: 'power3.out',
+          onUpdate: function () {
+            const value = this.targets()[0];
+            objectControl.setRotate(value.theta, value.phi);
+          }
+        });
 
-      //
-      // gsap.to('#selectCity', 0.3, { autoAlpha: 0, ease: 'power1.inOut' });
-      // gsap.to('#locationsOuterWrap', 0.3, { autoAlpha: 1, ease: 'power1.inOut' });
-      selectCityElem.current.classList.add('hide');
-      locationsOuterWrapElem.current.classList.add('show');
-      //   showDetails();
+        // point bg
+          resetPointsColor();
+          toWhiteColor();
+          animCanvasTexture.start();
+        //   setTimeout(() => {
+        //     animCanvasTexture.destroy();
+        //     setHideEarth(true);
+        //   }, 1600);
+          pointsBgMaterial.uniforms.activeInstanceId.value = currentHoveredInstanceId;
+          oldHoveredInstanceId = currentHoveredInstanceId;
+
+        //
+        // gsap.to('#selectCity', 0.3, { autoAlpha: 0, ease: 'power1.inOut' });
+        // gsap.to('#locationsOuterWrap', 0.3, { autoAlpha: 1, ease: 'power1.inOut' });
+        selectCityElem.current.classList.add('hide');
+        locationsOuterWrapElem.current.classList.add('show');
+        //   showDetails();
       }
     };
     selectLocationFunc.current = { selectLocation };
@@ -827,12 +827,7 @@ const App = props => {
         const attribute = mesh.geometry.attributes.instanceColor;
         const animValue = { r: pointInstanceColors[id * 3], g: pointInstanceColors[id * 3 + 1], b: pointInstanceColors[id * 3 + 2] };
 
-        gsap.to(animValue, 0.3, {
-          r: 1,
-          g: 1,
-          b: 1,
-          overwrite: true,
-          ease: 'power3.out',
+        gsap.to(animValue, 0.3, {r: 1,g: 1,b: 1,overwrite: true,ease: 'power3.out',
           onUpdate: function () {
             const value = this.targets()[0];
             attribute.setXYZ(id, value.r, value.g, value.b);
@@ -933,29 +928,29 @@ const App = props => {
         updateClouds();
         updateCircleLineBg();
 
-        raycaster.setFromCamera(mouse, camera);
-        const intersection = raycaster.intersectObject(pointsMesh);
+        // raycaster.setFromCamera(mouse, camera);
+        // const intersection = raycaster.intersectObject(pointsMesh);
 
-        if (intersection.length > 0) {
-          currentHoveredInstanceId = intersection[0].instanceId;
-          // console.log("balls clicked");
-          if (currentHoveredInstanceId !== prevHoveredInstanceId) {
-            document.body.style.cursor = 'pointer';
-            prevHoveredInstanceId = currentHoveredInstanceId;
-          }
-        } else {
-          if (prevHoveredInstanceId !== null) {
-            document.body.style.cursor = '';
-            currentHoveredInstanceId = null;
-            prevHoveredInstanceId = null;
-          }
-        }
+        // if (intersection.length > 0) {
+        //   currentHoveredInstanceId = intersection[0].instanceId;
+        //   // console.log("balls clicked");
+        //   if (currentHoveredInstanceId !== prevHoveredInstanceId) {
+        //     document.body.style.cursor = 'pointer';
+        //     prevHoveredInstanceId = currentHoveredInstanceId;
+        //   }
+        // } else {
+        //   if (prevHoveredInstanceId !== null) {
+        //     document.body.style.cursor = '';
+        //     currentHoveredInstanceId = null;
+        //     prevHoveredInstanceId = null;
+        //   }
+        // }
       }
     };
 
     const update = () => {
       draw();
-      if (stats) stats.update();
+      // if (stats) stats.update();
     };
 
     const render = () => {
