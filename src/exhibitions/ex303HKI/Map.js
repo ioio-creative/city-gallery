@@ -1,11 +1,14 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 // import dat from 'dat.gui';
 import * as PIXI from 'pixi.js';
 import gsap from 'gsap';
 
 const Map = props => {
+  const [on, setOn] = useState(true);
   const wrapElem = useRef(null);
   const data = props.appData;
+
+  const showHighlightFunc = useRef(null);
 
   useEffect(() => {
     // const gui = new dat.GUI({ width: 300 });
@@ -204,6 +207,7 @@ const Map = props => {
               uniform float progressHide2019;
               uniform float threshold;
               uniform float selectedCoastlineIdx;
+              uniform float highlightOpacity;
 
               varying vec2 vUvs;
               
@@ -246,8 +250,8 @@ const Map = props => {
 
                     float value2 = progressHide1900 * (1. + _threshold);
                     float v2 = clamp( (noiseTextureColor.r - 1. + value2) * (1./_threshold), 0., 1.);
-                    coastline1900Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., .6), 1.-v);
-                    coastline1900Color = mix(coastline1900Color, vec4(7. / 255., 74. / 255., 69. / 255., .6), v);
+                    coastline1900Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., highlightOpacity), 1.-v);
+                    coastline1900Color = mix(coastline1900Color, vec4(7. / 255., 74. / 255., 69. / 255., highlightOpacity), v);
                     coastline1900Color = vec4(mix(coastline1900DiffuseColor.rgb, coastline1900Color.rgb, coastline1900Color.a), 1.);
                     // hide effect
                     coastline1900Color = mix(coastline1900Color, vec4(0., 0., 0., 0.), v2);
@@ -258,8 +262,8 @@ const Map = props => {
 
                     float value2 = progressHide1945 * (1. + _threshold);
                     float v2 = clamp( (noiseTextureColor.r - 1. + value2) * (1./_threshold), 0., 1.);
-                    coastline1945Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., .6), 1.-v);
-                    coastline1945Color = mix(coastline1945Color, vec4(0. / 255., 122. / 255., 111. / 255., .6), v);
+                    coastline1945Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., highlightOpacity), 1.-v);
+                    coastline1945Color = mix(coastline1945Color, vec4(0. / 255., 122. / 255., 111. / 255., highlightOpacity), v);
                     coastline1945Color = vec4(mix(coastline1945DiffuseColor.rgb, coastline1945Color.rgb, coastline1945Color.a), 1.);
                     // hide effect
                     coastline1945Color = mix(coastline1945Color, vec4(0., 0., 0., 0.), v2);
@@ -270,8 +274,8 @@ const Map = props => {
                     
                     float value2 = progressHide1985 * (1. + _threshold);
                     float v2 = clamp( (noiseTextureColor.r - 1. + value2) * (1./_threshold), 0., 1.);
-                    coastline1985Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., .6), 1.-v);
-                    coastline1985Color = mix(coastline1985Color, vec4(40. / 255., 176. / 255., 155. / 255., .6), v);
+                    coastline1985Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., highlightOpacity), 1.-v);
+                    coastline1985Color = mix(coastline1985Color, vec4(40. / 255., 176. / 255., 155. / 255., highlightOpacity), v);
                     coastline1985Color = vec4(mix(coastline1985DiffuseColor.rgb, coastline1985Color.rgb, coastline1985Color.a), 1.);
                     // hide effect
                     coastline1985Color = mix(coastline1985Color, vec4(0., 0., 0., 0.), v2); 
@@ -282,8 +286,8 @@ const Map = props => {
 
                     float value2 = progressHide2019 * (1. + _threshold);
                     float v2 = clamp( (noiseTextureColor.r - 1. + value2) * (1./_threshold), 0., 1.);
-                    coastline2019Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., .6), 1.-v);
-                    coastline2019Color = mix(coastline2019Color, vec4(112. / 255., 204. / 255., 184. / 255., .6), v);
+                    coastline2019Color = mix(vec4(0., 0., 0., 0.), vec4(70. / 255., 70. / 255., 70. / 255., highlightOpacity), 1.-v);
+                    coastline2019Color = mix(coastline2019Color, vec4(112. / 255., 204. / 255., 184. / 255., highlightOpacity), v);
                     coastline2019Color = vec4(mix(coastline2019DiffuseColor.rgb, coastline2019Color.rgb, coastline2019Color.a), 1.);
                     // hide effect
                     coastline2019Color = mix(coastline2019Color, vec4(0., 0., 0., 0.), v2);
@@ -330,6 +334,7 @@ const Map = props => {
             coastline1945Mask: null,//new PIXI.Sprite.from('hkIsland_coastline1945of2019_mask').texture.baseTexture,
             coastline1985Mask: null,//new PIXI.Sprite.from('hkIsland_coastline1985of2019_mask').texture.baseTexture,
             coastline2019Mask: null,//new PIXI.Sprite.from('hkIsland_coastline2019of2019_mask').texture.baseTexture,
+            highlightOpacity: .8,
             sandTexture: new PIXI.Sprite.from('sand').texture.baseTexture,
             noiseTexture: new PIXI.Sprite.from('noise').texture.baseTexture
           }
@@ -702,11 +707,33 @@ const Map = props => {
     };
     props.handleStart.current = { start };
 
+    const showHighlight = (bool) => {
+      gsap.to(map[props.locationName].image.shader.uniforms, .6,{highlightOpacity: bool ? .8 : .2, ease:'power1.inOut'})
+    }
+    showHighlightFunc.current = { showHighlight };
+
     initEngine();
     startAnim();
   }, []);
 
-  return <div ref={wrapElem} className={`shader ${props.gameMode === 'street' ? `zone${props.zone+1}` : ''}`}></div>;
+  useEffect(()=>{
+    if(props.gameMode === 'coast'){
+      showHighlightFunc.current.showHighlight(true);
+    }
+    else if(props.gameMode === 'street'){
+      showHighlightFunc.current.showHighlight(false);
+    }
+  },[props.gameMode])
+
+  const onShowHighlight = (bool) => {
+    setOn(bool);
+    showHighlightFunc.current.showHighlight(bool);
+  }
+
+  return <>
+      <div ref={wrapElem} className={`shader ${props.gameMode === 'street' ? `zone${props.zone+1}` : ''}`}></div>
+      <div style={{position:'fixed',top:'100px',right:'70px',zIndex:'999',fontSize:'60px',color:'#fff'}}><span style={{opacity: on ? '1' : '.4'}} onClick={()=>onShowHighlight(true)}>on</span> / <span style={{opacity: on ? '.4' : '1'}} onClick={()=>onShowHighlight(false)}>off</span></div>
+    </>
 };
 
 export default Map;

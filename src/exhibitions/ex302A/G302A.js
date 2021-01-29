@@ -75,6 +75,10 @@ const G302A = props => {
       goToSection(d.index, true);
     }
 
+    const updateLang = (i) => {
+      onChangeLanguage(i === 0 ? 'tc' : 'en');
+    }
+
     if (socket) {
       socketRef.current = socket;
       socket.on('userEnter', start);
@@ -82,6 +86,7 @@ const G302A = props => {
       socket.on('navigationLeft', moveLeft);
       socket.on('navigationRight', moveRight);
       socket.on('navigationIndex', getNavigationIndex);
+      socket.on('selectLang', updateLang);
     } else {
       setSocket(webSocket('http://localhost:80/'));
     }
@@ -93,6 +98,7 @@ const G302A = props => {
         socket.off('navigationLeft', moveLeft);
         socket.off('navigationRight', moveRight);
         socket.off('navigationIndex', getNavigationIndex);
+        socket.off('selectLang', updateLang);
       }
     };
   }, [socket]);

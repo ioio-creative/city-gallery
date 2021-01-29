@@ -349,7 +349,7 @@ const Content = props => {
             } else if (type === 'scale') {
               const is = Math.max(
                 1,
-                1 + (img.getBoundingClientRect().left - ww / 8) / maxWidth
+                1 + (img.getBoundingClientRect().left - ww * .6) / (maxWidth*.1)
               );
               child.style.transform = `translate3d(0,0,0) scale(${is})`;
             }
@@ -613,10 +613,7 @@ const Content = props => {
                     <div id='top'>
                       <div id='imgOuterWrap'>
                         {c.image.src && (
-                          <div
-                            className='imgWrap'
-                            data-type={`${c.image.translationType}`}
-                          >
+                          <div className='imgWrap' data-type={`${c.image.translationType}`}>
                             <img src={c.image.src} />
                             {c.image.gallery && c.image.gallery.length > 0 && (
                               <div
@@ -674,7 +671,7 @@ const Content = props => {
         })}
       </div>
       {
-        <div id='gallery' className={openedGallery ? 'active' : ''}>
+        <div id='gallery' className={openedGallery && props.ClickedSectionIdx !== null ? 'active' : ''}>
           <div id='galleryContent'>
             <ul ref={galleryListElem}>
               {galleryItems &&

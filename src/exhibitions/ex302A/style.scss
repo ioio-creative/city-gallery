@@ -1062,7 +1062,6 @@ body {
             // transform: translate3d(calc(100vw - #{vw-calc(455 - 1)}), 1px, 0);
             transition-duration: 1s, 0.6s, 0.6s;
             transition-delay: 0.1s;
-            transition-property: width;
           }
           #bg {
             clip-path: polygon(0 0, 200% 0, 0 200%);
