@@ -80,6 +80,7 @@
     position: absolute;
     bottom: vw-calc(95);
     left: 50%;
+    z-index: 2;
     transform: translate3d(-50%, 0, 0);
     display: flex;
     text-align: center;
@@ -204,13 +205,13 @@
         }
       }
       #locationsOuterWrap {
+        width: 100%;
         position: absolute;
         top: 50%;
         left: 47%;
         transform: translate3d(-50%, -50%, 0);
         opacity: 0;
         visibility: hidden;
-        width: 713px;
         &.show{
           opacity: 1;
           visibility: visible;
