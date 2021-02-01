@@ -895,30 +895,30 @@ const App = props => {
     // toWhiteColorFunc.current = { toWhiteColor };
 
     const resetPointsColor = () => {
-      const meshs = [pointsMesh, linesMesh];
-      const id = oldHoveredInstanceId;
-      if (id !== currentHoveredInstanceId && id !== null) {
-        for (let i = 0; i < meshs.length; i++) {
-          const mesh = meshs[i];
-          const attribute = mesh.geometry.attributes.instanceColor;
-          const animValue = { r: 1, g: 1, b: 1 };
-
-          gsap.to(animValue, 0.3, {
-            r: pointInstanceColors[id * 3],
-            g: pointInstanceColors[id * 3 + 1],
-            b: pointInstanceColors[id * 3 + 2],
-            ease: 'power3.out',
-            onUpdate: function () {
-              const value = this.targets()[0];
-              attribute.setXYZ(id, value.r, value.g, value.b);
-              attribute.needsUpdate = true;
-            }
-          });
-        }
-      }
-      pointsBgMaterial.uniforms.activeInstanceId.value = -1;
-
       isHideEarth = false;
+      // const meshs = [pointsMesh, linesMesh];
+      // const id = oldHoveredInstanceId;
+      // if (id !== currentHoveredInstanceId && id !== null) {
+      //   for (let i = 0; i < meshs.length; i++) {
+      //     const mesh = meshs[i];
+      //     const attribute = mesh.geometry.attributes.instanceColor;
+      //     const animValue = { r: 1, g: 1, b: 1 };
+
+      //     gsap.to(animValue, 0.3, {
+      //       r: pointInstanceColors[id * 3],
+      //       g: pointInstanceColors[id * 3 + 1],
+      //       b: pointInstanceColors[id * 3 + 2],
+      //       ease: 'power3.out',
+      //       onUpdate: function () {
+      //         const value = this.targets()[0];
+      //         attribute.setXYZ(id, value.r, value.g, value.b);
+      //         attribute.needsUpdate = true;
+      //       }
+      //     });
+      //   }
+      // }
+      // pointsBgMaterial.uniforms.activeInstanceId.value = -1;
+
     };
     resetPointsColorFunc.current = { resetPointsColor };
 
@@ -947,7 +947,7 @@ const App = props => {
     showDetailsRef.current = { showDetails };
 
     const zoomIn = () => {
-      const tl = gsap.timeline({ onComplete: pops, onReverseComplete: reversePops });
+      const tl = gsap.timeline({ onComplete: pops });
       timeLineRef.current = tl;
       tl.to('#lang', 0.3, { autoAlpha: 0, ease: 'power1.inOut' });
       tl.to(camera.position, 2, { y: 0, z: 100, ease: 'power4.inOut' }, '-=.1');
@@ -957,7 +957,11 @@ const App = props => {
     zoomInFunc.current = { zoomIn };
 
     const zoomOut = () => {
-      timeLineRef.current.reverse();
+      const tl = gsap.timeline();
+      tl.to('#locationSelector', 0.3, { autoAlpha: 0, ease: 'power1.inOut' });
+      tl.to(camera.position, 2, { y: 0, z: 170, ease: 'power4.inOut' }, 'a');
+      tl.call(()=>reversePops(),null,'a');
+      tl.to('#lang', 0.3, { autoAlpha: 1, ease: 'power1.inOut' },'end');
       setSelectedId(null);
     };
     zoomOutFunc.current = { zoomOut, clearIdx };
