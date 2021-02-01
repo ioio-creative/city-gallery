@@ -43,16 +43,16 @@ const App = props => {
   const objectControlRef = useState(null);
   const locations = [
     { name: { en: 'Hong Kong', tc: '香港' }, lat: 22.37772, lon: 114.155267, offset:1.04 },
-    { name: { en: 'Beijing', tc: '北京' }, lat: 39.920244, lon: 116.411309, offset:1.05 },
+    { name: { en: 'Beijing', tc: '北京' }, lat: 39.920244, lon: 116.411309, offset:1.03 },
     { name: { en: 'Cairo', tc: '開羅' }, lat: 30.050844, lon: 31.236143, offset:1.03 },
-    { name: { en: 'London', tc: '倫敦' }, lat: 51.510833, lon: -0.127461, offset:1 },
-    { name: { en: 'Paris', tc: '巴黎' }, lat: 48.862788, lon: 2.339303, offset:1 },
+    { name: { en: 'London', tc: '倫敦' }, lat: 51.510833, lon: -0.127461, offset:0.97 },
+    { name: { en: 'Paris', tc: '巴黎' }, lat: 48.862788, lon: 2.339303, offset:0.97 },
     { name: { en: 'Mexico City', tc: '墨西哥城' }, lat: 19.595333, lon: -99.142672, offset:1.1 },
     { name: { en: 'Mumbai', tc: '孟買' }, lat: 19.144194, lon: 72.883378, offset:1.05 },
-    { name: { en: 'New York', tc: '紐約' }, lat: 40.7632, lon: -74.041618, offset:1.02 },
+    { name: { en: 'New York', tc: '紐約' }, lat: 40.7632, lon: -74.041618, offset:1.01 },
     { name: { en: 'Singapore', tc: '新加坡' }, lat: 1.34969, lon: 103.88134, offset:1.05 },
     { name: { en: 'Sydney', tc: '悉尼' }, lat: -33.817029, lon: 151.213937, offset:1.05 },
-    { name: { en: 'Tokyo', tc: '東京' }, lat: 35.680331, lon: 139.767505, offset:1.03 }
+    { name: { en: 'Tokyo', tc: '東京' }, lat: 35.680331, lon: 139.767505, offset:1.02 }
   ];
   // const moveToFunc = useRef(null);
   const moveFromIdFunc = useRef(null);
@@ -337,7 +337,7 @@ const App = props => {
         // pointOffsets.push(pos.x, pos.y, pos.z);
         pos.multiplyScalar(location.offset);
         // const scaledOffset = pointScaledOffsets;
-        vertices.push(pos.x, pos.y*1.1, pos.z);
+        vertices.push(pos.x, pos.y*1.17, pos.z);
         ids.push(i);
         sizes[i] = 0.0;
         // pointBgInstanceColors.push(1, 1, 1);
@@ -362,7 +362,7 @@ const App = props => {
           // 'attribute vec3 instanceColor;',
           'attribute float instanceId;',
           'attribute float size;',
-          'varying vec3 vColor;',
+          // 'varying vec3 vColor;',
           'varying float vId;',
 
           'void main() {',
@@ -377,12 +377,12 @@ const App = props => {
         fragmentShader: [
           'uniform sampler2D textures[3];',
           'uniform float activeInstanceId;',
-          'varying vec3 vColor;',
+          // 'varying vec3 vColor;',
           'varying float vId;',
 
           'void main() {',
             'vec4 texture;',
-            'vec3 color;',
+            // 'vec3 color;',
 
 
             'if(activeInstanceId == vId){',
@@ -403,7 +403,7 @@ const App = props => {
         ].join('\n'),
         transparent: true,
         depthWrite: false,
-        depthWrite: false
+        // depthTest:false
       });
       pinMesh = new THREE.Points(geometry, pointsBgMaterial);
 
@@ -784,11 +784,14 @@ const App = props => {
           if (intersection.length > 0) {
             currentHoveredInstanceId = intersection[0].index;
 
-            if(currentHoveredInstanceId !== 0){
-              // console.log(currentHoveredInstanceId)
+            if(currentHoveredInstanceId !== oldHoveredInstanceId){
               selectLocation(currentHoveredInstanceId);
               moveFromIdFunc.current.moveFromId(currentHoveredInstanceId);
             }
+            else{
+              showDetails(currentHoveredInstanceId);
+            }
+            
             // currentHoveredInstanceId = null;
 
             // currentHoveredInstanceId = intersection[0].instanceId;
@@ -987,8 +990,9 @@ const App = props => {
         const { theta, phi } = objectControl.getCurrentThetaPhi();
 
         const st = Math.abs((Math.abs(theta - targetTheta)* 180/Math.PI) % 360 - 180) / 180;
-        const sp = Math.abs((Math.abs(phi - targetPhi)* 180/Math.PI) % 360 - 180) / 180;
-        pinMesh.geometry.attributes.size.array[ i ] = st * sp * animValue[i].s;
+        const sp = Math.abs((Math.abs(phi - targetPhi)* 180/Math.PI) % 360 - 180) / 120;
+        // console.log(st);
+        pinMesh.geometry.attributes.size.array[ i ] = (sp * st) * animValue[i].s;
         pinMesh.geometry.attributes.size.needsUpdate = true;
       }
     }
