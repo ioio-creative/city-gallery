@@ -328,13 +328,38 @@
       width: 100%;
       height: 100%;
       position: relative;
+      #line{
+        width:0;
+        height:0;
+        position: absolute;
+        top:0;
+        left:0;
+        z-index: 99999;
+        pointer-events: none;
+        opacity: .5;
+        span{
+          position: absolute;
+          top:0;
+          left:0;
+          background:#fff;
+          transform: translate3d(50vw,100vh,0);
+          mix-blend-mode: difference;
+          @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+              width:vw-calc(random(6)+3);
+              height:#{random(60)+50}vh;
+              transform: translate3d(#{random(100)}vw,100vh,0);
+            }
+          }
+        }
+      }
       .locationName {
         position: absolute;
         top: vw-calc(75);
         text-transform: uppercase;
         font-weight: bold;
         font-size: vw-calc(70);
-        z-index: 999999;
+        z-index: 9999;
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1);
@@ -1217,7 +1242,7 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      z-index: 999999;
+      z-index: 9999;
       transform: translate3d(0, 100%, 0);
       transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
       #homeBtn {

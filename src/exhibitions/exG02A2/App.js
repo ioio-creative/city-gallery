@@ -949,7 +949,8 @@ const App = props => {
       // pointsBgMaterial.uniforms.activeInstanceId.value = currentHoveredInstanceId;
       // oldHoveredInstanceId = currentHoveredInstanceId;
       gsap.set('#detailPage', { className: 'active' });
-      gsap.fromTo('#opening .bg', 0.8, { y: '100%' }, { force3D: true, y: '0%', stagger: 0.08, ease: 'expo.inOut' });
+      gsap.fromTo('#opening .bg', 0.8, { y: '100%' }, { force3D: true, y: '0%', stagger: 0.1, ease: 'expo.inOut' });
+      gsap.fromTo('#sectionWrap #line span', 0.6, { y: '100vh', autoAlpha:.5 }, { force3D: true, y: '-150vh', autoAlpha:0, stagger: 0.1, ease: 'power3.inOut' });
 
       // setTimeout(() => {
         setDetailIdx(0);
@@ -1310,8 +1311,9 @@ const App = props => {
         }
       });
       temp.set(`#section${idx}`, { zIndex: zindex });
-      temp.fromTo(`#section${idx} .bg span`, 1, { y: '100%' }, { force3D: true, y: '-100%', ease: 'expo.out' });
+      temp.fromTo(`#section${idx} .bg span`, 1, { y: '100%' }, { force3D: true, y: '-100%', ease: 'expo.out' },'s');
       temp.fromTo(`#section${idx} .bg`, 0.6, { y: '100%' }, { force3D: true, y: '0%', ease: 'expo.inOut' },'-=.95');
+      temp.fromTo('#sectionWrap #line span', 0.4, { y: '100vh',autoAlpha:.5 }, { force3D: true, y: '-150vh', autoAlpha:0, stagger: 0.1, ease: 'power2.inOut' },'s');
       // temp.to({}, {duration:4});
       // gsap.set(`#section${idx}`, {zIndex:zindex});
       // gsap.fromTo(`#section${idx} .bg span`, 1, {y:'100%'},{force3D:true, y:'-100%', stagger:.08, ease:'expo.out'});
@@ -1459,6 +1461,14 @@ const App = props => {
             {selectedId && locations[selectedId].name['en'].replace(' ', '') !== 'Tokyo' && <span style={{ backgroundImage: `url(./images/exG02a/${selectedId ? locations[selectedId].name['en'].replace(' ', '').toLowerCase() : 'hongkong'}flag.png)`, borderRadius: 5 + 'px' }}></span>}
             {selectedId && locations[selectedId].name['en'].replace(' ', '') === 'Tokyo' && <span style={{ backgroundImage: `url(./images/exG02a/${selectedId ? locations[selectedId].name['en'].replace(' ', '').toLowerCase() : 'hongkong'}flag.svg)` }}></span>}
             {selectedId && locations[selectedId].name[language]}
+          </div>
+
+          <div id="line">
+            {
+              [...Array(5)].map((v,i)=>{
+                return <span key={i}></span>
+              })
+            }
           </div>
 
           <Section1 data={data && data.section1} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()} />
