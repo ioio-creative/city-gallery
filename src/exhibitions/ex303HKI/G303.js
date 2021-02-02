@@ -57,6 +57,7 @@ const G303 = props => {
       if (!started) {
         started = true;
         // setShowWholeScreen(true);
+        onBack();
       }
     }
 
