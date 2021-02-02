@@ -83,18 +83,18 @@ const App = props => {
     let materialItems = [];
     let textureItems = [];
     let meshItems = [];
-    const pointOffsets = [];
-    const pointScaledOffsets = [];
-    const pointScales = [];
-    const pointInstanceColors = [];
-    const pointBgInstanceColors = [];
+    // const pointOffsets = [];
+    // const pointScaledOffsets = [];
+    // const pointScales = [];
+    // const pointInstanceColors = [];
+    // const pointBgInstanceColors = [];
     let pointsBgMaterial = null;
     const groupedMesh = new THREE.Group();
-    let pointsMesh = null;
+    // let pointsMesh = null;
     let pinMesh = null;
-    let linesMesh = null;
-    let canvasTexture = null;
-    let animCanvasTexture = null;
+    // let linesMesh = null;
+    // let canvasTexture = null;
+    // let animCanvasTexture = null;
     const numsOfClouds = 8;
     let cloudsMesh = null;
     const cloudSpeed = [];
@@ -107,17 +107,18 @@ const App = props => {
     // const scaleUpMatrix = new THREE.Matrix4().makeRotationY( 0.1 );
     // const scaleDownMatrix = new THREE.Matrix4().makeScale( .5, .5, .5 );
     const instanceMatrix = new THREE.Matrix4();
-    const instanceMatrix2 = new THREE.Matrix4();
+    // const instanceMatrix2 = new THREE.Matrix4();
     const matrix = new THREE.Matrix4();
     let currentHoveredInstanceId = null;
-    let prevHoveredInstanceId = null;
+    // let prevHoveredInstanceId = null;
     let oldHoveredInstanceId = null;
 
     let objectControl = null;
     let dragging = false;
     let isHideEarth = false;
+    let goToDetail = false;
 
-    let attributesSize = [];
+    // let attributesSize = [];
     let animValue = [];
 
     // cameraControl system
@@ -352,7 +353,7 @@ const App = props => {
 
       pointsBgMaterial = new THREE.ShaderMaterial({
         uniforms: {
-          activeInstanceId: { type: 'f', value: -1 },
+          activeInstanceId: { type: 'f', value: -1.0 },
           textures: {
             type: 't',
             value: textures
@@ -385,7 +386,7 @@ const App = props => {
             // 'vec3 color;',
 
 
-            'if(activeInstanceId == vId){',
+            'if(vId > activeInstanceId-.5 && vId < activeInstanceId+.5){',
               // 'color = vec3(1.,1.,1.);',
               'texture = texture2D( textures[1], gl_PointCoord );',
             '}',
@@ -771,7 +772,7 @@ const App = props => {
     };
 
     const onMouseUp = (event) => {
-      if (!dragging) {
+      if (!dragging && !goToDetail) {
         let e = event.touches ? event.touches[0] : event;
 
         if(e){
@@ -784,12 +785,15 @@ const App = props => {
           if (intersection.length > 0) {
             currentHoveredInstanceId = intersection[0].index;
 
-            if(currentHoveredInstanceId !== oldHoveredInstanceId){
-              selectLocation(currentHoveredInstanceId);
-              moveFromIdFunc.current.moveFromId(currentHoveredInstanceId);
-            }
-            else{
-              showDetails(currentHoveredInstanceId);
+            if(currentHoveredInstanceId !== 0){
+              if(currentHoveredInstanceId !== oldHoveredInstanceId){
+                selectLocation(currentHoveredInstanceId);
+                moveFromIdFunc.current.moveFromId(currentHoveredInstanceId);
+              }
+              else{
+                showDetails(currentHoveredInstanceId);
+                goToDetail = true;
+              }
             }
             
             // currentHoveredInstanceId = null;
@@ -826,54 +830,59 @@ const App = props => {
 
     const selectLocation = id => {
       if (id) currentHoveredInstanceId = id;
-      if(currentHoveredInstanceId !== oldHoveredInstanceId){
-        objectControl.disableAutoRotate();
+      if(currentHoveredInstanceId !== 0){
+        if(currentHoveredInstanceId !== oldHoveredInstanceId){
+          objectControl.disableAutoRotate();
 
 
-        // find short rotation distance
-        const { targetTheta, targetPhi } = calcThetaPhiFromLatLon(locations[currentHoveredInstanceId].lat, locations[currentHoveredInstanceId].lon);
-        const { theta, phi } = objectControl.getCurrentThetaPhi();
-        const animValue = { theta: theta, phi: phi };
-        let shortTheta;
-        const currentTargetTheta = theta - targetTheta > 0 ? theta - targetTheta : Math.PI * 2 + (theta - targetTheta);
-        const fixedTargetTheta = theta - targetTheta > 0 ? currentTargetTheta % (Math.PI * 2) : currentTargetTheta < 0 ? Math.PI * 2 + (currentTargetTheta % (Math.PI * 2)) : currentTargetTheta % (Math.PI * 2); // 0 -> 6.28 -> 0 -> 6.28
+          // find short rotation distance
+          const { targetTheta, targetPhi } = calcThetaPhiFromLatLon(locations[currentHoveredInstanceId].lat, locations[currentHoveredInstanceId].lon);
+          const { theta, phi } = objectControl.getCurrentThetaPhi();
+          const animValue = { theta: theta, phi: phi };
+          let shortTheta;
+          const currentTargetTheta = theta - targetTheta > 0 ? theta - targetTheta : Math.PI * 2 + (theta - targetTheta);
+          const fixedTargetTheta = theta - targetTheta > 0 ? currentTargetTheta % (Math.PI * 2) : currentTargetTheta < 0 ? Math.PI * 2 + (currentTargetTheta % (Math.PI * 2)) : currentTargetTheta % (Math.PI * 2); // 0 -> 6.28 -> 0 -> 6.28
 
-        if (fixedTargetTheta > Math.PI && fixedTargetTheta < Math.PI * 2) {
-          // left side
-          shortTheta = Math.PI * 2 + (theta - fixedTargetTheta);
-        } else {
-          // right side
-          shortTheta = theta - fixedTargetTheta;
-        }
-
-        // gsap.to(camera.position, 1.3, { y: 0, z: 100, ease: 'power3.out' });
-        gsap.to(animValue, 1.3, {
-          theta: shortTheta,
-          phi: targetPhi,
-          ease: 'power3.out',
-          onUpdate: function () {
-            const value = this.targets()[0];
-            objectControl.setRotate(value.theta, value.phi);
+          if (fixedTargetTheta > Math.PI && fixedTargetTheta < Math.PI * 2) {
+            // left side
+            shortTheta = Math.PI * 2 + (theta - fixedTargetTheta);
+          } else {
+            // right side
+            shortTheta = theta - fixedTargetTheta;
           }
-        });
 
-        // point bg
-          // resetPointsColor();
-          // toWhiteColor();
-          // animCanvasTexture.start();
-        //   setTimeout(() => {
-        //     animCanvasTexture.destroy();
-        //     setHideEarth(true);
-        //   }, 1600);
-          pointsBgMaterial.uniforms.activeInstanceId.value = currentHoveredInstanceId;
-          oldHoveredInstanceId = currentHoveredInstanceId;
+          // gsap.to(camera.position, 1.3, { y: 0, z: 100, ease: 'power3.out' });
+          gsap.to(animValue, 1.3, {
+            theta: shortTheta,
+            phi: targetPhi,
+            ease: 'power3.out',
+            onUpdate: function () {
+              const value = this.targets()[0];
+              objectControl.setRotate(value.theta, value.phi);
+            }
+          });
 
-        //
-        // gsap.to('#selectCity', 0.3, { autoAlpha: 0, ease: 'power1.inOut' });
-        // gsap.to('#locationsOuterWrap', 0.3, { autoAlpha: 1, ease: 'power1.inOut' });
-        selectCityElem.current.classList.add('hide');
-        locationsOuterWrapElem.current.classList.add('show');
-        //   showDetails();
+          // point bg
+            // resetPointsColor();
+            // toWhiteColor();
+            // animCanvasTexture.start();
+          //   setTimeout(() => {
+          //     animCanvasTexture.destroy();
+          //     setHideEarth(true);
+          //   }, 1600);
+            pointsBgMaterial.uniforms.activeInstanceId.value = currentHoveredInstanceId;
+            oldHoveredInstanceId = currentHoveredInstanceId;
+
+          //
+          // gsap.to('#selectCity', 0.3, { autoAlpha: 0, ease: 'power1.inOut' });
+          // gsap.to('#locationsOuterWrap', 0.3, { autoAlpha: 1, ease: 'power1.inOut' });
+          selectCityElem.current.classList.add('hide');
+          locationsOuterWrapElem.current.classList.add('show');
+          //   showDetails();
+        }
+        else{
+          showDetails(currentHoveredInstanceId);
+        }
       }
     };
     selectLocationFunc.current = { selectLocation };
@@ -899,6 +908,7 @@ const App = props => {
 
     const resetPointsColor = () => {
       isHideEarth = false;
+      goToDetail = false;
       // const meshs = [pointsMesh, linesMesh];
       // const id = oldHoveredInstanceId;
       // if (id !== currentHoveredInstanceId && id !== null) {
@@ -1396,7 +1406,7 @@ const App = props => {
                     >
                       <span
                         onClick={() => {
-                          showDetailsRef.current.showDetails(idx);
+                          // showDetailsRef.current.showDetails(idx);
                         }}
                       >
                         {value.name[language]}
@@ -1433,7 +1443,7 @@ const App = props => {
             <div id='right' className='half'>
               <div className='wrap'>
                 <span className='name'>{selectedId && locations[selectedId].name[language]}</span>
-                <div className='img' style={{ backgroundImage: `url(./images/exG02a/${selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()}bg.jpg)` }}></div>
+                <div className='img' style={{ backgroundImage: `url(./images/exG02a/${selectedId ? locations[selectedId].name['en'].replace(' ', '').toLowerCase() : 'hongkong'}bg.jpg)` }}></div>
               </div>
               <div className='bg'>
                 <span></span>
@@ -1446,8 +1456,8 @@ const App = props => {
             <span style={{ backgroundImage: `url(./images/exG02a/hongkongflag.svg)` }}></span>
           </div>
           <div className={`locationName right ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}>
-            {selectedId && locations[selectedId].name['en'].replace(' ', '') !== 'Tokyo' && <span style={{ backgroundImage: `url(./images/exG02a/${selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()}flag.png)`, borderRadius: 5 + 'px' }}></span>}
-            {selectedId && locations[selectedId].name['en'].replace(' ', '') === 'Tokyo' && <span style={{ backgroundImage: `url(./images/exG02a/${selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()}flag.svg)` }}></span>}
+            {selectedId && locations[selectedId].name['en'].replace(' ', '') !== 'Tokyo' && <span style={{ backgroundImage: `url(./images/exG02a/${selectedId ? locations[selectedId].name['en'].replace(' ', '').toLowerCase() : 'hongkong'}flag.png)`, borderRadius: 5 + 'px' }}></span>}
+            {selectedId && locations[selectedId].name['en'].replace(' ', '') === 'Tokyo' && <span style={{ backgroundImage: `url(./images/exG02a/${selectedId ? locations[selectedId].name['en'].replace(' ', '').toLowerCase() : 'hongkong'}flag.svg)` }}></span>}
             {selectedId && locations[selectedId].name[language]}
           </div>
 
@@ -1466,9 +1476,7 @@ const App = props => {
           ></div>
           <ul>
             <li>
-              <img
-                alt=''
-                src='./images/exG02a/earth_icon.png'
+              <img alt='' src='./images/exG02a/earth_icon.png'
                 onClick={() => {
                   onBackHome(true);
                 }}
@@ -1477,9 +1485,7 @@ const App = props => {
             {data &&
               data.menu.map((value, idx) => {
                 return (
-                  <li
-                    key={idx}
-                    className={detailIdx === idx + 1 ? 'active' : ''}
+                  <li key={idx} className={detailIdx === idx + 1 ? 'active' : ''}
                     onClick={() => {
                       onChangeDetail(idx + 1);
                     }}

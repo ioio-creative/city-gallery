@@ -315,7 +315,8 @@ const Content = props => {
                 if(oldCurrentSectionIdx !== i){
                   // console.log(i);
                   // props.setCurrentSectionIdx(i);
-                  props.goToSection(i);
+                  // props.goToSection(i);
+                  props.dargToSection(i);
                   oldCurrentSectionIdx = i;
                 }
                 // console.log(i,pageOfNav)

@@ -380,6 +380,14 @@ const G302A = props => {
       socket.emit('navigationIndex', {data:{index:i}});
   };
 
+  const dargToSection = (i) => {
+    setCurrentSectionFunc.current.setCurrentSection(i);
+    setCurrentSectionIdx(i);
+
+    if(socket)
+      socket.emit('selectIndex', {data:{index:i}});
+  }
+
   const onChangeLanguage = lang => {
     setLanguage(lang);
     setContentData(props.appData.contents[lang]);
@@ -447,7 +455,8 @@ const G302A = props => {
           currentSectionIdx={currentSectionIdx}
           setCurrentSectionIdx={setCurrentSectionIdx}
           setClickedSectionIdx={setClickedSectionIdx}
-          goToSection={goToSection}
+          // goToSection={goToSection}
+          dargToSection={dargToSection}
           minimalSidebar={minimalSidebar}
           setMinimalSidebar={setMinimalSidebar}
           onBack={onBack}

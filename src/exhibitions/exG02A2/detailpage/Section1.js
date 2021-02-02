@@ -25,7 +25,7 @@ const Section1 = props => {
                 <div className="wrap">
                     <div className="title medium"><span></span>{data && data.populationArea}</div>
                     <div className="imageWrap">
-                        <div className="map" style={{backgroundImage:`url(${data && locationName && data.images[locationName].src})`}}></div>
+                        <div className="map" style={{backgroundImage:`url(${data && (locationName ? data.images[locationName].src : data.images['hongkong'].src)})`}}></div>
                     </div>
                     <div className="dist">{data && locationName && data.images[locationName].distance}<span style={{width:`${60 / 1920 * 100}vw`}}></span></div>
                     <div className="source">
