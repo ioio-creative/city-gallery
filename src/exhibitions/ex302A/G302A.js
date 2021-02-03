@@ -176,7 +176,8 @@ const G302A = props => {
     };
 
     const onMouseUp = () => {
-      moveSection();
+      if(moving)
+        moveSection();
       document.removeEventListener('mousemove', onMouseMove, false);
       document.removeEventListener('touchmove', onMouseMove, false);
       document.removeEventListener('mouseup', onMouseUp, false);
@@ -195,11 +196,10 @@ const G302A = props => {
 
     const leave = () => {
       isClickedSection = true;
-      setMinimalSidebar(false);
-      setClickedSectionIdx(null);
-
       sectionWrapElemPos.x = window.innerWidth;
       sectionWrapElemEasePos.x = window.innerWidth;
+
+      onBack();
     };
     leaveFunc.current = { leave };
 
@@ -218,10 +218,13 @@ const G302A = props => {
       sectionWrapElemPos.x = Math.min(0, Math.max(-maxWidth, sectionWrapElemPos.x));
     };
 
-    const moveSection = () => {
+    const moveSection = (isDetailPage = false) => {
       sectionWrapElemPos.x = -currentSection * (ww / 2);
       setCurrentSectionIdx(currentSection);
-      socketRef.current.emit('navigationIndex', {data:{index:currentSection}});
+
+      if(!isDetailPage){
+        socketRef.current.emit('navigationIndex', {data:{index:currentSection}});
+      }
 
       if (oldSection !== currentSection) {
         const tl = gsap.timeline();
@@ -250,9 +253,9 @@ const G302A = props => {
     };
     prevSectionFunc.current = { prevSection };
 
-    const setCurrentSection = i => {
+    const setCurrentSection = (i, isDetailPage = false) => {
       currentSection = i;
-      moveSection();
+      moveSection(isDetailPage);
     };
     setCurrentSectionFunc.current = { setCurrentSection };
 
@@ -361,7 +364,7 @@ const G302A = props => {
       setClickedSectionIdx(i);
       setIsClickedSectionFunc.current.setIsClickedSection(true);
 
-      socket.emit('selectIndex', {data:{index:i}});
+      socketRef.current.emit('selectIndex', {data:{index:i}});
     }
   };
 
@@ -370,22 +373,24 @@ const G302A = props => {
     setClickedSectionIdx(null);
     // setCurrentSectionIdx();
     setIsClickedSectionFunc.current.setIsClickedSection(false);
+    
+    // console.log(currentSectionIdx)
+    socketRef.current.emit('navigationIndex', {data:{index:currentSectionIdx}});
   }
 
   const goToSection = (i, isSocket = false) => {
     setCurrentSectionFunc.current.setCurrentSection(i);
     setCurrentSectionIdx(i);
 
-    if(!isSocket && socket)
-      socket.emit('navigationIndex', {data:{index:i}});
+    if(!isSocket)
+      socketRef.current.emit('navigationIndex', {data:{index:i}});
   };
 
   const dargToSection = (i) => {
-    setCurrentSectionFunc.current.setCurrentSection(i);
+    setCurrentSectionFunc.current.setCurrentSection(i, true);
     setCurrentSectionIdx(i);
 
-    if(socket)
-      socket.emit('selectIndex', {data:{index:i}});
+    socketRef.current.emit('selectIndex', {data:{index:i}});
   }
 
   const onChangeLanguage = lang => {

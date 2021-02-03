@@ -275,6 +275,9 @@ const Content = props => {
                     disableDrag = false;
                   },1000);
                 }
+                else{
+                  props.setClickedSectionIdx(i);
+                }
               }
             } else if (i > currentSectionIdx) {
               if (sx >= window.innerWidth)
@@ -451,18 +454,20 @@ const Content = props => {
   useEffect(() => {
     if (props.clickedSectionIdx !== null) {
       const elem = sidebarElems.current[props.clickedSectionIdx].current;
-      const tl = gsap.timeline({ delay: 1 });
+      if(!elem.classList.contains('minimize')){
+        const tl = gsap.timeline({ delay: 1 });
 
-      tl.set('#sidebarWrap', {className: 'active'});
-      tl.set('#sectionWrap', {className: 'hide',clearProps: 'opacity,visibility'});
-      tl.set(contentWrapElem.current, {className: 'active',clearProps: 'opacity,visibility'});
-      tl.fromTo(elem.querySelectorAll('#des span span'),1,{ force3D: true, y: '100%' },{ y: '0%', stagger: 0.01, ease: 'power4.out' },'s');
-      tl.fromTo(elem.querySelectorAll('#date span'),1,{ force3D: true, y: '100%' },{ y: '0%', stagger: 0.1, ease: 'power4.out' },'b-=.6');
-      tl.fromTo(elem.querySelectorAll('#line'),1,{ force3D: true, scaleX: 0 },{ scaleX: 1, ease: 'power3.inOut' },'s+=.6');
-      tl.set('#language #back', {className:'show'},'end-=.4');
-      tl.set('#language #back span', {className:'show'},'end');
+        tl.set('#sidebarWrap', {className: 'active'});
+        tl.set('#sectionWrap', {className: 'hide',clearProps: 'opacity,visibility'});
+        tl.set(contentWrapElem.current, {className: 'active',clearProps: 'opacity,visibility'});
+        tl.fromTo(elem.querySelectorAll('#des span span'),1,{ force3D: true, y: '100%' },{ y: '0%', stagger: 0.01, ease: 'power4.out' },'s');
+        tl.fromTo(elem.querySelectorAll('#date span'),1,{ force3D: true, y: '100%' },{ y: '0%', stagger: 0.1, ease: 'power4.out' },'b-=.6');
+        tl.fromTo(elem.querySelectorAll('#line'),1,{ force3D: true, scaleX: 0 },{ scaleX: 1, ease: 'power3.inOut' },'s+=.6');
+        tl.set('#language #back', {className:'show'},'end-=.4');
+        tl.set('#language #back span', {className:'show'},'end');
 
-      moveContentFunc.current.moveContent(props.clickedSectionIdx);
+        moveContentFunc.current.moveContent(props.clickedSectionIdx);
+      }
     } else {
       if (prevIdx !== null && prevIdx !== undefined) {
         const tl = gsap.timeline();
@@ -472,6 +477,11 @@ const Content = props => {
         tl.set('#language #back span', {className:''},'s');
         tl.set('#language #back', {className:''},'s+=.4');
         tl.fromTo('#sectionWrap',1,{ autoAlpha: 0 },{ autoAlpha: 1, ease: 'power1.inOut' },'s');
+        tl.call(()=>{
+          moveContentFunc.current.moveContent(0);
+          setIsOpenedGalleryFunc.current.setIsOpenedGallery(false);
+          setOpenedGallery(false);
+        },null);
       }
     }
   }, [props.clickedSectionIdx]);
