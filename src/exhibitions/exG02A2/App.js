@@ -1334,7 +1334,7 @@ const App = props => {
         }
       });
       temp.set(`#section${idx}`, { zIndex: zindex });
-      temp.fromTo(`#section${idx} .bg span`, 1, { y: '100%' }, { force3D: true, y: '-100%', ease: 'expo.out' },'s');
+      temp.fromTo(`#section${idx} .bg span`, 1, { y: '100%' }, { force3D: true, y: '-100%', stagger: 0.1, ease: 'expo.out' },'s');
       temp.fromTo(`#section${idx} .bg`, 0.8, { y: '100%' }, { force3D: true, y: '0%', stagger: 0.1, ease: 'expo.inOut' },'-=.8');
       // temp.fromTo('#sectionWrap #line span', 0.4, { y: '100vh',autoAlpha:.5 }, { force3D: true, y: '-150vh', autoAlpha:0, stagger: 0.1, ease: 'power2.inOut' },'s');
       // temp.to({}, {duration:4});
