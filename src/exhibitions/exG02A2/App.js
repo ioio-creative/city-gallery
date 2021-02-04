@@ -911,6 +911,8 @@ const App = props => {
     const resetPointsColor = () => {
       isHideEarth = false;
       goToDetail = false;
+      pointsBgMaterial.uniforms.activeInstanceId.value = -1;
+      oldHoveredInstanceId = null;
       // const meshs = [pointsMesh, linesMesh];
       // const id = oldHoveredInstanceId;
       // if (id !== currentHoveredInstanceId && id !== null) {
@@ -952,7 +954,7 @@ const App = props => {
       // oldHoveredInstanceId = currentHoveredInstanceId;
       gsap.set('#detailPage', { className: 'active' });
       gsap.fromTo('#opening .bg', 0.8, { y: '100%' }, { force3D: true, y: '0%', stagger: 0.1, ease: 'expo.inOut' });
-      gsap.fromTo('#sectionWrap #line span', 0.6, { y: '100vh', autoAlpha:.5 }, { force3D: true, y: '-150vh', autoAlpha:0, stagger: 0.1, ease: 'power3.inOut' });
+      // gsap.fromTo('#sectionWrap #line span', 0.6, { y: '100vh', autoAlpha:.5 }, { force3D: true, y: '-150vh', autoAlpha:0, stagger: 0.1, ease: 'power3.inOut' });
 
       // setTimeout(() => {
         setDetailIdx(0);
@@ -1209,11 +1211,10 @@ const App = props => {
       // moveToFunc.current = {moveTo}
 
       const moveFromId = id => {
-        // console.log(id)
-        if(items[id - 1]){
+        // if(items[id - 1]){
           moveTo(items[id - 1].offsetTop - items[id - 1].offsetHeight);
           setSelectedId(id);
-        }
+        // }
       };
       moveFromIdFunc.current = { moveFromId };
 
@@ -1231,7 +1232,7 @@ const App = props => {
               activedId = i;
               setScrolledDetailIdx(i + 1);
               setHoverId(i+1);
-              setSelectedId(null);
+              // setSelectedId(null);
             }
           }
         }
@@ -1334,8 +1335,8 @@ const App = props => {
       });
       temp.set(`#section${idx}`, { zIndex: zindex });
       temp.fromTo(`#section${idx} .bg span`, 1, { y: '100%' }, { force3D: true, y: '-100%', ease: 'expo.out' },'s');
-      temp.fromTo(`#section${idx} .bg`, 0.6, { y: '100%' }, { force3D: true, y: '0%', ease: 'expo.inOut' },'-=.95');
-      temp.fromTo('#sectionWrap #line span', 0.4, { y: '100vh',autoAlpha:.5 }, { force3D: true, y: '-150vh', autoAlpha:0, stagger: 0.1, ease: 'power2.inOut' },'s');
+      temp.fromTo(`#section${idx} .bg`, 0.8, { y: '100%' }, { force3D: true, y: '0%', stagger: 0.1, ease: 'expo.inOut' },'-=.8');
+      // temp.fromTo('#sectionWrap #line span', 0.4, { y: '100vh',autoAlpha:.5 }, { force3D: true, y: '-150vh', autoAlpha:0, stagger: 0.1, ease: 'power2.inOut' },'s');
       // temp.to({}, {duration:4});
       // gsap.set(`#section${idx}`, {zIndex:zindex});
       // gsap.fromTo(`#section${idx} .bg span`, 1, {y:'100%'},{force3D:true, y:'-100%', stagger:.08, ease:'expo.out'});
@@ -1377,6 +1378,7 @@ const App = props => {
       gsap.set(`.section .bg span`, { y: '100%' });
       gsap.set('#detailPage', { className: '' });
       setDetailIdx(null);
+      setSelectedId(null);
       // setStarted(false);
       enableRotate();
       resetPointsColorFunc.current.resetPointsColor();
@@ -1482,13 +1484,13 @@ const App = props => {
             {selectedId && locations[selectedId].name[language]}
           </div>
 
-          <div id="line">
+          {/* <div id="line">
             {
               [...Array(5)].map((v,i)=>{
                 return <span key={i}></span>
               })
             }
-          </div>
+          </div> */}
 
           <Section1 data={data && data.section1} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()} />
           <Section2 data={data && data.section2} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()} />
