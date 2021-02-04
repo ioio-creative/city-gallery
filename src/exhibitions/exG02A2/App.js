@@ -43,17 +43,17 @@ const App = props => {
   const showDetailsRef = useRef(null);
   const objectControlRef = useState(null);
   const locations = [
-    { name: { en: 'Hong Kong', tc: '香港' }, lat: 22.37772, lon: 114.155267, offset:1.04 },
-    { name: { en: 'Beijing', tc: '北京' }, lat: 39.920244, lon: 116.411309, offset:1.07 },
-    { name: { en: 'Cairo', tc: '開羅' }, lat: 30.050844, lon: 31.236143, offset:1.04 },
-    { name: { en: 'London', tc: '倫敦' }, lat: 51.510833, lon: -0.127461, offset:1.04 },
-    { name: { en: 'Paris', tc: '巴黎' }, lat: 48.862788, lon: 2.339303, offset:1.04 },
-    { name: { en: 'Mexico City', tc: '墨西哥城' }, lat: 19.595333, lon: -99.142672, offset:1.1 },
-    { name: { en: 'Mumbai', tc: '孟買' }, lat: 19.144194, lon: 72.883378, offset:1.05 },
-    { name: { en: 'New York', tc: '紐約' }, lat: 40.7632, lon: -74.041618, offset:1.04 },
-    { name: { en: 'Singapore', tc: '新加坡' }, lat: 1.34969, lon: 103.88134, offset:1.04 },
+    { name: { en: 'Hong Kong', tc: '香港' }, lat: 22.37772, lon: 114.155267, offset:1.06 },
+    { name: { en: 'Beijing', tc: '北京' }, lat: 39.920244, lon: 116.411309, offset:1.1 },
+    { name: { en: 'Cairo', tc: '開羅' }, lat: 30.050844, lon: 31.236143, offset:1.06 },
+    { name: { en: 'London', tc: '倫敦' }, lat: 51.510833, lon: -0.127461, offset:1.06 },
+    { name: { en: 'Paris', tc: '巴黎' }, lat: 48.862788, lon: 2.339303, offset:1.06 },
+    { name: { en: 'Mexico City', tc: '墨西哥城' }, lat: 19.595333, lon: -99.142672, offset:1.11 },
+    { name: { en: 'Mumbai', tc: '孟買' }, lat: 19.144194, lon: 72.883378, offset:1.06 },
+    { name: { en: 'New York', tc: '紐約' }, lat: 40.7632, lon: -74.041618, offset:1.06 },
+    { name: { en: 'Singapore', tc: '新加坡' }, lat: 1.34969, lon: 103.88134, offset:1.05 },
     { name: { en: 'Sydney', tc: '悉尼' }, lat: -33.817029, lon: 151.213937, offset:1.05 },
-    { name: { en: 'Tokyo', tc: '東京' }, lat: 35.680331, lon: 139.767505, offset:1.04 }
+    { name: { en: 'Tokyo', tc: '東京' }, lat: 35.680331, lon: 139.767505, offset:1.07 }
   ];
   // const moveToFunc = useRef(null);
   const moveFromIdFunc = useRef(null);
@@ -373,7 +373,7 @@ const App = props => {
           'vId = instanceId;',
           'vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );',
             'gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );',
-            'gl_PointSize = size * 100.0;',
+            'gl_PointSize = size * 60.0;',
             //`gl_PointSize = 2.5 * ${(window.innerHeight < window.innerWidth ? window.innerHeight : window.innerWidth * 4) * Math.PI} / -mvPosition.z;`,
           '}'
         ].join('\n'),

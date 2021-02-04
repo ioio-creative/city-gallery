@@ -584,7 +584,7 @@ export const calcThetaPhiFromLatLon = (lat, lon) => {
 }
 
 export const calcPosFromLatLonRad = (lat,lon,radius) => {
-    const phi   = (90-lat)*Math.PI/180;
+    const phi   = (90-lat-4)*Math.PI/180;
     const theta = (lon)*Math.PI/180;//(lon-180)*Math.PI/180;
 
     const x = -((radius) * Math.sin(phi)*Math.cos(theta))
