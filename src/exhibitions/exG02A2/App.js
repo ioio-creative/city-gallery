@@ -23,6 +23,7 @@ import Section4 from './detailpage/Section4';
 import Section5 from './detailpage/Section5';
 
 const App = props => {
+  // const [started, setStarted] = useState(false);
   // const count = useSelector(state => state.count);
   const canvasWrap = useRef(null);
   const zoomInFunc = useRef(null);
@@ -43,20 +44,21 @@ const App = props => {
   const objectControlRef = useState(null);
   const locations = [
     { name: { en: 'Hong Kong', tc: '香港' }, lat: 22.37772, lon: 114.155267, offset:1.04 },
-    { name: { en: 'Beijing', tc: '北京' }, lat: 39.920244, lon: 116.411309, offset:1.03 },
-    { name: { en: 'Cairo', tc: '開羅' }, lat: 30.050844, lon: 31.236143, offset:1.03 },
-    { name: { en: 'London', tc: '倫敦' }, lat: 51.510833, lon: -0.127461, offset:0.97 },
-    { name: { en: 'Paris', tc: '巴黎' }, lat: 48.862788, lon: 2.339303, offset:0.97 },
+    { name: { en: 'Beijing', tc: '北京' }, lat: 39.920244, lon: 116.411309, offset:1.07 },
+    { name: { en: 'Cairo', tc: '開羅' }, lat: 30.050844, lon: 31.236143, offset:1.04 },
+    { name: { en: 'London', tc: '倫敦' }, lat: 51.510833, lon: -0.127461, offset:1.04 },
+    { name: { en: 'Paris', tc: '巴黎' }, lat: 48.862788, lon: 2.339303, offset:1.04 },
     { name: { en: 'Mexico City', tc: '墨西哥城' }, lat: 19.595333, lon: -99.142672, offset:1.1 },
     { name: { en: 'Mumbai', tc: '孟買' }, lat: 19.144194, lon: 72.883378, offset:1.05 },
-    { name: { en: 'New York', tc: '紐約' }, lat: 40.7632, lon: -74.041618, offset:1.01 },
-    { name: { en: 'Singapore', tc: '新加坡' }, lat: 1.34969, lon: 103.88134, offset:1.05 },
+    { name: { en: 'New York', tc: '紐約' }, lat: 40.7632, lon: -74.041618, offset:1.04 },
+    { name: { en: 'Singapore', tc: '新加坡' }, lat: 1.34969, lon: 103.88134, offset:1.04 },
     { name: { en: 'Sydney', tc: '悉尼' }, lat: -33.817029, lon: 151.213937, offset:1.05 },
-    { name: { en: 'Tokyo', tc: '東京' }, lat: 35.680331, lon: 139.767505, offset:1.02 }
+    { name: { en: 'Tokyo', tc: '東京' }, lat: 35.680331, lon: 139.767505, offset:1.04 }
   ];
   // const moveToFunc = useRef(null);
   const moveFromIdFunc = useRef(null);
   const [selectedId, setSelectedId] = useState(null);
+  const [hoverId, setHoverId] = useState(null);
   const [detailIdx, setDetailIdx] = useState(null);
   const [scrolledDetailIdx, setScrolledDetailIdx] = useState(1);
   const [scrolling, setScrolling] = useState(null);
@@ -196,11 +198,11 @@ const App = props => {
       initEarth();
       initHalo();
       initLocationPoints();
-      initClouds();
       outerCircleLine = initCircleLineBg(80, 2.3, 2, 20, '#ffffff');
       innerCircleLine = initCircleLineBg(50, 3, 4, 15, '#63db71');
       scene.add(outerCircleLine);
       scene.add(innerCircleLine);
+      initClouds();
 
       for (let i = 0; i < meshItems.length; i++) groupedMesh.add(meshItems[i]);
 
@@ -338,7 +340,7 @@ const App = props => {
         // pointOffsets.push(pos.x, pos.y, pos.z);
         pos.multiplyScalar(location.offset);
         // const scaledOffset = pointScaledOffsets;
-        vertices.push(pos.x, pos.y*1.17, pos.z);
+        vertices.push(pos.x, pos.y, pos.z);
         ids.push(i);
         sizes[i] = 0.0;
         // pointBgInstanceColors.push(1, 1, 1);
@@ -371,7 +373,7 @@ const App = props => {
           'vId = instanceId;',
           'vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );',
             'gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );',
-            'gl_PointSize = size * 50.0;',
+            'gl_PointSize = size * 100.0;',
             //`gl_PointSize = 2.5 * ${(window.innerHeight < window.innerWidth ? window.innerHeight : window.innerWidth * 4) * Math.PI} / -mvPosition.z;`,
           '}'
         ].join('\n'),
@@ -538,7 +540,7 @@ const App = props => {
         geometry.scale(0.1, 0.1, 0.1);
         geometry.translate(0, 20, 0);
 
-        const material = new THREE.MeshPhongMaterial({ color: 0xffffff, shininess: 30 });
+        const material = new THREE.MeshPhongMaterial({ color: 0xffffff, shininess: 30, transparent:true, opacity:.9});
         cloudsMesh = new THREE.InstancedMesh(geometry, material, numsOfClouds);
         cloudsMesh.castShadow = true;
         const transform = new THREE.Object3D();
@@ -584,7 +586,7 @@ const App = props => {
     const initCircleLineBg = (size, angle, lineWidth, lineHeight, color) => {
       const map = new THREE.CanvasTexture(circleLineBgTexture(angle, lineWidth, lineHeight, color));
       const geometry = new THREE.PlaneBufferGeometry(size, size, 1, 1);
-      const material = new THREE.MeshBasicMaterial({map: map,transparent: true});
+      const material = new THREE.MeshBasicMaterial({map: map,transparent: true, depthWrite:false});
       map.premultiplyAlpha = true;
       material.blending = THREE.CustomBlending;
       const mesh = new THREE.Mesh(geometry, material);
@@ -828,7 +830,7 @@ const App = props => {
       document.removeEventListener('touchend', onMouseUp, false);
     };
 
-    const selectLocation = id => {
+    const selectLocation = (id) => {
       if (id) currentHoveredInstanceId = id;
       if(currentHoveredInstanceId !== 0){
         if(currentHoveredInstanceId !== oldHoveredInstanceId){
@@ -876,8 +878,8 @@ const App = props => {
           //
           // gsap.to('#selectCity', 0.3, { autoAlpha: 0, ease: 'power1.inOut' });
           // gsap.to('#locationsOuterWrap', 0.3, { autoAlpha: 1, ease: 'power1.inOut' });
-          selectCityElem.current.classList.add('hide');
-          locationsOuterWrapElem.current.classList.add('show');
+          if(selectCityElem.current) selectCityElem.current.classList.add('hide');
+          if(locationsOuterWrapElem.current) locationsOuterWrapElem.current.classList.add('show');
           //   showDetails();
         }
         else{
@@ -1000,10 +1002,10 @@ const App = props => {
         const { targetTheta, targetPhi } = calcThetaPhiFromLatLon(locations[i].lat, locations[i].lon);
         const { theta, phi } = objectControl.getCurrentThetaPhi();
 
-        const st = Math.abs((Math.abs(theta - targetTheta)* 180/Math.PI) % 360 - 180) / 180;
-        const sp = Math.abs((Math.abs(phi - targetPhi)* 180/Math.PI) % 360 - 180) / 120;
+        const st = Math.abs((Math.abs(theta - targetTheta)* 180/Math.PI) % 360 - 180) / 100;
+        const sp = 1 - Math.abs((Math.abs(phi - targetPhi)* 180/Math.PI) % 360) / 100;
         // console.log(st);
-        pinMesh.geometry.attributes.size.array[ i ] = (sp * st) * animValue[i].s;
+        pinMesh.geometry.attributes.size.array[ i ] = (st * sp) * animValue[i].s;
         pinMesh.geometry.attributes.size.needsUpdate = true;
       }
     }
@@ -1132,115 +1134,134 @@ const App = props => {
   }, []);
 
   useEffect(() => {
-    const parent = locationsWrapElem.current;
-    const child = locationsElem.current;
-    const items = child.querySelectorAll('li');
-    let clicked = false;
-    const mouse = {
-      pos: { x: 0, y: 0 },
-      startPos: { x: 0, y: 0 },
-      lastPos: { x: 0, y: 0 },
-      delta: { x: 0, y: 0 }
-    };
-    let y = 0;
-    let easeY = 0;
-    let activedId = 0;
-    let isHideEarth = false;
-    // let clickedId = 0;
+    if(allData){
+      const parent = locationsWrapElem.current;
+      const halfHeight = parent.offsetHeight / 2;
+      const child = locationsElem.current;
+      const items = child.querySelectorAll('li');
+      const itemHeight = items[0].offsetHeight;
+      let clicked = false;
+      const mouse = {
+        pos: { x: 0, y: 0 },
+        startPos: { x: 0, y: 0 },
+        lastPos: { x: 0, y: 0 },
+        delta: { x: 0, y: 0 }
+      };
+      let y = 0;
+      let easeY = 0;
+      let activedId = 0;
+      let isHideEarth = false;
+      let delaySelect = null;
+      // let clickedId = 0;
 
-    const onMouseDown = event => {
-      let e = event.touches ? event.touches[0] : event;
-      mouse.startPos.x = e.clientX;
-      mouse.startPos.y = e.clientY;
-      mouse.lastPos.x = 0;
-      mouse.lastPos.y = 0;
-      clicked = true;
-      setScrolling(false);
-      // console.log('second mousedown');
-      disableRotate();
-      document.addEventListener('mousemove', onMouseMove, false);
-      document.addEventListener('mouseup', onMouseUp, false);
-      document.addEventListener('touchmove', onMouseMove, false);
-      document.addEventListener('touchend', onMouseUp, false);
-    };
-
-    const onMouseMove = event => {
-      if (clicked) {
-        setScrolling(true);
+      const onMouseDown = event => {
         let e = event.touches ? event.touches[0] : event;
+        mouse.startPos.x = e.clientX;
+        mouse.startPos.y = e.clientY;
+        mouse.lastPos.x = 0;
+        mouse.lastPos.y = 0;
+        clicked = true;
+        setScrolling(false);
+        // console.log('second mousedown');
+        disableRotate();
+        document.addEventListener('mousemove', onMouseMove, false);
+        document.addEventListener('mouseup', onMouseUp, false);
+        document.addEventListener('touchmove', onMouseMove, false);
+        document.addEventListener('touchend', onMouseUp, false);
+      };
 
-        mouse.pos.x = mouse.startPos.x - e.clientX;
-        mouse.pos.y = mouse.startPos.y - e.clientY;
+      const onMouseMove = event => {
+        if (clicked) {
+          setScrolling(true);
+          let e = event.touches ? event.touches[0] : event;
 
-        mouse.delta.x = mouse.lastPos.x - mouse.pos.x;
-        mouse.delta.y = -(mouse.lastPos.y - mouse.pos.y);
+          mouse.pos.x = mouse.startPos.x - e.clientX;
+          mouse.pos.y = mouse.startPos.y - e.clientY;
 
-        mouse.lastPos.x = mouse.pos.x;
-        mouse.lastPos.y = mouse.pos.y;
+          mouse.delta.x = mouse.lastPos.x - mouse.pos.x;
+          mouse.delta.y = -(mouse.lastPos.y - mouse.pos.y);
+          mouse.delta.y *= 2;
 
-        moveElem(mouse.delta);
-      }
-    };
+          mouse.lastPos.x = mouse.pos.x;
+          mouse.lastPos.y = mouse.pos.y;
 
-    const onMouseUp = () => {
-      clicked = false;
-      enableRotate();
-      document.addEventListener('touchmove', onMouseMove, false);
-      document.removeEventListener('mouseup', onMouseUp, false);
-      document.removeEventListener('touchmove', onMouseMove, false);
-      document.removeEventListener('touchend', onMouseUp, false);
-    };
+          moveElem(mouse.delta);
+        }
+      };
 
-    const moveElem = delta => {
-      moveTo(y + delta.y);
-    };
+      const onMouseUp = () => {
+        selectLocation(activedId+1);
+        clicked = false;
+        enableRotate();
+        document.addEventListener('touchmove', onMouseMove, false);
+        document.removeEventListener('mouseup', onMouseUp, false);
+        document.removeEventListener('touchmove', onMouseMove, false);
+        document.removeEventListener('touchend', onMouseUp, false);
+      };
 
-    const moveTo = _y => {
-      y = Math.max(-parent.offsetHeight / 2 + items[0].offsetHeight / 2 - 7, Math.min(child.offsetHeight - parent.offsetHeight + items[0].offsetHeight, _y));
-    };
-    // moveToFunc.current = {moveTo}
+      const moveElem = delta => {
+        moveTo(y + delta.y);
+      };
 
-    const moveFromId = id => {
-      // console.log(id)
-      moveTo(items[id - 1].offsetTop - items[id - 1].offsetHeight);
-      setSelectedId(id);
-    };
-    moveFromIdFunc.current = { moveFromId };
+      const moveTo = _y => {
+        y = Math.max(-parent.offsetHeight / 2 + items[0].offsetHeight / 2 - 7, Math.min(child.offsetHeight - parent.offsetHeight + items[0].offsetHeight, _y));
+      };
+      // moveToFunc.current = {moveTo}
 
-    const update = () => {
-      if(!isHideEarth){
-        easeY += (y - easeY) * 0.1;
-        child.style.transform = `translate3d(-50%,${-easeY}px,0)`;
+      const moveFromId = id => {
+        // console.log(id)
+        if(items[id - 1]){
+          moveTo(items[id - 1].offsetTop - items[id - 1].offsetHeight);
+          setSelectedId(id);
+        }
+      };
+      moveFromIdFunc.current = { moveFromId };
 
-        for (let i = 0; i < items.length; i++) {
-          const item = items[i];
-          const offsetTop = item.getBoundingClientRect().top - parent.getBoundingClientRect().top;
-          const offsetBot = offsetTop + item.offsetHeight;
-          const half = parent.offsetHeight / 2;
+      const update = () => {
+        if(!isHideEarth){
+          easeY += (y - easeY) * 0.3;
+          child.style.transform = `translate3d(-50%,${-easeY}px,0)`;
 
-          if (half >= offsetTop && half <= offsetBot && i !== activedId) {
-            activedId = i;
-            setScrolledDetailIdx(i + 1);
+          for (let i = 0; i < items.length; i++) {
+            const item = items[i];
+            const itemOffsetTop = item.getBoundingClientRect().top - parent.getBoundingClientRect().top;
+            const itemOffsetBot = itemOffsetTop + itemHeight;
+            
+            if (itemOffsetTop < halfHeight && itemOffsetBot > halfHeight && i !== activedId) {
+              activedId = i;
+              setScrolledDetailIdx(i + 1);
+              setHoverId(i+1);
+              setSelectedId(null);
+            }
           }
         }
-      }
-    };
+      };
 
-    const animLoop = () => {
-      requestAnimationFrame(animLoop);
-      update();
-    };
+      // const delaySelectLocation = (i) => {
+      //   if(clicked) {
+      //     if(delaySelect) clearTimeout(delaySelect);
+      //     delaySelect = setTimeout(()=>{
+      //       console.log(i);
+      //       clearTimeout(delaySelect);
+      //     },1000);
+      //   }
+      // }
 
-    const initEvent = () => {
-      parent.addEventListener('mousedown', onMouseDown, false);
-      parent.addEventListener('touchstart', onMouseDown, false);
-    };
+      const animLoop = () => {
+        requestAnimationFrame(animLoop);
+        update();
+      };
 
-    initEvent();
-    animLoop();
+      const initEvent = () => {
+        parent.addEventListener('mousedown', onMouseDown, false);
+        parent.addEventListener('touchstart', onMouseDown, false);
+      };
 
-    return () => {};
-  }, []);
+      initEvent();
+      animLoop();
+    }
+    // return () => {};
+  }, [allData]);
 
   useEffect(() => {
     fetch('./json/g02a.json', {
@@ -1258,6 +1279,7 @@ const App = props => {
 
   const onChangeLang = lang => {
     if (allData) {
+      // setStarted(true);
       zoomInFunc.current.zoomIn();
       setLanguage(lang);
       setData(allData.content[lang]);
@@ -1329,12 +1351,12 @@ const App = props => {
     disableRotateFunc.current.disableRotate();
   };
 
-  const selectLocation = id => {
-    if (!scrolling) {
+  const selectLocation = (id) => {
+    // if (!scrolling) {
       moveFromIdFunc.current.moveFromId(id);
       selectLocationFunc.current.selectLocation(id);
       // console.log('debug');
-    }
+    // }
   };
 
   const onBackHome = (zoomOut = false) => {
@@ -1355,6 +1377,7 @@ const App = props => {
       gsap.set(`.section .bg span`, { y: '100%' });
       gsap.set('#detailPage', { className: '' });
       setDetailIdx(null);
+      // setStarted(false);
       enableRotate();
       resetPointsColorFunc.current.resetPointsColor();
       enableAutoRotateFunc.current.enableAutoRotate();
@@ -1399,15 +1422,11 @@ const App = props => {
               <ul ref={locationsElem} id='locations'>
                 {locations.map((value, idx) => {
                   return idx !== 0 ? (
-                    <li
-                      key={idx}
-                      className={selectedId === idx ? 'active' : ''}
+                    <li key={idx} className={selectedId === idx || hoverId === idx ? 'active' : ''}
                       onClick={() => {
                         selectLocation(idx);
-                      }}
-                    >
-                      <span
-                        onClick={() => {
+                      }}>
+                      <span onClick={() => {
                           // showDetailsRef.current.showDetails(idx);
                         }}
                       >

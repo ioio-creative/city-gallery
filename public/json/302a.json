@@ -38,7 +38,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1863_img1.png",
-                "translationType": "translate",
+                "translationType": "scale",
                 "description": "Waterworks",
                 "reference": "Source: ISD",
                 "gallery": [
@@ -225,7 +225,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1946_img1.png",
-                "translationType": "translate",
+                "translationType": "scale",
                 "description": "Development of the Kowloon Peninsula",
                 "reference": "Source: GRS",
                 "gallery": [
@@ -404,7 +404,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1965_img1.png",
-                "translationType": "translate",
+                "translationType": "scale",
                 "description": "Dongjiang-Shenzhen Water Supply Scheme (DJ-SZ WSS)",
                 "reference": "Source: GRS",
                 "gallery": [
@@ -749,7 +749,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1984_img1.png",
-                "translationType": "translate",
+                "translationType": "scale",
                 "description": "Territorial Development Strategy",
                 "reference": "Source: GRS",
                 "gallery": [
@@ -1075,7 +1075,7 @@
               },
               "image": {
                 "src": "./images/ex302a/2001_img1a.png",
-                "translationType": "translate",
+                "translationType": "scale",
                 "description": "2001 Sewerage Treatment and Disposal",
                 "reference": "Source: ISD",
                 "gallery": [
@@ -1291,7 +1291,7 @@
               },
               "image": {
                 "src": "./images/ex302a/2006_img1.jpg",
-                "translationType": "translate",
+                "translationType": "scale",
                 "description": "Ngong Ping, Lantau",
                 "reference": "Source: ISD",
                 "gallery": [
@@ -1495,7 +1495,7 @@
               },
               "image": {
                 "src": "./images/ex302a/2011_img1c.png",
-                "translationType": "translate",
+                "translationType": "scale",
                 "description": "Urban Design Study for the New Central Harborfront",
                 "reference": "Source: ISD",
                 "gallery": [
@@ -1851,7 +1851,28 @@
             },
             {
               "text": {
-                "year": 2018,
+                "year": 2019,
+                "content": "In 2019, the state officially announced the “Outline Development Plan for the Guangdong-Hong Kong-Macao Greater Bay Area”. The objectives are to further deepen cooperation amongst Guangdong, Hong Kong and Macao, fully leverage the composite advantages of the three places, facilitate in-depth integration within the region, and promote coordinated regional economic development, with a view to developing an international first-class bay area ideal for living, working and travelling."
+              },
+              "image": {
+                "src": "./images/ex302a/2019_img1.jpg",
+                "translationType": "scale",
+                "description": "Guangdong-Hong Kong-Macao Regional Cooperation",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2019_img1.jpg",
+                    "reference": "Source: PlanD"
+                  }
+                ]
+              },
+              "category": {
+                "id": "economic",
+                "name": "Economic/ Tourism"
+              }
+            },
+            {
+              "text": {
+                "year": 2020,
                 "content": "In 2020, the Hong Kong-Zhuhai-Macao Bridge was completed and opened in line with the increasingly close economic cooperation between the Hong Kong SAR and the Mainland. The Liantang/Heung Yuen Wai Port also opened in 2020, serving as a more efficient cross-border passage from Hong Kong to Shenzhen East, Huizhou and East Guangdong. "
               },
               "image": {
@@ -1876,7 +1897,7 @@
             },
             {
               "text": {
-                "year": 2018,
+                "year": 2021,
                 "content": "The \"Hong Kong 2030+: Towards a Planning Vision and Strategy Transcending 2030\" (\"Hong Kong 2030+\") published in 2020 put forward three development strategies to cope with new challenges in the future - planning for a liveable high-density city, embracing new economic challenges and opportunities, and creating capacity for sustainable growth."
               },
               "image": {
@@ -1897,27 +1918,6 @@
               "category": {
                 "id": "strategic",
                 "name": "Strategic plan"
-              }
-            },
-            {
-              "text": {
-                "year": 2019,
-                "content": "In 2019, the state officially announced the “Outline Development Plan for the Guangdong-Hong Kong-Macao Greater Bay Area”. The objectives are to further deepen cooperation amongst Guangdong, Hong Kong and Macao, fully leverage the composite advantages of the three places, facilitate in-depth integration within the region, and promote coordinated regional economic development, with a view to developing an international first-class bay area ideal for living, working and travelling."
-              },
-              "image": {
-                "src": "./images/ex302a/2019_img1.jpg",
-                "translationType": "scale",
-                "description": "Guangdong-Hong Kong-Macao Regional Cooperation",
-                "gallery": [
-                  {
-                    "src": "./images/ex302a/2019_img1.jpg",
-                    "reference": "Source: PlanD"
-                  }
-                ]
-              },
-              "category": {
-                "id": "economic",
-                "name": "Economic/ Tourism"
               }
             }
           ]
@@ -1950,7 +1950,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1863_img1.png",
-                "translationType": "translate",
+                "translationType": "scale",
                 "description": "水務設施",
                 "reference": "Source: ISD",
                 "gallery": [
@@ -2137,7 +2137,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1946_img1.png",
-                "translationType": "translate",
+                "translationType": "scale",
                 "description": "九龍區發展",
                 "reference": "Source: GRS",
                 "gallery": [
@@ -2316,7 +2316,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1965_img1.png",
-                "translationType": "translate",
+                "translationType": "scale",
                 "description": "東江—深圳供水工程（東深工程）",
                 "reference": "Source: GRS",
                 "gallery": [
@@ -2660,7 +2660,7 @@
               },
               "image": {
                 "src": "./images/ex302a/1984_img1.png",
-                "translationType": "translate",
+                "translationType": "scale",
                 "description": "《全港發展策略》",
                 "reference": "Source: GRS",
                 "gallery": [
@@ -2986,7 +2986,7 @@
               },
               "image": {
                 "src": "./images/ex302a/2001_img1a.png",
-                "translationType": "translate",
+                "translationType": "scale",
                 "description": "污水處理及排放",
                 "reference": "Source: ISD",
                 "gallery": [
@@ -3202,7 +3202,7 @@
               },
               "image": {
                 "src": "./images/ex302a/2006_img1.jpg",
-                "translationType": "translate",
+                "translationType": "scale",
                 "description": "大嶼山昂坪",
                 "reference": "Source: ISD",
                 "gallery": [
@@ -3406,7 +3406,7 @@
               },
               "image": {
                 "src": "./images/ex302a/2011_img1c.png",
-                "translationType": "translate",
+                "translationType": "scale",
                 "description": "中環新海濱城市設計",
                 "reference": "Source: ISD",
                 "gallery": [
@@ -3762,7 +3762,28 @@
             },
             {
               "text": {
-                "year": 2018,
+                "year": 2019,
+                "content": "2019年，國家正式公布了《粵港澳大灣區發展規劃綱要》，目標是進一步深化粵港澳合作，充分發揮三地綜合優勢，促成區內的深度融合，推動區域經濟協同發展，建設宜居、宜業、宜遊的國際一流灣區。"
+              },
+              "image": {
+                "src": "./images/ex302a/2019_img1.jpg",
+                "translationType": "scale",
+                "description": "粵港澳區域合作",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/2019_img1.jpg",
+                    "reference": "Source: PlanD"
+                  }
+                ]
+              },
+              "category": {
+                "id": "economic",
+                "name": "經濟/ 旅遊"
+              }
+            },
+            {
+              "text": {
+                "year": 2020,
                 "content": "蓮塘／香園圍口岸於2020年開通，為香港與深圳東、惠州和粵東之間提供更有效率的跨境通道。"
               },
               "image": {
@@ -3787,7 +3808,7 @@
             },
             {
               "text": {
-                "year": 2018,
+                "year": 2021,
                 "content": "2021年公布的《香港2030＋：跨越2030年的規劃遠景與策略》(Final Report)就著未來的新挑戰，提出三大發展策略：規劃宜居的高密度城市、迎接新的經濟挑戰與機遇和創造容量以達致可持續發展。"
               },
               "image": {
@@ -3808,27 +3829,6 @@
               "category": {
                 "id": "strategic",
                 "name": "策略規劃"
-              }
-            },
-            {
-              "text": {
-                "year": 2019,
-                "content": "2019年，國家正式公布了《粵港澳大灣區發展規劃綱要》，目標是進一步深化粵港澳合作，充分發揮三地綜合優勢，促成區內的深度融合，推動區域經濟協同發展，建設宜居、宜業、宜遊的國際一流灣區。"
-              },
-              "image": {
-                "src": "./images/ex302a/2019_img1.jpg",
-                "translationType": "scale",
-                "description": "粵港澳區域合作",
-                "gallery": [
-                  {
-                    "src": "./images/ex302a/2019_img1.jpg",
-                    "reference": "Source: PlanD"
-                  }
-                ]
-              },
-              "category": {
-                "id": "economic",
-                "name": "經濟/ 旅遊"
               }
             }
           ]

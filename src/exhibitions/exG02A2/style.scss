@@ -242,6 +242,7 @@
         height: vw-calc(300);
         position: relative;
         overflow: hidden;
+        pointer-events: none;
         #locations {
           position: relative;
           top: 0;
@@ -250,16 +251,17 @@
           margin: 0;
           padding: 0;
           will-change: transform;
+          pointer-events: initial;
           li {
-            height: vw-calc(105);
+            height: vw-calc(100);
             line-height: vw-calc(100);
             // border: 1px solid;
-            padding: vw-calc(10 0);
+            // padding: vw-calc(10 0);
             display: flex;
             justify-content: center;
             &.active {
               span {
-                transform: translate3d(0, -6%, 0) scale(1);
+                transform: translate3d(0, 0, 0) scale(1);
                 width: 800px;
                 display: flex;
                 justify-content: center;
@@ -268,7 +270,7 @@
             }
             &:not(.active):active {
               span {
-                transform: translate3d(0, -4%, 0) scale(0.4);
+                transform: translate3d(0, 0, 0) scale(0.4);
               }
             }
             // &:last-child{

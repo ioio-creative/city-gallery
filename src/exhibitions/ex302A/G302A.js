@@ -163,6 +163,8 @@ const G302A = props => {
 
         mouse.delta.x = mouse.currentPos.x - mouse.lastPos.x;
         mouse.delta.y = mouse.currentPos.y - mouse.lastPos.y;
+        mouse.delta.x *= 3;
+        mouse.delta.y *= 3;
 
         mouse.lastPos.x = mouse.currentPos.x;
         mouse.lastPos.y = mouse.currentPos.y;
@@ -415,9 +417,9 @@ const G302A = props => {
         <div className={`${language === 'en' ? 'active' : ''} btn`} onClick={() => onChangeLanguage('en')}>
           <span>EN</span>
         </div>
-        <div id="backBtn" className={clickedSectionIdx === null ? 'hide' : ''}>
+        {/* <div id="backBtn" className={clickedSectionIdx === null ? 'hide' : ''}>
           <div id="back" className="hide" onClick={onBack}><span>{contentData && contentData.global.backToYear}</span></div>
-        </div>
+        </div> */}
       </div>
       <div id="hints">{contentData && contentData.global.hints}</div>
       <div id='sectionNav' className={`${clickedSectionIdx !== null ? 'hide' : ''}`}>

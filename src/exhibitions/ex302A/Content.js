@@ -122,6 +122,8 @@ const Content = props => {
 
       mouse.delta.x = mouse.currentPos.x - mouse.lastPos.x;
       mouse.delta.y = mouse.currentPos.y - mouse.lastPos.y;
+      mouse.delta.x *= 3;
+      mouse.delta.y *= 3;
 
       mouse.lastPos.x = mouse.currentPos.x;
       mouse.lastPos.y = mouse.currentPos.y;
@@ -154,7 +156,7 @@ const Content = props => {
 
     const moveContentWrap = () => {
       if(!disableDrag){
-        contentWrapElemPos.x += mouse.delta.x * 2;
+        contentWrapElemPos.x += mouse.delta.x;
         contentWrapElemPos.x = Math.min(
           0,
           Math.max(-maxWidth, contentWrapElemPos.x)
@@ -190,7 +192,7 @@ const Content = props => {
 
     const moveGallery = () => {
       if (maxGalleryWidth > 0) {
-        galleryPos.x += mouse.delta.x * 2;
+        galleryPos.x += mouse.delta.x;
         galleryPos.x = Math.min(0, Math.max(-maxGalleryWidth, galleryPos.x));
       }
     };
@@ -602,7 +604,7 @@ const Content = props => {
                   return <span key={i}>{v}</span>;
                 })}
               </div>
-              {/* <div id="selectYearBtn" onClick={props.onBack}>選擇年份</div> */}
+              <div id="selectYearBtn" onClick={props.onBack}>{props.contentData.global.backToYear}</div>
               <div id='line'></div>
               <div id='img' style={{ backgroundImage: `url(${v.coverinsidebar.src}` }}></div>
             </div>
