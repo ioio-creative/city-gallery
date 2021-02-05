@@ -704,9 +704,9 @@ const Content = props => {
               </div>
             </div>
           </div>
-          <div id='galleryTotalNum' className='eb'>
+          {/* <div id='galleryTotalNum' className='eb'>
             <span>{galleryItems && galleryItems.length}</span>
-          </div>
+          </div> */}
           <div id='backBtn' onClick={() => setOpenedGallery(false)}>
             {props.contentData.global.back}
           </div>
