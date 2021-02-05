@@ -830,7 +830,8 @@ const App = props => {
       document.removeEventListener('touchend', onMouseUp, false);
     };
 
-    const selectLocation = (id) => {
+    const selectLocation = (id, noDetail) => {
+      console.log(id);
       if (id) currentHoveredInstanceId = id;
       if(currentHoveredInstanceId !== 0){
         if(currentHoveredInstanceId !== oldHoveredInstanceId){
@@ -883,7 +884,7 @@ const App = props => {
           //   showDetails();
         }
         else{
-          showDetails(currentHoveredInstanceId);
+          if(!noDetail) showDetails(currentHoveredInstanceId);
         }
       }
     };
@@ -911,8 +912,9 @@ const App = props => {
     const resetPointsColor = () => {
       isHideEarth = false;
       goToDetail = false;
-      pointsBgMaterial.uniforms.activeInstanceId.value = -1;
+      // pointsBgMaterial.uniforms.activeInstanceId.value = -1;
       oldHoveredInstanceId = null;
+      currentHoveredInstanceId = null;
       // const meshs = [pointsMesh, linesMesh];
       // const id = oldHoveredInstanceId;
       // if (id !== currentHoveredInstanceId && id !== null) {
@@ -1143,6 +1145,7 @@ const App = props => {
       const items = child.querySelectorAll('li');
       const itemHeight = items[0].offsetHeight;
       let clicked = false;
+      let dragging = false;
       const mouse = {
         pos: { x: 0, y: 0 },
         startPos: { x: 0, y: 0 },
@@ -1174,6 +1177,7 @@ const App = props => {
 
       const onMouseMove = event => {
         if (clicked) {
+          dragging = true;
           setScrolling(true);
           let e = event.touches ? event.touches[0] : event;
 
@@ -1192,8 +1196,9 @@ const App = props => {
       };
 
       const onMouseUp = () => {
-        selectLocation(activedId+1);
+        if(dragging) selectLocation(activedId+1, true);
         clicked = false;
+        dragging = false;
         enableRotate();
         document.addEventListener('touchmove', onMouseMove, false);
         document.removeEventListener('mouseup', onMouseUp, false);
@@ -1352,12 +1357,12 @@ const App = props => {
     disableRotateFunc.current.disableRotate();
   };
 
-  const selectLocation = (id) => {
-    // if (!scrolling) {
+  const selectLocation = (id, noDetail = false) => {
+    if (!scrolling) {
       moveFromIdFunc.current.moveFromId(id);
-      selectLocationFunc.current.selectLocation(id);
+      selectLocationFunc.current.selectLocation(id, noDetail);
       // console.log('debug');
-    // }
+    }
   };
 
   const onBackHome = (zoomOut = false) => {

@@ -365,7 +365,7 @@ export const ObjectControl = (function(_super){
         }
 
         this.draw = () => {
-            if(!clicked && !disableAuto) auotRotate += 0.001;
+            if(!clicked && !disableAuto) auotRotate += 0.0005;
             if(!disableEase){
                 thetaEase += ((sphericalEnd.theta + auotRotate) - thetaEase) * .05 * friction;
                 phiEase += ((sphericalEnd.phi) - phiEase) * .05 * friction;
