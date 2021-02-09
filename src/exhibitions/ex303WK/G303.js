@@ -101,7 +101,7 @@ const G303 = props => {
   };
 
   const onBack = () => {
-    setYearIdx(-1);
+    // setYearIdx(-1);
     setCoastlineIdx(null);
     setRunTransition(true);
     setShowYear(true);
