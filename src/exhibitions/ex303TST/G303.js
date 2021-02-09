@@ -58,6 +58,7 @@ const G303 = props => {
       if (started) {
         started = false;
         // setShowWholeScreen(false);
+        setYearIdx(-1);
         onBack();
       }
     }
