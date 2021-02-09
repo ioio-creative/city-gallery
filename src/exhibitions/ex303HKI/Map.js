@@ -609,14 +609,17 @@ const Map = props => {
           });
         }
       })
-      gsap.to(hideYears, 8, {p2: 1, stagger:0.4, ease: 'power4.out',
-        onUpdate: function () {
-          this.targets().forEach((target, i) => {
-            if(i < 3-idx)
-              options.year[`hideY${years[3-i]}`] = target.p2;
-          });
-        }
-      });
+      
+      if(hideYears.length){
+        gsap.to(hideYears, 8, {p2: 1, stagger:0.4, ease: 'power4.out',
+          onUpdate: function () {
+            this.targets().forEach((target, i) => {
+              if(i < 3-idx)
+                options.year[`hideY${years[3-i]}`] = target.p2;
+            });
+          }
+        });
+      }
 
       highlightTl = gsap.timeline();
       highlightTl.to(selectedHighlight, 1, {alpha: .8, ease: 'power1.inOut'},3);

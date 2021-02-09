@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import './style.scss';
 import webSocket from 'socket.io-client';
 // import VideoPlayer from '../../components/VideoPlayer';
@@ -9,7 +9,7 @@ import Map from '../ex303HKI/Map';
 
 
 const G303 = props => {
-  const params = useParams();
+  // const params = useParams();
   const [language, setLanguage] = useState('tc');
   // const [started, setStarted] = useState(false);
   const [yearIdx, setYearIdx] = useState(-1);

@@ -199,11 +199,11 @@ const Section5 = (props) => {
             <div id="left" className="half">
                 <div className="wrap">
                     <div className='gdpbg' style={{backgroundImage:`url(./images/exG02a/section5/hongkonggdp.png)`}}></div>
-                    <img src="./images/exG02a/section5/hkcoin20.png" style={{bottom: -43, right: 143}}></img>
-                    <img src="./images/exG02a/section5/hkcoin11.png" style={{bottom: 188, left: 19}}></img>
-                    <img src="./images/exG02a/section5/hkcoin11.png" style={{bottom: 383, right: 108}}></img>
-                    <img src="./images/exG02a/section5/hkcoin10.png" style={{bottom: '332px', right: '24px'}}></img>
-                    <img src="./images/exG02a/section5/hkcoin2.png" style={{bottom: 30+'px', left: 228+'px'}}></img>
+                    <img src="./images/exG02a/section5/hkcoin20.png" style={{bottom: -43, right: 143}} alt=''/>
+                    <img src="./images/exG02a/section5/hkcoin11.png" style={{bottom: 188, left: 19}} alt=''/>
+                    <img src="./images/exG02a/section5/hkcoin11.png" style={{bottom: 383, right: 108}} alt=''/>
+                    <img src="./images/exG02a/section5/hkcoin10.png" style={{bottom: '332px', right: '24px'}} alt=''/>
+                    <img src="./images/exG02a/section5/hkcoin2.png" style={{bottom: 30+'px', left: 228+'px'}} alt=''/>
                     <div className="title big">{globalData && globalData.gdp}</div>
                     <div className="big">{ data && data['hongkong'].money }HKD</div>
                     <canvas ref={canvasLeft} id="leftCanvas" width="600" height="600"></canvas>
@@ -223,11 +223,11 @@ const Section5 = (props) => {
             <div id="right" className="half">
                 <div className="wrap">
                     <div className='gdpbg' style={{backgroundImage:`url(./images/exG02a/section5/${locationName ? locationName : 'hongkong'}gdp.png)`}}></div>
-                    <img src="./images/exG02a/section5/other1.png" style={{bottom: -43, right: 643}}></img>
-                    <img src="./images/exG02a/section5/other1.png" style={{bottom: 288, right: 16}}></img>
-                    <img src="./images/exG02a/section5/other2.png" style={{bottom: 419, right: 308}}></img>
-                    <img src="./images/exG02a/section5/other3.png" style={{bottom: '32px', right: '130px'}}></img>
-                    <img src="./images/exG02a/section5/other4.png" style={{bottom: 230+'px', left: 44+'px'}}></img>
+                    <img src="./images/exG02a/section5/other1.png" style={{bottom: -43, right: 643}} alt=''/>
+                    <img src="./images/exG02a/section5/other1.png" style={{bottom: 288, right: 16}} alt=''/>
+                    <img src="./images/exG02a/section5/other2.png" style={{bottom: 419, right: 308}} alt=''/>
+                    <img src="./images/exG02a/section5/other3.png" style={{bottom: '32px', right: '130px'}} alt=''/>
+                    <img src="./images/exG02a/section5/other4.png" style={{bottom: 230+'px', left: 44+'px'}} alt=''/>
                     <div className="title big">{globalData && globalData.gdp}</div>
                     <div className="big">{ data && locationName && data[locationName].money }HKD</div>
                     <canvas ref={canvasRight} id="rightCanvas" width="600" height="600"></canvas>

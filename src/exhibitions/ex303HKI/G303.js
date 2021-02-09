@@ -8,14 +8,14 @@ import VideoPlayer from '../../components/VideoPlayer';
 
 import Menu from './MenuBig';
 import Map from './Map';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 
 // import video1 from '../../../src/media/ex303/video1.mp4';
 // import video2 from '../../../src/media/ex303/video2.mp4';
 // import img from './images/image.png';
 
 const G303 = props => {
-  const params = useParams();
+  // const params = useParams();
   const [language, setLanguage] = useState('tc');
   // const [started, setStarted] = useState(false);
   const [yearIdx, setYearIdx] = useState(-1);
