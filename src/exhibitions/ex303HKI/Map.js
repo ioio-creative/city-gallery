@@ -63,7 +63,7 @@ const Map = props => {
       app = new PIXI.Application({
         width: maxWidth,//window.innerWidth,
         height: maxHeight,//window.innerHeight,
-        antialias: true,
+        // antialias: true,
         transparent: true,
         resolution: 1,
         powerPreference:'low-power'
