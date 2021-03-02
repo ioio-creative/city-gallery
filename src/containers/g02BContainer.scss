@@ -535,6 +535,7 @@ body {
         align-items: flex-end;
         white-space: nowrap;
         line-height: vw-calc(80);
+
         span {
           width: 65%;
           margin-right: vw-calc(30);
@@ -562,11 +563,11 @@ body {
           height: 100%;
           width: 37%;
           div {
-            height: vw-calc(58);
+            height: vw-calc(70);
             width: auto;
           }
           img {
-            height: vw-calc(58);
+            height: vw-calc(70);
             width: auto;
           }
           &.zh {
@@ -576,37 +577,37 @@ body {
             }
             .icon2 {
               background-size: 100%;
-              margin-left: vw-calc(40);
+              margin-left: vw-calc(18);
               display: flex;
             }
             .icon3 {
               background-size: 100%;
-              margin-left: vw-calc(40);
-              margin-right: vw-calc(50);
+              margin-left: vw-calc(18);
+              margin-right: vw-calc(59);
               display: flex;
             }
           }
           &.en {
             .icon1 {
               background-size: 100%;
-              margin-right: vw-calc(15);
+              margin-right: vw-calc(18);
               display: flex;
             }
             .icon2 {
               background-size: 100%;
-              margin-right: vw-calc(15);
+              margin-right: vw-calc(18);
               display: flex;
             }
             .icon3 {
               background-size: 100%;
-              margin-right: vw-calc(25);
+              margin-right: vw-calc(59);
               display: flex;
             }
-            &.seoul {
-              .icon3 {
-                margin-right: vw-calc(-10);
-              }
-            }
+            // &.seoul {
+            //   .icon3 {
+            //     margin-right: vw-calc(-10);
+            //   }
+            // }
           }
         }
       }
@@ -962,11 +963,11 @@ body {
             }
           }
           p {
-            font-size: vw-calc(22);
-            line-height: vw-calc(32);
+            font-size: vw-calc(18);
+            line-height: vw-calc(26);
             color: #707070;
             // font-family: 'Noto Sans TC';
-            font-family: 'NotoSansTC';
+            // font-family: 'NotoSansTC';
             padding: 0 vw-calc(10);
             margin-top: vw-calc(10);
             &.credit {

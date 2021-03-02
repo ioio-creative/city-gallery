@@ -1395,147 +1395,149 @@ const App = props => {
   };
 
   return (
-    <div id='home' className={hideEarth ? 'hideEarth' : ''}>
-      <div ref={canvasWrap} id='canvasWrap'></div>
-      <div id='touch'>
-        Touch screen to select
-        <br />
-        觸碰螢幕以選取
-      </div>
-      <div id='lang'>
-        {allData && (
-          <>
-            <p>
-              Please select language
-              <br />
-              請選擇語言
-            </p>
-            <div onClick={() => onChangeLang('en')}>English</div>
-            <div onClick={() => onChangeLang('tc')}>繁體中文</div>
-          </>
-        )}
-      </div>
-      <div id='locationSelector'>
-        <div id='hk' className='sameWidth big'>
-          {locations[0].name[language]}
+    <div className={language}>
+      <div id='home' className={hideEarth ? 'hideEarth' : ''}>
+        <div ref={canvasWrap} id='canvasWrap'></div>
+        <div id='touch'>
+          Touch screen to select
+          <br />
+          觸碰螢幕以選取
         </div>
-        <div id='line'></div>
-        <div id='selector' className='sameWidth'>
-          <div ref={selectCityElem} id='selectCity' className='big'>
-            {data && data.global.selectCity}
+        <div id='lang'>
+          {allData && (
+            <>
+              <p>
+                Please select language
+                <br />
+                請選擇語言
+              </p>
+              <div onClick={() => onChangeLang('en')}>English</div>
+              <div onClick={() => onChangeLang('tc')}>繁體中文</div>
+            </>
+          )}
+        </div>
+        <div id='locationSelector'>
+          <div id='hk' className='sameWidth big'>
+            {locations[0].name[language]}
           </div>
-          <div ref={locationsOuterWrapElem} id='locationsOuterWrap'>
-            <div ref={locationsWrapElem} id='locationsWrap'>
-              <ul ref={locationsElem} id='locations'>
-                {locations.map((value, idx) => {
-                  return idx !== 0 ? (
-                    <li key={idx} className={selectedId === idx || hoverId === idx ? 'active' : ''}
+          <div id='line'></div>
+          <div id='selector' className='sameWidth'>
+            <div ref={selectCityElem} id='selectCity' className='big'>
+              {data && data.global.selectCity}
+            </div>
+            <div ref={locationsOuterWrapElem} id='locationsOuterWrap'>
+              <div ref={locationsWrapElem} id='locationsWrap'>
+                <ul ref={locationsElem} id='locations'>
+                  {locations.map((value, idx) => {
+                    return idx !== 0 ? (
+                      <li key={idx} className={selectedId === idx || hoverId === idx ? 'active' : ''}
+                        onClick={() => {
+                          selectLocation(idx);
+                        }}>
+                        <span onClick={() => {
+                            // showDetailsRef.current.showDetails(idx);
+                          }}
+                        >
+                          {value.name[language]}
+                        </span>
+                      </li>
+                    ) : (
+                      false
+                    );
+                  })}
+                </ul>
+              </div>
+              <div id='scroll'>
+                <div id='index'>
+                  <span>{scrolledDetailIdx < 10 ? `0${scrolledDetailIdx}` : scrolledDetailIdx}</span>/10
+                </div>
+                <span></span>
+                <p>{data && data.global.scrollDown}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id='detailPage' className=''>
+          <div id='sectionWrap'>
+            <div id='opening' className={`section ${detailIdx === 0 ? 'active' : ''}`}>
+              <div id='left' className='half'>
+                <div className='wrap'>
+                  <span className='name'>{locations[0].name[language]}</span>
+                  <div className='img lowerBg' style={{ backgroundImage: `url(./images/exG02a/hongkongbg.jpg)` }}></div>
+                </div>
+                <div className='bg'>
+                  <span></span>
+                </div>
+              </div>
+              <div id='right' className='half'>
+                <div className='wrap'>
+                  <span className='name'>{selectedId && locations[selectedId].name[language]}</span>
+                  <div className='img' style={{ backgroundImage: `url(./images/exG02a/${selectedId ? locations[selectedId].name['en'].replace(' ', '').toLowerCase() : 'hongkong'}bg.jpg)` }}></div>
+                </div>
+                <div className='bg'>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+            <div className={`locationName left ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}>
+              {locations[0].name[language]}
+              <span style={{ backgroundImage: `url(./images/exG02a/hongkongflag.svg)` }}></span>
+            </div>
+            <div className={`locationName right ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}>
+              {selectedId && locations[selectedId].name['en'].replace(' ', '') !== 'Tokyo' && <span style={{ backgroundImage: `url(./images/exG02a/${selectedId ? locations[selectedId].name['en'].replace(' ', '').toLowerCase() : 'hongkong'}flag.png)`, borderRadius: 5 + 'px' }}></span>}
+              {selectedId && locations[selectedId].name['en'].replace(' ', '') === 'Tokyo' && <span style={{ backgroundImage: `url(./images/exG02a/${selectedId ? locations[selectedId].name['en'].replace(' ', '').toLowerCase() : 'hongkong'}flag.svg)` }}></span>}
+              {selectedId && locations[selectedId].name[language]}
+            </div>
+
+            {/* <div id="line">
+              {
+                [...Array(5)].map((v,i)=>{
+                  return <span key={i}></span>
+                })
+              }
+            </div> */}
+
+            <Section1 data={data && data.section1} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()} />
+            <Section2 data={data && data.section2} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()} />
+            <Section3 data={data && data.section3} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()} />
+            <Section4 data={data && data.section4} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()} />
+            <Section5 data={data && data.section5} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()} />
+          </div>
+          <div id='nav'>
+            <div
+              id='homeBtn'
+              onClick={() => {
+                onBackHome();
+              }}
+            ></div>
+            <ul>
+              <li>
+                <img alt='' src='./images/exG02a/earth_icon.png'
+                  onClick={() => {
+                    onBackHome(true);
+                  }}
+                ></img>
+              </li>
+              {data &&
+                data.menu.map((value, idx) => {
+                  return (
+                    <li key={idx} className={detailIdx === idx + 1 ? 'active' : ''}
                       onClick={() => {
-                        selectLocation(idx);
-                      }}>
-                      <span onClick={() => {
-                          // showDetailsRef.current.showDetails(idx);
-                        }}
-                      >
-                        {value.name[language]}
-                      </span>
+                        onChangeDetail(idx + 1);
+                      }}
+                    >
+                      <span>{value}</span>
                     </li>
-                  ) : (
-                    false
                   );
                 })}
-              </ul>
-            </div>
-            <div id='scroll'>
-              <div id='index'>
-                <span>{scrolledDetailIdx < 10 ? `0${scrolledDetailIdx}` : scrolledDetailIdx}</span>/10
-              </div>
-              <span></span>
-              <p>{data && data.global.scrollDown}</p>
-            </div>
+              {/* <li className={detailIdx === 1 ? 'active' : ''} onClick={()=>onChangeDetail(1)}><span>Urban Form</span></li>
+                          <li className={detailIdx === 2 ? 'active' : ''} onClick={()=>onChangeDetail(2)}><span>Population Density</span></li>
+                          <li className={detailIdx === 3 ? 'active' : ''} onClick={()=>onChangeDetail(3)}><span>Tallest Buildings</span></li>
+                          <li className={detailIdx === 4 ? 'active' : ''} onClick={()=>onChangeDetail(4)}><span>Transportation</span></li>
+                          <li className={detailIdx === 5 ? 'active' : ''} onClick={()=>onChangeDetail(5)}><span>GDP</span></li> */}
+            </ul>
           </div>
-        </div>
-      </div>
-      <div id='detailPage' className=''>
-        <div id='sectionWrap'>
-          <div id='opening' className={`section ${detailIdx === 0 ? 'active' : ''}`}>
-            <div id='left' className='half'>
-              <div className='wrap'>
-                <span className='name'>{locations[0].name[language]}</span>
-                <div className='img lowerBg' style={{ backgroundImage: `url(./images/exG02a/hongkongbg.jpg)` }}></div>
-              </div>
-              <div className='bg'>
-                <span></span>
-              </div>
-            </div>
-            <div id='right' className='half'>
-              <div className='wrap'>
-                <span className='name'>{selectedId && locations[selectedId].name[language]}</span>
-                <div className='img' style={{ backgroundImage: `url(./images/exG02a/${selectedId ? locations[selectedId].name['en'].replace(' ', '').toLowerCase() : 'hongkong'}bg.jpg)` }}></div>
-              </div>
-              <div className='bg'>
-                <span></span>
-              </div>
-            </div>
-          </div>
-
-          <div className={`locationName left ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}>
-            {locations[0].name[language]}
-            <span style={{ backgroundImage: `url(./images/exG02a/hongkongflag.svg)` }}></span>
-          </div>
-          <div className={`locationName right ${detailIdx !== 0 && detailIdx !== null ? 'active' : ''}`}>
-            {selectedId && locations[selectedId].name['en'].replace(' ', '') !== 'Tokyo' && <span style={{ backgroundImage: `url(./images/exG02a/${selectedId ? locations[selectedId].name['en'].replace(' ', '').toLowerCase() : 'hongkong'}flag.png)`, borderRadius: 5 + 'px' }}></span>}
-            {selectedId && locations[selectedId].name['en'].replace(' ', '') === 'Tokyo' && <span style={{ backgroundImage: `url(./images/exG02a/${selectedId ? locations[selectedId].name['en'].replace(' ', '').toLowerCase() : 'hongkong'}flag.svg)` }}></span>}
-            {selectedId && locations[selectedId].name[language]}
-          </div>
-
-          {/* <div id="line">
-            {
-              [...Array(5)].map((v,i)=>{
-                return <span key={i}></span>
-              })
-            }
-          </div> */}
-
-          <Section1 data={data && data.section1} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()} />
-          <Section2 data={data && data.section2} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()} />
-          <Section3 data={data && data.section3} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()} />
-          <Section4 data={data && data.section4} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()} />
-          <Section5 data={data && data.section5} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()} />
-        </div>
-        <div id='nav'>
-          <div
-            id='homeBtn'
-            onClick={() => {
-              onBackHome();
-            }}
-          ></div>
-          <ul>
-            <li>
-              <img alt='' src='./images/exG02a/earth_icon.png'
-                onClick={() => {
-                  onBackHome(true);
-                }}
-              ></img>
-            </li>
-            {data &&
-              data.menu.map((value, idx) => {
-                return (
-                  <li key={idx} className={detailIdx === idx + 1 ? 'active' : ''}
-                    onClick={() => {
-                      onChangeDetail(idx + 1);
-                    }}
-                  >
-                    <span>{value}</span>
-                  </li>
-                );
-              })}
-            {/* <li className={detailIdx === 1 ? 'active' : ''} onClick={()=>onChangeDetail(1)}><span>Urban Form</span></li>
-                        <li className={detailIdx === 2 ? 'active' : ''} onClick={()=>onChangeDetail(2)}><span>Population Density</span></li>
-                        <li className={detailIdx === 3 ? 'active' : ''} onClick={()=>onChangeDetail(3)}><span>Tallest Buildings</span></li>
-                        <li className={detailIdx === 4 ? 'active' : ''} onClick={()=>onChangeDetail(4)}><span>Transportation</span></li>
-                        <li className={detailIdx === 5 ? 'active' : ''} onClick={()=>onChangeDetail(5)}><span>GDP</span></li> */}
-          </ul>
         </div>
       </div>
     </div>
