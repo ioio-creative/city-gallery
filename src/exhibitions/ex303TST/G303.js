@@ -103,7 +103,7 @@ const G303 = props => {
         setRunTransition(true);
         handleStart.current.start(yearIdx);
         handleShowCoastline.current.showCoastline(yearIdx);
-      },3000);
+      },5000);
     }
   };
 
