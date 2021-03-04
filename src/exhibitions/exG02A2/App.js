@@ -830,40 +830,51 @@ const App = props => {
       document.removeEventListener('touchend', onMouseUp, false);
     };
 
+    const shortRotationDistance = (id, autoRotate = false) => {
+      const { targetTheta, targetPhi } = calcThetaPhiFromLatLon(locations[id].lat, locations[id].lon);
+      const { theta, phi } = objectControl.getCurrentThetaPhi();
+      const animValue = { theta: theta, phi: phi };
+      let shortTheta;
+      const currentTargetTheta = theta - targetTheta > 0 ? theta - targetTheta : Math.PI * 2 + (theta - targetTheta);
+      const fixedTargetTheta = theta - targetTheta > 0 ? currentTargetTheta % (Math.PI * 2) : currentTargetTheta < 0 ? Math.PI * 2 + (currentTargetTheta % (Math.PI * 2)) : currentTargetTheta % (Math.PI * 2); // 0 -> 6.28 -> 0 -> 6.28
+
+      if (fixedTargetTheta > Math.PI && fixedTargetTheta < Math.PI * 2) {
+        // left side
+        shortTheta = Math.PI * 2 + (theta - fixedTargetTheta);
+      } else {
+        // right side
+        shortTheta = theta - fixedTargetTheta;
+      }
+
+      objectControl.disableAutoRotate();
+
+      gsap.to(animValue, autoRotate ? 2.6 : 1.3, {
+        theta: shortTheta,
+        phi: targetPhi,
+        ease: autoRotate ? 'power3.inOut' : 'power3.out',
+        onUpdate: function () {
+          const value = this.targets()[0];
+          objectControl.setRotate(value.theta, value.phi);
+        },
+        onComplete:function(){
+          if(autoRotate) objectControl.enableAutoRotate();
+        }
+      });
+    }
+
     const selectLocation = (id, noDetail) => {
-      console.log(id);
+      //console.log(id);
       if (id) currentHoveredInstanceId = id;
       if(currentHoveredInstanceId !== 0){
         if(currentHoveredInstanceId !== oldHoveredInstanceId){
-          objectControl.disableAutoRotate();
+          // objectControl.disableAutoRotate();
 
 
           // find short rotation distance
-          const { targetTheta, targetPhi } = calcThetaPhiFromLatLon(locations[currentHoveredInstanceId].lat, locations[currentHoveredInstanceId].lon);
-          const { theta, phi } = objectControl.getCurrentThetaPhi();
-          const animValue = { theta: theta, phi: phi };
-          let shortTheta;
-          const currentTargetTheta = theta - targetTheta > 0 ? theta - targetTheta : Math.PI * 2 + (theta - targetTheta);
-          const fixedTargetTheta = theta - targetTheta > 0 ? currentTargetTheta % (Math.PI * 2) : currentTargetTheta < 0 ? Math.PI * 2 + (currentTargetTheta % (Math.PI * 2)) : currentTargetTheta % (Math.PI * 2); // 0 -> 6.28 -> 0 -> 6.28
-
-          if (fixedTargetTheta > Math.PI && fixedTargetTheta < Math.PI * 2) {
-            // left side
-            shortTheta = Math.PI * 2 + (theta - fixedTargetTheta);
-          } else {
-            // right side
-            shortTheta = theta - fixedTargetTheta;
-          }
+          shortRotationDistance(currentHoveredInstanceId);
 
           // gsap.to(camera.position, 1.3, { y: 0, z: 100, ease: 'power3.out' });
-          gsap.to(animValue, 1.3, {
-            theta: shortTheta,
-            phi: targetPhi,
-            ease: 'power3.out',
-            onUpdate: function () {
-              const value = this.targets()[0];
-              objectControl.setRotate(value.theta, value.phi);
-            }
-          });
+          
 
           // point bg
             // resetPointsColor();
@@ -972,6 +983,8 @@ const App = props => {
       tl.to('#lang', 0.3, { autoAlpha: 0, ease: 'power1.inOut' });
       tl.to(camera.position, 2, { y: 0, z: 100, ease: 'power4.inOut' }, '-=.1');
       tl.to('#locationSelector', 0.3, { autoAlpha: 1, ease: 'power1.inOut' }, 'end');
+
+      shortRotationDistance(0, true);
       //   tl.call(pops, null, 'end');
     };
     zoomInFunc.current = { zoomIn };

@@ -332,7 +332,7 @@ const G303 = props => {
           {
             globalData &&
             <p>
-              <span>{globalData.coastInfo}</span>
+              <span>{yearIdx < 3 ? globalData.mapViewing : globalData.coastInfo}</span>
               { yearIdx >= 3 && <span>{globalData.streetInfo}</span>}
             </p>
           }

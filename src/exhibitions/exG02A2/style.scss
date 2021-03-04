@@ -790,8 +790,8 @@
                     &.singapore1 {
                       left: 1.8vw;
                       top: -14.8vw;
-                      > .name {
-                        width: 461px;
+                      & > .name {
+                        width: vw-calc(350);
                       }
                     }
                     &.london1 {
@@ -833,6 +833,10 @@
                     top: auto;
                     bottom: calc(105%);
                     left: 0%;
+                    &.newyork3{
+                      bottom: calc(90%);
+                      left: 92%;
+                    }
                   }
                 }
               }
@@ -904,10 +908,10 @@
                     top: vw-calc(-150);
                     left: 120%;
                     // .height,
-                    // .name {
-                    //   font-size: vw-calc(40);
-                    //   line-height: vw-calc(42);
-                    // }
+                    .name {
+                      font-size: vw-calc(30);
+                      line-height: vw-calc(36);
+                    }
                   }
                 }
                 &#_2nd {
@@ -923,6 +927,7 @@
                       // left:auto;
                       // transform: translate3d(100%,10%,0);
                       font-size: vw-calc(16);
+                      line-height:  vw-calc(42);
                     }
                   }
                 }
@@ -965,11 +970,11 @@
                   }
                   .height,
                   .name {
-                    font-size: vw-calc(24);
-                    line-height: vw-calc(30);
+                    width: vw-calc(250);
+                    font-size: vw-calc(22);
+                    line-height: vw-calc(28);
                     color: #fff;
                     margin-top: vw-calc(10);
-                    width: 310px;
                   }
                   .height {
                     margin-top: vw-calc(10);

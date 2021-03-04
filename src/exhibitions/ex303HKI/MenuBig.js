@@ -72,8 +72,8 @@ const Menu = props => {
             <div id="tc" className={props.language === 'tc' ? 'active' : ''} onClick={()=>props.setLanguage('tc')}>繁</div>
             <div id="en" className={props.language === 'en' ? 'active' : ''} onClick={()=>props.setLanguage('en')}>ENG</div>
           </div>
-          <div id="questionBtnWrap">
-            <div id="questionBtn" onClick={()=>props.onShowTutor(true)}>?</div>
+          <div id="questionBtnWrap" className={props.showNav ? 'disable' : ''}>
+            <div id="questionBtn" onClick={()=>!props.showNav ? props.onShowTutor(true) : false}>?</div>
           </div>
           <div id="indicator" className={!props.showNav ? 'hideImg' : props.yearIdx < 3 ? 'hideImg' : ''} 
             dangerouslySetInnerHTML={{__html: 

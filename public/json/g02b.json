@@ -33,14 +33,14 @@
           "detailBlocks": [
             {
               "image": {
-                "credit": "© www.mediaserver.hamburg.de/ Jörg Modrow",
+                "credit": "Photo by Andreas Vallbracht prachtvoll.de",
                 "src": "./images/exG02b/Hamburg/photo2.jpg",
                 "caption": "The old industrial area has been transformed into modern living spaces. Apart from residential, commercial buildings, there are also cultural and historical architecture, as well as various public spaces, such as a 26-hectare park, plazas, pedestrian corridors, etc., giving a rebirth of the old city."
               }
             },
             {
               "image": {
-                "credit": "Photo by Andreas Vallbracht prachtvoll.de",
+                "credit": "© www.mediaserver.hamburg.de/ Jörg Modrow",
                 "src": "./images/exG02b/Hamburg/photo1.jpg",
                 "caption": "Following the advent of the European Union, free-trade era, the edge of free ports no longer prevails. As the shipping and freight industry continues to shrink, this port city has gradually been left idle and forgotten. To transform Hamburg, the urban regeneration project known as \"HafenCity\" spanning for 25 year commenced in 1997."
               }
@@ -85,7 +85,7 @@
               "image": {
                 "credit": "Photo by AFCD",
                 "src": "./images/exG02b/HongKong/photo3.jpg",
-                "caption": "To conserve nature and maintain biodiversity, the Government has designated land and marine waters with important ecological value as protected areas, including 24 country parks and 22 special areas, which account for nearly 40% of the total land area in ​​Hong Kong. Hong Kong also has six marine parks and one marine reserve, occupying a total water area of 4,050 hectares."
+                "caption": "To conserve nature and maintain biodiversity*, the Government has designated land and marine waters with important ecological value as protected areas, including 24 country parks and 22 special areas, which account for nearly 40% of the total land area in ​​Hong Kong. Hong Kong also has six marine parks and one marine reserve, occupying a total water area of 4,050 hectares."
               }
             },
             {
@@ -121,7 +121,7 @@
               "image": {
                 "credit": "©Photographer (John Doe)-Korea Tourism Organization",
                 "src": "./images/exG02b/Seoul/photo2.jpg",
-                "caption": "An additional 16 hectares of green public space has been created along the river. The levelled embankment is flanked by trees canopies, and together with small rock platforms on riverside and atop the river, turning Cheonggyecheon into a water-friendly leisure spot for both visitors and locals."
+                "caption": "An additional 16 hectares of green public space has been created along the river. The levelled embankment is flanked by tree canopies, and together with small rock platforms on riverside and atop the river, turning Cheonggyecheon into a water-friendly leisure spot for both visitors and locals."
               }
             },
             {
@@ -184,21 +184,19 @@
           "detailBlocks": [
             {
               "image": {
-                "credit": "Photo by Kalmbach Publishing Company",
+                "credit": "Photo by Rick Darke",
                 "src": "./images/exG02b/NewYork/photo1.jpg",
                 "caption": "In the 1930s, the West Side of New York City was packed with godowns. Elevated railways were built across different districts for transporting goods. However, in the 1950s, rail freight shrank following the rapid development of highways and trucks. This elevated railway has accomplished its historical mission, and ceased all operations in the 1980s."
               }
             },
             {
               "image": {
-                "credit": "Photo by Joel Sternfeld",
                 "src": "./images/exG02b/NewYork/photo2.jpg",
                 "caption": "After ceasing operation, the elevated railway has become dilapidated with overgrown weeds, arousing demolition vs preservation controversy. A local NGO, Friends of High Line, proposed to convert the railway into a sky garden in 1999. Upon persevering for many years, the project finally commenced in 2006. In 2009, the works were completed and open to the public free of charge."
               }
             },
             {
               "image": {
-                "credit": "Photo by Rick Darke",
                 "src": "./images/exG02b/NewYork/photo3.jpg",
                 "caption": "The High Line is now a landmark of New York City. It not only provides a green and resting public space for its visitors, but also adds vibrancy to the old neighbourhood it traverses and presents an international revitalisation showcase. \"Seoullo 7017\" completed in 2017 was inspired by the High Line’s design. "
               }
@@ -229,7 +227,7 @@
               "image": {
                 "credit": "Photo by Floating Farm",
                 "src": "./images/exG02b/Rotterdam/photo2.jpg",
-                "caption": "90% of land in Rotterdam is below sea level. For years, the imminent risk has urged the city government and professional organisations to examine strategies for flood control, climate adaptation, and resilient city planning. The floating farms of the nearby residents is the latest attempt in the area. It is not only fearless of flooding, occupies no land, and bringing food production areas closer to their nearby consumers, greatly reduces carbon emissions incurred by transportation."
+                "caption": "90% of land in Rotterdam is below sea level. For years, the imminent risk has urged the city government and professional organisations to examine strategies for flood control, climate adaptation, and resilient city planning. The floating farms of the nearby residents is the latest attempt in the area. It is not only fearless of flooding, occupies no land, but also brings food production areas closer to their nearby consumers, greatly reducing carbon emissions incurred by transportation."
               }
             },
             {
@@ -258,7 +256,7 @@
               "image": {
                 "credit": "Imaginechina Limited / Alamy Stock Photo",
                 "src": "./images/exG02b/Huainan/photo1.jpg",
-                "caption": "Since Japan established its first floating solar power station in 2007, floating solar has become a new trend of renewable energy. Such a massive electricity generating facility occupies no land. Solar panels floating on the lake can block sunlight to reduce water evaporation, inhibit algae growth. Lake water also serves as a natural cooling medium, complementing one another a perfect complement to solar panels. "
+                "caption": "Since Japan established its first floating solar power station in 2007, floating solar has become a new trend of renewable energy. Such a massive electricity generating solar panels floating on the lake can block sunlight to reduce water evaporation and inhibit algae growth. Lake water also serves as a natural cooling medium, complementing one another a perfect complement to solar panels."
               }
             },
             {
@@ -270,9 +268,9 @@
             },
             {
               "image": {
-                "credit": "",
+                "credit": "Imaginechina Limited / Alamy Stock Photo",
                 "src": "./images/exG02b/Huainan/photo3.jpg",
-                "caption": "The lake atop the floating power station floats on was actually an abandoned coal mine. Years after years, water filled in and formed the lake. From underground to a lake, from coal mine to solar energy, from pollution source to renewable energy, this lake testified the changes in the energy trajectory of China."
+                "caption": "The lake atop the floating power station was actually an abandoned coal mine. Years after years, water filled in and formed the lake. From underground to a lake, from coal mine to solar energy, from pollution source to renewable energy, this lake has testified the changes in the energy trajectory of China."
               }
             }
           ]
@@ -337,14 +335,14 @@
               "image": {
                 "credit": "Picture courtesy of SMART Tunnel",
                 "src": "./images/exG02b/KualaLumpur/photo2.jpg",
-                "caption": "The 3-storey tunnel is 9.7 km long and is the second longest stormwater tunnel in Asia. The upper two storeys provide a total of four lanes, connecting to expressways; and the lower storey pipeline is linked to a stormwater tank, several rivers and lakes. It is not open during normal days, but turns into waterways on rainy day."
+                "caption": "The 3-storey tunnel is 9.7 km long and is the second longest stormwater tunnel in Asia. The upper two storeys provide a total of four lanes, connecting to expressways; and the lower storey pipeline is linked to a stormwater tank, several rivers and lakes. It is not open during normal days, but turns into waterways on rainy days."
               }
             },
             {
               "image": {
                 "credit": "Picture courtesy of SMART Tunnel",
                 "src": "./images/exG02b/KualaLumpur/photo3.jpg",
-                "caption": "The tunnel has three modes. On sunny or drizzling days, only two storeys of vehicular lanes are open and the bottom waterway is not used (Model 1). In the event of moderate rain, the bottom waterway will be open simultaneously (Mode 2). In case of heavy rain, the vehicular lane will automatically be closed with watertight gates and the entire tunnel will turn into a floodway which can discharge up to 3 million cubic feet of water, or equivalent to 34 standard swimming pools (Model 3). Upon the completion of the tunnel; it has successfully tackled several rainstorm. Its innovative design has earned the UN-Habitat Scroll of Honour Award 2011."
+                "caption": "The tunnel has three modes. On sunny or drizzling days, only two storeys of vehicular lanes are open and the bottom waterway is not used (Model 1). In the event of moderate rain, the bottom waterway will be open simultaneously (Mode 2). In case of heavy rain, the vehicular lane will automatically be closed with watertight gates and the entire tunnel will turn into a floodway which can discharge up to 3 million cubic feet of water, or equivalent to 34 standard swimming pools (Model 3). Upon the completion of the tunnel; it has successfully tackled several rainstorms. Its innovative design has earned the UN-Habitat Scroll of Honour Award 2011."
               }
             }
           ]
@@ -410,14 +408,14 @@
           "detailBlocks": [
             {
               "image": {
-                "credit": "© www.mediaserver.hamburg.de/ Jörg Modrow",
+                "credit": "Photo by Andreas Vallbracht prachtvoll.de",
                 "src": "./images/exG02b/Hamburg/photo2.jpg",
                 "caption": "老舊的工業區搖身一變，成為現代化生活空間，除了住宅及商廈外，還有文化和歷史建築，同時也包含二十六公頃的公園、廣場和行人步道等各類型公共空間，讓舊城重生。"
               }
             },
             {
               "image": {
-                "credit": "Photo by Andreas Vallbracht prachtvoll.de",
+                "credit": "© www.mediaserver.hamburg.de/ Jörg Modrow",
                 "src": "./images/exG02b/Hamburg/photo1.jpg",
                 "caption": "隨著歐盟自由貿易時代來臨，自由港的優勢不再。在航運業持續萎縮的情況下，這座港口城市逐漸被閒置遺忘。為了改造漢堡，長達二十五年名為「漢堡港城」的市區重建計劃於1997年展開。"
               }
@@ -448,7 +446,7 @@
               "image": {
                 "credit": "Photo by AFCD",
                 "src": "./images/exG02b/HongKong/photo1.jpg",
-                "caption": "對比起香港的城市化程度及人口密度，這裡的生物品種卻如此豐富，實屬難得。香港屬亞熱帶氣候，地形多山而崎嶇，美麗的海岸線，環山繞水的環境為各種生物的提供了良好的生境。"
+                "caption": "對比起香港的城市化程度及人口密度，這裡的生物品種卻如此豐富，實屬難得。香港屬亞熱帶氣候，地形多山而崎嶇，美麗的海岸線，環山繞水的環境為各種生物提供了良好的生長環境。"
               }
             },
             {
@@ -561,21 +559,19 @@
           "detailBlocks": [
             {
               "image": {
-                "credit": "Photo by Kalmbach Publishing Company",
+                "credit": "Photo by Rick Darke",
                 "src": "./images/exG02b/NewYork/photo1.jpg",
                 "caption": "1930年代的紐約市西城區貨倉林立，當時為了運送貨物，便興建了穿梭於城中各區的高架鐵路。然而，到了1950年代，由於公路和貨車的快速發展，鐵路貨運亦隨之萎縮，這條高架鐵路也完成了歷史任務，到了1980年代全面停止運作。"
               }
             },
             {
               "image": {
-                "credit": "Photo by Joel Sternfeld",
                 "src": "./images/exG02b/NewYork/photo2.jpg",
                 "caption": "停駛後，高架鐵路日久失修，雜草叢生，引起了清拆與保留的爭議。當地非牟利團體「高架鐵路之友」於1999年提出將鐵路轉型為空中公園，爭取多年後，項目最終於2006年動工，2009年竣工正式免費開放。"
               }
             },
             {
               "image": {
-                "credit": "Photo by Rick Darke",
                 "src": "./images/exG02b/NewYork/photo3.jpg",
                 "caption": "現在空中鐵路公園已是紐約的地標性景點，它不但為遊人提供了綠化及休憩公共空間，為鐵路沿線的舊社區帶來新動力，更是國際活化模範，2017年完工的「首爾路7017」亦參照了它的設計。"
               }

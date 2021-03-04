@@ -261,6 +261,11 @@ $width:3840;
         &:after{
           right:0;
         }
+        &.disable{
+          #questionBtn{
+            opacity: .3;
+          }
+        }
         #questionBtn{
           width:vw-calc(57, $width);
           height:vw-calc(57, $width);
@@ -272,6 +277,7 @@ $width:3840;
           align-items: center;
           font-size:vw-calc(27, $width);
           line-height: vw-calc(57, $width);
+          transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
         }
       }
       #indicator{

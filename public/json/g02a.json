@@ -48,7 +48,7 @@
           "london": {
             "src": "./images/exG02a/section1/londonmap.svg",
             "source": "Greater London Authority",
-            "distance": "5km"
+            "distance": "3km"
           },
           "paris": {
             "src": "./images/exG02a/section1/parismap.svg",
@@ -63,27 +63,27 @@
           "mumbai": {
             "src": "./images/exG02a/section1/mumbaimap.svg",
             "source": "Municipal Corporation of Greater Mumbai",
-            "distance": "5km"
+            "distance": "2km"
           },
           "newyork": {
             "src": "./images/exG02a/section1/newyorkmap.svg",
             "source": "NYC Department of City Planning",
-            "distance": "5km"
+            "distance": "3km"
           },
           "singapore": {
             "src": "./images/exG02a/section1/singaporemap.svg",
             "source": "Meteorological Service Singapore",
-            "distance": "5km"
+            "distance": "3km"
           },
           "sydney": {
             "src": "./images/exG02a/section1/sydneymap.svg",
             "source": "Australian Bureau of Statistics",
-            "distance": "5km"
+            "distance": "10km"
           },
           "tokyo": {
             "src": "./images/exG02a/section1/tokyomap.svg",
             "source": "Tokyo Metropolitan Government",
-            "distance": "5km"
+            "distance": "10km"
           }
         }
       },
@@ -514,7 +514,7 @@
           "london": {
             "src": "./images/exG02a/section1/londonmap.svg",
             "source": "Greater London Authority",
-            "distance": "5公里"
+            "distance": "3公里"
           },
           "paris": {
             "src": "./images/exG02a/section1/parismap.svg",
@@ -529,27 +529,27 @@
           "mumbai": {
             "src": "./images/exG02a/section1/mumbaimap.svg",
             "source": "Municipal Corporation of Greater Mumbai",
-            "distance": "5公里"
+            "distance": "2公里"
           },
           "newyork": {
             "src": "./images/exG02a/section1/newyorkmap.svg",
             "source": "NYC Department of City Planning",
-            "distance": "5公里"
+            "distance": "3公里"
           },
           "singapore": {
             "src": "./images/exG02a/section1/singaporemap.svg",
             "source": "Meteorological Service Singapore",
-            "distance": "5公里"
+            "distance": "3公里"
           },
           "sydney": {
             "src": "./images/exG02a/section1/sydneymap.svg",
             "source": "Australian Bureau of Statistics",
-            "distance": "5公里"
+            "distance": "10公里"
           },
           "tokyo": {
             "src": "./images/exG02a/section1/tokyomap.svg",
             "source": "Tokyo Metropolitan Government",
-            "distance": "5公里"
+            "distance": "10公里"
           }
         }
       },

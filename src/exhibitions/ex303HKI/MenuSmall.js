@@ -30,10 +30,10 @@ const Menu = props => {
   return (
     <div id='navWrap'>
       <div id='left'>
-        {
+        {/* {
           !props.showYear && props.gameMode !== 'home' && 
           <div id="indicator" className={`${props.streetIdx !== null ? 'hide' : ''} ${props.yearIdx != 3 ? 'hideImg' : ''} ${props.zone > 0 ? 'moveup' : ''}`} dangerouslySetInnerHTML={{__html:globalData && globalData.hints}}></div>
-        }
+        } */}
         <div id="wrap" className={`${!props.showNav ? 'noBtn' : props.yearIdx < 3  ? 'noBtn' : ''} ${props.runTransition ? 'disable' : ''}`}>
           <div className={`yearButton ${props.gameMode === 'street' ? 'hide' : ''} ${props.showNav ? 'active' : ''}`} 
             onClick={() => {
@@ -91,8 +91,8 @@ const Menu = props => {
             <div id="tc" className={props.language === 'tc' ? 'active' : ''} onClick={()=>props.setLanguage('tc')}>繁</div>
             <div id="en" className={props.language === 'en' ? 'active' : ''} onClick={()=>props.setLanguage('en')}>ENG</div>
           </div>
-          <div id="questionBtnWrap">
-            <div id="questionBtn" onClick={()=>props.onShowTutor(true)}>?</div>
+          <div id="questionBtnWrap" className={props.showNav ? 'disable' : ''}>
+            <div id="questionBtn" onClick={()=> !props.showNav ? props.onShowTutor(true) : false}>?</div>
           </div>
         </div>
       </div>

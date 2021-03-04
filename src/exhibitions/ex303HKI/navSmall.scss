@@ -288,6 +288,11 @@ $drakgreenblue:#074A45;
         &:before{
           left:0;
         }
+        &.disable{
+          #questionBtn{
+            opacity: .3;
+          }
+        }
         #questionBtn{
           width:vw-calc(57);
           height:vw-calc(57);
@@ -299,6 +304,7 @@ $drakgreenblue:#074A45;
           justify-content: center;
           align-items: center;
           font-size:vw-calc(27);
+          transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
         }
       }
     }

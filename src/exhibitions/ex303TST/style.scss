@@ -204,10 +204,10 @@ span{
                     touch-action: none;
                 }
                 &:before{
-                    animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+                    animation: radar3 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
                 }
                 &:after{
-                    animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite 1s;
+                    animation: radar3 3s cubic-bezier(0.16, 1, 0.3, 1) infinite 1s;
                 }
             }
         }
@@ -438,6 +438,24 @@ span{
                         background: url('../ex303HKI/images/marker.svg') center no-repeat;
                         transform: translate3d(-50%,-100%,0) scale(1);
                         transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+                        &:before{
+                            animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+                        }
+                        &:after{
+                            animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite .4s;
+                        }
+                        &:before, &:after{
+                            content:'';
+                            width:vw-calc(61);
+                            height:vw-calc(61);
+                            border-radius: vw-calc(100);
+                            border:vw-calc(2) solid #fa7f02;
+                            position: absolute;
+                            top:40%;
+                            left:50%;
+                            opacity: 1;
+                            transform: translate3d(-50%,-50%,0) scale(0);
+                        }
                     }
                     #location{
                         width:vw-calc(155);
@@ -700,6 +718,24 @@ span{
             transform-origin: center;
             transform: translate3d(-50%,0,0) rotate(-90deg);
             transition: all .3s cubic-bezier(0.87, 0, 0.13, 1);
+            &:before{
+                animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+            }
+            &:after{
+                animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite .4s;
+            }
+            &:before, &:after{
+                content:'';
+                width:vw-calc(61);
+                height:vw-calc(61);
+                border-radius: vw-calc(100);
+                border:vw-calc(2) solid #fff;
+                position: absolute;
+                top:50%;
+                left:50%;
+                opacity: 1;
+                transform: translate3d(-50%,-50%,0) scale(0);
+            }
             &.hide{
                 opacity: 0;
                 visibility: hidden;
@@ -902,6 +938,24 @@ span{
                         background: url('../ex303HKI/images/marker.svg') center center no-repeat;
                         transform: translate3d(-50%,-100%,0) scale(1);
                         transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+                        &:before{
+                            animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+                        }
+                        &:after{
+                            animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite .4s;
+                        }
+                        &:before, &:after{
+                            content:'';
+                            width:vw-calc(61);
+                            height:vw-calc(61);
+                            border-radius: vw-calc(100);
+                            border:vw-calc(2) solid #fa7f02;
+                            position: absolute;
+                            top:40%;
+                            left:50%;
+                            opacity: 1;
+                            transform: translate3d(-50%,-50%,0) scale(0);
+                        }
                         #location{
                             position: absolute;
                             font-size:vw-calc(20);
@@ -1363,6 +1417,12 @@ span{
 @keyframes radar{
     100%{
         transform: translate3d(0,0,0) scale(2,2.15);
+        opacity: 0;
+    }
+}
+@keyframes radar2{
+    100%{
+        transform: translate3d(-50%,-50%,0) scale(2,2);
         opacity: 0;
     }
 }
