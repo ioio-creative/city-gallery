@@ -278,6 +278,11 @@ span{
     #yearOfCoastline.zoomed p {
         transform: translate3d(65%, 0, 0);
     }
+    #coast #contentWrap .item #card #btnOuterWrap .btnWrap > div span{
+        width: vw-calc(130);
+        font-size: vw-calc(12);
+        line-height: vw-calc(14);
+    }
 }
 
 #main{
@@ -589,14 +594,15 @@ span{
                         display: flex;
                         justify-content: space-between;
                         position: absolute;
-                        top: 90%;
+                        top: 94%;
                         left:0;
                         padding:vw-calc(30 50 87);
                         z-index: 2;
                         .btnWrap{
                             &>div{
+                                height:100%;
                                 display: flex;
-                                align-items: center;
+                                // align-items: center;
                                 &:active{
                                     #icon{
                                         background:$lightblue;
@@ -606,7 +612,11 @@ span{
                                         }
                                     }
                                 }
+                                &>div{
+                                    align-items: center;
+                                }
                                 #icon{
+                                    margin-top: vw-calc(-16);
                                     width:vw-calc(42 + 2);
                                     height:vw-calc(42 + 2);
                                     border-radius: 50%;
@@ -618,10 +628,10 @@ span{
                                     }
                                 }
                                 span{
-                                    width:vw-calc(120);
+                                    width:vw-calc(121);
                                     margin:vw-calc(0 12);
-                                    font-size:vw-calc(10);
-                                    line-height: vw-calc(14);
+                                    font-size:vw-calc(14);
+                                    line-height: vw-calc(16);
                                 }
                             }
                             #nextBtn{

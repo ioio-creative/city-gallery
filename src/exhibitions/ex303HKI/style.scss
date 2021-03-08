@@ -297,6 +297,16 @@ span{
                 height:vw-calc(255, $width);
             }
         }
+        &:nth-child(4){
+            #card #btnOuterWrap{
+                top: 90%;
+            }
+        }
+        &:nth-child(5){
+            #card #btnOuterWrap{
+                top: 87%;
+            }
+        }
         &:nth-child(6){
             #markerWrap #location{
                 width:vw-calc(255, $width);
@@ -305,6 +315,14 @@ span{
             }
             #card{
                 height:vw-calc(620, $width);
+                #btnOuterWrap{
+                    top: 94%;
+                }
+            }
+        }
+        &:nth-child(7){
+            #card #btnOuterWrap{
+                top: 85%;
             }
         }
         &:nth-child(10){
@@ -312,16 +330,23 @@ span{
                 width:vw-calc(210, $width);
                 height:vw-calc(210, $width);
             }
-            // #card{
-            //     height:vw-calc(580, $width);
-            // }
         }
+        // &:nth-child(11){
+        //     #card #btnOuterWrap{
+        //         top: 90%;
+        //     }
+        // }
         #markerWrap #location{
             padding-top:0;
         }
     }
     #yearOfCoastline.zoomed p {
         transform: translate3d(65%, 0, 0);
+    }
+    #coast #contentWrap .item #card #btnOuterWrap .btnWrap > div span{
+        width: vw-calc(130, $width);
+        font-size: vw-calc(12, $width);
+        line-height: vw-calc(14, $width);
     }
 }
 
@@ -676,14 +701,14 @@ span{
                         display: flex;
                         justify-content: space-between;
                         position: absolute;
-                        top: 90%;
+                        top: 92%;
                         left:0;
                         padding:vw-calc(30 50 87, $width);
                         z-index: 2;
                         .btnWrap{
                             &>div{
+                                height:100%;
                                 display: flex;
-                                align-items: center;
                                 &:active{
                                     #icon{
                                         background:$lightblue;
@@ -693,7 +718,11 @@ span{
                                         }
                                     }
                                 }
+                                &>div{
+                                    align-items: center;
+                                }
                                 #icon{
+                                    margin-top: vw-calc(-8);
                                     width:vw-calc(42 + 2, $width);
                                     height:vw-calc(42 + 2, $width);
                                     border-radius: 50%;
@@ -705,10 +734,12 @@ span{
                                     }
                                 }
                                 span{
-                                    width:vw-calc(120, $width);
+                                    width:vw-calc(121, $width);
                                     margin:vw-calc(0 12, $width);
-                                    font-size:vw-calc(10, $width);
-                                    line-height: vw-calc(14, $width);
+                                    font-size:vw-calc(14, $width);
+                                    line-height: vw-calc(16, $width);
+                                    // display: flex;
+                                    // align-items: center;
                                 }
                             }
                             #nextBtn{
