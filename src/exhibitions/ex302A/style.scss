@@ -804,6 +804,7 @@ body {
             padding-top: vw-calc(40);
             align-items: flex-start;
             #imgOuterWrap {
+              padding-left: 2vw;
               .imgWrap {
                 height: vw-calc(300);
               }
@@ -839,6 +840,7 @@ body {
             align-items: flex-end;
             position: relative;
             #imgOuterWrap {
+              padding-left: 2vw;
               .imgWrap {
                 height: vw-calc(360);
               }
@@ -925,6 +927,12 @@ body {
         }
 
         #imgOuterWrap {
+          &.C{
+            width: 29.6vw;
+          }
+          &.S{
+            width: 33.3vw;
+          }
           display: flex;
           align-items: center;
           position: relative;
@@ -999,6 +1007,7 @@ body {
         #itemContent {
           font-size: vw-calc(22);
           line-height: vw-calc(38);
+          padding-left: 2vw;
           // font-size: 1vw;
           // line-height: 1.68vw;
         }

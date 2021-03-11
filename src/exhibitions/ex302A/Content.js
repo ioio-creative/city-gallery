@@ -31,18 +31,10 @@ const Content = props => {
   const triggerMinimal = useRef(null);
   // const onResizeFunc = useRef(null);
   const contentWrapElem = useRef(null);
-  const contentElems = useRef(
-    [...Array(props.sectionNum)].map(() => createRef())
-  );
-  const sidebarElems = useRef(
-    [...Array(props.sectionNum)].map(() => createRef())
-  );
-  const contentNavElems = useRef(
-    [...Array(props.sectionNum)].map(() => createRef())
-  );
-  const contentNavLineElems = useRef(
-    [...Array(props.sectionNum)].map(() => createRef())
-  );
+  const contentElems = useRef([...Array(props.sectionNum)].map(() => createRef()));
+  const sidebarElems = useRef([...Array(props.sectionNum)].map(() => createRef()));
+  const contentNavElems = useRef([...Array(props.sectionNum)].map(() => createRef()));
+  const contentNavLineElems = useRef([...Array(props.sectionNum)].map(() => createRef()));
   const galleryListElem = useRef(null);
   const controlBarElem = useRef(null);
   const controlBarBtnElem = useRef(null);
@@ -103,8 +95,7 @@ const Content = props => {
         mouse.lastPos = { x: 0, y: 0 };
         maxGalleryWidth = galleryListElem.current.offsetWidth - ww;
 
-        if (event.touches)
-          document.addEventListener('touchmove', onMouseMove, false);
+        if (event.touches) document.addEventListener('touchmove', onMouseMove, false);
         else document.addEventListener('mousemove', onMouseMove, false);
         document.addEventListener('mouseup', onMouseUp, false);
         document.addEventListener('touchend', onMouseUp, false);
@@ -155,12 +146,9 @@ const Content = props => {
     setIsClickedSectionFunc.current = { setIsClickedSection };
 
     const moveContentWrap = () => {
-      if(!disableDrag){
+      if (!disableDrag) {
         contentWrapElemPos.x += mouse.delta.x;
-        contentWrapElemPos.x = Math.min(
-          0,
-          Math.max(-maxWidth, contentWrapElemPos.x)
-        );
+        contentWrapElemPos.x = Math.min(0, Math.max(-maxWidth, contentWrapElemPos.x));
       }
     };
 
@@ -173,9 +161,7 @@ const Content = props => {
     const moveToItem = (i, j, lth) => {
       const currentContent = contentElems.current[i].current;
       // const item = currentContent.querySelector(`.item:nth-child(${j+1})`);
-      contentWrapElemPos.x =
-        -currentContent.offsetLeft -
-        ((currentContent.offsetWidth - window.innerWidth) / (lth - 1)) * j;
+      contentWrapElemPos.x = -currentContent.offsetLeft - ((currentContent.offsetWidth - window.innerWidth) / (lth - 1)) * j;
       // console.log(currentContent.offsetLeft, currentContent.offsetWidth)
       // contentWrapElemPos.x = -currentContent.offsetLeft - item.offsetLeft + sidebarW;
     };
@@ -203,9 +189,7 @@ const Content = props => {
     };
 
     const moveControlBarBtn = progress => {
-      controlBarBtnElem.current.style.transform = `translate3d(${
-        maxControlWidth * progress
-      }px,0,0)`;
+      controlBarBtnElem.current.style.transform = `translate3d(${maxControlWidth * progress}px,0,0)`;
     };
     // [end] gallery
     //
@@ -248,14 +232,11 @@ const Content = props => {
             const offsetX = content.getBoundingClientRect().left;
             let sx = Math.max(0, offsetX);
             if (offsetX - sidebarW <= -content.offsetWidth) {
-              sx = Math.max(
-                -sidebarW,
-                offsetX + content.offsetWidth - sidebarW
-              );
+              sx = Math.max(-sidebarW, offsetX + content.offsetWidth - sidebarW);
             }
             sidebar.style.transform = `translate3d(${sx}px,0,0)`;
 
-            if (i < currentSectionIdx){
+            if (i < currentSectionIdx) {
               if (!sidebar.classList.contains('minimize')) {
                 sidebar.classList.remove('active');
                 sidebar.classList.add('minimize');
@@ -265,19 +246,18 @@ const Content = props => {
             if (currentSectionIdx === i) {
               if (sx === 0 && isStartedToMove) {
                 if (!sidebar.classList.contains('minimize')) {
-                  setTimeout(()=>{
+                  setTimeout(() => {
                     sidebar.classList.remove('active');
                     sidebar.classList.add('minimize');
                     props.setClickedSectionIdx(i);
-                  },0);
+                  }, 0);
 
                   moveContent(i);
                   disableDrag = true;
-                  setTimeout(()=>{
+                  setTimeout(() => {
                     disableDrag = false;
-                  },1000);
-                }
-                else{
+                  }, 1000);
+                } else {
                   props.setClickedSectionIdx(i);
                 }
               }
@@ -300,8 +280,7 @@ const Content = props => {
             // content nav
             const contentNav = contentNavElems.current[i].current;
             let cx = Math.max(0, offsetX);
-            if (offsetX <= -content.offsetWidth + contentNav.offsetWidth + sidebarW)
-              cx = Math.max(-contentNav.offsetWidth, offsetX + content.offsetWidth - sidebarW - contentNav.offsetWidth);
+            if (offsetX <= -content.offsetWidth + contentNav.offsetWidth + sidebarW) cx = Math.max(-contentNav.offsetWidth, offsetX + content.offsetWidth - sidebarW - contentNav.offsetWidth);
             contentNav.style.transform = `translate3d(${cx}px,0,0)`;
 
             const contentNavLine = contentNavLineElems.current[i].current;
@@ -310,14 +289,14 @@ const Content = props => {
 
             if (data)
               if (offsetX <= window.innerWidth / 2 && offsetX + content.offsetWidth >= window.innerWidth / 2) {
-                const pageOfNav = Math.floor((s + 0.005) / (1 / (data.sections[i].items.length-1)));
-                if(oldPageOfNav !== pageOfNav){
+                const pageOfNav = Math.floor((s + 0.005) / (1 / (data.sections[i].items.length - 1)));
+                if (oldPageOfNav !== pageOfNav) {
                   // console.log(pageOfNav)
                   setNavIdx(pageOfNav);
                   oldPageOfNav = pageOfNav;
                 }
 
-                if(oldCurrentSectionIdx !== i){
+                if (oldCurrentSectionIdx !== i) {
                   // console.log(i);
                   // props.setCurrentSectionIdx(i);
                   // props.goToSection(i);
@@ -333,12 +312,11 @@ const Content = props => {
             cx = null;
             s = null;
           }
-        }
-        else{
+        } else {
           for (let i = 0; i < sectionNum; i++) {
             const sidebar = sidebarElems.current[i].current;
             if (!sidebar.classList.contains('active')) {
-              gsap.set(sidebar, {delay:1, className: 'sidebar active' });
+              gsap.set(sidebar, { delay: 1, className: 'sidebar active' });
             }
           }
         }
@@ -353,10 +331,7 @@ const Content = props => {
               const ix = -(img.getBoundingClientRect().left - sidebarW) * 0.06;
               child.style.transform = `translate3d(${ix}px,0,0) scale(1.2)`;
             } else if (type === 'scale') {
-              const is = Math.max(
-                1,
-                1 + (img.getBoundingClientRect().left - ww * .6) / (maxWidth*.1)
-              );
+              const is = Math.max(1, 1 + (img.getBoundingClientRect().left - ww * 0.6) / (maxWidth * 0.1));
               child.style.transform = `translate3d(0,0,0) scale(${is})`;
             }
 
@@ -370,20 +345,14 @@ const Content = props => {
             const offsetX = item.getBoundingClientRect().left - ww / 2.5;
             if (offsetX < 0 && !item.classList.contains('done')) {
               item.classList.add('done');
-              gsap.fromTo(
-                item.querySelectorAll('#top span span'),
-                1,
-                { force3D: true, y: '105%' },
-                { y: '0%', stagger: 0.08, ease: 'power4.out' },
-                's'
-              );
+              gsap.fromTo(item.querySelectorAll('#top span span'), 1, { force3D: true, y: '105%' }, { y: '0%', stagger: 0.08, ease: 'power4.out' }, 's');
             }
           }
-        } else {
-          galleryEasePos.x += (galleryPos.x - galleryEasePos.x) * 0.08;
-          galleryListElem.current.style.transform = `translate3d(${galleryEasePos.x}px,0,0)`;
-          moveControlBarBtn(galleryEasePos.x / -maxGalleryWidth);
-        }
+      } else {
+        galleryEasePos.x += (galleryPos.x - galleryEasePos.x) * 0.08;
+        galleryListElem.current.style.transform = `translate3d(${galleryEasePos.x}px,0,0)`;
+        moveControlBarBtn(galleryEasePos.x / -maxGalleryWidth);
+      }
     };
 
     const onKeyDown = e => {
@@ -412,16 +381,8 @@ const Content = props => {
       document.addEventListener('keydown', onKeyDown, false);
       window.addEventListener('resize', onResize, false);
 
-      controlBarBtnElem.current.addEventListener(
-        'mousedown',
-        onClickControlBarBtn,
-        false
-      );
-      controlBarBtnElem.current.addEventListener(
-        'touchstart',
-        onClickControlBarBtn,
-        false
-      );
+      controlBarBtnElem.current.addEventListener('mousedown', onClickControlBarBtn, false);
+      controlBarBtnElem.current.addEventListener('touchstart', onClickControlBarBtn, false);
     };
 
     const removeEvent = () => {
@@ -432,16 +393,8 @@ const Content = props => {
       document.removeEventListener('keydown', onKeyDown, false);
       window.removeEventListener('resize', onResize, false);
 
-      controlBarBtnElem.current.removeEventListener(
-        'mousedown',
-        onClickControlBarBtn,
-        false
-      );
-      controlBarBtnElem.current.removeEventListener(
-        'touchstart',
-        onClickControlBarBtn,
-        false
-      );
+      controlBarBtnElem.current.removeEventListener('mousedown', onClickControlBarBtn, false);
+      controlBarBtnElem.current.removeEventListener('touchstart', onClickControlBarBtn, false);
     };
 
     init();
@@ -456,34 +409,34 @@ const Content = props => {
   useEffect(() => {
     if (props.clickedSectionIdx !== null) {
       const elem = sidebarElems.current[props.clickedSectionIdx].current;
-      if(!elem.classList.contains('minimize')){
+      if (!elem.classList.contains('minimize')) {
         const tl = gsap.timeline({ delay: 1 });
 
-        tl.set('#sidebarWrap', {className: 'active'});
-        tl.set('#sectionWrap', {className: 'hide',clearProps: 'opacity,visibility'});
-        tl.set(contentWrapElem.current, {className: 'active',clearProps: 'opacity,visibility'});
-        tl.fromTo(elem.querySelectorAll('#des span span'),1,{ force3D: true, y: '100%' },{ y: '0%', stagger: 0.01, ease: 'power4.out' },'s');
-        tl.fromTo(elem.querySelectorAll('#date span'),1,{ force3D: true, y: '100%' },{ y: '0%', stagger: 0.1, ease: 'power4.out' },'b-=.6');
-        tl.fromTo(elem.querySelectorAll('#line'),1,{ force3D: true, scaleX: 0 },{ scaleX: 1, ease: 'power3.inOut' },'s+=.6');
-        tl.set('#language #back', {className:'show'},'end-=.4');
-        tl.set('#language #back span', {className:'show'},'end');
+        tl.set('#sidebarWrap', { className: 'active' });
+        tl.set('#sectionWrap', { className: 'hide', clearProps: 'opacity,visibility' });
+        tl.set(contentWrapElem.current, { className: 'active', clearProps: 'opacity,visibility' });
+        tl.fromTo(elem.querySelectorAll('#des span span'), 1, { force3D: true, y: '100%' }, { y: '0%', stagger: 0.01, ease: 'power4.out' }, 's');
+        tl.fromTo(elem.querySelectorAll('#date span'), 1, { force3D: true, y: '100%' }, { y: '0%', stagger: 0.1, ease: 'power4.out' }, 'b-=.6');
+        tl.fromTo(elem.querySelectorAll('#line'), 1, { force3D: true, scaleX: 0 }, { scaleX: 1, ease: 'power3.inOut' }, 's+=.6');
+        tl.set('#language #back', { className: 'show' }, 'end-=.4');
+        tl.set('#language #back span', { className: 'show' }, 'end');
 
         moveContentFunc.current.moveContent(props.clickedSectionIdx);
       }
     } else {
       if (prevIdx !== null && prevIdx !== undefined) {
         const tl = gsap.timeline();
-        tl.set(contentWrapElem.current,{ className: '', autoAlpha: 0 },'s');
-        tl.set('#sidebarWrap', { className: 'hide'}, 's');
-        tl.set('#sectionWrap', { className: '' },'s');
-        tl.set('#language #back span', {className:''},'s');
-        tl.set('#language #back', {className:''},'s+=.4');
-        tl.fromTo('#sectionWrap',1,{ autoAlpha: 0 },{ autoAlpha: 1, ease: 'power1.inOut' },'s');
-        tl.call(()=>{
+        tl.set(contentWrapElem.current, { className: '', autoAlpha: 0 }, 's');
+        tl.set('#sidebarWrap', { className: 'hide' }, 's');
+        tl.set('#sectionWrap', { className: '' }, 's');
+        tl.set('#language #back span', { className: '' }, 's');
+        tl.set('#language #back', { className: '' }, 's+=.4');
+        tl.fromTo('#sectionWrap', 1, { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power1.inOut' }, 's');
+        tl.call(() => {
           moveContentFunc.current.moveContent(0);
           setIsOpenedGalleryFunc.current.setIsOpenedGallery(false);
           setOpenedGallery(false);
-        },null);
+        }, null);
       }
     }
   }, [props.clickedSectionIdx]);
@@ -516,12 +469,7 @@ const Content = props => {
   // },[minimalContentNav])
 
   const onClickNav = (i, j) => {
-    if (!minimalContentNav)
-      moveToItemFunc.current.moveToItem(
-        i,
-        j,
-        props.contentData.sections[i].items.length
-      );
+    if (!minimalContentNav) moveToItemFunc.current.moveToItem(i, j, props.contentData.sections[i].items.length);
 
     if (triggerMinimal.current) clearTimeout(triggerMinimal.current);
     triggerMinimal.current = setTimeout(() => {
@@ -540,24 +488,13 @@ const Content = props => {
       <div id='contentNavWrap' className={`contentNav${props.clickedSectionIdx !== null && props.minimalSidebar ? ' active' : ''}`}>
         {props.contentData.sections.map((v, i) => {
           return (
-            <div key={i} ref={contentNavElems.current[i]} id={`contentNav${i + 1}`} className={`contentNav${minimalContentNav ? ' minimal' : ''}`}
-              onClick={() => minimalContentNav ? setMinimalContentNav(false) : null }
-            >
+            <div key={i} ref={contentNavElems.current[i]} id={`contentNav${i + 1}`} className={`contentNav${minimalContentNav ? ' minimal' : ''}`} onClick={() => (minimalContentNav ? setMinimalContentNav(false) : null)}>
               <div id='wrap'>
                 <ul>
                   {v.items.map((c, j) => {
                     return (
-                      <li
-                        key={j}
-                        id={c.category.id}
-                        className={
-                          props.currentSectionIdx === i && navIdx === j
-                            ? 'active'
-                            : ''
-                        }
-                        onClick={() => onClickNav(i, j)}
-                      >
-                        <div id="point"></div>
+                      <li key={j} id={c.category.id} className={props.currentSectionIdx === i && navIdx === j ? 'active' : ''} onClick={() => onClickNav(i, j)}>
+                        <div id='point'></div>
                         <span className='category'>{c.category.name}</span>
                         <span id='year' className='eb' dangerouslySetInnerHTML={{ __html: c.text.year }}></span>
                       </li>
@@ -572,12 +509,18 @@ const Content = props => {
           );
         })}
       </div>
-      <div id='sidebarWrap' className="hide">
+      <div id='sidebarWrap' className='hide'>
         {props.contentData.sections.map((v, i) => {
           return (
             <div key={i} ref={sidebarElems.current[i]} id={`sidebar${i + 1}`} className={`sidebar`}>
-              <div id="numOfItems"><p className="eb">{v.items.length}</p>{props.contentData.global.stories}</div>
-              <div id="numOfItemsSmall"><span className="eb">{v.items.length}</span>{props.contentData.global.stories}</div>
+              <div id='numOfItems'>
+                <p className='eb'>{v.items.length}</p>
+                {props.contentData.global.stories}
+              </div>
+              <div id='numOfItemsSmall'>
+                <span className='eb'>{v.items.length}</span>
+                {props.contentData.global.stories}
+              </div>
               <div id='bg' style={{ backgroundImage: `url('./images/ex302a/sidebarbg_${i}.png')` }}></div>
               <div id='desWrap'>
                 <div id='des'>
@@ -589,6 +532,7 @@ const Content = props => {
                         </span>
                       );
                     })}
+                  {/* {props.language === 'tc' && <div className='temp' dangerouslySetInnerHTML={{ __html: v.text1 }}></div>} */}
                   {props.language === 'en' &&
                     v.text1.split(' ').map((v, i) => {
                       return (
@@ -600,11 +544,16 @@ const Content = props => {
                 </div>
               </div>
               <div id='date' className='eb'>
-                {v.year.split(/(\d+)/g).filter(x => x).map((v, i) => {
-                  return <span key={i}>{v}</span>;
-                })}
+                {v.year
+                  .split(/(\d+)/g)
+                  .filter(x => x)
+                  .map((v, i) => {
+                    return <span key={i}>{v}</span>;
+                  })}
               </div>
-              <div id="selectYearBtn" onClick={props.onBack}>{props.contentData.global.backToYear}</div>
+              <div id='selectYearBtn' onClick={props.onBack}>
+                {props.contentData.global.backToYear}
+              </div>
               <div id='line'></div>
               <div id='img' style={{ backgroundImage: `url(${v.coverinsidebar.src}` }}></div>
             </div>
@@ -614,26 +563,21 @@ const Content = props => {
       <div ref={contentWrapElem} id='contentWrap'>
         {props.contentData.sections.map((v, i) => {
           return (
-            <div
-              key={i}
-              ref={contentElems.current[i]}
-              id={`content${i + 1}`}
-              className='content'
-            >
+            <div key={i} ref={contentElems.current[i]} id={`content${i + 1}`} className='content'>
               {v.items.map((c, j) => {
                 return (
                   <div key={j} className='item'>
                     <div id='top'>
-                      <div id='imgOuterWrap'>
+                      <div
+                        id='imgOuterWrap'
+                        className={`
+                      ${c.image.description === 'Cross Harbour Tunnel' ? 'C' : ''}
+                      ${c.image.description === 'Sewerage Treatment and Disposal' ? 'S' : ''}`}
+                      >
                         {c.image.src && (
                           <div className='imgWrap' data-type={`${c.image.translationType}`}>
                             <img src={c.image.src} />
-                            {c.image.gallery && c.image.gallery.length > 0 && (
-                              <div
-                                id='galleryBtn'
-                                onClick={() => showGallery(c.image.gallery)}
-                              ></div>
-                            )}
+                            {c.image.gallery && c.image.gallery.length > 0 && <div id='galleryBtn' onClick={() => showGallery(c.image.gallery)}></div>}
                           </div>
                         )}
                         <div id='imgDesWrap'>
@@ -656,7 +600,7 @@ const Content = props => {
                               return (
                                 <div key={l}>
                                   <span>
-                                    <span dangerouslySetInnerHTML={{__html:t}}></span>
+                                    <span dangerouslySetInnerHTML={{ __html: t }}></span>
                                   </span>
                                 </div>
                               );
@@ -668,14 +612,7 @@ const Content = props => {
                         {c.category.name}
                       </div>
                     </div>
-                    <div id='bot'>
-                      {c.text.content && (
-                        <div
-                          id='itemContent'
-                          dangerouslySetInnerHTML={{ __html: c.text.content }}
-                        ></div>
-                      )}
-                    </div>
+                    <div id='bot'>{c.text.content && <div id='itemContent' dangerouslySetInnerHTML={{ __html: c.text.content }}></div>}</div>
                   </div>
                 );
               })}
