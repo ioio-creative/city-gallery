@@ -443,8 +443,8 @@ const G302A = props => {
             <div key={i} ref={sectionElems.current[i]} id={`section${i + 1}`} className={`section${clickedSectionIdx === i ? ' active' : ''} ${currentSectionIdx === i ? ' current' : ''}`}>
               <div id='outerWrap'>
                 <div id='wrap'>
-                  <p className='eb' ref={sectionTextElems.current[i]}>
-                    <span>{contentData && contentData.sections[i].text1}</span>
+                  <p className={`eb`} ref={sectionTextElems.current[i]}>
+                    <span className={`year${i}`}>{contentData && contentData.sections[i].text1}</span>
                   </p>
                   <div ref={sectionImgElems.current[i]} className='img' style={{ backgroundImage: `url(${contentData && contentData.sections[i].coverincircle.src})` }}></div>
                 </div>

@@ -117,6 +117,15 @@ body {
     #contentWrap .content .item #itemContent{
       font-size: vw-calc(20);
       line-height: vw-calc(32);
+      &.H{
+        width: 38vw;
+      }
+      &.C{
+        width: 38vw;
+      }
+      &.S{
+        width: 34vw;
+      }
     }
   }
   &:before {
@@ -470,10 +479,17 @@ body {
             // align-items: center;
             span {
               width:vw-calc(420);
+              width: 20.575vw;
               position: relative;
               transform: translate3d(-50%,0,0);
               display: block;
               transition: opacity 0.6s cubic-bezier(0.65, 0, 0.35, 1), visibility 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+              &.year1{
+                width: 19.775vw;
+              }
+              &.year2, &.year3, &.year4{
+                width: 21.875vw;
+              }
             }
           }
           .img {
@@ -1010,6 +1026,9 @@ body {
           padding-left: 2vw;
           // font-size: 1vw;
           // line-height: 1.68vw;
+          &.S{
+            width: 33.3vw;
+          }
         }
       }
     }
@@ -1100,17 +1119,19 @@ body {
       &:not(.minimize){
         &#sidebar3{
           #desWrap #des {
-            width: vw-calc(870);
+            width: 46.9125vw;
           }
         }
         &#sidebar4{
           #desWrap #des {
             width: vw-calc(870);
+            width: 44.8125vw;
           }
         }
         &#sidebar5{
           #desWrap #des {
             width: vw-calc(760);
+            width: 39.18333vw;
           }
         }
       }

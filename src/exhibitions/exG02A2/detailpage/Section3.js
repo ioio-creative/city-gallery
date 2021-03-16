@@ -91,6 +91,8 @@ const Section3 = props => {
                         <div id="_2nd" className="building rectangle">
                             <div className={`infos ${locationName}2`}>
                                 <div className="ranking">2nd</div>
+                                {props.lang === "tc" &&  locationName === "mumbai" && <div className="engTag">只有英文</div>}
+                                {props.lang === "tc" &&  locationName === "mexicocity" && <div className="engTag">只有西班牙文</div>}
                                 <div className="name">{data && locationName && data[locationName].building[1].name}</div>
                                 <div className="height">{data && locationName && data[locationName].building[1].height}</div>
                                 <div className="floor">{data && locationName && data[locationName].building[1].floor}</div>
@@ -101,6 +103,7 @@ const Section3 = props => {
                         <div id="_1st" className="building rectangle">
                             <div className={`infos ${locationName}1`}>
                                 <div className="ranking">1st</div>
+                                {props.lang === "tc" &&  locationName === "mumbai" && <div className="engTag">只有英文</div>}
                                 <div className="name">{data && locationName && data[locationName].building[0].name}</div>
                                 <div className="height">{data && locationName && data[locationName].building[0].height}</div>
                                 <div className="floor">{data && locationName && data[locationName].building[0].floor}</div>
@@ -111,6 +114,8 @@ const Section3 = props => {
                         <div id="_3rd" className="building rectangle">
                             <div className={`infos ${locationName}3`}>
                                 <div className="ranking">3rd</div>
+                                {props.lang === "tc" &&  locationName === "mumbai" && <div className="engTag">只有英文</div>}
+                                {props.lang === "tc" &&  locationName === "mexicocity" && <div className="engTag">只有西班牙文</div>}
                                 <div className="name">{data && locationName && data[locationName].building[2].name}</div>
                                 <div className="height">{data && locationName && data[locationName].building[2].height}</div>
                                 <div className="floor">{data && locationName && data[locationName].building[2].floor}</div>

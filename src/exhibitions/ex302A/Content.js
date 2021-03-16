@@ -570,9 +570,6 @@ const Content = props => {
                     <div id='top'>
                       <div
                         id='imgOuterWrap'
-                        className={`
-                      ${c.image.description === 'Cross Harbour Tunnel' ? 'C' : ''}
-                      ${c.image.description === 'Sewerage Treatment and Disposal' ? 'S' : ''}`}
                       >
                         {c.image.src && (
                           <div className='imgWrap' data-type={`${c.image.translationType}`}>
@@ -612,7 +609,14 @@ const Content = props => {
                         {c.category.name}
                       </div>
                     </div>
-                    <div id='bot'>{c.text.content && <div id='itemContent' dangerouslySetInnerHTML={{ __html: c.text.content }}></div>}</div>
+                    <div id='bot'
+                    >{c.text.content && <div id='itemContent' 
+                      className={`${c.image.description === 'Cross Harbour Tunnel' ? 'C' : ''}
+                                  ${c.image.description === 'Sewerage Treatment and Disposal' ? 'S' : ''}
+                                  ${c.image.description === 'Hong Kong Outline Plan' ? 'H' : ''}
+                                  ${c.image.description === '污水處理及排放' ? 'S' : ''}`}
+                                  
+                      dangerouslySetInnerHTML={{ __html: c.text.content }}></div>}</div>
                   </div>
                 );
               })}
