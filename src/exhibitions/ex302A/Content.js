@@ -525,7 +525,7 @@ const Content = props => {
               <div id='desWrap'>
                 <div id='des'>
                   {props.language === 'tc' &&
-                    v.text1.split('').map((v, i) => {
+                    v.text1.match(/([^0-9「」、，。]{2}[「」，、。]+|[0-9]+[^0-9「」，、。]|.)/g).map((v, i) => {
                       return (
                         <span key={i}>
                           <span>{v}</span>
@@ -555,7 +555,7 @@ const Content = props => {
                 {props.contentData.global.backToYear}
               </div>
               <div id='line'></div>
-              <div id='img' style={{ backgroundImage: `url(${v.coverinsidebar.src}` }}></div>
+              <div id={`img`} className={`year${i}`} style={{ backgroundImage: `url(${v.coverinsidebar.src}` }}></div>
             </div>
           );
         })}
@@ -568,9 +568,7 @@ const Content = props => {
                 return (
                   <div key={j} className='item'>
                     <div id='top'>
-                      <div
-                        id='imgOuterWrap'
-                      >
+                      <div id='imgOuterWrap'>
                         {c.image.src && (
                           <div className='imgWrap' data-type={`${c.image.translationType}`}>
                             <img src={c.image.src} />
@@ -609,14 +607,18 @@ const Content = props => {
                         {c.category.name}
                       </div>
                     </div>
-                    <div id='bot'
-                    >{c.text.content && <div id='itemContent' 
-                      className={`${c.image.description === 'Cross Harbour Tunnel' ? 'C' : ''}
+                    <div id='bot'>
+                      {c.text.content && (
+                        <div
+                          id='itemContent'
+                          className={`${c.image.description === 'Cross Harbour Tunnel' ? 'C' : ''}
                                   ${c.image.description === 'Sewerage Treatment and Disposal' ? 'S' : ''}
                                   ${c.image.description === 'Hong Kong Outline Plan' ? 'H' : ''}
                                   ${c.image.description === '污水處理及排放' ? 'S' : ''}`}
-                                  
-                      dangerouslySetInnerHTML={{ __html: c.text.content }}></div>}</div>
+                          dangerouslySetInnerHTML={{ __html: c.text.content }}
+                        ></div>
+                      )}
+                    </div>
                   </div>
                 );
               })}
