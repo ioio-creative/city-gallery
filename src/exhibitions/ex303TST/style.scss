@@ -472,9 +472,24 @@ span {
             transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
           }
         }
-        #closeArea{
-            width:50vw;
-            height: 100%;
+        #card {
+          width: vw-calc(511);
+          height: vw-calc(698 - 59 - 87 + 20 + 49);
+          background: url('../ex303HKI/images/card_bg.svg') top / 99.95% repeat-y;
+          position: absolute;
+          top: 45vh;
+          left: calc(50% + #{vw-calc(342)});
+          padding: vw-calc(30 50 87);
+          color: #074a45;
+          display: flex;
+          opacity: 0;
+          visibility: hidden;
+          transform: translate3d(0, -50%, 0) scale(0.85);
+          transition: all 0.6s cubic-bezier(0.87, 0, 0.13, 1);
+          &:before,
+          &:after {
+            content: '';
+            width: 100%;
             position: absolute;
             left: 0;
             background: url('../ex303HKI/images/card.svg') top / 100% no-repeat;
