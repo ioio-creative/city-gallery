@@ -28,7 +28,6 @@ const G302A = props => {
   const leaveFunc = useRef(null);
   const socketRef = useRef(null);
 
-
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
@@ -71,13 +70,13 @@ const G302A = props => {
       }
     };
 
-    const getNavigationIndex = (d) => {
+    const getNavigationIndex = d => {
       goToSection(d.index, true);
-    }
+    };
 
-    const updateLang = (i) => {
+    const updateLang = i => {
       onChangeLanguage(i === 0 ? 'tc' : 'en');
-    }
+    };
 
     if (socket) {
       socketRef.current = socket;
@@ -178,8 +177,7 @@ const G302A = props => {
     };
 
     const onMouseUp = () => {
-      if(moving)
-        moveSection();
+      if (moving) moveSection();
       document.removeEventListener('mousemove', onMouseMove, false);
       document.removeEventListener('touchmove', onMouseMove, false);
       document.removeEventListener('mouseup', onMouseUp, false);
@@ -224,8 +222,8 @@ const G302A = props => {
       sectionWrapElemPos.x = -currentSection * (ww / 2);
       setCurrentSectionIdx(currentSection);
 
-      if(!isDetailPage){
-        socketRef.current.emit('navigationIndex', {data:{index:currentSection}});
+      if (!isDetailPage) {
+        socketRef.current.emit('navigationIndex', { data: { index: currentSection } });
       }
 
       if (oldSection !== currentSection) {
@@ -366,7 +364,7 @@ const G302A = props => {
       setClickedSectionIdx(i);
       setIsClickedSectionFunc.current.setIsClickedSection(true);
 
-      socketRef.current.emit('selectIndex', {data:{index:i}});
+      socketRef.current.emit('selectIndex', { data: { index: i } });
     }
   };
 
@@ -375,25 +373,24 @@ const G302A = props => {
     setClickedSectionIdx(null);
     // setCurrentSectionIdx();
     setIsClickedSectionFunc.current.setIsClickedSection(false);
-    
+
     // console.log(currentSectionIdx)
-    socketRef.current.emit('navigationIndex', {data:{index:currentSectionIdx}});
-  }
+    socketRef.current.emit('navigationIndex', { data: { index: currentSectionIdx } });
+  };
 
   const goToSection = (i, isSocket = false) => {
     setCurrentSectionFunc.current.setCurrentSection(i);
     setCurrentSectionIdx(i);
 
-    if(!isSocket)
-      socketRef.current.emit('navigationIndex', {data:{index:i}});
+    if (!isSocket) socketRef.current.emit('navigationIndex', { data: { index: i } });
   };
 
-  const dargToSection = (i) => {
+  const dargToSection = i => {
     setCurrentSectionFunc.current.setCurrentSection(i, true);
     setCurrentSectionIdx(i);
 
-    socketRef.current.emit('selectIndex', {data:{index:i}});
-  }
+    socketRef.current.emit('selectIndex', { data: { index: i } });
+  };
 
   const onChangeLanguage = lang => {
     setLanguage(lang);
@@ -421,7 +418,7 @@ const G302A = props => {
           <div id="back" className="hide" onClick={onBack}><span>{contentData && contentData.global.backToYear}</span></div>
         </div> */}
       </div>
-      <div id="hints">{contentData && contentData.global.hints}</div>
+      <div id='hints'>{contentData && contentData.global.hints}</div>
       <div id='sectionNav' className={`${clickedSectionIdx !== null ? 'hide' : ''}`}>
         <ul>
           {contentData &&
@@ -446,10 +443,12 @@ const G302A = props => {
                   <p className={`eb`} ref={sectionTextElems.current[i]}>
                     <span className={`year${i}`}>{contentData && contentData.sections[i].text1}</span>
                   </p>
-                  <div ref={sectionImgElems.current[i]} className='img' style={{ backgroundImage: `url(${contentData && contentData.sections[i].coverincircle.src})` }}></div>
+                  <div ref={sectionImgElems.current[i]} className={`img year${i}`} style={{ backgroundImage: `url(${contentData && contentData.sections[i].coverincircle.src})` }}></div>
                 </div>
               </div>
-              <div id='exploreBtn' onClick={() => onClickSection(i)}>{contentData && contentData.global.explore}</div>
+              <div id='exploreBtn' onClick={() => onClickSection(i)}>
+                {contentData && contentData.global.explore}
+              </div>
             </div>
           );
         })}
