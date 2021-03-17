@@ -322,7 +322,7 @@ const G02BContainer = props => {
     const onResize = () => {
       blockWidth = window.innerWidth / 3.1;
       blockHeight = blockWidth;
-    }
+    };
 
     loop();
     document.addEventListener('mousedown', onMouseDown, false);
@@ -514,15 +514,18 @@ const G02BContainer = props => {
             <div id='title'>
               <span className={`${contentData && contentData.cities[domId].id ? `${contentData.cities[domId].id} ${language}` : ''}`}>{contentData && contentData.cities[domId].name}</span>
               <div id='cityIcon' className={`${contentData && contentData.cities[domId].id ? `${contentData.cities[domId].id} ${language}` : ''}`}>
-                {contentData &&
-                  contentData.cities[domId].icon &&
-                  contentData.cities[domId].icon.map((v, i) => {
-                    return (
-                      <div key={i} className={`icon${i + 1}`}>
-                        <img src={v} />
-                      </div>
-                    );
-                  })}
+                <span>
+                  <div className='iconTitle' dangerouslySetInnerHTML={{ __html: contentData && contentData.global.iconTitle }}></div>
+                  {contentData &&
+                    contentData.cities[domId].icon &&
+                    contentData.cities[domId].icon.map((v, i) => {
+                      return (
+                        <div key={i} className={`icon${i + 1}`}>
+                          <img className={`${contentData.cities[domId].icon[i] ? '' : 'hide'}`} src={v} />
+                        </div>
+                      );
+                    })}
+                </span>
               </div>
             </div>
             <svg className={`${contentData && contentData.cities[domId].id ? `${contentData.cities[domId].id} ${language}` : ''}`}>
