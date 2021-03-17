@@ -1512,8 +1512,8 @@ const App = props => {
             </div> */}
 
             <Section1 data={data && data.section1} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()} />
-            <Section2 data={data && data.section2} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()} />
-            <Section3 data={data && data.section3} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()} />
+            <Section2 lang={language} data={data && data.section2} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()} />
+            <Section3 lang={language} data={data && data.section3} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()} />
             <Section4 data={data && data.section4} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()} />
             <Section5 data={data && data.section5} globalData={data && data.global} detailIdx={detailIdx} locationName={selectedId && locations[selectedId].name['en'].replace(' ', '').toLowerCase()} />
           </div>

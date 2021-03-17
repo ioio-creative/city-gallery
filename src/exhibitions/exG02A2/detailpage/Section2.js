@@ -83,7 +83,8 @@ const Section2 = props => {
                 <div className="wrap">
                     <ul>
                         <li>
-                            <div className="title big" dangerouslySetInnerHTML={{__html:globalData && globalData.populationDensity}}></div>
+                            {props.lang === "tc" && <div className="fakeTitle">城市人口密度（/平方公里）</div>}
+                            <div className={`title big ${props.lang === "tc" ? "trans" : ""}`} dangerouslySetInnerHTML={{__html:globalData && globalData.populationDensity}}></div>
                             <div className="big">{data && locationName && data[locationName].populationDensity.value}</div>
                         </li>
                         <li>
@@ -91,7 +92,8 @@ const Section2 = props => {
                             <div className="medium">{data && locationName && data[locationName].population.value}</div>
                         </li>
                         <li>
-                            <div className="title" dangerouslySetInnerHTML={{__html:globalData && globalData.landArea}}></div>
+                            {props.lang === "tc" && <div className="fakeTitle land">陸地面積（平方公里）</div>}
+                            <div className={`title ${props.lang === "tc" ? "trans" : ""}`} dangerouslySetInnerHTML={{__html:globalData && globalData.landArea}}></div>
                             <div className="medium">{data && locationName && data[locationName].landArea.value}</div>
                         </li>
                     </ul>

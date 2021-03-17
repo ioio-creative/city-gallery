@@ -16,7 +16,7 @@
       "global": {
         "explore": "Explore",
         "backToYear": "Select Year",
-        "hints": "Drag to explore more",
+        "hints": "Touch screen to select",
         "back": "back",
         "stories": "Stories"
       },
@@ -110,12 +110,12 @@
             {
               "text": {
                 "year": 1910,
-                "content": "In 1906, the construction works of the Kowloon-Canton Railway (British Section) project commenced and operation started in 1910. This is the first railway link connecting Hong Kong and Mainland China, with a length of 35 km, including 5 tunnels and 48 bridges. In 1911, the Canton-Kowloon Railway (China Section) was opened, and the through train service from Kowloon to Guangzhou commenced operation."
+                "content": "In 1906, the construction works of the Kowloon-Canton Railway (British Section) project commenced and operation started in 1910. This is the first railway link connecting Hong Kong and Mainland China, with a length of 35 km, including 5 tunnels and 48 bridges. </br>In 1911, the Canton-Kowloon Railway (China Section) was opened, and the through train service from Kowloon to Guangzhou commenced operation."
               },
               "image": {
                 "src": "./images/ex302a/1910_img1.png",
                 "translationType": "scale",
-                "description": "Kowloon-Canton Railway (British Section)",
+                "description": "Kowloon-Canton Railway </br>(British Section)",
                 "gallery": [
                   {
                     "src": "./images/ex302a/1910_img1.png",
@@ -147,7 +147,7 @@
             {
               "text": {
                 "year": 1930,
-                "content": "In 1912, the Chinese businessmen Ho Kai and Au Tak formed a company to reclaim land in Kowloon Bay and planned to build residential development. The reclamation area was named after the company name \"Kai Tak\".  Subsequently, the company was closed down due to economic recession, leaving the land vacant. The Government then bought back the land for airport construction. In 1930, the Kai Tak Airport commenced operation."
+                "content": "In 1912, the Chinese businessmen Ho Kai and Au Tak formed a company to reclaim land in Kowloon Bay and planned to build residential development. The reclamation area was named after the company </br> name \"Kai Tak\".  Subsequently, the company was closed down due to economic recession, leaving the land vacant. The Government then bought back the land for airport construction. In 1930, the Kai Tak Airport commenced operation."
               },
               "image": {
                 "src": "./images/ex302a/1910_img1.png",
@@ -318,7 +318,7 @@
             {
               "text": {
                 "year": 1954,
-                "content": "On the Christmas night of 1953, fire ravaged the squatter area in Shek Kip Mei and over 53 000 people were made homeless. To address the housing problem, the Government initiated to build resettlement blocks for the victims and other squatter dwellers. By the end of 1954, the first eight resettlement blocks (Mark I) were completed in Shek Kip Mei as the first batch of public housing."
+                "content": "On the Christmas night of 1953, fire ravaged the squatter area in Shek Kip Mei and over 53 000 people were made homeless. To address the housing problem, the Government initiated to build resettlement blocks for the victims and other squatter dwellers. By the end of 1954, the first eight resettlement blocks (Mark I) were completed in Shek Kip Mei as the first batch of </br>public housing."
               },
               "image": {
                 "src": "./images/ex302a/1954_img1a.png",
@@ -355,7 +355,7 @@
             {
               "text": {
                 "year": 1954,
-                "content": "After World War II, the economic focus of Hong Kong has shifted from entrepot trade to light industries. In 1954, Kwun Tong started developing into Hong Kong's first satellite town with industrial and residential areas; not only accommodating the rising population but also providing larbour force to the nearby industrial area."
+                "content": "After World War II, the economic focus of Hong Kong has shifted from entrepot trade to light industries. </br>In 1954, Kwun Tong started developing into Hong Kong's first satellite town with industrial and residential areas; not only accommodating the rising population but also providing larbour force to the nearby industrial area."
               },
               "image": {
                 "src": "./images/ex302a/1954_img1b.png",
@@ -400,7 +400,7 @@
             {
               "text": {
                 "year": 1965,
-                "content": "In 1963, Hong Kong had serious shortage of fresh water. The Governments of Hong Kong and Guangdong Province agreed to implement the Dongjiang-Shenzhen Water Supply Scheme, and the first phase of the project was completed in 1965. Dongjiang water flows  80 km afar into Yantian Reservoir and Shenzhen Reservoir, routes through a 3 km steel viaduct and reaches Muk Wu Water Pumping Station at Hong Kong boundary."
+                "content": "In 1963, Hong Kong had serious shortage of fresh water. The Governments of Hong Kong and Guangdong Province agreed to implement the Dongjiang-Shenzhen Water Supply Scheme, and the first phase of the project was completed in 1965. Dongjiang water flows  80 km afar into Yantian Reservoir and Shenzhen Reservoir, routes through a 3 km steel viaduct and reaches Muk Wu Water Pumping Station at </br>Hong Kong boundary."
               },
               "image": {
                 "src": "./images/ex302a/1965_img1.png",
@@ -533,7 +533,7 @@
             {
               "text": {
                 "year": 1972,
-                "content": "The 1948 \"Hong Kong Preliminary Planning Report\" has already proposed to construct a cross harbour tunnel to connect the city centres of Hong Kong and Kowloon, and to strengthen the transport network from the city centres to the outer area (New Territories) to expand the extent of the urban area. In 1972, the first cross-harbour tunnel crossing - Hung Hom Cross Harbour Tunnel commenced operation, gradually replacing the transportation role of ferries. In 1989 and 1997, the second and third cross harbour tunnels also started operation respectively, yielding a total design capacity of the three tunnels was 275,000 vehicles per day."
+                "content": "The 1948 \"Hong Kong Preliminary Planning Report\" has already proposed to construct a cross harbour tunnel to connect the city centres of Hong Kong and Kowloon, and to strengthen the transport network from the city centres to the outer area (New Territories) to expand the extent of the urban area. </br>In 1972, the first cross-harbour tunnel crossing - Hung Hom Cross Harbour Tunnel commenced operation, gradually replacing the transportation role of ferries. In 1989 and 1997, the second and third cross harbour tunnels also started operation respectively, yielding a total design capacity of the three tunnels was 275,000 vehicles per day."
               },
               "image": {
                 "src": "./images/ex302a/1972_img1b.png",
@@ -637,7 +637,7 @@
             {
               "text": {
                 "year": 1976,
-                "content": "In 1976, the \"Country Parks Ordinance\" was enacted to provide a legal framework for the establishment of the Country and Marine Parks Board, as well as the designation, development and management of country parks and special areas.  The Country Parks Ordinance, together with the Marine Parks Ordinance enacted in 1995, are the milestone for conservation of Hong Kong’s countryside and marine nature."
+                "content": "In 1976, the \"Country Parks Ordinance\" was enacted to provide a legal framework for the establishment of the Country and Marine Parks Board, as well as the designation, development and management of country parks and special areas.  The Country Parks Ordinance, together with the Marine Parks Ordinance enacted in 1995, are the milestone for conservation of </br>Hong Kong’s countryside and marine nature."
               },
               "image": {
                 "src": "./images/ex302a/1976_img1.png",
@@ -745,7 +745,7 @@
             {
               "text": {
                 "year": 1984,
-                "content": "In 1984, the Government promulgated the \"Territorial Development Strategy\" to provide a land use-transport development framework for 1999 to 2001, with the development focus shifted from new towns to the Metro Area on both sides of the Harbour and with highways and railways forming the backbone of the city development."
+                "content": "In 1984, the Government promulgated the \"Territorial Development Strategy\" to provide a land use-transport development framework for 1999 to 2001, with the development focus shifted from new towns to the Metro Area on both sides of the Harbour and with highways and railways forming the backbone of the </br>city development."
               },
               "image": {
                 "src": "./images/ex302a/1984_img1.png",
@@ -892,7 +892,7 @@
             {
               "text": {
                 "year": 1995,
-                "content": "In 1995, about 1 500 hectares of wetland in the Mai Po and Inner Deep Bay region were enlisted as a Ramsar Site. This piece of wetland is very important for migratory birds, and is a wintering ground and refueling station for them flying from Russia in the Arctic to Australia."
+                "content": "In 1995, about 1 500 hectares of wetland in the Mai Po and Inner Deep Bay region were enlisted as a Ramsar <nobr>Site. This piece of wetland is very important for migratory</nobr> birds, and is a wintering ground and refueling station for them flying from Russia in the Arctic to Australia."
               },
               "image": {
                 "src": "./images/ex302a/1995_img1a.jpg",
@@ -1022,7 +1022,7 @@
             {
               "text": {
                 "year": 1998,
-                "content": "In 1998, the Government promulgated the report of the \"Territorial Development Strategy Review\", which formulated the long term strategy up to 2011. The Report suggested to study the development potential of North West New Territories, North East New Territories, Hong Kong Island South and Lamma Island to address the increasing housing demand."
+                "content": "In 1998, the Government promulgated the report of </br>the \"Territorial Development Strategy Review\", which formulated the long term strategy up to 2011. The Report suggested to study the development potential of North West New Territories, North East New Territories, Hong Kong Island South and Lamma Island to address the increasing housing demand."
               },
               "image": {
                 "src": "./images/ex302a/1998_img1.png",
@@ -1071,7 +1071,7 @@
             {
               "text": {
                 "year": 2001,
-                "content": "In 1986, the Government formulated the sewerage strategy and \"Sewerage Master Plans\". In 2001, Stage 1 of the \"Harbour Area Treatment Scheme\" commenced operation, and treats 75% of the sewage generated from both sides of the Harbour every day. Stage 2A also commenced operation in 2015, providing treatment for the remaining 25% of the sewage generated from the northern and southwestern parts of the Hong Kong Island, which routed through a tunnel to reach the Stonecutters Island for centralised treatment.  The programme has significantly improved the water quality of Victoria Harbour and safeguard public health."
+                "content": "In 1986, the Government formulated the sewerage strategy </br>and \"Sewerage Master Plans\". In 2001, Stage 1 of the \"Harbour Area Treatment Scheme\" commenced operation, and treats 75% of the sewage generated from both sides of the Harbour every day. Stage 2A also commenced operation in 2015, providing treatment for the remaining 25% of the sewage generated from the northern and southwestern parts of the Hong Kong Island, which routed through a tunnel to reach the Stonecutters Island for centralised treatment.  The programme has significantly improved the water quality of Victoria Harbour and safeguard public health."
               },
               "image": {
                 "src": "./images/ex302a/2001_img1a.png",
@@ -1376,7 +1376,7 @@
             {
               "text": {
                 "year": 2009,
-                "content": "In 2009, Hong Kong Geopark was designated as a National Geoparks of China, and was accepted as a member of the Global Geoparks Network in 2011. In 2015, it was renamed as \"Hong Kong UNESCO Global Geopark\". Located in the eastern part of Hong Kong, the Park includes the Sai Kung Volcanic Rock Region and the Northeast New Territories Sedimentary Rock Region."
+                "content": "In 2009, Hong Kong Geopark was designated as a National Geoparks of China, and was accepted as a member of the Global Geoparks Network in 2011. In 2015, it was renamed as \"Hong Kong UNESCO Global Geopark\". Located in the eastern part of Hong Kong, the Park includes the Sai Kung Volcanic Rock Region and the Northeast New Territories Sedimentary </br>Rock Region."
               },
               "image": {
                 "src": "./images/ex302a/2009_img1.jpg",
@@ -1409,7 +1409,7 @@
             {
               "text": {
                 "year": 2010,
-                "content": "In 2010, the Government set up the Harborfront Commission to play an advocacy, oversight and pro-active advisory role in the envisioning, planning, urban design, development, marketing, branding, management and operation of the harbourfront areas, their adjacent waters within the harbour limit and associated facilities on a continuous and ongoing </br>basis, etc."
+                "content": "In 2010, the Government set up the Harborfront Commission to play an advocacy, oversight and </br>pro-active advisory role in the envisioning, planning, urban design, development, marketing, branding, management and operation of the harbourfront areas, their adjacent waters within the harbour limit and associated facilities on a continuous and ongoing </br>basis, etc."
               },
               "image": {
                 "src": "./images/ex302a/2010_img1.png",
@@ -1492,7 +1492,7 @@
             {
               "text": {
                 "year": 2011,
-                "content": "In 2011, the Government completed the Urban Design Study for the New Central Harborfront and proposed to an urban design framework to enhance the area spanning from the Central Piers to the Hong Kong Convention and Exhibition Centre with a view to creating a vibrant, attractive, accessible New Central Harborfront."
+                "content": "In 2011, the Government completed the Urban Design Study for the New Central Harborfront and proposed to an urban design framework to enhance the area spanning from the Central Piers to the Hong Kong Convention and Exhibition Centre with a view to creating a vibrant, attractive, accessible New </br>Central Harborfront."
               },
               "image": {
                 "src": "./images/ex302a/2011_img1c.png",
@@ -1592,7 +1592,7 @@
             {
               "text": {
                 "year": 2014,
-                "content": "The Government released the \"Railway Development Strategy 2014\", initially recommending the implementation of seven new railway schemes between 2018 and 2026, including the Northern Link, Kwu Tung Station, Hung Shui Kiu Station, Tung Chung West Extension, East Kowloon Line, South Island Line </br>(West Section), North Island Line, and Tuen Mun South Extension."
+                "content": "The Government released the \"Railway Development Strategy 2014\", initially recommending the implementation of seven new railway schemes between 2018 and 2026, including the Northern Link, Kwu Tung Station, Hung Shui Kiu Station, Tung Chung West Extension, East Kowloon Line, South Island </br>Line (West Section), North Island Line, and Tuen Mun South Extension."
               },
               "image": {
                 "src": "./images/ex302a/2014_img1a.png",
@@ -1621,7 +1621,7 @@
             {
               "text": {
                 "year": 2014,
-                "content": "The government announced the Long Term Housing Strategy (LTHS) in 1987, 1998, and 2014. The 2014 LTHS set out three strategic directions for building more public rental housing units, supplying more subsidised sale flats, and stabilising the residential property market."
+                "content": "The government announced the Long Term Housing Strategy (LTHS) in 1987, 1998, and 2014. The 2014 LTHS set out three strategic directions for building more public rental housing units, supplying more subsidised <nobr>sale flats, and stabilising the residential property market.</nobr>"
               },
               "image": {
                 "src": "./images/ex302a/2014_img1b.png",
@@ -1745,7 +1745,7 @@
             {
               "text": {
                 "year": 2017,
-                "content": "In 2017, the Hong Kong SAR Government and the Shenzhen Municipal People’s Government signed the \"Memorandum of Understanding on Jointly Developing the Lok Ma Chau Loop\" to support Hong Kong's innovation and technology industry.  Both parties will join hands in developing the Loop as </br>\"Hong Kong/Shenzhen Innovation and Technology Park\"."
+                "content": "In 2017, the Hong Kong SAR Government and the Shenzhen Municipal People’s Government signed the \"Memorandum of Understanding on Jointly Developing the Lok Ma Chau Loop\" to support Hong Kong's innovation and technology industry.  Both parties will join hands in developing the Loop as \"Hong Kong/Shenzhen Innovation and Technology Park\"."
               },
               "image": {
                 "src": "./images/ex302a/2017_img1b.jpg",
@@ -1824,7 +1824,7 @@
             {
               "text": {
                 "year": 2018,
-                "content": "In 2018, the Hong Kong section of the </br>Guangzhou-Shenzhen-Hong Kong Express Rail Link was inaugurated, with a total length of about 26 km. It runs from Hong Kong West Kowloon Station and routes through a dedicated tunnel to Shenzhen Futian Station and Guangzhounan Station to connect with the national high speed rail network.  In 2018, the </br>Hong Kong-Zhuhai-Macao Bridge was completed and commenced operation to support closer economic cooperation between Hong Kong SAR and the Mainland."
+                "content": "In 2018, the Hong Kong section of the </br>Guangzhou-Shenzhen-Hong Kong Express Rail Link was inaugurated, with a total length of about 26 km. It runs from Hong Kong West Kowloon Station and routes through a dedicated tunnel to Shenzhen Futian Station and Guangzhounan Station to connect with the national high speed rail network.  In 2018, the </br>Hong Kong-Zhuhai-Macao Bridge was completed and commenced operation to support closer economic <nobr>cooperation between Hong Kong SAR and the Mainland.</nobr>"
               },
               "image": {
                 "src": "./images/ex302a/2018_img1b.jpg",
@@ -1853,7 +1853,7 @@
             {
               "text": {
                 "year": 2019,
-                "content": "In 2019, the State officially announced the “Outline Development Plan for the Guangdong-Hong Kong-Macao Greater Bay Area”. The objectives are to further deepen cooperation amongst Guangdong, Hong Kong and Macao, fully leverage the composite advantages of the three places, facilitate in-depth integration within the region, and promote coordinated regional economic development with a view to developing an international first-class bay area ideal for living, working and traveling."
+                "content": "In 2019, the State officially announced the “Outline Development Plan for the Guangdong-Hong Kong-Macao Greater Bay Area”. The objectives are to further deepen cooperation amongst Guangdong, Hong Kong and Macao, fully leverage the composite advantages of the three places, facilitate in-depth integration within the region, and promote coordinated regional economic development with a view to developing an international <nobr>first-class bay area ideal for living, working and traveling.</nobr>"
               },
               "image": {
                 "src": "./images/ex302a/2019_img1.jpg",
@@ -1929,7 +1929,7 @@
       "global": {
         "explore": "探索",
         "backToYear": "選擇年份",
-        "hints": "拖曳畫面探索更多",
+        "hints": "觸碰螢幕以選取",
         "back": "返回",
         "stories": "個年代故事"
       },
@@ -1973,7 +1973,7 @@
             {
               "text": {
                 "year": 1872,
-                "content": "1869年，政府在上環普仁街撥出土地，興建香港第一間華人醫院 — 東華醫院。1872年，醫院落成啟用，為貧苦市民提供免費中醫藥服務。"
+                "content": "1869年，政府在上環普仁街撥出土地，興建香港第<nobr>一間華人醫院 — 東華醫院。1872年，醫院落成啟用，</nobr>為貧苦市民提供免費中醫藥服務。"
               },
               "image": {
                 "src": "./images/ex302a/1872_img1.jpg",
@@ -1994,7 +1994,7 @@
             {
               "text": {
                 "year": 1890,
-                "content": "1890年，香港電燈有限公司在灣仔永豐街旁山坡地段建成了香港第一所發電廠，為中區至文咸東街一帶的電街燈提供電力。1919年，北角發電廠啟用，灣仔發電廠轉為後備用途，直至1922年關閉並拆卸。"
+                "content": "1890年，香港電燈有限公司在灣仔永豐街旁山坡地段建成了香港第一所發電廠，為中區至文咸東街一帶的電街燈提供電力。1919年，北角發電廠啟用，<nobr>灣仔發電廠轉為後備用途，直至1922年關閉並拆卸。</nobr>"
               },
               "image": {
                 "src": "./images/ex302a/1890_img1.png",
@@ -2023,7 +2023,7 @@
             {
               "text": {
                 "year": 1910,
-                "content": "1906年，九廣鐵路（英段）工程展開，並於1910年開通，這是連接香港和中國內地的第一條鐵路，全長35公里，包括5條隧道和48條橋樑。1911年，廣九鐵路（華段）開通，九龍往廣州的直通車開始營運。"
+                "content": "1906年，九廣鐵路（英段）工程展開，並於1910年開通，這是連接香港和中國內地的第一條鐵路，全長35公里，包括5條隧道和48條橋樑。1911年，</br>廣九鐵路（華段）開通，九龍往廣州的直通車開始營運。"
               },
               "image": {
                 "src": "./images/ex302a/1910_img1.png",
@@ -2060,7 +2060,7 @@
             {
               "text": {
                 "year": 1930,
-                "content": "1912年，華人何啟和區德合組公司，於九龍灣填海並計劃興建樓房，該填海區便以公司名稱「啟德」命名。後來，公司因經濟衰退倒閉，填海土地閒置，政府便購回土地興建機場。1930年，香港啟德機場啟用。"
+                "content": "1912年，華人何啟和區德合組公司，於九龍灣填海並計劃興建樓房，該填海區便以公司名稱「啟德」<nobr>命名。後來，公司因經濟衰退倒閉，填海土地閒置，</nobr>政府便購回土地興建機場。1930年，香港啟德機場啟用。"
               },
               "image": {
                 "src": "./images/ex302a/1930_img1.png",
@@ -2089,7 +2089,7 @@
             {
               "text": {
                 "year": 1939,
-                "content": "1939年，政府頒布《城市規劃條例》。條例授權城市規劃委員會有系統地擬備和核准香港各地區的布局設計及適宜在該等地區內建立的建築物類型的圖則，以及為擬備和核准某些在內發展須有許可的地區的圖則而訂定條文，以促進社區的衞生、安全、便利及一般福利。城市規劃發展藍圖。"
+                "content": "1939年，政府頒布《城市規劃條例》。條例授權城市規劃委員會有系統地擬備和核准香港各地區的布局設計及適宜在該等地區內建立的建築物類型的</br>圖則，以及為擬備和核准某些在內發展須有許可的<nobr>地區的圖則而訂定條文，以促進社區的衞生、安全、</nobr>便利及一般福利。城市規劃發展藍圖。"
               },
               "image": {
                 "src": "./images/ex302a/1939_img1.png",
@@ -2172,7 +2172,7 @@
             {
               "text": {
                 "year": 1947,
-                "content": "1947年，工務司署成立城市設計組，專責城市規劃事宜。經過多次的部門更迭後，1990年，政府把分散的規劃職能合併，成立規劃署，負責擬備各類圖則、制定土地用途指引，以及為城市規劃委員會提供服務。"
+                "content": "1947年，工務司署成立城市設計組，專責城市規劃事宜。經過多次的部門更迭後，1990年，政府把分散的規劃職能合併，成立規劃署，負責擬備各類</br>圖則、制定土地用途指引，以及為城市規劃委員會提供服務。"
               },
               "image": {
                 "src": "./images/ex302a/1946_img1.png",
@@ -2313,7 +2313,7 @@
             {
               "text": {
                 "year": 1965,
-                "content": "1963年，香港食水短缺問題嚴重。政府與廣東當局協議興建東江—深圳供水工程，第一期工程於1965年完成。東江水從80多公里外流入雁田水庫和深圳水庫，再經3公里長的鋼管，到達香港邊境的木湖抽水站。"
+                "content": "1963年，香港食水短缺問題嚴重。政府與廣東當局<nobr>協議興建東江—深圳供水工程，第一期工程於1965年</nobr>完成。東江水從80多公里外流入雁田水庫和深圳水庫，再經3公里長的鋼管，到達香港邊境的木湖抽</br>水站。"
               },
               "image": {
                 "src": "./images/ex302a/1965_img1.png",
@@ -2347,7 +2347,7 @@
             {
               "text": {
                 "year": 1967,
-                "content": "1967至1978年間，位於港島南區的華富邨分階段落成。華富邨是香港第一個以自給自足社區概念規劃的公共屋邨，邨內設有商場、學校、巴士總站，以及其他社區配套設施。"
+                "content": "1967至1978年間，位於港島南區的華富邨分階段</br>落成。華富邨是香港第一個以自給自足社區概念規劃的公共屋邨，邨內設有商場、學校、巴士總站，以及其他社區配套設施。"
               },
               "image": {
                 "src": "./images/ex302a/1967_img1.png",
@@ -2380,7 +2380,7 @@
             {
               "text": {
                 "year": 1972,
-                "content": "香港自60年代開始經濟不斷發展，城市發展的壓力也不斷增加，政府必須對香港長遠的土地用途和人口分布進行全面檢討。1965年，政府開始編制《土地利用計劃書》，全面檢討香港長遠的土地用途和人口分布。1974 年，政府因應當時的社會經濟情況和發展優先次序，大幅度修訂上述計劃書，並重新命名為《香港發展綱略》。"
+                "content": "香港自60年代開始經濟不斷發展，城市發展的壓力也不斷增加，政府必須對香港長遠的土地用途和人口分布進行全面檢討。1965年，政府開始編制</br>《土地利用計劃書》，全面檢討香港長遠的土地用途和人口分布。1974 年，政府因應當時的社會經濟情況和發展優先次序，大幅度修訂上述計劃書，並重新命名為《香港發展綱略》。"
               },
               "image": {
                 "src": "./images/ex302a/1946_img1.png",
@@ -2446,7 +2446,7 @@
             {
               "text": {
                 "year": 1972,
-                "content": "1948年的《初步規劃報告書》已提出興建海底隧道聯繫香港和九龍的城市核心，並加強核心區的對外（新界區）交通，擴張市區範圍。1972年，位於維港中部的第一條海底隧道 — 紅磡海底隧道正式通車，渡海小輪的交通角色逐漸被取代。1989年及1997年，第二條和第三條海底隧道亦相繼通車，三條隧道的設計容量合共為275,000架次。"
+                "content": "1948年的《初步規劃報告書》已提出興建海底隧道聯繫香港和九龍的城市核心，並加強核心區的對</br>外（新界區）交通，擴張市區範圍。1972年，位於維港中部的第一條海底隧道 — 紅磡海底隧道正式</br>通車，渡海小輪的交通角色逐漸被取代。1989年及1997年，第二條和第三條海底隧道亦相繼通車，三條隧道的設計容量合共為275,000架次。"
               },
               "image": {
                 "src": "./images/ex302a/1972_img1b.png",
@@ -2483,7 +2483,7 @@
             {
               "text": {
                 "year": 1972,
-                "content": "香港發展為區內運輸及物流樞紐，建基於其優越的地理位置及作為通往珠江三角洲的門戶角色。1972年，葵涌貨櫃碼頭的一號貨櫃碼頭投入運作。1976年擴展至五號貨櫃碼頭。1997年前，六號至八號貨櫃碼頭亦相繼落成。葵涌貨櫃碼頭現有九個碼頭，每年能處理超過2,000萬個標準貨櫃箱。"
+                "content": "香港發展為區內運輸及物流樞紐，建基於其優越的地理位置及作為通往珠江三角洲的門戶角色。</br>1972年，葵涌貨櫃碼頭的一號貨櫃碼頭投入運作。1976年擴展至五號貨櫃碼頭。1997年前，六號至八號貨櫃碼頭亦相繼落成。葵涌貨櫃碼頭現有九個</br>碼頭，每年能處理超過2,000萬個標準貨櫃箱。"
               },
               "image": {
                 "src": "./images/ex302a/1972_img1c.png",
@@ -2549,7 +2549,7 @@
             {
               "text": {
                 "year": 1976,
-                "content": "1976年頒布的《郊野公園條例》，為設立郊野公園及海岸公園委員會提供了法律根據，並規管郊野公園和特別地區的指定、管制和管理。《郊野公園條例》連同1995年頒布的《海岸公園條例》為保護香港郊野及海洋自然生態立下里程碑。"
+                "content": "1976年頒布的《郊野公園條例》，為設立郊野公園及海岸公園委員會提供了法律根據，並規管郊野公<nobr>園和特別地區的指定、管制和管理。《郊野公園條例》</nobr>連同1995年頒布的《海岸公園條例》為保護香港郊野及海洋自然生態立下里程碑。"
               },
               "image": {
                 "src": "./images/ex302a/1976_img1.png",
@@ -2724,7 +2724,7 @@
             {
               "text": {
                 "year": 1989,
-                "content": "1989年，政府宣布《港口及機場發展策略》，為本港港口及機場的整體發展定下長遠的規劃大綱。相關項目包括香港機場核心計劃（又稱「玫瑰園計劃」），選址大嶼山赤鱲角興建全新的香港國際機場。"
+                "content": "1989年，政府宣布《港口及機場發展策略》，為本港<nobr>港口及機場的整體發展定下長遠的規劃大綱。相關項</nobr>目包括香港機場核心計劃（又稱「玫瑰園計劃」），選址大嶼山赤鱲角興建全新的香港國際機場。"
               },
               "image": {
                 "src": "./images/ex302a/1989_img1.png",
@@ -2757,7 +2757,7 @@
             {
               "text": {
                 "year": 1990,
-                "content": "1990年，規劃署成立，隸屬當時的規劃環境地政科。規劃署集中過往由城市規劃處、發展策略組，以及拓展署屬下的各拓展辦事處負責的規劃功能，肩負起使香港成為更美好的安居樂業地方的使命。"
+                "content": "<nobr>1990年，規劃署成立，隸屬當時的規劃環境地政科。</nobr>規劃署集中過往由城市規劃處、發展策略組，以及拓展署屬下的各拓展辦事處負責的規劃功能，肩負起使香港成為更美好的安居樂業地方的使命。"
               },
               "image": {
                 "src": "./images/ex302a/1990_img1.png",
@@ -2837,7 +2837,7 @@
             {
               "text": {
                 "year": 1995,
-                "content": "1995年，政府頒布《海岸公園條例》，目的在於保護和護理海洋環境及種類繁多的海洋動植物。1996年，政府劃定位於東部水域的海下灣海岸公園和印洲塘海岸公園。"
+                "content": "1995年，政府頒布《海岸公園條例》，目的在於保<nobr>護和護理海洋環境及種類繁多的海洋動植物。1996年，</nobr>政府劃定位於東部水域的海下灣海岸公園和印洲塘海岸公園。"
               },
               "image": {
                 "src": "./images/ex302a/1995_img1b.png",
@@ -2934,7 +2934,7 @@
             {
               "text": {
                 "year": 1998,
-                "content": "1998年，政府發表《全港發展策略檢討》報告，制定至2011年為止的長遠計劃。報告提出研究新界西北部、新界東北部、港島南部和南丫島的發展潛質，應付不斷增加的房屋需求。"
+                "content": "1998年，政府發表《全港發展策略檢討》報告，制定至2011年為止的長遠計劃。報告提出研究新界西<nobr>北部、新界東北部、港島南部和南丫島的發展潛質，</nobr>應付不斷增加的房屋需求。"
               },
               "image": {
                 "src": "./images/ex302a/1998_img1.png",
@@ -3042,7 +3042,7 @@
             {
               "text": {
                 "year": 2002,
-                "content": "2002年，香港科學園首三幢大樓啟用，由法定機構香港科技園公司負責運作和管理園內和其他多項設施。園內五大科技群組為生物醫藥、電子、綠色科技、資訊及通訊科技，以及物料與精密工程。"
+                "content": "2002年，香港科學園首三幢大樓啟用，由法定機構<nobr>香港科技園公司負責運作和管理園內和其他多項設施。</nobr>園內五大科技群組為生物醫藥、電子、綠色科技、資訊及通訊科技，以及物料與精密工程。"
               },
               "image": {
                 "src": "./images/ex302a/2002_img1a.png",
@@ -3079,7 +3079,7 @@
             {
               "text": {
                 "year": 2002,
-                "content": "2002年，數碼港項目落成，旨在支持和推動香港資訊及通訊科技的發展。數碼港具備先進完善的資訊科技和電訊基建設施，集中發展的數碼科技範疇包括：金融科技、電子商貿、大數據和人工智能等。"
+                "content": "2002年，數碼港項目落成，旨在支持和推動香港資訊及通訊科技的發展。數碼港具備先進完善的資訊科技和電訊基建設施，集中發展的數碼科技範疇</br><nobr>包括：金融科技、電子商貿、大數據和人工智能等。</nobr>"
               },
               "image": {
                 "src": "./images/ex302a/2002_img1b.png",
@@ -3112,7 +3112,7 @@
             {
               "text": {
                 "year": 2004,
-                "content": "是次修訂加快了制訂圖則的過程，提高了審批規劃許可程序的透明度，讓公眾人士有更多機會參與其中。此外，亦加強執法，管制違例發展，以及提高城市規劃委員會的運作效率。"
+                "content": "是次修訂加快了制訂圖則的過程，提高了審批規劃許可程序的透明度，讓公眾人士有更多機會參與</br>其中。此外，亦加強執法，管制違例發展，以及提高城市規劃委員會的運作效率。"
               },
               "image": {
                 "src": "./images/ex302a/2004_img1a.png",
@@ -3166,7 +3166,7 @@
             {
               "text": {
                 "year": 2004,
-                "content": "2004年，香港首個大型地下蓄洪池完工，設於大坑東欖球場和足球場地下，容量為十萬立方米，可抵禦50年一遇的暴雨。其他防洪策略和工程包括興建雨水泵房、雨水排放隧道系統、排水繞道和雨水渠等。"
+                "content": "2004年，香港首個大型地下蓄洪池完工，設於大坑東欖球場和足球場地下，容量為十萬立方米，可抵禦50年一遇的暴雨。其他防洪策略和工程包括興建雨水泵房、雨水排放隧道系統、排水繞道和雨水</br>渠等。"
               },
               "image": {
                 "src": "./images/ex302a/2004_img1c.jpg",
@@ -3199,7 +3199,7 @@
             {
               "text": {
                 "year": 2006,
-                "content": "2006年，昂坪360正式通車，提供來往東涌及昂坪的索道服務，全長5.7公里，是亞洲最長的雙繩索纜車系統。昂坪整個旅遊項目融合了大嶼山的宗教文化，鄰近景點包括天壇大佛、寶蓮禪寺和心經簡林。"
+                "content": "2006年，昂坪360正式通車，提供來往東涌及昂坪的索道服務，全長5.7公里，是亞洲最長的雙繩索纜車系統。昂坪整個旅遊項目融合了大嶼山的宗教文<nobr>化，鄰近景點包括天壇大佛、寶蓮禪寺和心經簡林。</nobr>"
               },
               "image": {
                 "src": "./images/ex302a/2006_img1.jpg",
@@ -3254,7 +3254,7 @@
             {
               "text": {
                 "year": 2007,
-                "content": "2007年，政府為在發展和保育文物兩者之間取得平衡，推出了「活化歷史建築伙伴計劃」，讓非牟利機構申請活化政府歷史建築。計劃目的為保存歷史建築，並以創新的方法予以善用。"
+                "content": "2007年，政府為在發展和保育文物兩者之間取得</br>平衡，推出了「活化歷史建築伙伴計劃」，讓非牟利機構申請活化政府歷史建築。計劃目的為保存歷史建築，並以創新的方法予以善用。"
               },
               "image": {
                 "src": "./images/ex302a/2007_img1b.jpg",
@@ -3287,7 +3287,7 @@
             {
               "text": {
                 "year": 2009,
-                "content": "2009年，香港地質公園成為中國國家地質公園，2011年加入世界地質公園網絡，並於2015年更名為「香港聯合國教科文組織世界地質公園」。位於香港東部的地質公園包含西貢火山岩及新界東北沉積岩兩個園區。"
+                "content": "2009年，香港地質公園成為中國國家地質公園，2011年加入世界地質公園網絡，並於2015年更名</br>為「香港聯合國教科文組織世界地質公園」。位於香港東部的地質公園包含西貢火山岩及新界東北沉積岩兩個園區。"
               },
               "image": {
                 "src": "./images/ex302a/2009_img1.jpg",
@@ -3320,7 +3320,7 @@
             {
               "text": {
                 "year": 2010,
-                "content": "2010年，政府成立海濱事務委員會，旨在構想、規劃、城市設計、發展、市場推廣、品牌建立、管理及營運海濱用地、海港範圍內鄰近水域及相關設施方面，持續無間地擔當倡導、監察及積極的諮詢角色等。"
+                "content": "2010年，政府成立海濱事務委員會，旨在構想、</br>規劃、城市設計、發展、市場推廣、品牌建立、管理及營運海濱用地、海港範圍內鄰近水域及相關設施方面，持續無間地擔當倡導、監察及積極的諮詢角色等。"
               },
               "image": {
                 "src": "./images/ex302a/2010_img1.png",
@@ -3353,7 +3353,7 @@
             {
               "text": {
                 "year": 2011,
-                "content": "2011年，香港機場管理局發表《香港國際機場2030規劃大綱》，建議填海650公頃，發展機場三跑道系統。工程於2016年展開。建成後，預計機場每年實際最高跑道容量約為62萬架次。"
+                "content": "2011年，香港機場管理局發表《香港國際機場2030規劃大綱》，建議填海650公頃，發展機場三跑道</br>系統。工程於2016年展開。建成後，預計機場每年實際最高跑道容量約為62萬架次。"
               },
               "image": {
                 "src": "./images/ex302a/2011_img1a.png",
@@ -3565,7 +3565,7 @@
             {
               "text": {
                 "year": 2014,
-                "content": "2014年，政府陸續規劃新發展區和擴展原有新市鎮，包括於2017年和2019年開始東涌新市鎮擴展計劃的填海工程。古洞北及粉嶺北新發展區的土地平整工程和洪水橋／廈村的土地平整工程亦相繼動工。"
+                "content": "2014年，政府陸續規劃新發展區和擴展原有新市鎮，包括於2017年和2019年開始東涌新市鎮擴展計劃的填海工程。古洞北及粉嶺北新發展區的土地平<nobr>整工程和洪水橋／廈村的土地平整工程亦相繼動工。</nobr>"
               },
               "image": {
                 "src": "./images/ex302a/2014_img1c.jpg",
@@ -3598,7 +3598,7 @@
             {
               "text": {
                 "year": 2016,
-                "content": "2016年，香港海運港口局正式成立，為港口及海運服務業訂定長遠發展方向、推動業界人力資源發展，及制定推廣策略和措施，以提升香港的國際海運中心地位。"
+                "content": "2016年，香港海運港口局正式成立，為港口及海運<nobr>服務業訂定長遠發展方向、推動業界人力資源發展，</nobr>及制定推廣策略和措施，以提升香港的國際海運中心地位。"
               },
               "image": {
                 "src": "./images/ex302a/2016_img1.png",
@@ -3627,7 +3627,7 @@
             {
               "text": {
                 "year": 2017,
-                "content": "<nobr>2017年，政府公布了《香港氣候行動藍圖2030＋》，</nobr>訂立新的碳強度目標 — 以2005年為基準，於2030年把碳強度降低65%至70%。藍圖提出了一系列行動計劃，包括更廣泛和具規模地採用可再生能源等措施。"
+                "content": "<nobr>2017年，政府公布了《香港氣候行動藍圖2030＋》，</nobr>訂立新的碳強度目標 — 以2005年為基準，於2030年把碳強度降低65%至70%。藍圖提出了一系列行動</br><nobr>計劃，包括更廣泛和具規模地採用可再生能源等措施。</nobr>"
               },
               "image": {
                 "src": "./images/ex302a/2017_img1a.png",
@@ -3677,7 +3677,7 @@
             {
               "text": {
                 "year": 2017,
-                "content": "2017年，政府公布了《香港智慧城市藍圖》，就「智慧出行」、「智慧生活」、「智慧環境」、「智慧市民」、「智慧政府」和「智慧經濟」六個範疇，提出未來五年的措施，推動香港發展為智慧城市。"
+                "content": "2017年，政府公布了《香港智慧城市藍圖》，</br>就「智慧出行」、「智慧生活」、「智慧環境」、「智慧市民」、「智慧政府」和「智慧經濟」六個範疇，提出未來五年的措施，推動香港發展為智慧城市。"
               },
               "image": {
                 "src": "./images/ex302a/2017_img1c.png",
@@ -3710,7 +3710,7 @@
             {
               "text": {
                 "year": 2018,
-                "content": "2018年，位於北大嶼山小蠔灣的O · PARK1正式投入運作。這是香港第一所有機資源回收中心，採用了厭氧分解技術將廚餘轉化為生物氣以作發電，每天可處理200公噸廚餘，減少佔用寶貴的堆填區空間。"
+                "content": "2018年，位於北大嶼山小蠔灣的O · PARK1正式投入運作。這是香港第一所有機資源回收中心，採用了厭氧分解技術將廚餘轉化為生物氣以作發電，每天可處理200公噸廚餘，減少佔用寶貴的堆填區</br>空間。"
               },
               "image": {
                 "src": "./images/ex302a/2018_img1a.png",
@@ -3735,7 +3735,7 @@
             {
               "text": {
                 "year": 2018,
-                "content": "2018年，廣深港高速鐵路香港段通車，全長約26公里，由香港西九龍站開始，經過專用隧道至深圳福田站及廣州南站，並連接國家整個高鐵網絡。2018年，港珠澳大橋落成並啟用，以配合香港特區和內地緊密的經濟合作。"
+                "content": "2018年，廣深港高速鐵路香港段通車，全長約26</br>公里，由香港西九龍站開始，經過專用隧道至深圳福田站及廣州南站，並連接國家整個高鐵網絡。2018年，港珠澳大橋落成並啟用，以配合香港特區和內地緊密的經濟合作。"
               },
               "image": {
                 "src": "./images/ex302a/2018_img1b.jpg",
@@ -3785,7 +3785,7 @@
             {
               "text": {
                 "year": 2020,
-                "content": "蓮塘／香園圍口岸於2020年開通，為香港與</br>深圳東、惠州和粵東之間提供更有效率的跨境通道。"
+                "content": "蓮塘／香園圍口岸於2020年開通，為香港與深</br>圳東、惠州和粵東之間提供更有效率的跨境通道。"
               },
               "image": {
                 "src": "./images/ex302a/2018_img1c.jpg",

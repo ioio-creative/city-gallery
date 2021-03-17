@@ -72,7 +72,7 @@
   }
   #touch {
     font-size: vw-calc(16);
-    line-height: vw-calc(21);
+    line-height: vw-calc(25);
     font-weight: bold;
     color: #707376;
     text-align: center;
@@ -86,7 +86,7 @@
       height: vw-calc(70);
       background: url('./images/touchicon.svg') center no-repeat;
       background-size: 100%;
-      margin: 0 auto vw-calc(20);
+      margin: 0 auto vw-calc(16);
     }
   }
   #lang {
@@ -396,7 +396,7 @@
           background-position: center;
           background-repeat: no-repeat;
           background-size: contain;
-          margin: 0 vw-calc(30);
+          margin: -0.3vw vw-calc(30);
           box-shadow: 0 vw-calc(3 6) #00000029;
           border-radius: vw-calc(3);
           display: inline-block;
@@ -457,6 +457,7 @@
               position: relative;
               margin-right: vw-calc(20);
               top: vw-calc(7);
+              top: -0.0242vw;
               display: inline-block;
               transform-style: preserve-3d;
               transform: rotate3d(1, 0, 0, 55deg);
@@ -757,7 +758,8 @@
                     }
                     .ranking {
                       position: absolute;
-                      top: 0;
+                      // top: 0;
+                      top: -0.28vw;
                       left: vw-calc(-60);
                       // left: -3.04167vw;
                       // transform: translate3d(-100%,10%,0);
@@ -777,6 +779,11 @@
                     left: 0%;
                     &.mumbai1 {
                       top: -7.7vw;
+                      .engTag{
+                        margin-top: -1.77917vw;
+                        position: absolute;
+                        left: 3vw;
+                      }
                     }
                     &.newyork1 {
                       left: 7.2vw;
@@ -784,6 +791,7 @@
                       .ranking{
                         position: absolute;
                         top: 0;
+                        top: 0.3vw;
                         left: vw-calc(-60);
                       }
                     }
@@ -806,6 +814,7 @@
                       .ranking{
                         position: absolute;
                         top: 0;
+                        top: 0.3vw;
                         left: vw-calc(-60);
                       }
                     }
@@ -816,6 +825,13 @@
                     top: auto;
                     bottom: calc(110%);
                     right: 10%;
+                    &.mumbai2 {
+                      .engTag{
+                        margin-top: 0.52083vw;
+                        position: absolute;
+                        left: 12vw;
+                      }
+                    }
                     &.newyork2 {
                       left: -18.8vw;
                       top: -5vw;
@@ -826,6 +842,13 @@
                       left: -17.8vw;
                       top: -9vw;
                     }
+                    &.mexicocity2{
+                      .engTag{
+                        margin-top: 0.42083vw;
+                        position: absolute;
+                        left: 10.3vw;
+                      }
+                    }
                   }
                 }
                 #_3rd {
@@ -833,9 +856,23 @@
                     top: auto;
                     bottom: calc(105%);
                     left: 0%;
+                    &.mumbai3{
+                      .engTag{
+                        margin-top: -1.67917vw;
+                        position: absolute;
+                        left: 2.9vw;
+                      }
+                    }
                     &.newyork3{
                       bottom: calc(90%);
                       left: 92%;
+                    }
+                    &.mexicocity3{
+                      .engTag{
+                        margin-top: -1.67917vw;
+                        position: absolute;
+                        left: 3vw;
+                      }
                     }
                   }
                 }
@@ -1214,6 +1251,22 @@
             .wrap {
               padding-right: vw-calc(104);
               text-align: right;
+              .title{
+                &.trans{
+                  color: transparent;
+                }
+              }
+              .fakeTitle{
+                position: absolute;
+                font-size: vw-calc(25);
+                font-weight: normal;
+                z-index: 4;
+                left: 29vw;
+                &.land{
+                  font-size: vw-calc(20);
+                  left: 34.8vw;
+                }
+              }
             }
             .bg {
               background: transparent linear-gradient(60deg, #8fc0c6 0%, #a5e4dd 100%) 0% 0% no-repeat;
@@ -1250,6 +1303,11 @@
               font-weight: bold;
               position: relative;
               z-index: 4;
+              .dollarSign{
+                display: inline-block;
+                font-size: 24px;
+                padding-left: 6px;
+              }
             }
             .medium {
               font-size: vw-calc(30);

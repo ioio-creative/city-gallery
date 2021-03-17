@@ -205,7 +205,7 @@ const Section5 = (props) => {
                     <img src="./images/exG02a/section5/hkcoin10.png" style={{bottom: '332px', right: '24px'}} alt=''/>
                     <img src="./images/exG02a/section5/hkcoin2.png" style={{bottom: 30+'px', left: 228+'px'}} alt=''/>
                     <div className="title big">{globalData && globalData.gdp}</div>
-                    <div className="big">{ data && data['hongkong'].money }HKD</div>
+                    <div className="big">{ data && data['hongkong'].money }<div className="dollarSign">HKD</div></div>
                     <canvas ref={canvasLeft} id="leftCanvas" width="600" height="600"></canvas>
                     {/* <div className="coins">
                         {
