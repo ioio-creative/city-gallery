@@ -492,11 +492,22 @@ const Content = props => {
               <div id='wrap'>
                 <ul>
                   {v.items.map((c, j) => {
+                    console.log(j);
                     return (
                       <li key={j} id={c.category.id} className={props.currentSectionIdx === i && navIdx === j ? 'active' : ''} onClick={() => onClickNav(i, j)}>
                         <div id='point'></div>
                         <span className='category'>{c.category.name}</span>
-                        <span id='year' className='eb' dangerouslySetInnerHTML={{ __html: c.text.year }}></span>
+                        {j === 28 && props.language === 'en' && (
+                          <span id='year' className='eb small' style={{ fontFamily: "'Helvetica Neue LT Std', 'NotoSansTC', sans-serif", fontSize: '0.4vw' }}>
+                            Upcoming
+                          </span>
+                        )}
+                        {j === 28 && props.language === 'tc' && (
+                          <span id='year' className='eb small' style={{ fontFamily: "'Helvetica Neue LT Std', 'NotoSansTC', sans-serif", fontSize: '0.4vw' }}>
+                            最新動向
+                          </span>
+                        )}
+                        {j !== 28 && <span id='year' className='eb' dangerouslySetInnerHTML={{ __html: c.text.year }}></span>}
                       </li>
                     );
                   })}

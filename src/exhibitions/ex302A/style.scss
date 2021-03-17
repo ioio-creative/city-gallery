@@ -118,13 +118,13 @@ body {
       font-size: vw-calc(20);
       line-height: vw-calc(32);
       &.H{
-        width: 38vw;
+        width: 30vw;
       }
       &.C{
-        width: 38vw;
+        width: 29.3vw;
       }
       &.S{
-        width: 34vw;
+        width: 30.4vw;
       }
     }
   }
@@ -1050,7 +1050,7 @@ body {
           // font-size: 1vw;
           // line-height: 1.68vw;
           &.S{
-            width: 33.3vw;
+            width: 32vw;
           }
         }
       }
@@ -1297,6 +1297,7 @@ body {
       #numOfItemsSmall{
         position: absolute;
         top: vw-calc(62);
+        top: 1.72917vw;
         left: vw-calc(62);
         z-index: 2;
         font-size:vw-calc(20);
