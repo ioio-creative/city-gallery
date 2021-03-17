@@ -1,79 +1,75 @@
 @import '../../setting.scss';
 
-$white:#fff;
-$black:#000;
-$lightblue:#70CCB8;
-$drakgreenblue:#074A45;
-$brown:#59472A;
+$white: #fff;
+$black: #000;
+$lightblue: #70ccb8;
+$drakgreenblue: #074a45;
+$brown: #59472a;
 
 @font-face {
-    font-family: 'SourceHanSerifTC-Bold';
-    src: url('../../fonts/SourceHanSerifTC-Bold.otf');
+  font-family: 'SourceHanSerifTC-Bold';
+  src: url('../../fonts/SourceHanSerifTC-Bold.otf');
 }
 @font-face {
-    font-family: 'EB Garamond';
-    src: url('../../fonts/EBGaramond-MediumItalic.woff2') format('woff2'),
-        url('../../fonts/EBGaramond-MediumItalic.woff') format('woff'),
-        url('../../fonts/EBGaramond-MediumItalic.ttf') format('truetype');
-    font-weight: 500;
-    font-style: italic;
-    font-display: swap;
+  font-family: 'EB Garamond';
+  src: url('../../fonts/EBGaramond-MediumItalic.woff2') format('woff2'), url('../../fonts/EBGaramond-MediumItalic.woff') format('woff'), url('../../fonts/EBGaramond-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
 }
 @font-face {
-    font-family: 'Helvetica Neue LT Std';
-    src: url('../../fonts/HelveticaNeueLTStd-Bd.woff2') format('woff2'),
-        url('../../fonts/HelveticaNeueLTStd-Bd.woff') format('woff'),
-        url('../../fonts/HelveticaNeueLTStd-Bd.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Helvetica Neue LT Std';
+  src: url('../../fonts/HelveticaNeueLTStd-Bd.woff2') format('woff2'), url('../../fonts/HelveticaNeueLTStd-Bd.woff') format('woff'), url('../../fonts/HelveticaNeueLTStd-Bd.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
-.eb{
-    font-family: 'EB Garamond';
+.eb {
+  font-family: 'EB Garamond';
 }
-.dg.ac{
-    z-index: 999 !important;
+.dg.ac {
+  z-index: 999 !important;
 }
 .streetFont {
-    font-family: 'SourceHanSerifTC-Bold';
+  font-family: 'SourceHanSerifTC-Bold';
 }
 
-body{
-    overflow: hidden;
-    font-family: 'Helvetica Neue LT Std';
-    // background:#0d3c59;
+body {
+  overflow: hidden;
+  font-family: 'Helvetica Neue LT Std';
+  // background:#0d3c59;
 }
 
-*{
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    padding:0;
-    margin:0;
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  padding: 0;
+  margin: 0;
 }
 ul,
-li{
-    list-style: none;
+li {
+  list-style: none;
 }
-span{
-    display: inline-block;
-}
-
-.hide{
-    opacity: 0;
-    visibility: hidden;
+span {
+  display: inline-block;
 }
 
-.shader{
-    position: relative;
-    z-index: 1;
-    transform-origin: top left;
-    transform: translate3d(0,0,0) scale(.5);
-    transition: transform .8s cubic-bezier(0.65, 0, 0.35, 1);
+.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.shader {
+  position: relative;
+  z-index: 1;
+  transform-origin: top left;
+  transform: translate3d(0, 0, 0) scale(0.5);
+  transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 // .zone1{
@@ -86,164 +82,165 @@ span{
 //     transform: translate3d(-69%, -7%, 0) scale(2.255);
 // }
 
-#ref{
-    text-align: right;
-    color:#074A45;
-    font-size: vw-calc(20);
-    font-weight: bold;
-    position: absolute;
-    top:vw-calc(41);
-    right:vw-calc(63);
-    z-index: 1;
-    text-shadow: 0 vw-calc(3 6) #fff;
-    opacity: 1;
-    visibility: visible;
-    transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
-    &.hide{
-        opacity: 0;
-        visibility: hidden;
-    }
-    &.w{
-        color:#fff;
-        text-shadow: 0 vw-calc(3 6) #074A45;
-    }
-}
-
-#popupTutor{
-    width:100%;
-    height:100%;
-    position: fixed;
-    top:0;
-    left:0;
-    z-index: 1000;
+#ref {
+  text-align: right;
+  color: #074a45;
+  font-size: vw-calc(20);
+  font-weight: bold;
+  position: absolute;
+  top: vw-calc(41);
+  right: vw-calc(63);
+  z-index: 1;
+  text-shadow: 0 vw-calc(3 6) #fff;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.6s cubic-bezier(0.87, 0, 0.13, 1);
+  &.hide {
     opacity: 0;
     visibility: hidden;
-    transition: all .3s cubic-bezier(0.87, 0, 0.13, 1);
-    &.active{
-        opacity: 1;
-        visibility: visible;
+  }
+  &.w {
+    color: #fff;
+    text-shadow: 0 vw-calc(3 6) #074a45;
+  }
+}
+
+#popupTutor {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  #content {
+    width: vw-calc(653);
+    height: vw-calc(653);
+    border-radius: 50%;
+    border: vw-calc(5) solid #fff;
+    background: #000;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    #title {
+      display: flex;
+      margin-top: vw-calc(141);
+      padding: 0 vw-calc(100);
+      & > * {
+        padding: 0 vw-calc(30);
+      }
+      p {
+        font-size: vw-calc(35);
+        font-weight: bold;
+        flex: 0;
+        white-space: nowrap;
+      }
+      span {
+        font-size: vw-calc(18);
+        line-height: vw-calc(27);
+      }
     }
-    #content{
-        width:vw-calc(653);
-        height:vw-calc(653);
+    &.slide2 {
+      #man {
+        left: 45%;
+        background: url('../ex303HKI/images/man_right.svg') no-repeat;
+        span {
+          top: 16%;
+          left: 83%;
+        }
+      }
+    }
+    #man {
+      width: vw-calc(224);
+      height: vw-calc(284);
+      background: url('../ex303HKI/images/man_left.svg') no-repeat;
+      position: absolute;
+      left: 55%;
+      bottom: vw-calc(78);
+      transform: translate3d(-50%, 0, 0);
+      span {
+        width: vw-calc(54);
+        height: vw-calc(54);
+        background: #26fafa;
+        opacity: 0.44;
         border-radius: 50%;
-        border: vw-calc(5) solid #fff;
-        background:#000;
-        color:#fff;
         position: absolute;
-        top:50%;
-        left:50%;
-        transform: translate3d(-50%,-50%,0);
-        #title{
-            display: flex;
-            margin-top:vw-calc(141);
-            padding:0 vw-calc(100);
-            &>*{
-                padding:0 vw-calc(30);
-            }
-            p{
-                font-size:vw-calc(35);
-                font-weight: bold;
-                flex: 0;
-                white-space: nowrap;
-            }
-            span{
-                font-size:vw-calc(18);
-                line-height:vw-calc(27);
-            }
+        top: 16%;
+        left: -7%;
+        &:before,
+        &:after {
+          content: '';
+          width: calc(100% - #{vw-calc(3)});
+          height: calc(100% - #{vw-calc(3)});
+          border-radius: vw-calc(100);
+          border: vw-calc(3) solid #26fafa;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 1;
+          transform: translate3d(0, 0, 0) scale(0);
+          pointer-events: none;
+          touch-action: none;
         }
-        &.slide2{
-            #man{
-                left:45%;
-                background:url('../ex303HKI/images/man_right.svg') no-repeat;
-                span{
-                    top: 16%;
-                    left: 83%;
-                }
-            }
+        &:before {
+          animation: radar3 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
         }
-        #man{
-            width:vw-calc(224);
-            height:vw-calc(284);
-            background:url('../ex303HKI/images/man_left.svg') no-repeat;
-            position: absolute;
-            left:55%;
-            bottom:vw-calc(78);
-            transform: translate3d(-50%,0,0);
-            span{
-                width:vw-calc(54);
-                height: vw-calc(54);
-                background:#26FAFA;
-                opacity: .44;
-                border-radius: 50%;
-                position: absolute;
-                top: 16%;
-                left: -7%;
-                &:before, &:after{
-                    content:'';
-                    width:calc(100% - #{vw-calc(3)});
-                    height:calc(100% - #{vw-calc(3)});
-                    border-radius: vw-calc(100);
-                    border:vw-calc(3) solid #26FAFA;
-                    position: absolute;
-                    top:0;
-                    left:0;
-                    opacity: 1;
-                    transform: translate3d(0,0,0) scale(0);
-                    pointer-events: none;
-                    touch-action: none;
-                }
-                &:before{
-                    animation: radar3 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-                }
-                &:after{
-                    animation: radar3 3s cubic-bezier(0.16, 1, 0.3, 1) infinite 1s;
-                }
-            }
+        &:after {
+          animation: radar3 3s cubic-bezier(0.16, 1, 0.3, 1) infinite 1s;
         }
-        .btn{
-            width:vw-calc(76);
-            height:vw-calc(76);
-            border-radius: 50%;
-            border:vw-calc(3) solid #fff;
-            position: absolute;
-            top:50%;
-            transform: translate3d(0,-50%,0);
-            background:#000;
-            opacity: 1;
-            visibility: visible;
-            &.hide{
-                opacity: .4;
-                visibility: visible;
-            }
-            &:before{
-                content:'';
-                width:vw-calc(30);
-                height:vw-calc(20);
-                background:url('../ex303HKI/images/arrow_stroke.svg') no-repeat;
-                position: absolute;
-                top:50%;
-                left:50%;
-            }
-            &#leftBtn{
-                right:calc(100% + #{vw-calc(37)});
-                &:before{
-                    transform: translate3d(-50%,-50%,0) rotate(-90deg);
-                }
-            }
-            &#rightBtn{
-                left:calc(100% + #{vw-calc(37)});
-                &:before{
-                    transform: translate3d(-50%,-50%,0) rotate(90deg);
-                }
-            }
-        }
+      }
     }
-    #bg{
-        width:100%;
-        height:100%;
-        background: rgba(0,0,0,.65);
+    .btn {
+      width: vw-calc(76);
+      height: vw-calc(76);
+      border-radius: 50%;
+      border: vw-calc(3) solid #fff;
+      position: absolute;
+      top: 50%;
+      transform: translate3d(0, -50%, 0);
+      background: #000;
+      opacity: 1;
+      visibility: visible;
+      &.hide {
+        opacity: 0.4;
+        visibility: visible;
+      }
+      &:before {
+        content: '';
+        width: vw-calc(30);
+        height: vw-calc(20);
+        background: url('../ex303HKI/images/arrow_stroke.svg') no-repeat;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      }
+      &#leftBtn {
+        right: calc(100% + #{vw-calc(37)});
+        &:before {
+          transform: translate3d(-50%, -50%, 0) rotate(-90deg);
+        }
+      }
+      &#rightBtn {
+        left: calc(100% + #{vw-calc(37)});
+        &:before {
+          transform: translate3d(-50%, -50%, 0) rotate(90deg);
+        }
+      }
     }
+  }
+  #bg {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+  }
 }
 // .zone1_street{
 //     transform: translate3d(-15.4%,-44%,0);
@@ -258,1125 +255,1154 @@ span{
 //     transform: translate3d(-86.45%,-36%,0);
 // }
 
-.en#main{
-    #popupTutor #content #title p{
-        white-space: normal;
+.en#main {
+  #popupTutor #content #title p {
+    white-space: normal;
+  }
+  #coast #locationsWrap #locations {
+    font-size: vw-calc(16);
+  }
+  #coast #contentWrap .item #markerWrap #location {
+    padding-top: 0;
+  }
+  #coast #contentWrap .item {
+    &:nth-child(4) {
+      #card {
+        height: vw-calc(620);
+      }
     }
-    #coast #locationsWrap #locations{
-        font-size: vw-calc(16);
-    }
-    #coast #contentWrap .item #markerWrap #location{
-        padding-top:0;
-    }
-    #coast #contentWrap .item{
-        &:nth-child(4){
-            #card{
-                height:vw-calc(620);
-            }
-        }
-    }
-    #yearOfCoastline.zoomed p {
-        transform: translate3d(65%, 0, 0);
-    }
-    #coast #contentWrap .item #card #btnOuterWrap .btnWrap > div span{
-        width: vw-calc(130);
-        font-size: vw-calc(12);
-        line-height: vw-calc(14);
-    }
+  }
+  #yearOfCoastline.zoomed p {
+    transform: translate3d(65%, 0, 0);
+  }
+  #coast #contentWrap .item #card #btnOuterWrap .btnWrap > div span {
+    width: vw-calc(130);
+    font-size: vw-calc(12);
+    line-height: vw-calc(14);
+  }
 }
 
-#main{
-    width:100%;
-    height:100%;
-    // background:#103042;
-    font-family: 'Helvetica';
-    #coast{
-        width:100%;
-        height:100%;
-        position: absolute;
-        top: 0;
-        z-index: 1;
-        opacity:1;
-        visibility: visible;
-        transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
-        &.hide{
+#main {
+  width: 100%;
+  height: 100%;
+  // background:#103042;
+  font-family: 'Helvetica';
+  #coast {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.6s cubic-bezier(0.87, 0, 0.13, 1);
+    &.hide {
+      opacity: 0;
+      visibility: hidden;
+      // transition-delay: 0s;
+      // transition-duration: .3s;
+      #locationsWrap {
+        #locations {
+          div {
             opacity: 0;
             visibility: hidden;
-            // transition-delay: 0s;
-            // transition-duration: .3s;
-            #locationsWrap{
-                #locations{
-                    div{
-                        opacity: 0;
-                        visibility: hidden;
-                        transition-delay: 0s;
-                    }
-                }
-            }
-            #contentWrap{
-                .item{
-                    opacity: 0;
-                    visibility: hidden;
-                    transition-delay: 0s;
-                }
-            }
+            transition-delay: 0s;
+          }
         }
-        #locationsWrap{
-            width:100%;
-            position: absolute;
-            top:0;
-            left:0;
-            z-index: 1;
-            #locations{
-                width:100%;
-                // height:100%;
-                font-size: vw-calc(22);
-                position: relative;
-                div{
-                    width:vw-calc(183);
-                    height:vw-calc(48);
-                    padding-bottom:vw-calc(2);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    background:#243838cc;
-                    border-radius: vw-calc(24);
-                    box-shadow: 0 vw-calc(3 6) rgba(0,0,0,.4);
-                    color:#fff;
-                    position: absolute;
-                    opacity: 1;
-                    visibility: visible;
-                    transition: opacity .6s cubic-bezier(0.87, 0, 0.13, 1),  visibility .6s cubic-bezier(0.87, 0, 0.13, 1);
-                    @for $i from 1 through 8 {
-                        &:nth-child(#{$i}) {
-                            transition-delay: #{$i*.1}s;
-                        }
-                    }
-                    &:nth-child(1){
-                        top:vw-calc(225);
-                        left:vw-calc(842);
-                    }
-                    &:nth-child(2){
-                        top:vw-calc(436);
-                        left:vw-calc(1188);
-                    }
-                }
-            }
+      }
+      #contentWrap {
+        .item {
+          opacity: 0;
+          visibility: hidden;
+          transition-delay: 0s;
         }
-        #contentWrap{
-            width:100%;
-            height:100%;
-            position: absolute;
-            top:0;
-            left:0;
-            z-index: 5;
-            #bg{
-                width:100%;
-                height:100%;
-                background:#042220b0;
-                display: block;
-                opacity: 0;
-                visibility: hidden;
-                transition: all .3s cubic-bezier(0.87, 0, 0.13, 1);
-            }
-            &.showCard{
-                #bg{
-                    opacity: 1;
-                    visibility: visible;
-                }
-                .item{
-                   #markerWrap{
-                        #marker{
-                            transform: translate3d(-50%,-100%,0) scale(0);
-                        }
-                    }
-                }
-            }
-            .item{
-                width:100%;
-                position: relative;
-                z-index: 1;
-                opacity: 1;
-                visibility: visible;
-                transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
-                @for $i from 1 through 3 {
-                    &:nth-child(#{$i}) {
-                        transition-delay: #{$i*.1}s;
-                    }
-                }
-                &.show{
-                    #markerWrap{
-                        #location{
-                            transform: translate3d(-50%,-124%,0) scale(1);
-                        }
-                    }
-                    #card{
-                        opacity: 1;
-                        visibility: visible;
-                        transform: translate3d(0,-50%,0) scale(1);
-                    }
-                }
-                #markerWrap{
-                    width:0;
-                    height:0;
-                    position: absolute;
-                    #marker{
-                        width:vw-calc(61);
-                        height:vw-calc(69);
-                        background: url('../ex303HKI/images/marker.svg') center no-repeat;
-                        transform: translate3d(-50%,-100%,0) scale(1);
-                        transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-                        &:before{
-                            animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-                        }
-                        &:after{
-                            animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite .4s;
-                        }
-                        &:before, &:after{
-                            content:'';
-                            width:vw-calc(61);
-                            height:vw-calc(61);
-                            border-radius: vw-calc(100);
-                            border:vw-calc(2) solid #fa7f02;
-                            position: absolute;
-                            top:40%;
-                            left:50%;
-                            opacity: 1;
-                            transform: translate3d(-50%,-50%,0) scale(0);
-                        }
-                    }
-                    #location{
-                        width:vw-calc(155);
-                        height:vw-calc(155);
-                        font-size:vw-calc(18);
-                        line-height: vw-calc(22);
-                        font-weight: bold;
-                        border-radius: 50%;
-                        padding:vw-calc(5 10 0);
-                        background:#fff;
-                        box-shadow: vw-calc(6 6 6) rgba(0,0,0,.2);
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        text-align: center;
-                        transform: translate3d(-50%,-124%,0) scale(0);
-                        transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-                    }
-                }
-                #card{
-                    width:vw-calc(511);
-                    height:vw-calc(698 - 59 - 87 + 20);
-                    background: url('../ex303HKI/images/card_bg.svg') top / 99.95% repeat-y;
-                    position: absolute;
-                    top:45vh;
-                    left:calc(50% + #{vw-calc(342)});
-                    padding:vw-calc(30 50 87);
-                    color:#074A45;
-                    display: flex;
-                    opacity: 0;
-                    visibility: hidden;
-                    transform: translate3d(0,-50%,0) scale(.85);
-                    transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
-                    &:before, &:after{
-                        content:'';
-                        width:100%;
-                        position: absolute;
-                        left:0;
-                        background: url('../ex303HKI/images/card.svg') top / 100% no-repeat;
-                    }
-                    &:before{
-                        height:vw-calc(59);
-                        bottom:100%;
-                    }
-                    &:after{
-                        height:vw-calc(87);
-                        top:100%;
-                        background-position: bottom;
-                    }
-                    #closeBtn{
-                        width:vw-calc(32);
-                        height:vw-calc(32);
-                        position: absolute;
-                        top:vw-calc(-20);
-                        right:vw-calc(63);
-                        span{
-                            width:100%;
-                            height:vw-calc(2);
-                            background:#074A45;
-                            display: block;
-                            position: absolute;
-                            top:50%;
-                            left:50%;
-                            &:nth-child(1){
-                                transform: translate3d(-50%,-50%,0) rotate(45deg);
-                            }
-                            &:nth-child(2){
-                                transform: translate3d(-50%,-50%,0) rotate(-45deg);
-                            }
-                        }
-                    }
-                    #wrap{
-                        width:100%;
-                        position: relative;
-                        z-index:2;
-                        #title{
-                            display: flex;
-                            justify-content: space-between;
-                            font-size:vw-calc(22);
-                            margin-bottom:vw-calc(24);
-                        }
-                        #imgWrap{
-                            width: 100%;
-                            position: relative;
-                            &:before{
-                                content:'';
-                                padding-top:62.65%;
-                                display: block;
-                            }
-                            img{
-                                width: 100%;
-                                height:100%;
-                                object-fit: cover;
-                                object-position: center;
-                                position: absolute;
-                                top:0;
-                                left:0;
-                            }
-                        }
-                        #info{
-                            height:vw-calc(180);
-                            padding:vw-calc(25 0 0 10);
-                            &>li{
-                                display: flex;
-                                margin-top:vw-calc(32);
-                                &:first-child{
-                                    margin:0;
-                                    span{
-                                        &:nth-child(2){
-                                            height:auto;
-                                        }
-                                    }
-                                }
-                                span{
-                                    font-size: vw-calc(14);
-                                    line-height: vw-calc(18);
-                                    padding-right:vw-calc(10);
-                                    &:first-child{
-                                        flex:none;
-                                        width:vw-calc(77);
-                                        font-size: vw-calc(15);
-                                    }
-                                    &:nth-child(2){
-                                        height:vw-calc(80);
-                                        overflow-x: hidden;
-                                        overflow-y: scroll;
-                                        &::-webkit-scrollbar {
-                                            width: vw-calc(3);
-                                        }
-                                        &::-webkit-scrollbar-thumb {
-                                            background: #074A45; 
-                                        }
-                                    }
-                                    ul{
-                                        margin-top:vw-calc(10);
-                                        li{
-                                            list-style: disc;
-                                            margin-top:vw-calc(3);
-                                            margin-left:vw-calc(15);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    #btnOuterWrap{
-                        width:100%;
-                        display: flex;
-                        justify-content: space-between;
-                        position: absolute;
-                        top: 94%;
-                        left:0;
-                        padding:vw-calc(30 50 87);
-                        z-index: 2;
-                        .btnWrap{
-                            &>div{
-                                height:100%;
-                                display: flex;
-                                // align-items: center;
-                                &:active{
-                                    #icon{
-                                        background:$lightblue;
-                                        transform: translate3d(0,0,0) scale(.9);
-                                        g{
-                                            stroke:$white;
-                                        }
-                                    }
-                                }
-                                &>div{
-                                    align-items: center;
-                                }
-                                #icon{
-                                    margin-top: vw-calc(-16);
-                                    width:vw-calc(42 + 2);
-                                    height:vw-calc(42 + 2);
-                                    border-radius: 50%;
-                                    border: vw-calc(2) solid $lightblue;
-                                    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-                                    g{
-                                        stroke:$lightblue;
-                                        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-                                    }
-                                }
-                                span{
-                                    width:vw-calc(121);
-                                    margin:vw-calc(0 12);
-                                    font-size:vw-calc(14);
-                                    line-height: vw-calc(16);
-                                }
-                            }
-                            #nextBtn{
-                                flex-direction: row-reverse;
-                                span{
-                                    text-align: right;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+      }
     }
-    #street{
+    #locationsWrap {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      #locations {
+        width: 100%;
+        // height:100%;
+        font-size: vw-calc(22);
+        position: relative;
+        div {
+          width: vw-calc(183);
+          height: vw-calc(48);
+          padding-bottom: vw-calc(2);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #243838cc;
+          border-radius: vw-calc(24);
+          box-shadow: 0 vw-calc(3 6) rgba(0, 0, 0, 0.4);
+          color: #fff;
+          position: absolute;
+          opacity: 1;
+          visibility: visible;
+          transition: opacity 0.6s cubic-bezier(0.87, 0, 0.13, 1), visibility 0.6s cubic-bezier(0.87, 0, 0.13, 1);
+          @for $i from 1 through 8 {
+            &:nth-child(#{$i}) {
+              transition-delay: #{$i * 0.1}s;
+            }
+          }
+          &:nth-child(1) {
+            top: vw-calc(225);
+            left: vw-calc(842);
+          }
+          &:nth-child(2) {
+            top: vw-calc(436);
+            left: vw-calc(1188);
+          }
+        }
+      }
+    }
+    #contentWrap {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      #bg {
+        width: 100%;
+        height: 100%;
+        background: #042220b0;
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+      }
+      &.showCard {
+        #bg {
+          opacity: 1;
+          visibility: visible;
+        }
+        .item {
+          #markerWrap {
+            #marker {
+              transform: translate3d(-50%, -100%, 0) scale(0);
+            }
+          }
+        }
+      }
+      .item {
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.6s cubic-bezier(0.87, 0, 0.13, 1);
+        @for $i from 1 through 3 {
+          &:nth-child(#{$i}) {
+            transition-delay: #{$i * 0.1}s;
+          }
+        }
+        &.show {
+          #markerWrap {
+            #location {
+              transform: translate3d(-50%, -124%, 0) scale(1);
+            }
+          }
+          #card {
+            opacity: 1;
+            visibility: visible;
+            transform: translate3d(0, -50%, 0) scale(1);
+          }
+        }
+        #markerWrap {
+          width: 0;
+          height: 0;
+          position: absolute;
+          #marker {
+            width: vw-calc(61);
+            height: vw-calc(69);
+            background: url('../ex303HKI/images/marker.svg') center no-repeat;
+            transform: translate3d(-50%, -100%, 0) scale(1);
+            transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+            &:before {
+              animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+            }
+            &:after {
+              animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite 0.4s;
+            }
+            &:before,
+            &:after {
+              content: '';
+              width: vw-calc(61);
+              height: vw-calc(61);
+              border-radius: vw-calc(100);
+              border: vw-calc(2) solid #fa7f02;
+              position: absolute;
+              top: 40%;
+              left: 50%;
+              opacity: 1;
+              transform: translate3d(-50%, -50%, 0) scale(0);
+            }
+          }
+          #location {
+            width: vw-calc(155);
+            height: vw-calc(155);
+            font-size: vw-calc(18);
+            line-height: vw-calc(22);
+            font-weight: bold;
+            border-radius: 50%;
+            padding: vw-calc(5 10 0);
+            background: #fff;
+            box-shadow: vw-calc(6 6 6) rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transform: translate3d(-50%, -124%, 0) scale(0);
+            transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+          }
+        }
+        #card {
+          width: vw-calc(511);
+          height: vw-calc(698 - 59 - 87 + 20 + 49);
+          background: url('../ex303HKI/images/card_bg.svg') top / 99.95% repeat-y;
+          position: absolute;
+          top: 45vh;
+          left: calc(50% + #{vw-calc(342)});
+          padding: vw-calc(30 50 87);
+          color: #074a45;
+          display: flex;
+          opacity: 0;
+          visibility: hidden;
+          transform: translate3d(0, -50%, 0) scale(0.85);
+          transition: all 0.6s cubic-bezier(0.87, 0, 0.13, 1);
+          &:before,
+          &:after {
+            content: '';
+            width: 100%;
+            position: absolute;
+            left: 0;
+            background: url('../ex303HKI/images/card.svg') top / 100% no-repeat;
+          }
+          &:before {
+            height: vw-calc(59);
+            bottom: 100%;
+          }
+          &:after {
+            height: vw-calc(87);
+            top: 100%;
+            background-position: bottom;
+          }
+          #closeBtn {
+            width: vw-calc(32);
+            height: vw-calc(32);
+            position: absolute;
+            top: vw-calc(-25);
+            right: vw-calc(63);
+            span {
+              width: 100%;
+              height: vw-calc(2);
+              background: #074a45;
+              display: block;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              &:nth-child(1) {
+                transform: translate3d(-50%, -50%, 0) rotate(45deg);
+              }
+              &:nth-child(2) {
+                transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+              }
+            }
+          }
+          #wrap {
+            width: 100%;
+            position: relative;
+            z-index: 2;
+            top: vw-calc(-25);
+            #title {
+              display: flex;
+              justify-content: space-between;
+              font-size: vw-calc(22);
+              font-weight: 800;
+              margin-bottom: vw-calc(24);
+            }
+            #imgWrap {
+              width: 85%;
+              position: relative;
+              &:before {
+                content: '';
+                padding-top: 62.65%;
+                display: block;
+              }
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+              }
+            }
+            #info {
+              height: vw-calc(250);
+              padding: vw-calc(25 0 0 10);
+              overflow-y: scroll;
+              &::-webkit-scrollbar {
+                width: vw-calc(3);
+              }
+              &::-webkit-scrollbar-thumb {
+                background: #074a45;
+              }
+              & > li {
+                display: flex;
+                margin-top: vw-calc(32);
+                &:first-child {
+                  margin: 0;
+                  span {
+                    &:nth-child(2) {
+                      height: auto;
+                    }
+                  }
+                }
+                span {
+                  font-size: vw-calc(22);
+                  line-height: vw-calc(24);
+                  padding-right: vw-calc(10);
+                  &:first-child {
+                    flex: none;
+                    width: vw-calc(77);
+                    // font-size: vw-calc(15);
+                  }
+                  &:nth-child(2) {
+                    // height: vw-calc(200);
+                    height: max-content;
+                    overflow-x: hidden;
+                    overflow-y: hidden;
+                    // overflow-y: scroll;
+                    // &::-webkit-scrollbar {
+                    //   width: vw-calc(3);
+                    // }
+                    // &::-webkit-scrollbar-thumb {
+                    //   background: #074a45;
+                    // }
+                  }
+                  ul {
+                    margin-top: vw-calc(9);
+                    li {
+                      list-style: disc;
+                      margin-top: vw-calc(2.7);
+                      margin-left: vw-calc(13.5);
+                    }
+                  }
+                }
+              }
+            }
+          }
+          #btnOuterWrap {
+            width: 100%;
+            height: vw-calc(165);
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 94%;
+            left: 0;
+            padding: vw-calc(30 50 87);
+            align-items: center;
+            z-index: 2;
+            .btnWrap {
+              & > div {
+                height: 100%;
+                display: flex;
+                // align-items: center;
+                &:active {
+                  #icon {
+                    background: $lightblue;
+                    transform: translate3d(0, 0, 0) scale(0.9);
+                    g {
+                      stroke: $white;
+                    }
+                  }
+                }
+                & > div {
+                  align-items: center;
+                  height: 100%;
+                  position: relative;
+                  top: vw-calc(7);
+                }
+                #icon {
+                  margin-top: vw-calc(-8);
+                  width: vw-calc(42 + 2);
+                  height: vw-calc(42 + 2);
+                  border-radius: 50%;
+                  border: vw-calc(2) solid $lightblue;
+                  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+                  g {
+                    stroke: $lightblue;
+                    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+                  }
+                }
+                span {
+                  align-self: center;
+                  width: vw-calc(121);
+                  margin: vw-calc(0 12);
+                  font-size: vw-calc(14);
+                  line-height: vw-calc(16);
+                }
+              }
+              #nextBtn {
+                flex-direction: row-reverse;
+                span {
+                  text-align: right;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #street {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.6s cubic-bezier(0.87, 0, 0.13, 1);
+    &:after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: block;
+      opacity: 0;
+      visibility: hidden;
+      position: relative;
+      z-index: 4;
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    &.hide {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      touch-action: none;
+    }
+    &.showVideo {
+      &:after {
+        opacity: 1;
+        visibility: visible;
+      }
+      .zoneBtn,
+      #mapIndicator {
+        z-index: 3;
+      }
+    }
+    & > div {
+      height: 100%;
+      transform-origin: left top;
+      transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+      & > div {
+        transform-origin: left top;
+        transform: translate3d(0, 0, 0) scale(0.44346);
+      }
+    }
+    .zoneBtn {
+      width: vw-calc(67);
+      height: vw-calc(67);
+      background: url('../ex303HKI/images/prevnext.svg');
+      position: absolute;
+      left: 50%;
+      z-index: 6;
+      opacity: 1;
+      visibility: visible;
+      transform-origin: center;
+      transform: translate3d(-50%, 0, 0) rotate(-90deg);
+      transition: all 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+      &:before {
+        animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+      }
+      &:after {
+        animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite 0.4s;
+      }
+      &:before,
+      &:after {
+        content: '';
+        width: vw-calc(61);
+        height: vw-calc(61);
+        border-radius: vw-calc(100);
+        border: vw-calc(2) solid #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: 1;
+        transform: translate3d(-50%, -50%, 0) scale(0);
+      }
+      &.hide {
+        opacity: 0;
+        visibility: hidden;
+      }
+      &#prevZoneBtn {
+        bottom: vw-calc(204);
+        transform: translate3d(-50%, 0, 0) rotate(90deg);
+      }
+      &#nextZoneBtn {
+        top: vw-calc(50);
+      }
+    }
+    #mapIndicator {
+      height: auto;
+      position: fixed;
+      top: vw-calc(50);
+      left: vw-calc(74);
+      z-index: 6;
+      opacity: 1;
+      visibility: visible;
+      transition: all 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+      &.hide {
+        opacity: 0;
+        visibility: hidden;
+      }
+      & > span {
+        margin-bottom: vw-calc(20);
+        font-size: vw-calc(30);
+        font-weight: 900;
+        color: #fff;
+        text-shadow: vw-calc(0 3 6) #000;
+      }
+      ul {
+        width: vw-calc(196);
+        height: vw-calc(199);
+        display: flex;
+        flex-direction: column-reverse;
+        background: #fff url('../ex303HKI/images/minimap.svg') top center / 100% no-repeat;
+        li {
+          width: 100%;
+          height: 33.333%;
+          border-top: vw-calc(2) dashed $lightblue;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: flex-end;
+          position: relative;
+          padding-right: vw-calc(10);
+          &:after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: $black;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.5;
+            visibility: visible;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+          }
+          &:last-child {
+            border: 0;
+          }
+          &.active {
+            border: vw-calc(3) solid $drakgreenblue;
+            &:after {
+              opacity: 0;
+              visibility: hidden;
+            }
+            span {
+              background: #fff;
+              color: #074a45;
+            }
+          }
+          span {
+            width: vw-calc(32);
+            height: vw-calc(32);
+            border-radius: 50%;
+            background: #074a45;
+            color: #97ffe2;
+            font-size: vw-calc(20);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+    #locationsWrap {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      #locations {
+        width: 100%;
+        // height:100%;
+        font-size: vw-calc(22);
+        position: relative;
+        & > div {
+          opacity: 1;
+          visibility: visible;
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+          &.hide {
+            opacity: 0;
+            visibility: hidden;
+          }
+          &#zone1 {
+            .name {
+              &:nth-child(1) {
+                top: vw-calc(1562);
+                left: vw-calc(1933);
+              }
+            }
+          }
+          &#zone2 {
+            .name {
+              &:nth-child(1) {
+                top: vw-calc(956);
+                left: vw-calc(2048);
+              }
+            }
+          }
+          &#zone3 {
+            .name {
+              &:nth-child(1) {
+                top: vw-calc(577);
+                left: vw-calc(2012);
+              }
+            }
+          }
+          .name {
+            width: vw-calc(183);
+            height: vw-calc(48);
+            padding-bottom: vw-calc(2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #243838cc;
+            border-radius: vw-calc(24);
+            box-shadow: 0 vw-calc(3 6) rgba(0, 0, 0, 0.4);
+            color: #fff;
+            position: absolute;
+            opacity: 1;
+            visibility: visible;
+            // transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
+            // @for $i from 1 through 8 {
+            //     &:nth-child(#{$i}) {
+            //         transition-delay: #{$i*.1}s;
+            //     }
+            // }
+            // &:nth-child(1){
+            //     top:vw-calc(540);
+            //     left:vw-calc(703);
+            // }
+            // &:nth-child(7){
+            //     top:vw-calc(697);
+            //     right:vw-calc(892);
+            // }
+          }
+        }
+      }
+    }
+    #contentWrap {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      .item {
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        &.hide {
+          opacity: 0;
+          visibility: hidden;
+        }
+        &.inactive {
+          #markerWrap {
+            #marker {
+              background: url('../ex303HKI/images/marker_w.svg') center center no-repeat;
+            }
+          }
+        }
+        #markerWrap {
+          width: 0;
+          height: 0;
+          position: absolute;
+          z-index: 2;
+          #marker {
+            width: vw-calc(61);
+            height: vw-calc(69);
+            background: url('../ex303HKI/images/marker.svg') center center no-repeat;
+            transform: translate3d(-50%, -100%, 0) scale(1);
+            transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+            &:before {
+              animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+            }
+            &:after {
+              animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite 0.4s;
+            }
+            &:before,
+            &:after {
+              content: '';
+              width: vw-calc(61);
+              height: vw-calc(61);
+              border-radius: vw-calc(100);
+              border: vw-calc(2) solid #fa7f02;
+              position: absolute;
+              top: 40%;
+              left: 50%;
+              opacity: 1;
+              transform: translate3d(-50%, -50%, 0) scale(0);
+            }
+            #location {
+              position: absolute;
+              font-size: vw-calc(20);
+              line-height: vw-calc(21);
+              font-weight: bold;
+              color: #fff;
+              white-space: nowrap;
+              text-shadow: vw-calc(0 3 6) #000;
+              &.top {
+                bottom: 110%;
+                left: 50%;
+                transform: translate3d(-50%, 0, 0);
+              }
+              &.left {
+                right: 100%;
+                top: 45%;
+                transform: translate3d(0, -50%, 0);
+              }
+              &.right {
+                left: 100%;
+                top: 45%;
+                transform: translate3d(0, -50%, 0);
+              }
+            }
+          }
+        }
+        #roadWrap {
+          width: 0;
+          height: 0;
+          position: absolute;
+          z-index: 1;
+          pointer-events: none;
+        }
+      }
+    }
+    #videoWrap {
+      width: vw-calc(912);
+      height: auto;
+      position: absolute;
+      top: 45vh;
+      right: vw-calc(68);
+      z-index: 5;
+      transform: translate3d(0, -50%, 0);
+      animation: fadeIn 0.6s cubic-bezier(0.87, 0, 0.13, 1);
+      &:before {
+        content: '';
+        display: block;
+        padding-top: 56.25%;
+      }
+      & > div,
+      video {
         width: 100%;
         height: 100%;
         position: absolute;
-        top:0;
-        z-index: 1;
-        opacity:1;
-        visibility: visible;
-        transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
-        &:after{
-            content:'';
-            width:100%;
-            height:100%;
-            background:rgba(0,0,0,.5);
-            display: block;
-            opacity: 0;
-            visibility: hidden;
-            position: relative;
-            z-index: 4;
-            transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
+        top: 0;
+        left: 0;
+        transform: none;
+        outline: none;
+        .vjs-big-play-button {
+          width: vw-calc(155);
+          height: vw-calc(155);
+          background: url('../ex303HKI/images/playBtn.svg') no-repeat;
+          transform: translate3d(-50%, -50%, 0);
+          border: 0;
+          margin: 0;
+          * {
+            display: none;
+          }
         }
-        &.hide{
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-            touch-action: none;
+        .vjs-control-bar {
+          height: vw-calc(6);
+          opacity: 1 !important;
+          background: none;
         }
-        &.showVideo{
-            &:after{
-                opacity: 1;
-                visibility: visible;
-            }
-            .zoneBtn,#mapIndicator{
-                z-index: 3;
-            }
+        .vjs-progress-control .vjs-progress-holder {
+          height: 100%;
+          margin: 0;
         }
-        &>div{
-            height: 100%;
-            transform-origin: left top;
-            transition: transform .8s cubic-bezier(0.65, 0, 0.35, 1);
-            &>div{
-                transform-origin: left top;
-                transform: translate3d(0, 0, 0) scale(0.44346);
-            }
+        .vjs-play-control,
+        .vjs-picture-in-picture-control,
+        .vjs-remaining-time {
+          display: none;
         }
-        .zoneBtn{
-            width:vw-calc(67);
-            height:vw-calc(67);
-            background:url('../ex303HKI/images/prevnext.svg');
-            position: absolute;
-            left:50%;
-            z-index: 6;
-            opacity: 1;
-            visibility: visible;
-            transform-origin: center;
-            transform: translate3d(-50%,0,0) rotate(-90deg);
-            transition: all .3s cubic-bezier(0.87, 0, 0.13, 1);
-            &:before{
-                animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-            }
-            &:after{
-                animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite .4s;
-            }
-            &:before, &:after{
-                content:'';
-                width:vw-calc(61);
-                height:vw-calc(61);
-                border-radius: vw-calc(100);
-                border:vw-calc(2) solid #fff;
-                position: absolute;
-                top:50%;
-                left:50%;
-                opacity: 1;
-                transform: translate3d(-50%,-50%,0) scale(0);
-            }
-            &.hide{
-                opacity: 0;
-                visibility: hidden;
-            }
-            &#prevZoneBtn{
-                bottom:vw-calc(204);
-                transform: translate3d(-50%,0,0) rotate(90deg);
-            }
-            &#nextZoneBtn{
-                top:vw-calc(50);
-            }
+        .vjs-load-progress {
+          background: #074a45;
         }
-        #mapIndicator{
-            height:auto;
-            position: fixed;
-            top:vw-calc(50);
-            left:vw-calc(74);
-            z-index: 6;
-            opacity: 1;
-            visibility: visible;
-            transition: all .3s cubic-bezier(0.87, 0, 0.13, 1);
-            &.hide{
-                opacity: 0;
-                visibility: hidden;
-            }
-            &>span{
-                margin-bottom:vw-calc(20);
-                font-size:vw-calc(30);
-                font-weight: 900;
-                color:#fff;
-                text-shadow: vw-calc(0 3 6) #000;
-            }
-            ul{
-                width:vw-calc(196);
-                height:vw-calc(199);
-                display: flex;
-                flex-direction: column-reverse;
-                background:#fff url('../ex303HKI/images/minimap.svg') top center / 100% no-repeat;
-                li{
-                    width:100%;
-                    height:33.333%;
-                    border-top:vw-calc(2) dashed $lightblue;
-                    display: flex;
-                    justify-content: center;
-                    flex-direction: column;
-                    align-items: flex-end;
-                    position: relative;
-                    padding-right:vw-calc(10);
-                    &:after{
-                        content:'';
-                        width:100%;
-                        height:100%;
-                        background:$black;
-                        position: absolute;
-                        top:0;
-                        left:0;
-                        opacity: .5;
-                        visibility: visible;
-                        transition: all .3s cubic-bezier(0.16, 1, 0.3, 1);
-                    }
-                    &:last-child{
-                        border:0;
-                    }
-                    &.active{
-                        border:vw-calc(3) solid $drakgreenblue;
-                        &:after{
-                            opacity: 0;
-                            visibility: hidden;
-                        }
-                        span{
-                            background:#fff;
-                            color:#074A45;
-                        }
-                    }
-                    span{
-                        width:vw-calc(32);
-                        height:vw-calc(32);
-                        border-radius: 50%;
-                        background:#074A45;
-                        color:#97FFE2;
-                        font-size:vw-calc(20);
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                }
-            }
+        .vjs-play-progress {
+          background: #70ccb8;
+          &:before {
+            display: none;
+          }
         }
-        #locationsWrap{
-            width:100%;
-            position: absolute;
-            top:0;
-            left:0;
-            z-index: 1;
-            #locations{
-                width:100%;
-                // height:100%;
-                font-size: vw-calc(22);
-                position: relative;
-                &>div{
-                    opacity: 1;
-                    visibility: visible;
-                    transition: all .3s cubic-bezier(0.16, 1, 0.3, 1);
-                    &.hide{
-                        opacity: 0;
-                        visibility: hidden;
-                    }
-                    &#zone1{
-                        .name{
-                            &:nth-child(1){
-                                top:vw-calc(1562);
-                                left:vw-calc(1933);
-                            }
-                        }
-                    }
-                    &#zone2{
-                        .name{
-                            &:nth-child(1){
-                                top:vw-calc(956);
-                                left:vw-calc(2048);
-                            }
-                        }
-                    }
-                    &#zone3{
-                        .name{
-                            &:nth-child(1){
-                                top:vw-calc(577);
-                                left:vw-calc(2012);
-                            }
-                        }
-                    }
-                    .name{
-                        width:vw-calc(183);
-                        height:vw-calc(48);
-                        padding-bottom:vw-calc(2);
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        background:#243838cc;
-                        border-radius: vw-calc(24);
-                        box-shadow: 0 vw-calc(3 6) rgba(0,0,0,.4);
-                        color:#fff;
-                        position: absolute;
-                        opacity: 1;
-                        visibility: visible;
-                        // transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
-                        // @for $i from 1 through 8 {
-                        //     &:nth-child(#{$i}) {
-                        //         transition-delay: #{$i*.1}s;
-                        //     }
-                        // }
-                        // &:nth-child(1){
-                        //     top:vw-calc(540);
-                        //     left:vw-calc(703);
-                        // }
-                        // &:nth-child(7){
-                        //     top:vw-calc(697);
-                        //     right:vw-calc(892);
-                        // }
-                    }
-                }
-            }
-        }
-        #contentWrap{
-            width:100%;
-            height:100%;
-            position: absolute;
-            top:0;
-            left:0;
-            z-index: 5;
-            .item{
-                opacity: 1;
-                visibility: visible;
-                transition: all .3s cubic-bezier(0.16, 1, 0.3, 1);
-                &.hide{
-                    opacity: 0;
-                    visibility: hidden;
-                }
-                &.inactive{
-                    #markerWrap{
-                        #marker{
-                            background: url('../ex303HKI/images/marker_w.svg') center center no-repeat;
-                        }
-                    }
-                }
-                #markerWrap{
-                    width:0;
-                    height:0;
-                    position: absolute;
-                    z-index: 2;
-                    #marker{
-                        width:vw-calc(61);
-                        height:vw-calc(69);
-                        background: url('../ex303HKI/images/marker.svg') center center no-repeat;
-                        transform: translate3d(-50%,-100%,0) scale(1);
-                        transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-                        &:before{
-                            animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-                        }
-                        &:after{
-                            animation: radar2 3s cubic-bezier(0.16, 1, 0.3, 1) infinite .4s;
-                        }
-                        &:before, &:after{
-                            content:'';
-                            width:vw-calc(61);
-                            height:vw-calc(61);
-                            border-radius: vw-calc(100);
-                            border:vw-calc(2) solid #fa7f02;
-                            position: absolute;
-                            top:40%;
-                            left:50%;
-                            opacity: 1;
-                            transform: translate3d(-50%,-50%,0) scale(0);
-                        }
-                        #location{
-                            position: absolute;
-                            font-size:vw-calc(20);
-                            line-height: vw-calc(21);
-                            font-weight: bold;
-                            color:#fff;
-                            white-space: nowrap;
-                            text-shadow: vw-calc(0 3 6) #000;
-                            &.top{
-                                bottom:110%;
-                                left:50%;
-                                transform: translate3d(-50%,0,0);
-                            }
-                            &.left{
-                                right:100%;
-                                top:45%;
-                                transform: translate3d(0,-50%,0);
-                            }
-                            &.right{
-                                left:100%;
-                                top:45%;
-                                transform: translate3d(0,-50%,0);
-                            }
-                        }
-                    }
-                }
-                #roadWrap{
-                    width:0;
-                    height:0;
-                    position: absolute;
-                    z-index: 1;
-                    pointer-events: none;
-                }
-            }
-        }
-        #videoWrap{
-            width:vw-calc(912);
-            height:auto;
-            position: absolute;
-            top:45vh;
-            right:vw-calc(68);
-            z-index: 5;
-            transform: translate3d(0,-50%,0);
-            animation: fadeIn .6s cubic-bezier(0.87, 0, 0.13, 1);
-            &:before{
-                content:'';
-                display: block;
-                padding-top:56.25%;
-            }
-            &>div, video{
-                width:100%;
-                height:100%;
-                position: absolute;
-                top:0;
-                left:0;
-                transform: none;
-                outline: none;
-                .vjs-big-play-button{
-                    width:vw-calc(155);
-                    height:vw-calc(155);
-                    background:url('../ex303HKI/images/playBtn.svg') no-repeat;
-                    transform: translate3d(-50%,-50%,0);
-                    border:0;
-                    margin:0;
-                    *{
-                        display: none;
-                    }
-                }
-                .vjs-control-bar{
-                    height:vw-calc(6);
-                    opacity: 1 !important;
-                    background:none;
-                }
-                .vjs-progress-control .vjs-progress-holder{
-                    height:100%;
-                    margin:0;
-                }
-                .vjs-play-control, .vjs-picture-in-picture-control, .vjs-remaining-time{
-                    display: none;
-                }
-                .vjs-load-progress{
-                    background:#074A45;
-                }
-                .vjs-play-progress{
-                    background:#70CCB8;
-                    &:before{
-                        display: none;
-                    }
-                }
-            }
-            #closeBtn{
-                width:vw-calc(50);
-                height:vw-calc(50);
-                background:url('../ex303HKI/images/closeBtn.svg') no-repeat;
-                position: absolute;
-                top:0;
-                right:0;
-                left:auto;
-                z-index: 1;
-                transform: translate3d(50%,-50%,0);
-            }
-        }
-    }
-    
-    #currentYear{
+      }
+      #closeBtn {
+        width: vw-calc(50);
+        height: vw-calc(50);
+        background: url('../ex303HKI/images/closeBtn.svg') no-repeat;
         position: absolute;
-        bottom:vw-calc(37);
-        left:vw-calc(80);
+        top: 0;
+        right: 0;
+        left: auto;
         z-index: 1;
-        font-size: vw-calc(130);
-        text-shadow: 0 vw-calc(3 6) rgba(0,0,0,.2);
-        color:#074A45;
+        transform: translate3d(50%, -50%, 0);
+      }
+    }
+  }
+
+  #currentYear {
+    position: absolute;
+    bottom: vw-calc(37);
+    left: vw-calc(80);
+    z-index: 1;
+    font-size: vw-calc(130);
+    text-shadow: 0 vw-calc(3 6) rgba(0, 0, 0, 0.2);
+    color: #074a45;
+    opacity: 1;
+    visibility: visible;
+    transition: all 1s cubic-bezier(0.87, 0, 0.13, 1);
+    &.w {
+      color: #fff;
+    }
+    &.disabled {
+      transition-duration: 0.3s;
+      transition-delay: 0s;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  #yearOfCoastline {
+    width: vw-calc(290);
+    height: vw-calc(360);
+    position: absolute;
+    bottom: vw-calc(65);
+    right: vw-calc(10);
+    z-index: 1;
+    // background:url('./images/yearOfCoastline_b.svg') center no-repeat;
+    opacity: 1;
+    visibility: visible;
+    transition: all 1s cubic-bezier(0.87, 0, 0.13, 1);
+    &.w {
+      &:before {
+        background: url('../ex303HKI/images/yearOfCoastline_w.svg') center no-repeat;
+      }
+      p {
+        color: #fff;
+      }
+      span,
+      span:before,
+      span:after {
+        border-color: #fff;
+      }
+    }
+    &.disabled {
+      transition-duration: 0.3s;
+      transition-delay: 0s;
+      opacity: 0;
+      visibility: hidden;
+    }
+    &:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background: url('../ex303HKI/images/yearOfCoastline_b.svg') center no-repeat;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+    &:after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background: rgba(7, 74, 69, 0.2);
+      box-shadow: 0 0 vw-calc(200 200) rgba(7, 74, 69, 0.2);
+      transform: translate3d(10%, 0, 0) scale(0.4, 0.5);
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: vw-calc(50);
+    }
+    p {
+      white-space: nowrap;
+      position: absolute;
+      bottom: vw-calc(0);
+      right: 75%;
+      z-index: 2;
+      font-size: vw-calc(16);
+      font-weight: bold;
+      color: #000;
+      transform: translate3d(0, 0, 0);
+      transition: all 1s cubic-bezier(0.87, 0, 0.13, 1);
+    }
+    span {
+      width: vw-calc(117);
+      height: vw-calc(15 + 2);
+      border-bottom: vw-calc(2) solid #000;
+      position: absolute;
+      bottom: vw-calc(4);
+      left: vw-calc(94);
+      z-index: 2;
+      transform: translate3d(0, 0, 0) scaleX(1);
+      transition: all 1s cubic-bezier(0.87, 0, 0.13, 1);
+      &:before,
+      &:after {
+        content: '';
+        width: 0;
+        height: 100%;
+        border-left: vw-calc(2) solid #000;
+        position: absolute;
+        bottom: vw-calc(-2);
+        transform: translate3d(0, 0, 0) scaleX(1);
+        transition: all 1s cubic-bezier(0.87, 0, 0.13, 1);
+      }
+      &:before {
+        left: vw-calc(-2);
+      }
+      &:after {
+        right: vw-calc(-2);
+      }
+    }
+  }
+  #yearSelector {
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    transform: translate3d(-50%, -50%, 0);
+    transition: all 0.6s cubic-bezier(0.87, 0, 0.13, 1);
+    &.hide {
+      transition-delay: 0s;
+    }
+    #btnWrap {
+      width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translate3d(vw-calc((339 + 20) / 2), 0, 0);
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      &.active {
         opacity: 1;
         visibility: visible;
-        transition: all 1s cubic-bezier(0.87, 0, 0.13, 1);
-        &.w{
-            color:#fff;
-        }
-        &.disabled{
-            transition-duration: .3s;
-            transition-delay: 0s;
-            opacity: 0;
-            visibility: hidden;
-        }
-    }
-    #yearOfCoastline{
-        width:vw-calc(290);
-        height:vw-calc(360);
-        position: absolute;
-        bottom:vw-calc(65);
-        right:vw-calc(10);
-        z-index: 1;
-        // background:url('./images/yearOfCoastline_b.svg') center no-repeat;
-        opacity: 1;
-        visibility: visible;
-        transition: all 1s cubic-bezier(0.87, 0, 0.13, 1);
-        &.w{
-            &:before{
-                background:url('../ex303HKI/images/yearOfCoastline_w.svg') center no-repeat;
-            }
-            p{
-                color:#fff;
-            }
-            span, span:before, span:after{
-                border-color: #fff;
-            }
-        }
-        &.disabled{
-            transition-duration: .3s;
-            transition-delay: 0s;
-            opacity: 0;
-            visibility: hidden;
-        }
-        &:before{
-            content:'';
-            width:100%;
-            height:100%;
-            background:url('../ex303HKI/images/yearOfCoastline_b.svg') center no-repeat;
-            display: block;
-            position: relative;
-            z-index: 1;
-        }
-        &:after{
-            content:'';
-            width:100%;
-            height:100%;
-            background:rgba(7,74,69,.2);
-            box-shadow: 0 0 vw-calc(200 200) rgba(7,74,69,.2);
-            transform: translate3d(10%,0,0) scale(.4, .5);
-            position: absolute;
-            top:0;
-            left:0;
-            border-radius: vw-calc(50);
-        }
-        p{
-            white-space: nowrap;
-            position: absolute;
-            bottom:vw-calc(0);
-            right:75%;
-            z-index: 2;
-            font-size: vw-calc(16);
-            font-weight: bold;
-            color:#000;
-            transform: translate3d(0,0,0);
-            transition: all 1s cubic-bezier(0.87, 0, 0.13, 1);
-        }
-        span{
-            width:vw-calc(117);
-            height:vw-calc(15 + 2);
-            border-bottom:vw-calc(2) solid #000;
-            position: absolute;
-            bottom:vw-calc(4);
-            left:vw-calc(94);
-            z-index: 2;
-            transform: translate3d(0,0,0) scaleX(1);
-            transition: all 1s cubic-bezier(0.87, 0, 0.13, 1);
-            &:before, &:after{
-                content:'';
-                width:0;
-                height: 100%;
-                border-left:vw-calc(2) solid #000;
-                position: absolute;
-                bottom:vw-calc(-2);
-                transform: translate3d(0,0,0) scaleX(1);
-                transition: all 1s cubic-bezier(0.87, 0, 0.13, 1);
-            }
-            &:before{
-                left:vw-calc(-2);
-            }
-            &:after{
-                right:vw-calc(-2);
-            }
-        }
-    }
-    #yearSelector{
-        z-index: 10;
-        position: absolute;
-        top:50%;
-        left:50%;
-        color:$white;
+      }
+      &.idx_0 {
+        transform: translate3d(vw-calc((339 + 20) / 2), 0, 0);
+      }
+      &.idx_1 {
+        transform: translate3d(vw-calc((339 + 20) + (339 + 20) / 2), 0, 0);
+      }
+      &.idx_2 {
+        transform: translate3d(vw-calc((339 + 20) + (339 + 20) + (339 + 20) / 2), 0, 0);
+      }
+      &.idx_3 {
+        transform: translate3d(vw-calc((339 + 20) + (339 + 20) + (339 + 20) + (339 + 20) / 2), 0, 0);
+      }
+      #arrow {
+        width: vw-calc(28);
+        height: vw-calc(16);
+        background: url('../ex303HKI/images/arrow.svg') center no-repeat;
+      }
+      p {
+        font-size: vw-calc(20);
+        color: #bbb;
+        white-space: nowrap;
+        margin-top: vw-calc(10);
         display: flex;
         flex-direction: column;
-        transform: translate3d(-50%,-50%,0);
-        transition: all .6s cubic-bezier(0.87, 0, 0.13, 1);
-        &.hide{
-            transition-delay: 0s;
+        span {
+          margin-left: vw-calc(20);
+          list-style: disc;
+          display: list-item;
         }
-        #btnWrap{
-            width: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: absolute;
-            top:110%;
-            left:0;
-            opacity: 0;
-            visibility: hidden;
-            transform: translate3d(vw-calc((339 + 20) / 2 ),0,0);
-            transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
-            &.active{
-                opacity: 1;
-                visibility: visible;
-            }
-            &.idx_0{
-                transform: translate3d(vw-calc((339 + 20) / 2 ),0,0);
-            }
-            &.idx_1{
-                transform: translate3d(vw-calc((339 + 20) + (339 + 20) / 2),0,0);
-            }
-            &.idx_2{
-                transform: translate3d(vw-calc((339 + 20) + (339 + 20) + (339 + 20) / 2),0,0);
-            }
-            &.idx_3{
-                transform: translate3d(vw-calc((339 + 20) + (339 + 20) + (339 + 20) + (339 + 20) / 2),0,0);
-            }
-            #arrow{
-                width:vw-calc(28);
-                height:vw-calc(16);
-                background:url('../ex303HKI/images/arrow.svg') center no-repeat;
-            }
-            p{
-                font-size: vw-calc(20);
-                color:#bbb;
-                white-space: nowrap;
-                margin-top:vw-calc(10);
-                display: flex;
-                flex-direction: column;
-                span{
-                    margin-left: vw-calc(20);
-                    list-style: disc;
-                    display: list-item;
-                }
-            }
-        }
-        ul{
-            font-family: 'Times New Roman', Times, serif;
-            font-style: italic;
-            font-weight: bold;
-            position: relative;
-            display: flex;
-            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-            // &:before,
-            // &:after{
-            //     content:'';
-            //     width:vw-calc(3);
-            //     height:vw-calc(27);
-            //     background:$white;
-            //     position: absolute;
-            //     left:50%;
-            // }
-            // &:before{
-            //     bottom:calc(100% + #{vw-calc(20)});
-            // }
-            // &:after{
-            //     top:calc(100% + #{vw-calc(20)});
-            // }
-            li{
-                height:vw-calc(150);
-                font-size:vw-calc(170);
-                margin:0 vw-calc(10);
-                text-shadow: 0 vw-calc(3 6) rgba(0,0,0,.3);
-                display: flex;
-                transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-                &.active{
-                    span{
-                        transform: translate3d(0,0,0) scale(1);
-                    }
-                }
-                span{
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    transform-origin: center;
-                    transform: translate3d(0,0,0) scale(.6);
-                    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-                }
-            }
-        }
+      }
     }
-    #startBtn{
-        width:vw-calc(191);
-        height:vw-calc(191*0.303);
-        background:$white;
-        color:$drakgreenblue;
-        border-radius: vw-calc(100);
-        margin-top:vw-calc(14);
-        font-size:vw-calc(23);
-        line-height:vw-calc(191*0.303);
-        font-weight: bold;
+    ul {
+      font-family: 'Times New Roman', Times, serif;
+      font-style: italic;
+      font-weight: bold;
+      position: relative;
+      display: flex;
+      transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+      // &:before,
+      // &:after{
+      //     content:'';
+      //     width:vw-calc(3);
+      //     height:vw-calc(27);
+      //     background:$white;
+      //     position: absolute;
+      //     left:50%;
+      // }
+      // &:before{
+      //     bottom:calc(100% + #{vw-calc(20)});
+      // }
+      // &:after{
+      //     top:calc(100% + #{vw-calc(20)});
+      // }
+      li {
+        height: vw-calc(150);
+        font-size: vw-calc(170);
+        margin: 0 vw-calc(10);
+        text-shadow: 0 vw-calc(3 6) rgba(0, 0, 0, 0.3);
         display: flex;
-        justify-content: center;
-        align-items: center;
-        // position: absolute;
-        // top:50%;
-        // left:50%;
-        z-index: 10;
-        transform: translate3d(0,0,0) scale(1);
-        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-        &.disabled{
-            opacity: 0;
+        transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        &.active {
+          span {
+            transform: translate3d(0, 0, 0) scale(1);
+          }
         }
-        &:not(.disabled){
-            transform: translate3d(0,0,0) scale(1);
-            &:before{
-                animation: radar 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-            }
-            &:after{
-                animation: radar 3s cubic-bezier(0.16, 1, 0.3, 1) infinite .4s;
-            }
-            &:active{
-                transform: translate3d(0,0,0) scale(.9);
-            }
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transform-origin: center;
+          transform: translate3d(0, 0, 0) scale(0.6);
+          transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        &:before, &:after{
-            content:'';
-            width:calc(100% - #{vw-calc(2)});
-            height:calc(100% - #{vw-calc(2)});
-            border-radius: vw-calc(100);
-            border:vw-calc(1) solid #fff;
-            position: absolute;
-            top:0;
-            left:0;
-            opacity: 1;
-            transform: translate3d(0,0,0) scale(0);
-        }
+      }
     }
-    #streetInfo{
-        // width:100%;
-        // height:100%;
-        position: fixed;
-        z-index: 2;
-        opacity:0;
-        visibility: hidden;
-        // &:after{
-        //     content:'';
-        //     width:100%;
-        //     height:100%;
-        //     position: absolute;
-        //     top:0;
-        //     left:0;
-        //     z-index: 1;
-        //     background:$white;
-        //     opacity: .5;
-        //     visibility: hidden;
-        // }
-        h1{
-            font-size:vw-calc(100);
-            color:$drakgreenblue;
-            transform: translate3d(17vw, 81vh, 0);
-        }
-        // #markerOuterWrap{
-        //     width:100%;
-        //     height:100%;
-        //     position: absolute;
-        //     top: 0;
-        //     left:0;
-        //     z-index: 2;
-        //     transform-origin: left top;
-        //     #markerWrap{
-        //         width:84.42708vw;
-        //         height:84.42708 * 0.573vw;
-        //         position: absolute;
-        //         bottom:-93.2%;
-        //         left: 9.5%;
-        //         // transform: translate3d(-50%,-50%,0);
-        //         // transform-origin: left;
-        //         span{
-        //             width:0;
-        //             height:0;
-        //             display: block;
-        //             &:before{
-        //                 content:'';
-        //                 width:vw-calc(45);
-        //                 height:vw-calc(55);
-        //                 background:url('../ex303HKI/images/marker.svg') center no-repeat;
-        //                 background-size:100%;
-        //                 transform: translate3d(-50%,-100%,0);
-        //                 display: block;
-        //             }
-        //         }
-        //     }
-        // }
+  }
+  #startBtn {
+    width: vw-calc(191);
+    height: vw-calc(191 * 0.303);
+    background: $white;
+    color: $drakgreenblue;
+    border-radius: vw-calc(100);
+    margin-top: vw-calc(14);
+    font-size: vw-calc(23);
+    line-height: vw-calc(191 * 0.303);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // position: absolute;
+    // top:50%;
+    // left:50%;
+    z-index: 10;
+    transform: translate3d(0, 0, 0) scale(1);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    &.disabled {
+      opacity: 0;
     }
+    &:not(.disabled) {
+      transform: translate3d(0, 0, 0) scale(1);
+      &:before {
+        animation: radar 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+      }
+      &:after {
+        animation: radar 3s cubic-bezier(0.16, 1, 0.3, 1) infinite 0.4s;
+      }
+      &:active {
+        transform: translate3d(0, 0, 0) scale(0.9);
+      }
+    }
+    &:before,
+    &:after {
+      content: '';
+      width: calc(100% - #{vw-calc(2)});
+      height: calc(100% - #{vw-calc(2)});
+      border-radius: vw-calc(100);
+      border: vw-calc(1) solid #fff;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(0);
+    }
+  }
+  #streetInfo {
+    // width:100%;
+    // height:100%;
+    position: fixed;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    // &:after{
+    //     content:'';
+    //     width:100%;
+    //     height:100%;
+    //     position: absolute;
+    //     top:0;
+    //     left:0;
+    //     z-index: 1;
+    //     background:$white;
+    //     opacity: .5;
+    //     visibility: hidden;
+    // }
+    h1 {
+      font-size: vw-calc(100);
+      color: $drakgreenblue;
+      transform: translate3d(17vw, 81vh, 0);
+    }
+    // #markerOuterWrap{
+    //     width:100%;
+    //     height:100%;
+    //     position: absolute;
+    //     top: 0;
+    //     left:0;
+    //     z-index: 2;
+    //     transform-origin: left top;
+    //     #markerWrap{
+    //         width:84.42708vw;
+    //         height:84.42708 * 0.573vw;
+    //         position: absolute;
+    //         bottom:-93.2%;
+    //         left: 9.5%;
+    //         // transform: translate3d(-50%,-50%,0);
+    //         // transform-origin: left;
+    //         span{
+    //             width:0;
+    //             height:0;
+    //             display: block;
+    //             &:before{
+    //                 content:'';
+    //                 width:vw-calc(45);
+    //                 height:vw-calc(55);
+    //                 background:url('../ex303HKI/images/marker.svg') center no-repeat;
+    //                 background-size:100%;
+    //                 transform: translate3d(-50%,-100%,0);
+    //                 display: block;
+    //             }
+    //         }
+    //     }
+    // }
+  }
 }
 
-@keyframes fadeIn{
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-@keyframes radar{
-    100%{
-        transform: translate3d(0,0,0) scale(2,2.15);
-        opacity: 0;
-    }
+@keyframes radar {
+  100% {
+    transform: translate3d(0, 0, 0) scale(2, 2.15);
+    opacity: 0;
+  }
 }
-@keyframes radar2{
-    100%{
-        transform: translate3d(-50%,-50%,0) scale(2,2);
-        opacity: 0;
-    }
+@keyframes radar2 {
+  100% {
+    transform: translate3d(-50%, -50%, 0) scale(2, 2);
+    opacity: 0;
+  }
 }
