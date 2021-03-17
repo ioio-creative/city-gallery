@@ -636,6 +636,7 @@ span {
             #imgWrap {
               width: 85%;
               position: relative;
+              margin-bottom: vw-calc(20, $width);
               &:before {
                 content: '';
                 padding-top: 62.65%;
@@ -653,7 +654,7 @@ span {
             }
             #info {
               height: vw-calc(250, $width);
-              padding: vw-calc(25 0 0 10, $width);
+              padding: vw-calc(10 0 0 10, $width);
               overflow-y: scroll;
               &::-webkit-scrollbar {
                 width: vw-calc(3, $width);
@@ -674,7 +675,7 @@ span {
                 }
                 span {
                   font-size: vw-calc(22, $width);
-                  line-height: vw-calc(24, $width);
+                  line-height: vw-calc(26, $width);
                   padding-right: vw-calc(10, $width);
                   &:first-child {
                     flex: none;

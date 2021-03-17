@@ -529,6 +529,7 @@ span {
             #imgWrap {
               width: 85%;
               position: relative;
+              margin-bottom: vw-calc(20);
               &:before {
                 content: '';
                 padding-top: 62.65%;
@@ -546,7 +547,7 @@ span {
             }
             #info {
               height: vw-calc(250);
-              padding: vw-calc(25 0 0 10);
+              padding: vw-calc(10 0 0 10);
               overflow-y: scroll;
               &::-webkit-scrollbar {
                 width: vw-calc(3);
@@ -567,7 +568,7 @@ span {
                 }
                 span {
                   font-size: vw-calc(22);
-                  line-height: vw-calc(24);
+                  line-height: vw-calc(26);
                   padding-right: vw-calc(10);
                   &:first-child {
                     flex: none;
