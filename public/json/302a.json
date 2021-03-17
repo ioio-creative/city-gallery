@@ -467,7 +467,7 @@
             {
               "text": {
                 "year": 1972,
-                "content": "Since the 1960s, Hong Kong's economy has started to grow, and pressure for urban development has also been escalating. The Government needed to holistically review the long-term land use and population distribution of Hong Kong. In 1965, the Government began formulating the \"Colony Outline Plan\" to comprehensively review the long-term land use and population distribution of Hong Kong. In 1974, based on the contemporary socio-economic conditions and development priorities, the Plan was substantially revised and renamed as \"Hong Kong Outline Plan\"."
+                "content": "Since the 1960s, Hong Kong's economy has started to grow. The Government needed to holistically review the long-term land use and population distribution.  In 1965, the Government began formulating the \"Colony Outline Plan\" to comprehensively review the long-term land use and population distribution of Hong Kong. In 1974, based on the contemporary socio-economic conditions and development priorities, the Plan was substantially revised and renamed as \"Hong Kong Outline Plan\"."
               },
               "image": {
                 "src": "./images/ex302a/1946_img1.png",
@@ -533,7 +533,7 @@
             {
               "text": {
                 "year": 1972,
-                "content": "The 1948 \"Hong Kong Preliminary Planning Report\" has already proposed to construct a cross harbour tunnel to connect the city centres of Hong Kong and Kowloon, and to strengthen the transport network from the city centres to the outer area (New Territories) to expand the extent of the urban area. </br>In 1972, the first cross-harbour tunnel crossing - Hung Hom Cross Harbour Tunnel commenced operation, gradually replacing the transportation role of ferries. In 1989 and 1997, the second and third cross harbour tunnels also started operation respectively, yielding a total design capacity of the three tunnels was 275,000 vehicles per day."
+                "content": "The 1948 \"Hong Kong Preliminary Planning Report\" proposed to construct a cross harbour tunnel to connect the city centres of Hong Kong and Kowloon, to strengthen the transport network from the city centres to the New Territories, and to expand the extent of the urban area. </br>In 1972, the first cross-harbour tunnel crossing - Hung Hom Cross Harbour Tunnel commenced operation. In 1989 and 1997, the second and third cross harbour tunnels also started operation respectively."
               },
               "image": {
                 "src": "./images/ex302a/1972_img1b.png",
@@ -1071,7 +1071,7 @@
             {
               "text": {
                 "year": 2001,
-                "content": "In 1986, the Government formulated the sewerage strategy </br>and \"Sewerage Master Plans\". In 2001, Stage 1 of the \"Harbour Area Treatment Scheme\" commenced operation, and treats 75% of the sewage generated from both sides of the Harbour every day. Stage 2A also commenced operation in 2015, providing treatment for the remaining 25% of the sewage generated from the northern and southwestern parts of the Hong Kong Island, which routed through a tunnel to reach the Stonecutters Island for centralised treatment.  The programme has significantly improved the water quality of Victoria Harbour and safeguard public health."
+                "content": "In 1986, the Government formulated the sewerage strategy and \"Sewerage Master Plans\". In 2001, Stage 1 of the \"Harbour Area Treatment Scheme\" commenced operation. Stage 2A also commenced operation in 2015, providing treatment for the remaining 25% of the sewage generated from the northern and southwestern parts of the Hong Kong Island, which routed through a tunnel to reach the Stonecutters Island for centralised treatment.  The programme has significantly improved the water quality of Victoria Harbour and safeguard public health."
               },
               "image": {
                 "src": "./images/ex302a/2001_img1a.png",
@@ -1899,12 +1899,12 @@
             {
               "text": {
                 "year": 2021,
-                "content": "In 202x, the \"Hong Kong 2030+: Towards a Planning Vision and Strategy Transcending 2030\" Final Report was promulgated to put forward three development strategies in face of the new challenges in </br>future - enhancing liveability in a compact high-density city, embracing new economic opportunities and challenges, and creating capacity for sustainable growth.  A Conceptual Spatial Framework was proposed to guide future development."
+                "content": "The \"Hong Kong 2030+: Towards a Planning Vision and Strategy Transcending 2030\" puts forward the development strategies in face of the new challenges in future - enhancing liveability in a compact high-density city; embracing new economic opportunities and <nobr>challenges; and creating capacity for sustainable growth.</nobr>"
               },
               "image": {
                 "src": "./images/ex302a/2018_img1d.jpg",
                 "translationType": "scale",
-                "description": "Hong Kong 2030+",
+                "description": "Upcoming",
                 "gallery": [
                   {
                     "src": "./images/ex302a/2018_img1d.jpg",
@@ -2380,7 +2380,7 @@
             {
               "text": {
                 "year": 1972,
-                "content": "香港自60年代開始經濟不斷發展，城市發展的壓力也不斷增加，政府必須對香港長遠的土地用途和人口分布進行全面檢討。1965年，政府開始編制</br>《土地利用計劃書》，全面檢討香港長遠的土地用途和人口分布。1974 年，政府因應當時的社會經濟情況和發展優先次序，大幅度修訂上述計劃書，並重新命名為《香港發展綱略》。"
+                "content": "<nobr>香港自60年代開始經濟不斷發展，城市發展的壓力也不</nobr><nobr>斷增加。1965年，政府開始編制《土地利用計劃書》，</nobr>全面檢討香港長遠的土地用途和人口分布。1974 年，政府因應當時的社會經濟情況和發展優先次序，大幅度修訂上述計劃書，並重新命名為《香港發展綱略》。"
               },
               "image": {
                 "src": "./images/ex302a/1946_img1.png",
@@ -2446,7 +2446,7 @@
             {
               "text": {
                 "year": 1972,
-                "content": "1948年的《初步規劃報告書》已提出興建海底隧道聯繫香港和九龍的城市核心，並加強核心區的對</br>外（新界區）交通，擴張市區範圍。1972年，位於維港中部的第一條海底隧道 — 紅磡海底隧道正式</br>通車，渡海小輪的交通角色逐漸被取代。1989年及1997年，第二條和第三條海底隧道亦相繼通車，三條隧道的設計容量合共為275,000架次。"
+                "content": "1948年的《初步規劃報告書》已提出興建海底隧道聯繫香港和九龍的城市核心，並加強核心區的對外（新界區）交通，擴張市區範圍。1972年，位於維港中部的第一條海底隧道 — 紅磡海底隧道正式</br>通車。1989年及1997年，第二條和第三條海底隧道亦相繼通車。"
               },
               "image": {
                 "src": "./images/ex302a/1972_img1b.png",
@@ -2724,7 +2724,7 @@
             {
               "text": {
                 "year": 1989,
-                "content": "1989年，政府宣布《港口及機場發展策略》，為本港<nobr>港口及機場的整體發展定下長遠的規劃大綱。相關項</nobr>目包括香港機場核心計劃（又稱「玫瑰園計劃」），選址大嶼山赤鱲角興建全新的香港國際機場。"
+                "content": "1989年，政府宣布《港口及機場發展策略》，為本<nobr>港港口及機場的整體發展定下長遠的規劃大綱。相關</nobr><nobr>項目包括香港機場核心計劃（又稱「玫瑰園計劃」），</nobr>選址大嶼山赤鱲角興建全新的香港國際機場。"
               },
               "image": {
                 "src": "./images/ex302a/1989_img1.png",
@@ -2983,7 +2983,7 @@
             {
               "text": {
                 "year": 2001,
-                "content": "1986年，政府制定污水排放策略和「污水收集整體計劃」。2001年，「淨化海港計劃」的第一期污水處理設施投入運作，每日處理約75%從維港兩岸產生的污水；第二期甲項目亦於2015年啟用，將餘下港島北部及西南部的污水，經由隧道輸往昂船洲污水處理廠中央處理。計劃顯著改善維港水質，保障公眾健康。"
+                "content": "<nobr>1986年，政府制定污水排放策略和「污水收集整體計劃」。</nobr><nobr>2001年，「淨化海港計劃」的第一期污水處理設施投入運作；</nobr>第二期甲項目亦於2015年啟用，將餘下港島北部及西南部的污水，經由隧道輸往昂船洲污水處理廠中央處理。計劃顯著改善維港水質，保障公眾健康。"
               },
               "image": {
                 "src": "./images/ex302a/2001_img1a.png",
@@ -3810,12 +3810,12 @@
             {
               "text": {
                 "year": 2021,
-                "content": "2021年公布的《香港2030＋：跨越2030年的規劃遠景與策略》(Final Report)就著未來的新挑戰，提出三大發展策略：規劃宜居的高密度城市、迎接新的經濟挑戰與機遇和創造容量以達致可持續發展。"
+                "content": "《香港2030＋：跨越2030年的規劃遠景與策略》就著應對未來的新挑戰，提出三大發展策略：規劃宜居的高密度城市、迎接新的經濟挑戰與機遇和創造容量以達致可持續發展。"
               },
               "image": {
                 "src": "./images/ex302a/2018_img1d.jpg",
                 "translationType": "scale",
-                "description": "香港2030＋",
+                "description": "最新動向",
                 "gallery": [
                   {
                     "src": "./images/ex302a/2018_img1d.jpg",
