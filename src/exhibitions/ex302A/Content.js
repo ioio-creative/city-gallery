@@ -543,7 +543,7 @@ const Content = props => {
                       );
                     })}
                   {props.language === 'en' && 
-                    v.text1.match(/[a-zA-Z0-9?><;,\-!'."]+/g).map((v, i) => {
+                    v.text1.match(/[a-zA-Z0-9?;,\-!'."]+/g).map((v, i) => {
                     // v.text1.split(" ").map((v, i) => {
                       return (
                         <span key={i}>
