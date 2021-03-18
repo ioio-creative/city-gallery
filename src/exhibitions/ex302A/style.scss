@@ -101,6 +101,9 @@ body {
       &.active #desWrap #des{
         font-size: vw-calc(24);
         line-height: vw-calc(40);
+        &.year1{
+          width: 32.8125vw;
+        }
       }
       #desWrap #des{
         font-size: vw-calc(18);
@@ -126,6 +129,7 @@ body {
     #contentWrap .content .item #itemContent{
       font-size: vw-calc(20);
       line-height: vw-calc(32);
+      padding-left: 2vw;
       &.H{
         width: 30vw;
       }

@@ -28,6 +28,7 @@ const Content = props => {
   const moveToItemFunc = useRef(null);
   const getCurrentSectionIdxFunc = useRef(null);
   const getDataFunc = useRef(null);
+  const updateWidthFunc = useRef(null);
   const triggerMinimal = useRef(null);
   // const onResizeFunc = useRef(null);
   const contentWrapElem = useRef(null);
@@ -217,6 +218,7 @@ const Content = props => {
       requestAnimationFrame(animLoop);
 
       if (!isOpenedGallery) {
+        if(contentWrapElemPos.x < -maxWidth) contentWrapElemPos.x = -maxWidth;
         contentWrapElemEasePos.x += (contentWrapElemPos.x - contentWrapElemEasePos.x) * 0.08;
         let x = contentWrapElemEasePos.x;
         contentWrapElem.current.style.transform = `translate3d(${x}px,0,0)`;
@@ -370,9 +372,14 @@ const Content = props => {
       }
     };
 
+    const updateWidth = () => {
+      maxWidth = contentWrapElem.current.offsetWidth - ww;
+    }
+    updateWidthFunc.current = {updateWidth};
+
     const onResize = () => {
       sidebarW = ww * (455 / 1920);
-      maxWidth = contentWrapElem.current.offsetWidth - ww;
+      updateWidth();
     };
 
     const addEvent = () => {
@@ -440,6 +447,10 @@ const Content = props => {
       }
     }
   }, [props.clickedSectionIdx]);
+
+  useEffect(()=>{
+    updateWidthFunc.current.updateWidth();
+  },[props.language]);
 
   useEffect(() => {
     getCurrentSectionIdxFunc.current.getCurrentSectionIdx(props.currentSectionIdx);
