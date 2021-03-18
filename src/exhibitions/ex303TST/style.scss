@@ -33,6 +33,7 @@ $brown: #59472a;
 }
 .streetFont {
   font-family: 'SourceHanSerifTC-Bold';
+  font-weight: bold;
 }
 
 body {
@@ -507,8 +508,8 @@ span {
             width: vw-calc(32);
             height: vw-calc(32);
             position: absolute;
-            top: vw-calc(-25);
-            right: vw-calc(63);
+            top: vw-calc(-40);
+            right: vw-calc(25);
             span {
               width: 100%;
               height: vw-calc(2);
@@ -529,16 +530,18 @@ span {
             width: 100%;
             position: relative;
             z-index: 2;
-            top: vw-calc(-25);
+            top: vw-calc(-40);
             #title {
               display: flex;
               justify-content: space-between;
               font-size: vw-calc(22);
               font-weight: 800;
-              margin-bottom: vw-calc(13.5);
+              margin-top: vw-calc(5);
+              margin-bottom: vw-calc(15);
             }
             #imgWrap {
               width: 100%;
+              height: 45%;
               position: relative;
               margin-bottom: vw-calc(20);
               &:before {
@@ -579,7 +582,7 @@ span {
                 }
                 span {
                   font-size: vw-calc(22);
-                  line-height: vw-calc(26);
+                  line-height: vw-calc(30);
                   padding-right: vw-calc(10);
                   &:first-child {
                     flex: none;

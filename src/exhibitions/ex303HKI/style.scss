@@ -35,6 +35,7 @@ $width: 3840;
 }
 .streetFont {
   font-family: 'SourceHanSerifTC-Bold';
+  font-weight: bold;
 }
 
 body {
@@ -294,16 +295,16 @@ span {
         height: vw-calc(255, $width);
       }
     }
-    &:nth-child(4) {
-      #card #btnOuterWrap {
-        top: 90%;
-      }
-    }
-    &:nth-child(5) {
-      #card #btnOuterWrap {
-        top: 87%;
-      }
-    }
+    // &:nth-child(4) {
+    //   #card #btnOuterWrap {
+    //     top: 90%;
+    //   }
+    // }
+    // &:nth-child(5) {
+    //   #card #btnOuterWrap {
+    //     top: 87%;
+    //   }
+    // }
     &:nth-child(6) {
       #markerWrap #location {
         width: vw-calc(255, $width);
@@ -317,11 +318,11 @@ span {
         }
       }
     }
-    &:nth-child(7) {
-      #card #btnOuterWrap {
-        top: 85%;
-      }
-    }
+    // &:nth-child(7) {
+    //   #card #btnOuterWrap {
+    //     top: 85%;
+    //   }
+    // }
     &:nth-child(10) {
       #markerWrap #location {
         width: vw-calc(210, $width);
@@ -600,8 +601,8 @@ span {
             width: vw-calc(32, $width);
             height: vw-calc(32, $width);
             position: absolute;
-            top: vw-calc(-25, $width);
-            right: vw-calc(63, $width);
+            top: vw-calc(-40, $width);
+            right: vw-calc(25, $width);
             span {
               width: 100%;
               height: vw-calc(2, $width);
@@ -622,19 +623,21 @@ span {
             width: 100%;
             position: relative;
             z-index: 2;
-            top: vw-calc(-25, $width);
+            top: vw-calc(-40, $width);
             #title {
               display: flex;
               justify-content: space-between;
               font-size: vw-calc(22, $width);
               font-weight: 800;
-              margin-bottom: vw-calc(13.5, $width);
+              margin-top: vw-calc(5, $width);
+              margin-bottom: vw-calc(15, $width);
               br {
                 display: none;
               }
             }
             #imgWrap {
               width: 100%;
+              height: 45%;
               position: relative;
               margin-bottom: vw-calc(20, $width);
               &:before {
@@ -674,8 +677,8 @@ span {
                   }
                 }
                 span {
-                  font-size: vw-calc(22, $width);
-                  line-height: vw-calc(26, $width);
+                  font-size: vw-calc(20, $width);
+                  line-height: vw-calc(30 $width);
                   padding-right: vw-calc(10, $width);
                   &:first-child {
                     flex: none;
@@ -712,7 +715,7 @@ span {
             display: flex;
             justify-content: space-between;
             position: absolute;
-            top: 92%;
+            top: 96%;
             left: 0;
             padding: vw-calc(30 50 87, $width);
             z-index: 2;

@@ -205,7 +205,7 @@ const G303 = props => {
                                 </g>
                               </svg>
                             </div>
-                            <span dangerouslySetInnerHTML={{ __html: coastlineData[i - 1].cardContent.title }}></span>
+                            {/* <span dangerouslySetInnerHTML={{ __html: coastlineData[i - 1].cardContent.title }}></span> */}
                           </div>
                         )}
                       </div>
@@ -222,7 +222,7 @@ const G303 = props => {
                                 </g>
                               </svg>
                             </div>
-                            <span dangerouslySetInnerHTML={{ __html: coastlineData[i + 1].cardContent.title }}></span>
+                            {/* <span dangerouslySetInnerHTML={{ __html: coastlineData[i + 1].cardContent.title }}></span> */}
                           </div>
                         )}
                       </div>

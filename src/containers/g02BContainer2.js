@@ -294,7 +294,7 @@ const G02BContainer = props => {
       timer = setTimeout(() => {
         setIdle(true);
         isIdle = true;
-      }, 2000 * 60);
+      }, 1000 * 60);
     };
 
     const setIsIdle = bool => {
