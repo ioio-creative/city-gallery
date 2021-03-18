@@ -164,16 +164,16 @@ span {
       display: flex;
       margin-top: vw-calc(141, $width);
       padding: 0 vw-calc(100, $width);
-      & > * {
-        padding: 0 vw-calc(30, $width);
-      }
       p {
+        padding-right: vw-calc(30, $width);
         font-size: vw-calc(35, $width);
+        line-height: vw-calc(38, $width);
         font-weight: bold;
-        flex: 0;
+        width: vw-calc(250, $width);
         white-space: nowrap;
       }
       span {
+        width: vw-calc(450, $width);
         font-size: vw-calc(18, $width);
         line-height: vw-calc(27, $width);
       }
@@ -269,13 +269,14 @@ span {
   #bg {
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.65);
+    background: rgba(0, 0, 0, 0.8);
   }
 }
 
 .en#main {
   #popupTutor #content #title p {
     white-space: normal;
+    font-size: vw-calc(25, $width);
   }
   #coast #locationsWrap #locations,
   #street #locationsWrap #locations {
@@ -464,7 +465,7 @@ span {
       #bg {
         width: 100%;
         height: 100%;
-        background: #042220b0;
+        background: #042220d1;
         display: block;
         opacity: 0;
         visibility: hidden;
