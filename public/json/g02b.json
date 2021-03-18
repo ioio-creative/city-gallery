@@ -13,7 +13,7 @@
     "en": {
       "global": {
         "dragHints": "Touch screen to select",
-        "dragMore": "Touch screen to select",
+        "dragMore": "Learn more below",
         "clickHints": "CLICK to see the details",
         "exploreHints": "Discover more cities",
         "iconTitle": "UN Sustainable <br/>Development Goals"
@@ -389,7 +389,7 @@
     "zh": {
       "global": {
         "dragHints": "觸碰螢幕以選取",
-        "dragMore": "觸碰螢幕以選取",
+        "dragMore": "往下了解更多",
         "clickHints": "按下查看詳細資料",
         "exploreHints": "探索更多城市",
         "iconTitle": "聯合國<br/>可持續發展目標"
