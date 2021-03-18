@@ -492,7 +492,6 @@ const Content = props => {
               <div id='wrap'>
                 <ul>
                   {v.items.map((c, j) => {
-                    console.log(j);
                     return (
                       <li key={j} id={c.category.id} className={props.currentSectionIdx === i && navIdx === j ? 'active' : ''} onClick={() => onClickNav(i, j)}>
                         <div id='point'></div>
@@ -534,25 +533,30 @@ const Content = props => {
               </div>
               <div id='bg' style={{ backgroundImage: `url('./images/ex302a/sidebarbg_${i}.png')` }}></div>
               <div id='desWrap'>
-                <div id='des'>
+                <div id='des' className={`year${i} ${props.language}`}>
                   {props.language === 'tc' &&
-                    v.text1.match(/([^0-9「」、，。]{2}[「」，、。]+|[0-9]+[^0-9「」，、。]|.)/g).map((v, i) => {
+                    v.text1.match(/(\u{653F}\u{5E9C}|[^0-9「」、，。《》]{2}[「」，、。《》]+|[0-9]+[^0-9「」，、。《》][「」，、。《》]+|.)/gu).map((v, i) => {
                       return (
                         <span key={i}>
                           <span>{v}</span>
                         </span>
                       );
                     })}
-                  {/* {props.language === 'tc' && <div className='temp' dangerouslySetInnerHTML={{ __html: v.text1 }}></div>} */}
-                  {props.language === 'en' &&
-                    v.text1.split(' ').map((v, i) => {
+                  {props.language === 'en' && 
+                    v.text1.match(/[a-zA-Z0-9?><;,\-!'."]+/g).map((v, i) => {
+                    // v.text1.split(" ").map((v, i) => {
                       return (
                         <span key={i}>
                           <span>{v}&nbsp;</span>
                         </span>
                       );
-                    })}
+                    })
+                    }
                 </div>
+                {/* <div id='des' className={`year${i}`} dangerouslySetInnerHTML={{__html: props.language === "en" 
+                                                        ? v.text1.replace(/[a-zA-Z0-9?><;,\-!'."]+/g, '<span><span>$&&nbsp;</span></span>') 
+                                                        : v.text1.replace(/<\/br>/gu, '<div>$%</div>').replace(/(\u{653F}\u{5E9C}|[^0-9「」、，。《》]{2}[「」，、。《》]+|[0-9]+[^0-9「」，、。《》][「」，、。《》]+|.)/gu, '<span><span>$&</span></span>')}}>
+                </div> */}
               </div>
               <div id='date' className='eb'>
                 {v.year
@@ -604,7 +608,7 @@ const Content = props => {
                           <div id='imgDes'>
                             {c.image.description.split('<br/>').map((t, l) => {
                               return (
-                                <div key={l}>
+                                <div key={l} className={`${props.language}TitleWindow `}>
                                   <span>
                                     <span dangerouslySetInnerHTML={{ __html: t }}></span>
                                   </span>

@@ -27,6 +27,7 @@ const G302A = props => {
   const startFunc = useRef(null);
   const leaveFunc = useRef(null);
   const socketRef = useRef(null);
+  const idleRef = useRef(null);
 
   const [socket, setSocket] = useState(null);
 
@@ -397,8 +398,16 @@ const G302A = props => {
     setContentData(props.appData.contents[lang]);
   };
 
+  const idleOn = () => {
+    console.log("idle");
+    if (idleRef.current) clearTimeout(idleRef.current);
+    idleRef.current = setTimeout(() => {
+      onBack();
+    }, 1000 * 60 * 100); // 1 minutes
+  };
+
   return (
-    <div id='home' className={language}>
+    <div id='home' className={language} onTouchStart={idleOn}>
       {/* <svg width="100" height="100">
                 <defs>
                     <mask id="circle-mask">
@@ -441,7 +450,7 @@ const G302A = props => {
               <div id='outerWrap'>
                 <div id='wrap'>
                   <p className={`eb`} ref={sectionTextElems.current[i]}>
-                    <span className={`year${i}`}>{contentData && contentData.sections[i].text1}</span>
+                    {contentData && contentData.sections[i].text1 && <span className={`year${i} ${language}`} dangerouslySetInnerHTML={{ __html: contentData.sections[i].cover }}></span>}
                   </p>
                   <div ref={sectionImgElems.current[i]} className={`img year${i}`} style={{ backgroundImage: `url(${contentData && contentData.sections[i].coverincircle.src})` }}></div>
                 </div>

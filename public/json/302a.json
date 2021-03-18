@@ -17,13 +17,14 @@
         "explore": "Explore",
         "backToYear": "Select Year",
         "hints": "Touch screen to select",
-        "back": "back",
+        "back": "Back",
         "stories": "Stories"
       },
       "sections": [
         {
           "year": "1841 - 1939",
-          "text1": "From the opening of the port in 1841, till the outbreak of the Second World War, development of Hong Kong mainly focused on the \"Victoria City\" on Hong Kong Island. Kowloon was later gradually developed, and the Town Planning Ordinance was promulgated in 1939 to establish a holistic town planning mechanism.",
+          "text1": "From the mid-19th century till the outbreak of the Second World War, developments in Hong Kong were mainly along Victoria Harbour, focusing around \"Victoria City\" on Hong Kong Island and gradually expanding to Kowloon and the New Kowloon. In 1939, the Town Planning Ordinance was enacted to establish a legal and procedural framework for town planning development.",
+          "cover": "From the mid-19th century till the outbreak of the Second World War, developments in Hong Kong were mainly along Victoria Harbour, focusing around \"Victoria City\" on Hong Kong Island and gradually expanding to Kowloon and the New Kowloon. </br>In 1939, the Town Planning Ordinance was enacted to establish a legal and procedural framework for town planning development.",
           "coverinsidebar": {
             "src": "./images/ex302a/1841_cover.png"
           },
@@ -65,7 +66,7 @@
               "image": {
                 "src": "./images/ex302a/1872_img1.jpg",
                 "translationType": "scale",
-                "description": "The First Chinese Hospital in Hong Kong",
+                "description": "The First </br>Chinese Hospital in </br>Hong Kong",
                 "gallery": [
                   {
                     "src": "./images/ex302a/1872_img1.jpg",
@@ -210,7 +211,8 @@
         },
         {
           "year": "1940 - 1959",
-          "text1": "Faced so many problems needed to be solved after the war, Sir Abercrombie, the Government consultant, prepared the first long-term planning strategy for Hong Kong. In the early 1950s, a huge number of new immigrants moved into Hong Kong, causing a serious shortage of housing units. After the Shek Kip Mei fire, the Government decided to build the first batch of public housing estates for the general public.",
+          "text1": "Post-war developments were filled with challenges, and the Government commissioned a consultant to formulate the first long-term development strategy for Hong Kong. In the early 1950s, an influx of Mainland immigrants moved to Hong Kong, posing substantial housing demand. The Shek Kip Mei Fire has catalysed the Government’s initiative to develop the first batch of public housing estates to improve the living environment.",
+          "cover": "Post-war developments were filled with challenges, and the Government commissioned a consultant to formulate the first long-term development strategy for Hong Kong. In the early 1950s, an influx of Mainland immigrants moved to Hong Kong, posing substantial housing demand. The Shek Kip Mei Fire has catalysed the Government’s initiative to develop the first batch of public housing estates to improve the living environment.",
           "coverinsidebar": {
             "src": "./images/ex302a/1940_cover.png"
           },
@@ -286,7 +288,7 @@
               "image": {
                 "src": "./images/ex302a/1948_img1.png",
                 "translationType": "scale",
-                "description": "The Hong Kong Preliminary Planning Report",
+                "description": "The Hong Kong </br>Preliminary </br>Planning Report",
                 "gallery": [
                   {
                     "src": "./images/ex302a/1948_img1.png",
@@ -355,12 +357,12 @@
             {
               "text": {
                 "year": 1954,
-                "content": "After World War II, the economic focus of Hong Kong has shifted from entrepot trade to light industries. </br>In 1954, Kwun Tong started developing into Hong Kong's first satellite town with industrial and residential areas; not only accommodating the rising population but also providing larbour force to the nearby industrial area."
+                "content": "After World War II, the economic focus of Hong Kong has shifted from entrepot trade to light industries. </br>In 1954, Kwun Tong started developing into </br>Hong Kong's first satellite town with industrial and residential areas; not only accommodating the rising population but also providing larbour force to the nearby industrial area."
               },
               "image": {
                 "src": "./images/ex302a/1954_img1b.png",
                 "translationType": "scale",
-                "description": "The First Satellite Town",
+                "description": "The First </br>Satellite Town",
                 "gallery": [
                   {
                     "src": "./images/ex302a/1954_img1b.png",
@@ -389,7 +391,8 @@
         },
         {
           "year": "1960 - 1979",
-          "text1": "In the 1950s and 1960s, the manufacturing industry flourished. The government further developed infrastructure, such as the Lion Rock Tunnel and Dongjiang-Shenzhen Water Supply Scheme. In the 1970s, the government launched the “Ten-year Housing Programme” to build a large number of public housing and develop new towns, and continued to expand the transportation network. The opening of the Mass Transit Railway in 1979 marked the beginning of the mass transportation system.",
+          "text1": "In the 1950s and 1960s, the manufacturing industry flourished. The Government further developed infrastructural facilities, including the Lion Rock Tunnel and Dongjiang Waterworks. In the 1970s, the Government launched the \"Ten-year Housing Programme\" to build a large number of public housing developments and develop new towns, and continued to expand the transportation network. The opening of the Mass Transit Railway services in 1979 marked the beginning of mass transportation system.",
+          "cover": "In the 1950s and 1960s, the manufacturing industry flourished. The Government further developed infrastructural facilities, including the Lion Rock Tunnel and Dongjiang Waterworks. In the 1970s, the <nobr>Government launched the \"Ten-year Housing Programme\"</nobr> to build a large number of public housing developments and develop new towns, and continued to expand the transportation network. The opening of the Mass Transit Railway services in 1979 marked the beginning of mass transportation system.",
           "coverinsidebar": {
             "src": "./images/ex302a/1960_cover.png"
           },
@@ -439,7 +442,7 @@
               "image": {
                 "src": "./images/ex302a/1967_img1.png",
                 "translationType": "scale",
-                "description": "The First Self-Sustained Public Housing Estate",
+                "description": "The First </br>Self-Sustained </br>Public Housing Estate",
                 "gallery": [
                   {
                     "src": "./images/ex302a/1967_img1.png",
@@ -472,7 +475,7 @@
               "image": {
                 "src": "./images/ex302a/1946_img1.png",
                 "translationType": "scale",
-                "description": "Hong Kong Outline Plan",
+                "description": "Hong Kong </br>Outline Plan",
                 "gallery": [
                   {
                     "src": "./images/ex302a/1979_img2a.png",
@@ -675,7 +678,7 @@
               "image": {
                 "src": "./images/ex302a/1978_img1.png",
                 "translationType": "scale",
-                "description": "The First Industrial Estate",
+                "description": "The First </br>Industrial Estate",
                 "gallery": [
                   {
                     "src": "./images/ex302a/1978_img1.png",
@@ -734,7 +737,8 @@
         },
         {
           "year": "1980 - 1999",
-          "text1": "In the 1980s, the departments in charge of town planning related affairs, including the Public Works Department and Town Planning Office, were reorganized into the present institutional framework gradually. In the late 1980s, the 10-project Hong Kong Airport Core Programme was announced, providing a far-reaching foundation for infrastructure development in and beyond the 1990s. In the early 1990s, the Metroplan was passed to propose the initiatives of “road and railways as backbone” and identify the seven strategic development districts below sub-regions. In 1998, the new Hong Kong International Airport at Chek Lap Kok was opened.",
+          "text1": "In the late 1980s, the Hong Kong Airport Core Programme was announced, providing an important foundation for airport, transport network and urban developments over the next decades. The urban core was closely linked up with New Territories West and Lantau Island. In the early 1990s, the Metroplan was endorsed with highways and railways serving as backbone. In 1998, the Hong Kong International Airport at Chek Lap Kok commenced operation, fostering economic development in Hong Kong.",
+          "cover": "In the late 1980s, the Hong Kong Airport Core Programme was announced, providing an important foundation for airport, transport network and urban developments over the next decades. The urban core was closely linked up with New Territories West and Lantau Island. In the early 1990s, the Metroplan was endorsed with highways and railways serving as backbone. In 1998, the Hong Kong International Airport at Chek Lap Kok commenced operation, fostering economic development in Hong Kong.",
           "coverinsidebar": {
             "src": "./images/ex302a/1980_cover.png"
           },
@@ -967,7 +971,7 @@
               "image": {
                 "src": "./images/ex302a/1997_img1a.jpg",
                 "translationType": "scale",
-                "description": "Protection of Victoria Harbour",
+                "description": "Protection of </br>Victoria Harbour",
                 "gallery": [
                   {
                     "src": "./images/ex302a/1997_img1a.jpg",
@@ -992,7 +996,7 @@
             {
               "text": {
                 "year": 1997,
-                "content": "In 1997, the Government commissioned the \"Study on Sustainable Development for the 21st Century in Hong Kong\" to formulate the definition and guiding principles of \"sustainable development\", and to propose a governance structure to facilitate the incorporation of \"sustainable development\" into the government decision making process as a factor of consideration."
+                "content": "In 1997, the Government commissioned the \"Study on Sustainable Development for the 21st Century in </br>Hong Kong\" to formulate the definition and guiding principles of \"sustainable development\", and to propose a governance structure to facilitate the incorporation of \"sustainable development\" into the government decision making process as a factor </br>of consideration."
               },
               "image": {
                 "src": "./images/ex302a/1997_img1b.png",
@@ -1027,7 +1031,7 @@
               "image": {
                 "src": "./images/ex302a/1998_img1.png",
                 "translationType": "scale",
-                "description": "Territorial Development Strategy Review",
+                "description": "Territorial </br>Development </br>Strategy Review",
                 "gallery": [
                   {
                     "src": "./images/ex302a/1998_img1.png",
@@ -1060,7 +1064,8 @@
         },
         {
           "year": "2000 - 2019",
-          "text1": "With the new global economic trends, Hong Kong is embracing new challenges. In 2007, the government published \"Hong Kong 2030: Planning Vision and Strategy\", a new development framework for the next two decades. It proposed New Development Areas in the northeastern New Territories, and closer cooperation between Guangdong, Hong Kong and Macao, as well as further development of transportation networks.",
+          "text1": "Under the emerging global economic trends, Hong Kong was facing new challenges. In 2007, the Government promulgated \"Hong Kong 2030: Planning Vision and Strategy\", proposing a planning strategy which focus on providing a quality living environment, enhancing economic competitiveness, and strengthening links with the Mainland. Looking ahead, Hong Kong is committed to develop into a more liveable, competitive and sustainable \"Asia’s World City\".",
+          "cover": "Under the emerging global economic trends, Hong Kong was facing new challenges. In 2007, the Government promulgated \"Hong Kong 2030: Planning Vision and Strategy\", proposing a planning strategy which focus on providing a quality living environment, enhancing economic competitiveness, and strengthening links with the Mainland.</br></br>Looking ahead, Hong Kong is committed to develop into a more liveable, competitive and sustainable \"Asia’s World City\".",
           "coverinsidebar": {
             "src": "./images/ex302a/2000_cover.png"
           },
@@ -1076,7 +1081,7 @@
               "image": {
                 "src": "./images/ex302a/2001_img1a.png",
                 "translationType": "scale",
-                "description": "Sewerage Treatment and Disposal",
+                "description": "Sewerage Treatment </br>and Disposal",
                 "css": "sewage",
                 "reference": "Source: ISD",
                 "gallery": [
@@ -1136,7 +1141,7 @@
               "image": {
                 "src": "./images/ex302a/2002_img1a.png",
                 "translationType": "scale",
-                "description": "Hong Kong Science Park",
+                "description": "Hong Kong </br>Science Park",
                 "gallery": [
                   {
                     "src": "./images/ex302a/2002_img1a.png",
@@ -1858,7 +1863,7 @@
               "image": {
                 "src": "./images/ex302a/2019_img1.jpg",
                 "translationType": "scale",
-                "description": "Guangdong-Hong Kong-Macao Regional Cooperation",
+                "description": "Guangdong-</br>Hong Kong-Macao</br>Regional Cooperation",
                 "gallery": [
                   {
                     "src": "./images/ex302a/2019_img1.jpg",
@@ -1879,7 +1884,7 @@
               "image": {
                 "src": "./images/ex302a/2018_img1c.jpg",
                 "translationType": "scale",
-                "description": "Liantang/Heung Yuen Wai Port",
+                "description": "Liantang/</br>Heung Yuen Wai Port",
                 "gallery": [
                   {
                     "src": "./images/ex302a/2018_img1c.jpg",
@@ -1936,7 +1941,8 @@
       "sections": [
         {
           "year": "1841 - 1939",
-          "text1": "1841年開埠至第二次世界大戰爆發前，香港主要發展區集中在港島的「維多利亞城」，其後逐漸拓展九龍，並於1939年實施城市規劃條例，建立整體規劃制度。",
+          "text1": "十九世紀中至第二次世界大戰爆發前，香港主要沿維多利亞港發展，以港島的「維多利亞城」為中心，其後逐漸拓展至九龍及新九龍。 1939年，香港訂定《城市規劃條例》，奠定在城市規劃發展時可依據的法律及機制基礎。",
+          "cover": "十九世紀中至第二次世界大戰爆發前，香港主要沿維多利亞港發展，以港島的「維多利亞城」為中心，其後逐漸拓展至九龍及新九龍。 1939年，香港訂定《城市規劃條例》，奠定在城市規劃發展時可依據的法律及機制基礎。",
           "coverinsidebar": {
             "src": "./images/ex302a/1841_cover.png"
           },
@@ -2123,7 +2129,8 @@
         },
         {
           "year": "1940 - 1959",
-          "text1": "二戰後百廢待興，政府顧問亞柏康比為香港制定了第一份長遠的規劃策略。五十年代初，大量內地移民來港，安全衛生問題加上石硤尾大火，促使政府興建首批公營房屋。",
+          "text1": "戰後發展充滿挑戰，政府委派顧問為香港制定了第一份長遠的發展策略。五十年代初，大量內地移民來港，對住屋的需求大增。石硤尾發生的大火促使政府興建首批公營房屋，改善生活環境。",
+          "cover": "戰後發展充滿挑戰，政府委派顧問為香港制定了第一份長遠的發展策略。五十年代初，大量內地移民來港，對住屋的需求大增。石<nobr>硤尾發生的大火促使政府興建首批公營房屋，</nobr>改善生活環境。",
           "coverinsidebar": {
             "src": "./images/ex302a/1940_cover.png"
           },
@@ -2302,7 +2309,8 @@
         },
         {
           "year": "1960 - 1979",
-          "text1": "製造業於五、六十年代發展蓬勃，政府進一步發展基建，例如獅子山隧道、東江水工程等等。至七十年代，政府推出「十年建屋計劃」，大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡。1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
+          "text1": "製造業於五、六十年代發展蓬勃，政府進一步發展基礎設施，包括獅子山隧道、東江水工程等。至七十年代，政府推出「十年建屋計劃」，大量興建公共房屋及發展新市鎮，並持續擴展運輸網絡。1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
+          "cover": "製造業於五、六十年代發展蓬勃，政府進一步發展基礎設施，包括獅子山隧道、東江水工程等。至七十年代，政府推出「十年建屋計劃」，大量興建公共房屋及發展新市鎮，並持續擴展運輸</br>網絡。1979年地下鐵路投入服務，標誌着集體運輸系統的開始。",
           "coverinsidebar": {
             "src": "./images/ex302a/1960_cover.png"
           },
@@ -2483,7 +2491,7 @@
             {
               "text": {
                 "year": 1972,
-                "content": "香港發展為區內運輸及物流樞紐，建基於其優越的地理位置及作為通往珠江三角洲的門戶角色。</br>1972年，葵涌貨櫃碼頭的一號貨櫃碼頭投入運作。1976年擴展至五號貨櫃碼頭。1997年前，六號至八號貨櫃碼頭亦相繼落成。葵涌貨櫃碼頭現有九個</br>碼頭，每年能處理超過2,000萬個標準貨櫃箱。"
+                "content": "香港發展為區內運輸及物流樞紐，建基於其優越的地理位置及作為通往珠江三角洲的門戶角色。</br>1972年，葵涌貨櫃碼頭的一號貨櫃碼頭投入運作。1976年，擴展至五號貨櫃碼頭。1997年前，六號至八號貨櫃碼頭亦相繼落成。葵涌貨櫃碼頭現有九個</br>碼頭，每年能處理超過2,000萬個標準貨櫃箱。"
               },
               "image": {
                 "src": "./images/ex302a/1972_img1c.png",
@@ -2646,7 +2654,8 @@
         },
         {
           "year": "1980 - 1999",
-          "text1": "八十年代，負責規劃工作的工務司署和城市設計處等部門逐一改組，逐漸接近現時架構。八十年代末，包括十項工程項目的香港機場核心計劃推出，為往後數十年的機場發展奠定重要基礎。九十年代初通過「都會計劃」，以主要公路和鐵路為骨幹，重點發展七個「都會區」。1998年，赤鱲角香港國際機場投入服務。",
+          "text1": "八十年代末，香港機場核心計劃推出，為往後數十年的機場、交通網絡及市區發展奠定重要基礎。城市核心與新界西及大嶼山緊緊連接起來。九十年代初通過「都會計劃」，以主要公路和鐵路為骨幹。1998年，赤鱲角香港國際機場投入服務，讓香港的經濟發展可更上一層樓。",
+          "cover": "八十年代末，香港機場核心計劃推出，為往後數<nobr>十年的機場、交通網絡及市區發展奠定重要基礎。</nobr>城市核心與新界西及大嶼山緊緊連接起來。九十年代初通過「都會計劃」，以主要公路和鐵路為骨幹。1998年，赤鱲角香港國際機場投入服務，讓香港的經濟發展可更上一層樓。",
           "coverinsidebar": {
             "src": "./images/ex302a/1980_cover.png"
           },
@@ -2972,7 +2981,8 @@
         },
         {
           "year": "2000 - 2019",
-          "text1": "在全球經濟新趨勢下，本港面對新挑戰。2007年政府發表《香港2030：規劃遠景與策略》，為香港未來二十年提出了新的發展框架，包括拓展新界東北等新發展區，並進一步深化粵港澳合作，加強交通配套。",
+          "text1": "在全球經濟新趨勢下，本港面對新挑戰。2007年政府發表《香港2030：規劃遠景與策略》，建議規劃策略集中於提供優質生活環境、提升經濟競爭力、以及加強與內地的聯繫。展望將來，使香港將成為更宜居，更具競爭力及可持續發展的「亞洲國際都會」。",
+          "cover": "在全球經濟新趨勢下，本港面對新挑戰。2007年政府發表《香港2030：規劃遠景與策略》，建議規劃策略集中於提供優質生活環境、提升經濟競</br>爭力、以及加強與內地的聯繫。 </br></br>展望將來，使香港將成為更宜居，更具競爭力及可持續發展的「亞洲國際都會」。",
           "coverinsidebar": {
             "src": "./images/ex302a/2000_cover.png"
           },
