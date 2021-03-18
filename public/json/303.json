@@ -2817,27 +2817,6 @@
             "cardContent": {
               "title": "Kai Tak Metro Park",
 
-              "image": { "src": "./images/ex303/coastline/21.jpg" },
-              "info": [
-                ["Area", "4.13 hectares"],
-                [
-                  "About",
-                  "Kwun Tong Promenade has a total area of about 4.13 hectaress.  It was formerly Kwun Tong Public Cargo Working Area, which forms an integral part ofKai Tak Development.  The waterfront boardwalk in the Promenade is about one kilometre long.   Not only that visitors can enjoy a close-up views of the icons in Kowloon East -  Kai Tak Cruise Terminal and the Runway Park, but also have a bird-eye view of the splendid night views of Hong Kong Island East and the panoramas of Victoria Harbour and Lei Yue Mun."
-                ]
-              ]
-            }
-          },
-          {
-            "marker": {
-              "id": "cklw",
-              "name": "Cha Kwo Ling Waterfront",
-              "pos": {
-                "x": 1248,
-                "y": 580
-              }
-            },
-            "cardContent": {
-              "title": "Cha Kwo Ling Waterfront",
               "image": { "src": "./images/ex303/coastline/19.jpg" },
               "info": [
                 ["Area", "12.8 hectares"],
@@ -2871,6 +2850,7 @@
           },
           {
             "marker": {
+              "id": "cklw",
               "name": "Cha Kwo Ling Waterfront",
               "pos": {
                 "x": 1248,
@@ -2918,24 +2898,6 @@
             "cardContent": {
               "title": "啟德都會公園",
 
-              "image": { "src": "./images/ex303/coastline/21.jpg" },
-              "info": [
-                ["面積", "4.13公頃"],
-                ["簡介", "觀塘海濱花園整體面積4.13公頃，前身為觀塘公眾貨物裝卸區，屬啟德發展計劃一部分。園內海濱步道全長約一公里。遊人在步道上不但可以近距離欣賞東九龍新地標 ─ 啟德郵輪碼頭和跑道公園，更可遠眺港島東的璀璨夜景，飽覽維多利亞港和鯉魚門的風光。"]
-              ]
-            }
-          },
-          {
-            "marker": {
-              "id": "cklw",
-              "name": "茶果嶺海濱",
-              "pos": {
-                "x": 1248,
-                "y": 580
-              }
-            },
-            "cardContent": {
-              "title": "茶果嶺海濱",
               "image": { "src": "./images/ex303/coastline/19.jpg" },
               "info": [
                 ["面積", "12.8公頃"],
@@ -2966,6 +2928,7 @@
           },
           {
             "marker": {
+              "id": "cklw",
               "name": "茶果嶺海濱",
               "pos": {
                 "x": 1248,
