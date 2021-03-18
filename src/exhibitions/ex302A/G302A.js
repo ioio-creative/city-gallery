@@ -403,7 +403,7 @@ const G302A = props => {
     if (idleRef.current) clearTimeout(idleRef.current);
     idleRef.current = setTimeout(() => {
       onBack();
-    }, 1000 * 60 * 100); // 1 minutes
+    }, 1000 * 60 * 1); // 1 minutes
   };
 
   return (
