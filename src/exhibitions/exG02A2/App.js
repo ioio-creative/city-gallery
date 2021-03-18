@@ -42,6 +42,7 @@ const App = props => {
   // const canvasTextureRef = useRef(null);
   const showDetailsRef = useRef(null);
   const objectControlRef = useState(null);
+  const idleRef = useRef(null);
   const locations = [
     { name: { en: 'Hong Kong', tc: '香港' }, lat: 22.37772, lon: 114.155267, offset:1.06 },
     { name: { en: 'Beijing', tc: '北京' }, lat: 39.920244, lon: 116.411309, offset:1.1 },
@@ -1407,8 +1408,16 @@ const App = props => {
     }
   };
 
+  const idleOn = () => {
+    console.log("idle");
+    if (idleRef.current) clearTimeout(idleRef.current);
+    idleRef.current = setTimeout(() => {
+      onBackHome(true);
+    }, 1000 * 60 * 1); // 1 minutes
+  };
+
   return (
-    <div className={language}>
+    <div className={language} onTouchStart={idleOn}>
       <div id='home' className={hideEarth ? 'hideEarth' : ''}>
         <div ref={canvasWrap} id='canvasWrap'></div>
         <div id='touch'>

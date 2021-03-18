@@ -105,6 +105,15 @@ body {
       #desWrap #des{
         font-size: vw-calc(18);
         line-height: vw-calc(24);
+        &.year0{
+          width: 18vw;
+        }
+        &.year1{
+          width: 17vw;
+        }
+        &.year3{
+          width: 17vw;
+        }
       }
     }
     #sectionWrap #section4 #outerWrap #wrap p{
@@ -501,8 +510,13 @@ body {
               transform: translate3d(-50%,0,0);
               display: block;
               transition: opacity 0.6s cubic-bezier(0.65, 0, 0.35, 1), visibility 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+              &.year0{
+                width: 22vw;
+              }
               &.year1{
-                width: 19.775vw;
+                &.tc{
+                  width: 19.8vw;
+                }
               }
               &.year2, &.year3, &.year4{
                 width: 21.875vw;
@@ -525,6 +539,20 @@ body {
               height: vw-calc(653);
               bottom: calc(50% - 16.40521vw);
               right: calc(50% - 17.70521vw);
+              &.tc{
+                width: 60.6vw;
+                height: 58vw;
+                bottom: calc(50% - 16.40521vw);
+                right: calc(50% - 25.70521vw);
+              }
+            }
+            &.year2{
+              &.tc{
+                width: 41.6vw;
+                height: 58vw;
+                bottom: calc(50% - 16.40521vw);
+                right: calc(50% - 19.70521vw);
+              }
             }
           }
         }
@@ -1033,6 +1061,9 @@ body {
               font-size: vw-calc(48);
               line-height: vw-calc(60);
               font-weight: bold;
+              // .enTitleWindow{
+              //   width: 28vw;
+              // }
               span {
                 overflow: hidden;
                 display: block;
@@ -1146,7 +1177,7 @@ body {
       &:not(.minimize){
         &#sidebar3{
           #desWrap #des {
-            width: 46.9125vw;
+            width: 40.9125vw;
           }
         }
         &#sidebar4{
@@ -1217,6 +1248,9 @@ body {
             // top:calc(52% - #{vw-calc(40)});
             left: vw-calc(190);
             transform: translate3d(0, -100%, 0);
+            &.year0{
+              width: vw-calc(630);
+            }
           }
         }
         #date {
@@ -1332,6 +1366,12 @@ body {
           left: vw-calc(65);
           transform: translate3d(0, -100%, 0);
           transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+          // &.year0{
+          //   width: 18vw;
+          // }
+          &.year0, &.year4{
+            width: 18vw;
+          }
           span {
             float: left;
             overflow: hidden;
