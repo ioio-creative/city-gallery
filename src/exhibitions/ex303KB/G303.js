@@ -168,7 +168,7 @@ const G303 = props => {
                     <span id='marker' onClick={() => setCoastlineIdx(i)}></span>
                     <span id='location' dangerouslySetInnerHTML={{ __html: v.marker.name }}></span>
                   </div>
-                  <div id='card'>
+                  <div id='card' className={`${v.marker.id ? v.marker.id : ''}`}>
                     <div id='closeBtn' onClick={() => setCoastlineIdx(null)}>
                       <span></span>
                       <span></span>
@@ -263,7 +263,7 @@ const G303 = props => {
           </p>
         </div>
       </div>
-      <div id='yearOfCoastline' className={`${showYear || coastlineIdx !== null ? 'disabled' : gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}>
+      <div id='yearOfCoastline' className={`${showYear || coastlineIdx !== null ? 'disabled' : gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : 'b'} ${language === 'en' ? 'en' : 'zh'}`}>
         <p>{`500 ${language === 'en' ? 'm' : '米'}`}</p>
         <span></span>
       </div>

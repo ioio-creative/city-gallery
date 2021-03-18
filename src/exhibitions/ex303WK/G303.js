@@ -327,7 +327,7 @@ const G303 = props => {
           </p>
         </div>
       </div>
-      <div id='yearOfCoastline' className={`${showYear || coastlineIdx !== null ? 'disabled' : gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : ''}`}>
+      <div id='yearOfCoastline' className={`${showYear || coastlineIdx !== null ? 'disabled' : gameMode === 'home' ? 'disabled' : ''} ${yearIdx === 3 ? 'w' : 'b'} ${language === 'en' ? 'en' : 'zh'}`}>
         <p>{`500 ${language === 'en' ? 'm' : '米'}`}</p>
         <span></span>
       </div>

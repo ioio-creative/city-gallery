@@ -343,7 +343,7 @@ const G303 = props => {
           )}
         </div>
       </div>
-      <div id='yearOfCoastline' className={`${showYear || coastlineIdx !== null || streetIdx !== null ? 'disabled' : gameMode === 'home' ? 'disabled' : gameMode === 'street' ? 'zoomed' : ''} ${yearIdx === 3 ? 'w' : ''}`}>
+      <div id='yearOfCoastline' className={`${showYear || coastlineIdx !== null || streetIdx !== null ? 'disabled' : gameMode === 'home' ? 'disabled' : gameMode === 'street' ? 'zoomed' : ''} ${yearIdx === 3 ? 'w' : 'b'} ${language === 'en' ? 'en' : 'zh'}`}>
         <p>{gameMode === 'street' ? `500 ${language === 'en' ? 'm' : '米'}` : `825 ${language === 'en' ? 'm' : '米'}`}</p>
         <span></span>
       </div>

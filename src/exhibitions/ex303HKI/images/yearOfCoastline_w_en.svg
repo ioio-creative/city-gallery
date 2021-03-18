@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="230" height="310" viewBox="0 0 230 310">
+  <defs>
+    <filter id="Path_383" x="0" y="0" width="44" height="44" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_629" data-name="Group 629" transform="translate(-2276 236)">
+    <g transform="matrix(1, 0, 0, 1, 2276, -236)" filter="url(#Path_383)">
+      <g id="Path_383-2" data-name="Path 383" transform="translate(9 6)" fill="#004a47">
+        <path d="M 25.75 25.75 L 0.25 25.75 L 0.25 0.25 L 25.75 0.25 L 25.75 25.75 Z" stroke="none"/>
+        <path d="M 0.5 0.5 L 0.5 25.5 L 25.5 25.5 L 25.5 0.5 L 0.5 0.5 M 0 0 L 26 0 L 26 26 L 0 26 L 0 0 Z" stroke="none" fill="#fff"/>
+      </g>
+    </g>
+    <text id="_1900_or_before" data-name="1900 or before" transform="translate(2319 -212)" fill="#fff" font-size="18" font-family="Helvetica-Bold, Helvetica" font-weight="700"><tspan x="0" y="0">1900 or before</tspan></text>
+    <g id="Rectangle_72" data-name="Rectangle 72" transform="translate(2285 -184)" fill="#007a6f" stroke="#fff" stroke-width="0.5">
+      <rect width="26" height="26" stroke="none"/>
+      <rect x="0.25" y="0.25" width="25.5" height="25.5" fill="none"/>
+    </g>
+    <text id="_1901_1945" data-name="1901–1945" transform="translate(2319 -166)" fill="#fff" font-size="18" font-family="Helvetica-Bold, Helvetica" font-weight="700"><tspan x="0" y="0">190</tspan><tspan y="0" letter-spacing="0.06em">1–</tspan><tspan y="0">1945</tspan></text>
+    <g id="Rectangle_71" data-name="Rectangle 71" transform="translate(2285 -138)" fill="#09b9a7" stroke="#fff" stroke-width="0.5">
+      <rect width="26" height="26" stroke="none"/>
+      <rect x="0.25" y="0.25" width="25.5" height="25.5" fill="none"/>
+    </g>
+    <text id="_1946_1985" data-name="1946–1985" transform="translate(2319 -120)" fill="#fff" font-size="18" font-family="Helvetica-Bold, Helvetica" font-weight="700"><tspan x="0" y="0">194</tspan><tspan y="0" letter-spacing="0.06em">6–</tspan><tspan y="0">1985</tspan></text>
+    <g id="Rectangle_70" data-name="Rectangle 70" transform="translate(2285 -91)" fill="#97ffe2" stroke="#fff" stroke-width="0.5">
+      <rect width="26" height="26" stroke="none"/>
+      <rect x="0.25" y="0.25" width="25.5" height="25.5" fill="none"/>
+    </g>
+    <g id="Rectangle_111" data-name="Rectangle 111" transform="translate(2285 48)" fill="#666" stroke="#fff" stroke-width="0.5">
+      <rect width="26" height="26" stroke="none"/>
+      <rect x="0.25" y="0.25" width="25.5" height="25.5" fill="none"/>
+    </g>
+    <text id="_1986_or_after" data-name="1986 or after" transform="translate(2319 -71)" fill="#fff" font-size="18" font-family="Helvetica-Bold, Helvetica" font-weight="700"><tspan x="0" y="0">1986 or after</tspan></text>
+    <text id="Coastline_before_1900" data-name="Coastline before 1900" transform="translate(2319 -25)" fill="#fff" font-size="18" font-family="Helvetica-Bold, Helvetica" font-weight="700"><tspan x="0" y="0">Coastline before 1900</tspan></text>
+    <text id="Other_reclaimed_area" data-name="Other reclaimed area" transform="translate(2319 68)" fill="#fff" font-size="18" font-family="Helvetica-Bold, Helvetica" font-weight="700"><tspan x="0" y="0">Other reclaimed area</tspan></text>
+    <line id="Line_75" data-name="Line 75" x2="26" transform="translate(2285.5 -31.5)" fill="none" stroke="#ff8300" stroke-width="3"/>
+    <text id="Coastline_in_2019" data-name="Coastline in 2019" transform="translate(2319 21)" fill="#fff" font-size="18" font-family="Helvetica-Bold, Helvetica" font-weight="700"><tspan x="0" y="0">Coastline in 2019</tspan></text>
+    <line id="Line_92" data-name="Line 92" x2="26" transform="translate(2285.5 14.5)" fill="none" stroke="#ff8300" stroke-width="3" stroke-dasharray="5"/>
+  </g>
+</svg>

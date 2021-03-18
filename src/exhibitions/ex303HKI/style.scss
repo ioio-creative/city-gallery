@@ -289,23 +289,32 @@ span {
         width: vw-calc(200, $width);
         height: vw-calc(200, $width);
       }
+      #card #wrap #info {
+        height: vw-calc(295, $width);
+      }
     }
     &:nth-child(3) {
       #markerWrap #location {
         width: vw-calc(255, $width);
         height: vw-calc(255, $width);
       }
+      #card #wrap #info {
+        height: vw-calc(270, $width);
+      }
     }
-    // &:nth-child(4) {
-    //   #card #btnOuterWrap {
-    //     top: 90%;
-    //   }
-    // }
-    // &:nth-child(5) {
-    //   #card #btnOuterWrap {
-    //     top: 87%;
-    //   }
-    // }
+    &:nth-child(4) {
+      // #card #btnOuterWrap {
+      //   top: 90%;
+      // }
+    }
+    &:nth-child(5) {
+      // #card #btnOuterWrap {
+      //   top: 87%;
+      // }
+      // #card #wrap #info {
+      //   height: vw-calc(270, $width);
+      // }
+    }
     &:nth-child(6) {
       #markerWrap #location {
         width: vw-calc(255, $width);
@@ -314,16 +323,22 @@ span {
       }
       #card {
         height: vw-calc(620, $width);
-        #btnOuterWrap {
-          top: 94%;
+        // #btnOuterWrap {
+        //   top: 94%;
+        // }
+        #wrap #info {
+          height: vw-calc(245, $width);
         }
       }
     }
-    // &:nth-child(7) {
-    //   #card #btnOuterWrap {
-    //     top: 85%;
-    //   }
-    // }
+    &:nth-child(7) {
+      // #card #btnOuterWrap {
+      //   top: 85%;
+      // }
+      #info {
+        height: vw-calc(180, $width);
+      }
+    }
     &:nth-child(10) {
       #markerWrap #location {
         width: vw-calc(210, $width);
@@ -657,7 +672,7 @@ span {
               }
             }
             #info {
-              height: vw-calc(250, $width);
+              height: vw-calc(300, $width);
               padding: vw-calc(10 0 0 10, $width);
               overflow-y: scroll;
               &::-webkit-scrollbar {
@@ -782,7 +797,7 @@ span {
       content: '';
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.65);
       display: block;
       opacity: 0;
       visibility: hidden;
@@ -1228,8 +1243,15 @@ span {
     visibility: visible;
     transition: all 1s cubic-bezier(0.87, 0, 0.13, 1);
     &.w {
-      &:before {
-        background: url('./images/yearOfCoastline_w.svg') center no-repeat;
+      &.en {
+        &:before {
+          background: url('./images/yearOfCoastline_w_en.svg') center no-repeat;
+        }
+      }
+      &.zh {
+        &:before {
+          background: url('./images/yearOfCoastline_w_zh.svg') center no-repeat;
+        }
       }
       p {
         color: #fff;
@@ -1238,6 +1260,18 @@ span {
       span:before,
       span:after {
         border-color: #fff;
+      }
+    }
+    &.b {
+      &.en {
+        &:before {
+          background: url('./images/yearOfCoastline_b_en.svg') center no-repeat;
+        }
+      }
+      &.zh {
+        &:before {
+          background: url('./images/yearOfCoastline_b_zh.svg') center no-repeat;
+        }
       }
     }
     &.disabled {
@@ -1250,10 +1284,10 @@ span {
       content: '';
       width: 100%;
       height: 100%;
-      background: url('./images/yearOfCoastline_b.svg') center no-repeat;
       display: block;
       position: relative;
       z-index: 1;
+      // background: url('./images/yearOfCoastline_b.svg') center no-repeat;
     }
     &:after {
       content: '';
