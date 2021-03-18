@@ -129,15 +129,16 @@ body {
     #contentWrap .content .item #itemContent{
       font-size: vw-calc(20);
       line-height: vw-calc(32);
-      // &.H{
-      //   width: 30vw;
-      // }
-      // &.C{
-      //   width: 29.3vw;
-      // }
-      // &.S{
-      //   width: 30.4vw;
-      // }
+      padding-left: 2vw;
+      &.H{
+        width: 30vw;
+      }
+      &.C{
+        width: 29.3vw;
+      }
+      &.S{
+        width: 30.4vw;
+      }
     }
   }
   &:before {
