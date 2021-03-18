@@ -369,7 +369,7 @@ const G303 = props => {
         <p>{gameMode === 'street' ? `500 ${language === 'en' ? 'm' : '米'}` : `825 ${language === 'en' ? 'm' : '米'}`}</p>
         <span></span>
       </div>
-      <div id='ref' className={`${showYear ? 'hide' : gameMode === 'home' ? 'hide' : ''} ${yearIdx === 3 ? 'w' : ''}`} dangerouslySetInnerHTML={{ __html: globalData && globalData.reference }}></div>
+      {/* <div id='ref' className={`${showYear ? 'hide' : gameMode === 'home' ? 'hide' : ''} ${yearIdx === 3 ? 'w' : ''}`} dangerouslySetInnerHTML={{ __html: globalData && globalData.reference }}></div> */}
 
       <div id='popupTutor' className={showTutor ? 'active' : ''}>
         <div id='content' className={`slide${tutorIdx + 1}`}>
