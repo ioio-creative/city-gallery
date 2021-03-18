@@ -617,8 +617,8 @@ span {
             width: vw-calc(32, $width);
             height: vw-calc(32, $width);
             position: absolute;
-            top: vw-calc(-40, $width);
-            right: vw-calc(25, $width);
+            top: vw-calc(-30, $width);
+            right: vw-calc(28, $width);
             span {
               width: 100%;
               height: vw-calc(2, $width);
@@ -643,7 +643,7 @@ span {
             #title {
               display: flex;
               justify-content: space-between;
-              font-size: vw-calc(22, $width);
+              font-size: vw-calc(23, $width);
               font-weight: 800;
               margin-top: vw-calc(5, $width);
               margin-bottom: vw-calc(15, $width);
@@ -683,7 +683,7 @@ span {
               }
               & > li {
                 display: flex;
-                margin-top: vw-calc(28.8, $width);
+                margin-top: vw-calc(15, $width);
                 &:first-child {
                   margin: 0;
                   span {
@@ -693,7 +693,7 @@ span {
                   }
                 }
                 span {
-                  font-size: vw-calc(20, $width);
+                  font-size: vw-calc(19, $width);
                   line-height: vw-calc(30 $width);
                   padding-right: vw-calc(10, $width);
                   &:first-child {

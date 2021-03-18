@@ -477,8 +477,11 @@ span {
           visibility: hidden;
           transform: translate3d(0, -50%, 0) scale(0.85);
           transition: all 0.6s cubic-bezier(0.87, 0, 0.13, 1);
+          &.ktaa {
+            left: vw-calc(600);
+          }
           &.cklw {
-            left: vw-calc(1370);
+            left: vw-calc(650);
           }
           &:before,
           &:after {
@@ -501,8 +504,8 @@ span {
             width: vw-calc(32);
             height: vw-calc(32);
             position: absolute;
-            top: vw-calc(-40);
-            right: vw-calc(25);
+            top: vw-calc(-30);
+            right: vw-calc(28);
             span {
               width: 100%;
               height: vw-calc(2);
@@ -527,7 +530,7 @@ span {
             #title {
               display: flex;
               justify-content: space-between;
-              font-size: vw-calc(22);
+              font-size: vw-calc(23);
               font-weight: 800;
               margin-top: vw-calc(5);
               margin-bottom: vw-calc(15);
@@ -553,7 +556,7 @@ span {
               }
             }
             #info {
-              height: vw-calc(340);
+              height: vw-calc(300);
               padding: vw-calc(10 0 0 10);
               overflow-y: scroll;
               &::-webkit-scrollbar {
@@ -564,7 +567,7 @@ span {
               }
               & > li {
                 display: flex;
-                margin-top: vw-calc(32);
+                margin-top: vw-calc(15);
                 &:first-child {
                   margin: 0;
                   span {
@@ -574,7 +577,7 @@ span {
                   }
                 }
                 span {
-                  font-size: vw-calc(22);
+                  font-size: vw-calc(19);
                   line-height: vw-calc(30);
                   padding-right: vw-calc(10);
                   &:first-child {
@@ -613,7 +616,7 @@ span {
             display: flex;
             justify-content: space-between;
             position: absolute;
-            top: 94%;
+            top: 93.5%;
             left: 0;
             padding: vw-calc(30 50 87);
             align-items: center;

@@ -509,8 +509,8 @@ span {
             width: vw-calc(32);
             height: vw-calc(32);
             position: absolute;
-            top: vw-calc(-40);
-            right: vw-calc(25);
+            top: vw-calc(-30);
+            right: vw-calc(28);
             span {
               width: 100%;
               height: vw-calc(2);
@@ -535,7 +535,7 @@ span {
             #title {
               display: flex;
               justify-content: space-between;
-              font-size: vw-calc(22);
+              font-size: vw-calc(23);
               font-weight: 800;
               margin-top: vw-calc(5);
               margin-bottom: vw-calc(15);
@@ -572,7 +572,7 @@ span {
               }
               & > li {
                 display: flex;
-                margin-top: vw-calc(28.8);
+                margin-top: vw-calc(15);
                 &:first-child {
                   margin: 0;
                   span {
@@ -582,7 +582,7 @@ span {
                   }
                 }
                 span {
-                  font-size: vw-calc(22);
+                  font-size: vw-calc(19);
                   line-height: vw-calc(30);
                   padding-right: vw-calc(10);
                   &:first-child {

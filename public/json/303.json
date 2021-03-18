@@ -347,7 +347,7 @@
             "marker": {
               "name": "Water Sports and Recreation Precinct in Wan Chai North",
               "pos": {
-                "x": 2060,
+                "x": 1850,
                 "y": 472
               }
             },
@@ -364,7 +364,7 @@
             "marker": {
               "name": "Revitalised Typhoon Shelter Precinct in Causeway Bay",
               "pos": {
-                "x": 2060,
+                "x": 1960,
                 "y": 446
               }
             },
@@ -387,11 +387,29 @@
             },
             "cardContent": {
               "title": "East Coast Park Precinct in Fortress Hill",
-
               "image": { "src": "./images/ex303/coastline/14.jpg" },
               "info": [
                 ["Area", "4.7 hectares"],
                 ["About", "Works commenced in 2020."]
+              ]
+            }
+          },
+          {
+            "marker": {
+              "name": "Boardwalk underneath the Island Eastern Corridor",
+              "pos": {
+                "x": 2201,
+                "y": 237
+              }
+            },
+            "cardContent": {
+              "title": "Boardwalk underneath the Island Eastern Corridor",
+              "image": { "src": "./images/ex303/coastline/15.png" },
+              "info": [
+                [
+                  "About",
+                  "The works for the Boardwalk underneath the Island Eastern Corridor connecting Causeway Bay and Quarry Bay, measuring two kilometres long and 10 metres wide will commence in 2021, with a design emphasising a water-friendly culture and accessibility. The project is scheduled for completion by phases in 2024."
+                ]
               ]
             }
           }
@@ -1169,7 +1187,7 @@
             "marker": {
               "name": "灣仔北水上運動及康樂主題區",
               "pos": {
-                "x": 2060,
+                "x": 1850,
                 "y": 472
               }
             },
@@ -1186,7 +1204,7 @@
             "marker": {
               "name": "銅鑼灣活力避風塘主題區",
               "pos": {
-                "x": 2060,
+                "x": 1960,
                 "y": 446
               }
             },
@@ -1213,6 +1231,24 @@
               "info": [
                 ["面積", "4.7公頃"],
                 ["簡介", "工程已於2020年展開"]
+              ]
+            }
+          },
+          {
+            "marker": {
+              "name": "東區走廊下之行人板道",
+              "pos": {
+                "x": 2201,
+                "y": 237
+              }
+            },
+            "cardContent": {
+              "title": "東區走廊下之行人板道",
+
+              "image": { "src": "./images/ex303/coastline/15.png" },
+              "info": [
+                ["面積", "1,700米（長度）"],
+                ["簡介", "全長兩公里、闊10米的東區走廊板道工程將於2021展開，連接銅鑼灣至鰂魚涌，板道設計着重親水文化和通達性；預計於2024年分階段完成。"]
               ]
             }
           }
@@ -2829,6 +2865,21 @@
           },
           {
             "marker": {
+              "name": "Kowloon Bay Action Area",
+              "pos": {
+                "x": 1013,
+                "y": 332
+              }
+            },
+            "cardContent": {
+              "title": "Kowloon Bay Action Area",
+
+              "image": { "src": "./images/ex303/coastline/20.jpg" },
+              "info": [["About", "Planning and Engineering Feasibility Study for the Development at Kowloon Bay Action Area proposes a multi-level pedestrian network to connect the Kowloon Bay MTR Station, Kai Tak Development and Kwun Tong waterfront. "]]
+            }
+          },
+          {
+            "marker": {
               "name": "Kwun Tong Promenade",
               "pos": {
                 "x": 1153,
@@ -2837,7 +2888,6 @@
             },
             "cardContent": {
               "title": "Kwun Tong Promenade",
-
               "image": { "src": "./images/ex303/coastline/21.jpg" },
               "info": [
                 ["Area", "4.13 hectares"],
@@ -2848,6 +2898,27 @@
               ]
             }
           },
+          {
+            "marker": {
+              "id": "ktaa",
+              "name": "Kwun Tong Action Area",
+              "pos": {
+                "x": 1205,
+                "y": 524
+              }
+            },
+            "cardContent": {
+              "title": "Kwun Tong Action Area",
+              "image": { "src": "./images/ex303/coastline/22.png" },
+              "info": [
+                [
+                  "About",
+                  "The Planning and Engineering Feasibility Study on Kwun Tong Action Area proposes to restructure the Government, Institution and Community (GIC) uses near the Kwun Tong Ferry Pier, improve the road capacity and pedestrian facilities, and enhance the harbourfront area.  It proposes to integrate the waterfront promenade with the series of open spaces in the area to enhance the harbourfront connectivity, linking with Kwun Tong Waterfront Promenade, and with the future Tsui Ping River and Cha Kwo Ling waterfront."
+                ]
+              ]
+            }
+          },
+
           {
             "marker": {
               "id": "cklw",
@@ -2910,6 +2981,21 @@
           },
           {
             "marker": {
+              "name": "九龍灣行動區",
+              "pos": {
+                "x": 1013,
+                "y": 332
+              }
+            },
+            "cardContent": {
+              "title": "九龍灣行動區",
+
+              "image": { "src": "./images/ex303/coastline/20.jpg" },
+              "info": [["簡介", "「九龍灣行動區發展規劃及工程可行性研究」建議將採用多層行人網絡，提供行人連接至港鐵九龍灣站及牛頭角站 、啟德發展區和觀塘海濱 。"]]
+            }
+          },
+          {
+            "marker": {
               "name": "觀塘海濱花園",
               "pos": {
                 "x": 1153,
@@ -2924,6 +3010,21 @@
                 ["面積", "4.13公頃"],
                 ["簡介", "觀塘海濱花園整體面積4.13公頃，前身為觀塘公眾貨物裝卸區，屬啟德發展計劃一部分。園內海濱步道全長約一公里。遊人在步道上不但可以近距離欣賞東九龍新地標 ─ 啟德郵輪碼頭和跑道公園，更可遠眺港島東的璀璨夜景，飽覽維多利亞港和鯉魚門的風光。"]
               ]
+            }
+          },
+          {
+            "marker": {
+              "id": "ktaa",
+              "name": "觀塘行動區",
+              "pos": {
+                "x": 1205,
+                "y": 524
+              }
+            },
+            "cardContent": {
+              "title": "觀塘行動區",
+              "image": { "src": "./images/ex303/coastline/22.png" },
+              "info": [["簡介", "「觀塘行動區發展規劃及工程可行性研究」」建議重整現時在觀塘碼頭一帶的政府、設施用地的土地用途，改善該區道路容量及行人設施和提升海濱環境。建議結合海濱長廊及區內一系列的休憩空間，加強海濱長廊連接性，連接觀塘海濱花園，並延伸至未來的翠屏河及茶果嶺海濱。"]]
             }
           },
           {
