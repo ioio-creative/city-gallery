@@ -452,7 +452,7 @@ const G302A = props => {
                   <p className={`eb`} ref={sectionTextElems.current[i]}>
                     {contentData && contentData.sections[i].text1 && <span className={`year${i} ${language}`} dangerouslySetInnerHTML={{ __html: contentData.sections[i].cover }}></span>}
                   </p>
-                  <div ref={sectionImgElems.current[i]} className={`img year${i}`} style={{ backgroundImage: `url(${contentData && contentData.sections[i].coverincircle.src})` }}></div>
+                  <div ref={sectionImgElems.current[i]} className={`img year${i} ${language}`} style={{ backgroundImage: `url(${contentData && contentData.sections[i].coverincircle.src})` }}></div>
                 </div>
               </div>
               <div id='exploreBtn' onClick={() => onClickSection(i)}>

@@ -543,7 +543,7 @@ const Content = props => {
                       );
                     })}
                   {props.language === 'en' && 
-                    v.text1.match(/[a-zA-Z0-9?;,\-!'."]+/g).map((v, i) => {
+                    v.text1.match(/[a-zA-Z0-9?;,\-!'."]+|<br[^>]*>/gu).map((v, i) => {
                     // v.text1.split(" ").map((v, i) => {
                       return (
                         <span key={i}>
@@ -555,7 +555,7 @@ const Content = props => {
                 </div>
                 {/* <div id='des' className={`year${i}`} dangerouslySetInnerHTML={{__html: props.language === "en" 
                                                         ? v.text1.replace(/[a-zA-Z0-9?><;,\-!'."]+/g, '<span><span>$&&nbsp;</span></span>') 
-                                                        : v.text1.replace(/<\/br>/gu, '<div>$%</div>').replace(/(\u{653F}\u{5E9C}|[^0-9「」、，。《》]{2}[「」，、。《》]+|[0-9]+[^0-9「」，、。《》][「」，、。《》]+|.)/gu, '<span><span>$&</span></span>')}}>
+                                                        : v.text1.replace(/(\u{653F}\u{5E9C}|[^0-9「」、，。《》]{2}[「」，、。《》]+|[0-9]+[^0-9「」，、。《》][「」，、。《》]+|<br[^>]*>|.)/gu, '<span><span>$&</span></span>').replace(/<br[^>]*>/gu, '<div>$&</div>')}}>
                 </div> */}
               </div>
               <div id='date' className='eb'>

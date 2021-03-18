@@ -539,6 +539,20 @@ body {
               height: vw-calc(653);
               bottom: calc(50% - 16.40521vw);
               right: calc(50% - 17.70521vw);
+              &.tc{
+                width: 60.6vw;
+                height: 58vw;
+                bottom: calc(50% - 16.40521vw);
+                right: calc(50% - 25.70521vw);
+              }
+            }
+            &.year2{
+              &.tc{
+                width: 60.6vw;
+                height: 58vw;
+                bottom: calc(50% - 16.40521vw);
+                right: calc(50% - 25.70521vw);
+              }
             }
           }
         }
