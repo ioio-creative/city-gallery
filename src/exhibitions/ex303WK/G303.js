@@ -45,7 +45,7 @@ const G303 = props => {
       if (!started) {
         started = true;
         // setShowWholeScreen(true);
-        onBack();
+        // onBack();
       }
     };
 
@@ -96,7 +96,7 @@ const G303 = props => {
         setRunTransition(true);
         handleStart.current.start(yearIdx);
         handleShowCoastline.current.showCoastline(yearIdx);
-      }, 5000);
+      }, 2000);
     }
   };
 

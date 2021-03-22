@@ -159,7 +159,7 @@
       },
       {
         "name": "noise",
-        "src": "./images/ex303/noise_island.png"
+        "src": "./images/ex303/noise_island_hki.png"
       },
       {
         "name": "marker",
@@ -450,8 +450,8 @@
               "name": "Ladder Street",
               "namePos": "left",
               "pos": {
-                "x": 2121,
-                "y": 847
+                "x": 2081,
+                "y": 887
               }
             },
             "road": {
@@ -508,8 +508,8 @@
               "name": "Old Bailey Street",
               "namePos": "top",
               "pos": {
-                "x": 2282,
-                "y": 950
+                "x": 2252,
+                "y": 1000
               }
             },
             "road": {
@@ -563,36 +563,7 @@
           {
             "zone": 2,
             "marker": {
-              "name": "Star Street",
-              "namePos": "top",
-              "pos": {
-                "x": 2864,
-                "y": 1194
-              }
-            },
-            "road": {
-              "pos": {
-                "x": 2885,
-                "y": 1256
-              },
-              "image": {
-                "src": "./images/ex303/street/starStreet.svg"
-              },
-              "inactiveImage": {
-                "src": "./images/ex303/street/starStreet_w.svg"
-              },
-              "video": {
-                "src": "./images/ex303/video/sunMoonStar.mp4",
-                "poster": {
-                  "src": "./images/ex303/video/sunMoonStar_poster.jpg"
-                }
-              }
-            }
-          },
-          {
-            "zone": 2,
-            "marker": {
-              "name": "Sun Street",
+              "name": "Sun, Moon & Star Street",
               "namePos": "top",
               "pos": {
                 "x": 2916,
@@ -601,43 +572,14 @@
             },
             "road": {
               "pos": {
-                "x": 2932,
-                "y": 1272
+                "x": 2885,
+                "y": 1250
               },
               "image": {
-                "src": "./images/ex303/street/sunStreet.svg"
+                "src": "./images/ex303/street/sunStarMoonStreet.svg"
               },
               "inactiveImage": {
-                "src": "./images/ex303/street/sunStreet_w.svg"
-              },
-              "video": {
-                "src": "./images/ex303/video/sunMoonStar.mp4",
-                "poster": {
-                  "src": "./images/ex303/video/sunMoonStar_poster.jpg"
-                }
-              }
-            }
-          },
-          {
-            "zone": 2,
-            "marker": {
-              "name": "Moon Street",
-              "namePos": "top",
-              "pos": {
-                "x": 2970,
-                "y": 1199
-              }
-            },
-            "road": {
-              "pos": {
-                "x": 2948,
-                "y": 1266
-              },
-              "image": {
-                "src": "./images/ex303/street/moonStreet.svg"
-              },
-              "inactiveImage": {
-                "src": "./images/ex303/street/moonStreet_w.svg"
+                "src": "./images/ex303/street/sunStarMoonStreet_w.svg"
               },
               "video": {
                 "src": "./images/ex303/video/sunMoonStar.mp4",
@@ -883,7 +825,7 @@
             "zone": 3,
             "marker": {
               "name": "Yuet Yuen Street",
-              "namePos": "top",
+              "namePos": "left",
               "pos": {
                 "x": 4087,
                 "y": 523
@@ -1289,8 +1231,8 @@
               "name": "樓梯街",
               "namePos": "left",
               "pos": {
-                "x": 2121,
-                "y": 847
+                "x": 2081,
+                "y": 887
               }
             },
             "road": {
@@ -1347,8 +1289,8 @@
               "name": "奧卑利街",
               "namePos": "top",
               "pos": {
-                "x": 2282,
-                "y": 950
+                "x": 2252,
+                "y": 1000
               }
             },
             "road": {
@@ -1402,36 +1344,7 @@
           {
             "zone": 2,
             "marker": {
-              "name": "星街",
-              "namePos": "top",
-              "pos": {
-                "x": 2864,
-                "y": 1194
-              }
-            },
-            "road": {
-              "pos": {
-                "x": 2885,
-                "y": 1256
-              },
-              "image": {
-                "src": "./images/ex303/street/starStreet.svg"
-              },
-              "inactiveImage": {
-                "src": "./images/ex303/street/starStreet_w.svg"
-              },
-              "video": {
-                "src": "./images/ex303/video/sunMoonStar.mp4",
-                "poster": {
-                  "src": "./images/ex303/video/sunMoonStar_poster.jpg"
-                }
-              }
-            }
-          },
-          {
-            "zone": 2,
-            "marker": {
-              "name": "日街",
+              "name": "日、月、星街",
               "namePos": "top",
               "pos": {
                 "x": 2916,
@@ -1440,43 +1353,14 @@
             },
             "road": {
               "pos": {
-                "x": 2932,
-                "y": 1272
+                "x": 2885,
+                "y": 1250
               },
               "image": {
-                "src": "./images/ex303/street/sunStreet.svg"
+                "src": "./images/ex303/street/sunStarMoonStreet.svg"
               },
               "inactiveImage": {
-                "src": "./images/ex303/street/sunStreet_w.svg"
-              },
-              "video": {
-                "src": "./images/ex303/video/sunMoonStar.mp4",
-                "poster": {
-                  "src": "./images/ex303/video/sunMoonStar_poster.jpg"
-                }
-              }
-            }
-          },
-          {
-            "zone": 2,
-            "marker": {
-              "name": "月街",
-              "namePos": "top",
-              "pos": {
-                "x": 2970,
-                "y": 1199
-              }
-            },
-            "road": {
-              "pos": {
-                "x": 2948,
-                "y": 1266
-              },
-              "image": {
-                "src": "./images/ex303/street/moonStreet.svg"
-              },
-              "inactiveImage": {
-                "src": "./images/ex303/street/moonStreet_w.svg"
+                "src": "./images/ex303/street/sunStarMoonStreet_w.svg"
               },
               "video": {
                 "src": "./images/ex303/video/sunMoonStar.mp4",
@@ -1722,7 +1606,7 @@
             "zone": 3,
             "marker": {
               "name": "月園街",
-              "namePos": "top",
+              "namePos": "left",
               "pos": {
                 "x": 4087,
                 "y": 523
@@ -2027,7 +1911,7 @@
       },
       {
         "name": "noise",
-        "src": "./images/ex303/noise_island_s.png"
+        "src": "./images/ex303/noise_island_s_tst.png"
       },
       {
         "name": "marker",
@@ -2812,7 +2696,7 @@
       },
       {
         "name": "noise",
-        "src": "./images/ex303/noise_island_s.png"
+        "src": "./images/ex303/noise_island_s_kb.png"
       },
       {
         "name": "marker",
@@ -3210,7 +3094,7 @@
       },
       {
         "name": "noise",
-        "src": "./images/ex303/noise_island_s.png"
+        "src": "./images/ex303/noise_island_s_wk.png"
       },
       {
         "name": "marker",

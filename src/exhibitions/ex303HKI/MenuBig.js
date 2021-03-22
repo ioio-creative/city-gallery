@@ -47,7 +47,7 @@ const Menu = props => {
                 else return;
               })
             ) : (
-              <div className='streetName'>{streetData && streetData[props.streetIdx].marker.name}</div>
+              <div className={`streetName ${props.streetIdx === 5 && props.language !== 'en' ? 's' : ''}`}>{streetData && streetData[props.streetIdx].marker.name}</div>
             )}
           </div>
           <span id='space'></span>

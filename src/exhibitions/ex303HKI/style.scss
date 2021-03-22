@@ -77,13 +77,13 @@ span {
     transform: translate3d(-15.4%, -21.85%, 0) scale(0.94) !important;
   }
   &.zone2 {
-    transform: translate3d(-44.45%, -27.57%, 0) scale(0.943) !important;
+    transform: translate3d(-36.45%, -27.57%, 0) scale(0.943) !important;
   }
   &.zone3 {
-    transform: translate3d(-76.85%, -18.05%, 0) scale(0.943) !important;
+    transform: translate3d(-65.05%, -18.05%, 0) scale(0.943) !important;
   }
   &.zone4 {
-    transform: translate3d(-86.5%, -18.05%, 0) scale(0.943) !important;
+    transform: translate3d(-81.5%, -18.05%, 0) scale(0.943) !important;
   }
 }
 
@@ -91,13 +91,13 @@ span {
   transform: translate3d(-15.4%, -43.6%, 0) scale(1.88) !important;
 }
 .zone2 {
-  transform: translate3d(-44.4%, -55%, 0) scale(1.885) !important;
+  transform: translate3d(-36.4%, -55%, 0) scale(1.885) !important;
 }
 .zone3 {
-  transform: translate3d(-76.8%, -36%, 0) scale(1.885) !important;
+  transform: translate3d(-65%, -36%, 0) scale(1.885) !important;
 }
 .zone4 {
-  transform: translate3d(-86.45%, -36%, 0) scale(1.885) !important;
+  transform: translate3d(-81.45%, -36%, 0) scale(1.885) !important;
 }
 
 // .zone1_street{
@@ -570,6 +570,20 @@ span {
             text-align: center;
             transform: translate3d(-50%, -124%, 0) scale(0);
             transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+          }
+        }
+        &:nth-child(9){
+          #markerWrap{
+            #location{
+              margin-left: vw-calc(-50);
+            }
+          }
+        }
+        &:nth-child(10){
+          #markerWrap{
+            #location{
+              margin-left: vw-calc(20);
+            }
           }
         }
         &:nth-child(12) {
@@ -1143,7 +1157,7 @@ span {
       height: auto;
       position: absolute;
       top: 50vh;
-      left: calc(50% + #{vw-calc(412, $width)});
+      left: calc(50% + #{vw-calc(210, $width)});
       z-index: 6;
       transform: translate3d(0, -50%, 0);
       animation: fadeIn 0.6s cubic-bezier(0.87, 0, 0.13, 1);
@@ -1202,10 +1216,10 @@ span {
         background: url('./images/closeBtn.svg') no-repeat;
         position: absolute;
         top: 0;
-        right: 0;
+        left: 0;
         left: auto;
         z-index: 1;
-        transform: translate3d(50%, -50%, 0);
+        transform: translate3d(-50%, -50%, 0);
       }
     }
   }
