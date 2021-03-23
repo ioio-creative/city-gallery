@@ -664,7 +664,7 @@ const Map = props => {
         showCoastlineTl = gsap.timeline();
         showCoastlineTl.killTweensOf(options, "oceanProgress");
         showCoastlineTl.to(options, 3, {islandProgress: 1, ease: 'power3.inOut'});
-        showCoastlineTl.to(targetYears, 10, { p: 1, p2:0, stagger:1.3, ease: 'power3.out',
+        showCoastlineTl.to(targetYears, 10, { p: 1, p2:0, stagger:1, ease: 'power3.out',
           onUpdate: function () {
             this.targets().forEach((target, i) => {
               if (i <= idx)
@@ -675,7 +675,7 @@ const Map = props => {
           }
         },'-=1');
 
-        showCoastlineTl.to(options, 8, {oceanProgress: 1, ease: 'power3.out'}, `-=${(3-idx)*2+5.5}`);
+        showCoastlineTl.to(options, 8, {oceanProgress: 1, ease: 'power3.out'}, `-=${(3-idx)*2+5.2}`);
         showCoastlineTl.call(()=>{
           props.showNav(true);
           props.setGameMode('coast');
