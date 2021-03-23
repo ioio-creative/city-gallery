@@ -662,7 +662,9 @@ const Map = props => {
       else {
         if(showCoastlineTl) showCoastlineTl.kill();
         showCoastlineTl = gsap.timeline();
-        showCoastlineTl.to(targetYears, 10, { p: 1, p2:1, stagger:1.3, ease: 'power3.out',
+        showCoastlineTl.killTweensOf(options, "oceanProgress");
+        showCoastlineTl.to(options, 3, {islandProgress: 1, ease: 'power3.inOut'});
+        showCoastlineTl.to(targetYears, 10, { p: 1, p2:0, stagger:1.3, ease: 'power3.out',
           onUpdate: function () {
             this.targets().forEach((target, i) => {
               if (i <= idx)
@@ -671,17 +673,17 @@ const Map = props => {
                 options.year[`hideY${years[i]}`] = target.p2;
             });
           }
-        });
-        showCoastlineTl.killTweensOf(options, "oceanProgress");
-        showCoastlineTl.to(options, 8, {oceanProgress: 1, ease: 'power3.out'}, '-=7');
+        },'-=1');
+
+        showCoastlineTl.to(options, 8, {oceanProgress: 1, ease: 'power3.out'}, `-=${(3-idx)*2+5.5}`);
         showCoastlineTl.call(()=>{
           props.showNav(true);
           props.setGameMode('coast');
           props.setRunTransition(false);
-        }, null, '-=6.6');
+        }, null, `-=${(3-idx)*2+3}`);
         showCoastlineTl.call(()=>{
           showDottedline();
-        }, null, '-=6.6');
+        }, null, `-=${(3-idx)*2+3}`);
         hasShownCoastline = true;
       }
     };
@@ -694,7 +696,6 @@ const Map = props => {
 
     const start = i => {
       // gsap.to(options, 4, { progress: 1, ease: 'power2.inOut' });
-      gsap.to(options, 3, {islandProgress: 1, ease: 'power2.inOut'});
       // gsap.killTweensOf(options, "oceanProgress");
       // gsap.to(options, 10, {oceanProgress: 1, ease: 'power3.out'});
       // gsap.to({}, i + 2.5, {
