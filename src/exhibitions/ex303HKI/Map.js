@@ -6,6 +6,7 @@ import gsap from 'gsap';
 const Map = props => {
   const [on, setOn] = useState(true);
   const wrapElem = useRef(null);
+  const videoElem = useRef(null);
   const data = props.appData;
 
   const showHighlightFunc = useRef(null);
@@ -638,9 +639,9 @@ const Map = props => {
 
       if (hasShownCoastline && idx === -1) {
         showDottedline(false);
-        gsap.to(options, 5, {islandProgress: 0, ease: 'power3.inOut'});
         gsap.killTweensOf(options, "oceanProgress");
         gsap.to(options, 8, {oceanProgress: 0, ease: 'power3.out'});
+        gsap.to(options, 5, {islandProgress: 0, ease: 'power3.inOut'});
 
         if(showCoastlineTl) showCoastlineTl.kill();
         showCoastlineTl = gsap.timeline();
@@ -660,10 +661,12 @@ const Map = props => {
         }, null, '-=6');
       }
       else {
+        videoElem.current.play();
         if(showCoastlineTl) showCoastlineTl.kill();
-        showCoastlineTl = gsap.timeline();
+        showCoastlineTl = gsap.timeline({delay:3});
         showCoastlineTl.killTweensOf(options, "oceanProgress");
-        showCoastlineTl.to(options, 3, {islandProgress: 1, ease: 'power3.inOut'});
+        showCoastlineTl.to(options, 8, {oceanProgress: 1, ease: 'power3.out'},'s');// `-=${(3-idx)*2+5.2}`);
+        showCoastlineTl.to(options, 3, {islandProgress: 1, ease: 'power3.inOut'},'s');
         showCoastlineTl.to(targetYears, 10, { p: 1, p2:0, stagger:1, ease: 'power3.out',
           onUpdate: function () {
             this.targets().forEach((target, i) => {
@@ -673,17 +676,16 @@ const Map = props => {
                 options.year[`hideY${years[i]}`] = target.p2;
             });
           }
-        },'-=1');
+        },'s+=1');
 
-        showCoastlineTl.to(options, 8, {oceanProgress: 1, ease: 'power3.out'}, `-=${(3-idx)*2+5.2}`);
         showCoastlineTl.call(()=>{
           props.showNav(true);
           props.setGameMode('coast');
           props.setRunTransition(false);
-        }, null, `-=${(3-idx)*2+3}`);
+        }, null, `-=${(3-idx)*2+5}`);
         showCoastlineTl.call(()=>{
           showDottedline();
-        }, null, `-=${(3-idx)*2+3}`);
+        }, null, `-=${(3-idx)*2+5}`);
         hasShownCoastline = true;
       }
     };
@@ -740,6 +742,7 @@ const Map = props => {
   }
 
   return <>
+      <video ref={videoElem} width="100%" height="100%" style={{position:'fixed',top:0,left:0,zIndex:10,pointerEvents:'none',objectFit: 'cover'}} preload="true" src="./images/ex303/sand_3.webm" ></video>
       <div ref={wrapElem} className={`shader ${props.gameMode === 'street' ? `zone${props.zone+1}` : ''}`}></div>
       {/* { !props.showYear && props.gameMode !== 'home' && <div style={{position:'fixed',top:'100px',right:'70px',zIndex:'999',fontSize:'60px',color:'#fff'}}><span style={{opacity: on ? '1' : '.4'}} onClick={()=>onShowHighlight(true)}>on</span> / <span style={{opacity: on ? '.4' : '1'}} onClick={()=>onShowHighlight(false)}>off</span></div>} */}
     </>

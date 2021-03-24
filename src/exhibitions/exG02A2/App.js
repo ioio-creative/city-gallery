@@ -1409,15 +1409,15 @@ const App = props => {
   };
 
   const idleOn = () => {
-    console.log("idle");
+    // console.log("idle");
     if (idleRef.current) clearTimeout(idleRef.current);
     idleRef.current = setTimeout(() => {
       onBackHome(true);
-    }, 1000 * 60 * 1); // 1 minutes
+    }, 1000 * 60); // 1 minutes
   };
 
   return (
-    <div className={language} onTouchStart={idleOn}>
+    <div className={language} onTouchStart={idleOn} onMouseDown={idleOn}>
       <div id='home' className={hideEarth ? 'hideEarth' : ''}>
         <div ref={canvasWrap} id='canvasWrap'></div>
         <div id='touch'>

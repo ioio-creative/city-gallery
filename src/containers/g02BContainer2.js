@@ -219,7 +219,7 @@ const G02BContainer = props => {
     let isIdle = true;
 
     const onMouseDown = event => {
-      if (!idle) idle();
+      if (!isIdle) idle();
       if (!isDragDisabled) {
         // idle();
         setDragging(false);
@@ -238,7 +238,7 @@ const G02BContainer = props => {
     };
 
     const onMouseMove = event => {
-      if (!idle) idle();
+      if (!isIdle) idle();
       setDragging(true);
       let e = event.touches ? event.touches[0] : event;
       const mx = e.clientX;
