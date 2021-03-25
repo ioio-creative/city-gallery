@@ -231,7 +231,7 @@
           },
           {
             "marker": {
-              "name": "Central and Western District Promenade - Western Wholesale Food Market Section",
+              "name": "Central and Western District Promenade - Western Wholesale<br/> Food Market Section",
               "pos": {
                 "x": 921,
                 "y": 301
@@ -991,7 +991,7 @@
         "coastline": [
           {
             "marker": {
-              "name": "卑路乍灣海濱休憩用地",
+              "name": "卑路乍灣海濱<br/>休憩用地",
               "pos": {
                 "x": 615,
                 "y": 454
@@ -1025,7 +1025,7 @@
           },
           {
             "marker": {
-              "name": "中西區海濱長廊—西區副食品批發市場段",
+              "name": "中西區海濱長廊—西區副食品<br/>批發市場段",
               "pos": {
                 "x": 921,
                 "y": 301
@@ -1042,7 +1042,7 @@
           },
           {
             "marker": {
-              "name": "西營盤豐物道海濱用地",
+              "name": "西營盤豐物道<br/>海濱用地",
               "pos": {
                 "x": 999,
                 "y": 301
@@ -1076,7 +1076,7 @@
           },
           {
             "marker": {
-              "name": "中西區海濱長廊 (中環段)至香港會議展覽中心海濱長廊",
+              "name": "中西區海濱長廊 (中環段)至香港會議展覽中心<br/>海濱長廊",
               "pos": {
                 "x": 1566,
                 "y": 492
@@ -1093,7 +1093,7 @@
           },
           {
             "marker": {
-              "name": "灣仔北慶典主題區",
+              "name": "灣仔北<br/>慶典主題區",
               "pos": {
                 "x": 1647,
                 "y": 446
@@ -1110,7 +1110,7 @@
           },
           {
             "marker": {
-              "name": "灣仔北渡輪碼頭畔主題區",
+              "name": "灣仔北渡輪碼<br/>頭畔主題區",
               "pos": {
                 "x": 1737,
                 "y": 498
@@ -1127,14 +1127,14 @@
           },
           {
             "marker": {
-              "name": "灣仔北水上運動及康樂主題區",
+              "name": "灣仔北水上運動<br/>及康樂主題區",
               "pos": {
                 "x": 1850,
                 "y": 472
               }
             },
             "cardContent": {
-              "title": "灣仔北水上運動及<br/>康樂主題區",
+              "title": "灣仔北水上運動及康樂主題區",
               "image": { "src": "./images/ex303/coastline/12.jpg" },
               "info": [
                 ["面積", "1.39公頃"],
@@ -1144,7 +1144,7 @@
           },
           {
             "marker": {
-              "name": "銅鑼灣活力避風塘主題區",
+              "name": "銅鑼灣活力<br/>避風塘主題區",
               "pos": {
                 "x": 1960,
                 "y": 446
@@ -1161,7 +1161,7 @@
           },
           {
             "marker": {
-              "name": "炮台山東岸公園主題區",
+              "name": "炮台山東岸<br/>公園主題區",
               "pos": {
                 "x": 2064,
                 "y": 311
@@ -1178,7 +1178,7 @@
           },
           {
             "marker": {
-              "name": "東區走廊下之行人板道",
+              "name": "東區走廊下之<br/>行人板道",
               "pos": {
                 "x": 2201,
                 "y": 237
@@ -1970,7 +1970,7 @@
             "zone": 1,
             "marker": {
               "id": "knutsford",
-              "name": "Knutsford<br>Terrace",
+              "name": "Knutsford<br/>Terrace",
               "namePos": "top",
               "pos": {
                 "x": 2050,
@@ -2000,7 +2000,7 @@
             "zone": 1,
             "marker": {
               "id": "observatory",
-              "name": "Observatory<br>Road",
+              "name": "Observatory<br/>Road",
               "namePos": "top",
               "pos": {
                 "x": 2156,
@@ -2728,7 +2728,7 @@
         "coastline": [
           {
             "marker": {
-              "name": "Kai Tak Metro Park",
+              "name": "Kai Tak</br>Metro Park",
               "pos": {
                 "x": 911,
                 "y": 374
@@ -2749,7 +2749,7 @@
           },
           {
             "marker": {
-              "name": "Kowloon Bay Action Area",
+              "name": "Kowloon Bay<br/>Action Area",
               "pos": {
                 "x": 1013,
                 "y": 332

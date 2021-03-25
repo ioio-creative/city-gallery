@@ -564,6 +564,7 @@ span {
               height: vw-calc(340);
               padding: vw-calc(10 0 0 10);
               overflow-y: scroll;
+              font-weight: bold;
               &::-webkit-scrollbar {
                 width: vw-calc(3);
               }
@@ -1084,7 +1085,7 @@ span {
         position: absolute;
         top: 0;
         right: 0;
-        left: auto;
+        left: vw-calc(-48);
         z-index: 1;
         transform: translate3d(50%, -50%, 0);
       }
