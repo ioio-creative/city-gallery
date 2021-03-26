@@ -242,8 +242,8 @@ const Map = props => {
                 // ocean
                 //if(oceanMaskTextureColor.a >= .01){
                   float value = oceanProgress * (1. + _threshold);
-                  float v = clamp( (noiseTextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
-                  gl_FragColor = mix(startOceanDiffuseColor, oceanDiffuseColor, v);
+                  float v = clamp( (sandTextureColor.r - 1. + value) * (1./_threshold), 0., 1.);
+                  gl_FragColor = mix(startOceanDiffuseColor, oceanDiffuseColor, value);
                 //}
 
                 if(coastline1900MaskColor.a >= 0.6){
@@ -602,7 +602,7 @@ const Map = props => {
           hideYears[i] = v2;
       }
 
-      gsap.to(showYears, 8, {p2: 1, stagger:0.4, ease: 'power2.out',
+      gsap.to(showYears, 6, {p2: 1, stagger:0.4, ease: 'power2.out',
         onUpdate: function () {
           this.targets().forEach((target, i) => {
             if(i <= idx)
@@ -612,7 +612,7 @@ const Map = props => {
       })
       
       if(hideYears.length){
-        gsap.to(hideYears, 8, {p2: 0, stagger:0.4, ease: 'power4.out',
+        gsap.to(hideYears, 6, {p2: 0, stagger:0.4, ease: 'power4.out',
           onUpdate: function () {
             this.targets().forEach((target, i) => {
               if(i < 3-idx)
@@ -623,8 +623,8 @@ const Map = props => {
       }
 
       highlightTl = gsap.timeline();
-      highlightTl.to(selectedHighlight, 1, {alpha: .8, ease: 'power1.inOut'},4);
-      highlightTl.to(selectedHighlight, 1, {alpha: .4,repeat:-1, yoyo:true, ease: 'power1.inOut' },5);
+      highlightTl.to(selectedHighlight, 1, {alpha: .8, ease: 'power1.inOut'},3);
+      highlightTl.to(selectedHighlight, 1, {alpha: .4,repeat:-1, yoyo:true, ease: 'power1.inOut' },4);
 
       updateMapImage();
     };
@@ -640,7 +640,7 @@ const Map = props => {
       if (hasShownCoastline && idx === -1) {
         showDottedline(false);
         gsap.killTweensOf(options, "oceanProgress");
-        gsap.to(options, 8, {oceanProgress: 0, ease: 'power3.out'});
+        gsap.to(options, 3, {oceanProgress: 0, ease: 'power3.out'});
         gsap.to(options, 5, {islandProgress: 0, ease: 'power3.inOut'});
 
         if(showCoastlineTl) showCoastlineTl.kill();
@@ -663,11 +663,9 @@ const Map = props => {
       else {
         videoElem.current.play();
         if(showCoastlineTl) showCoastlineTl.kill();
-        showCoastlineTl = gsap.timeline({delay:3});
-        showCoastlineTl.killTweensOf(options, "oceanProgress");
-        showCoastlineTl.to(options, 8, {oceanProgress: 1, ease: 'power3.out'},'s');// `-=${(3-idx)*2+5.2}`);
+        showCoastlineTl = gsap.timeline({delay:2});
         showCoastlineTl.to(options, 3, {islandProgress: 1, ease: 'power3.inOut'},'s');
-        showCoastlineTl.to(targetYears, 10, { p: 1, p2:0, stagger:1, ease: 'power3.out',
+        showCoastlineTl.to(targetYears, 10, { p: 1, p2:0, stagger:1.4, ease: 'power3.out',
           onUpdate: function () {
             this.targets().forEach((target, i) => {
               if (i <= idx)
@@ -678,14 +676,16 @@ const Map = props => {
           }
         },'s+=1');
 
+        showCoastlineTl.killTweensOf(options, "oceanProgress");
+        showCoastlineTl.to(options, 4, {oceanProgress: 1, ease: 'power3.out'}, `-=${(3-idx)*2+6.2}`);
         showCoastlineTl.call(()=>{
           props.showNav(true);
           props.setGameMode('coast');
           props.setRunTransition(false);
-        }, null, `-=${(3-idx)*2+5}`);
+        }, null, `-=${(3-idx)*2+6}`);
         showCoastlineTl.call(()=>{
           showDottedline();
-        }, null, `-=${(3-idx)*2+5}`);
+        }, null, `-=${(3-idx)*2+6}`);
         hasShownCoastline = true;
       }
     };
@@ -742,7 +742,7 @@ const Map = props => {
   }
 
   return <>
-      <video ref={videoElem} width="100%" height="100%" style={{position:'fixed',top:0,left:0,zIndex:10,pointerEvents:'none',opacity: .1,objectFit: 'cover'}} preload="true" src="./images/ex303/sand_3.webm" ></video>
+      <video ref={videoElem} width="100%" height="100%" style={{position:'fixed',top:0,left:0,zIndex:10,pointerEvents:'none',opacity: .1,objectFit: 'cover'}} preload="true" src="./images/ex303/sand_10sec.webm" ></video>
       <div ref={wrapElem} className={`shader ${props.gameMode === 'street' ? `zone${props.zone+1}` : ''}`}></div>
       {/* { !props.showYear && props.gameMode !== 'home' && <div style={{position:'fixed',top:'100px',right:'70px',zIndex:'999',fontSize:'60px',color:'#fff'}}><span style={{opacity: on ? '1' : '.4'}} onClick={()=>onShowHighlight(true)}>on</span> / <span style={{opacity: on ? '.4' : '1'}} onClick={()=>onShowHighlight(false)}>off</span></div>} */}
     </>

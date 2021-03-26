@@ -92,11 +92,11 @@ const G303 = props => {
     if (yearIdx >= 0) {
       socket.emit('selectIndex', { data: { index: yearIdx } });
       setShowYear(false);
-      setTimeout(() => {
+      // setTimeout(() => {
         setRunTransition(true);
         handleStart.current.start(yearIdx);
         handleShowCoastline.current.showCoastline(yearIdx);
-      }, 2000);
+      // }, 2000);
     }
   };
 

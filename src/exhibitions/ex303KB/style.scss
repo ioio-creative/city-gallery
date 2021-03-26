@@ -71,6 +71,7 @@ span {
   transform-origin: top left;
   transform: translate3d(0, 0, 0) scale(0.5);
   transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+  will-change: transform;
 }
 
 // .zone1{

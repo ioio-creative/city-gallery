@@ -73,6 +73,7 @@ span {
   transform-origin: top left;
   transform: translate3d(0, 0, 0) scale(0.5);
   transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+  will-change: transform;
   &.zone1 {
     transform: translate3d(-15.4%, -21.85%, 0) scale(0.94) !important;
   }
@@ -555,6 +556,7 @@ span {
               left: 50%;
               opacity: 1;
               transform: translate3d(-50%, -50%, 0) scale(0);
+              will-change: transform;
             }
           }
           #location {
@@ -660,7 +662,8 @@ span {
             #title {
               display: flex;
               justify-content: space-between;
-              font-size: vw-calc(23, $width);
+              font-size: vw-calc(21, $width);
+              line-height: vw-calc(26, $width);
               font-weight: 800;
               margin-top: vw-calc(5, $width);
               margin-bottom: vw-calc(15, $width);
@@ -712,7 +715,7 @@ span {
                 }
                 span {
                   font-size: vw-calc(19, $width);
-                  line-height: vw-calc(30 $width);
+                  line-height: vw-calc(26, $width);
                   padding-right: vw-calc(10, $width);
                   &:first-child {
                     flex: none;
