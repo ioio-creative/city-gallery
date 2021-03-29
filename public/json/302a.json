@@ -470,39 +470,6 @@
             {
               "text": {
                 "year": 1972,
-                "content": "Since the 1960s, Hong Kong's economy has started to grow. The Government needed to holistically review the long-term land use and population distribution.  In 1965, the Government began formulating the \"Colony Outline Plan\" to comprehensively review the long-term land use and population distribution of Hong Kong. In 1974, based on the contemporary socio-economic conditions and development priorities, the Plan was substantially revised and renamed as \"Hong Kong Outline Plan\"."
-              },
-              "image": {
-                "src": "./images/ex302a/1946_img1.png",
-                "translationType": "scale",
-                "description": "Hong Kong </br>Outline Plan",
-                "gallery": [
-                  {
-                    "src": "./images/ex302a/1979_img2a.png",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1979_img3a.png",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1979_img4a.png",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1979_img5a.png",
-                    "reference": "圖片參考: ISD"
-                  }
-                ]
-              },
-              "category": {
-                "id": "strategic",
-                "name": "Strategic Plan"
-              }
-            },
-            {
-              "text": {
-                "year": 1972,
                 "content": "In 1972, the Government announced the \"Ten-year Housing Programme\" and established the Hong Kong Housing Authority in 1973, which not only take care of all resettlement blocks and low-cost housing estates but also uphold the responsibility of implementing the public housing programme."
               },
               "image": {
@@ -703,6 +670,39 @@
             {
               "text": {
                 "year": 1979,
+                "content": "Since the 1960s, Hong Kong's economy has started to grow. The Government needed to holistically review the long-term land use and population distribution.  In 1965, the Government began formulating the \"Colony Outline Plan\" to comprehensively review the long-term land use and population distribution of Hong Kong. In 1974, based on the contemporary socio-economic conditions and development priorities, the Plan was substantially revised and renamed as \"Hong Kong Outline Plan\"."
+              },
+              "image": {
+                "src": "./images/ex302a/1946_img1.png",
+                "translationType": "scale",
+                "description": "Hong Kong </br>Outline Plan",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1979_img2a.png",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img3a.png",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img4a.png",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img5a.png",
+                    "reference": "圖片參考: ISD"
+                  }
+                ]
+              },
+              "category": {
+                "id": "strategic",
+                "name": "Strategic Plan"
+              }
+            },
+            {
+              "text": {
+                "year": 1979,
                 "content": "In 1979, the first phase of the modified initial system, which is part of the current Kwun Tong Line, came into operation by phases, earmarking the advent of mass transit transport system in Hong Kong.  In 2007, the Mass Transit Railway Corporation and Kowloon-Canton Railway Corporation were merged as the MTR Corporation Limited."
               },
               "image": {
@@ -896,7 +896,7 @@
             {
               "text": {
                 "year": 1995,
-                "content": "In 1995, about 1 500 hectares of wetland in the Mai Po and Inner Deep Bay region were enlisted as a Ramsar <nobr>Site. This piece of wetland is very important for migratory</nobr> birds, and is a wintering ground and refueling station for them flying from Russia in the Arctic to Australia."
+                "content": "In 1995, about 1,500 hectares of wetland in the Mai Po and Inner Deep Bay region were enlisted as a Ramsar <nobr>Site. This piece of wetland is very important for migratory</nobr> birds, and is a wintering ground and refueling station for them flying from Russia in the Arctic to Australia."
               },
               "image": {
                 "src": "./images/ex302a/1995_img1a.jpg",
@@ -1026,7 +1026,7 @@
             {
               "text": {
                 "year": 1998,
-                "content": "In 1998, the Government promulgated the report of </br>the \"Territorial Development Strategy Review\", which formulated the long term strategy up to 2011. The Report suggested to study the development potential of North West New Territories, North East New Territories, Hong Kong Island South and Lamma Island to address the increasing housing demand."
+                "content": "In 1996, the Government completed the \"Territorial Development Strategy Review\". The report, which was promulgated in 1998, suggested to study the development potential of North West New Territories, North East New Territories, Hong Kong Island South and Lamma Island to address the increasing </br>housing demand."
               },
               "image": {
                 "src": "./images/ex302a/1998_img1.png",
@@ -1063,7 +1063,7 @@
           ]
         },
         {
-          "year": "2000 - 2019",
+          "year": "2000 - 2020",
           "text1": "Under the emerging global economic trends, Hong Kong was facing new challenges. In 2007, the Government promulgated \"Hong Kong 2030: Planning Vision and Strategy\", proposing a planning strategy which focus on providing a quality living environment, enhancing economic competitiveness, and strengthening links with the Mainland. Looking ahead, Hong Kong is committed to develop into a more liveable, competitive and sustainable \"Asia’s World City\".",
           "cover": "Under the emerging global economic trends, Hong Kong was facing new challenges. In 2007, the Government promulgated \"Hong Kong 2030: Planning Vision and Strategy\", proposing a planning strategy which focus on providing a quality living environment, enhancing economic competitiveness, and strengthening links with the Mainland. Looking ahead, Hong Kong is committed to develop into a more liveable, competitive and sustainable \"Asia’s World City\".",
           "coverinsidebar": {
@@ -2388,39 +2388,6 @@
             {
               "text": {
                 "year": 1972,
-                "content": "<nobr>香港自60年代開始經濟不斷發展，城市發展的壓力也不</nobr><nobr>斷增加。1965年，政府開始編制《土地利用計劃書》，</nobr>全面檢討香港長遠的土地用途和人口分布。1974 年，政府因應當時的社會經濟情況和發展優先次序，大幅度修訂上述計劃書，並重新命名為《香港發展綱略》。"
-              },
-              "image": {
-                "src": "./images/ex302a/1946_img1.png",
-                "translationType": "scale",
-                "description": "《香港發展綱略》",
-                "gallery": [
-                  {
-                    "src": "./images/ex302a/1979_img2a.png",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1979_img3a.png",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1979_img4a.png",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1979_img5a.png",
-                    "reference": "圖片參考: ISD"
-                  }
-                ]
-              },
-              "category": {
-                "id": "strategic",
-                "name": "策略規劃"
-              }
-            },
-            {
-              "text": {
-                "year": 1972,
                 "content": "1972年，政府宣布「十年建屋計劃」，並於1973年成立香港房屋委員會，接管所有徙置大廈及政府廉租屋邨之餘，亦肩負起推展公營房屋計劃的責任。"
               },
               "image": {
@@ -2620,6 +2587,39 @@
             {
               "text": {
                 "year": 1979,
+                "content": "<nobr>香港自60年代開始經濟不斷發展，城市發展的壓力也不</nobr><nobr>斷增加。1965年，政府開始編制《土地利用計劃書》，</nobr>全面檢討香港長遠的土地用途和人口分布。1974 年，政府因應當時的社會經濟情況和發展優先次序，大幅度修訂上述計劃書，並重新命名為《香港發展綱略》。"
+              },
+              "image": {
+                "src": "./images/ex302a/1946_img1.png",
+                "translationType": "scale",
+                "description": "《香港發展綱略》",
+                "gallery": [
+                  {
+                    "src": "./images/ex302a/1979_img2a.png",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img3a.png",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img4a.png",
+                    "reference": "圖片參考: ISD"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img5a.png",
+                    "reference": "圖片參考: ISD"
+                  }
+                ]
+              },
+              "category": {
+                "id": "strategic",
+                "name": "策略規劃"
+              }
+            },
+            {
+              "text": {
+                "year": 1979,
                 "content": "1979年，為現時觀塘綫一部分的第一期修正早期系統通車，地下鐵路開始分階段投入服務，標誌著香港快速集體運輸系統的開始。2007年，地下鐵路公<nobr style=\"width:26vw;display: block;\">司和九廣鐵路公司合併為香港鐵路有限公司（港鐵）。</nobr>"
               },
               "image": {
@@ -2813,7 +2813,7 @@
             {
               "text": {
                 "year": 1995,
-                "content": "1995年，米埔及內后海灣約1 500公頃濕地正式列為拉姆薩爾濕地。這片濕地對遷飛候鳥非常重要，是牠們從北極圈俄羅斯遷飛至澳洲期間的過冬棲息地和補給站。"
+                "content": "1995年，米埔及內后海灣約1,500公頃濕地正式列為拉姆薩爾濕地。這片濕地對遷飛候鳥非常重要，是牠們從北極圈俄羅斯遷飛至澳洲期間的過冬棲息地和補給站。"
               },
               "image": {
                 "src": "./images/ex302a/1995_img1a.jpg",
@@ -2943,7 +2943,7 @@
             {
               "text": {
                 "year": 1998,
-                "content": "1998年，政府發表《全港發展策略檢討》報告，制定至2011年為止的長遠計劃。報告提出研究新界西<nobr>北部、新界東北部、港島南部和南丫島的發展潛質，</nobr>應付不斷增加的房屋需求。"
+                "content": "1996年，政府完成《全港發展策略檢討》，並於1998年發表報告，提出研究新界西北部、新界東</br>北部、港島南部和南丫島的發展潛質，應付不斷增加的房屋需求。"
               },
               "image": {
                 "src": "./images/ex302a/1998_img1.png",
@@ -2980,7 +2980,7 @@
           ]
         },
         {
-          "year": "2000 - 2019",
+          "year": "2000 - 2020",
           "text1": "在全球經濟新趨勢下，本港面對新挑戰。2007年政府發表《香港2030：規劃遠景與策略》，建議規劃策略集中於提供優質生活環境、提升經濟競爭力、以及加強與內地的聯繫。 展望將來，使香港將成為更宜居，更具競爭力及可持續發展的「亞洲國際都會」。",
           "cover": "在全球經濟新趨勢下，本港面對新挑戰。2007年政府發表《香港2030：規劃遠景與策略》，建議規劃策略集中於提供優質生活環境、提升經濟競</br>爭力、以及加強與內地的聯繫。展望將來，使</br>香港將成為更宜居，更具競爭力及可持續發展</br>的「亞洲國際都會」。",
           "coverinsidebar": {
