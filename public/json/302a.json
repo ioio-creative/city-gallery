@@ -41,15 +41,14 @@
                 "src": "./images/ex302a/1863_img1.png",
                 "translationType": "scale",
                 "description": "Waterworks",
-                "reference": "Source: ISD",
                 "gallery": [
                   {
                     "src": "./images/ex302a/1863_img1.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1863_img2.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -64,13 +63,13 @@
                 "content": "In 1869, the Government granted a piece of land on Po Yan Street in Sheung Wan to establish the first Chinese hospital in Hong Kong, Tung Wah Hospital. In 1872, the Hospital commenced operation to provide free Chinese medicial services to the sick and poor."
               },
               "image": {
-                "src": "./images/ex302a/1872_img1.jpg",
+                "src": "./images/ex302a/1872_img1.png",
                 "translationType": "scale",
                 "description": "The First </br>Chinese Hospital in </br>Hong Kong",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/1872_img1.jpg",
-                    "reference": "Source: Tung Wah"
+                    "src": "./images/ex302a/1872_img1.png",
+                    "reference": "Source: Tung Wah Group of Hospitals"
                   }
                 ]
               },
@@ -91,15 +90,15 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1890_img1.png",
-                    "reference": "Source: archive.org(p168)"
+                    "reference": "Source: HK Electric"
                   },
                   {
                     "src": "./images/ex302a/1890_img2.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1890_img3.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -120,23 +119,19 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1910_img1.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1910_img2.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1910_img3.png",
-                    "reference": "圖片參考: KCRC"
+                    "reference": "Source: Public Records Office, Government Records Service"
                   },
                   {
                     "src": "./images/ex302a/1910_img4.png",
-                    "reference": "圖片參考: KCRC"
-                  },
-                  {
-                    "src": "./images/ex302a/1910_img5.png",
-                    "reference": "圖片參考: KCRC"
+                    "reference": "Source: Public Records Office, Government Records Service"
                   }
                 ]
               },
@@ -151,21 +146,25 @@
                 "content": "In 1912, the Chinese businessmen Ho Kai and Au Tak formed a company to reclaim land in Kowloon Bay and planned to build residential development. The reclamation area was named after the company </br> name \"Kai Tak\".  Subsequently, the company was closed down due to economic recession, leaving the land vacant. The Government then bought back the land for airport construction. In 1930, the Kai Tak Airport commenced operation."
               },
               "image": {
-                "src": "./images/ex302a/1910_img1.png",
+                "src": "./images/ex302a/1930_img1.png",
                 "translationType": "scale",
                 "description": "Kai Tak Airport",
                 "gallery": [
                   {
                     "src": "./images/ex302a/1930_img1.png",
-                    "reference": "圖片參考: GRS"
+                    "reference": "Source: Public Records Office, Government Records Service"
                   },
                   {
                     "src": "./images/ex302a/1930_img2.png",
-                    "reference": "圖片參考: GRS"
+                    "reference": "Source: Public Records Office, Government Records Service"
                   },
                   {
                     "src": "./images/ex302a/1930_img3.png",
-                    "reference": "圖片參考: GRS"
+                    "reference": "Source: Public Records Office, Government Records Service"
+                  },
+                  {
+                    "src": "./images/ex302a/1930_img4.png",
+                    "reference": "Source: Public Records Office, Government Records Service"
                   }
                 ]
               },
@@ -180,25 +179,25 @@
                 "content": "In 1939, the Government enacted the \"Town Planning Ordinance\".  The Ordinance makes provision for the Town Planning Board to systematically prepare and approve plans for the layout of areas of Hong Kong as well as for the types of building suitable for erection therein and for the preparation and approval of plans for areas within which permission is required for development to promote the health, safety, convenience and general welfare of the community."
               },
               "image": {
-                "src": "./images/ex302a/1910_img1.png",
+                "src": "./images/ex302a/1939_img1.png",
                 "translationType": "scale",
                 "description": "Enactment of the Town Planning Ordinance",
                 "gallery": [
                   {
                     "src": "./images/ex302a/1939_img1.png",
-                    "reference": "圖片參考: PlanD"
+                    "reference": "Source: Planning Department"
                   },
                   {
                     "src": "./images/ex302a/1939_img2.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1939_img3.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1939_img4.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -229,27 +228,26 @@
                 "src": "./images/ex302a/1946_img1.png",
                 "translationType": "scale",
                 "description": "Development in Kowloon",
-                "reference": "Source: GRS",
                 "gallery": [
                   {
                     "src": "./images/ex302a/1946_img1.png",
-                    "reference": "Source: GRS"
+                    "reference": "Source: Public Records Office, Government Records Service"
                   },
                   {
                     "src": "./images/ex302a/1946_img2.png",
-                    "reference": "Source: GRS"
+                    "reference": "Source: Public Records Office, Government Records Service"
                   },
                   {
                     "src": "./images/ex302a/1946_img3.png",
-                    "reference": "Source: GRS"
+                    "reference": "Source: Public Records Office, Government Records Service"
                   },
                   {
                     "src": "./images/ex302a/1946_img4.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1946_img5.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -264,14 +262,14 @@
                 "content": "In 1947, the Public Works Department established a Town Planning Office dedicated for town planning matters. After several rounds of organisational </br>re-structuring, in 1990, the Government consolidated the scattered functions of town planning to establish the Planning Department, responsible for preparation of various types of plans, formulation of land use guidelines and provision of services to the Town Planning Broad."
               },
               "image": {
-                "src": "./images/ex302a/1946_img1.png",
+                "src": "./images/ex302a/1947_img1.png",
                 "translationType": "scale",
                 "description": "Establishment of Town Planning Office",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/1946_img1.png",
+                    "src": "./images/ex302a/1947_img1.png",
                     "description": "",
-                    "reference": ""
+                    "reference": "Source: Public Records Office, Government Records Service"
                   }
                 ]
               },
@@ -292,23 +290,19 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1948_img1.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Planning Department"
                   },
                   {
                     "src": "./images/ex302a/1948_img2.png",
-                    "reference": "Source: To be advised by Plan D"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1948_img3.png",
-                    "reference": "Source: To be advised by Plan D"
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/1948_img3.png",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1948_img3.png",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/1948_img4.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -329,23 +323,23 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1954_img1a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1954_img2a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1954_img3a.png",
-                    "reference": "圖片參考: KCRC"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1954_img4a.png",
-                    "reference": "圖片參考: KCRC"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1954_img5a.png",
-                    "reference": "圖片參考: KCRC"
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -366,19 +360,19 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1954_img1b.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Public Records Office, Government Records Service"
                   },
                   {
                     "src": "./images/ex302a/1954_img2b.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1954_img3b.png",
-                    "reference": "圖片參考: KCRC"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1954_img4b.png",
-                    "reference": "圖片參考: KCRC"
+                    "reference": "Source: Public Records Office, Government Records Service"
                   }
                 ]
               },
@@ -413,19 +407,19 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1965_img1.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1965_img2.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1965_img3.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1965_img4.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -446,19 +440,19 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1967_img1.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Public Records Office, Government Records Service"
                   },
                   {
                     "src": "./images/ex302a/1967_img2.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1967_img3.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1967_img4.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -479,19 +473,19 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1972_img1a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1972_img2a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1972_img3a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1972_img4a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -512,23 +506,11 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1972_img1b.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1972_img2b.png",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1972_img3b.png",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1972_img4b.png",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1972_img5b.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -550,15 +532,15 @@
                   {
                     "src": "./images/ex302a/1972_img1c.png",
                     "description": "",
-                    "reference": ""
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1972_img2c.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1972_img3c.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -579,23 +561,23 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1973_img1.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Planning Department"
                   },
                   {
                     "src": "./images/ex302a/1973_img2.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1973_img3.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Planning Department"
                   },
                   {
                     "src": "./images/ex302a/1973_img4.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1973_img5.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -616,19 +598,15 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1976_img1.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1976_img2.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/1976_img3.jpg",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1976_img4.png",
-                    "reference": "圖片參考: ISD"
+                    "src": "./images/ex302a/1976_img3.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -650,15 +628,15 @@
                   {
                     "src": "./images/ex302a/1978_img1.png",
                     "description": "",
-                    "reference": ""
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1978_img2.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1978_img3.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -673,25 +651,29 @@
                 "content": "Since the 1960s, Hong Kong's economy has started to grow. The Government needed to holistically review the long-term land use and population distribution.  In 1965, the Government began formulating the \"Colony Outline Plan\" to comprehensively review the long-term land use and population distribution of Hong Kong. In 1974, based on the contemporary socio-economic conditions and development priorities, the Plan was substantially revised and renamed as \"Hong Kong Outline Plan\"."
               },
               "image": {
-                "src": "./images/ex302a/1946_img1.png",
+                "src": "./images/ex302a/1979_img1a.png",
                 "translationType": "scale",
                 "description": "Hong Kong </br>Outline Plan",
                 "gallery": [
                   {
+                    "src": "./images/ex302a/1979_img1a.png",
+                    "reference": "Source: Plannning Department"
+                  },
+                  {
                     "src": "./images/ex302a/1979_img2a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Plannning Department"
                   },
                   {
                     "src": "./images/ex302a/1979_img3a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1979_img4a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1979_img5a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -712,19 +694,23 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1979_img1b.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1979_img2b.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: MTR Corporation"
                   },
                   {
                     "src": "./images/ex302a/1979_img3b.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/1979_img4b.jpg",
-                    "reference": "圖片參考: ISD"
+                    "src": "./images/ex302a/1979_img4b.png",
+                    "reference": "Source: MTR Corporation"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img5b.png",
+                    "reference": "Source: MTR Corporation"
                   }
                 ]
               },
@@ -759,19 +745,23 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1984_img1.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Planning Department"
                   },
                   {
                     "src": "./images/ex302a/1984_img2.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1984_img3.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1984_img4.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
+                  },
+                  {
+                    "src": "./images/ex302a/1984_img5.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -792,19 +782,15 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1988_img1.png",
-                    "reference": "Source: URA 土地發展公司年報 1997-1998"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1988_img2.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1988_img3.png",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1988_img4.png",
-                    "reference": "Source: URA 土地發展公司年報 1997-1998"
+                    "reference": "Source: Urban Renewal Authority"
                   }
                 ]
               },
@@ -825,19 +811,23 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1989_img1.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Planning Department"
                   },
                   {
                     "src": "./images/ex302a/1989_img2.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1989_img3.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1989_img4.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
+                  },
+                  {
+                    "src": "./images/ex302a/1989_img5.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -858,7 +848,7 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1990_img1.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Planing Department"
                   }
                 ]
               },
@@ -880,11 +870,11 @@
                   {
                     "src": "./images/ex302a/1991_img1.png",
                     "description": "",
-                    "reference": ""
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1991_img2.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -899,25 +889,25 @@
                 "content": "In 1995, about 1,500 hectares of wetland in the Mai Po and Inner Deep Bay region were enlisted as a Ramsar <nobr>Site. This piece of wetland is very important for migratory</nobr> birds, and is a wintering ground and refueling station for them flying from Russia in the Arctic to Australia."
               },
               "image": {
-                "src": "./images/ex302a/1995_img1a.jpg",
+                "src": "./images/ex302a/1995_img1a.png",
                 "translationType": "scale",
                 "description": "Ramsar Site",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/1995_img1a.jpg",
-                    "reference": "圖片參考: ISD"
+                    "src": "./images/ex302a/1995_img1a.png",
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1995_img2a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/1995_img3a.jpg",
-                    "reference": "圖片參考: ISD"
+                    "src": "./images/ex302a/1995_img3a.png",
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1995_img4a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Agriculture, Fisheries and Conservation Department"
                   }
                 ]
               },
@@ -938,23 +928,23 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1995_img1b.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/1995_img2b.jpg",
-                    "reference": "圖片參考: ISD"
+                    "src": "./images/ex302a/1995_img2b.png",
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/1995_img3b.jpg",
-                    "reference": "圖片參考: ISD"
+                    "src": "./images/ex302a/1995_img3b.png",
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/1995_img4b.jpg",
-                    "reference": "圖片參考: ISD"
+                    "src": "./images/ex302a/1995_img4b.png",
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/1995_img5b.jpg",
-                    "reference": "圖片參考: ISD"
+                    "src": "./images/ex302a/1995_img5b.png",
+                    "reference": "Source: Agriculture, Fisheries and Conservation Department"
                   }
                 ]
               },
@@ -969,22 +959,22 @@
                 "content": "The \"Protection of the Harbour Ordinance\" enacted in 1997 and was subsequently amended aims to protect and preserve the harbour by establishing a presumption against reclamation in the harbour."
               },
               "image": {
-                "src": "./images/ex302a/1997_img1a.jpg",
+                "src": "./images/ex302a/1997_img1a.png",
                 "translationType": "scale",
                 "description": "Protection of </br>Victoria Harbour",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/1997_img1a.jpg",
+                    "src": "./images/ex302a/1997_img1a.png",
                     "description": "",
-                    "reference": ""
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1997_img2a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1997_img3a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1005,16 +995,11 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1997_img1b.png",
-                    "description": "",
-                    "reference": ""
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/1997_img2b.png",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1997_img3b.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1035,23 +1020,11 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1998_img1.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Planning Department"
                   },
                   {
                     "src": "./images/ex302a/1998_img2.png",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1998_img3.png",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1979_img4.png",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1979_img5.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1083,19 +1056,10 @@
                 "translationType": "scale",
                 "description": "Sewerage Treatment </br>and Disposal",
                 "css": "sewage",
-                "reference": "Source: ISD",
                 "gallery": [
                   {
                     "src": "./images/ex302a/2001_img1a.png",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2001_img2a.png",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2001_img3a.jpg",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1116,15 +1080,7 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2001_img1b.png",
-                    "reference": "Source: Tung Wah"
-                  },
-                  {
-                    "src": "./images/ex302a/2001_img2b.png",
-                    "reference": "Source: Tung Wah"
-                  },
-                  {
-                    "src": "./images/ex302a/2001_img3b.png",
-                    "reference": "Source: Tung Wah"
+                    "reference": "Source: Urban Renewal Authority"
                   }
                 ]
               },
@@ -1145,23 +1101,15 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2002_img1a.png",
-                    "reference": "Source: archive.org(p168)"
+                    "reference": "Source: Hong Kong Science Park"
                   },
                   {
                     "src": "./images/ex302a/2002_img2a.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Hong Kong Science Park"
                   },
                   {
                     "src": "./images/ex302a/2002_img3a.png",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2002_img4a.png",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2002_img5a.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Hong Kong Science Park"
                   }
                 ]
               },
@@ -1182,19 +1130,19 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2002_img1b.png",
-                    "reference": "Source: archive.org(p168)"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/2002_img2b.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/2002_img3b.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2002_img4b.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2002_img4b.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1215,11 +1163,11 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2004_img1a.png",
-                    "reference": "Source: GRS"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/2004_img2a.png",
-                    "reference": "Source: GRS"
+                    "reference": "Source: Planning Department"
                   }
                 ]
               },
@@ -1240,15 +1188,11 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2004_img1b.png",
-                    "reference": "Source: PlanD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2004_img2b.jpg",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2004_img3b.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2004_img2b.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1263,25 +1207,25 @@
                 "content": "In 2004, Hong Kong's first large-scale underground stormwater storage tank was completed.  It was situated under the Tai Hang Tung rugby pitch and football pitch, with a capacity of 100 000 cubic metres, and capable of handling rainstorms with a 50-year return period. Other flood prevention strategies and works include stormwater pumping stations, stormwater drainage tunnel systems, bypass floodway and storm drains, etc."
               },
               "image": {
-                "src": "./images/ex302a/2004_img1c.jpg",
+                "src": "./images/ex302a/2004_img1c.png",
                 "translationType": "scale",
                 "description": "Flood Prevention Strategy",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/2004_img1c.jpg",
-                    "reference": "Source: PlanD"
+                    "src": "./images/ex302a/2004_img1c.png",
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2004_img2c.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2004_img2c.png",
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2004_img3c.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2004_img3c.png",
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2004_img4c.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2004_img4c.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1293,25 +1237,25 @@
             {
               "text": {
                 "year": 2006,
-                "content": "In 2006, Ngong Ping 360 commenced operation.  It provides a cable ropeway to and fro Tung Chung and Ngong Ping, with a total length of 5.7 km, and is the longest bi-cable ropeway in Asia. The Ngong Ping tourism project is encompassing the religious heritage in Lantau, and its nearby attractions include the Big Buddha, Po Lin Monastery, and Wisdom Path."
+                "content": "In 2006, Ngong Ping 360 commenced operation.  It provides a cable ropeway to and fro Tung Chung and Ngong Ping, with a total length of 5.7 km, and is the longest bi-cable ropeway in Asia. The Ngong Ping tourism project is encompassing the religious heritage in Lantau, and its nearby attractions include the Big Buddha, Po Lin Monastery, and W政府新聞處om Path."
               },
               "image": {
-                "src": "./images/ex302a/2006_img1.jpg",
+                "src": "./images/ex302a/2006_img1.png",
                 "translationType": "scale",
                 "description": "Ngong Ping, Lantau",
-                "reference": "Source: ISD",
+                "reference": "Source: 政府新聞處",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/2006_img1.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2006_img1.png",
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2006_img2.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2006_img2.png",
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2006_img3.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2006_img3.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1332,11 +1276,7 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2007_img1a.png",
-                    "reference": "Source: Tung Wah"
-                  },
-                  {
-                    "src": "./images/ex302a/2007_img2a.png",
-                    "reference": "Source: Tung Wah"
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1351,25 +1291,25 @@
                 "content": "In 2007, aiming to strike a balance between development and heritage conservation, the Government launched the \"Revitalising Historic Buildings Through Partnership Scheme\" to let </br>non-profit organisations submit applications for revitalising government-owned historic buildings. The aim of the Scheme is to preserve historic buildings and put them into good and innovative use."
               },
               "image": {
-                "src": "./images/ex302a/2007_img1b.jpg",
+                "src": "./images/ex302a/2007_img1b.png",
                 "translationType": "scale",
                 "description": "Revitalising Historic Buildings Through Partnership Scheme",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/2007_img1b.jpg",
-                    "reference": "Source: archive.org(p168)"
+                    "src": "./images/ex302a/2007_img1b.png",
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2007_img2b.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2007_img2b.png",
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2007_img3b.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2007_img3b.png",
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2007_img4b.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2007_img4b.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1384,25 +1324,21 @@
                 "content": "In 2009, Hong Kong Geopark was designated as a National Geoparks of China, and was accepted as a member of the Global Geoparks Network in 2011. In 2015, it was renamed as \"Hong Kong UNESCO Global Geopark\". Located in the eastern part of Hong Kong, the Park includes the Sai Kung Volcanic Rock Region and the Northeast New Territories Sedimentary </br>Rock Region."
               },
               "image": {
-                "src": "./images/ex302a/2009_img1.jpg",
+                "src": "./images/ex302a/2009_img1.png",
                 "translationType": "scale",
                 "description": "Geopark",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/2009_img1.jpg",
-                    "reference": "Source: archive.org(p168)"
+                    "src": "./images/ex302a/2009_img1.png",
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2009_img2.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2009_img2.png",
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2009_img3.jpg",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2009_img4.png",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2009_img3.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1423,19 +1359,15 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2010_img1.png",
-                    "reference": "Source: GRS"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/2010_img2.png",
-                    "reference": "Source: GRS"
+                    "reference": "Source: Harbourfront Commission"
                   },
                   {
-                    "src": "./images/ex302a/2010_img3.jpg",
-                    "reference": "Source: GRS"
-                  },
-                  {
-                    "src": "./images/ex302a/2010_img4.jpg",
-                    "reference": "Source: GRS"
+                    "src": "./images/ex302a/2010_img3.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1456,11 +1388,11 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2011_img1a.png",
-                    "reference": "Source: PlanD"
+                    "reference": "Source: Chief Secretary for Administration’s Office"
                   },
                   {
                     "src": "./images/ex302a/2011_img2a.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Airport Authority Hong Kong"
                   }
                 ]
               },
@@ -1481,11 +1413,7 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2011_img1b.png",
-                    "reference": "Source: PlanD"
-                  },
-                  {
-                    "src": "./images/ex302a/2011_img2b.jpg",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1503,23 +1431,15 @@
                 "src": "./images/ex302a/2011_img1c.png",
                 "translationType": "scale",
                 "description": "Urban Design Study for the New Central Harborfront",
-                "reference": "Source: ISD",
+                "reference": "Source: 政府新聞處",
                 "gallery": [
                   {
                     "src": "./images/ex302a/2011_img1c.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/2011_img2c.png",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2011_img3c.png",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2011_img4c.jpg",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Planning Department"
                   }
                 ]
               },
@@ -1540,19 +1460,19 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2012_img1.png",
-                    "reference": "Source: Tung Wah"
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2012_img2.jpg",
-                    "reference": "Source: Tung Wah"
+                    "src": "./images/ex302a/2012_img2.png",
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/2012_img3.png",
-                    "reference": "Source: Tung Wah"
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2012_img4.jpg",
-                    "reference": "Source: Tung Wah"
+                    "src": "./images/ex302a/2012_img4.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1573,19 +1493,15 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2013_img1.png",
-                    "reference": "Source: archive.org(p168)"
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2013_img2.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2013_img2.png",
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2013_img3.jpg",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2013_img4.png",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2013_img3.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1606,15 +1522,11 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2014_img1a.png",
-                    "reference": "Source: archive.org(p168)"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/2014_img2a.png",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2014_img3a.jpg",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Transport and Housing Bureau"
                   }
                 ]
               },
@@ -1635,19 +1547,15 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2014_img1b.png",
-                    "reference": "Source: GRS"
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/2014_img2b.png",
-                    "reference": "Source: GRS"
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2014_img3b.jpg",
-                    "reference": "Source: GRS"
-                  },
-                  {
-                    "src": "./images/ex302a/2014_img4b.png",
-                    "reference": "Source: GRS"
+                    "src": "./images/ex302a/2014_img3b.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1662,25 +1570,21 @@
                 "content": "In 2014, the government successively planned new development areas and extension of new towns, including the reclamation works of Tung Chung New Town Extension Project, which began in 2017 and 2019. The land formation works in the Kwu Tung North and Fanling North New Development Areas and in Hung Shui Kiu/Ha Tsuen have also started."
               },
               "image": {
-                "src": "./images/ex302a/2014_img1c.jpg",
+                "src": "./images/ex302a/2014_img1c.png",
                 "translationType": "scale",
                 "description": "New Development Areas and New Town Extension",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/2014_img1c.jpg",
-                    "reference": "Source: GRS"
+                    "src": "./images/ex302a/2014_img1c.png",
+                    "reference": "Source: Information Services Department"
                   },
                   {
                     "src": "./images/ex302a/2014_img2c.png",
-                    "reference": "Source: GRS"
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2014_img3c.jpg",
-                    "reference": "Source: GRS"
-                  },
-                  {
-                    "src": "./images/ex302a/2014_img4c.jpg",
-                    "reference": "Source: GRS"
+                    "src": "./images/ex302a/2014_img3c.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1701,15 +1605,11 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2016_img1.png",
-                    "reference": "Source: PlanD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2016_img2.jpg",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2016_img3.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2016_img2.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1730,15 +1630,11 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2017_img1a.png",
-                    "reference": "Source: PlanD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2017_img2a.jpg",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2017_img3a.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2017_img2a.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1753,13 +1649,13 @@
                 "content": "In 2017, the Hong Kong SAR Government and the Shenzhen Municipal People’s Government signed the \"Memorandum of Understanding on Jointly Developing the Lok Ma Chau Loop\" to support Hong Kong's innovation and technology industry.  Both parties will join hands in developing the Loop as \"Hong Kong/Shenzhen Innovation and Technology Park\"."
               },
               "image": {
-                "src": "./images/ex302a/2017_img1b.jpg",
+                "src": "./images/ex302a/2017_img1b.png",
                 "translationType": "scale",
                 "description": "Hong Kong-Shenzhen Innovation and Technology Park in the Loop",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/2017_img1b.jpg",
-                    "reference": "Source: PlanD"
+                    "src": "./images/ex302a/2017_img1b.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1780,19 +1676,15 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2017_img1c.png",
-                    "reference": "Source: PlanD"
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2017_img2c.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2017_img2c.png",
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2017_img3c.jpg",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2017_img4c.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2017_img3c.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1813,11 +1705,19 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2018_img1a.png",
-                    "reference": "Source: PlanD"
+                    "reference": "Source: Arup"
                   },
                   {
                     "src": "./images/ex302a/2018_img2a.png",
-                    "reference": "Source: ISD"
+                    "reference": "Source: Arup"
+                  },
+                  {
+                    "src": "./images/ex302a/2018_img3a.png",
+                    "reference": "Source: Arup"
+                  },
+                  {
+                    "src": "./images/ex302a/2018_img4a.png",
+                    "reference": "Source: Arup"
                   }
                 ]
               },
@@ -1832,21 +1732,29 @@
                 "content": "In 2018, the Hong Kong section of the </br>Guangzhou-Shenzhen-Hong Kong Express Rail Link was inaugurated, with a total length of about 26 km. It runs from Hong Kong West Kowloon Station and routes through a dedicated tunnel to Shenzhen Futian Station and Guangzhounan Station to connect with the national high speed rail network.  In 2018, the </br>Hong Kong-Zhuhai-Macao Bridge was completed and commenced operation to support closer economic <nobr>cooperation between Hong Kong SAR and the Mainland.</nobr>"
               },
               "image": {
-                "src": "./images/ex302a/2018_img1b.jpg",
+                "src": "./images/ex302a/2018_img1b.png",
                 "translationType": "scale",
                 "description": "High Speed Rail and Hong Kong-Zhuhai-Macao Bridge",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/2018_img1b.jpg",
-                    "reference": "Source: PlanD"
+                    "src": "./images/ex302a/2018_img1b.png",
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2018_img2b.jpg",
-                    "reference": "Source: PlanD"
+                    "src": "./images/ex302a/2018_img2b.png",
+                    "reference": "Source: Information Services Department"
                   },
                   {
-                    "src": "./images/ex302a/2018_img3b.jpg",
-                    "reference": "Source: PlanD"
+                    "src": "./images/ex302a/2018_img3b.png",
+                    "reference": "Source: Information Services Department"
+                  },
+                  {
+                    "src": "./images/ex302a/2018_img4b.png",
+                    "reference": "Source: Transport and Housing Bureau"
+                  },
+                  {
+                    "src": "./images/ex302a/2018_img5b.png",
+                    "reference": "Source: Transport and Housing Bureau"
                   }
                 ]
               },
@@ -1861,13 +1769,13 @@
                 "content": "In 2019, the State officially announced the “Outline Development Plan for the Guangdong-Hong Kong-Macao Greater Bay Area”. The objectives are to further deepen cooperation amongst Guangdong, Hong Kong and Macao, fully leverage the composite advantages of the three places, facilitate in-depth integration within the region, and promote coordinated regional economic development with a view to developing an international <nobr>first-class bay area ideal for living, working and traveling.</nobr>"
               },
               "image": {
-                "src": "./images/ex302a/2019_img1.jpg",
+                "src": "./images/ex302a/2019_img1.png",
                 "translationType": "scale",
                 "description": "Guangdong-</br>Hong Kong-Macao</br>Regional Cooperation",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/2019_img1.jpg",
-                    "reference": "Source: PlanD"
+                    "src": "./images/ex302a/2019_img1.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1882,17 +1790,13 @@
                 "content": "The Liantang/Heung Yuen Wai Port commenced operation in 2020, providing a more efficient </br>cross-boundary passage between Hong Kong and Shenzhen East, Huizhou and Guangdong East."
               },
               "image": {
-                "src": "./images/ex302a/2018_img1c.jpg",
+                "src": "./images/ex302a/2020_img1a.png",
                 "translationType": "scale",
                 "description": "Liantang/</br>Heung Yuen Wai Port",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/2018_img1c.jpg",
-                    "reference": "Source: PlanD"
-                  },
-                  {
-                    "src": "./images/ex302a/2018_img2c.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2020_img1a.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1907,17 +1811,17 @@
                 "content": "The \"Hong Kong 2030+: Towards a Planning Vision and Strategy Transcending 2030\" puts forward the development strategies in face of the new challenges in future - enhancing liveability in a compact high-density city; embracing new economic opportunities and <nobr>challenges; and creating capacity for sustainable growth.</nobr>"
               },
               "image": {
-                "src": "./images/ex302a/2018_img1d.jpg",
+                "src": "./images/ex302a/2020_img1b.png",
                 "translationType": "scale",
                 "description": "Upcoming",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/2018_img1d.jpg",
-                    "reference": "Source: PlanD"
+                    "src": "./images/ex302a/2020_img1b.png",
+                    "reference": "Source: Planning Department"
                   },
                   {
-                    "src": "./images/ex302a/2018_img2d.png",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2020_img2b.png",
+                    "reference": "Source: Information Services Department"
                   }
                 ]
               },
@@ -1959,15 +1863,14 @@
                 "src": "./images/ex302a/1863_img1.png",
                 "translationType": "scale",
                 "description": "水務設施",
-                "reference": "Source: ISD",
                 "gallery": [
                   {
                     "src": "./images/ex302a/1863_img1.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1863_img2.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -1982,13 +1885,13 @@
                 "content": "1869年，政府在上環普仁街撥出土地，興建香港第<nobr>一間華人醫院 — 東華醫院。1872年，醫院落成啟用，</nobr>為貧苦市民提供免費中醫藥服務。"
               },
               "image": {
-                "src": "./images/ex302a/1872_img1.jpg",
+                "src": "./images/ex302a/1872_img1.png",
                 "translationType": "scale",
                 "description": "香港第一間華人醫院",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/1872_img1.jpg",
-                    "reference": "Source: Tung Wah"
+                    "src": "./images/ex302a/1872_img1.png",
+                    "reference": "資料來源: 東華三院"
                   }
                 ]
               },
@@ -2009,15 +1912,15 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1890_img1.png",
-                    "reference": "Source: archive.org(p168)"
+                    "reference": "資料來源: 港燈"
                   },
                   {
                     "src": "./images/ex302a/1890_img2.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1890_img3.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -2038,23 +1941,19 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1910_img1.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1910_img2.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1910_img3.png",
-                    "reference": "圖片參考: KCRC"
+                    "reference": "資料來源: 政府檔案處歷史檔案館"
                   },
                   {
                     "src": "./images/ex302a/1910_img4.png",
-                    "reference": "圖片參考: KCRC"
-                  },
-                  {
-                    "src": "./images/ex302a/1910_img5.png",
-                    "reference": "圖片參考: KCRC"
+                    "reference": "資料來源: 政府檔案處歷史檔案館"
                   }
                 ]
               },
@@ -2075,15 +1974,19 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1930_img1.png",
-                    "reference": "圖片參考: GRS"
+                    "reference": "資料來源: 政府檔案處歷史檔案館"
                   },
                   {
                     "src": "./images/ex302a/1930_img2.png",
-                    "reference": "圖片參考: GRS"
+                    "reference": "資料來源: 政府檔案處歷史檔案館"
                   },
                   {
                     "src": "./images/ex302a/1930_img3.png",
-                    "reference": "圖片參考: GRS"
+                    "reference": "資料來源: 政府檔案處歷史檔案館"
+                  },
+                  {
+                    "src": "./images/ex302a/1930_img4.png",
+                    "reference": "資料來源: 政府檔案處歷史檔案館"
                   }
                 ]
               },
@@ -2104,19 +2007,19 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1939_img1.png",
-                    "reference": "圖片參考: PlanD"
+                    "reference": "資料來源: 規劃署"
                   },
                   {
                     "src": "./images/ex302a/1939_img2.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1939_img3.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1939_img4.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -2147,27 +2050,27 @@
                 "src": "./images/ex302a/1946_img1.png",
                 "translationType": "scale",
                 "description": "九龍區發展",
-                "reference": "Source: GRS",
+                "reference": "資料來源: GRS",
                 "gallery": [
                   {
                     "src": "./images/ex302a/1946_img1.png",
-                    "reference": "Source: GRS"
+                    "reference": "資料來源: 政府檔案處歷史檔案館"
                   },
                   {
                     "src": "./images/ex302a/1946_img2.png",
-                    "reference": "Source: GRS"
+                    "reference": "資料來源: 政府檔案處歷史檔案館"
                   },
                   {
                     "src": "./images/ex302a/1946_img3.png",
-                    "reference": "Source: GRS"
+                    "reference": "資料來源: 政府檔案處歷史檔案館"
                   },
                   {
                     "src": "./images/ex302a/1946_img4.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1946_img5.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -2182,14 +2085,14 @@
                 "content": "1947年，工務司署成立城市設計組，專責城市規劃事宜。經過多次的部門更迭後，1990年，政府把分散的規劃職能合併，成立規劃署，負責擬備各類</br>圖則、制定土地用途指引，以及為城市規劃委員會提供服務。"
               },
               "image": {
-                "src": "./images/ex302a/1946_img1.png",
+                "src": "./images/ex302a/1947_img1.png",
                 "translationType": "scale",
                 "description": "成立城市設計組",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/1946_img1.png",
+                    "src": "./images/ex302a/1947_img1.png",
                     "description": "",
-                    "reference": ""
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -2210,23 +2113,19 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1948_img1.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 規劃署"
                   },
                   {
                     "src": "./images/ex302a/1948_img2.png",
-                    "reference": "Source: To be advised by Plan D"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1948_img3.png",
-                    "reference": "Source: To be advised by Plan D"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/1948_img3.png",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1948_img3.png",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/1948_img4.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -2247,23 +2146,23 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1954_img1a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1954_img2a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1954_img3a.png",
-                    "reference": "圖片參考: KCRC"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1954_img4a.png",
-                    "reference": "圖片參考: KCRC"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1954_img5a.png",
-                    "reference": "圖片參考: KCRC"
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -2284,19 +2183,19 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1954_img1b.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府檔案處歷史檔案館"
                   },
                   {
                     "src": "./images/ex302a/1954_img2b.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1954_img3b.png",
-                    "reference": "圖片參考: KCRC"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1954_img4b.png",
-                    "reference": "圖片參考: KCRC"
+                    "reference": "資料來源: 政府檔案處歷史檔案館"
                   }
                 ]
               },
@@ -2327,23 +2226,23 @@
                 "src": "./images/ex302a/1965_img1.png",
                 "translationType": "scale",
                 "description": "東江—深圳供水工程",
-                "reference": "Source: GRS",
+                "reference": "資料來源: GRS",
                 "gallery": [
                   {
                     "src": "./images/ex302a/1965_img1.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府檔案處歷史檔案館"
                   },
                   {
                     "src": "./images/ex302a/1965_img2.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1965_img3.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1965_img4.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -2364,19 +2263,19 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1967_img1.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府檔案處歷史檔案館"
                   },
                   {
                     "src": "./images/ex302a/1967_img2.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1967_img3.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1967_img4.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -2397,19 +2296,19 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1972_img1a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1972_img2a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1972_img3a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1972_img4a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -2430,23 +2329,11 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1972_img1b.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1972_img2b.png",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1972_img3b.png",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1972_img4b.png",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1972_img5b.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -2467,15 +2354,15 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1972_img1c.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1972_img2c.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1972_img3c.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -2496,23 +2383,23 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1973_img1.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 規劃署"
                   },
                   {
                     "src": "./images/ex302a/1973_img2.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1973_img3.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 規劃署"
                   },
                   {
                     "src": "./images/ex302a/1973_img4.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1973_img5.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -2533,19 +2420,15 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1976_img1.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1976_img2.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/1976_img3.jpg",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1976_img4.png",
-                    "reference": "圖片參考: ISD"
+                    "src": "./images/ex302a/1976_img3.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -2567,15 +2450,15 @@
                   {
                     "src": "./images/ex302a/1978_img1.png",
                     "description": "",
-                    "reference": ""
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1978_img2.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1978_img3.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -2590,25 +2473,29 @@
                 "content": "<nobr>香港自60年代開始經濟不斷發展，城市發展的壓力也不</nobr><nobr>斷增加。1965年，政府開始編制《土地利用計劃書》，</nobr>全面檢討香港長遠的土地用途和人口分布。1974 年，政府因應當時的社會經濟情況和發展優先次序，大幅度修訂上述計劃書，並重新命名為《香港發展綱略》。"
               },
               "image": {
-                "src": "./images/ex302a/1946_img1.png",
+                "src": "./images/ex302a/1979_img1a.png",
                 "translationType": "scale",
                 "description": "《香港發展綱略》",
                 "gallery": [
                   {
+                    "src": "./images/ex302a/1979_img1a.png",
+                    "reference": "資料來源: 規劃署"
+                  },
+                  {
                     "src": "./images/ex302a/1979_img2a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 規劃署"
                   },
                   {
                     "src": "./images/ex302a/1979_img3a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1979_img4a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1979_img5a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -2629,19 +2516,23 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1979_img1b.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1979_img2b.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 港鐵公司"
                   },
                   {
                     "src": "./images/ex302a/1979_img3b.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/1979_img4b.jpg",
-                    "reference": "圖片參考: ISD"
+                    "src": "./images/ex302a/1979_img4b.png",
+                    "reference": "資料來源: 港鐵公司"
+                  },
+                  {
+                    "src": "./images/ex302a/1979_img5b.png",
+                    "reference": "資料來源: 港鐵公司"
                   }
                 ]
               },
@@ -2672,23 +2563,26 @@
                 "src": "./images/ex302a/1984_img1.png",
                 "translationType": "scale",
                 "description": "《全港發展策略》",
-                "reference": "Source: GRS",
                 "gallery": [
                   {
                     "src": "./images/ex302a/1984_img1.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 規劃署"
                   },
                   {
                     "src": "./images/ex302a/1984_img2.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1984_img3.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1984_img4.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府新聞處"
+                  },
+                  {
+                    "src": "./images/ex302a/1984_img4.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -2709,19 +2603,15 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1988_img1.png",
-                    "reference": "Source: URA 土地發展公司年報 1997-1998"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1988_img2.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1988_img3.png",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1988_img4.png",
-                    "reference": "Source: URA 土地發展公司年報 1997-1998"
+                    "reference": "資料來源: 市區重建局"
                   }
                 ]
               },
@@ -2742,19 +2632,23 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1989_img1.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 規劃署"
                   },
                   {
                     "src": "./images/ex302a/1989_img2.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1989_img3.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1989_img4.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
+                  },
+                  {
+                    "src": "./images/ex302a/1989_img5.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -2775,7 +2669,7 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1990_img1.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 規劃署"
                   }
                 ]
               },
@@ -2797,11 +2691,11 @@
                   {
                     "src": "./images/ex302a/1991_img1.png",
                     "description": "",
-                    "reference": ""
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1991_img2.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -2816,25 +2710,25 @@
                 "content": "1995年，米埔及內后海灣約1,500公頃濕地正式列為拉姆薩爾濕地。這片濕地對遷飛候鳥非常重要，是牠們從北極圈俄羅斯遷飛至澳洲期間的過冬棲息地和補給站。"
               },
               "image": {
-                "src": "./images/ex302a/1995_img1a.jpg",
+                "src": "./images/ex302a/1995_img1a.png",
                 "translationType": "scale",
                 "description": "拉姆薩爾濕地",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/1995_img1a.jpg",
-                    "reference": "圖片參考: ISD"
+                    "src": "./images/ex302a/1995_img1a.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1995_img2a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/1995_img3a.jpg",
-                    "reference": "圖片參考: ISD"
+                    "src": "./images/ex302a/1995_img3a.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1995_img4a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 漁農自然護理署"
                   }
                 ]
               },
@@ -2855,23 +2749,23 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1995_img1b.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/1995_img2b.jpg",
-                    "reference": "圖片參考: ISD"
+                    "src": "./images/ex302a/1995_img2b.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/1995_img3b.jpg",
-                    "reference": "圖片參考: ISD"
+                    "src": "./images/ex302a/1995_img3b.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/1995_img4b.jpg",
-                    "reference": "圖片參考: ISD"
+                    "src": "./images/ex302a/1995_img4b.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/1995_img5b.jpg",
-                    "reference": "圖片參考: ISD"
+                    "src": "./images/ex302a/1995_img5b.png",
+                    "reference": "資料來源: 漁農自然護理署"
                   }
                 ]
               },
@@ -2886,22 +2780,22 @@
                 "content": "1997年通過及其後修訂的《保護海港條例》訂明，旨在藉設定不准在海港內進行填海工程的推定，以達致保護和保存海港的目的。"
               },
               "image": {
-                "src": "./images/ex302a/1997_img1a.jpg",
+                "src": "./images/ex302a/1997_img1a.png",
                 "translationType": "scale",
                 "description": "保護維多利亞港",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/1997_img1a.jpg",
+                    "src": "./images/ex302a/1997_img1a.png",
                     "description": "",
-                    "reference": ""
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1997_img2a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1997_img3a.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -2923,15 +2817,11 @@
                   {
                     "src": "./images/ex302a/1997_img1b.png",
                     "description": "",
-                    "reference": ""
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/1997_img2b.png",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1997_img3b.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -2952,23 +2842,11 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/1998_img1.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 規劃署"
                   },
                   {
                     "src": "./images/ex302a/1998_img2.png",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1998_img3.png",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1979_img4.png",
-                    "reference": "圖片參考: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/1979_img5.png",
-                    "reference": "圖片參考: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -2999,19 +2877,11 @@
                 "src": "./images/ex302a/2001_img1a.png",
                 "translationType": "scale",
                 "description": "污水處理及排放",
-                "reference": "Source: ISD",
+                "reference": "資料來源: 政府新聞處",
                 "gallery": [
                   {
                     "src": "./images/ex302a/2001_img1a.png",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2001_img2a.png",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2001_img3a.jpg",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -3032,15 +2902,7 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2001_img1b.png",
-                    "reference": "Source: Tung Wah"
-                  },
-                  {
-                    "src": "./images/ex302a/2001_img2b.png",
-                    "reference": "Source: Tung Wah"
-                  },
-                  {
-                    "src": "./images/ex302a/2001_img3b.png",
-                    "reference": "Source: Tung Wah"
+                    "reference": "資料來源: 市區重建局"
                   }
                 ]
               },
@@ -3061,23 +2923,15 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2002_img1a.png",
-                    "reference": "Source: archive.org(p168)"
+                    "reference": "資料來源: 香港科學園"
                   },
                   {
                     "src": "./images/ex302a/2002_img2a.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 香港科學園"
                   },
                   {
                     "src": "./images/ex302a/2002_img3a.png",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2002_img4a.png",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2002_img5a.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 香港科學園"
                   }
                 ]
               },
@@ -3098,19 +2952,19 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2002_img1b.png",
-                    "reference": "Source: archive.org(p168)"
+                    "reference": "資料來源: 香港科學園"
                   },
                   {
                     "src": "./images/ex302a/2002_img2b.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/2002_img3b.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2002_img4b.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2002_img4b.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -3131,11 +2985,11 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2004_img1a.png",
-                    "reference": "Source: GRS"
+                    "reference": "資料來源: 香港科學園"
                   },
                   {
                     "src": "./images/ex302a/2004_img2a.png",
-                    "reference": "Source: GRS"
+                    "reference": "資料來源: 規劃署"
                   }
                 ]
               },
@@ -3156,15 +3010,11 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2004_img1b.png",
-                    "reference": "Source: PlanD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2004_img2b.jpg",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2004_img3b.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2004_img2b.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -3179,25 +3029,25 @@
                 "content": "2004年，香港首個大型地下蓄洪池完工，設於大坑東欖球場和足球場地下，容量為十萬立方米，可抵禦50年一遇的暴雨。其他防洪策略和工程包括興建雨水泵房、雨水排放隧道系統、排水繞道和雨水</br>渠等。"
               },
               "image": {
-                "src": "./images/ex302a/2004_img1c.jpg",
+                "src": "./images/ex302a/2004_img1c.png",
                 "translationType": "scale",
                 "description": "防洪策略",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/2004_img1c.jpg",
-                    "reference": "Source: PlanD"
+                    "src": "./images/ex302a/2004_img1c.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2004_img2c.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2004_img2c.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2004_img3c.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2004_img3c.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2004_img4c.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2004_img4c.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -3212,22 +3062,21 @@
                 "content": "2006年，昂坪360正式通車，提供來往東涌及昂坪的索道服務，全長5.7公里，是亞洲最長的雙繩索纜車系統。昂坪整個旅遊項目融合了大嶼山的宗教文<nobr>化，鄰近景點包括天壇大佛、寶蓮禪寺和心經簡林。</nobr>"
               },
               "image": {
-                "src": "./images/ex302a/2006_img1.jpg",
+                "src": "./images/ex302a/2006_img1.png",
                 "translationType": "scale",
                 "description": "大嶼山昂坪",
-                "reference": "Source: ISD",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/2006_img1.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2006_img1.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2006_img2.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2006_img2.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2006_img3.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2006_img3.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -3248,11 +3097,7 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2007_img1a.png",
-                    "reference": "Source: Tung Wah"
-                  },
-                  {
-                    "src": "./images/ex302a/2007_img2a.png",
-                    "reference": "Source: Tung Wah"
+                    "reference": "資料來源: 規劃署"
                   }
                 ]
               },
@@ -3267,25 +3112,25 @@
                 "content": "2007年，政府為在發展和保育文物兩者之間取得</br>平衡，推出了「活化歷史建築伙伴計劃」，讓非牟利機構申請活化政府歷史建築。計劃目的為保存歷史建築，並以創新的方法予以善用。"
               },
               "image": {
-                "src": "./images/ex302a/2007_img1b.jpg",
+                "src": "./images/ex302a/2007_img1b.png",
                 "translationType": "scale",
                 "description": "「活化歷史建築<br/>伙伴計劃」",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/2007_img1b.jpg",
-                    "reference": "Source: archive.org(p168)"
+                    "src": "./images/ex302a/2007_img1b.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2007_img2b.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2007_img2b.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2007_img3b.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2007_img3b.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2007_img4b.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2007_img4b.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -3300,25 +3145,21 @@
                 "content": "2009年，香港地質公園成為中國國家地質公園，2011年加入世界地質公園網絡，並於2015年更名</br>為「香港聯合國教科文組織世界地質公園」。位於香港東部的地質公園包含西貢火山岩及新界東北沉積岩兩個園區。"
               },
               "image": {
-                "src": "./images/ex302a/2009_img1.jpg",
+                "src": "./images/ex302a/2009_img1.png",
                 "translationType": "scale",
                 "description": "地質公園",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/2009_img1.jpg",
-                    "reference": "Source: archive.org(p168)"
+                    "src": "./images/ex302a/2009_img1.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2009_img2.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2009_img2.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2009_img3.jpg",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2009_img4.png",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2009_img3.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -3339,19 +3180,15 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2010_img1.png",
-                    "reference": "Source: GRS"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/2010_img2.png",
-                    "reference": "Source: GRS"
+                    "reference": "資料來源: 海濱事務委員會"
                   },
                   {
-                    "src": "./images/ex302a/2010_img3.jpg",
-                    "reference": "Source: GRS"
-                  },
-                  {
-                    "src": "./images/ex302a/2010_img4.jpg",
-                    "reference": "Source: GRS"
+                    "src": "./images/ex302a/2010_img3.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -3372,11 +3209,11 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2011_img1a.png",
-                    "reference": "Source: PlanD"
+                    "reference": "資料來源: 政務司司長辦公室"
                   },
                   {
                     "src": "./images/ex302a/2011_img2a.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 香港機場管理局"
                   }
                 ]
               },
@@ -3397,11 +3234,7 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2011_img1b.png",
-                    "reference": "Source: PlanD"
-                  },
-                  {
-                    "src": "./images/ex302a/2011_img2b.jpg",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -3419,23 +3252,15 @@
                 "src": "./images/ex302a/2011_img1c.png",
                 "translationType": "scale",
                 "description": "中環新海濱城市設計",
-                "reference": "Source: ISD",
+                "reference": "資料來源: 政府新聞處",
                 "gallery": [
                   {
                     "src": "./images/ex302a/2011_img1c.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/2011_img2c.png",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2011_img3c.png",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2011_img4c.jpg",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 規劃署"
                   }
                 ]
               },
@@ -3456,19 +3281,19 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2012_img1.png",
-                    "reference": "Source: Tung Wah"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2012_img2.jpg",
-                    "reference": "Source: Tung Wah"
+                    "src": "./images/ex302a/2012_img2.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/2012_img3.png",
-                    "reference": "Source: Tung Wah"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2012_img4.jpg",
-                    "reference": "Source: Tung Wah"
+                    "src": "./images/ex302a/2012_img4.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -3489,19 +3314,15 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2013_img1.png",
-                    "reference": "Source: archive.org(p168)"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2013_img2.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2013_img2.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2013_img3.jpg",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2013_img4.png",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2013_img3.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -3522,15 +3343,11 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2014_img1a.png",
-                    "reference": "Source: archive.org(p168)"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/2014_img2a.png",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2014_img3a.jpg",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 運輸及房屋局"
                   }
                 ]
               },
@@ -3551,19 +3368,11 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2014_img1b.png",
-                    "reference": "Source: GRS"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/2014_img2b.png",
-                    "reference": "Source: GRS"
-                  },
-                  {
-                    "src": "./images/ex302a/2014_img3b.jpg",
-                    "reference": "Source: GRS"
-                  },
-                  {
-                    "src": "./images/ex302a/2014_img4b.png",
-                    "reference": "Source: GRS"
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -3578,25 +3387,21 @@
                 "content": "2014年，政府陸續規劃新發展區和擴展原有新市鎮，包括於2017年和2019年開始東涌新市鎮擴展計劃的填海工程。古洞北及粉嶺北新發展區的土地平<nobr>整工程和洪水橋／廈村的土地平整工程亦相繼動工。</nobr>"
               },
               "image": {
-                "src": "./images/ex302a/2014_img1c.jpg",
+                "src": "./images/ex302a/2014_img1c.png",
                 "translationType": "scale",
                 "description": "新發展區和<br/>擴展新市鎮",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/2014_img1c.jpg",
-                    "reference": "Source: GRS"
+                    "src": "./images/ex302a/2014_img1c.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
                     "src": "./images/ex302a/2014_img2c.png",
-                    "reference": "Source: GRS"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2014_img3c.jpg",
-                    "reference": "Source: GRS"
-                  },
-                  {
-                    "src": "./images/ex302a/2014_img4c.jpg",
-                    "reference": "Source: GRS"
+                    "src": "./images/ex302a/2014_img3c.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -3617,15 +3422,11 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2016_img1.png",
-                    "reference": "Source: PlanD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2016_img2.jpg",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2016_img3.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2016_img2.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -3646,15 +3447,11 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2017_img1a.png",
-                    "reference": "Source: PlanD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2017_img2a.jpg",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2017_img3a.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2017_img2a.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -3669,13 +3466,13 @@
                 "content": "2017年，香港特區政府和深圳市人民政府簽署了《關於港深推進落馬洲河套地區共同發展的合作備忘錄》，為支持香港的創科業，雙方將合作發展河套地區為「港深創新及科技園」。"
               },
               "image": {
-                "src": "./images/ex302a/2017_img1b.jpg",
+                "src": "./images/ex302a/2017_img1b.png",
                 "translationType": "scale",
                 "description": "河套地區創新及<br/>科技園發展",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/2017_img1b.jpg",
-                    "reference": "Source: PlanD"
+                    "src": "./images/ex302a/2017_img1b.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -3696,19 +3493,15 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2017_img1c.png",
-                    "reference": "Source: PlanD"
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2017_img2c.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2017_img2c.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2017_img3c.jpg",
-                    "reference": "Source: ISD"
-                  },
-                  {
-                    "src": "./images/ex302a/2017_img4c.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2017_img3c.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -3729,11 +3522,19 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2018_img1a.png",
-                    "reference": "Source: PlanD"
+                    "reference": "資料來源: 奧雅納"
                   },
                   {
                     "src": "./images/ex302a/2018_img2a.png",
-                    "reference": "Source: ISD"
+                    "reference": "資料來源: 奧雅納"
+                  },
+                  {
+                    "src": "./images/ex302a/2018_img3a.png",
+                    "reference": "資料來源: 奧雅納"
+                  },
+                  {
+                    "src": "./images/ex302a/2018_img4a.png",
+                    "reference": "資料來源: 奧雅納"
                   }
                 ]
               },
@@ -3748,21 +3549,29 @@
                 "content": "2018年，廣深港高速鐵路香港段通車，全長約26</br>公里，由香港西九龍站開始，經過專用隧道至深圳福田站及廣州南站，並連接國家整個高鐵網絡。2018年，港珠澳大橋落成並啟用，以配合香港特區和內地緊密的經濟合作。"
               },
               "image": {
-                "src": "./images/ex302a/2018_img1b.jpg",
+                "src": "./images/ex302a/2018_img1b.png",
                 "translationType": "scale",
                 "description": "高速鐵路及港珠澳大橋",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/2018_img1b.jpg",
-                    "reference": "Source: PlanD"
+                    "src": "./images/ex302a/2018_img1b.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2018_img2b.jpg",
-                    "reference": "Source: PlanD"
+                    "src": "./images/ex302a/2018_img2b.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2018_img3b.jpg",
-                    "reference": "Source: PlanD"
+                    "src": "./images/ex302a/2018_img3b.png",
+                    "reference": "資料來源: 政府新聞處"
+                  },
+                  {
+                    "src": "./images/ex302a/2018_img4b.png",
+                    "reference": "資料來源: 政府新聞處"
+                  },
+                  {
+                    "src": "./images/ex302a/2018_img5b.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -3777,13 +3586,13 @@
                 "content": "<nobr>2019年，國家正式公布了《粵港澳大灣區發展規劃綱要》，</nobr>目標是進一步深化粵港澳合作，充分發揮三地綜合優勢，促成區內的深度融合，推動區域經濟協同發展，建設宜居、</br>宜業、宜遊的國際一流灣區。"
               },
               "image": {
-                "src": "./images/ex302a/2019_img1.jpg",
+                "src": "./images/ex302a/2019_img1.png",
                 "translationType": "scale",
                 "description": "粵港澳區域合作",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/2019_img1.jpg",
-                    "reference": "Source: PlanD"
+                    "src": "./images/ex302a/2019_img1.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -3798,17 +3607,13 @@
                 "content": "蓮塘／香園圍口岸於2020年開通，為香港與深</br>圳東、惠州和粵東之間提供更有效率的跨境通道。"
               },
               "image": {
-                "src": "./images/ex302a/2018_img1c.jpg",
+                "src": "./images/ex302a/2020_img1a.png",
                 "translationType": "scale",
                 "description": "蓮塘／香園圍口岸",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/2018_img1c.jpg",
-                    "reference": "Source: PlanD"
-                  },
-                  {
-                    "src": "./images/ex302a/2018_img2c.jpg",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2020_img1a.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },
@@ -3823,17 +3628,17 @@
                 "content": "《香港2030＋：跨越2030年的規劃遠景與策略》就著應對未來的新挑戰，提出三大發展策略：規劃宜居的高密度城市、迎接新的經濟挑戰與機遇和創造容量以達致可持續發展。"
               },
               "image": {
-                "src": "./images/ex302a/2018_img1d.jpg",
+                "src": "./images/ex302a/2020_img1b.png",
                 "translationType": "scale",
                 "description": "最新動向",
                 "gallery": [
                   {
-                    "src": "./images/ex302a/2018_img1d.jpg",
-                    "reference": "Source: PlanD"
+                    "src": "./images/ex302a/2020_img1b.png",
+                    "reference": "資料來源: 政府新聞處"
                   },
                   {
-                    "src": "./images/ex302a/2018_img2d.png",
-                    "reference": "Source: ISD"
+                    "src": "./images/ex302a/2020_img2b.png",
+                    "reference": "資料來源: 政府新聞處"
                   }
                 ]
               },

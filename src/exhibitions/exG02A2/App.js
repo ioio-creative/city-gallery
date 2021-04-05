@@ -1413,7 +1413,7 @@ const App = props => {
     if (idleRef.current) clearTimeout(idleRef.current);
     idleRef.current = setTimeout(() => {
       onBackHome(true);
-    }, 1000 * 60); // 1 minutes
+    }, 1000 * 60 * 100); // 1 minutes
   };
 
   return (
