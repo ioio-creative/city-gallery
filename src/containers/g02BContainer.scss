@@ -136,8 +136,11 @@ body {
           }
           #description {
             width: vw-calc(1008);
-            font-size: vw-calc(23);
-            line-height: vw-calc(40);
+            // width: 49.5vw;
+            // font-size: vw-calc(26);
+            font-size: vw-calc(28);
+            // line-height: vw-calc(40);
+            line-height: 2.5vw;
           }
         }
       }
@@ -655,11 +658,13 @@ body {
       }
       #description {
         // width: vw-calc(610);
-        width: vw-calc(1008);
+        // width: vw-calc(1008);
+        width: 46.5vw;
         // text-align: justify;
         font-size: vw-calc(28);
-        line-height: vw-calc(36);
-        margin-top: vw-calc(10);
+        // line-height: vw-calc(36);
+        line-height: 2.5vw;
+        margin-top: vw-calc(29);
         margin-left: vw-calc(3);
         color: #555555;
         &.en {
