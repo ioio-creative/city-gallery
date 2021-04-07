@@ -742,7 +742,7 @@ const Map = props => {
   }
 
   return <>
-      <video ref={videoElem} width="100%" height="100%" style={{position:'fixed',top:0,left:0,zIndex:10,pointerEvents:'none',opacity: .1,objectFit: 'cover'}} preload="true" src="./images/ex303/sand_10sec.webm" ></video>
+      <video ref={videoElem} width="100%" height="100%" style={{position:'fixed',top:0,left:0,zIndex:10,pointerEvents:'none',opacity: .5,objectFit: 'cover'}} preload="true" src="./images/ex303/sand_10sec.webm" ></video>
       <div ref={wrapElem} className={`shader ${props.gameMode === 'street' ? `zone${props.zone+1}` : ''}`}></div>
       {/* { !props.showYear && props.gameMode !== 'home' && <div style={{position:'fixed',top:'100px',right:'70px',zIndex:'999',fontSize:'60px',color:'#fff'}}><span style={{opacity: on ? '1' : '.4'}} onClick={()=>onShowHighlight(true)}>on</span> / <span style={{opacity: on ? '.4' : '1'}} onClick={()=>onShowHighlight(false)}>off</span></div>} */}
     </>
