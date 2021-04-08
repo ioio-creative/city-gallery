@@ -94,9 +94,8 @@ const Menu = props => {
               ENG
             </div>
           </div>
-          <div id='questionBtnWrap' className={props.showNav ? 'disable' : ''}>
-            <div id='questionBtn' onClick={() => (!props.showNav ? props.onShowTutor(true) : false)}>
-              ?
+          <div id='questionBtnWrap' className={props.showNav ? '' : 'disable'}>
+            <div id='questionBtn' onClick={() => {props.back(); props.socket.emit('backToHome');}}>
             </div>
           </div>
           {/* <div id="indicator" className={!props.showNav ? 'hideImg' : props.yearIdx < 3 ? 'hideImg' : ''} 

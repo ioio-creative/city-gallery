@@ -71,7 +71,7 @@ span {
   position: relative;
   z-index: 1;
   transform-origin: top left;
-  transform: translate3d(0, 0, 0) scale(0.5);
+  transform: translate3d(0%, 0%, 0) scale(0.5);
   transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
   will-change: transform;
   &.zone1 {
@@ -277,7 +277,12 @@ span {
     background: rgba(0, 0, 0, 0.8);
   }
 }
-
+.tc#main{
+  #coast #contentWrap .item #card #wrap #title{ 
+    font-size: vw-calc(28, $width);
+    line-height: vw-calc(34, $width);
+  }
+}
 .en#main {
   #popupTutor #content #title p {
     white-space: normal;
@@ -527,6 +532,12 @@ span {
             visibility: visible;
             transform: translate3d(0, -50%, 0) scale(1);
           }
+          
+          &:nth-child(12){
+            #card {
+              transform: translate3d(15%, -50%, 0) scale(1);
+            }
+          }
         }
         #markerWrap {
           width: 0;
@@ -589,11 +600,6 @@ span {
             #location {
               margin-left: vw-calc(20);
             }
-          }
-        }
-        &:nth-child(12) {
-          #card {
-            transform: translate3d(15%, -50%, 0) scale(1);
           }
         }
         #card {

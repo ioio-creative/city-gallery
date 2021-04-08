@@ -128,7 +128,7 @@ const G303 = props => {
 
   return (
     // <div id='main' className={`${started ? 'started' : ''}${zoomed ? ' zoomed' : ''}`}>
-    <div id='main' className={`${language}`}>
+    <div id='main' className={`${language}`} onTouchStart={()=> socket.emit('onTouchStart')}>
       <Map
         locationName='wk'
         doubleScreen={false}

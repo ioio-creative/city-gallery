@@ -134,6 +134,7 @@ $drakgreenblue:#074A45;
           background:#074A45;
           color:#fff;
           opacity: 1;
+          box-shadow: 0 vw-calc(3 4) rgba(0,0,0,.3);
           &:active{
             transform: translate3d(0,0,0) scale(.9);
           }
@@ -206,7 +207,7 @@ $drakgreenblue:#074A45;
         top:50%;
         left:50%;
         transform: translate3d(0,0,0);
-        overflow: hidden;
+        // overflow: hidden;
         &.hide{
           display: none;
         }
@@ -220,6 +221,7 @@ $drakgreenblue:#074A45;
           left:0;
           z-index: -1;
           background:$drakgreenblue;
+          box-shadow: 0 vw-calc(3 4) rgba(0,0,0,.3);
           transform: translate3d(0,0,0);
           transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -304,6 +306,7 @@ $drakgreenblue:#074A45;
           justify-content: center;
           align-items: center;
           font-size:vw-calc(27);
+          background: url('./images/Home_btn.svg') center no-repeat;
           transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
         }
       }

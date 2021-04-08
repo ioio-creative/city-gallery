@@ -69,7 +69,7 @@ span {
   position: relative;
   z-index: 1;
   transform-origin: top left;
-  transform: translate3d(0, 0, 0) scale(0.5);
+  transform: translate3d(0%, 0%, 0) scale(0.5);
   transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
   will-change: transform;
 }
@@ -470,7 +470,7 @@ span {
           background: url('../ex303HKI/images/card_bg.svg') top / 99.95% repeat-y;
           position: absolute;
           top: 45vh;
-          left: calc(50% + #{vw-calc(342)});
+          left: vw-calc(300);
           padding: vw-calc(30 50 87);
           color: #074a45;
           display: flex;
@@ -478,12 +478,12 @@ span {
           visibility: hidden;
           transform: translate3d(0, -50%, 0) scale(0.85);
           transition: all 0.6s cubic-bezier(0.87, 0, 0.13, 1);
-          &.ktaa {
-            left: vw-calc(600);
-          }
-          &.cklw {
-            left: vw-calc(650);
-          }
+          // &.ktaa {
+          //   left: vw-calc(600);
+          // }
+          // &.cklw {
+          //   left: vw-calc(650);
+          // }
           &:before,
           &:after {
             content: '';

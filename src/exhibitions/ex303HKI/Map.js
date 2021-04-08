@@ -660,12 +660,12 @@ const Map = props => {
           props.setRunTransition(false);
         }, null, '-=6');
       }
-      else {
+      else if(!hasShownCoastline && idx > -1){
         videoElem.current.play();
         if(showCoastlineTl) showCoastlineTl.kill();
         showCoastlineTl = gsap.timeline({delay:1});
         showCoastlineTl.to(options, 3, {islandProgress: 1, ease: 'power3.inOut'},'s');
-        showCoastlineTl.to(targetYears, 10, { p: 1, p2:0, stagger:1.3, ease: 'power3.out',
+        showCoastlineTl.to(targetYears, 10 + ((3-idx) * 5), { p: 1, p2:0, stagger:1.3, ease: 'power3.out',
           onUpdate: function () {
             this.targets().forEach((target, i) => {
               if (i <= idx)
@@ -677,15 +677,15 @@ const Map = props => {
         },'s+=1');
 
         showCoastlineTl.killTweensOf(options, "oceanProgress");
-        showCoastlineTl.to(options, 4, {oceanProgress: 1, ease: 'power3.out'}, `-=${(3-idx)*2+5.5}`);
+        showCoastlineTl.to(options, 4, {oceanProgress: 1, ease: 'power3.out'}, `-=${5.5+((3-idx) * 5)}`);
         showCoastlineTl.call(()=>{
           props.showNav(true);
           props.setGameMode('coast');
           props.setRunTransition(false);
-        }, null, `-=${(3-idx)*2+5.5}`);
+        }, null, `-=${5.5+((3-idx) * 5)}`);
         showCoastlineTl.call(()=>{
           showDottedline();
-        }, null, `-=${(3-idx)*2+5.5}`);
+        }, null, `-=${5.5+((3-idx) * 5)}`);
         hasShownCoastline = true;
       }
     };

@@ -101,6 +101,7 @@ $width:3840;
           background:#074A45;
           color:#fff;
           opacity: 1;
+          box-shadow: 0 vw-calc(3 4, $width) rgba(0,0,0,.3);
           &:active{
             transform: translate3d(0,0,0) scale(.9);
           }
@@ -171,7 +172,7 @@ $width:3840;
         top:50%;
         left:50%;
         transform: translate3d(0,0,0);
-        overflow: hidden;
+        // overflow: hidden;
         &.hide{
           display: none;
         }
@@ -185,6 +186,7 @@ $width:3840;
           left:0;
           z-index: -1;
           background:$drakgreenblue;
+          box-shadow: 0 vw-calc(3 4, $width) rgba(0,0,0,.3);
           transform: translate3d(0,0,0);
           transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -277,6 +279,7 @@ $width:3840;
           align-items: center;
           font-size:vw-calc(27, $width);
           line-height: vw-calc(57, $width);
+          background: url('./images/Home_btn.svg') center no-repeat;
           transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
         }
       }

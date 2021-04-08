@@ -400,6 +400,7 @@ const G302A = props => {
 
   const idleOn = () => {
     console.log("idle");
+    socket.emit('onTouchStart');
     if (idleRef.current) clearTimeout(idleRef.current);
     idleRef.current = setTimeout(() => {
       onBack();

@@ -147,7 +147,7 @@ const G303 = props => {
   const streetData = props.appData.hki.contents[language].street;
 
   return (
-    <div id='main' className={`${language}`}>
+    <div id='main' className={`${language}`} onTouchStart={()=> socket.emit('onTouchStart')}>
       <Map
         locationName='hki'
         doubleScreen={true}
