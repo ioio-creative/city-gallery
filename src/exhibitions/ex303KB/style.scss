@@ -334,15 +334,16 @@ span {
         position: relative;
         div {
           width: vw-calc(183);
-          height: vw-calc(48);
+          height: vw-calc(58);
           padding-bottom: vw-calc(2);
           display: flex;
           justify-content: center;
           align-items: center;
-          background: #243838cc;
-          border-radius: vw-calc(24);
-          box-shadow: 0 vw-calc(3 6) rgba(0, 0, 0, 0.4);
+          background: url('../ex303HKI/images/lable.png') center no-repeat;
+          // border-radius: vw-calc(24);
+          // box-shadow: 0 vw-calc(3 6) rgba(0, 0, 0, 0.4);
           color: #fff;
+          padding-bottom: vw-calc(12);
           position: absolute;
           opacity: 1;
           visibility: visible;

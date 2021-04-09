@@ -264,6 +264,7 @@ $drakgreenblue:#074A45;
           background:transparent;
           color:#074A45;
           font-size:vw-calc(23);
+          line-height: vw-calc(57);
           margin:vw-calc(13/2);
           transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
           &.active{

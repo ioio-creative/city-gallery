@@ -427,15 +427,16 @@ span {
         position: relative;
         div {
           width: vw-calc(183, $width);
-          height: vw-calc(48, $width);
+          height: vw-calc(58, $width);
           padding-bottom: vw-calc(2, $width);
           display: flex;
           justify-content: center;
           align-items: center;
-          background: #243838cc;
-          border-radius: vw-calc(24, $width);
-          box-shadow: 0 vw-calc(3 6) rgba(0, 0, 0, 0.4);
+          background: url('./images/lable.png') center no-repeat;
+          // border-radius: vw-calc(24, $width);
+          // box-shadow: 0 vw-calc(3 6) rgba(0, 0, 0, 0.4);
           color: #fff;
+          padding-bottom: vw-calc(12, $width);
           position: absolute;
           opacity: 1;
           visibility: visible;

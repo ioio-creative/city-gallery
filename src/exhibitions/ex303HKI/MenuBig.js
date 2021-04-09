@@ -94,7 +94,7 @@ const Menu = props => {
               ENG
             </div>
           </div>
-          <div id='questionBtnWrap' className={props.showNav ? '' : 'disable'}>
+          <div id='questionBtnWrap'>
             <div id='questionBtn' onClick={() => {props.back(); props.socket.emit('backToHome');}}>
             </div>
           </div>

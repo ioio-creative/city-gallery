@@ -659,6 +659,8 @@ const Map = props => {
           props.setGameMode('home');
           props.setRunTransition(false);
         }, null, '-=6');
+        
+        hasShownCoastline = false;
       }
       else if(!hasShownCoastline && idx > -1){
         videoElem.current.play();
