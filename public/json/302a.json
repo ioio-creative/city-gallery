@@ -1037,8 +1037,8 @@
         },
         {
           "year": "2000 - 2021",
-          "text1": "Under the emerging global economic trends, Hong Kong was facing new challenges. In 2007, the Government promulgated \"Hong Kong 2030: Planning Vision and Strategy\", proposing a planning strategy which focus on providing a quality living environment, enhancing economic competitiveness, and strengthening links with the Mainland. Looking ahead, Hong Kong is committed to develop into a more liveable, competitive and sustainable \"Asia’s World City\".",
-          "cover": "Under the emerging global economic trends, Hong Kong was facing new challenges. In 2007, the Government promulgated \"Hong Kong 2030: Planning Vision and Strategy\", proposing a planning strategy which focus on providing a quality living environment, enhancing economic competitiveness, and strengthening links with the Mainland. Looking ahead, Hong Kong is committed to develop into a more liveable, competitive and sustainable \"Asia’s World City\".",
+          "text1": "Under the emerging global economic trends, Hong Kong was facing new challenges. In 2007, the Government promulgated \"Hong Kong 2030: Planning Vision and Strategy\", proposing a planning strategy which focus on providing a quality living environment, enhancing economic competitiveness, and strengthening links with the Mainland. Looking ahead, Hong Kong is committed to develop into a more liveable, competitive and sustainable \"Asia's World City\".",
+          "cover": "Under the emerging global economic trends, Hong Kong was facing new challenges. In 2007, the Government promulgated \"Hong Kong 2030: Planning Vision and Strategy\", proposing a planning strategy which focus on providing a quality living environment, enhancing economic competitiveness, and strengthening links with the Mainland. Looking ahead, Hong Kong is committed to develop into a more liveable, competitive and sustainable \"Asia's World City\".",
           "coverinsidebar": {
             "src": "./images/ex302a/2000_cover.png"
           },
@@ -1092,7 +1092,7 @@
             {
               "text": {
                 "year": 2002,
-                "content": "In 2002, the first three buildings in Hong Kong Science Park commenced operation, and the statutory body of the Hong Kong Science and Technology Park Cooperation is responsible for the operation and management of the Park and other facilities. There are five technology clusters in the Park, viz. Biomedical Technology, Electronics, Green Technology, Information and Communications Technology, and Material and Precision Engineering."
+                "content": "In 2002, the first three buildings in Hong Kong Science Park commenced operation, and the statutory body Hong Kong Science and Technology Parks Corporation is responsible for the operation and management of the Park and other facilities. There are five technology clusters in the Park, viz. Biomedical Technology, Electronics, Green Technology, Information and Communications Technology, and Material and Precision Engineering."
               },
               "image": {
                 "src": "./images/ex302a/2002_img1a.png",
@@ -1101,15 +1101,15 @@
                 "gallery": [
                   {
                     "src": "./images/ex302a/2002_img1a.png",
-                    "reference": "Source: Hong Kong Science Park"
+                    "reference": "Source: Hong Kong Science and Technology Parks Corporation"
                   },
                   {
                     "src": "./images/ex302a/2002_img2a.png",
-                    "reference": "Source: Hong Kong Science Park"
+                    "reference": "Source: Hong Kong Science and Technology Parks Corporation"
                   },
                   {
                     "src": "./images/ex302a/2002_img3a.png",
-                    "reference": "Source: Hong Kong Science Park"
+                    "reference": "Source: Hong Kong Science and Technology Parks Corporation"
                   }
                 ]
               },
@@ -2914,24 +2914,24 @@
             {
               "text": {
                 "year": 2002,
-                "content": "2002年，香港科學園首三幢大樓啟用，由法定機構<nobr>香港科技園公司負責運作和管理園內和其他多項設施。</nobr>園內五大科技群組為生物醫藥、電子、綠色科技、資訊及通訊科技，以及物料與精密工程。"
+                "content": "2002年，香港科學園首三幢大樓啟用，由法定機構香港科技園公司負責運作和管理園區和其他多項設施。園內五大科技群組為生物醫藥、電子、綠色科技、資訊及通訊</br>科技，以及物料與精密工程。"
               },
               "image": {
                 "src": "./images/ex302a/2002_img1a.png",
                 "translationType": "scale",
-                "description": "科學園",
+                "description": "香港科學園",
                 "gallery": [
                   {
                     "src": "./images/ex302a/2002_img1a.png",
-                    "reference": "資料來源: 香港科學園"
+                    "reference": "資料來源: 香港科技園公司"
                   },
                   {
                     "src": "./images/ex302a/2002_img2a.png",
-                    "reference": "資料來源: 香港科學園"
+                    "reference": "資料來源: 香港科技園公司"
                   },
                   {
                     "src": "./images/ex302a/2002_img3a.png",
-                    "reference": "資料來源: 香港科學園"
+                    "reference": "資料來源: 香港科技園公司"
                   }
                 ]
               },
