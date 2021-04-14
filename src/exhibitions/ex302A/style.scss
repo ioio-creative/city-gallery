@@ -112,7 +112,7 @@ body {
           width: 18vw;
         }
         &.year1{
-          width: 17vw;
+          width: 16vw;
         }
         &.year3{
           width: 17vw;
@@ -1070,7 +1070,7 @@ body {
               // }
               span {
                 overflow: hidden;
-                display: block;
+                // display: block;
                 span {
                   transform: translate3d(0, 105%, 0);
                 }
@@ -1374,7 +1374,7 @@ body {
           //   width: 18vw;
           // }
           &.year0, &.year4{
-            width: 18vw;
+            width: 17vw;
           }
           span {
             float: left;

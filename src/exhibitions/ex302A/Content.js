@@ -623,7 +623,8 @@ const Content = props => {
                               return (
                                 <div key={l} className={`${props.language}TitleWindow `}>
                                   <span>
-                                    <span dangerouslySetInnerHTML={{ __html: t }}></span>
+                                    {/* <span dangerouslySetInnerHTML={{ __html: t }}></span> */}
+                                    <span>{t}</span>
                                   </span>
                                 </div>
                               );
