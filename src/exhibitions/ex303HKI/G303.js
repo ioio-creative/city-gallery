@@ -56,10 +56,10 @@ const G303 = props => {
     const enter = () => {
       if (!started) {
         started = true;
-        setRunTransition(false);
         // setShowWholeScreen(true);
         // onBack();
       }
+      setRunTransition(false);
     };
 
     const leave = () => {
