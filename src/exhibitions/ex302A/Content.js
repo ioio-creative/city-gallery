@@ -545,15 +545,17 @@ const Content = props => {
               <div id='bg' style={{ backgroundImage: `url('./images/ex302a/sidebarbg_${i}.png')` }}></div>
               <div id='desWrap'>
                 <div id='des' className={`year${i} ${props.language}`}>
-                  {props.language === 'tc' &&
+                  {props.language === 'tc' && props.contentData.lang === 'tc' &&
                     v.text1.match(/(\u{653F}\u{5E9C}|[^0-9「」、，。《》]{2}[「」，、。《》]+|[0-9]+[^0-9「」，、。《》][「」，、。《》]+|.)/gu).map((v, i) => {
                       return (
                         <span key={i}>
                           <span>{v}</span>
                         </span>
                       );
-                    })}
-                  {props.language === 'en' && 
+                    })
+                  }
+  
+                  {props.language === 'en' && props.contentData.lang === 'en' &&
                     v.text1.match(/[a-zA-Z0-9?;,\-!'."]+|<br[^>]*>/gu).map((v, i) => {
                     // v.text1.split(" ").map((v, i) => {
                       return (

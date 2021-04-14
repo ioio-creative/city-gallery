@@ -1,5 +1,4 @@
-import React from 'react';
-import {useEffect, useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import api from 'websiteApi';
 import G302A from './G302A';
 

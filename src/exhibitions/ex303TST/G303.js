@@ -51,7 +51,6 @@ const G303 = props => {
         // setShowWholeScreen(true);
         // onBack();
       }
-      console.log('user enter!!!!!!!');
       setRunTransition(false);
     };
 

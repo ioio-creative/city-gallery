@@ -13,6 +13,7 @@ const G302A = props => {
   const [dragging, setDragging] = useState(false);
   const [minimalSidebar, setMinimalSidebar] = useState(false);
 
+  const originalContentData = props.appData.contents;
   const sectionNum = contentData.sections.length;
   const sectionWrapElem = useRef(null);
   const sectionElems = useRef([...Array(sectionNum)].map(() => createRef()));
@@ -76,7 +77,7 @@ const G302A = props => {
     };
 
     const updateLang = i => {
-      onChangeLanguage(i === 0 ? 'tc' : 'en');
+      onChangeLanguage(+i === 0 ? 'tc' : 'en');
     };
 
     if (socket) {
@@ -394,8 +395,8 @@ const G302A = props => {
   };
 
   const onChangeLanguage = lang => {
+    setContentData(originalContentData[lang]);
     setLanguage(lang);
-    setContentData(props.appData.contents[lang]);
   };
 
   const idleOn = () => {
@@ -463,7 +464,7 @@ const G302A = props => {
           );
         })}
       </div>
-      {contentData && (
+      {sectionNum && (
         <Content
           language={language}
           contentData={contentData}
