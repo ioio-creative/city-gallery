@@ -214,8 +214,8 @@
         },
         {
           "year": "1940 - 1959",
-          "text1": "On the Christmas night of 1953, fire ravaged the squatter area in Shek Kip Mei and over 53,000 people were made homeless. To address the housing problem, the Government initiated to build resettlement blocks for the victims and other squatter dwellers. By the end of 1954, the first eight resettlement blocks (Mark I) were completed in Shek Kip Mei as the first batch of public housing.",
-          "cover": "On the Christmas night of 1953, fire ravaged the squatter area in Shek Kip Mei and over 53,000 people were made homeless. To address the housing problem, the Government initiated to build resettlement blocks for the victims and other squatter dwellers. By the end of 1954, the first eight resettlement blocks (Mark I) were completed in Shek Kip Mei as the first batch of public housing.",
+          "text1": "Post-war developments were filled with challenges, and the Government commissioned a consultant to formulate the first long-term development strategy for Hong Kong. In the early 1950s, an influx of Mainland immigrants moved to Hong Kong, posing substantial housing demand. The Shek Kip Mei Fire has catalysed the Government’s initiative to develop the first batch of public housing estates to improve the living environment.",
+          "cover": "Post-war developments were filled with challenges, and the Government commissioned a consultant to formulate the first long-term development strategy for Hong Kong. In the early 1950s, an influx of Mainland immigrants moved to Hong Kong, posing substantial housing demand. The Shek Kip Mei Fire has catalysed the Government’s initiative to develop the first batch of public housing estates to improve the living environment.",
           "coverinsidebar": {
             "src": "./images/ex302a/1940_cover.png"
           },
@@ -318,7 +318,7 @@
             {
               "text": {
                 "year": 1954,
-                "content": "On the Christmas night of 1953, fire ravaged the squatter area in Shek Kip Mei and over 53 000 people were made homeless. To address the housing problem, the Government initiated to build resettlement blocks for the victims and other squatter dwellers. By the end of 1954, the first eight resettlement blocks (Mark I) were completed in Shek Kip Mei as the first batch of <br/>public housing."
+                "content": "On the Christmas night of 1953, fire ravaged the squatter area in Shek Kip Mei and over 53,000 people were made homeless. To address the housing problem, the Government initiated to build resettlement blocks for the victims and other squatter dwellers. By the end of 1954, the first eight resettlement blocks (Mark I) were completed in Shek Kip Mei as the first batch of </br>public housing."
               },
               "image": {
                 "src": "./images/ex302a/1954_img1a.png",
@@ -2935,7 +2935,7 @@
             {
               "text": {
                 "year": 2002,
-                "content": "2002年，香港科學園首三幢大樓啟用，由法定機構香港科技園公司負責運作和管理園區和其他多項設施。園內五大科技群組為生物醫藥、電子、綠色科技、資訊及通訊<br/>科技，以及物料與精密工程。"
+                "content": "2002年，香港科學園首三幢大樓啟用，由法定機構香港科技園公司負責運作和管理園區和其他多項設施。園內五大科技群組為生物醫藥、電子、綠色</br>科技、資訊及通訊科技，以及物料與精密工程。"
               },
               "image": {
                 "src": "./images/ex302a/2002_img1a.png",
