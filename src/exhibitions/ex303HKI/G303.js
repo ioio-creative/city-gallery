@@ -112,9 +112,9 @@ const G303 = props => {
       socket.emit('selectIndex', { data: { index: yearIdx } });
       setShowYear(false);
       // setTimeout(() => {
-        setRunTransition(true);
-        handleStart.current.start(yearIdx);
-        handleShowCoastline.current.showCoastline(yearIdx);
+      setRunTransition(true);
+      handleStart.current.start(yearIdx);
+      handleShowCoastline.current.showCoastline(yearIdx);
       // }, 2000);
     }
   };
@@ -148,7 +148,7 @@ const G303 = props => {
   const streetData = props.appData.hki.contents[language].street;
 
   return (
-    <div id='main' className={`${language}`} onTouchStart={()=> socket.emit('onTouchStart')}>
+    <div id='main' className={`${language}`} onTouchStart={() => socket.emit('onTouchStart')}>
       <Map
         locationName='hki'
         doubleScreen={true}
@@ -205,10 +205,11 @@ const G303 = props => {
                           return (
                             <li key={j}>
                               <span>{vi[0]}</span>
-                              <span>{vi[1]}</span>
+                              <span dangerouslySetInnerHTML={{ __html: vi[1] }}></span>
                             </li>
                           );
                         })}
+                        {/* <div id='credit'>{v.cardContent.image.credit}</div> */}
                       </ul>
                     </div>
                     <div id='btnOuterWrap'>
@@ -370,7 +371,7 @@ const G303 = props => {
         <p>{gameMode === 'street' ? `500 ${language === 'en' ? 'm' : '米'}` : `825 ${language === 'en' ? 'm' : '米'}`}</p>
         <span></span>
       </div>
-      {/* <div id='ref' className={`${showYear ? 'hide' : gameMode === 'home' ? 'hide' : ''} ${yearIdx === 3 ? 'w' : ''}`} dangerouslySetInnerHTML={{ __html: globalData && globalData.reference }}></div> */}
+      <div id='ref' className={`${showYear ? 'hide' : gameMode === 'home' ? 'hide' : ''} ${yearIdx === 3 ? 'w' : ''}`} dangerouslySetInnerHTML={{ __html: globalData && globalData.referenceImg }}></div>
 
       <div id='popupTutor' className={showTutor ? 'active' : ''}>
         <div id='content' className={`slide${tutorIdx + 1}`}>

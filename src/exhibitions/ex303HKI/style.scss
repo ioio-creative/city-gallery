@@ -277,8 +277,8 @@ span {
     background: rgba(0, 0, 0, 0.8);
   }
 }
-.tc#main{
-  #coast #contentWrap .item #card #wrap #title{ 
+.tc#main {
+  #coast #contentWrap .item #card #wrap #title {
     font-size: vw-calc(28, $width);
     line-height: vw-calc(34, $width);
   }
@@ -533,8 +533,8 @@ span {
             visibility: visible;
             transform: translate3d(0, -50%, 0) scale(1);
           }
-          
-          &:nth-child(12){
+
+          &:nth-child(12) {
             #card {
               transform: translate3d(15%, -50%, 0) scale(1);
             }
@@ -703,6 +703,10 @@ span {
               padding: vw-calc(10 0 0 10, $width);
               overflow-y: scroll;
               font-weight: bold;
+              #credit {
+                margin-top: vw-calc(15, $width);
+                font-size: vw-calc(19, $width);
+              }
               &::-webkit-scrollbar {
                 width: vw-calc(3, $width);
               }

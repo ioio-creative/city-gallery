@@ -94,9 +94,9 @@ const G303 = props => {
       socket.emit('selectIndex', { data: { index: yearIdx } });
       setShowYear(false);
       // setTimeout(() => {
-        setRunTransition(true);
-        handleStart.current.start(yearIdx);
-        handleShowCoastline.current.showCoastline(yearIdx);
+      setRunTransition(true);
+      handleStart.current.start(yearIdx);
+      handleShowCoastline.current.showCoastline(yearIdx);
       // }, 2000);
     }
   };
@@ -129,7 +129,7 @@ const G303 = props => {
 
   return (
     // <div id='main' className={`${started ? 'started' : ''}${zoomed ? ' zoomed' : ''}`}>
-    <div id='main' className={`${language}`} onTouchStart={()=> socket.emit('onTouchStart')}>
+    <div id='main' className={`${language}`} onTouchStart={() => socket.emit('onTouchStart')}>
       <Map
         locationName='kb'
         doubleScreen={false}
@@ -187,7 +187,7 @@ const G303 = props => {
                           return (
                             <li key={j}>
                               <span>{vi[0]}</span>
-                              <span>{vi[1]}</span>
+                              <span dangerouslySetInnerHTML={{ __html: vi[1] }}></span>
                             </li>
                           );
                         })}
