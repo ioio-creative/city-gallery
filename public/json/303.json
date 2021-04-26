@@ -203,7 +203,7 @@
             },
             "cardContent": {
               "title": "Belcher Bay Promenade",
-              "image": { "src": "./images/ex303/coastline/4.jpg", "credit": "Photo source: Planning Department" },
+              "image": { "src": "./images/ex303/coastline/4.jpg" },
               "info": [
                 ["Area", "0.59 hectare"],
                 [
@@ -223,7 +223,7 @@
             },
             "cardContent": {
               "title": "Open Space on Sai Ying Pun Eastern Street North",
-              "image": { "src": "./images/ex303/coastline/5.png", "credit": "Photo source: Central and Western District Council" },
+              "image": { "src": "./images/ex303/coastline/5.png" },
               "info": [
                 ["Area", "1.25 hectares"],
                 [
@@ -243,19 +243,19 @@
             },
             "cardContent": {
               "title": "Central and Western District Promenade - Western Wholesale Food Market Section",
-              "image": { "src": "./images/ex303/coastline/6.jpg", "credit": "Photo source: Photo source: Planning Department" },
+              "image": { "src": "./images/ex303/coastline/6.jpg" },
               "info": [
                 ["Area", "0.59 hectare"],
                 [
                   "About",
-                  "The four idle piers and a waterfront section of the Western Wholesale Food Market were revitalised through public participation into a public open space, which was opened in 2018. The project preserved the distinctive features and heritage elements of the Western Wholesale Food Market and piers, and also provides activity spaces via a shared community platform.<br/><br/>Photo source: <br/>Photo source: Planning Department"
+                  "The four idle piers and a waterfront section of the Western Wholesale Food Market were revitalised through public participation into a public open space, which was opened in 2018. The project preserved the distinctive features and heritage elements of the Western Wholesale Food Market and piers, and also provides activity spaces via a shared community platform.<br/><br/>Photo source: <br/>Planning Department"
                 ]
               ]
             }
           },
           {
             "marker": {
-              "name": "Sai Ying Pun Fung Mat Road>br/>Harbourfront Area  ",
+              "name": "Sai Ying Pun<br/>Fung Mat Road<br/>Harbourfront Area  ",
               "pos": {
                 "x": 999,
                 "y": 301
@@ -263,26 +263,26 @@
             },
             "cardContent": {
               "title": "Sai Ying Pun Fung Mat Road Harbourfront Area  ",
-              "image": { "src": "./images/ex303/coastline/7.jpg", "credit": "Photo source: Photo source: Planning Department" },
+              "image": { "src": "./images/ex303/coastline/7.jpg" },
               "info": [
                 ["Area", "0.65 hectare"],
                 [
                   "About",
-                  "Opened in 2019, WE Park is modelled on the popular pipe play facilities of the former Shek Lei Pui Playground. The park not only displays art installations with different themes, but also uses containers as mobile art galleries for various creative and art workshops for children and parents.<br/><br/>Photo source:<br/> Photo source: Planning Department"
+                  "Opened in 2019, WE Park is modelled on the popular pipe play facilities of the former Shek Lei Pui Playground. The park not only displays art installations with different themes, but also uses containers as mobile art galleries for various creative and art workshops for children and parents.<br/><br/>Photo source:<br/>Planning Department"
                 ]
               ]
             }
           },
           {
             "marker": {
-              "name": "Central and Western District Promenade –Central Section",
+              "name": "Central and Western District Promenade (Central Section)",
               "pos": {
                 "x": 1446,
                 "y": 459
               }
             },
             "cardContent": {
-              "title": "Central and Western District Promenade –Central Section",
+              "title": "Central and Western District Promenade (Central Section)",
               "image": { "src": "./images/ex303/coastline/8.png" },
               "info": [
                 ["Area", "3.6 hectares"],
@@ -292,14 +292,14 @@
           },
           {
             "marker": {
-              "name": "Central and Western District Promenade (Central Section) to the Hong Kong Convention and Exhibition Centre ",
+              "name": "Central and Western District Promenade<br/> (Central Section) to the Hong Kong Convention and Exhibition Centre ",
               "pos": {
                 "x": 1566,
                 "y": 492
               }
             },
             "cardContent": {
-              "title": "Central and Western District Promenade (Central Section) to the Hong Kong Convention and Exhibition Centre ",
+              "title": "Central and Western District Promenade<br/> (Central Section) to the Hong Kong Convention and Exhibition Centre ",
               "image": { "src": "./images/ex303/coastline/9.jpg" },
               "info": [
                 ["Area", "1.4 hectares"],
@@ -317,7 +317,7 @@
             },
             "cardContent": {
               "title": "Celebration Precinct in Wan Chai North",
-              "image": { "src": "./images/ex303/coastline/10.jpg", "credit": "Photo source: Development Bureau" },
+              "image": { "src": "./images/ex303/coastline/10.jpg" },
               "info": [
                 ["Area", "1.85 hectares"],
                 ["About", "A design competition is planned to solicit creative design ideas from the community. The target is to commence construction works around 2024.<br/><br/>Photo source: <br/>Development Bureau"]
@@ -334,7 +334,7 @@
             },
             "cardContent": {
               "title": "Pierside Precinct in Wan Chai North",
-              "image": { "src": "./images/ex303/coastline/11.png", "credit": "Photo source: Wan Chai District Council" },
+              "image": { "src": "./images/ex303/coastline/11.png" },
               "info": [
                 ["Area", "4.04 hectares"],
                 [
@@ -354,7 +354,7 @@
             },
             "cardContent": {
               "title": "Water Sports and Recreation Precinct in Wan Chai North",
-              "image": { "src": "./images/ex303/coastline/12.jpg", "credit": "Photo source: Development Bureau" },
+              "image": { "src": "./images/ex303/coastline/12.jpg" },
               "info": [
                 ["Area", "1.39 hectares"],
                 ["About", "The western part of the waterfront section was opened in 2020, and the remaining parts would be opened by the end of 2021.<br/><br/>Photo source:<br/>Development Bureau"]
@@ -371,7 +371,7 @@
             },
             "cardContent": {
               "title": "Revitalised Typhoon Shelter Precinct in Causeway Bay",
-              "image": { "src": "./images/ex303/coastline/13.jpg", "credit": "Photo source: Development Bureau" },
+              "image": { "src": "./images/ex303/coastline/13.jpg" },
               "info": [
                 ["Area", "2.53 hectares"],
                 ["About", "The waterfront promenade near Victoria Park Road would be enhanced, and new landing steps would be introduced to bring people closer to the water. Construction works are expected to commence in 2020-21.<br/><br/>Photo source: <br/>Development Bureau"]
@@ -388,7 +388,7 @@
             },
             "cardContent": {
               "title": "East Coast Park Precinct in Fortress Hill",
-              "image": { "src": "./images/ex303/coastline/14.jpg", "credit": "Photo source: Development Bureau" },
+              "image": { "src": "./images/ex303/coastline/14.jpg" },
               "info": [
                 ["Area", "4.7 hectares"],
                 ["About", "Works commenced in 2020.<br/><br/>Photo source: <br/>Development Bureau"]
@@ -405,7 +405,7 @@
             },
             "cardContent": {
               "title": "Boardwalk underneath the Island Eastern Corridor",
-              "image": { "src": "./images/ex303/coastline/15.png", "credit": "Photo source: Civil Engineering and Development Department" },
+              "image": { "src": "./images/ex303/coastline/15.png" },
               "info": [
                 ["Length", "1,700 meters"],
                 [
@@ -1002,7 +1002,7 @@
             },
             "cardContent": {
               "title": "卑路乍灣海濱休憩用地",
-              "image": { "src": "./images/ex303/coastline/4.jpg", "credit": "相片來源：規劃署" },
+              "image": { "src": "./images/ex303/coastline/4.jpg" },
               "info": [
                 ["面積", "0.59公頃"],
                 ["簡介", "位於堅尼地城城西道的卑路乍灣海濱休憩用地於2020年10月起全面24小時開放，為市民提供可飽覽維港西面和夕陽海景的消閒空間。<br/><br/>相片來源：<br/>規劃署"]
@@ -1019,7 +1019,7 @@
             },
             "cardContent": {
               "title": "西營盤東邊街北的休憩用地",
-              "image": { "src": "./images/ex303/coastline/5.png", "credit": "相片來源：中西區區議會" },
+              "image": { "src": "./images/ex303/coastline/5.png" },
               "info": [
                 ["面積", "1.25公頃"],
                 ["簡介", "西營盤東邊街北休憩用地位於石塘咀至灣仔的4.5公里海濱長廊。設計的主要特點包括以跨代共融為概念，為休憩用地的不同部份提供嶄新、多元化和適合不同年齡及能力人士享用的遊樂設施。項目預計於2024年分階段完成。<br/><br/>相片來源：<br/>中西區區議會"]
@@ -1036,7 +1036,7 @@
             },
             "cardContent": {
               "title": "中西區海濱長廊—西區副食品批發市場段",
-              "image": { "src": "./images/ex303/coastline/6.jpg", "credit": "相片來源：規劃署" },
+              "image": { "src": "./images/ex303/coastline/6.jpg" },
               "info": [
                 ["面積", "0.59公頃"],
                 ["簡介", "西區副食品批發市場的四個閒置碼頭及臨海地段經過公眾參與後活化為公眾休憩用地，於2018年開放。項目保留西區副食品批發市場及碼頭的風貌和歷史元素，及更提供活動空間作共享社區平台。<br/><br/>相片來源：<br/>規劃署"]
@@ -1053,7 +1053,7 @@
             },
             "cardContent": {
               "title": "西營盤豐物道海濱用地",
-              "image": { "src": "./images/ex303/coastline/7.jpg", "credit": "相片來源：規劃署" },
+              "image": { "src": "./images/ex303/coastline/7.jpg" },
               "info": [
                 ["面積", "0.65公頃"],
                 ["簡介", "2019年開放，那裡有一個「捐山窿公園」，重現昔日石梨貝的渠管遊樂設施。公園定期配合不同主題推出藝術裝置，並於貨櫃改裝的流動美術館舉行各類兒童及親子藝術創意工作坊。<br/><br/>相片來源：<br/>規劃署"]
@@ -1062,14 +1062,14 @@
           },
           {
             "marker": {
-              "name": "中西區海濱長廊—中環段",
+              "name": "中西區海濱長廊（中環段）",
               "pos": {
                 "x": 1446,
                 "y": 459
               }
             },
             "cardContent": {
-              "title": "中西區海濱長廊—中環段",
+              "title": "中西區海濱長廊（中環段）",
               "image": { "src": "./images/ex303/coastline/8.png" },
               "info": [
                 ["面積", "3.6公頃"],
@@ -1086,7 +1086,7 @@
               }
             },
             "cardContent": {
-              "title": "中西區海濱長廊 (中環段)至香港會議展覽中心海濱長廊",
+              "title": "中西區海濱長廊 (中環段)至<br/>香港會議展覽中心海濱長廊",
               "image": { "src": "./images/ex303/coastline/9.jpg" },
               "info": [
                 ["面積", "1.4公頃"],
@@ -1104,7 +1104,7 @@
             },
             "cardContent": {
               "title": "灣仔北慶典主題區",
-              "image": { "src": "./images/ex303/coastline/10.jpg", "credit": "相片來源：發展局" },
+              "image": { "src": "./images/ex303/coastline/10.jpg" },
               "info": [
                 ["面積", "1.85公頃"],
                 ["簡介", "計劃舉辦設計比賽，以吸納民間嶄新的設計意念。目標是在 2024年左右展開建築工程。<br/><br/>相片來源：<br/>發展局"]
@@ -1121,7 +1121,7 @@
             },
             "cardContent": {
               "title": "灣仔北渡輪碼頭畔主題區",
-              "image": { "src": "./images/ex303/coastline/11.png", "credit": "相片來源：灣仔區議會" },
+              "image": { "src": "./images/ex303/coastline/11.png" },
               "info": [
                 ["面積", "4.04公頃"],
                 ["簡介", "博覽道東至馬師道一段海濱長廊的建築工程正在進行中，可望於2021年分段落成開放。計劃舉辦設計比賽，以吸納民間嶄新的設計意念。目標是在2024年左右展開建築工程。<br/><br/>相片來源：<br/>灣仔區議會"]
@@ -1138,7 +1138,7 @@
             },
             "cardContent": {
               "title": "灣仔北水上運動及康樂主題區",
-              "image": { "src": "./images/ex303/coastline/12.jpg", "credit": "相片來源：發展局" },
+              "image": { "src": "./images/ex303/coastline/12.jpg" },
               "info": [
                 ["面積", "1.39公頃"],
                 ["簡介", "海濱西面的部分於2020年之內開放, 餘下部分將於2021年年底或之前開放。<br/><br/>相片來源：<br/>發展局"]
@@ -1155,7 +1155,7 @@
             },
             "cardContent": {
               "title": "銅鑼灣活力避風塘主題區",
-              "image": { "src": "./images/ex303/coastline/13.jpg", "credit": "相片來源：發展局" },
+              "image": { "src": "./images/ex303/coastline/13.jpg" },
               "info": [
                 ["面積", "2.53公頃"],
                 ["簡介", "將提升維園道附近的海濱長廊，並引入海岸堤階，將公眾和水體的距離拉近。預期於2020-21 年度展開有關建築工程。<br/><br/>相片來源：<br/>發展局"]
@@ -1172,10 +1172,10 @@
             },
             "cardContent": {
               "title": "炮台山東岸公園主題區",
-              "image": { "src": "./images/ex303/coastline/14.jpg", "credit": "相片來源：發展局" },
+              "image": { "src": "./images/ex303/coastline/14.jpg" },
               "info": [
                 ["面積", "4.7公頃"],
-                ["簡介", "工程已於2020年展開。<br/><br/>相片來源：<br/>發展局"]
+                ["簡介", "將提升維園道附近的海濱長廊，並引入海岸堤階，將公眾和水體的距離拉近。預期於2020-21 年度展開有關建築工程。<br/><br/>相片來源：<br/>發展局"]
               ]
             }
           },
@@ -1190,7 +1190,7 @@
             "cardContent": {
               "title": "東區走廊下之行人板道",
 
-              "image": { "src": "./images/ex303/coastline/15.png", "credit": "相片來源：土木工程拓展署" },
+              "image": { "src": "./images/ex303/coastline/15.png" },
               "info": [
                 ["長度", "1,700米"],
                 ["簡介", "全長兩公里、闊10米的東區走廊板道工程將於2021展開，連接銅鑼灣至鰂魚涌，板道設計着重親水文化和通達性；預計於2024年分階段完成。<br/><br/>相片來源：<br/>土木工程拓展署"]
@@ -2717,7 +2717,7 @@
           "coastline": "Coastline",
           "selectYear": "Select Year",
           "locations": ["Kwun Tong", "Kowloon Bay", "Yau Tong"],
-          "reference": "The coastline on this map is for reference only. <br/>Reclamation data only shows part of the area within Victoria Harbour.<br/> by (in alphabetical order) <br/>Energizing Kowloon East Office, Information Services Department,<br/>and Public Records Office, Government Records Service.",
+          "reference": "The coastline on this map is for reference only. <br/>Reclamation data only shows part of the area within Victoria Harbour.<br/> Images on the screen above are provided by (in alphabetical order) <br/>Energizing Kowloon East Office, Information Services Department,<br/>and Public Records Office, Government Records Service.",
           "hints": "Please click on the different buoys to<br/>explore information about different reclamation areas",
           "streetInfo": "Street Name History",
           "coastInfo": "Harbourfront Information",
@@ -2763,7 +2763,7 @@
               "image": { "src": "./images/ex303/coastline/20.jpg" },
               "info": [
                 ["Area", "7 hectares"],
-                ["About", "Planning and Engineering Feasibility Study for the Development at Kowloon Bay Action Area proposes a multi-level pedestrian network to connect the Kowloon Bay MTR Station, Kai Tak Development and Kwun Tong waterfront. <br/><br/>Photo source: <br/>Planning Department"]
+                ["About", "Planning and Engineering Feasibility Study for the Development at Kowloon Bay Action Area proposes a multi-level pedestrian network to connect the Kowloon Bay MTR Station, Kai Tak Development and Kwun Tong waterfront."]
               ]
             }
           },
@@ -2798,12 +2798,14 @@
             },
             "cardContent": {
               "title": "Kwun Tong Action Area",
-              "image": { "src": "./images/ex303/coastline/22.png" },
+              "image": { "src": "./images/ex303/coastline/22.jpg" },
               "info": [
                 [
                   ["Area", "4.2 hectares"],
-                  "About",
-                  "The Planning and Engineering Feasibility Study on Kwun Tong Action Area proposes to restructure the Government, Institution and Community (GIC) uses near the Kwun Tong Ferry Pier, improve the road capacity and pedestrian facilities, and enhance the harbourfront area.  It proposes to integrate the waterfront promenade with the series of open spaces in the area to enhance the harbourfront connectivity, linking with Kwun Tong Waterfront Promenade, and with the future Tsui Ping River and Cha Kwo Ling waterfront. <br/><br/>Photo source:<br/>Energizing Kowloon East Office"
+                  [
+                    "About",
+                    "The Planning and Engineering Feasibility Study on Kwun Tong Action Area proposes to restructure the Government, Institution and Community (GIC) uses near the Kwun Tong Ferry Pier, improve the road capacity and pedestrian facilities, and enhance the harbourfront area.  It proposes to integrate the waterfront promenade with the series of open spaces in the area to enhance the harbourfront connectivity, linking with Kwun Tong Waterfront Promenade, and with the future Tsui Ping River and Cha Kwo Ling waterfront. <br/><br/>Photo source:<br/>Energizing Kowloon East Office"
+                  ]
                 ]
               ]
             }
@@ -2916,7 +2918,7 @@
             },
             "cardContent": {
               "title": "觀塘行動區",
-              "image": { "src": "./images/ex303/coastline/22.png" },
+              "image": { "src": "./images/ex303/coastline/22.jpg" },
               "info": [
                 ["面積", "4.2公頃"],
                 [

@@ -312,17 +312,18 @@ span {
       }
     }
     &:nth-child(4) {
-      // #card #btnOuterWrap {
-      //   top: 90%;
-      // }
+      #markerWrap #location {
+        width: vw-calc(210, $width);
+        height: vw-calc(210, $width);
+        padding: 0 vw-calc(25, $width);
+      }
     }
     &:nth-child(5) {
-      // #card #btnOuterWrap {
-      //   top: 87%;
-      // }
-      // #card #wrap #info {
-      //   height: vw-calc(270, $width);
-      // }
+      #markerWrap #location {
+        width: vw-calc(200, $width);
+        height: vw-calc(200, $width);
+        padding: 0 vw-calc(25, $width);
+      }
     }
     &:nth-child(6) {
       #markerWrap #location {
