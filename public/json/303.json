@@ -299,7 +299,7 @@
               }
             },
             "cardContent": {
-              "title": "Central and Western District Promenade<br/> (Central Section) to the Hong Kong Convention and Exhibition Centre ",
+              "title": "Central and Western District Promenade (Central Section)<br/> to the Hong Kong Convention and Exhibition Centre ",
               "image": { "src": "./images/ex303/coastline/9.jpg" },
               "info": [
                 ["Area", "1.4 hectares"],
@@ -1079,14 +1079,14 @@
           },
           {
             "marker": {
-              "name": "中西區海濱長廊 (中環段)至香港會議展覽中心<br/>海濱長廊",
+              "name": "中西區海濱長廊（中環段）至<br/>香港會議展覽<br/>中心海濱長廊",
               "pos": {
                 "x": 1566,
                 "y": 492
               }
             },
             "cardContent": {
-              "title": "中西區海濱長廊 (中環段)至<br/>香港會議展覽中心海濱長廊",
+              "title": "中西區海濱長廊（中環段）至<br/>香港會議展覽中心海濱長廊",
               "image": { "src": "./images/ex303/coastline/9.jpg" },
               "info": [
                 ["面積", "1.4公頃"],
