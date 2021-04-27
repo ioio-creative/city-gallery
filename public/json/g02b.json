@@ -192,12 +192,14 @@
             },
             {
               "image": {
+                "credit": "Photo by Dan Hanscom",
                 "src": "./images/exG02b/NewYork/photo2.jpg",
                 "caption": "After ceasing operation, the elevated railway has become dilapidated with overgrown weeds, arousing demolition vs preservation controversy. A local NGO, Friends of High Line, proposed to convert the railway into a sky garden in 1999. Upon persevering for many years, the project finally commenced in 2006. In 2009, the works were completed and open to the public free of charge."
               }
             },
             {
               "image": {
+                "credit": "Photo by Yuen Man Cheung",
                 "src": "./images/exG02b/NewYork/photo3.jpg",
                 "caption": "The High Line is now a landmark of New York City. It not only provides a green and resting public space for its visitors, but also adds vibrancy to the old neighbourhood it traverses and presents an international revitalisation showcase. \"Seoullo 7017\" completed in 2017 was inspired by the High Line’s design. "
               }
@@ -568,14 +570,14 @@
             },
             {
               "image": {
-                "credit": "Dan Hanscom / Alamy Stock Photo",
+                "credit": "Photo by Dan Hanscom",
                 "src": "./images/exG02b/NewYork/photo2.jpg",
                 "caption": "停駛後，高架鐵路日久失修，雜草叢生，引起了清拆與保留的爭議。當地非牟利團體「高架鐵路之友」於1999年提出將鐵路轉型為空中公園，爭取多年後，項目最終於2006年動工，2009年竣工正式免費開放。"
               }
             },
             {
               "image": {
-                "credit": "Yuen Man Cheung / Alamy Stock Photo",
+                "credit": "Photo by Yuen Man Cheung",
                 "src": "./images/exG02b/NewYork/photo3.jpg",
                 "caption": "現在空中鐵路公園已是紐約的地標性景點，它不但為遊人提供了綠化及休憩公共空間，為鐵路沿線的舊社區帶來新動力，更是國際活化模範，2017年完工的「首爾路7017」亦參照了它的設計。"
               }
