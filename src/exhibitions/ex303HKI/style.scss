@@ -313,8 +313,8 @@ span {
     }
     &:nth-child(4) {
       #markerWrap #location {
-        width: vw-calc(210, $width);
-        height: vw-calc(210, $width);
+        // width: vw-calc(200, $width);
+        // height: vw-calc(200, $width);
         padding: 0 vw-calc(25, $width);
       }
     }
@@ -327,8 +327,8 @@ span {
     }
     &:nth-child(6) {
       #markerWrap #location {
-        width: vw-calc(255, $width);
-        height: vw-calc(255, $width);
+        // width: vw-calc(200, $width);
+        // height: vw-calc(200, $width);
         padding: 0 vw-calc(25, $width);
       }
       #card {
@@ -342,17 +342,14 @@ span {
       }
     }
     &:nth-child(7) {
-      // #card #btnOuterWrap {
-      //   top: 85%;
-      // }
       #info {
         height: vw-calc(180, $width);
       }
     }
-    &:nth-child(10) {
+    &:nth-child(9) {
       #markerWrap #location {
-        width: vw-calc(210, $width);
-        height: vw-calc(210, $width);
+        width: vw-calc(180, $width);
+        height: vw-calc(180, $width);
       }
     }
     // &:nth-child(11){
@@ -594,17 +591,17 @@ span {
             transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
           }
         }
-        &:nth-child(9) {
+        &:nth-child(8) {
           #markerWrap {
             #location {
               margin-left: vw-calc(-50);
             }
           }
         }
-        &:nth-child(10) {
+        &:nth-child(9) {
           #markerWrap {
             #location {
-              margin-left: vw-calc(20);
+              margin-left: vw-calc(30);
             }
           }
         }

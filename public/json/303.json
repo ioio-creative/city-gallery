@@ -245,7 +245,7 @@
               "title": "Central and Western District Promenade - Western Wholesale Food Market Section",
               "image": { "src": "./images/ex303/coastline/6.jpg" },
               "info": [
-                ["Area", "0.59 hectare"],
+                ["Area", "0.52 hectare"],
                 [
                   "About",
                   "In the 2013 Policy Address, the Chief Executive announced the Signature Project Scheme (SPS). After discussion and public engagement exercise, the Central and Western District Council decided to pursue “Harbourfront Enhancement and Revitalisation at the Western Wholesale Food Market” as its SPS project. The promenade was opened in April 2018, providing running space and elderly exercise facilities, and four piers with different themes, creating a unique pier-turned-park. The project’s design has preserved the distinctive features, historical elements and piers, highlighting the characteristics of wholesale trade and history of the district.<br/><br/>Photo source: <br/>Planning Department"
@@ -275,14 +275,14 @@
           },
           {
             "marker": {
-              "name": "Promenade between Tamar and the Hong Kong<br/>Convention and Exhibition Centre",
+              "name": "Promenade between Tamar and the<br/>Hong Kong Convention and Exhibition Centre",
               "pos": {
                 "x": 1566,
                 "y": 492
               }
             },
             "cardContent": {
-              "title": "Promenade between Tamar and the Hong Kong<br/>Convention and Exhibition Centre",
+              "title": "Promenade between Tamar and the<br/>Hong Kong Convention and Exhibition Centre",
               "image": { "src": "./images/ex303/coastline/9.jpg" },
               "info": [
                 ["Area", "1.4 hectares"],
@@ -1009,7 +1009,7 @@
           },
           {
             "marker": {
-              "name": "西營盤東邊街北的休憩用地",
+              "name": "西營盤東邊街北休憩用地",
               "pos": {
                 "x": 813,
                 "y": 327
@@ -1162,7 +1162,7 @@
               "image": { "src": "./images/ex303/coastline/14.jpg" },
               "info": [
                 ["面積", "4.7公頃"],
-                ["簡介", "部分用地將會從現時的工程提早 釋出，並在美化後於2021年年底開始分階段率先開放供市民享 用。「維多利亞港」字型藝術裝置設計比賽的得獎作品將會在該處展示。整個作品長約40米、高約三米，從海港內亦能清楚見到。<br/><br/>相片來源：<br/>發展局"]
+                ["簡介", "部分用地將會從現時的工程提早釋出，並在美化後於2021年年底開始分階段率先開放供市民享 用。「維多利亞港」字型藝術裝置設計比賽的得獎作品將會在該處展示。整個作品長約40米、高約三米，從海港內亦能清楚見到。<br/><br/>相片來源：<br/>發展局"]
               ]
             }
           },

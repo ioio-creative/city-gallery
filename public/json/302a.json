@@ -1241,7 +1241,7 @@
             {
               "text": {
                 "year": 2006,
-                "content": "In 2006, Ngong Ping 360 commenced operation.  It provides a cable ropeway to and fro Tung Chung and Ngong Ping, with a total length of 5.7 km, and is the longest bi-cable ropeway in Asia. The Ngong Ping tourism project is encompassing the religious heritage in Lantau, and its nearby attractions include the Big Buddha, Po Lin Monastery, and W政府新聞處om Path."
+                "content": "In 2006, Ngong Ping 360 commenced operation.  It provides a cable ropeway to and fro Tung Chung and Ngong Ping, with a total length of 5.7 km, and is the longest bi-cable ropeway in Asia. The Ngong Ping tourism project is encompassing the religious heritage in Lantau, and its nearby attractions include the Big Buddha, Po Lin Monastery, and Wisdom Path."
               },
               "image": {
                 "src": "./images/ex302a/2006_img1.png",
@@ -1791,12 +1791,12 @@
             {
               "text": {
                 "year": 2020,
-                "content": "The Liantang/Heung Yuen Wai Port commenced operation in 2020, providing a more efficient <br/>cross-boundary passage between Hong Kong and Shenzhen East, Huizhou and Guangdong East."
+                "content": "The Liantang/Heung Yuen Wai Boundary Control Point commenced operation in 2020, providing a more efficient cross-boundary passage between Hong Kong and Shenzhen East, Huizhou and Guangdong East."
               },
               "image": {
                 "src": "./images/ex302a/2020_img1a.png",
                 "translationType": "scale",
-                "description": "Liantang/<br/>Heung Yuen Wai Port",
+                "description": "Liantang/<br/>Heung Yuen Wai Boundary Control Point",
                 "gallery": [
                   {
                     "src": "./images/ex302a/2020_img1a.png",
@@ -1849,7 +1849,7 @@
           ]
         }
       ],
-      "lang":"en"
+      "lang": "en"
     },
     "tc": {
       "global": {
@@ -3683,7 +3683,7 @@
           ]
         }
       ],
-      "lang":"tc"
+      "lang": "tc"
     }
   }
 }
