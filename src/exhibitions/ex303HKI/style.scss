@@ -313,13 +313,6 @@ span {
     }
     &:nth-child(4) {
       #markerWrap #location {
-        width: vw-calc(210, $width);
-        height: vw-calc(210, $width);
-        padding: 0 vw-calc(25, $width);
-      }
-    }
-    &:nth-child(5) {
-      #markerWrap #location {
         width: vw-calc(200, $width);
         height: vw-calc(200, $width);
         padding: 0 vw-calc(25, $width);
@@ -355,11 +348,6 @@ span {
         height: vw-calc(210, $width);
       }
     }
-    // &:nth-child(11){
-    //     #card #btnOuterWrap{
-    //         top: 90%;
-    //     }
-    // }
     #markerWrap #location {
       padding-top: 0;
     }
@@ -460,10 +448,6 @@ span {
             left: vw-calc(1231, $width);
           }
           &:nth-child(4) {
-            top: vw-calc(720, $width);
-            left: vw-calc(1599, $width);
-          }
-          &:nth-child(5) {
             top: vw-calc(642, $width);
             right: vw-calc(1662, $width);
           }
@@ -535,7 +519,13 @@ span {
             transform: translate3d(0, -50%, 0) scale(1);
           }
 
-          &:nth-child(12) {
+          &:nth-child(4) {
+            #card {
+              transform: translate3d(-275%, -50%, 0) scale(1);
+            }
+          }
+
+          &:nth-child(11) {
             #card {
               transform: translate3d(15%, -50%, 0) scale(1);
             }
