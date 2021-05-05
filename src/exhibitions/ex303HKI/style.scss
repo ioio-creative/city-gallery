@@ -534,8 +534,12 @@ span {
             visibility: visible;
             transform: translate3d(0, -50%, 0) scale(1);
           }
-
-          &:nth-child(12) {
+          &:nth-child(4) {
+            #card {
+              transform: translate3d(-275%, -50%, 0) scale(1);
+            }
+          }
+          &:nth-child(11) {
             #card {
               transform: translate3d(15%, -50%, 0) scale(1);
             }
@@ -676,7 +680,7 @@ span {
               margin-top: vw-calc(5, $width);
               margin-bottom: vw-calc(15, $width);
               br {
-                display: none;
+                // display: none;
               }
             }
             #imgWrap {
