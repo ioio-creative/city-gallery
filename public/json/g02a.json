@@ -559,6 +559,9 @@
       "section2": {
         "distance": "500/公里<sup>2</sup>",
         "hongkong": {
+          "populationDensity": { "value": "6,795.22" },
+          "population": { "value": "7,520,000" },
+          "landArea": { "value": "1,106.66" },
           "source": "GovHK, <br/>Hong Kong Special Administrative Region 2019"
         },
         "beijing": {
